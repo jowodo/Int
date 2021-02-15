@@ -1,0 +1,22 @@
+Hi Theo, 
+
+this week I want to start systematically making samples. I found a approach called design of experiments (DOE) which captures the variation of information better than single factor variations.
+One established method is the https://en.wikipedia.org/wiki/Factorial_experiment were you use max und minimum of all variables/factors/parameters and as a result get 2^(number of paramters) experiments. In my case I would have to conduct 2^6=64 experiments. There is another method which further reduces the number of experiments: https://en.wikipedia.org/wiki/Plackett%E2%80%93Burman_design
+Only 8 experiments would be needed to capture the variance of my data:
+The experiments would look somethink like this: 
+['conc', 'nlay', 'Tcal', 'Tvel', 'vDOC', 'TDOC']
+[[  1.   10.  400.   60.    5.   20. ]
+ [  5.   10.  500.   60.    0.1  20. ]
+ [  1.    1.  500.  480.    0.1  20. ]
+ [  5.    1.  400.  480.    5.   20. ]
+ [  1.    1.  500.   60.    5.   80. ]
+ [  5.    1.  400.   60.    0.1  80. ]
+ [  1.   10.  400.  480.    0.1  80. ]
+ [  5.   10.  500.  480.    5.   80. ]]
+['conc', 'nlay', 'Tcal', 'Tvel', 'vDOC', 'TDOC']
+
+which theses experiments i could only capture linear effects, which surely is a good starting point. 
+The question arises which minimum and maximum values should be chosen, i.e. how big should the range be?
+
+Best, 
+Johann 
