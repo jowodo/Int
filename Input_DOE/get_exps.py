@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 import numpy as np
 np.set_printoptions(suppress=True)
 def get_exp(H,param):
