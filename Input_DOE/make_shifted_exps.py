@@ -32,5 +32,5 @@ h_new2=get.get_exp(h,param2)
 h_all=np.concatenate((h_new,h_new2))
 #
 print(param["head"])
-print(get.sort_exp(h_new2,-1))
+print(get.sort_exp(h_new2,-2))
 print(param["head"])
