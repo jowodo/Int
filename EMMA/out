@@ -1,0 +1,14 @@
+[1] "Hello world"
+[1] "PERFORM THE FOLLOWING EXPERIMENTS ( t = 0 )"
+     conc layr vDOC TDOC vCal TCal
+2665    5    4   10   40  120  500
+755     5    8   10   40  360  400
+3703    3    4   10   60  480  500
+120     5   10   10   40  120  400
+2001    1    4    5   40  360  450
+1099    4   10   15   40  480  400
+252     2    8    5   80  120  400
+3157    2   10   10   80  240  500
+497     2   10    5   60  240  400
+2539    4   10   15   80  480  450
+[1] "ADD THE MEASURED RESPONSE VALUES TO ypop"
