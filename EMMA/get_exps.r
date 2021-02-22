@@ -29,5 +29,10 @@ nresp <- 1
 
 #emma(in.name, nlev, lower, upper, out.name, opt, nd, na, weight, C, w1, w2, c1i, c1f, c2i, c2f, b, pr.mut, graph)
 var <- emmat0(in.name, nlev, lower, upper, out.name, nd)
+vec <- c(1,2,3,4,5,1,2,3,4,5)
+resp <- data.frame(resistance=vec,row.names=rownames(var$xpop))
+var$ypop <- resp
+tn<-emmatn(1,var,graph=graph,opt=opt, weight=weight, na=na,pr.mut=pr.mut)
+
 
 save.session(file=".RSession")
