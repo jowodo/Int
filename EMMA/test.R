@@ -29,8 +29,7 @@ if (t==0){
 	}
 } else {
 	file<- paste(".t",as.character(t-1),sep="")
-	restore.session(file)
-#	load(file, envir = parent.frame(), verbose = FALSE)
+	load(file, envir = parent.frame(), verbose = FALSE)
 	print(paste("restored time step ",as.character(t-1)," from file '.t",as.character(t-1),"'",sep=""))
 	print("Please enter the responses")
 	response<-c()
