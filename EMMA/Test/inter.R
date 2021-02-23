@@ -2,8 +2,6 @@
 ###		- get f1$ypop
 
 
-
-
 library("emma")
 ### META PARAMETERS
 in.name <- c("conc", "layr", "vDOC", "TDOC", "vCal", "TCal")
@@ -19,36 +17,52 @@ graph="no"
 C<-10
 pr.mut <- c(0.1, 0.07, 0.04, rep(0.01, C-3))
 
-f0<-function(){
+t0<-function(){
 	t0 <- emmat0(in.name, nlev, lower, upper, out.name, nd)
 	return(t0)
 }
-get_ypop<-function(tn){
+### GET YPOP FROM PRECEDING TIMESTEP
+get.ypop<-function(tn,t0){
+	### PRINT XPOP and YPOP
+	print(t0$ypop)
+	print(t1$xpop)
 	t<-tn$time
 	### GET NEW RESPONSES
 	response<-c()
 	if (t==0){
-		tested<-tn$tested
+		new.tested<-tn$tested
 	}else{
-		tested<-tail(tn$tested,na)
+		new.tested<-tail(tn$tested,na)
 	}
-	for(i in tested){
-		cat(paste("\n",i,"\n"))
+	for(i in new.tested){
+#		cat(paste("\n",i,"\n"))
+		cat(paste("\n",i, " "))
 		response<-append(response,scan(n=1,))
 	}
 	### APPEND NEW TO OLD RESPONSES
-	if (!t==0){
-		response<-rbind(tn$ypop,data.frame(conductivity=response))
-		print(tn$ypop)
+	df.new.response<-data.frame(conductivity=response,row.names=new.tested)
+	if (t==0){
+		# there is no previous responses
+#		df.all.response<-data.frame(conductivity=response,row.names=new.tested)
+		df.all.response<-df.new.response
 	}else{
-		response<-data.frame(conductivity=response)
+		# join with previous responses
+#		df.all.response<-rbind(t0$ypop,data.frame(conductivity=response,row.names=new.tested))
+		df.all.response<-rbind(t0$ypop,df.new.response)
+#		print(tn$ypop)
 	}
-	print(response)
-	return(response)
+	print(df.all.response)
+	return(df.all.response)
 }
 
 get_exps<-function(tn){
 	t<-tn$time+1
 	tn<-emmatn(t,tn,graph=graph,opt=opt,weight=weight,na=na,pr.mut=pr.mut)
 	return(tn)
+}
+save_all<-function(filename){
+	save(list = ls(all.names = TRUE), file =filename, envir = .GlobalEnv)
+}
+load_all<-function(filename){
+	load(file=filename, envir = parent.frame(), verbose = FALSE)
 }
