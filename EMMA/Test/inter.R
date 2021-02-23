@@ -10,8 +10,8 @@ lower <- c(1,4,5,40,120,400)
 upper <- c(5,10,20,80,480,500)
 out.name <- c("conductivity")
 opt <- c("mn")
-nd <- 2	# initial experiments
-na <- 1		# exps per time step
+nd <- 8# initial experiments
+na <- 4		# exps per time step
 weight <- c(1)	
 graph="no"
 C<-10
@@ -25,7 +25,7 @@ t0<-function(){
 get.ypop<-function(tn,t0){
 	### PRINT XPOP and YPOP
 	print(t0$ypop)
-	print(t1$xpop)
+	print(tn$xpop)
 	t<-tn$time
 	### GET NEW RESPONSES
 	response<-c()
@@ -36,7 +36,7 @@ get.ypop<-function(tn,t0){
 	}
 	for(i in new.tested){
 #		cat(paste("\n",i,"\n"))
-		cat(paste("\n",i, " "))
+		cat(paste(i, " "))
 		response<-append(response,scan(n=1,))
 	}
 	### APPEND NEW TO OLD RESPONSES
@@ -55,7 +55,7 @@ get.ypop<-function(tn,t0){
 	return(df.all.response)
 }
 
-get_exps<-function(tn){
+get.next<-function(tn){
 	t<-tn$time+1
 	tn<-emmatn(t,tn,graph=graph,opt=opt,weight=weight,na=na,pr.mut=pr.mut)
 	return(tn)

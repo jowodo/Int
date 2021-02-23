@@ -1,3 +1,6 @@
+LINKS:
+https://en.wikipedia.org/wiki/Kernel_method
+
 NEXT:
 plot I-V
 how many shortcuts over cm2
