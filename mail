@@ -1,0 +1,7 @@
+Hi Philipp,
+
+ja genau. Am Anfang definiere ich meine Grenzen und wieviele Levels ich pro Faktor haben will. 
+Zum Beispiel bei der Calcination Temperatur haben 400 und 500 recht gut funktioniert und das sind meine Grenzen. Mit 3 levels ergibt das 400,450,500.
+Das Programm spuckt mir dann aus den moeglichen Kombinationen an Experimente aus (in meinem Fall 10). 
+Ich werd dann 10 verschiedenen Schichten machen und messen wie gut (oder schlecht) sie leiten und das dann wieder ins Programm einspeisen. Dann schlaegt es mir anhand dieser Daten die naechsten Experimente vor; und dann beginnt das Ganze wieder von vorne. 
+
