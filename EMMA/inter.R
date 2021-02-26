@@ -8,13 +8,13 @@ in.name <- 	c("conc",	"layr",	"vDOC",	"TDOC",	"vCal",	"TCal")
 nlev <- 	c(4,		5,		6,		5,		4,		3)
 lower <- 	c(2,		6,		10,		40,		120,	400)
 upper <- 	c(5,		14,		20,		80,		480,	500)
-out.name <- c("conductivity")
-opt <- c("mn")
+out.name <- c("conductivity","pinhole density")
+opt <- c("mn","mn")
 nd <- 10# initial experiments
 na <- 5		# exps per time step
-weight <- c(1)	
-graph="no"
-C<-10
+weight <- c(0.4,0.6)	
+graph="yes"
+C<-10		# total number of timesteps
 pr.mut <- c(0.1, 0.07, 0.04, rep(0.01, C-3))
 
 t0<-function(){
