@@ -1,5 +1,8 @@
 LINKS:
 https://en.wikipedia.org/wiki/Kernel_method
+latin square paper 
+incorporate ascii data into git 
+make usb to ntfs
 
 NEXT:
 plot I-V
