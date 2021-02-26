@@ -5,9 +5,9 @@
 library("emma")
 ### META PARAMETERS
 in.name <- 	c("conc",	"layr",	"vDOC",	"TDOC",	"vCal",	"TCal")
-nlev <- 	c(5,		7,		6,		5,		4,		3)
-lower <- 	c(1,		4,		10,		40,		120,	400)
-upper <- 	c(5,		10,		20,		80,		480,	500)
+nlev <- 	c(4,		5,		6,		5,		4,		3)
+lower <- 	c(2,		6,		10,		40,		120,	400)
+upper <- 	c(5,		14,		20,		80,		480,	500)
 out.name <- c("conductivity")
 opt <- c("mn")
 nd <- 10# initial experiments
