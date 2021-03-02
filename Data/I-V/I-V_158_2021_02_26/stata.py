@@ -10,10 +10,13 @@ def get_conductance(filename):
     n_comments=40
     for r in range(n_comments):
         try:
-            df=pd.read_csv(filename,"\t",header=r,names=("V","I","i","J","j"))
+            print(r)
+            df=pd.read_csv(filename,"\t",header=n_comments,names=("V","I","i","J","j"))
         except:
+            print("except")
             pass
         else:
+            print("else")
             break
     i=0
     j=-1
@@ -49,7 +52,7 @@ def main():
     Gs=[]
     for filename in get_files(sample_name):
     #filename="131_Ag_Ag_01"
-#        print(filename)
+        print(filename)
         G=get_conductance(filename)
         Gs.append(G)
     #    print(filename,get_conductance(filename),sep="\t")
