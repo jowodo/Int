@@ -1,5 +1,6 @@
 set xlabel "pondus G"
 set ylabel "count"
+set xtics 1
 set yrange [0:100]
 set term pngcairo
 set out "stat.png"

@@ -35,11 +35,13 @@ def make_stat(G):
     mini=0
     maxi=13
     stat=np.repeat(0,maxi-mini)
+    stat_rel=np.repeat(0,maxi-mini)
     n = len(G)
     for i in range(mini,maxi):
         #stat[i]=(np.absolute(np.around(np.log10(G))) == i).sum()
-        stat[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()/n*100
-        print(i,stat[i],sep="\t")
+        stat[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()
+        stat_rel[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()/n*100
+        print(i,stat_rel[i],stat[i],sep="\t")
     return stat
 
 #######################
