@@ -8,7 +8,7 @@ def get_sample_name():
     return name
 def get_conductance(filename):
     n_comments=40
-    print(filename)
+#    print(filename)
     for r in range(n_comments):
         try:
             df=pd.read_csv(filename,"\t",header=r,names=("V","I","i","J","j"))
@@ -29,12 +29,15 @@ def get_header():
 def get_Gheader():
     return "exp\t%\tcount"
 def get_files(sample_name):
-    measurements = filter(lambda measurment: sample_name in measurment, os.listdir())   # only return files with sample number in name
+    all_files = os.listdir()
+#    print(all_files)
+    measurements = filter(lambda measurment: sample_name in measurment, all_files)   # only return files with sample number in name
     measurements = filter(lambda measurment: "Ag" not    in measurment, measurements)   # don't include Ag files
     return sorted(list(measurements))
 def get_measurement():
     return 
 def make_stat(G):
+#    print(G)
     mini=1
     maxi=13
     stat=np.repeat(0,maxi)#-mini)
@@ -49,11 +52,11 @@ def make_stat(G):
 
 #######################
 def main():
-    #print(get_header())
     sample_name = get_sample_name()
+    files=get_files(sample_name)
+#    print(files)
     Gs=[]
-    for filename in get_files(sample_name):
-    #filename="131_Ag_Ag_01"
+    for filename in files:
 #        print(filename)
         G=get_conductance(filename)
         Gs.append(G)

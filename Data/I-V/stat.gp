@@ -1,6 +1,7 @@
 set xlabel "pondus G"
 set ylabel "percent %"
 set xtics 1
+set xrange [0:13]
 set yrange [0:100]
 set term pngcairo
 set out "stat.png"
