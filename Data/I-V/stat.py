@@ -8,6 +8,7 @@ def get_sample_name():
     return name
 def get_conductance(filename):
     n_comments=40
+#    print(filename)
     for r in range(n_comments):
         try:
             df=pd.read_csv(filename,"\t",header=r,names=("V","I","i","J","j"))
@@ -21,7 +22,7 @@ def get_conductance(filename):
     di= (df["I"].iloc[j]-df["I"].iloc[i])
     R = dv/di
     G = di/dv
-    return G
+    return np.absolute(G)
 def get_header():
     return "exp\tconductance [S]"
 def get_Gheader():
