@@ -16,10 +16,14 @@ def get_conductance(filename):
             pass
         else:
 #            break
-            i=0     #first 
-            j=-1    #last
-            dv= (df["V"].iloc[j]-df["V"].iloc[i])
-            di= (df["I"].iloc[j]-df["I"].iloc[i])
+            i=0         #first 
+            j=len(df)-1    #last
+            while i < j:
+                dv= (df["V"].iloc[j]-df["V"].iloc[i])
+                di= (df["I"].iloc[j]-df["I"].iloc[i])
+#                print(di/dv)
+                i=i+1
+                j=j-1
             R = dv/di
             G = di/dv
             return np.absolute(G)
