@@ -7,7 +7,7 @@ library("emma")
 in.name <- 	c("conc",	"layr",	"vDOC",	"TDOC",	"vCal",	"TCal")
 nlev <- 	c(4,		5,		6,		5,		5,		3)
 lower <- 	c(2,		4,		10,		40,		120,	300)
-upper <- 	c(5,		12,		20,		80,		960,	500)
+upper <- 	c(5,		12,		20,		80,		1680,	500)
 out.name <- c("conductivity","pinhole density","layers","Cal_vel")
 opt <- c("mn","mn","mn","mx")
 nd <- 10# initial experiments
