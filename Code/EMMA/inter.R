@@ -60,13 +60,15 @@ get.ypop<-function(tn,t0){
 	}else{
 		new.tested<-tail(tn$tested,na)
 	}
+	print(out.name)
 	for(i in new.tested){
 #		cat(paste("\n",i,"\n"))
 		cat(paste(i, " "))
-		response<-append(response,scan(n=1,))
+		response<-append(response,scan(n=length(out.name),))
 	}
 	### APPEND NEW TO OLD RESPONSES
-	df.new.response<-data.frame(conductivity=response,row.names=new.tested)
+#	df.new.response<-data.frame(conductivity=response,row.names=new.tested)
+	df.new.response<-data.frame(out.name[1] =response[1],row.names=new.tested)
 	if (t==0){
 		# there is no previous responses
 #		df.all.response<-data.frame(conductivity=response,row.names=new.tested)
