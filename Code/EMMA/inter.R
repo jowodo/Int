@@ -49,7 +49,7 @@ upper <- 	c(5,		12,		20,		80,		1080,	500)
 #opt <- c("mn")
 ####
 out.name <- c("conductivity","pinhole density")
-weight <- c(0.3,0.5)
+weight <- c(0.3,0.7)
 opt <- c("mn","mn")
 nd <- 03# initial experiments
 na <- 2		# exps per time step
