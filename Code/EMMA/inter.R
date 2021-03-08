@@ -24,6 +24,11 @@
 ####### get next experiments
 ### > t4<-get.next(t3)
 
+### dependecies
+### gfortran
+### earth 
+### emma
+
 
 
 
@@ -36,7 +41,7 @@ lower <- 	c(2,		4,		10,		40,		120,	300)
 upper <- 	c(5,		12,		20,		80,		1080,	500)
 out.name <- c("conductivity","pinhole density","layers","Cal_vel")
 opt <- c("mn","mn","mn","mx")
-nd <- 10# initial experiments
+nd <- 03# initial experiments
 na <- 5		# exps per time step
 weight <- c(0.4,0.5,0.05,0.05)	
 graph="yes"
@@ -54,7 +59,8 @@ get.ypop<-function(tn,t0){
 	print(tn$xpop)
 	t<-tn$time
 	### GET NEW RESPONSES
-	response<-c()
+	#response<-c()
+	response<-data.frame(a=c(),b=c(),d=c(),e=c())
 	if (t==0){
 		new.tested<-tn$tested
 	}else{
@@ -64,11 +70,19 @@ get.ypop<-function(tn,t0){
 	for(i in new.tested){
 #		cat(paste("\n",i,"\n"))
 		cat(paste(i, " "))
-		response<-append(response,scan(n=length(out.name),))
+		#response<-append(response,list(scan(n=length(out.name),)))
+#		print(class(response))
+#		print(response)
+		response<-rbind(response,(scan(n=length(out.name),)))
 	}
 	### APPEND NEW TO OLD RESPONSES
-#	df.new.response<-data.frame(conductivity=response,row.names=new.tested)
-	df.new.response<-data.frame(out.name[1] =response[1],row.names=new.tested)
+	#df.new.response<-data.frame(conductivity=response,row.names=new.tested)
+	df.new.response<-data.frame(conductivity=response,row.names=new.tested)
+	colnames(df.new.response)<-out.name
+#	print(response)
+#	print(new.tested)
+#	df.new.response<-data.frame(column.names=out.name,response,row.names=new.tested)
+#	df.new.response<-data.frame(out.name[1] =response[1],row.names=new.tested)
 	if (t==0){
 		# there is no previous responses
 #		df.all.response<-data.frame(conductivity=response,row.names=new.tested)
