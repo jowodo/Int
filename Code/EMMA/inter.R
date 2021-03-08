@@ -1,6 +1,32 @@
 ### todo: row names
 ###		- get f1$ypop
 
+### to use 
+####### open R 
+### $ R
+####### source this file
+### > source ("inter.R")
+####### make initial timestep t0
+### > t0<-t0()
+####### save chages and all vars to file
+### > save.image("filename")
+####### quit without saving workspace
+### > quit()
+####### maker experiments and reopen R
+### $ R
+####### feed experimental data
+### > t0<-get.ypop(t0,t0)
+####### get next experiments
+### > t1<-get.next(t0)
+########### e.g. for timestep = 3
+####### feed experimental data
+### > t3<-get.ypop(t3,t2)
+####### get next experiments
+### > t4<-get.next(t3)
+
+
+
+
 
 library("emma")
 ### META PARAMETERS
