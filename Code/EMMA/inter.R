@@ -39,20 +39,25 @@ in.name <- 	c("conc",	"layr",	"vDOC",	"TDOC",	"vCal",	"TCal")
 nlev <- 	c(4,		5,		6,		5,		5,		3)
 lower <- 	c(2,		4,		10,		40,		120,	300)
 upper <- 	c(5,		12,		20,		80,		1080,	500)
-####
-#out.name <- c("conductivity","pinhole density","layers","Cal_vel")
-#weight <- c(0.3,0.5,0.05,0.05)	
-#opt <- c("mn","mn","mn","mx")
-####
-#out.name <- c("conductivity")
-#weight <- c(1)
-#opt <- c("mn")
-####
+### ### ### ### 
 out.name <- c("conductivity","pinhole density")
 weight <- c(0.3,0.7)
 opt <- c("mn","mn")
-nd <- 03# initial experiments
-na <- 2		# exps per time step
+### ### ### ### 
+out.name <- c("conductivity","pinhole density","layers")
+weight <- c(0.3,0.5,0.2)
+opt <- c("mn","mn","mn")
+### ### ### ### 
+#out.name <- c("conductivity")
+#weight <- c(1)
+#opt <- c("mn")
+### ### ### ### 
+out.name <- c("conductivity","pinhole density","layers","Cal_vel")
+weight <- c(0.4,0.5,0.05,0.05)	
+opt <- c("mn","mn","mn","mx")
+### ### ### ###
+nd <- 10# initial experiments
+na <- 5		# exps per time step
 graph="yes"
 C<-10		# total number of timesteps
 pr.mut <- c(0.1, 0.07, 0.04, rep(0.01, C-3))
@@ -68,9 +73,10 @@ get.ypop<-function(tn,t0){
 	print(tn$xpop)
 	t<-tn$time
 	### GET NEW RESPONSES
-#	response<-data.frame(a=c(),b=c(),d=c(),e=c())
+	response<-data.frame(a=c(),b=c(),d=c())
 	response<-data.frame(a=c(),b=c())
-#	response<-c()
+	response<-c()
+	response<-data.frame(a=c(),b=c(),d=c(),e=c())
 	if (t==0){
 		new.tested<-tn$tested
 	}else{
