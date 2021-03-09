@@ -56,8 +56,8 @@ out.name <- c("conductivity","pinhole density","layers","Cal_vel")
 weight <- c(0.4,0.5,0.05,0.05)	
 opt <- c("mn","mn","mn","mx")
 ### ### ### ###
-nd <- 03# initial experiments
-na <- 2		# exps per time step
+nd <- 10# initial experiments
+na <- 5		# exps per time step
 graph="yes"
 C<-10		# total number of timesteps
 pr.mut <- c(0.1, 0.07, 0.04, rep(0.01, C-3))
