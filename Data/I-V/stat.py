@@ -6,7 +6,8 @@ def get_sample_name():
     path=os.getcwd()
     dirname=path.split("/")[-1]
     name=dirname.split("_")[1]
-    return name
+    no=dirname.split("_")[2]
+    return name,no
 def get_conductance(filename):
     n_comments=40
 #    print(filename)
@@ -97,7 +98,7 @@ def make_stat(G):
 
 #######################
 def main():
-    sample_name = get_sample_name()
+    sample_name,no = get_sample_name()
     files=get_files(sample_name)
 #    print(files)
     Gs=[]
@@ -108,7 +109,8 @@ def main():
     #    print(filename,get_conductance(filename),sep="\t")
 #    print(get_Gheader())
     msd,holes=make_stat(Gs)
-    print(sample_name,msd, holes, sep="\t")
+#    print(sample_name,msd, holes, sep="\t")
+    print(f"{sample_name:s}\t{no:s}\t{msd:.5f}\t{holes:.5f}")
     #print(Gs)
 
     #print(get_sample_name())
