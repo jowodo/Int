@@ -18,8 +18,8 @@ def get_conductance(filename):
             #print("could not read",filename)
         else:
 #            break
-            i=0         #first 
-            j=len(df)-1    #last
+            i=0             #first 
+            j=len(df)-1     #last
 #            print(j)
             #TODO find pos at which V=0
             zero=np.where( df["V"] == 0)
@@ -72,10 +72,10 @@ def make_stat(G):
     stat=np.repeat(0,maxi)#-mini)
     stat_rel=np.repeat(0,maxi)#-mini)
     n = len(G)
-    for i in range(mini,maxi):
+#    for i in range(mini,maxi):
         #stat[i]=(np.absolute(np.around(np.log10(G))) == i).sum()
-        stat[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()
-        stat_rel[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()/n*100
+     #   stat[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()
+      #  stat_rel[i]=(np.absolute((np.log10(G)).astype(int)) == i).sum()/n*100
         ### old visualization stat
         # print(i,stat_rel[i],stat[i],sep="\t")
     #return stat
@@ -85,11 +85,13 @@ def make_stat(G):
     holes=0
     for g in G:
         lgg = np.log10(g)
-        if lgg < 5:
+#        print(lgg)
+        if -lgg < 5:
             holes = holes + 1
-        sd=(g0-lgg)
+        sd=(lgg+g0)**2
         msd=msd+sd
     msd=msd/n
+    holes=holes/n
     return msd,holes
     
 
