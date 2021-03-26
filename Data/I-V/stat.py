@@ -84,6 +84,8 @@ def make_stat(G):
     msd=0   #mean square distance
     g0=13
     holes=0
+    avg=0
+    lavg=0
     for g in G:
         lgg = np.log10(g)
 #        print(lgg)
@@ -91,9 +93,13 @@ def make_stat(G):
             holes = holes + 1
         sd=(lgg+g0)**2
         msd=msd+sd
+        avg=avg+g
+        lavg=lavg+lgg
     msd=msd/n
     holes=holes/n
-    return msd,holes
+    avg=np.log10(avg/n)
+    lavg=lavg/n
+    return msd,holes,avg,lavg
     
 
 #######################
@@ -108,9 +114,9 @@ def main():
         Gs.append(G)
     #    print(filename,get_conductance(filename),sep="\t")
 #    print(get_Gheader())
-    msd,holes=make_stat(Gs)
+    msd,holes,avg,lavg=make_stat(Gs)
 #    print(sample_name,msd, holes, sep="\t")
-    print(f"{sample_name:s}\t{no:s}\t{msd:.5f}\t{holes:.5f}")
+    print(f"{sample_name:s}\t{no:s}\t{msd:.5f}\t{holes:.5f}\t{avg:.5f}\t{lavg:.5f}")
     #print(Gs)
 
     #print(get_sample_name())
