@@ -1,6 +1,8 @@
 import math
 import numpy as np 
-import sklearn.svm  as skl
+#import sklearn.svm  as skl
+from sklearn.svm import SVR
+from sklearn.kernel_ridge import KernelRidge as KRR
 import pandas as pd
 
 infile="stat.dat"
@@ -55,13 +57,22 @@ def get_sets(df,nr):
     testy  = df.get(names[y_col])[ttmin:ttmax].to_numpy()
     return trainx,testx,trainy,testy
 
-nr=4
-trainx,testx,trainy,testy = get_sets(df,4)
-#ML1 = skl.LinearSVR()
-ML1 = skl.SVR(kernel='poly')
-ML1 = skl.SVR()
-ML1.fit(trainx,trainy)
-pred_testy = ML1.predict(testx)
-#print(np.array([ testy, pred_testy ] ) ) 
-print( names[nr+7], get_MAE(testy,pred_testy), get_MAE(testy,pred_testy)/np.average(testy), sep="\t")
+n=4
+line=""
+hline=""
+for nr in range(1,4+1):
+    trainx,testx,trainy,testy = get_sets(df,nr)
+    #ML = skl.LinearSVR()
+    ML = SVR(kernel='poly', C=1, degree=3, epsilon=4.4)
+    ML.fit(trainx,trainy)
+    pred_testy = ML.predict(testx)
+#    print(np.array([ testy, pred_testy ] ) ) 
+#    line=line+ str(get_MAE(testy,pred_testy))+"\t"+ str(get_MAE(testy,pred_testy)/np.average(testy))+"\t"
+    line=line+ f"{get_MAE(testy,pred_testy):.6f}"+"\t"+ f"{get_MAE(testy,pred_testy)/np.average(testy):.6f}"+"\t"
+    hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
+#    print( names[nr+7], get_MAE(testy,pred_testy), get_MAE(testy,pred_testy)/np.average(testy), sep="\t")
+#    print( names[nr+7], ML.support_vectors_, sep="\t")
 
+
+#print(hline)
+print(line)
