@@ -1,0 +1,48 @@
+nr	Zr.ml	AcAc.ml	AcOH.ml	BuOH.ml	T_pyr.K	T_cal.K	B_c.K/h	d_SEM.nm	G.S
+102	0.1		0.025	2		9.9		296		673		60		15			10E7
+
+
+##############
+1		2		(3)		4		5		(6)		7		8 	
+2**6 = 64 ...
+conc	lyaers	[T_pyr]	T_cal	T_rate	[d_sem]	v_DOC	T_DOC resistance	
+1
+2
+3
+4
+5
+		5
+		10
+				200
+						400
+						500
+								60
+								120
+								240
+								480
+										???
+										???
+												10
+												5
+												1
+												0.1
+												0.01
+														20
+														40
+														80
+														
+															????
+															????
+
+conc *T_pyr *T_cal *T_rate *v_DOC *T_DOC = 5*1*2*4*5*3 = 600
+5+1+2+4+5+3 = 20
+
+
+head=["conc","nlay","Tcal","Tvel","vDOC","TDOC"]
+min=[1,1,400,60,0.1,20]
+max=[5,10,500,480,5,80]
+if fracfact:
+conc = nlay 
+vDOC = - TDOC
+
+gen= "a a b c d -d"
