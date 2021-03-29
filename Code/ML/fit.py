@@ -60,10 +60,16 @@ def get_sets(df,nr):
 n=4
 line=""
 hline=""
-for nr in range(1,4+1):
+
+kernel=["poly","rbf","sigmoid"]
+C= np.array(range(1,20))*0.1
+degree=range(1,6)
+epsilon= np.array(range(1,20))*0.2
+
+for nr in range(1,n+1):
     trainx,testx,trainy,testy = get_sets(df,nr)
     #ML = skl.LinearSVR()
-    ML = SVR(kernel='poly', C=1, degree=3, epsilon=4.4)
+    ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
     ML.fit(trainx,trainy)
     pred_testy = ML.predict(testx)
 #    print(np.array([ testy, pred_testy ] ) ) 
@@ -76,3 +82,16 @@ for nr in range(1,4+1):
 
 #print(hline)
 print(line)
+
+"""
+print(ML.class_weight_)
+#print(ML.coef_)
+print(ML.dual_coef_)
+print(ML.fit_status_)
+print(ML.intercept_)
+print(ML.n_support_)
+print(ML.shape_fit_)
+print(ML.support_)
+print(ML.support_vectors_)
+print(ML.get_params())
+"""
