@@ -70,6 +70,7 @@ for nr in range(1,n+1):
     hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
 print(hline)
 
+"""
 for k in kernel:
     for c in C:
         for d in degree:
@@ -79,11 +80,14 @@ for k in kernel:
                     varia=str(d)
                     trainx,testx,trainy,testy = get_sets(df,nr)
                     ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
+                    ML = SVR(kernel=k, C=c, degree=d, epsilon=e)
                     ML.fit(trainx,trainy)
                     pred_testy = ML.predict(testx)
                     line=line+ f"{get_MAE(testy,pred_testy):.6f}"+"\t"+ f"{get_MAE(testy,pred_testy)/np.average(testy):.6f}"+"\t"
                     hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
             print(line+ k+ ",C="+f"{c:.1f}"+ ",deg="+str(d)+ ",e="+f"{e:.1f}")
+            """
+
 
 #print(hline)
 print(line)
