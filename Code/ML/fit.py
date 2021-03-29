@@ -67,31 +67,23 @@ degree=range(1,6)
 epsilon= np.array(range(1,20))*0.2
 
 for nr in range(1,n+1):
-    trainx,testx,trainy,testy = get_sets(df,nr)
-    #ML = skl.LinearSVR()
-    ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
-    ML.fit(trainx,trainy)
-    pred_testy = ML.predict(testx)
-#    print(np.array([ testy, pred_testy ] ) ) 
-#    line=line+ str(get_MAE(testy,pred_testy))+"\t"+ str(get_MAE(testy,pred_testy)/np.average(testy))+"\t"
-    line=line+ f"{get_MAE(testy,pred_testy):.6f}"+"\t"+ f"{get_MAE(testy,pred_testy)/np.average(testy):.6f}"+"\t"
     hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
-#    print( names[nr+7], get_MAE(testy,pred_testy), get_MAE(testy,pred_testy)/np.average(testy), sep="\t")
-#    print( names[nr+7], ML.support_vectors_, sep="\t")
+print(hline)
 
+for k in kernel:
+    for c in C:
+        for d in degree:
+            for e in epsilon:
+                line=""
+                for nr in range(1,n+1):
+                    varia=str(d)
+                    trainx,testx,trainy,testy = get_sets(df,nr)
+                    ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
+                    ML.fit(trainx,trainy)
+                    pred_testy = ML.predict(testx)
+                    line=line+ f"{get_MAE(testy,pred_testy):.6f}"+"\t"+ f"{get_MAE(testy,pred_testy)/np.average(testy):.6f}"+"\t"
+                    hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
+            print(line+ k+ ",C="+f"{c:.1f}"+ ",deg="+str(d)+ ",e="+f"{e:.1f}")
 
 #print(hline)
 print(line)
-
-"""
-print(ML.class_weight_)
-#print(ML.coef_)
-print(ML.dual_coef_)
-print(ML.fit_status_)
-print(ML.intercept_)
-print(ML.n_support_)
-print(ML.shape_fit_)
-print(ML.support_)
-print(ML.support_vectors_)
-print(ML.get_params())
-"""
