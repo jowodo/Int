@@ -4,7 +4,8 @@ import sklearn.svm  as skl
 import pandas as pd
 
 infile="stat.dat"
-df=pd.read_csv(infile, skiprows=1, delim_whitespace=True, names = ["nr", "conc", "layr", "vDOC", "TDOC", "vCal" , "TCal", "nr2", "conductivity" , "phdensity", "layers", "Cal_vel"] )
+names = ["nr", "conc", "layr", "vDOC", "TDOC", "vCal", "TCal", "nr2", "conductivity" , "phdensity", "layers", "Cal_vel"] 
+df=pd.read_csv(infile, skiprows=1, delim_whitespace=True, names = names)
 conc = df.conc
 layr = df.layr
 vDoc = df.vDOC
@@ -15,6 +16,7 @@ G = df.conductivity
 phd = df.phdensity
 layers = df.layers
 Cal_vel = df.Cal_vel
+Cal_vel = df.get("Cal_cel")
 
 tmin=0                      # train minimum index
 tmax=25
@@ -46,20 +48,27 @@ testy4 = vCal[ttmin:ttmax].to_numpy()/60
 #trainx = np.array([trainx1, trainx2 ]).reshape(20,2)
 trainx = np.transpose( np.array([trainx1, trainx2 , trainx3, trainx4, trainx5, trainx6]) )
 testx = np.transpose( np.array([testx1, testx2, testx3, testx4, testx5, testx6 ]) )
-trainy = trainy4    #.reshape(20,1)
-testy  =  testy4    #.reshape(20,1)
+y_col= 4
+#trainy = trainy4    #.reshape(20,1)
+trainy = df.get(names[y_col+7])[tmin:tmax].to_numpy()
+#testy  =  testy4    #.reshape(20,1)
+testy  = df.get(names[y_col+7])[ttmin:ttmax].to_numpy()
 #trainx1 =trainx1.to_numpy()
 #print(trainx1)
 #trainx1.reshape(np.array(trainx1),1)
 #print(type(trainx1))
 #print(trainx.shape)
 #print(trainy.shape)
+def get_MAE(y,ypred):
+    return (np.average(np.absolute(y-ypred)))
 
 #ML1 = skl.LinearSVR()
 ML1 = skl.SVR(kernel='poly')
+ML1 = skl.SVR()
 ML1.fit(trainx,trainy)
 pred_testy = ML1.predict(testx)
 print(np.array([ testy, pred_testy ] ) ) 
+print("MAE/AVG:\t",get_MAE(testy,pred_testy)/np.average(testy))
 
 #print(df)
 #print(phd)
