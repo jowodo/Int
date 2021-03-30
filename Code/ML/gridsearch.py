@@ -66,7 +66,8 @@ C= np.array(range(1,20))*0.05
 degree=range(1,6)
 epsilon= np.array(range(1,20))*0.2
 gamma=[0.0,0.1,1.0,10.0]
-param = {"kernel":kernel, "C":C, "degree":degree, "epsilon":epsilon, "gamma":gamma }
+#param = {"kernel":kernel, "C":C, "degree":degree, "epsilon":epsilon, "gamma":gamma }
+C=[1,0.1]; degree=[3]; epsilon=[1,2]; gamma=['scale']
 
 for nr in range(1,n+1):
     hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
@@ -91,4 +92,4 @@ for g in gamma:
 
 
 #print(hline)
-print(line)
+#print(line)
