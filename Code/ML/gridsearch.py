@@ -3,8 +3,6 @@ import numpy as np
 #import sklearn.svm  as skl
 from sklearn.svm import SVR
 from sklearn.kernel_ridge import KernelRidge as KRR
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
 import pandas as pd
 
 infile="stat.dat"
@@ -64,15 +62,16 @@ line=""
 hline=""
 
 kernel=["poly","rbf"]#,"sigmoid"]
-C= np.array(range(1,20))*0.005
+C= np.array(range(1,20))*0.05
 degree=range(1,6)
 epsilon= np.array(range(1,20))*0.2
 gamma=[0.0,0.1,1.0,10.0]
-#kernel=["poly"]; C=[0.01]; degree=[3]; epsilon=[1]; gamma=[0.1]
+param = {"kernel":kernel, "C":C, "degree":degree, "epsilon":epsilon, "gamma":gamma }
 
 for nr in range(1,n+1):
     hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
 print(hline)
+
 for g in gamma:
     for k in kernel:
         for c in C:
@@ -82,15 +81,13 @@ for g in gamma:
                     for nr in range(1,n+1):
                         varia=str(d)
                         trainx,testx,trainy,testy = get_sets(df,nr)
-                        pipe = make_pipeline(StandardScaler(), SVR(kernel=k, C=c, degree=d, epsilon=e))
-                        #ML = SVR(kernel=k, C=c, degree=d, epsilon=e)
-                        #ML.fit(trainx,trainy)
-                        pipe.fit(trainx,trainy)
-                        pred_testy = pipe.predict(testx)
+                        ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
+                        ML = SVR(kernel=k, C=c, degree=d, epsilon=e)
+                        ML.fit(trainx,trainy)
+                        pred_testy = ML.predict(testx)
                         line=line+ f"{get_MAE(testy,pred_testy):.6f}"+"\t"+ f"{get_MAE(testy,pred_testy)/np.average(testy):.6f}"+"\t"
-#                        line = line + str(pipe.score(testx,testy))
                         hline=hline+ names[nr+7]+"MAE\t"+ names[nr+7]+"MAE/AVG\t"
-                print(line+ k+ ",C="+f"{c:.1f}"+ ",deg="+str(d)+ ",e="+f"{e:.1f}" +",g="+f"{g:.1}")
+                print(line+ k+ ",C="+f"{c:.1f}"+ ",deg="+str(d)+ ",e="+f"{e:.1f}" +"g="+f"{g:.1}")
 
 
 #print(hline)
