@@ -1,0 +1,60 @@
+\ifglsentryexists{nemo}{}%
+{%
+\gls@defglossaryentry{nemo}%
+{%
+name={amat},%
+sort={amat},%
+type={acronym},%
+first={dolorem\glsspace (amat)},%
+firstplural={dolorems\glsspace (amats)},%
+text={amat},%
+plural={amats},%
+description={dolorem},%
+descriptionplural={dolorem\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={dolorem},%
+longplural={dolorems},%
+short={amat},%
+shortplural={amats},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{zrpro}{}%
+{%
+\gls@defglossaryentry{zrpro}%
+{%
+name={Zr(PrO)$_4$},%
+sort={Zr(PrO)$_4$},%
+type={acronym},%
+first={zirconium(IV)propoxide\glsspace (Zr(PrO)$_4$)},%
+firstplural={zirconium(IV)propoxides\glsspace (Zr(PrO)$_4$s)},%
+text={Zr(PrO)$_4$},%
+plural={Zr(PrO)$_4$s},%
+description={zirconium(IV)propoxide},%
+descriptionplural={zirconium(IV)propoxide\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={zirconium(IV)propoxide},%
+longplural={zirconium(IV)propoxides},%
+short={Zr(PrO)$_4$},%
+shortplural={Zr(PrO)$_4$s},%
+counter={page},%
+parent={},%
+%
+}%
+}%

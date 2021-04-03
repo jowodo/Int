@@ -1,5 +1,12 @@
 \begin{thebibliography}{1}
 
+\bibitem{Anwar2017}
+M.~A. Anwar, T.~Kurniawan, Y.~P. Asmara, W.~S.~W. Harun, A.~N. Oumar, and
+  A.~B.~D. Nandyanto, ``Morphology evaluation of {ZrO}2dip coating on mild
+  steel and its corrosion performance in {NaOH} solution,'' {\em {IOP}
+  Conference Series: Materials Science and Engineering}, vol.~257, p.~012087,
+  oct 2017.
+
 \bibitem{Hu2016}
 B.~Hu, E.~Jia, B.~Du, and Y.~Yin, ``A new sol-gel route to prepare dense al2o3
   thin films,'' {\em Ceramics International}, vol.~42, no.~15,
@@ -29,5 +36,10 @@ D.~Carta, L.~Villanova, S.~Costacurta, A.~Patelli, I.~Poli, S.~Vezzu,
   for optimizing coating properties based on an evolutionary algorithm
   approach,'' {\em Analytical chemistry}, vol.~83, no.~16, pp.~6373--6380,
   2011.
+
+\bibitem{Lecun1995conv}
+Y.~LeCun, Y.~Bengio, {\em et~al.}, ``Convolutional networks for images, speech,
+  and time series,'' {\em The handbook of brain theory and neural networks},
+  vol.~3361, no.~10, p.~1995, 1995.
 
 \end{thebibliography}
