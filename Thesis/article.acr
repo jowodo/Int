@@ -2,35 +2,38 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{glssymbols}\relax \glsresetentrylist %
 \glossentry{1f}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}%
+		\setentrycounter[]{page}\glsnumberformat{3}}}%
 \glossentry{2f}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}%
+		\setentrycounter[]{page}\glsnumberformat{3}}}%
 \glossentry{3f}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2}}}%
+		\setentrycounter[]{page}\glsnumberformat{3}}}%
 \glossentry{4f}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2}}}%
+		\setentrycounter[]{page}\glsnumberformat{3}}}%
 \glossentry{5f}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{3}}}\glsgroupskip
 \glsgroupheading{A}\relax \glsresetentrylist %
 \glossentry{acoh}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{3}}}\glsgroupskip
 \glsgroupheading{B}\relax \glsresetentrylist %
 \glossentry{buoh}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{6}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{7}}}\glsgroupskip
+\glsgroupheading{D}\relax \glsresetentrylist %
+\glossentry{db}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{4}}}\glsgroupskip
 \glsgroupheading{F}\relax \glsresetentrylist %
 \glossentry{fto}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{H}\relax \glsresetentrylist %
 \glossentry{water}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}%
+		\setentrycounter[]{page}\glsnumberformat{2}}}%
 \glossentry{h2so4}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}%
+		\setentrycounter[]{page}\glsnumberformat{2}}}%
 \glossentry{acac}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{6}}}%
+		\setentrycounter[]{page}\glsnumberformat{7}}}%
 \glossentry{hcl}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{I}\relax \glsresetentrylist %
 \glossentry{ipo}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}%
@@ -40,12 +43,12 @@
 \glossentry{n2}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2}}}%
 \glossentry{naoh}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{S}\relax \glsresetentrylist %
 \glossentry{sds}{\glossaryentrynumbers{\relax 
-		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}}}\glsgroupskip
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
 \glsgroupheading{Z}\relax \glsresetentrylist %
 \glossentry{zrpro}{\glossaryentrynumbers{\relax 
 		\setentrycounter[]{page}\glsnumberformat{2\delimN 3}\delimN 
-		\setentrycounter[]{page}\glsnumberformat{6}}}%
+		\setentrycounter[]{page}\glsnumberformat{7}}}%
 \end{theglossary}\glossarypostamble

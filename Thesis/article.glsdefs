@@ -568,3 +568,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{db}{}%
+{%
+\gls@defglossaryentry{db}%
+{%
+name={DB},%
+sort={DB},%
+type={acronym},%
+first={doctor blading\glsspace (DB)},%
+firstplural={doctor bladings\glsspace (DBs)},%
+text={DB},%
+plural={DBs},%
+description={doctor blading},%
+descriptionplural={doctor blading\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={doctor blading},%
+longplural={doctor bladings},%
+short={DB},%
+shortplural={DBs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.12)  18 APR 2021 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.4.12)  18 APR 2021 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,31 +615,34 @@ LaTeX Info: Redefining \nameref on input line 30.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 91.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2]
-Overfull \hbox (16.26762pt too wide) in paragraph at lines 230--247
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 93.
+ [2]
+<Pics/erichsen.png, id=205, 1284.8pt x 963.6pt>
+File: Pics/erichsen.png Graphic file (type png)
+<use Pics/erichsen.png>
+Package pdftex.def Info: Pics/erichsen.png  used on input line 202.
+(pdftex.def)             Requested size: 341.43437pt x 256.07324pt.
+ [3 <./Pics/erichsen.png>]
+Overfull \hbox (16.26762pt too wide) in paragraph at lines 242--259
  [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3] [4] [5] (./article.bbl [6]) [7] (./article.aux)
+[4] [5] [6] (./article.bbl) [7] (./article.aux)
 Package rerunfilecheck Info: File `article.out' has not changed.
 (rerunfilecheck)             Checksum: F76DBEF0E1D5F852A9185899612D9470;970.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 12783 strings out of 479383
- 192746 string characters out of 5875830
- 702047 words of memory out of 5000000
- 29562 multiletter control sequences out of 15000+600000
+ 12824 strings out of 479383
+ 193293 string characters out of 5875830
+ 695165 words of memory out of 5000000
+ 29598 multiletter control sequences out of 15000+600000
  409327 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,11n,98p,1002b,513s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,11n,98p,1002b,392s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
@@ -651,10 +654,10 @@ public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
 /usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on article.pdf (7 pages, 182105 bytes).
+Output written on article.pdf (7 pages, 1685304 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 67 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 329 PDF objects out of 1000 (max. 8388607)
+ 302 compressed objects within 4 object streams
+ 69 named destinations out of 1000 (max. 500000)
+ 134 words of extra memory for PDF output out of 10000 (max. 10000000)
 
