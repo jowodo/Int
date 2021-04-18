@@ -9,6 +9,7 @@
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks = true,
+	colorlinks = false,
 	linkbordercolor = {white},
 	urlcolor = {blue},
 	linkcolor = {blue},
@@ -19,6 +20,9 @@
 \makeglossaries
 \newcommand{\todo}[1]{\textbf{\textcolor{red}{#1}}}
 \newcommand{\td}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\me}[1]{\textbf{\textcolor{gray}{#1}}}
+\newcommand{\ds}[1]{}
+\newcommand{\oc}{$^o$C}
 
 \title{Functional oxide layers for electrical isolation and chemical passivation of steel substrates}
 \author{Johann Dorn}
@@ -29,63 +33,161 @@
 my notes
 \fi
 %\begin{acronym}
-	\newacronym{nemo}{amat}{dolorem}
+%	\newacronym{nemo}{amat}{dolorem}
 	\newacronym{zrpro}{Zr(PrO)$_4$}{zirconium(IV)propoxide}
 	\newacronym{acac}{Hacac}{acetylacetone}
 	\newacronym{acoh}{AcOH}{acetic acid}
+	\newacronym{buoh}{BuOH}{1-buthanol}
+	\newacronym{ipo}{IPO}{2-Propanol}
+	\newacronym{ito}{ITO}{indium doped tin oxide}
+	\newacronym{fto}{FTO}{fluorine doped tin oxide}
+	\newacronym{n2}{N$_2$}{nitrogen}
+	\newacronym{water}{H$_2$O}{deionized water}
+	\newacronym{sds}{SDS}{sodium dodecyl sulfate}
+	\newacronym{hcl}{HCl}{hydrochloric acid}
+	\newacronym{h2so4}{H$_2$SO$_4$}{sulfuric acid}
+	\newacronym{naoh}{NaOH}{sodium hydroxide}
+	\newacronym{zro}{ZrO$_2$}{zirconium dioxide}
+	\newacronym{1f}{1F}{one-fold concentrated solution}
+	\newacronym{2f}{2F}{two-fold concentrated solution}
+	\newacronym{3f}{3F}{three-fold concentrated solution}
+	\newacronym{4f}{4F}{four-fold concentrated solution}
+	\newacronym{5f}{5F}{five-fold concentrated solution}
 %\end{acronym}
 
+%\clearpage
 \printglossaries
+%\clearpage
+%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Preface}
-some 
-\Ac{abktag}
-\gls{nemo}
-worlds
-\Ac{abktag}
-adsf
-
+%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
+%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aims and Objectives}
+was hab ich gemacht, warum? 
+Defensio: Argumente in der Arbeit noch mal sichten, Feedback von Betreuungsperson im Kopf haben - da könnten Fragen kommen, 
+sich selbst aufnehmen 
+
+Präsentieren: Visualisierungen sinnvoll? 
+Antworten überlegen/Argumente überlegen
+Limitation, Rahmen der Arbeit
+Begründung für die eigene Vorgehensweise
+%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXPERIMENTAL
 \section{Experimental}
+\label{sec:exp}
+In this section the used chemicals and substrates, experimental procedures and any used equipment are described. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Substrate Preparation}
+Five different substrates were used throughout this work: 
+microscope glass slides (2.5~cm~x~7.5~cm) \td{from where}, thinner, squared glass plates (2.5~cm~x~2.5~cm) \td{from where}, \gls{ito} glass plates (2.5~cm~x 2.5~cm) \td{from where}, \gls{fto} glass plates (5~cm~x~5~cm) from \td{Sigma Aldrich} and steel foil (10~cm~x~10~cm) \td{provided by Sunplugged~(\url{http://sunplugged.at/)}}.
+The glass slides and \gls{fto} were cut with a \td{diamond scratcher} and broken with a \td{glass breaker} into pieces of dimensions 2.5~cm~x~2.5~cm.
+The steel foil was cut with a foil cutter\me{, a cutter knife repeatedly, a paper cutter or a scissors (ordered by increasing curvature of resulting slides)}.
+All substrates were cleaned in three steps before usage:
+\begin{enumerate}
+	\item 15 minutes in 50 ml \gls{water} and 1 ml of Hellmanex III in a sonic bath
+	\item 15 minutes in \gls{water} in a sonic bath
+	\item 15 minutes in \gls{ipo} in a sonic bath 
+\end{enumerate}
+After the last cleaning step, the samples were dry blown with dry \gls{n2} gas. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse
 \subsection{Cutting of the steel foil}
-\subsection{Solution Preperation}
 \label{sec:cut}
 There is a red foil cutter in the vacuum room, which cuts the foil without much bending.
 Alternatively, the foil can be cut without bending by cutting repeatedly with a cutter knife.
 The foil is cut into 2.5 x 2.7 mm plates.
 The small plates are marked with an diamond cutter pen.
-The plates are cleaned with 1ml of Hellmanex III in 50-100 ml dion. water in the sonic bath for 15 min, then in dion. water for 15 min and finally in isopropanol for 15 min. 
+The plates are cleaned with 1ml of Hellmanex III in 50-100 ml \gls{water} in the sonic bath for 15 min, then in \gls{water} for 15 min and finally in \gls{ipo} for 15 min. 
 The samples are dry blown with dry N$_2$ and stored until doctor blading.
-
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solution}
-Two main recipes were used and the ingridients varied. 
-The first recipe was adopted from Ref. \cite{Anwar2017} was based on \gls{zrpro} in 
+Two main recipes were used and their ingredients were varied. 
+The first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water} 
+and the second recipe - 
+adopted from Hu et. al. \cite{Hu2016} -
+was based on \gls{zrpro} in \gls{buoh}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aquatic solution}
+The procedure for the aquatic solution is as follows: 
+While stirring \gls{zrpro} is added to \gls{acac} and \gls{water} (including any additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) is added to \gls{ipo} in two separate vessels and stirred for 1 hour. 
+The \gls{water}-\gls{ipo} mixture is added to the other solution and stirred over night. 
+The exact volumes can be taken from table \ref{tab:rec1}.
+\begin{table}[h]
+	\centering
+	\caption{}
+	\label{tab:rec1}
+	\begin{tabular}{llllllll}
+		\hline
+		recipe				&1		&2		&3		&4		&5		&6		&7\\
+%		\hline
+%		conc. [a.u.]	&1		&1.7	&2.6	&3.5	&4.4	\\
+		\hline
+		\gls{zrpro} [ml]	&8		&8		&8		&8		&8		&8		&8\\
+		\gls{acac} [ml]		&8		&8		&8		&8		&8		&8		&8\\
+		\gls{ipo} [ml]		&2		&2		&2		&2		&2		&2		&2\\
+		\gls{water} [ml]		&2.6	&2.6	&2.5	&2		&2		&2		&2\\
+		\gls{sds} [mg]		&-		&5.9	&-		&-		&-		&-		&-\\
+		\gls{hcl} [ml]		&-		&-		&-		&-		&0.5	&-		&-\\
+		\gls{h2so4} [ml]	&-		&-		&-		&-		&-		&0.5	&-\\
+		\gls{naoh} [ml] 	&-		&-		&-		&-		&-		&-		&0.5\\
+		\hline
+	\end{tabular}
+\end{table}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Buthanolic solution}
 \label{sec:sol}
-The recipe for the solution was adapted from ref \cite{Hu2016}.
-The standard concentration will be described first and then the differences of higher concentrated solutions:
-4.9 ml of 1-buthanol (BuOH) are put into a beaker glass (or similar, preferably with cap) with a stirrer. 
-0.1 ml of zirconium(IV)propoxide solution (Zr(PrO)$_4$) are added while stirring.  
-After 10 to 15 minutes 0.05 ml (approximately one mole equivalent of Zr(PrO)$_4$) acetylactate (AcAC) is added and stirred for another 10 to 15 minutes. 
-Finally, 1 ml of isopropanol (IPO) is added to the mixture and stirred for additional 20-30 minutes. 
+%The recipe for the solution was adapted from ref \cite{Hu2016}.
+Five different concentration were prepared. 
+%The first solution \td{(standard concentration/ one fold/ 1F)} 
+%followed the recipe loosely, which is described by Hu et al. \cite{Hu2016}.
+%In order to obtain thicker \gls{zro} layers the \gls{zrpro} concentration in the starting solution was raised.
+The \gls{1f}
+%one-fold concentrated solution (1F) 
+was closest to the recipe proposed by Hu et. al. \cite{Hu2016}. 
+The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar with higher concentrations of \gls{zrpro} (see table \ref{tab:rec2}).
+The procedure for obtaining the \gls{1f} solution will be explained in detail:
+%
+%was closely on the basis of ref \cite{Hu2016}. 
+%The standard concentration will be described first and then the differences of higher concentrated solutions:
+4.9 ml of solvent (\gls{buoh}) are put into a beaker glass (or similar, preferably with cap) with a stirrer. 
+0.1 ml of \gls{zrpro} are added while stirring.  
+After 10 to 15 minutes 0.05 ml (\ds{approximately }one mole equivalent of \gls{zrpro}) chelating agent (\gls{acac}) is added and stirred for another 10 to 15 minutes. 
+Finally, 1 ml of stabilisation solvent (\gls{ipo} or \gls{acoh}) is added to the mixture and stirred for additional 20-30 minutes. 
 Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180. 
-In order to make a double concentrated solution, the volume of Zr(PrO)$_4$ and AcAc is doubled and BoOH is decreased by the volume of Zr(PrO)$_4$. 
-The real concentration is not double of the original, though, but rather 1.7 fold because volume of IPO is kept constant.
+In order to make a 
+%double concentrated 
+\gls{2f}
+solution, the volume of \gls{zrpro} and \gls{acac} is doubled and \gls{buoh} is decreased by the volume of \gls{zrpro}. 
+The real concentration is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{clllll}
+	\caption{}
+	\label{tab:rec2}
+	\begin{tabular}{rlllll}
 		\hline
 				&1F		&2F		&3F		&4F		&5F		\\
 		\hline
 		conc. [a.u.]	&1		&1.7	&2.6	&3.5	&4.4	\\
 		\hline
-		BuOH [ml]		&4.95	&4.9	&4.85	&4.8	&4.75	\\
-		Zr(OPr) [ml]	&0.05	&0.1	&0.15	&0.2	&0.25	\\
-		AcAc [ml]		&0.0125	&0.025	&0.0375	&0.05	&0.0625	\\
-		IPO [ml]		&2		&2		&2		&2		&2		\\
+		\gls{buoh} [ml]		&4.95	&4.9	&4.85	&4.8	&4.75	\\
+		\gls{zrpro} [ml]	&0.05	&0.1	&0.15	&0.2	&0.25	\\
+		\gls{acac} [ml]		&0.0125	&0.025	&0.0375	&0.05	&0.0625	\\
+		\gls{ipo}/\gls{acoh} [ml]		&2		&2		&2		&2		&2		\\
 		\hline
 	\end{tabular}
 \end{table}
@@ -101,6 +203,123 @@ The blade is put in position.
 After evaporation of the solution, the vacuum is turned of, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
 The small metal plate is transferred to the hot heating plate and rests on there for 3-5 min. 
 The process is repeated as wished. 
+
+\subsection{Calcination}
+A LabTech EH45 C heating plate and a Naberterm \td{L B410} furnace were used to calcinate the doctor bladed samples. 
+The heating plate heated with a steady rate of \td{2} $^o$C/min. 
+In order to achieve a lower overall heating rate several temperature ramps and plateaus were \todo{used}. See table~\ref{tab:labtech}
+
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{rl ll ll ll ll ll ll }%ll ll ll ll ll ll ll}
+%			&temp [\oc]	&time/rate &temp [\oc]	&time/rate	&temp [\oc]\\
+		HP1		&&&&&&&&&&&&&\\
+		\hline
+		T [\oc]	&80		&100	&150	&160	&170 	&180	&190	&200	&250	&300	&350	&400	\\
+		t [min]	&10 	&10		&5 		&5 		&5 		&5 &5 &10 &10 &10 &10 &60 \\
+		\hline
+	\end{tabular}
+	\caption{Time the temperature was held constant at certain temperatures on the heatingplate}
+	\label{tab:labtech}
+\end{table}
+
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{rl ll ll}% ll ll ll ll }%ll ll ll ll ll ll ll}
+%			&temp [\oc]	&time/rate &temp [\oc]	&time/rate	&temp [\oc]\\
+		HP1		&&&&&\\%&&&&&&&&\\
+		\hline
+		T [\oc]				&80		&150	&200	&400	&400 	\\
+		$\theta$ [\oc/min]	&10 	&10		&5 		&5		& 		\\
+		\hline
+		name	&80-150 [\oc/min]	&150-200 [\oc/min]	&200-T$_{max}$ [\oc/min]	&T$_{max}$ [min]	&T$_{max}$ [\oc] \\
+		NT1		&2					&1					&2					&60 &400 \\
+		NT2		&2					&2					&2					&60 &400 \\
+		NT3		&3					&3					&3					&60 &400 \\
+		NT4		&4					&4					&4					&60 &400 \\
+		NT5		&4					&4					&4					&60 &500 \\
+		NT6		&1					&1					&1					&60 &400 \\
+		NT7		&max				&max				&max				&60 &600 \\
+		\hline
+	\end{tabular}
+	\caption{Heating rates and constant temperature times. \td{Macht dieser Graph ueberhaupt sinn? }}
+	\label{tab:nt}
+\end{table}
+
+\subsection{EMMA Propagation}
+\begin{table}
+	\centering
+	\begin{tabular}{ccccccc}
+		\hline
+		\hline
+conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
+		\hline
+1	&10	&5	&20	&120	&400	&\\
+1	&4	&0.1	&20	&120	&500	&\\
+5	&10	&0.1	&20	&120	&500	&\\
+5	&4	&5	&20	&480	&400	&\\
+1	&5	&5	&80	&120	&500	&\\
+1	&10	&1	&80	&480	&400	&\\
+5	&5	&1	&80	&120	&400	&\\
+5	&10	&5	&80	&480	&500	&\\
+2	&8	&0.5	&40	&360	&470	&\\
+2	&6	&2	&40	&360	&430	&\\
+		\hline
+%4	&12	&-	&-	&-	&-&\\
+1	&4	&12	&70	&120	&500	&\\
+1	&9	&18	&80	&240	&400	&\\
+%2	&5	&18	&70	&-	&-		&\\
+4	&6	&14	&60	&240	&500	&\\
+4	&6	&14	&60	&240	&500	&\\
+4	&6	&14	&60	&240	&500	&\\
+		\hline
+2	&10	&20	&40	&120	&500	&6113\\
+3	&8	&18	&70	&1080	&300	&2850\\
+3	&6	&10	&50	&1080	&400	&5526	\\
+%3	&10	&14	&50	&600	&500	&-7374	\\
+3	&10	&16	&80	&120	&500	&6554	\\
+4	&6	&16	&80	&1080	&300	&2947	\\
+3	&12	&12	&80	&840	&500	&8318	\\
+3	&10	&14	&50	&600	&500	&7374	\\
+5	&6	&10	&60	&1080	&400	&5648	\\
+5	&10	&20	&60	&360	&300	&3956	\\
+5	&12	&14	&60	&1080	&300	&2700	\\
+		\hline
+%2	&2	&10	&40	&600	&300	&-7201	\\
+2	&4	&10	&80	&1080	&300	&6101	\\
+%2	&4	&10	&40	&600	&300	&-7201	\\
+2	&4	&10	&40	&600	&300	&7201	\\
+3	&4	&12	&60	&600	&300	&1462	\\
+4	&4	&10	&80	&1080	&300	&2883	\\
+5	&12	&20	&70	&600	&300	&1680	\\
+		\hline
+2	&4	&10	&40	&120	&300	&1	\\
+2	&4	&10	&40	&120	&500	&6001	\\
+3	&4	&10	&40	&120	&500	&6102	\\
+5	&4	&10	&80	&1080	&300	&2884	\\
+5	&12	&20	&60	&120	&300	&360	\\
+		\hline
+3	&4	&10	&40	&600	&400	&4202	\\
+2	&6	&20	&40	&120	&500	&6105	\\
+%4	&4	&14	&80	&1080	&300	&-2923	\\
+5	&12	&14	&60	&600	&300	&1500	\\
+3	&6	&14	&60	&600	&300	&1486	\\
+4	&4	&14	&80	&1080	&300	&2923	\\
+		\hline
+4	&8	&18	&80	&1080	&300	&2971	\\
+3	&8	&10	&50	&1080	&300	&2530	\\
+2	&12	&16	&40	&120	&400	&3077	\\
+2	&10	&18	&60	&1080	&300	&2733	\\
+4	&10	&10	&50	&1080	&300	&2535	\\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{}
+	\label{tab:emma}
+\end{table}
+
 
 \section{Evaluation and Computational Details}
 \subsection{Evaluation of Samples}
@@ -160,12 +379,12 @@ Next, the output variables (dependant variables), their weights in the objective
 						&		&					&20				&					&		\\
 		\hline
 	\end{tabular}
-	\caption{Discrete levels of each input parameter}
+	\caption{Discrete levels of each input parameter \td{are concentrations correct?}}
 	\label{tab:input}
 \end{table}
 
 The first step is to select an initial population (ensemble of experiments), which is chosen randomly from the population space. 
-The samples are made, measured and evaluated according to sections \ref{sec:cut}-\ref{sec:eval} and the distance $D$ (see eq. \ref{eq:D}), $\rho_s$ (see eq. \ref{eq:rho}), $n_{layers}$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in $^o$C/min) are supplied to the program. 
+The samples are made, measured and evaluated according to section \ref{sec:exp} and the distance $D$ (see eq. \ref{eq:D}), $\rho_s$ (see eq. \ref{eq:rho}), $n_{layers}$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in $^o$C/min) are supplied to the program. 
 The program uses this data to estimate a response for each output variable (and to choose a fraction of the initial population which is allowed to propagate).
 The response variables for the entire population space is calculated. 
 The current population - each of the particles independently - moves towards the optimum solution.
@@ -174,21 +393,20 @@ The population for the next time step is outputted and the experiments are again
 
 scarce data may lead to overfitting\cite{Lecun1995conv}
 \section{Results and Discussion}
+The space seems to be too big for the small sample size.
+Look at relation of space size and sample size here and in Hu2016.
 \section{Outlook}
 
-
-
-
 Making of the solution for the sol-gel process:
-For a single concentrated solution 0.05 ml of Zr(IV)Propoxide are added while stirring to 4.95 ml of Buthan-1-ol and stirred for 15 minutes. 
-0.013 ml (or one molar equvilent of Zr) of Acetylacetone is added to the stirring solution. 
+For a single concentrated solution 0.05 ml of \gls{zrpro} are added while stirring to 4.95 ml of \gls{buoh} and stirred for 15 minutes. 
+0.013 ml (or one molar equvilent of Zr) of \gls{acac} is added to the stirring solution. 
 After another 15 minutes 1 ml of acetic acid is added and stirred for 30 minutes to stabilize the solution up to 24h. 
 
 The concentration can be increased up to 5 times being stable for a minimum of 4 hours. 
 The sol-gel process produces am homogeneous transparent crystalline zirconia oxide layer. 
 homogeneity can be mainly controlled via blade velocity and temperature and layers can be stacked.
 
-\clearpage
+%\clearpage
 \bibliographystyle{ieeetr}
 \bibliography{int}
 \end{document}
