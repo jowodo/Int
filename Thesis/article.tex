@@ -7,6 +7,7 @@
 \usepackage{pdfpages}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{subcaption}
 \hypersetup{
 	colorlinks = true,
 	colorlinks = false,
@@ -56,7 +57,7 @@ my notes
 	\newacronym{db}{DB}{doctor blading}
 %\end{acronym}
 
-%\clearpage
+\clearpage
 \printglossaries
 %\clearpage
 %%%%%%%%%
@@ -83,6 +84,11 @@ Begründung für die eigene Vorgehensweise
 %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXPERIMENTAL
+\section{Theoretical Background aka How does is work?}
+\subsection{Sputtering}
+\subsection{SEM}
+\subsection{Infrared absorbance}
+
 \section{Experimental}
 \label{sec:exp}
 In this section the used chemicals and substrates, experimental procedures and any used equipment are described. 
@@ -90,9 +96,9 @@ In this section the used chemicals and substrates, experimental procedures and a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Substrate Preparation}
 Five different substrates were used throughout this work: 
-microscope glass slides (2.5~cm~x~7.5~cm) \td{from where}, thinner, squared glass plates (2.5~cm~x~2.5~cm) \td{from where}, \gls{ito} glass plates (2.5~cm~x 2.5~cm) \td{from where}, \gls{fto} glass plates (5~cm~x~5~cm) from \td{Sigma Aldrich} and steel foil (10~cm~x~10~cm) \td{provided by Sunplugged GmbH (\url{http://sunplugged.at/)}}.
-The glass slides and \gls{fto} were cut\td{/scratched} with a \td{diamond scratcher/scraper} and broken with a \td{glass breaker} into pieces of dimensions 2.5~cm~x~2.5~cm.
-The steel foil was cut with a foil cutter\me{, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting slides)}.
+microscope glass slides (2.5~cm~x~7.5~cm) \td{from Sigma Aldrich}, thinner, squared glass plates (2.5~cm~x~2.5~cm) \td{from Sigma Aldrich}, \gls{ito} glass plates (2.5~cm~x 2.5~cm) \td{from Sigma Aldrich}, \gls{fto} glass plates (5~cm~x~5~cm) from \td{Sigma Aldrich} and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
+The glass slides and \gls{fto} were \ds{cut\td{/scratched}}scratched with a scratching tool \ds{\td{(diamond scratcher/scraper)} }and broken with a \td{glass breaker} into pieces with dimensions 2.5~cm~x~2.5~cm.
+The steel foil was cut with a foil cutter, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting plates).
 All substrates were cleaned in three steps before usage:
 \begin{enumerate}
 	\item 15 minutes in 50 ml \gls{water} and 1 ml of Hellmanex III in a sonic bath
@@ -116,16 +122,39 @@ The samples are dry blown with dry N$_2$ and stored until doctor blading.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solution}
-Two main recipes were used and their \td{ingredients/compositions} were varied. 
+Two main recipes were used and their compositions were varied. 
 The first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water} 
 and the second recipe - 
 adopted from Hu et. al. \cite{Hu2016} -
 was based on \gls{zrpro} in \gls{buoh}.
+
+%\iffalse
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		%\includegraphics[width=.99\textwidth]{Pics/sol-aq.png}
+		\includegraphics[height=0.8\textwidth]{Pics/sol-aq.png}
+		\label{fig:sol-aq}
+		\caption{Aquatic solution}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		%\includegraphics[width=.99\textwidth]{Pics/sol-bu.png}
+		\includegraphics[height=0.8\textwidth]{Pics/sol-bu.png}
+		\label{fig:sol-bu}
+		\caption{Buthanolic solution}
+	\end{subfigure}
+	\label{fig:sol}
+	\caption{Aquatic and buthanolic solution in beaker glass sealed with Parafilm}
+\end{figure}
+%\fi
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aquatic solution}
 \me{The procedure for the aquatic solution is as follows:}
-While stirring \gls{zrpro} is added to \gls{acac} and \gls{water} (including any additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) is added to \gls{ipo} in two separate vessels and stirred for 1 hour. 
-The \gls{water}-\gls{ipo} mixture is added to the other solution and stirred over night. 
+\gls{zrpro} was added to \gls{acac} while stirring and in a seperate vessel \gls{water} (including any additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) was added to \gls{ipo} and both were stirred for 1 hour. 
+The \gls{water}-\gls{ipo} mixture was added to the other solution and stirred over night. 
 The exact volumes can be taken from table \ref{tab:rec1}.
 \begin{table}[h]
 	\centering
@@ -152,14 +181,11 @@ The exact volumes can be taken from table \ref{tab:rec1}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Buthanolic solution}
 \label{sec:sol}
-\td{make recipe general}
-%The recipe for the solution was adapted from ref \cite{Hu2016}.
 Five different concentration were prepared. 
 %The first solution \td{(standard concentration/ one fold/ 1F)} 
 %followed the recipe loosely, which is described by Hu et al. \cite{Hu2016}.
 %In order to obtain thicker \gls{zro} layers the \gls{zrpro} concentration in the starting solution was raised.
-The \gls{1f} \td{(one fold (1F) solution /or/ one fold solution (1F))}
-%one-fold concentrated solution (1F) 
+The \gls{1f} 
 was closest to the recipe proposed by Hu et. al. \cite{Hu2016}. 
 The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar with higher concentrations of \gls{zrpro} (see table \ref{tab:rec2}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,19 +194,19 @@ The procedure for obtaining the \gls{1f} solution will be explained in detail: \
 %
 %was closely on the basis of ref \cite{Hu2016}. 
 %The standard concentration will be described first and then the differences of higher concentrated solutions:
-4.9 ml of solvent (\gls{buoh}) are put into a beaker glass (or similar, preferably with \td{an air-tight} cap) with a stirrer. 
+4.9 ml of solvent (\gls{buoh}) are put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer. 
 0.1 ml of \gls{zrpro} are added while stirring.  
 After 10 to 15 minutes 0.05 ml (\ds{approximately }one mole equivalent of \gls{zrpro}) chelating agent (\gls{acac}) is added and stirred for another 10 to 15 minutes. 
 Finally, 1 ml of stabilisation solvent (\gls{ipo} or \gls{acoh}) is added to the mixture and stirred for additional 20-30 minutes. 
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The solvent (\gls{buoh}) is put into a beaker glass (or similar, preferably with \td{an air-tight} cap) with a stirrer and \gls{zrpro} is added while stirring.  
-After 10 to 15 minutes one mole equivalent chelating agent (\gls{acac}) is added and stirred for another 10 to 15 minutes. 
-Finally, the stabilisation solvent (\gls{ipo} or \gls{acoh}) is added to the mixture and stirred for additional 20-30 minutes. 
+The solvent (\gls{buoh}) is put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer and \gls{zrpro} is added while stirring.  
+After stirring 10 to 15 minutes one mole equivalent chelating agent (\gls{acac}) is added and stirred for another 10 to 15 minutes. 
+Finally, the stabilisation solvent\cite{Hu2016} (\gls{ipo} or \gls{acoh}) is added to the mixture and stirred for additional 20-30 minutes. 
 Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} is doubled and \gls{buoh} is decreased by the volume of \gls{zrpro}. 
-The real concentration is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
+The real concentration of a \gls{2f} solution is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
 
 \begin{table}[h]
 	\centering
@@ -264,6 +290,34 @@ In order to achieve a lower overall heating rate several temperature ramps and p
 	\caption{Heating rates and constant temperature times. \td{Macht dieser Graph ueberhaupt sinn? }}
 	\label{tab:nt}
 \end{table}
+
+\subsection{Characterisation}
+\subsubsection{SEM}
+Zeiss Supra 40
+\subsubsection{Infrared}
+Bruker Vertex 70
+\subsubsection{X-Ray Defraction}
+Thermo Scientific ARL Equinox 100 X-Ray Diffractometer
+\subsubsection{Current-Voltage Curve}
+Agilent 4156C Precision Semiconductor Parameter Analyzer
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=.9\textwidth]{Pics/i-v.png}
+		\label{fig:iv-agilent}
+		\caption{peripherals}
+	\end{subfigure}
+	\begin{subfigure}{0.48\textwidth}
+		\centering
+		\includegraphics[width=.9\textwidth]{Pics/i-v-micro.png}
+		\label{fig:iv-micro}
+		\caption{View through the microscope}
+	\end{subfigure}
+	\label{fig:iv}
+	\caption{I-V curve abnehm aperature and sicht durch das micro scope.}
+\end{figure}
+
 
 \subsection{EMMA Propagation}
 \begin{table}
@@ -412,6 +466,11 @@ scarce data may lead to overfitting\cite{Lecun1995conv}
 \section{Results and Discussion}
 The space seems to be too big for the small sample size.
 Look at relation of space size and sample size here and in Hu2016.
+
+Would be easier to fit with single factor at a time variation or latin hyper cuber?
+Would it also be easier for PSO or ML to find fitting function?
+Every output var is independent of each other, so $v_{cal}$ can act as test 
+
 \section{Outlook}
 
 Making of the solution for the sol-gel process:
