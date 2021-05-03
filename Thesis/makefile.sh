@@ -1,6 +1,6 @@
 #!/bin/bash
 
-basename=article
+basename=thesis
 pdflatex $basename.tex
 bibtex $basename.aux
 makeglossaries $basename
