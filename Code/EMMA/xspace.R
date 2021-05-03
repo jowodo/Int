@@ -1,3 +1,4 @@
 source("inter.R")
-load("t0")
-t0$xspace
+load("t4")
+t4$xspace
+t4$yspace

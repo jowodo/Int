@@ -27,11 +27,11 @@ part=$all
 head -n1 $filename 
 
 tail -n $(($lines-1)) $filename > $ffpp-1 & \
-	sort -hk $layrk $ffpp-1 > $ffpp-2 && part=$(($part/$layrlvl)) && head -n $(($part*1)) $ffpp-2 | tail -n $part > $ffpp-3 && \
+	sort -hk $layrk $ffpp-1 > $ffpp-2 && part=$(($part/$layrlvl)) && head -n $(($part*5)) $ffpp-2 | tail -n $part > $ffpp-3 && \
 	sort -hk $vdock $ffpp-3 > $ffpp-4 && part=$(($part/$vdoclvl)) && head -n $(($part*1)) $ffpp-4 | tail -n $part > $ffpp-5 && \
-	sort -hk $tdock $ffpp-5 > $ffpp-6 && part=$(($part/$tdoclvl)) && head -n $(($part*2)) $ffpp-6 | tail -n $part > $ffpp-7 && \
+	sort -hk $tdock $ffpp-5 > $ffpp-6 && part=$(($part/$tdoclvl)) && head -n $(($part*1)) $ffpp-6 | tail -n $part > $ffpp-7 && \
 	sort -hk $vcalk $ffpp-7 > $ffpp-8 && part=$(($part/$vcallvl)) && head -n $(($part*1)) $ffpp-8 | tail -n $part > $ffpp-9 && \
-	sort -hk $tcalk $ffpp-9 > $ffpp-0 && part=$(($part/$tcallvl)) && head -n $(($part*1)) $ffpp-0
+	sort -hk $tcalk $ffpp-9 > $ffpp-0 && part=$(($part/$tcallvl)) && head -n $(($part*2)) $ffpp-0 | tail -n $part 
 
 rm $ffpp-1
 rm $ffpp-2

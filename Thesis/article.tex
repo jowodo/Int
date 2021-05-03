@@ -236,12 +236,13 @@ The real concentration of a \gls{2f} solution is not double of the original, tho
 		with vacuum pump in the background and temperature regulator on the left.}
 	\label{fig:eric}
 \end{figure}
-\td{picture of the machine, and name of the machine}
 The temperature of the heating plate is set to 200 $^o$C.
 The temperature of the vacuum plate is set and waited until reached.
-The sample is placed on the vacuum plate and tested if it can be \td{held/retained} by the underpressure.
-The velocity of the \gls{db} blade is set and a mini test run is performed. 
+The sample is placed on the vacuum plate and the vacuum is switched on. 
+The velocity of the \gls{db} blade is set and it is %\td{a mini test run is performed.} 
+tested if the sample can be retained in place by the under-pressure.
 The blade is put in position. 
+\td{After setting the heating plate temperature, the vacuum plate temperature (see figure \ref{fig:eric}) and the \gls{db} velocity, the \gls{db} blade is set up and the sample placed on the vacuum plate. The vacuum is switched on and the blade is sent over the sample without liquid to see if it is held in position.}
 100-125 $\mu$l of solution is applied with an 10-1000 $\mu$l pipette and the doctor blading is started immediately. 
 After evaporation of the solution, the vacuum is turned of, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
 The small metal plate is transferred to the hot heating plate and rests on there for 3-5 min. 
@@ -319,6 +320,7 @@ Agilent 4156C Precision Semiconductor Parameter Analyzer
 \end{figure}
 
 
+\iffalse
 \subsection{EMMA Propagation}
 \begin{table}
 	\centering
@@ -390,6 +392,7 @@ conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
 	\caption{}
 	\label{tab:emma}
 \end{table}
+\fi
 
 
 \section{Evaluation and Computational Details}
@@ -461,8 +464,87 @@ The response variables for the entire population space is calculated.
 The current population - each of the particles independently - moves towards the optimum solution.
 The population for the next time step is outputted and the experiments are again executed, measured and evaluated.
 
+\subsection{EMMA Propagation}
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{ccccccc}
+		\hline
+		\hline
+conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
+		\hline
+1	&10	&5	&20	&120	&400	&\\
+1	&4	&0.1	&20	&120	&500	&\\
+5	&10	&0.1	&20	&120	&500	&\\
+5	&4	&5	&20	&480	&400	&\\
+1	&5	&5	&80	&120	&500	&\\
+1	&10	&1	&80	&480	&400	&\\
+5	&5	&1	&80	&120	&400	&\\
+5	&10	&5	&80	&480	&500	&\\
+2	&8	&0.5	&40	&360	&470	&\\
+2	&6	&2	&40	&360	&430	&\\
+		\hline
+%4	&12	&-	&-	&-	&-&\\
+1	&4	&12	&70	&120	&500	&\\
+1	&9	&18	&80	&240	&400	&\\
+%2	&5	&18	&70	&-	&-		&\\
+4	&6	&14	&60	&240	&500	&\\
+4	&6	&14	&60	&240	&500	&\\
+4	&6	&14	&60	&240	&500	&\\
+		\hline
+2	&10	&20	&40	&120	&500	&6113\\
+3	&8	&18	&70	&1080	&300	&2850\\
+3	&6	&10	&50	&1080	&400	&5526	\\
+%3	&10	&14	&50	&600	&500	&-7374	\\
+3	&10	&16	&80	&120	&500	&6554	\\
+4	&6	&16	&80	&1080	&300	&2947	\\
+3	&12	&12	&80	&840	&500	&8318	\\
+3	&10	&14	&50	&600	&500	&7374	\\
+5	&6	&10	&60	&1080	&400	&5648	\\
+5	&10	&20	&60	&360	&300	&3956	\\
+5	&12	&14	&60	&1080	&300	&2700	\\
+		\hline
+%2	&2	&10	&40	&600	&300	&-7201	\\
+2	&4	&10	&80	&1080	&300	&6101	\\
+%2	&4	&10	&40	&600	&300	&-7201	\\
+2	&4	&10	&40	&600	&300	&7201	\\
+3	&4	&12	&60	&600	&300	&1462	\\
+4	&4	&10	&80	&1080	&300	&2883	\\
+5	&12	&20	&70	&600	&300	&1680	\\
+		\hline
+2	&4	&10	&40	&120	&300	&1	\\
+2	&4	&10	&40	&120	&500	&6001	\\
+3	&4	&10	&40	&120	&500	&6102	\\
+5	&4	&10	&80	&1080	&300	&2884	\\
+5	&12	&20	&60	&120	&300	&360	\\
+		\hline
+3	&4	&10	&40	&600	&400	&4202	\\
+2	&6	&20	&40	&120	&500	&6105	\\
+%4	&4	&14	&80	&1080	&300	&-2923	\\
+5	&12	&14	&60	&600	&300	&1500	\\
+3	&6	&14	&60	&600	&300	&1486	\\
+4	&4	&14	&80	&1080	&300	&2923	\\
+		\hline
+4	&8	&18	&80	&1080	&300	&2971	\\
+3	&8	&10	&50	&1080	&300	&2530	\\
+2	&12	&16	&40	&120	&400	&3077	\\
+2	&10	&18	&60	&1080	&300	&2733	\\
+4	&10	&10	&50	&1080	&300	&2535	\\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{}
+	\label{tab:emma}
+\end{table}
 
-scarce data may lead to overfitting\cite{Lecun1995conv}
+
+\td{scarce data may lead to overfitting\cite{Lecun1995conv}}
+
+\subsection{Fitting via Machine Learning}
+Python and sci-kit learn \td{cite} was used to implement a linear fit model, and SVR with the kernels polynomial, rbf and sigmoid. 
+The space of hyper parameters C, the degree (in case of polynomial), epsilon and gamma was scaned. 
+
+
+\clearpage
 \section{Results and Discussion}
 The space seems to be too big for the small sample size.
 Look at relation of space size and sample size here and in Hu2016.
@@ -470,6 +552,8 @@ Look at relation of space size and sample size here and in Hu2016.
 Would be easier to fit with single factor at a time variation or latin hyper cuber?
 Would it also be easier for PSO or ML to find fitting function?
 Every output var is independent of each other, so $v_{cal}$ can act as test 
+
+plot predictions from EMMA and ML.
 
 \section{Outlook}
 

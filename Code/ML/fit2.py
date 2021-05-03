@@ -33,7 +33,6 @@ def get_sets(df,nr):
     tmax=int(ndatapoints*4/5)
     ttmin = tmax                   # test  minimum index
     ttmax=ndatapoints
-    
 
     trainx1 = conc[tmin:tmax].to_numpy()
     trainx2 = layr[tmin:tmax].to_numpy()
