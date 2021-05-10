@@ -69,8 +69,10 @@
 \lipsum[1]
 \section*{Preface}
 \lipsum[2]
+%Thank
 %I want to thank Theodoros Dimopulos, Adhi, Neha, Philipp. 
-%Quyhn, Maria, Jana, Vivien and Katharina who tried to keep me sane throuhgout the
+%Quyhn, Maria, Jana, Vivien and Katharina who tried to keep me sane throughout the
+%Elif 
 \clearpage
 \tableofcontents
 \clearpage
@@ -282,9 +284,11 @@ The process is repeated as wished.
 
 \subsection{Calcination}
 A LabTech EH45 C heating plate and a Naberterm \td{L B410} furnace were used to calcinate the doctor bladed samples. 
-The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
-In order to achieve a lower overall heating rate several temperature ramps and plateaus were \todo{used}. See table~\ref{tab:labtech}
-
+%The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
+The heating plate can hold temperature for a certain amount of time, but doesn't have conifgurable heating rates.
+In order to achieve a lower overall heating rate several temperature ramps and plateaus were \todo{used} (see table~\ref{tab:labtech}).
+This procedure will be called HP1 from now on, which stands for heating plate procedure.
+The HP1 procedure was optimized for the available hardware by a colleague working on the the project prior to me.
 
 \begin{table}[h]
 	\centering
@@ -296,40 +300,61 @@ In order to achieve a lower overall heating rate several temperature ramps and p
 		t [\minutes{}]	&10 	&10		&5 		&5 		&5 		&5 &5 &10 &10 &10 &10 &60 \\
 		\hline
 	\end{tabular}
-	\caption{Time the temperature was held constant at certain temperatures on the heatingplate}
+	\caption{Time the temperature was held constant at certain temperatures on the heating plate}
 	\label{tab:labtech}
 \end{table}
-
-
+%
+The NT1 heating program was used to mimic the HP1 heating procedure. 
+NT2 is an simplification of NT2 and further programs are the same with increased heating rate and partly increased calcination temperature (NT5).
+In figure \ref{fig:heat} the different heating ramps are depicted. 
+All heating programms are held at the calcination temperature (T$_{\textrm{Cal}}$) for one hour.
+%
+%
 \begin{table}[h]
 	\centering
 	\begin{tabular}{rl ll ll}% ll ll ll ll }%ll ll ll ll ll ll ll}
 %			&temp [\oc]	&time/rate &temp [\oc]	&time/rate	&temp [\oc]\\
-		HP1		&&&&&\\%&&&&&&&&\\
+%		HP1		&&&&&\\%&&&&&&&&\\
+%		\hline
+%		T [\oc{}]				&80		&150	&200	&400	&400 	\\
+%		$\theta$ [\oc{}/\minutes{}]	&10 	&10		&5 		&5		& 		\\
+		\hline\hline
+		Name	&80-150 [\oc{}/\minutes{}]	&150-200 [\oc{}/\minutes{}]	&200-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] \\
 		\hline
-		T [\oc{}]				&80		&150	&200	&400	&400 	\\
-		$\theta$ [\oc{}/\minutes{}]	&10 	&10		&5 		&5		& 		\\
-		\hline
-		name	&80-150 [\oc{}/\minutes{}]	&150-200 [\oc{}/\minutes{}]	&200-T$_{max}$ [\oc{}/\minutes{}]	&T$_{max}$ [\minutes{}]	&T$_{max}$ [\oc{}] \\
 		NT1		&2					&1					&2					&60 &400 \\
 		NT2		&2					&2					&2					&60 &400 \\
 		NT3		&3					&3					&3					&60 &400 \\
 		NT4		&4					&4					&4					&60 &400 \\
 		NT5		&4					&4					&4					&60 &500 \\
 		NT6		&1					&1					&1					&60 &400 \\
-		NT7		&max				&max				&max				&60 &600 \\
-		\hline
+%		NT7		&max				&max				&max				&60 &600 \\
+		\hline\hline
 	\end{tabular}
-	\caption{Heating rates and constant temperature times. \td{Macht dieser Graph ueberhaupt sinn? }}
+	\caption{Heating rates and constant temperature times. \td{Macht dieser tisch ueberhaupt sinn? }}
 	\label{tab:nt}
 \end{table}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=.7\textwidth]{../Data/Graphs/hp1.png}
+	\caption{Heatings rates}
+	\label{fig:heat}
+\end{figure}
+
 \subsection{Characterisation}
+All scanning electron microscopy images were taken with a Zeiss Supra 40. 
+%
+Infrared spectra were recorded with a Bruker Vertex 70 spectrometer. 
+%
+Diffraction spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
+The sample was placed in a way such that it absorbed half of the beam. 
+All spectra were taken at \SI{5}{\degree} incident angle. 
+And compared to an internal database.
 \subsubsection{SEM}
 Zeiss Supra 40
 \subsubsection{Infrared}
 Bruker Vertex 70
-\subsubsection{X-Ray Defraction}
+\subsubsection{X-Ray Diffraction}
 Thermo Scientific ARL Equinox 100 X-Ray Diffractometer
 \subsubsection{Current-Voltage Curve}
 Agilent 4156C Precision Semiconductor Parameter Analyzer
