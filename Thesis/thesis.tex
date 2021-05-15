@@ -25,6 +25,7 @@
 \newcommand{\me}[1]{\textbf{\textcolor{gray}{#1}}}
 \newcommand{\ds}[1]{}
 \newcommand{\x}{$\times$}
+\newcommand{\picwidth}{0.7\textwidth}
 
 %SI UNITS
 \newcommand{\cm}[1]{\SI{#1}{\centi\meter}}
@@ -342,6 +343,7 @@ All heating programms are held at the calcination temperature (T$_{\textrm{Cal}}
 \end{figure}
 
 \subsection{Characterisation}
+\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 All scanning electron microscopy images were taken with a Zeiss Supra 40. 
 %
 Infrared spectra were recorded with a Bruker Vertex 70 spectrometer. 
@@ -355,7 +357,9 @@ Zeiss Supra 40
 \subsubsection{Infrared}
 Bruker Vertex 70
 \subsubsection{X-Ray Diffraction}
-Thermo Scientific ARL Equinox 100 X-Ray Diffractometer
+Thermo Scientific ARL Equinox 100 X-Ray Diffractometer\\
+\url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
+\url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
 \subsubsection{Current-Voltage Curve}
 Agilent 4156C Precision Semiconductor Parameter Analyzer
 \begin{figure}
@@ -375,6 +379,17 @@ Agilent 4156C Precision Semiconductor Parameter Analyzer
 	\label{fig:iv}
 	\caption{I-V curve abnehm aperature and sicht durch das micro scope.}
 \end{figure}
+
+\subsection{Finding base process}
+After a fitting recipe was found, the process to produce an accaptable layer was untersucht. 
+There were many variables which had to be taken into account. 
+The damals current procedure produced clear and continuous films, but was plagued from unhomogenities due to drying stains. 
+Using a heat gunn the drying stain can be surcumvented (umgangen), but the results were unreproduceable. 
+The glass unterlage was therefore exchanged with a metal plate which allowed both to hold the sample via underpressure and heat it to a certain temperature.
+The bounds fore the process were then explored. 
+Especially the doctor blading velocity.
+
+
 
 
 \iffalse
@@ -612,6 +627,14 @@ Every output var is independent of each other, so $v_{cal}$ can act as test
 
 plot predictions from EMMA and ML.
 
+\subsection{XRD}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\picwidth]{Pics/xrd.png}
+	\caption{XRD spectra}
+	\label{fig:xrd}
+\end{figure}
 \section{Outlook}
 
 Making of the solution for the sol-gel process:
@@ -622,6 +645,14 @@ After another \minutes{15} \ml{1} of acetic acid is added and stirred for \minut
 The concentration can be increased up to 5 times being stable for a minimum of \h{4}. 
 The sol-gel process produces am homogeneous transparent crystalline zirconia oxide layer. 
 homogeneity can be mainly controlled via blade velocity and temperature and layers can be stacked.
+
+It should have been alos verglichen with grid search with comparable size
+but most time was used to find a vernuenfig base recipe and process
+
+It is still very human 
+Der process is - as it the case with all ML and most fitting processes - is very abhaengig von hyper parameters, 
+In the current work population size, number of generations, and most importantly boundaries (grenzen). 
+
 
 %\clearpage
 \bibliographystyle{ieeetr}
