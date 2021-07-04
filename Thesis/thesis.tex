@@ -64,6 +64,9 @@
 \newacronym{4f}{4F}{four-fold concentrated solution}
 \newacronym{5f}{5F}{five-fold concentrated solution}
 \newacronym{db}{DB}{doctor blading}
+\newacronym{pv}{PV}{photovoltaic}
+\newacronym{cigs}{CIGS}{copper indium gallium sulfide}
+\newacronym{sg}{SG}{sol-gel}
 
 \clearpage
 \section*{Abstract}
@@ -87,23 +90,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
-\td{describe everything what is meantioned in \ref{sec:exp}}
-Photovoltaik is cool and a big hope when trying to become carbon neutral as it uses the energy provided by sun directly. 
-One sort of PV is CIGS (copper indium gallium sulfide. https://doi.org/10.1016/j.tsf.2009.09.033
-In order to make a module, mutliple cells are schalted in series. 
-Glas is a good non-conducting substrate, but very rigid and brittle. 
-An alternative is steel, which is ductile, inexpensive and highly available, but unfortunately conducting. 
-An insulating layer must therefore be applied. to the steel substrate before any cigs cells can be draufgegeben.
-A non-toxic material is ZrO2. 
-A economic and scalable method is doctor blading via a sol-gel process. 
-SG processes often produce poreous layers. 
-In this work a dense, insulating and homogeneous layer is angestrebt. 
-ML can help to uncover complex non-linear relations, such as the influence of the verarbeitungs factors on the thickness and resistivy of the resulting layer.
+\td{describe everything what is mentioned in \ref{sec:exp}}
+\td{\Gls{pv} is cool and a big hope when trying to become carbon neutral as it uses the energy provided by sun directly in contrast to renewable energy sources (e.g. wind and water) or even carbon based sources. }
+One sort of \gls{pv} is \gls{cigs} \cite{Vasekar2010}. % https://doi.org/10.1016/j.tsf.2009.09.033}
+In order to make a module, multiple cells are operated in series. 
+Glass is a good non-conducting substrate, but very rigid and brittle. 
+An alternative is steel, which is ductile, inexpensive and highly available, but conducting. 
+An insulating layer must therefore be applied to the steel substrate before any \gls{cigs} cells can be applied.
+A non-toxic material which is suitable for this application is ZrO2. 
+An economic and scalable method is doctor blading via a \gls{sg} process. 
+\gls{sg} processes often produce porous layers. 
+In this work a dense, insulating and homogeneous layer is pursued. 
+ML can help to uncover complex non-linear relations, such as the influence of the production factors on the thickness and resistance of the resulting layer.
 %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aims and Objectives}
-was hab ich gemacht, warum? 
+The aim of this work is to develop a non-conducting layer on steel based on  non-toxic materials like Aluminium or Zirconium via doctor blading. 
+This layer can then be used as insulator for CIGS modules on steel sheets.
+The method of doctor blading \td{(which is in principle a sol-gel process)} was chosen because of the availability to the industrial partner.
+In order to optimize the resulting layer the multitude of parameters was optimized with an machine learning ansatz. 
+The conductivity (dependent variable), the number of layers and calcination time (both independent variables) should be minimized.
+The conductivity should be as small as possible.
+The number of layers should be held small and the calcination heating rate should be maximized. 
 \iffalse
 Defensio: Argumente in der Arbeit noch mal sichten, Feedback von Betreuungsperson im Kopf haben - da könnten Fragen kommen, 
 sich selbst aufnehmen 
@@ -139,7 +148,7 @@ All substrates were cleaned in three steps before usage:
 	\item \minutes{15} in \gls{water} in a sonic bath
 	\item \minutes{15} in \gls{ipo} in a sonic bath 
 \end{enumerate}
-After the last cleaning step, the samples were dry blown with dry \gls{n2} gas. 
+After the last cleaning step, the samples were blown dry with dry \gls{n2} gas. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,9 +167,7 @@ The samples are dry blown with dry N$_2$ and stored until doctor blading.
 \subsection{Solution}
 Two main recipes were used and their compositions were varied. 
 The first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water}.
-The second recipe - 
-adopted from Hu et. al. \cite{Hu2016} -
-was based on \gls{zrpro} in \gls{buoh}.
+The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zrpro} in \gls{buoh}.
 
 %\iffalse
 \begin{figure}[htb]
@@ -180,19 +187,19 @@ was based on \gls{zrpro} in \gls{buoh}.
 		\caption{Buthanolic solution}
 	\end{subfigure}
 	\label{fig:sol}
-	\caption{Aquatic and buthanolic solution in beaker glass sealed with Parafilm}
+	\caption{Aquatic and buthanolic solution in beaker glass with magnetic stir bars sealed with Parafilm} 
 \end{figure}
 %\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aquatic solution}
-\me{The procedure for the aquatic solution is as follows:}
+%\me{The procedure for the aquatic solution is as follows:}
 \gls{zrpro} was added to \gls{acac} while stirring and in a seperate vessel \gls{water} (including any additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) was added to \gls{ipo} and both were stirred for one hour. 
 The \gls{water}-\gls{ipo} mixture was added to the other solution and stirred over night. 
-The exact volumes can be taken from table \ref{tab:rec1}.
+The exact volumes can be taken from table~\ref{tab:rec1}.
 \begin{table}[h]
 	\centering
-	\caption{}
+	\caption{Compositions of different aquatic solutions}
 	\label{tab:rec1}
 	\begin{tabular}{llllllll}
 		\hline
@@ -203,7 +210,7 @@ The exact volumes can be taken from table \ref{tab:rec1}.
 		\gls{zrpro} [\ml{}]	&8		&8		&8		&8		&8		&8		&8\\
 		\gls{acac}  [\ml{}]	&8		&8		&8		&8		&8		&8		&8\\
 		\gls{ipo}   [\ml{}]	&2		&2		&2		&2		&2		&2		&2\\
-		\gls{water} [\ml{}]	&2.6	&2.6	&2.5	&2		&2		&2		&2\\
+		\gls{water} [\ml{}]	&2.6	&2.6	&2.5	&2~		&2		&2		&2\\
 		\gls{sds}   [\mg{}]	&-		&5.9	&-		&-		&-		&-		&-\\
 		\gls{hcl}   [\ml{}]	&-		&-		&-		&-		&0.5	&-		&-\\
 		\gls{h2so4} [\ml{}]	&-		&-		&-		&-		&-		&0.5	&-\\
@@ -223,24 +230,6 @@ The \gls{1f}
 was closest to the recipe proposed by Hu et. al. \cite{Hu2016}. 
 The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar with higher concentrations of \gls{zrpro} (see table \ref{tab:rec2}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\iffalse
-The procedure for obtaining the \gls{1f} solution will be explained in detail: \td{maybe just keep it general}
-%
-%was closely on the basis of ref \cite{Hu2016}. 
-%The standard concentration will be described first and then the differences of higher concentrated solutions:
-\ml{4.9} of solvent (\gls{buoh}) are put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer. 
-\ml{0.1} of \gls{zrpro} are added while stirring.  
-After 10 to 15 minutes \ml{0.05} (\ds{approximately }one mole equivalent of \gls{zrpro}) chelating agent (\gls{acac}) is added and stirred for another \minutes{10 to 15}. 
-Finally, \ml{1} of stabilisation solvent (\gls{ipo} or \gls{acoh}) is added to the mixture and stirred for additional 20-30 minutes. 
-\fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The solvent (\gls{buoh}) is put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer and \gls{zrpro} is added while stirring.  
-After stirring \minutes{\ds{10 to }15} one mole equivalent chelating agent (\gls{acac}) is added and stirred for another \minutes{\ds{10 to }15}. 
-Finally, the stabilisation solvent\cite{Hu2016} (\gls{ipo} or \gls{acoh}) is added to the mixture and stirred for additional \minutes{\ds{20-}30}. 
-\me{Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180.}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} is doubled and \gls{buoh} is decreased by the volume of \gls{zrpro}. 
-%The real concentration of a \gls{2f} solution is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
 
 \begin{table}[h]
 	\centering
@@ -260,16 +249,27 @@ In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} i
 	\end{tabular}
 \end{table}
 
-\subsection{Doctor blading}
+\iffalse
+The procedure for obtaining the \gls{1f} solution will be explained in detail: \td{maybe just keep it general}
+%
+%was closely on the basis of ref \cite{Hu2016}. 
+%The standard concentration will be described first and then the differences of higher concentrated solutions:
+\ml{4.9} of solvent (\gls{buoh}) are put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer. 
+\ml{0.1} of \gls{zrpro} are added while stirring.  
+After 10 to 15 minutes \ml{0.05} (\ds{approximately }one mole equivalent of \gls{zrpro}) chelating agent (\gls{acac}) were added and stirred for another \minutes{10 to 15}. 
+Finally, \ml{1} of stabilisation solvent (\gls{ipo} or \gls{acoh}) was added to the mixture and stirred for additional 20-30 minutes. 
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The solvent (\gls{buoh}) was put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer and \gls{zrpro} was added while stirring.  
+After stirring \minutes{\ds{10 to }15} one mole equivalent chelating agent (\gls{acac}) was added and stirred for another \minutes{\ds{10 to }15}. 
+Finally, the stabilisation solvent\cite{Hu2016} (\gls{ipo} or \gls{acoh}) was added to the mixture and stirred for additional \minutes{\ds{20-}30}. 
+\me{Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} was doubled and \gls{buoh} was decreased by the volume of \gls{zrpro}. 
+%The real concentration of a \gls{2f} solution is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
+
+\subsection{Doctor blading}[hb]
 \label{sec:DB}
-\begin{figure}
-	\centering
-	\includegraphics[width=.8\textwidth]{Pics/erichsen1.png}
-	\caption{Erichsen Coatmaster 510 
-		%Doctor blading machine 
-		with vacuum pump in the background and temperature regulator on the left.}
-	\label{fig:eric}
-\end{figure}
 %{The temperature of the heating plate is set to 200 $^o$C.
 %The temperature of the vacuum plate is set and waited until reached.
 %The velocity of the \gls{db} blade is set and it is %\td{a mini test run is performed.} 
@@ -282,6 +282,18 @@ The vacuum is switched on and the blade is sent over the sample without liquid t
 After evaporation of the solution, the vacuum is turned of, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
 The small metal plate is transferred to the hot heating plate and rests on there for 3-\minutes{5}. 
 The process is repeated as wished. 
+\begin{figure}
+	\centering
+	\includegraphics[width=.8\textwidth]{Pics/erichsen1.png}
+	%\caption{(3) Erichsen Coatmaster 510 with (2) vacuum pump in the background and (1) temperature regulator on the left.}
+	\caption{
+		(1) Temperature regulator on the left,
+		(2) vacuum pump in the background and 
+		(3) Erichsen Coatmaster 510 with heatable vacuum plate.
+		The majority of the suction areas is sealed with tape to increase the under pressure in the remaining
+	.}
+	\label{fig:eric}
+\end{figure}
 
 \subsection{Calcination}
 A LabTech EH45 C heating plate and a Naberterm \td{L B410} furnace were used to calcinate the doctor bladed samples. 
@@ -307,6 +319,7 @@ The HP1 procedure was optimized for the available hardware by a colleague workin
 %
 The NT1 heating program was used to mimic the HP1 heating procedure. 
 NT2 is an simplification of NT2 and further programs are the same with increased heating rate and partly increased calcination temperature (NT5).
+NT2 had only 2 variables (heating rate and maximal temperature) instead of 4 (three heating rates and maximal temperature), where the \td{calcination time} was held constant.
 In figure \ref{fig:heat} the different heating ramps are depicted. 
 All heating programms are held at the calcination temperature (T$_{\textrm{Cal}}$) for one hour.
 %

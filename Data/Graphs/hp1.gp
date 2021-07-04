@@ -6,6 +6,7 @@ set xlabel "Time [min]"
 set ylabel "Temperature [°C]"
 set xrange [0:550]
 set yrange [0:550]
+set xtics 0,60
 
 plot filename u 3:1 w l lw width t "HP1" ,\
 	filename u 4:1 w l lw width t "NT1"	,\
