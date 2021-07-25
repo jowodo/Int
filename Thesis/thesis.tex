@@ -22,7 +22,7 @@
 \makeglossaries
 \newcommand{\todo}[1]{\textbf{\textcolor{red}{#1}}}
 \newcommand{\td}[1]{\textbf{\textcolor{red}{#1}}}
-\newcommand{\me}[1]{\textbf{\textcolor{gray}{#1}}}
+\newcommand{\me}[1]{\textcolor{gray}{#1}}
 \newcommand{\ds}[1]{}
 \newcommand{\x}{$\times$}
 \newcommand{\picwidth}{0.7\textwidth}
@@ -70,7 +70,10 @@
 
 \clearpage
 \section*{Abstract}
-\lipsum[1]
+%\lipsum[1]
+\td{A thin zirconium oxide layer was aufgetragen via doctor blading on a steel foil substrate with the goal of erhalten an moeglichst homogenuous and insulating layer.
+The layers were characterized over the current-voltage curve and the operational variables were optimized with an pso swarm optimization algorithm.
+}
 \section*{Preface}
 \lipsum[2]
 %Thank
@@ -91,28 +94,32 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 \td{describe everything what is mentioned in \ref{sec:exp}}
-\td{\Gls{pv} is cool and a big hope when trying to become carbon neutral as it uses the energy provided by sun directly in contrast to renewable energy sources (e.g. wind and water) or even carbon based sources. }
-One sort of \gls{pv} is \gls{cigs} \cite{Vasekar2010}. % https://doi.org/10.1016/j.tsf.2009.09.033}
+\Gls{pv} is one big hope when trying to become carbon neutral as it uses the energy provided by sun directly in contrast to renewable energy sources (e.g. wind and water) or even carbon based sources.
+One sort of \gls{pv} are \gls{cigs} \cite{Vasekar2010} cells. % https://doi.org/10.1016/j.tsf.2009.09.033}
 In order to make a module, multiple cells are operated in series. 
+The cells must be applied to a non-conducting surface.
 Glass is a good non-conducting substrate, but very rigid and brittle. 
 An alternative is steel, which is ductile, inexpensive and highly available, but conducting. 
 An insulating layer must therefore be applied to the steel substrate before any \gls{cigs} cells can be applied.
-A non-toxic material which is suitable for this application is ZrO2. 
+A non-toxic material which is suitable for this application is \gls{zro}. 
 An economic and scalable method is doctor blading via a \gls{sg} process. 
 \gls{sg} processes often produce porous layers. 
 In this work a dense, insulating and homogeneous layer is pursued. 
 ML can help to uncover complex non-linear relations, such as the influence of the production factors on the thickness and resistance of the resulting layer.
+The minisation of the conductance if performed with a particle swarm optimization algorithm.
 %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aims and Objectives}
 The aim of this work is to develop a non-conducting layer on steel based on  non-toxic materials like Aluminium or Zirconium via doctor blading. 
 This layer can then be used as insulator for CIGS modules on steel sheets.
-The method of doctor blading \td{(which is in principle a sol-gel process)} was chosen because of the availability to the industrial partner.
-In order to optimize the resulting layer the multitude of parameters was optimized with an machine learning ansatz. 
+Doctor blading - or tape casting - is a widely used precision coating method to apply thin films on large area surfaces\cite{Berni2004}.
+%The method of doctor blading, which is in principle a sol-gel process, 
+This sol-gel process was chosen because of the availability to the industrial partner.
+In order to optimize the resulting layer the multitude of parameters was optimized with an particle swarm optimization ansatz. %machine learning 
 The conductivity (dependent variable), the number of layers and calcination time (both independent variables) should be minimized.
-The conductivity should be as small as possible.
-The number of layers should be held small and the calcination heating rate should be maximized. 
+%The conductivity should be as small as possible.
+%The number of layers should be held small and the calcination heating rate should be maximized. 
 \iffalse
 Defensio: Argumente in der Arbeit noch mal sichten, Feedback von Betreuungsperson im Kopf haben - da könnten Fragen kommen, 
 sich selbst aufnehmen 
@@ -164,7 +171,7 @@ The samples are dry blown with dry N$_2$ and stored until doctor blading.
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Solution}
+\subsection{Solutions}
 Two main recipes were used and their compositions were varied. 
 The first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water}.
 The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zrpro} in \gls{buoh}.
@@ -187,14 +194,14 @@ The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zr
 		\caption{Buthanolic solution}
 	\end{subfigure}
 	\label{fig:sol}
-	\caption{Aquatic and buthanolic solution in beaker glass with magnetic stir bars sealed with Parafilm} 
+	\caption{Aquatic and buthanolic solution in beaker glass with magnetic stirring bars sealed with Parafilm} 
 \end{figure}
 %\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aquatic solution}
 %\me{The procedure for the aquatic solution is as follows:}
-\gls{zrpro} was added to \gls{acac} while stirring and in a seperate vessel \gls{water} (including any additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) was added to \gls{ipo} and both were stirred for one hour. 
+\gls{zrpro} was added to \gls{acac} while stirring and in a separate vessel \gls{water} (including any optional additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) was added to \gls{ipo} and both were stirred for one hour. 
 The \gls{water}-\gls{ipo} mixture was added to the other solution and stirred over night. 
 The exact volumes can be taken from table~\ref{tab:rec1}.
 \begin{table}[h]
@@ -263,12 +270,11 @@ Finally, \ml{1} of stabilisation solvent (\gls{ipo} or \gls{acoh}) was added to 
 The solvent (\gls{buoh}) was put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer and \gls{zrpro} was added while stirring.  
 After stirring \minutes{\ds{10 to }15} one mole equivalent chelating agent (\gls{acac}) was added and stirred for another \minutes{\ds{10 to }15}. 
 Finally, the stabilisation solvent\cite{Hu2016} (\gls{ipo} or \gls{acoh}) was added to the mixture and stirred for additional \minutes{\ds{20-}30}. 
-\me{Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} was doubled and \gls{buoh} was decreased by the volume of \gls{zrpro}. 
 %The real concentration of a \gls{2f} solution is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
 
-\subsection{Doctor blading}[hb]
+\subsection{Doctor blading}
 \label{sec:DB}
 %{The temperature of the heating plate is set to 200 $^o$C.
 %The temperature of the vacuum plate is set and waited until reached.
@@ -276,10 +282,10 @@ In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} w
 %tested if the sample can be retained in place by the under-pressure.
 %The blade is put in position. 
 %The sample is placed on the vacuum plate and the vacuum is switched on. }
-{After setting the heating plate temperature, the vacuum plate temperature (see figure \ref{fig:eric}) and the \gls{db} velocity, the \gls{db} blade is put into position and the sample placed on the vacuum plate. 
-The vacuum is switched on and the blade is sent over the sample without liquid to see if it is held in position.}
-\ul{100} of solution is applied with an 10-\ul{1000} pipette and the doctor blading is started immediately. 
-After evaporation of the solution, the vacuum is turned of, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
+After setting the heating plate temperature, the vacuum plate temperature (see figure \ref{fig:eric}) and the \gls{db} velocity, the \gls{db} blade is put into position and the sample placed on the vacuum plate. 
+The vacuum is switched on and the blade is sent over the sample without liquid to see if it is held in position.
+\ul{100} of solution is applied with an 10-\ul{1000} pipette and the blade moves over the sample distributing the liquid evenly. %\td{the doctor blading} is started immediately. 
+After evaporation of the solution, the vacuum is turned off, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
 The small metal plate is transferred to the hot heating plate and rests on there for 3-\minutes{5}. 
 The process is repeated as wished. 
 \begin{figure}
@@ -290,18 +296,20 @@ The process is repeated as wished.
 		(1) Temperature regulator on the left,
 		(2) vacuum pump in the background and 
 		(3) Erichsen Coatmaster 510 with heatable vacuum plate.
-		The majority of the suction areas is sealed with tape to increase the under pressure in the remaining
-	.}
+		The majority of the suction areas is sealed with tape to increase the under pressure at the remaining ones.
+		\todo{add picture with blade}
+	}
 	\label{fig:eric}
 \end{figure}
 
 \subsection{Calcination}
-A LabTech EH45 C heating plate and a Naberterm \td{L B410} furnace were used to calcinate the doctor bladed samples. 
+A LabTech EH45 C heating plate and a Naberterm L B410 furnace were used to calcinate the doctor bladed samples. 
 %The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
-The heating plate can hold temperature for a certain amount of time, but doesn't have conifgurable heating rates.
-In order to achieve a lower overall heating rate several temperature ramps and plateaus were \todo{used} (see table~\ref{tab:labtech}).
+%The heating plate can hold temperature for a certain amount of time, but doesn't have conifgurable heating rates.
+The heating late can hold temperature for a certain amount of time, but heated with a fixed rate of circa \oc{10}/\minutes{}.
+In order to achieve a lower overall heating rate several temperature ramps and plateaus were alternated (see table~\ref{tab:labtech}).
 This procedure will be called HP1 from now on, which stands for heating plate procedure.
-The HP1 procedure was optimized for the available hardware by a colleague working on the the project prior to me.
+The HP1 procedure was optimized for the available hardware by a colleague working on the project prior to the author.
 
 \begin{table}[h]
 	\centering
@@ -317,11 +325,13 @@ The HP1 procedure was optimized for the available hardware by a colleague workin
 	\label{tab:labtech}
 \end{table}
 %
-The NT1 heating program was used to mimic the HP1 heating procedure. 
-NT2 is an simplification of NT2 and further programs are the same with increased heating rate and partly increased calcination temperature (NT5).
-NT2 had only 2 variables (heating rate and maximal temperature) instead of 4 (three heating rates and maximal temperature), where the \td{calcination time} was held constant.
-In figure \ref{fig:heat} the different heating ramps are depicted. 
-All heating programms are held at the calcination temperature (T$_{\textrm{Cal}}$) for one hour.
+The NT1 heating program was used to mimic the HP1 heating procedure in the Naberterm furnace. 
+NT2 is an simplification of NT1 and programs NT3-NT6 are the same as NT2 with altered heating rate and partly increased calcination temperature T$_{\textrm{Cal}}$ (NT5).
+NT2-NT6 had only 2 variables (heating rate and calcination temperature) instead of 4 (three different heating rates and calcination temperature). 
+%where the \td{calcination time} was held constant.
+%The time at maximum temperature was held constant over all heating procedures.
+All heating programs were held at the calcination temperature for one hour.
+In figure \ref{fig:heat} the different heating curves are depicted. 
 %
 %
 \begin{table}[h]
@@ -333,48 +343,48 @@ All heating programms are held at the calcination temperature (T$_{\textrm{Cal}}
 %		T [\oc{}]				&80		&150	&200	&400	&400 	\\
 %		$\theta$ [\oc{}/\minutes{}]	&10 	&10		&5 		&5		& 		\\
 		\hline\hline
-		Name	&80-150 [\oc{}/\minutes{}]	&150-200 [\oc{}/\minutes{}]	&200-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] \\
+		Name	&80-150\oc{} [\oc{}/\minutes{}]	&150-200\oc{} [\oc{}/\minutes{}]	&200\oc{}-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] &t$_{\textrm{Cal}}$ [\minutes{}]	\\
 		\hline
-		NT1		&2					&1					&2					&60 &400 \\
-		NT2		&2					&2					&2					&60 &400 \\
-		NT3		&3					&3					&3					&60 &400 \\
-		NT4		&4					&4					&4					&60 &400 \\
-		NT5		&4					&4					&4					&60 &500 \\
-		NT6		&1					&1					&1					&60 &400 \\
-%		NT7		&max				&max				&max				&60 &600 \\
+		NT1		&2					&1					&2				&400	&60  \\
+		NT2		&2					&2					&2				&400	&60  \\
+		NT3		&3					&3					&3				&400	&60  \\
+		NT4		&4					&4					&4				&400	&60  \\
+		NT5		&4					&4					&4				&500	&60  \\
+		NT6		&1					&1					&1				&400	&60  \\
+%		NT7		&max				&max				&max			&600	&60  \\
 		\hline\hline
 	\end{tabular}
-	\caption{Heating rates and constant temperature times. \td{Macht dieser tisch ueberhaupt sinn? }}
+	\caption{Heating rates and calcination temperature holding times. }
 	\label{tab:nt}
 \end{table}
 
 \begin{figure}
 	\centering
 	\includegraphics[width=.7\textwidth]{../Data/Graphs/hp1.png}
-	\caption{Heatings rates}
+	\caption{Different heatings curves}
 	\label{fig:heat}
 \end{figure}
 
 \subsection{Characterisation}
-\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
+%\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 All scanning electron microscopy images were taken with a Zeiss Supra 40. 
 %
 Infrared spectra were recorded with a Bruker Vertex 70 spectrometer. 
 %
 Diffraction spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
-The sample was placed in a way such that it absorbed half of the beam. 
-All spectra were taken at \SI{5}{\degree} incident angle. 
-And compared to an internal database.
-\subsubsection{SEM}
-Zeiss Supra 40
-\subsubsection{Infrared}
-Bruker Vertex 70
-\subsubsection{X-Ray Diffraction}
-Thermo Scientific ARL Equinox 100 X-Ray Diffractometer\\
+%\subsubsection{SEM}
+%AllZeiss Supra 40
+%\subsubsection{Infrared}
+%Bruker Vertex 70
+%\subsubsection{X-Ray Diffraction}
+%The sample was placed in a way such that it absorbed half of the beam. 
+All spectra were taken at \SI{5}{\degree} incident angle 
+and compared to an internal database.
+%Thermo Scientific ARL Equinox 100 X-Ray Diffractometer\\
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
 \url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
-\subsubsection{Current-Voltage Curve}
-Agilent 4156C Precision Semiconductor Parameter Analyzer
+%\subsubsection{Current-Voltage Curve}
+The current-voltage curves were measeured with Agilent 4156C Precision Semiconductor Parameter Analyzer after sputtering Aluminium contacts through a mask with \td{Sputtering Machine} assisted by \td{Leybold Univex 450 C} for the vacuum.
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -631,6 +641,7 @@ The space of hyper parameters C, the degree (in case of polynomial), epsilon and
 
 \clearpage
 \section{Results and Discussion}
+\todo{Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180.}
 The space seems to be too big for the small sample size.
 Look at relation of space size and sample size here and in Hu2016.
 
@@ -639,6 +650,9 @@ Would it also be easier for PSO or ML to find fitting function?
 Every output var is independent of each other, so $v_{cal}$ can act as test 
 
 plot predictions from EMMA and ML.
+the data has a lot of error, but because the production process takes so long nad the limited time and the chosen optimisation method, the experiments weren't weiderholt
+how much variance is in data? 
+
 
 \subsection{XRD}
 
