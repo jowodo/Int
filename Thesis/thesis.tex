@@ -66,12 +66,21 @@
 \newacronym{db}{DB}{doctor blading}
 \newacronym{pv}{PV}{photovoltaic}
 \newacronym{cigs}{CIGS}{copper indium gallium sulfide}
+
 \newacronym{sg}{SG}{sol-gel}
+\newacronym{ir}{IR}{infrafred}
+\newacronym{sem}{SEM}{scanning electron microscopy}
+\newacronym{xrd}{XRD}{X-ray diffraction}
+
+\newacronym{pso}{PSO}{particle swam optimization}
+\newacronym{ml}{ML}{machine learning}
+
+
 
 \clearpage
 \section*{Abstract}
 %\lipsum[1]
-\td{A thin zirconium oxide layer was aufgetragen via doctor blading on a steel foil substrate with the goal of erhalten an moeglichst homogenuous and insulating layer.
+\td{A thin zirconium oxide layer was applied via doctor blading on a steel foil substrate with the goal of get an moeglichst homogeneous and insulating layer.
 The layers were characterized over the current-voltage curve and the operational variables were optimized with an pso swarm optimization algorithm.
 }
 \section*{Preface}
@@ -80,6 +89,7 @@ The layers were characterized over the current-voltage curve and the operational
 %I want to thank Theodoros Dimopulos, Adhi, Neha, Philipp. 
 %Quyhn, Maria, Jana, Vivien and Katharina who tried to keep me sane throughout the
 %Elif 
+%This project showed how import is to plan experiments, chose fitting methods, reproducablitiy and how import proper reseaerch and constant reading of literature is. 
 \clearpage
 \tableofcontents
 \clearpage
@@ -151,12 +161,13 @@ In this section the used chemicals and substrates, experimental procedures and a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Substrate Preparation}
 Five different substrates were used throughout this work: 
-microscope glass slides (\cm{2.5}\x\cm{7.5})\ds{ from Sigma Aldrich},\ds{ thinner,} squared glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{ito} glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{fto} glass plates (\cm{5}\x\cm{5}) from\ds{ Sigma Aldrich} and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
-The glass slides and \gls{fto} were scored with a diamond scribe \ds{\td{(diamond scratcher/scraper)} }and broken with running pliers into pieces with dimensions \cm{2.5}\x\cm{2.5}.
-The steel foil was cut with a foil cutter, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting plates).
+microscope glass slides (\cm{2.5}\x\cm{7.5})\ds{ from Sigma Aldrich},\ds{ thinner,} squared glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{ito} glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{fto} glass plates (\cm{5}\x\cm{5})\ds{ from Sigma Aldrich} and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
+The glass slides and \gls{fto} were scored with a diamond scribe \ds{\td{(diamond scratcher/scraper)} }and broken with running pliers into pieces of dimensions \cm{2.5}\x\cm{2.5}.
+The steel foil was cut with a foil cutter.
+%, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting plates).
 All substrates were cleaned in three steps before usage:
 \begin{enumerate}
-	\item \minutes{15} in \ml{50} \gls{water} and \ml{1} of Hellmanex III in a sonic bath
+	\item \minutes{15} in \ml{50} \gls{water} and \ml{1} of Hellmanex III alkaline concentrate in a sonic bath
 	\item \minutes{15} in \gls{water} in a sonic bath
 	\item \minutes{15} in \gls{ipo} in a sonic bath 
 \end{enumerate}
@@ -177,7 +188,8 @@ The samples are dry blown with dry N$_2$ and stored until doctor blading.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solutions}
-Two main recipes were used and their compositions were varied. 
+%Two main recipes were used and their compositions were varied. 
+All recipes for solutions can be assigned into two categories:
 The first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water}.
 The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zrpro} in \gls{buoh}.
 
@@ -234,7 +246,7 @@ The exact volumes can be taken from table~\ref{tab:rec1}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Buthanolic solution}
 \label{sec:sol}
-Five different concentration were prepared. 
+Five different concentrations of the buthanolic solutions were prepared. 
 %The first solution \td{(standard concentration/ one fold/ 1F)} 
 %followed the recipe loosely, which is described by Hu et al. \cite{Hu2016}.
 %In order to obtain thicker \gls{zro} layers the \gls{zrpro} concentration in the starting solution was raised.
@@ -249,7 +261,7 @@ The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar w
 	\label{tab:rec2}
 	\begin{tabular}{rlllll}
 		\hline
-				&1F		&2F		&3F		&4F		&5F		\\
+		recipe	&1F		&2F		&3F		&4F		&5F		\\
 		\hline
 %		conc. [a.u.]	&1		&1.7	&2.6	&3.5	&4.4	\\
 %		\hline
@@ -287,12 +299,12 @@ In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} w
 %tested if the sample can be retained in place by the under-pressure.
 %The blade is put in position. 
 %The sample is placed on the vacuum plate and the vacuum is switched on. }
-After setting the heating plate temperature, the vacuum plate temperature (see figure \ref{fig:eric}) and the \gls{db} velocity, the \gls{db} blade is put into position and the sample placed on the vacuum plate. 
-The vacuum is switched on and the blade is sent over the sample without liquid to see if it is held in position.
-\ul{100} of solution is applied with an 10-\ul{1000} pipette and the blade moves over the sample distributing the liquid evenly. %\td{the doctor blading} is started immediately. 
-After evaporation of the solution, the vacuum is turned off, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
-The small metal plate is transferred to the hot heating plate and rests on there for 3-\minutes{5}. 
-The process is repeated as wished. 
+After setting the heating plate temperature, the vacuum plate temperature (see figure \ref{fig:eric}) and the \gls{db} velocity, the \gls{db} blade were put into position and the sample was placed on the vacuum plate. 
+The vacuum was switched on and the blade was sent over the sample without liquid to see if it was held in position.
+\ul{100} of solution were applied with a 10-\ul{1000} pipette and the blade moved over the sample distributing the liquid evenly. %\td{the doctor blading} is started immediately. 
+After evaporation of the solution, the vacuum was turned off, the 'blade pusher' put into initial position, the blade removed and excess solution removed with a wipe. 
+The small metal plate was transferred to the hot heating plate and rested on there for 3-\minutes{5}. 
+The process can be repeated as wished. 
 \begin{figure}
 	\centering
 	\includegraphics[width=.8\textwidth]{Pics/erichsen1.png}
@@ -308,12 +320,13 @@ The process is repeated as wished.
 \end{figure}
 
 \subsection{Calcination}
-A LabTech EH45 C heating plate and a Naberterm L B410 furnace were used to calcinate the doctor bladed samples. 
+A LabTech EH45C heating plate (HP) and a Naberterm LB410 furnace were used to calcinate the doctor bladed samples. 
 %The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
 %The heating plate can hold temperature for a certain amount of time, but doesn't have conifgurable heating rates.
-The heating late can hold temperature for a certain amount of time, but heated with a fixed rate of circa \oc{10}/\minutes{}.
-In order to achieve a lower overall heating rate several temperature ramps and plateaus were alternated (see table~\ref{tab:labtech}).
-This procedure will be called HP1 from now on, which stands for heating plate procedure.
+The heating plate can hold temperature for a certain amount of time, but heated with a fixed rate of circa \oc{10}/\minutes{}.
+In order to achieve a lower overall heating rate several temperature ramps and plateaus were alternated (see table~\ref{tab:labtech} and figure~\ref{fig:heat}).
+%This procedure will be called HP1 from now on, which stands for heating plate procedure.
+This procedure was called HP1.
 The HP1 procedure was optimized for the available hardware by a colleague working on the project prior to the author.
 
 \begin{table}[h]
@@ -372,22 +385,13 @@ In figure \ref{fig:heat} the different heating curves are depicted.
 
 \subsection{Characterisation}
 %\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
-All scanning electron microscopy images were taken with a Zeiss Supra 40. 
-%
-Infrared spectra were recorded with a Bruker Vertex 70 spectrometer. 
-%
-Diffraction spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
-%\subsubsection{SEM}
-%AllZeiss Supra 40
-%\subsubsection{Infrared}
-%Bruker Vertex 70
-%\subsubsection{X-Ray Diffraction}
+All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
+\Gls{ir} \td{absorbance} spectra were recorded with a Bruker Vertex 70 spectrometer.
+\Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 %The sample was placed in a way such that it absorbed half of the beam. 
-All spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
-%Thermo Scientific ARL Equinox 100 X-Ray Diffractometer\\
-%\subsubsection{Current-Voltage Curve}
-The current-voltage curves were measeured with Agilent 4156C Precision Semiconductor Parameter Analyzer after sputtering Aluminium contacts through a mask with a Leybold UNIVEX450C Sputter System.
-%\td{Sputtering Machine} assisted by \td{Leybold Univex 450 C} for the vacuum. In this work, the Al layers were deposited with the Leybold UNIV
+All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
+The current-voltage curves were measured with Agilent 4156C Precision Semiconductor Parameter Analyzer after sputtering aluminium contacts through a mask with a Leybold UNIVEX450C Sputter System.
+\td{Directional current sputtering argon as inert gas. }
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -406,8 +410,24 @@ The current-voltage curves were measeured with Agilent 4156C Precision Semicondu
 	\caption{I-V curve abnehm aperature and sicht durch das micro scope.}
 \end{figure}
 
-\subsection{Finding base process}
-After a fitting recipe was found, the process to produce an accaptable layer was untersucht. 
+\subsection{Finding base process/Preliminary study}
+%yeeeah 
+Initially glass plates were doctor bladed manually with aquatic solution and calcinated via HP1. 
+\td{why}
+glass was used for IR.
+In order to measure the resistivity of the produced layer FTO and ITO (both conductive) were used as substrate.
+Conducting substrates are also needed for SEM micrographs. 
+Different additives were included to the recipe and the resistance was checked with a multimeter. 
+%The additives should influence pH and surface tensions. 
+Chemicals were added to influence pH and surface tension with the goal to influence the resulting layer. 
+As no homogeneous layers resulted from any aquatic recipe a new one was introduced, which gave more homogeneous films.
+With this new buthanolic recipe the limits of the optimization problem were explored in a preliminary study.
+For the preliminary study a DB machine and NT were used and the steel. 
+Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
+Some additional hand picked experiments were introduced to further eingrenzen the limits of the optimization as every reduction in variables or levels meant a faster convergence.
+%ooooh 
+
+After a fitting recipe was found, the process to produce an acceptable layer was untersucht. 
 There were many variables which had to be taken into account. 
 The damals current procedure produced clear and continuous films, but was plagued from unhomogenities due to drying stains. 
 Using a heat gunn the drying stain can be surcumvented (umgangen), but the results were unreproduceable. 
