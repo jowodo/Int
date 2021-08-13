@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
-infile="db_final.dat"
+infile="db_final.csv"
 names = ["nr", "enr", "conductivity", "phdensity", "avg1(G)", "avg2(G)", "conc", "layers", "vDOC", "TDOC", "vCal", "TCal"]
 df=pd.read_csv(infile, skiprows=1, names = names)
 data=np.array(df)

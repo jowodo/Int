@@ -661,6 +661,8 @@ conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
 Python and sci-kit learn \td{cite} was used to implement a linear fit model, and SVR with the kernels polynomial, rbf and sigmoid. 
 The space of hyper parameters C, the degree (in case of polynomial), epsilon and gamma was scaned. 
 
+The independent variables are located on a partially irregular grid.  
+
 
 \clearpage
 \section{Results and Discussion}
@@ -683,6 +685,12 @@ The data is spread across the datenraum, such that it is not trivial to (1) find
 Dimension reduction bietet sich stark an bei solcher Datenlage. 
 Welche methode funktioniert bei relativ vielen variablen, wenig datenpunkten und Noise. 
 Am besten waere feature extraction (variable x1 hat am meisten einfluss. ginge auch wenn man bei pca den einfluss von verschiedenen 
+
+heating rate was one of the dependent variables with the intention of minimizing the variable. 
+It can also be used as test to see how well the GA performes
+It doesn't influence the fit for the other splines, but it influences the choice of samples therefore it might have slowed down the process
+Overall there were too many variables involved for such a small dataset
+
 
 \subsection{XRD}
 
