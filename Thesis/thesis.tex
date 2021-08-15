@@ -143,6 +143,7 @@ Begründung für die eigene Vorgehensweise
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EXPERIMENTAL
 \section{Theoretical Background aka How does is work?}
+%\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 \subsection{Sputtering}
 \subsection{SEM}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
@@ -154,15 +155,16 @@ Begründung für die eigene Vorgehensweise
 \subsection{Machine Learning}
 \subsection{Princlipal Component Analysis}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
 \section{Experimental}
 \label{sec:exp}
 In this section the used chemicals and substrates, experimental procedures and any used equipment are described. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Substrate Preparation}
 Five different substrates were used throughout this work: 
 microscope glass slides (\cm{2.5}\x\cm{7.5})\ds{ from Sigma Aldrich},\ds{ thinner,} squared glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{ito} glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{fto} glass plates (\cm{5}\x\cm{5})\ds{ from Sigma Aldrich} and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
-The glass slides and \gls{fto} were scored with a diamond scribe \ds{\td{(diamond scratcher/scraper)} }and broken with running pliers into pieces of dimensions \cm{2.5}\x\cm{2.5}.
+The glass slides and \gls{fto} were scored with a diamond scribe \ds{\td{(diamond scratcher/scraper)} }and broken with a running plier into pieces of dimensions \cm{2.5}\x\cm{2.5}.
 The steel foil was cut with a foil cutter.
 %, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting plates).
 All substrates were cleaned in three steps before usage:
@@ -171,20 +173,8 @@ All substrates were cleaned in three steps before usage:
 	\item \minutes{15} in \gls{water} in a sonic bath
 	\item \minutes{15} in \gls{ipo} in a sonic bath 
 \end{enumerate}
-After the last cleaning step, the samples were blown dry with dry \gls{n2} gas. 
+After the last cleaning step, the samples were blown dry with dry \gls{n2} gas and kept in a clean plastic container until the doctor blading step.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\iffalse
-\subsection{Cutting of the steel foil}
-\label{sec:cut}
-There is a red foil cutter in the vacuum room, which cuts the foil without much bending.
-Alternatively, the foil can be cut without bending by cutting repeatedly with a cutter knife.
-The foil is cut into \cm{2.5}\x\cm{2.7} plates.
-The small plates are marked with an diamond cutter pen.
-The plates are cleaned with \ml{1} of Hellmanex III in \ml{\ds{50-}100} \gls{water} in the sonic bath for 15 min, then in \gls{water} for 15 min and finally in \gls{ipo} for 15 min. 
-The samples are dry blown with dry N$_2$ and stored until doctor blading.
-\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solutions}
@@ -293,20 +283,13 @@ additional \minutes{\ds{20-}30}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} was 
 doubled and \gls{buoh} was decreased by the volume of \gls{zrpro}. 
-%The real concentration of a \gls{2f} solution is not double of the original, though, but rather 1.7 fold because volume of \gls{ipo} is kept constant.
 
 \subsection{Doctor blading}
 \label{sec:DB}
-%{The temperature of the heating plate is set to 200 $^o$C.
-%The temperature of the vacuum plate is set and waited until reached.
-%The velocity of the \gls{db} blade is set and it is %\td{a mini test run is performed.} 
-%tested if the sample can be retained in place by the under-pressure.
-%The blade is put in position. 
-%The sample is placed on the vacuum plate and the vacuum is switched on. }
 An Erichsen Coatmaster 510 with a heatable plate was used for doctor blading. The plate 
-had round patches of porous metal where underpressure to keep substrate in place (see 
+had round patches of porous metal where underpressure could be applied to keep substrate in place (see 
 figure~\ref{fig:eric}). After setting the heating plate temperature, the vacuum plate 
-temperature (see figure \ref{fig:eric}) and the \gls{db} velocity, the \gls{db} blade 
+temperature and the \gls{db} velocity, the \gls{db} blade 
 was put into position, the sample was placed on the vacuum plate and the vacuum was 
 switched on. %and the blade was sent over the sample without liquid to see if it was held in position. 
 \ul{100} of solution were 
@@ -315,17 +298,27 @@ liquid evenly. After evaporation of the solution, the vacuum was turned off, the
 pusher' put into initial position, the blade removed and excess solution removed with a 
 wipe. The small metal plate was transferred to the hot heating plate and rested on there 
 for 3-\minutes{5}. %The process can be repeated as wished. 
-This process was repeated as many times as needed.
+This process of applying a \gls{zro} layer was repeated as many times as needed.
 \begin{figure}
 	\centering
-	\includegraphics[width=.8\textwidth]{Pics/erichsen1.png}
-	%\caption{(3) Erichsen Coatmaster 510 with (2) vacuum pump in the background and (1) temperature regulator on the left.}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\includegraphics[width=.99\textwidth]{Pics/erichsen1.png}
+		\caption{}
+	\end{subfigure}
+	\begin{subfigure}{.49\textwidth}
+		\centering
+		\includegraphics[width=.99\textwidth]{Pics/erichsendb1.png}
+		\caption{}
+	\end{subfigure}
 	\caption{
-		(1) Temperature regulator on the left,
-		(2) vacuum pump in the background and 
-		(3) Erichsen Coatmaster 510 with heatable vacuum plate.
-		The majority of the suction areas is sealed with tape to increase the under pressure at the remaining ones.
-		\todo{add picture with blade}
+		(a)
+		Temperature regulator (1) on the left,
+		vacuum pump (2) in the background and 
+		Erichsen Coatmaster 510 (3) with heatable vacuum plate.
+%		(b) Erichsen Coatmaster 510 with \gls{db} blade.
+		(b) Close up of the \gls{db} blade in position.
+		The majority of the suction areas is sealed with tape to increase the underpressure at the remaining ones.
 	}
 	\label{fig:eric}
 \end{figure}
@@ -395,14 +388,13 @@ In figure \ref{fig:heat} the different heating curves are depicted.
 \end{figure}
 
 \subsection{Characterisation}
-%\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
 \Gls{ir} \td{absorbance} spectra were recorded with a Bruker Vertex 70 spectrometer.
 \Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 %The sample was placed in a way such that it absorbed half of the beam. 
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 The current-voltage curves were measured with Agilent 4156C Precision Semiconductor Parameter Analyzer after sputtering aluminium contacts through a mask with a Leybold UNIVEX450C Sputter System.
-\td{Directional current sputtering argon as inert gas. }
+\td{Directional current sputtering argon as inert gas.}
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -421,20 +413,21 @@ The current-voltage curves were measured with Agilent 4156C Precision Semiconduc
 	\caption{I-V curve abnehm aperature and sicht durch das micro scope.}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Finding base process/Preliminary study}
-%yeeeah 
 Initially glass plates were doctor bladed manually with aquatic solution and calcinated via HP1. 
-\td{why}
-glass was used for IR.
-In order to measure the resistivity of the produced layer FTO and ITO (both conductive) were used as substrate.
-Conducting substrates are also needed for SEM micrographs. 
-Different additives were included to the recipe and the resistance was checked with a multimeter. 
+Glass was used because of its availability and in order to be able to make IR transmission spectra.
+In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} (both conductive) were used as substrate.
+Conducting substrates were also needed for \gls{sem} micrographs. 
+Different additives were included in the recipe and the resistance was checked with a multimeter. 
 %The additives should influence pH and surface tensions. 
 Chemicals were added to influence pH and surface tension with the goal to influence the resulting layer. 
-As no homogeneous layers resulted from any aquatic recipe a new one was introduced, which gave more homogeneous films.
+As no homogeneous layers resulted from any aquatic recipe a new recipe was introduced, which gave more homogeneous films.
 With this new buthanolic recipe the limits of the optimization problem were explored in a preliminary study.
-For the preliminary study a DB machine and NT were used and the steel. 
+%For the preliminary study a DB machine and NT were used and the steel. 
+In the preliminary study only steel was used as substrate.
 Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
+See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
 Some additional hand picked experiments were introduced to further eingrenzen the limits of the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 
