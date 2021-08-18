@@ -21,7 +21,8 @@
 \usepackage[acronym,nomain]{glossaries}
 \makeglossaries
 \newcommand{\todo}[1]{\textbf{\textcolor{red}{#1}}}
-\newcommand{\td}[1]{\textbf{\textcolor{red}{#1}}}
+%\newcommand{\td}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\td}[1]{\textcolor{red}{#1}}
 \newcommand{\me}[1]{\textcolor{gray}{#1}}
 \newcommand{\ds}[1]{}
 \newcommand{\x}{$\times$}
@@ -147,7 +148,7 @@ Begründung für die eigene Vorgehensweise
 \subsection{Sputtering}
 \subsection{SEM}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
-\subsection{Infrared absorbance}
+\subsection{Infrared absorption}
 \subsection{X-Ray Diffraction}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
 \url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
@@ -376,7 +377,7 @@ In figure \ref{fig:heat} the different heating curves are depicted.
 %		NT7		&max				&max				&max			&600	&60  \\
 		\hline\hline
 	\end{tabular}
-	\caption{Heating rates and calcination temperature holding times. }
+	\caption{Heating rates and calcination temperature holding times.}
 	\label{tab:nt}
 \end{table}
 
@@ -389,12 +390,13 @@ In figure \ref{fig:heat} the different heating curves are depicted.
 
 \subsection{Characterisation}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
-\Gls{ir} \td{absorbance} spectra were recorded with a Bruker Vertex 70 spectrometer.
+\Gls{ir} absorption spectra were recorded with a Bruker Vertex 70 spectrometer.
 \Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 %The sample was placed in a way such that it absorbed half of the beam. 
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 The current-voltage curves were measured with Agilent 4156C Precision Semiconductor Parameter Analyzer after sputtering aluminium contacts through a mask with a Leybold UNIVEX450C Sputter System.
-\td{Directional current sputtering argon as inert gas.}
+\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
+\td{Directional current sputtering with Argon as inert gas at \SI{0.005}{\milli\bar} with a power of 40 Watt for \SI{700}{\second} was used.}
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -415,7 +417,7 @@ The current-voltage curves were measured with Agilent 4156C Precision Semiconduc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Finding base process/Preliminary study}
-Initially glass plates were doctor bladed manually with aquatic solution and calcinated via HP1. 
+Initially, glass plates were doctor bladed manually with aquatic solution and calcinated via HP1. 
 Glass was used because of its availability and in order to be able to make IR transmission spectra.
 In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} (both conductive) were used as substrate.
 Conducting substrates were also needed for \gls{sem} micrographs. 
@@ -427,9 +429,14 @@ With this new buthanolic recipe the limits of the optimization problem were expl
 %For the preliminary study a DB machine and NT were used and the steel. 
 In the preliminary study only steel was used as substrate.
 Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
-See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
+%See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
 Some additional hand picked experiments were introduced to further eingrenzen the limits of the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
+\td{first recipe tried to improve to achieve more restisting layer. by pH value, surface tensionand solution ratios (only 10\% change because it was assumed, that the recipe is good and should be improved, but the recipe should be altered thoroughly.
+The second recipe was adopted to the chemicals available in the lap and potential less toxic.
+The solvent (EtOEtOEt,BuOH, PrOH) and the chalating agent (AcAc and citric acid) were varied 
+Later in the process, the stabilisation compound was also varied (AcOH, iPOH)
+}
 
 After a fitting recipe was found, the process to produce an acceptable layer was untersucht. 
 There were many variables which had to be taken into account. 
@@ -438,8 +445,6 @@ Using a heat gunn the drying stain can be surcumvented (umgangen), but the resul
 The glass unterlage was therefore exchanged with a metal plate which allowed both to hold the sample via underpressure and heat it to a certain temperature.
 The bounds fore the process were then explored. 
 Especially the doctor blading velocity.
-
-
 
 
 \iffalse
