@@ -10,8 +10,8 @@
 \usepackage{subcaption}
 \usepackage{siunitx}
 \hypersetup{
-	colorlinks = true,
-	colorlinks = false,
+    colorlinks = true,
+    colorlinks = false,
 	linkbordercolor = {white},
 	urlcolor = {blue},
 	linkcolor = {blue},
@@ -508,9 +508,37 @@ deposition because miniscus is pulling liquid off the substrate.}
 \td{IPO influence on "stability" p74: 600ul IPO makes clear, 4000 ul BuOH not clear with 
 same base solution (1ml of 4F), added extra 400ul to BuOH sol and after 5min clear. 
 of 1:5 is unacceptable Dilution }
-21.8 from 15.02 13:30 bis 
-26.3 from 16.02 16:30 bis 18++
+21.8 (1F) from 15.02. 13:30 bis 
+26.3 (1ml iPO to ca2ml of 5f) from 16.02. 16:30 bis 18.02.++
 18.02 4F in 80min milky
+      2F in ca 24h (stabilization AcOH)
+\td{In example of documentation 2 input variables and 1-2 responses initial population=10
+, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
+iterations (as in actual experiments) lead to suboptimal results.
+When plotting input vars  against the response variables, no trend
+The exploration-vs-exploitation parameters of the model were also not set accordingly.}
+see \href{https://search.r-project.org/CRAN/refmans/emma/html/emma.html}{source}
+
+\td{p75 tested various vDOC (10,15,20) with TDOC (40,60,70,80) variations with only visual 
+inspection of evaporation process. Ideally solution evaporate shortly after DB but not 
+before} 
+n-BuOH has boiling point of ca 117C 
+\href{https://pubchem.ncbi.nlm.nih.gov/compound/1-butanol#section=Boiling-Point}{source}
+\td{p74 146,150,151,152,153,154,156,157,158,160,161,186,187,188,190,194,195,198 
+all sputtered with Ag silver on 19.02.2021.}
+EMMA was finished on 23.02.2021
+first experiments generated, but trashed because 1F solution neglected, contraints 
+tightened
+p76, 146 (10x1F) good, 154 (3x4F) okay, 156 (3x3F) bad visualisation
+look at visualisation in code/pca/ folder and maybe use sort -n 3 
+which values were actually used in EMMA and how were they calulated
+from 145 to 160 what was changed, large increase of G
+small better!!!
+p82 test to what extend AcOH can be replaced with iPOH
+192 was first with IPOH
+why is IPO satbilizing? 
+
+
 
 
 \iffalse
@@ -522,63 +550,63 @@ of 1:5 is unacceptable Dilution }
 		\hline
 conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
 		\hline
-1	&10	&5	&20	&120	&400	&\\
+1	&10	&5	    &20	&120	&400	&\\
 1	&4	&0.1	&20	&120	&500	&\\
 5	&10	&0.1	&20	&120	&500	&\\
-5	&4	&5	&20	&480	&400	&\\
-1	&5	&5	&80	&120	&500	&\\
-1	&10	&1	&80	&480	&400	&\\
-5	&5	&1	&80	&120	&400	&\\
-5	&10	&5	&80	&480	&500	&\\
+5	&4	&5	    &20	&480	&400	&\\
+1	&5	&5	    &80	&120	&500	&\\
+1	&10	&1	    &80	&480	&400	&\\
+5	&5	&1	    &80	&120	&400	&\\
+5	&10	&5	    &80	&480	&500	&\\
 2	&8	&0.5	&40	&360	&470	&\\
-2	&6	&2	&40	&360	&430	&\\
+2	&6	&2	    &40	&360	&430	&\\
 		\hline
-%4	&12	&-	&-	&-	&-&\\
-1	&4	&12	&70	&120	&500	&\\
-1	&9	&18	&80	&240	&400	&\\
-%2	&5	&18	&70	&-	&-		&\\
-4	&6	&14	&60	&240	&500	&\\
-4	&6	&14	&60	&240	&500	&\\
-4	&6	&14	&60	&240	&500	&\\
+%4	&12	&-	    &-	&-	&-&\\
+1	&4	&12	    &70	&120	&500	&\\
+1	&9	&18	    &80	&240	&400	&\\
+%2	&5	&18	    &70	&-	&-		&\\
+4	&6	&14	    &60	&240	&500	&\\
+4	&6	&14	    &60	&240	&500	&\\
+4	&6	&14	    &60	&240	&500	&\\
 		\hline
-2	&10	&20	&40	&120	&500	&6113\\
-3	&8	&18	&70	&1080	&300	&2850\\
-3	&6	&10	&50	&1080	&400	&5526	\\
-%3	&10	&14	&50	&600	&500	&-7374	\\
-3	&10	&16	&80	&120	&500	&6554	\\
-4	&6	&16	&80	&1080	&300	&2947	\\
-3	&12	&12	&80	&840	&500	&8318	\\
-3	&10	&14	&50	&600	&500	&7374	\\
-5	&6	&10	&60	&1080	&400	&5648	\\
-5	&10	&20	&60	&360	&300	&3956	\\
-5	&12	&14	&60	&1080	&300	&2700	\\
+2	&10	&20	    &40	&120	&500	&6113\\
+3	&8	&18	    &70	&1080	&300	&2850\\
+3	&6	&10	    &50	&1080	&400	&5526	\\
+%3	&10	&14	    &50	&600	&500	&-7374	\\
+3	&10	&16	    &80	&120	&500	&6554	\\
+4	&6	&16	    &80	&1080	&300	&2947	\\
+3	&12	&12	    &80	&840	&500	&8318	\\
+3	&10	&14	    &50	&600	&500	&7374	\\
+5	&6	&10	    &60	&1080	&400	&5648	\\
+5	&10	&20	    &60	&360	&300	&3956	\\
+5	&12	&14	    &60	&1080	&300	&2700	\\
 		\hline
-%2	&2	&10	&40	&600	&300	&-7201	\\
-2	&4	&10	&80	&1080	&300	&6101	\\
-%2	&4	&10	&40	&600	&300	&-7201	\\
-2	&4	&10	&40	&600	&300	&7201	\\
-3	&4	&12	&60	&600	&300	&1462	\\
-4	&4	&10	&80	&1080	&300	&2883	\\
-5	&12	&20	&70	&600	&300	&1680	\\
+%2	&2	&10	    &40	&600	&300	&-7201	\\
+2	&4	&10	    &80	&1080	&300	&6101	\\
+%2	&4	&10	    &40	&600	&300	&-7201	\\
+2	&4	&10	    &40	&600	&300	&7201	\\
+3	&4	&12	    &60	&600	&300	&1462	\\
+4	&4	&10	    &80	&1080	&300	&2883	\\
+5	&12	&20	    &70	&600	&300	&1680	\\
 		\hline
-2	&4	&10	&40	&120	&300	&1	\\
-2	&4	&10	&40	&120	&500	&6001	\\
-3	&4	&10	&40	&120	&500	&6102	\\
-5	&4	&10	&80	&1080	&300	&2884	\\
-5	&12	&20	&60	&120	&300	&360	\\
+2	&4	&10	    &40	&120	&300	&1	\\
+2	&4	&10	    &40	&120	&500	&6001	\\
+3	&4	&10	    &40	&120	&500	&6102	\\
+5	&4	&10	    &80	&1080	&300	&2884	\\
+5	&12	&20	    &60	&120	&300	&360	\\
 		\hline
-3	&4	&10	&40	&600	&400	&4202	\\
-2	&6	&20	&40	&120	&500	&6105	\\
-%4	&4	&14	&80	&1080	&300	&-2923	\\
-5	&12	&14	&60	&600	&300	&1500	\\
-3	&6	&14	&60	&600	&300	&1486	\\
-4	&4	&14	&80	&1080	&300	&2923	\\
+3	&4	&10	    &40	&600	&400	&4202	\\
+2	&6	&20	    &40	&120	&500	&6105	\\
+%4	&4	&14	    &80	&1080	&300	&-2923	\\
+5	&12	&14	    &60	&600	&300	&1500	\\
+3	&6	&14	    &60	&600	&300	&1486	\\
+4	&4	&14	    &80	&1080	&300	&2923	\\
 		\hline
-4	&8	&18	&80	&1080	&300	&2971	\\
-3	&8	&10	&50	&1080	&300	&2530	\\
-2	&12	&16	&40	&120	&400	&3077	\\
-2	&10	&18	&60	&1080	&300	&2733	\\
-4	&10	&10	&50	&1080	&300	&2535	\\
+4	&8	&18	    &80	&1080	&300	&2971	\\
+3	&8	&10	    &50	&1080	&300	&2530	\\
+2	&12	&16	    &40	&120	&400	&3077	\\
+2	&10	&18	    &60	&1080	&300	&2733	\\
+4	&10	&10	    &50	&1080	&300	&2535	\\
 		\hline
 		\hline
 	\end{tabular}
