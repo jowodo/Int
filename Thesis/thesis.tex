@@ -8,6 +8,7 @@
 \usepackage{url}
 \usepackage{hyperref}
 \usepackage{subcaption}
+\usepackage[font=small,labelfont=bf]{caption}
 \usepackage{siunitx}
 \hypersetup{
     colorlinks = true,
@@ -69,7 +70,7 @@
 \newacronym{cigs}{CIGS}{copper indium gallium sulfide}
 
 \newacronym{sg}{SG}{sol-gel}
-\newacronym{ir}{IR}{infrafred}
+\newacronym{ftir}{IR}{Fourier transform infrafred}
 \newacronym{sem}{SEM}{scanning electron microscopy}
 \newacronym{xrd}{XRD}{X-ray diffraction}
 
@@ -288,7 +289,8 @@ doubled and \gls{buoh} was decreased by the volume of \gls{zrpro}.
 \subsection{Doctor blading}
 \label{sec:DB}
 An Erichsen Coatmaster 510 with a heatable plate was used for doctor blading. The plate 
-had round patches of porous metal where underpressure could be applied to keep substrate in place (see 
+had equally spaced circular \SI{2.5}{\milli\meter} diameter patches of porous metal where 
+underpressure could be applied to keep substrate in place (see 
 figure~\ref{fig:eric}). After setting the heating plate temperature, the vacuum plate 
 temperature and the \gls{db} velocity, the \gls{db} blade 
 was put into position, the sample was placed on the vacuum plate and the vacuum was 
@@ -325,7 +327,7 @@ This process of applying a \gls{zro} layer was repeated as many times as needed.
 \end{figure}
 
 \subsection{Calcination}
-A LabTech EH45C heating plate (HP) and a Naberterm LB410 furnace were used to calcinate the doctor bladed samples. 
+A LabTech EH45C heating plate and a Naberterm LB410 furnace were used to calcinate the doctor bladed samples. 
 %The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
 %The heating plate can hold temperature for a certain amount of time, but doesn't have conifgurable heating rates.
 The heating plate can hold temperature for a certain amount of time, but heated with a fixed rate of circa \oc{10}/\minutes{}.
@@ -390,13 +392,28 @@ In figure \ref{fig:heat} the different heating curves are depicted.
 
 \subsection{Characterisation}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
-\Gls{ir} absorption spectra were recorded with a Bruker Vertex 70 spectrometer.
+\Gls{ftir} transmitance and reflectance spectra were recorded with a Bruker Vertex 70 
+%transmission [\%] and reflection?  which angle? 
+spectrometer with a quartz beam splitter, \SI{0.5}{\milli\meter} aperture and 
+Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter} - \SI{588}{\nano\meter})
+and a Silicon detector for visual for 
+% gallium phosphide http://dx.doi.org/10.1051/epjconf/20134800028
+infrared light (\SI{500}{\nano\meter} - \SI{1.2}{\micro\meter}). For transmittance the light
+entered the sample from the side with the layer. The UV and VIS+IR sepctra were merged via 
+Opus software included in the spectrometer. 
+%\td{IR around page 45
+%REFLECTIVITY? can also be used for determination of thickness p47
+%}
 \Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 %The sample was placed in a way such that it absorbed half of the beam. 
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
-The current-voltage curves were measured with Agilent 4156C Precision Semiconductor Parameter Analyzer after sputtering aluminium contacts through a mask with a Leybold UNIVEX450C Sputter System.
-\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
+The current-voltage curves were measured with Agilent 4156C Precision Semiconductor 
+Parameter Analyzer after sputtering aluminium contacts through a mask with a Leybold 
 \td{Directional current sputtering with Argon as inert gas at \SI{0.005}{\milli\bar} with a power of 40 Watt for \SI{700}{\second} was used.}
+UNIVEX450C Sputter System.
+\td{, creating a direct contact to steel subtrate by removing the \gls{zro} layer on the 
+edge of the sample by scatching and applying silver paste.}
+%\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -452,15 +469,6 @@ The stirring time was untersucht, but not much difference so shortest was used b
 short time can produces faster and the resulting solution is longer stable 
 (after finishing mixing)
 10 layers were tried of short stiring and gave good results? samples 130,131,134,135 (p43)
-}
-
-\td{IR around page 45
-beam splitter quartz, aperature \SI{0.5}{\milli\meter} FTIR instead of monochromator
-detectors: GaP detects UV, Si \SI{400}{\nano\meter} - \SI{1.1}{\micro\meter}
-beam comes from layer side 
-merged via opus software UVVIS+IR
-REFLECTIVITY? can also be used for determination of thickness p47
-TRANSMITANCE 
 }
 
 \td{p48 started with erichson? 
@@ -548,6 +556,10 @@ TODO: check which software versions
 check if output of 
 check if outputs provided by all-stat.sh is same as in R  (p 100)
 look at last pages of notebook
+\td{maybe the observable/sumofsquareddistanceoflogofconductance is not a good metric.
+I should have a look at the raw data. maybe try to verarbeiten different and then fit 
+with KRR or SVM, is phd a sigmoid function? }
+
 
 
 
