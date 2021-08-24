@@ -13,8 +13,9 @@
 \hypersetup{
     colorlinks = true,
     colorlinks = false,
-	linkbordercolor = {white},
 	urlcolor = {blue},
+%	linkbordercolor = {transparent},
+    pdfborder = {0 0 0},
 	linkcolor = {blue},
 	citecolor = {blue}
 }
@@ -48,9 +49,9 @@
 \maketitle
 \newacronym{zrpro}{Zr(PrO)$_4$}{zirconium(IV)propoxide}
 \newacronym{acac}{Hacac}{acetylacetone}
-\newacronym{acoh}{AcOH}{acetic acid}
-\newacronym{buoh}{BuOH}{1-buthanol}
-\newacronym{ipo}{IPO}{2-Propanol}
+\newacronym{acoh}{AcOH}{glacial acetic acid}
+\newacronym{buoh}{BuOH}{Butan-1-ol}
+\newacronym{ipo}{IPO}{Propan-2-ol}
 \newacronym{ito}{ITO}{indium doped tin oxide}
 \newacronym{fto}{FTO}{fluorine doped tin oxide}
 \newacronym{n2}{N$_2$}{nitrogen}
@@ -76,6 +77,7 @@
 
 \newacronym{pso}{PSO}{particle swam optimization}
 \newacronym{ml}{ML}{machine learning}
+\newacronym{vs}{vs.}{versus}
 
 
 
@@ -123,7 +125,7 @@ The minisation of the conductance if performed with a particle swarm optimizatio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aims and Objectives}
-The aim of this work is to develop a non-conducting layer on steel based on  non-toxic materials like Aluminium or Zirconium via doctor blading. 
+The aim of this work is to develop a non-conducting layer on steel based on  non-toxic materials like aluminium or zirconium via doctor blading. 
 This layer can then be used as insulator for CIGS modules on steel sheets.
 Doctor blading - or tape casting - is a widely used precision coating method to apply thin films on large area surfaces\cite{Berni2004}.
 %The method of doctor blading, which is in principle a sol-gel process, 
@@ -162,6 +164,8 @@ Begründung für die eigene Vorgehensweise
 \clearpage
 \section{Experimental}
 \label{sec:exp}
+\subsection{finding a solution}
+\subsection{finding process variables}
 In this section the used chemicals and substrates, experimental procedures and any used equipment are described. 
 \subsection{Substrate Preparation}
 Five different substrates were used throughout this work: 
@@ -208,11 +212,15 @@ The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zr
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aquatic solution}
 %\me{The procedure for the aquatic solution is as follows:}
-\gls{zrpro} was added to \gls{acac} while stirring and in a separate vessel \gls{water} (including any optional additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) was added to \gls{ipo} and both were stirred for one hour. 
+\gls{zrpro} was added to \gls{acac} while stirring and in a separate vessel \gls{water} 
+(including any optional additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) 
+was added to \gls{ipo} and both were stirred for one hour. 
+These additives were added to influence pH and surface tension with the goal to influence the resulting layer.
 The \gls{water}-\gls{ipo} mixture was added to the other solution and stirred over night. 
 The exact volumes can be taken from table~\ref{tab:rec1}.
-\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).
-Chemicals were added to influence pH and surface tension with the goal to influence the resulting layer. }
+Unfortunately this solution failed to produce any thing near homogeneous solution. 
+Thus, an alternative solution was found.
+\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).}
 \begin{table}[h]
 	\centering
 	\caption{Compositions of different aquatic solutions}
@@ -242,16 +250,32 @@ Five different concentrations of the buthanolic solutions were prepared.
 %The first solution \td{(standard concentration/ one fold/ 1F)} 
 %followed the recipe loosely, which is described by Hu et al. \cite{Hu2016}.
 %In order to obtain thicker \gls{zro} layers the \gls{zrpro} concentration in the starting solution was raised.
-The \gls{1f} 
-was closest to the recipe proposed by Hu et. al. \cite{Hu2016}. 
-\td{p34
-The second recipe was adopted to the chemicals available in the lap and potential less toxic.
-The first thing was to get a recipe with similar ingredients, which were available. 
-p34 why did i try \#8 vs \#9 
-The solvent (1,2-BuOH,BuOH, PrOH) and the chalating agent (AcAc and citric acid) were varied 
-Later in the process, the stabilisation compound was also varied (AcOH, iPOH)
-}
-The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar with higher concentrations of \gls{zrpro} (see table \ref{tab:rec2}).
+The \gls{1f} was closest to the recipe proposed by Hu et. al. \cite{Hu2016}. 
+The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar with 
+higher concentrations of \gls{zrpro} (see table \ref{tab:rec2}).
+Not all chemicals mentioned in \cite{Hu2016} were available, so chemically similar 
+starting materials had to be chosen from the available inventory. 
+%\td{p34}
+The solvent (Butane-1,2-diol, \gls{buoh} and Propan-1-ol), the chelating agent 
+(\gls{acac} and citric acid) were varied and later in the process, the stabilisation 
+compound (\gls{acoh} and \gls{ipo}) was varied too.
+The most promissing combination of solvent, chelating agent and stabilisation reagent was \gls{buoh}, \gls{acac} and \gls{ipo}.
+The main differences between the used recipe and mentioned by \cite{Hu2016} were 
+precursor (transition metal complex zirconium propoxide \gls{vs} post-transition metal 
+complex aluminium isopropoxide), solvent (1-BuOH \gls{vs} 2-MeO-EtOH), reaction temperature 
+(room temperature \gls{vs} \SI{105}{\celsius}), stirring time (15/15/\SI{30}{\minute}
+\gls{vs} 30/30/\SI{120}{\minute}), application process (doctor blading \gls{vs} spin coating), 
+the heat treatment between layers (\SI{200}{\celsius} \gls{vs} \SI{200}{\celsius} and then \SI{400}
+{\celsius}) and the calcination temperature (\SI{400}{\celsius} \gls{vs}
+\SI{500}{\celsius}).
+%me          hu
+%Zr(OPr)4    Al(iPrO)3   
+%1-BuOH      2-MeO-EtOH  
+%RT          80-105
+%15-15-30    30-30-120
+%DB          spin coating
+%200C        200/400C
+%400C        500C
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[h]
@@ -296,8 +320,8 @@ switched on. %and the blade was sent over the sample without liquid to see if it
 applied with a 10-\ul{1000} pipette and the blade moved over the sample distributing the 
 liquid evenly. After evaporation of the solution, the vacuum was turned off, the 'blade 
 pusher' put into initial position, the blade removed and excess solution removed with a 
-wipe. The small metal plate was transferred to the hot heating plate and rested on there 
-for 3-\minutes{5}. %The process can be repeated as wished. 
+wipe. The small metal plate was transferred to the \SI{200}{\celsius} heating plate and 
+rested on there for \minutes{5}. 
 This process of applying a \gls{zro} layer was repeated as many times as needed.
 \begin{figure}
 	\centering
@@ -317,14 +341,14 @@ This process of applying a \gls{zro} layer was repeated as many times as needed.
 		vacuum pump (2) in the background and 
 		Erichsen Coatmaster 510 (3) with heatable vacuum plate.
 %		(b) Erichsen Coatmaster 510 with \gls{db} blade.
-		(b) Close up of the \gls{db} blade in position.
+        (b) Close up of the \gls{db} blade in position with blade height adjusted to \SI{0.2}{\micro\meter}.
 		The majority of the suction areas is sealed with tape to increase the underpressure at the remaining ones.
 	}
 	\label{fig:eric}
 \end{figure}
 
 \subsection{Calcination}
-A LabTech EH45C heating plate and a Naberterm LB410 furnace were used to calcinate the doctor bladed samples. 
+A LabTech EH45C heating plate and a Naberterm LB410 muffle furnace were used to calcinate the doctor bladed samples. 
 %The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
 %The heating plate can hold temperature for a certain amount of time, but doesn't have conifgurable heating rates.
 The heating plate can hold temperature for a certain amount of time, but heated with a fixed rate of circa \oc{10}/\minutes{}.
@@ -406,6 +430,16 @@ Opus software included in the spectrometer.
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 The current-voltage (I-V) curves were measured with Agilent 4156C Precision Semiconductor 
 Parameter Analyzer. Prior to I-V measurements the samples were sputtered with aluminium 
+\td{I-V: 2 terminal measurement 
+one terminal was varibale and the other the ground 
+from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$
+measure current from back bone to backbone 
+if shorted, then can measure actual resistance of layer. resistance of steel 
+is neglectable. In order to get an impression of the quality of the layer 
+mutliple contact (picture) are sputtered (throuhg a mask) and statistics: 
+Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold.
+if tunneling, iv follows powerlaw, if direct contact, iv follows linear
+}
 through a mask to produce contact with a Leybold 
 UNIVEX450C Sputter System.
 Directional current sputtering with Argon as inert gas at \SI{0.005}{\milli\bar} with a 
@@ -450,48 +484,33 @@ The Plackett-Burman design implemented in the python library \texttt{pyDOE} was 
 get an overview of reasonable boundaries.
 %Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
 %See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
-Some additional hand picked experiments were introduced to further narrow the limits of the optimization down as every reduction in variables or levels meant a faster convergence.
+Some additional hand picked experiments were introduced to further narrow the limits of 
+the optimization down as every reduction in variables or levels meant a faster convergence.
 %ooooh 
-\td{
-acceptable layer was produced by solution, but very unstable (short lived) how long? p41 
-extra AcOH stabilzed but needed so much that dilution to large...
-The stirring time was untersucht, but not much difference so shortest was used because 
-short time can produces faster and the resulting solution is longer stable 
-(after finishing mixing)
-10 layers were tried of short stiring and gave good results? samples 130,131,134,135 (p43)
-}
 
 \td{p48 started with erichson? 
 used double sided tape to hold in place, which ofcourse gave extra thickness.
-0-3.5 micro meter in 0.5 steps DB height were tested and did not substantially 
-alter the results p 56
+0-\SI{3.5}{\micro\meter} in \SI{0.5}{\micro\meter} steps blade height were tested and did 
+not substantially alter the results p 56
+}
+\td{
 double calcination (2x400C) was tried instead of pyrolization (4x200 than 400C),p49
-sooo higher concentration of zro2 leads to less stable solution
+so higher concentration of zro2 leads to less stable solution
 5F ca 100min
 4F ca 140min
-3F ca 7h 
-}
-
-\td{I-V: 2 terminal measurement 
-one terminal was varibale and the other the ground 
-from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$
-measure current from back bone to backbone 
-if shorted, then can measure actual resistance of layer. resistance of steel 
-is neglectable. In order to get an impression of the quality of the layer 
-mutliple contact (picture) are sputtered (throuhg a mask) and statistics: 
-Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold.
-if tunneling, iv follows powerlaw, if direct contact, iv follows linear
+3F ca 420min (7h)
 }
 
 \td{tryed to use heat gun to let solution evaporate faster, started to heat the DOC p55}
 \td{varied doctor blading velocity: 10, 5, 1, 0.5, 0.2, 0.1. Slower less layer}
 
-After a fitting recipe was found, the process to produce an acceptable layer was untersucht. 
+After a fitting recipe was found, the process to produce an acceptable layer was examined. 
 There were many variables which had to be taken into account. 
 The damals current procedure produced clear and continuous films, but was plagued from 
 unhomogenities due to drying stains. 
 Using a heat gunn the drying stain can be surcumvented (umgangen), but the results were unreproduceable. 
-The glass unterlage was therefore exchanged with a metal plate which allowed both to hold the sample via underpressure and heat it to a certain temperature.
+The glass unterlage was therefore exchanged with a metal plate which allowed both to hold 
+the sample via underpressure and heat it to a certain temperature.
 The bounds fore the process were then explored. 
 Especially the doctor blading velocity.
 
@@ -741,6 +760,15 @@ When the switch to the erichsen was made. The height was kept constant in order 
 the variables to optimize ueberschuabar, but could have been even less variables.
 If the movement was to slow the resluting  layer would be very inhomogenuous, thus the
 velocity wasn't varied.
+
+\td{
+acceptable layer was produced by buthanolic solution, but very unstable (short lived) how long? p41 
+extra AcOH stabilzed but needed so much that dilution too large...
+The stirring time was untersucht, but not much difference so shortest was used because 
+short time can produces faster and the resulting solution is longer stable 
+(after finishing mixing)
+10 layers were tried of short stiring and gave good results? samples 130,131,134,135 (p43)
+}
 
 \subsection{XRD}
 

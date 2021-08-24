@@ -11,6 +11,7 @@ Thesis/*.log
 Thesis/*.out
 Thesis/*.toc
 Thesis/*.pdf
+Thesis/thesis.pdf
 Process/article.aux
 Process/article.bbl
 Process/article.blg
