@@ -185,7 +185,6 @@ All recipes for solutions can be divided into two categories:
 the first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water}.
 The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zrpro} in \gls{buoh}.
 
-%\iffalse
 \begin{figure}[htb]
 	\centering
 	\begin{subfigure}{0.49\textwidth}
@@ -205,7 +204,6 @@ The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zr
 	\label{fig:sol}
 	\caption{Aquatic and buthanolic solution in beaker glass with magnetic stirring bars sealed with Parafilm} 
 \end{figure}
-%\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Aquatic solution}
@@ -213,6 +211,8 @@ The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zr
 \gls{zrpro} was added to \gls{acac} while stirring and in a separate vessel \gls{water} (including any optional additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) was added to \gls{ipo} and both were stirred for one hour. 
 The \gls{water}-\gls{ipo} mixture was added to the other solution and stirred over night. 
 The exact volumes can be taken from table~\ref{tab:rec1}.
+\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).
+Chemicals were added to influence pH and surface tension with the goal to influence the resulting layer. }
 \begin{table}[h]
 	\centering
 	\caption{Compositions of different aquatic solutions}
@@ -244,6 +244,13 @@ Five different concentrations of the buthanolic solutions were prepared.
 %In order to obtain thicker \gls{zro} layers the \gls{zrpro} concentration in the starting solution was raised.
 The \gls{1f} 
 was closest to the recipe proposed by Hu et. al. \cite{Hu2016}. 
+\td{p34
+The second recipe was adopted to the chemicals available in the lap and potential less toxic.
+The first thing was to get a recipe with similar ingredients, which were available. 
+p34 why did i try \#8 vs \#9 
+The solvent (1,2-BuOH,BuOH, PrOH) and the chalating agent (AcAc and citric acid) were varied 
+Later in the process, the stabilisation compound was also varied (AcOH, iPOH)
+}
 The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar with higher concentrations of \gls{zrpro} (see table \ref{tab:rec2}).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -265,16 +272,6 @@ The other four solutions (\gls{2f}, \gls{3f}, \gls{4f}, \gls{5f}) were similar w
 	\end{tabular}
 \end{table}
 
-\iffalse
-The procedure for obtaining the \gls{1f} solution will be explained in detail: \td{maybe just keep it general}
-%
-%was closely on the basis of ref \cite{Hu2016}. 
-%The standard concentration will be described first and then the differences of higher concentrated solutions:
-\ml{4.9} of solvent (\gls{buoh}) are put into a beaker glass (or similar, preferably with an air-tight cap) with a stirrer. 
-\ml{0.1} of \gls{zrpro} are added while stirring.  
-After 10 to 15 minutes \ml{0.05} (\ds{approximately }one mole equivalent of \gls{zrpro}) chelating agent (\gls{acac}) were added and stirred for another \minutes{10 to 15}. 
-Finally, \ml{1} of stabilisation solvent (\gls{ipo} or \gls{acoh}) was added to the mixture and stirred for additional 20-30 minutes. 
-\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The solvent (\gls{buoh}) was put into a beaker glass (or similar, preferably with an 
 air-tight cap) with a magnetic stirring bar and \gls{zrpro} was added while stirring. After 
@@ -407,12 +404,14 @@ Opus software included in the spectrometer.
 \Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 %The sample was placed in a way such that it absorbed half of the beam. 
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
-The current-voltage curves were measured with Agilent 4156C Precision Semiconductor 
-Parameter Analyzer after sputtering aluminium contacts through a mask with a Leybold 
-\td{Directional current sputtering with Argon as inert gas at \SI{0.005}{\milli\bar} with a power of 40 Watt for \SI{700}{\second} was used.}
+The current-voltage (I-V) curves were measured with Agilent 4156C Precision Semiconductor 
+Parameter Analyzer. Prior to I-V measurements the samples were sputtered with aluminium 
+through a mask to produce contact with a Leybold 
 UNIVEX450C Sputter System.
-\td{, creating a direct contact to steel subtrate by removing the \gls{zro} layer on the 
-edge of the sample by scatching and applying silver paste.}
+Directional current sputtering with Argon as inert gas at \SI{0.005}{\milli\bar} with a 
+power of \SI{40}{\watt} for \SI{700}{\second} was used. Between sputtering and I-V measurements 
+direct contacts to the steel subtrate were created by removing the \gls{zro} layer on two 
+opposing edge of a sample with sand paper and then by applying silver paste.
 %\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
 \begin{figure}
 	\centering
@@ -429,40 +428,31 @@ edge of the sample by scatching and applying silver paste.}
 		\caption{View through the microscope}
 	\end{subfigure}
 	\label{fig:iv}
-	\caption{I-V curve abnehm aperature and sicht durch das micro scope.}
+    \caption{I-V curve abnehm aperature and sicht durch das micro scope.\td{make a sketch}}
+
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Finding base process/Preliminary study}
 Initially, glass plates were doctor bladed manually with aquatic solution and calcinated via HP1. 
-Glass was used because of its availability and in order to be able to make IR transmission spectra.
-In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} (both conductive) were used as substrate.
-Conducting substrates were also needed for \gls{sem} micrographs. 
-Different additives were included in the recipe and the resistance was checked with a multimeter. 
-%The additives should influence pH and surface tensions. 
-Chemicals were added to influence pH and surface tension with the goal to influence the resulting layer. 
-As no homogeneous layers resulted from any aquatic recipe a new recipe was introduced, which gave more homogeneous films.
+Glass was used because of its availability and in order to be able to make IR \td{transmission} spectra.
+In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} layered 
+glass plates (both conductive) were used as substrate.
+Conducting substrates were also needed to \gls{sem} produce micrographs. 
+%otherwise the sample would charge and can't be pictured anymore. 
+%this means if the produced layer is thick and homogeneous enough, it's difficult to see in sem
+Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
+\td{As no homogeneous layers resulted from any aquatic recipe} a new recipe was introduced, which gave more homogeneous films.
 With this new buthanolic recipe the limits of the optimization problem were explored in a preliminary study.
 %For the preliminary study a DB machine and NT were used and the steel. 
 In the preliminary study only steel was used as substrate.
-Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
+The Plackett-Burman design implemented in the python library \texttt{pyDOE} was used to
+get an overview of reasonable boundaries.
+%Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
 %See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
-Some additional hand picked experiments were introduced to further eingrenzen the limits of the optimization as every reduction in variables or levels meant a faster convergence.
+Some additional hand picked experiments were introduced to further narrow the limits of the optimization down as every reduction in variables or levels meant a faster convergence.
 %ooooh 
-\td{first recipe tried to improve to achieve more restisting layer. by pH value, surface tensionand solution ratios (only 10\% change because it was assumed, that the recipe is good and should be improved, but the recipe should be altered thoroughly.
-two layers were also tried but didn't even pass the visual examination/test/inspection. 
-A curst was produced. 
-At this point in time everything was doctor bladed by hand. The hight was varied (with tape).
-When the switch to the erichsen was mad. The //height was kept constant in order to keep 
-the variables to optimize ueberschuabar, but could have been even less variables.
-If the movement was to slow the resluting  layer would be very inhomogenuous, thus the
-velocity wasn't varied.
-p34
-The second recipe was adopted to the chemicals available in the lap and potential less toxic.
-The first thing was to get a recipe with similar ingredients, which were available. 
-p34 why did i try \#8 vs \#9 
-The solvent (1,2-BuOH,BuOH, PrOH) and the chalating agent (AcAc and citric acid) were varied 
-Later in the process, the stabilisation compound was also varied (AcOH, iPOH)
+\td{
 acceptable layer was produced by solution, but very unstable (short lived) how long? p41 
 extra AcOH stabilzed but needed so much that dilution to large...
 The stirring time was untersucht, but not much difference so shortest was used because 
@@ -560,84 +550,9 @@ look at last pages of notebook
 I should have a look at the raw data. maybe try to verarbeiten different and then fit 
 with KRR or SVM, is phd a sigmoid function? }
 
-
-
-
-\iffalse
-\subsection{EMMA Propagation}
-\begin{table}
-	\centering
-	\begin{tabular}{ccccccc}
-		\hline
-		\hline
-conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
-		\hline
-1	&10	&5	    &20	&120	&400	&\\
-1	&4	&0.1	&20	&120	&500	&\\
-5	&10	&0.1	&20	&120	&500	&\\
-5	&4	&5	    &20	&480	&400	&\\
-1	&5	&5	    &80	&120	&500	&\\
-1	&10	&1	    &80	&480	&400	&\\
-5	&5	&1	    &80	&120	&400	&\\
-5	&10	&5	    &80	&480	&500	&\\
-2	&8	&0.5	&40	&360	&470	&\\
-2	&6	&2	    &40	&360	&430	&\\
-		\hline
-%4	&12	&-	    &-	&-	&-&\\
-1	&4	&12	    &70	&120	&500	&\\
-1	&9	&18	    &80	&240	&400	&\\
-%2	&5	&18	    &70	&-	&-		&\\
-4	&6	&14	    &60	&240	&500	&\\
-4	&6	&14	    &60	&240	&500	&\\
-4	&6	&14	    &60	&240	&500	&\\
-		\hline
-2	&10	&20	    &40	&120	&500	&6113\\
-3	&8	&18	    &70	&1080	&300	&2850\\
-3	&6	&10	    &50	&1080	&400	&5526	\\
-%3	&10	&14	    &50	&600	&500	&-7374	\\
-3	&10	&16	    &80	&120	&500	&6554	\\
-4	&6	&16	    &80	&1080	&300	&2947	\\
-3	&12	&12	    &80	&840	&500	&8318	\\
-3	&10	&14	    &50	&600	&500	&7374	\\
-5	&6	&10	    &60	&1080	&400	&5648	\\
-5	&10	&20	    &60	&360	&300	&3956	\\
-5	&12	&14	    &60	&1080	&300	&2700	\\
-		\hline
-%2	&2	&10	    &40	&600	&300	&-7201	\\
-2	&4	&10	    &80	&1080	&300	&6101	\\
-%2	&4	&10	    &40	&600	&300	&-7201	\\
-2	&4	&10	    &40	&600	&300	&7201	\\
-3	&4	&12	    &60	&600	&300	&1462	\\
-4	&4	&10	    &80	&1080	&300	&2883	\\
-5	&12	&20	    &70	&600	&300	&1680	\\
-		\hline
-2	&4	&10	    &40	&120	&300	&1	\\
-2	&4	&10	    &40	&120	&500	&6001	\\
-3	&4	&10	    &40	&120	&500	&6102	\\
-5	&4	&10	    &80	&1080	&300	&2884	\\
-5	&12	&20	    &60	&120	&300	&360	\\
-		\hline
-3	&4	&10	    &40	&600	&400	&4202	\\
-2	&6	&20	    &40	&120	&500	&6105	\\
-%4	&4	&14	    &80	&1080	&300	&-2923	\\
-5	&12	&14	    &60	&600	&300	&1500	\\
-3	&6	&14	    &60	&600	&300	&1486	\\
-4	&4	&14	    &80	&1080	&300	&2923	\\
-		\hline
-4	&8	&18	    &80	&1080	&300	&2971	\\
-3	&8	&10	    &50	&1080	&300	&2530	\\
-2	&12	&16	    &40	&120	&400	&3077	\\
-2	&10	&18	    &60	&1080	&300	&2733	\\
-4	&10	&10	    &50	&1080	&300	&2535	\\
-		\hline
-		\hline
-	\end{tabular}
-	\caption{}
-	\label{tab:emma}
-\end{table}
-\fi
-
-
+%%%%%%%%%%%%%%%%%%
+%%% EVALUATION %%%
+%%%%%%%%%%%%%%%%%%
 \section{Evaluation and Computational Details}
 \subsection{Evaluation of Samples}
 \label{sec:eval}
@@ -816,6 +731,16 @@ It can also be used as test to see how well the GA performes
 It doesn't influence the fit for the other splines, but it influences the choice of samples therefore it might have slowed down the process
 Overall there were too many variables involved for such a small dataset
 
+first recipe tried to improve to achieve more restisting layer. by pH value, surface 
+tensionand solution ratios (only 10\% change because it was assumed, that the recipe is 
+good and should be improved, but the recipe should be altered thoroughly.
+two layers were also tried but didn't even pass the visual examination/test/inspection. 
+A curst was produced. 
+At this point in time everything was doctor bladed by hand. The hight was varied (with tape).
+When the switch to the erichsen was made. The height was kept constant in order to keep 
+the variables to optimize ueberschuabar, but could have been even less variables.
+If the movement was to slow the resluting  layer would be very inhomogenuous, thus the
+velocity wasn't varied.
 
 \subsection{XRD}
 
