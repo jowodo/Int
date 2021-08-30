@@ -79,11 +79,14 @@
 \newacronym{pso}{PSO}{particle swam optimization}
 \newacronym{ml}{ML}{machine learning}
 \newacronym{vs}{vs.}{versus}
+\newacronym{iv}{I-V}{current-voltage}
 
 
 
 \clearpage
 \section*{Abstract}
+%has been used ist meiner Meinung nach eher zu verwenden, wenn man es auch heute noch den Subjekt benutzt, z.B. diese Methode war (ist aber auch heute noch) in diesem und jenem Bereich eingewendet. was used würde ich eher schreiben bei einem konkretem Fall, zB wenn man bei einer bestimmten Studie etwas benutzt hat 
+
 %\lipsum[1]
 \td{A thin zirconium oxide layer was applied via doctor blading on a steel foil substrate with the goal of get an moeglichst homogeneous and insulating layer.
 The layers were characterized over the current-voltage curve and the operational variables were optimized with an \gls{pso} swarm optimization algorithm.
@@ -404,11 +407,15 @@ project prior to the author.
 \end{table}
 %
 \clearpage
-The NT1 heating program was used to mimic the HP1 heating procedure in the muffle furnace. 
+The NT1 heating program was used to mimic the HP1 heating procedure from the heating 
+plate in the muffle furnace. 
 NT2 is an simplification of NT1 and programs NT3~-~NT6 are the same as NT2 with altered 
-heating rate and partly increased calcination temperature T$_{\textrm{Cal}}$ (NT5).
-NT2-NT6 had only 2 variables (heating rate and calcination temperature) instead of 4 
-(three different heating rates and calcination temperature). 
+heating rate and 
+NT5 additionally used a calcination temperature T$_{\textrm{Cal}}$ of \SI{500}{\celsius}.
+%partly increased calcination temperature T$_{\textrm{Cal}}$ (NT5).
+NT2-NT6 had 2 variables (heating rate and calcination temperature) in contrast to 
+NT1 which had 4 (three different heating rates and calcination temperature). 
+% instead of 4 (three different heating rates and calcination temperature). 
 %where the \td{calcination time} was held constant.
 %The time at maximum temperature was held constant over all heating procedures.
 All heating programs were held at the calcination temperature for one hour.
@@ -453,36 +460,33 @@ All \gls{sem} micrographs were taken with a Zeiss Supra 40.
 \Gls{ftir} transmitance and reflectance spectra were recorded with a Bruker Vertex 70 
 %transmission [\%] and reflection?  which angle? 
 spectrometer with a quartz beam splitter, \SI{0.5}{\milli\meter} aperture and 
-Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter} - \SI{588}{\nano\meter})
-and a Silicon detector for visual for 
+Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter} - \SI{588}
 % gallium phosphide http://dx.doi.org/10.1051/epjconf/20134800028
+{\nano\meter}) and a Silicon detector for visual for 
 infrared light (\SI{500}{\nano\meter} - \SI{1.2}{\micro\meter}). For transmittance the light
-entered the sample from the side with the layer. The UV and VIS+IR sepctra were merged via 
-Opus software included in the spectrometer. 
+entered the sample from the side with the layer. The UV and VIS+IR sepctra were merged 
+in Opus software. % included in the spectrometer. 
 %\td{IR around page 45
 %REFLECTIVITY? can also be used for determination of thickness p47
 %}
 \Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 %The sample was placed in a way such that it absorbed half of the beam. 
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
-The current-voltage (I-V) curves were measured with Agilent 4156C Precision Semiconductor 
-Parameter Analyzer. Prior to I-V measurements the samples were sputtered with aluminium 
-\td{I-V: 2 terminal measurement 
-one terminal was varibale and the other the ground 
-from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$
-measure current from back bone to backbone 
-if shorted, then can measure actual resistance of layer. resistance of steel 
-is neglectable. In order to get an impression of the quality of the layer 
-mutliple contact (picture) are sputtered (throuhg a mask) and statistics: 
-Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold.
-if tunneling, iv follows powerlaw, if direct contact, iv follows linear
-}
-through a mask to produce contact with a Leybold 
+
+The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
+Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of \SI{10}{\milli\volt}.
+\todo{figure}
+%\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
+
+Prior to \gls{iv} measurements the samples were sputtered with aluminium 
+through a mask to produce a multitude of equidistant contacts with a Leybold 
 UNIVEX450C Sputter System.
+%https://en.wikipedia.org/wiki/Sputter_deposition
 Directional current sputtering with Argon as inert gas at \SI{0.005}{\milli\bar} with a 
-power of \SI{40}{\watt} for \SI{700}{\second} was used. Between sputtering and I-V measurements 
-direct contacts to the steel subtrate were created by removing the \gls{zro} layer on two 
-opposing edge of a sample with sand paper and then by applying silver paste.
+power of \SI{40}{\watt} for \SI{700}{\second} \td{was used.}
+Between sputtering and \gls{iv} measurements 
+direct contacts to the steel subtrate were created by removing the \gls{zro} layer with 
+sand paper on two opposing edges of a sample and then by applying silver paste.
 %\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
 \begin{figure}
 	\centering
@@ -500,7 +504,6 @@ opposing edge of a sample with sand paper and then by applying silver paste.
 	\end{subfigure}
 	\label{fig:iv}
     \caption{I-V curve abnehm aperature and sicht durch das micro scope.\td{make a sketch}}
-
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
@@ -509,11 +512,15 @@ Initially, glass plates were doctor bladed manually with aquatic solution and ca
 Glass was used because of its availability and in order to be able to make IR \td{transmission} spectra.
 In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} layered 
 glass plates (both conductive) were used as substrate.
-Conducting substrates were also needed to \gls{sem} produce micrographs. 
+Conducting substrates were also needed to produce \gls{sem} micrographs. 
 %otherwise the sample would charge and can't be pictured anymore. 
 %this means if the produced layer is thick and homogeneous enough, it's difficult to see in sem
-Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
-\td{As no homogeneous layers resulted from any aquatic recipe} a new recipe was introduced, which gave more homogeneous films.
+%Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
+%\todo{different additives, heating programs (NT1-NT5 and HP1), blade distances (distance between blade and substrate) and layer counts were tried}
+Solution composition, heating program, blade distance (distance between blade and substrate) and layer count were varied but no homogeneous layers resulted. 
+Thus, 
+%\td{As no homogeneous layers resulted from any aquatic recipe}
+a new recipe was introduced, which gave more homogeneous films.
 With this new buthanolic recipe the limits of the optimization problem were explored in a preliminary study.
 %For the preliminary study a DB machine and NT were used and the steel. 
 In the preliminary study only steel was used as substrate.
