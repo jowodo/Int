@@ -163,8 +163,9 @@ Begründung für die eigene Vorgehensweise
 \subsection{Machine Learning}
 \subsection{Princlipal Component Analysis}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% EXPERIMENTAL %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \section{Experimental}
 \label{sec:exp}
@@ -316,6 +317,11 @@ doubled and the volume of \gls{buoh} was decreased by the increase of volume of 
 
 \subsection{Doctor blading}
 \label{sec:DB}
+\todo{manual}
+Before doctore blading with an automated machine manual \gls{DB} wire bar coaters was used. 
+
+
+
 An Erichsen Coatmaster 510 with a heatable plate was used for doctor blading. The plate 
 had equally spaced circular \SI{2.5}{\milli\meter} diameter patches of porous metal where 
 underpressure could be applied to keep substrate in place (see 
@@ -513,6 +519,7 @@ Glass was used because of its availability and in order to be able to make IR \t
 In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} layered 
 glass plates (both conductive) were used as substrate.
 Conducting substrates were also needed to produce \gls{sem} micrographs. 
+\td{should maybe put this into beginning of section \ref{sec:exp}?}
 %otherwise the sample would charge and can't be pictured anymore. 
 %this means if the produced layer is thick and homogeneous enough, it's difficult to see in sem
 %Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
@@ -520,11 +527,11 @@ Conducting substrates were also needed to produce \gls{sem} micrographs.
 Solution composition, heating program, blade distance (distance between blade and substrate) and layer count were varied but no homogeneous layers resulted. 
 Thus, 
 %\td{As no homogeneous layers resulted from any aquatic recipe}
-a new recipe was introduced, which gave more homogeneous films.
+a the buthanolic recipe was introduced, which gave more homogeneous films.
 With this new buthanolic recipe the limits of the optimization problem were explored in a preliminary study.
 %For the preliminary study a DB machine and NT were used and the steel. 
 In the preliminary study only steel was used as substrate.
-The Plackett-Burman \cite{Plackett1946} design implemented in the python library \texttt{pyDOE} was used to
+The Plackett-Burman \cite{Plackett1946} design implemented in the python3 library \texttt{pyDOE} was used to
 get an overview of reasonable boundaries.
 %Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
 %See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
