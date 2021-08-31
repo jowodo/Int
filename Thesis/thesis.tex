@@ -10,6 +10,7 @@
 \usepackage{subcaption}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{siunitx}
+\usepackage{circuitikz}
 \hypersetup{
     colorlinks = true,
     colorlinks = false,
@@ -72,7 +73,8 @@
 \newacronym{cigs}{CIGS}{copper indium gallium sulfide}
 
 \newacronym{sg}{SG}{sol-gel}
-\newacronym{ftir}{IR}{Fourier transform infrafred}
+\newacronym{ir}{IR}{infrafred}
+\newacronym{ft}{FT}{Fourier transform}
 \newacronym{sem}{SEM}{scanning electron microscopy}
 \newacronym{xrd}{XRD}{X-ray diffraction}
 
@@ -169,12 +171,16 @@ Begründung für die eigene Vorgehensweise
 \clearpage
 \section{Experimental}
 \label{sec:exp}
-\subsection{finding a solution}
-\subsection{finding process variables}
+%\subsection{finding a solution}
+%\subsection{finding process variables}
 In this section the used chemicals and substrates, experimental procedures and any used equipment are described. 
 \subsection{Substrate Preparation}
 Five different substrates were used throughout this work: 
 microscope glass slides (\cm{2.5}\x\cm{7.5})\ds{ from Sigma Aldrich},\ds{ thinner,} squared glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{ito} glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{fto} glass plates (\cm{5}\x\cm{5})\ds{ from Sigma Aldrich} and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
+%
+Glass was used because of its availability and to measure transmission and reflectance 
+spectra. \gls{fto} and \gls{ito} were used in order to have a conducting substrate, which
+is needed the conductivity of the layer and for \gls{sem} micrographs.
 The glass slides and \gls{fto} were scored with a diamond scribe \ds{\td{(diamond scratcher/scraper)} }and broken with a running plier into pieces of dimensions \cm{2.5}\x\cm{2.5}.
 The steel foil was cut with a foil cutter.
 %, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting plates).
@@ -317,12 +323,28 @@ doubled and the volume of \gls{buoh} was decreased by the increase of volume of 
 
 \subsection{Doctor blading}
 \label{sec:DB}
-\todo{manual}
-Before doctore blading with an automated machine manual \gls{DB} wire bar coaters was used. 
+%\todo{manual}
+%Before doctore blading with an automated machine manual \gls{db} wire bar coaters was used. 
+All glass substrates were doctor bladed manually with a smooth stainless steel wire bar 
+coater. On two opposing edges adhesive tape was applied to create a valley in between. After the 
+layer was applied and dried the tape was removed and the substrate treated with heat.
+Lower \gls{db} velocities resulted in inhomogeneous layers and thus wasn't altered in the
+manual \gls{db} process. 
+One and two layers of adhesive tape were used to alter the depth of the valley. 
+%
 
-
-
-An Erichsen Coatmaster 510 with a heatable plate was used for doctor blading. The plate 
+Most
+%All 
+steel substrates (all pre-optimisation and optimisation samples) doctor bladed with an 
+Erichsen Coatmaster 510 with a heatable plate.
+The rest was doctor bladed on a glass plate, fixed with double sided adhesive tape and 
+partially heated with a heat gun.
+The blade height was varied from \SI{0}{\milli\meter} to \SI{3.5}{\milli\meter} in 
+\SI{0.5}{\milli\meter} steps and did not substantially alter the results.
+For the rest of the experiments a blade height of \SI{0.2}{\milli\meter} was used.
+%was used for doctor blading. The plate 
+%An Erichsen Coatmaster 510 with a heatable plate was used for doctor blading. 
+The heatable vacuum plate 
 had equally spaced circular \SI{2.5}{\milli\meter} diameter patches of porous metal where 
 underpressure could be applied to keep substrate in place (see 
 figure~\ref{fig:eric}). After setting the temperature of the heating plate to 
@@ -331,11 +353,15 @@ figure~\ref{fig:eric}). After setting the temperature of the heating plate to
 \gls{db} velocity (\mmps{10}, \mmps{12}, \mmps{14}, \mmps{16}, \mmps{18} or \mmps{20}), 
 the blade was put into position, the sample was placed on the vacuum plate and the vacuum 
 was switched on. 
+During pre-optimisation samples, lower \gls{db} velocities (\mmps{0.1}, \mmps{0.5}, 
+\mmps{1}, \mmps{2} and \mmps{5}) were tested. 
+% which lead to very thin layers. 
 %and the blade was sent over the sample without liquid to see if it was held in position. 
 \ul{100} of solution were 
-applied with a 10-\ul{1000} pipette and the blade moved over the sample distributing the 
+applied with a 10 - \ul{1000} pipette and the blade moved over the sample distributing the 
 liquid evenly. After evaporation of the solution, the vacuum was turned off, the 'blade 
-pusher' put into initial position, the blade removed and excess solution removed with a 
+pusher' put into initial position, the blade removed and excess solution on the plate 
+removed with a 
 wipe. The small metal plate was transferred to the \SI{200}{\celsius} heating plate and 
 rested on there for \minutes{5}. 
 This process of applying a \gls{zro} layer was repeated as many times as needed.
@@ -362,6 +388,7 @@ This process of applying a \gls{zro} layer was repeated as many times as needed.
 	}
 	\label{fig:eric}
 \end{figure}
+
 
 \subsection{Calcination}
 A LabTech EH45C heating plate and a Naberterm LB410 muffle furnace were used to calcinate 
@@ -412,7 +439,7 @@ project prior to the author.
 	\end{tabular}
 \end{table}
 %
-\clearpage
+%\clearpage
 The NT1 heating program was used to mimic the HP1 heating procedure from the heating 
 plate in the muffle furnace. 
 NT2 is an simplification of NT1 and programs NT3~-~NT6 are the same as NT2 with altered 
@@ -463,14 +490,14 @@ In figure \ref{fig:heat} the different heating curves are depicted.
 
 \subsection{Characterisation}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
-\Gls{ftir} transmitance and reflectance spectra were recorded with a Bruker Vertex 70 
+\Gls{ft} \gls{ir} transmittance and reflectance spectra (\SI{20}{\degree}) were recorded with a Bruker Vertex 70 
 %transmission [\%] and reflection?  which angle? 
 spectrometer with a quartz beam splitter, \SI{0.5}{\milli\meter} aperture and 
 Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter} - \SI{588}
 % gallium phosphide http://dx.doi.org/10.1051/epjconf/20134800028
-{\nano\meter}) and a Silicon detector for visual for 
-infrared light (\SI{500}{\nano\meter} - \SI{1.2}{\micro\meter}). For transmittance the light
-entered the sample from the side with the layer. The UV and VIS+IR sepctra were merged 
+{\nano\meter}) and a Silicon detector for visual and \gls{ir} light 
+(\SI{500}{\nano\meter} - \SI{1.2}{\micro\meter}). For transmittance the light
+entered the sample from the side with the layer. The UV and VIS+IR spectra were merged 
 in Opus software. % included in the spectrometer. 
 %\td{IR around page 45
 %REFLECTIVITY? can also be used for determination of thickness p47
@@ -480,8 +507,7 @@ in Opus software. % included in the spectrometer.
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 
 The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
-Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of \SI{10}{\milli\volt}.
-\todo{figure}
+Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of \SI{10}{\milli\volt} (see figure \ref{fig:iv}).
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
 
 Prior to \gls{iv} measurements the samples were sputtered with aluminium 
@@ -494,6 +520,7 @@ Between sputtering and \gls{iv} measurements
 direct contacts to the steel subtrate were created by removing the \gls{zro} layer with 
 sand paper on two opposing edges of a sample and then by applying silver paste.
 %\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
+\iffalse
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -502,36 +529,65 @@ sand paper on two opposing edges of a sample and then by applying silver paste.
 		\label{fig:iv-agilent}
 		\caption{peripherals}
 	\end{subfigure}
-	\begin{subfigure}{0.48\textwidth}
+%	\begin{subfigure}{0.48\textwidth}
+%		\centering
+%		\includegraphics[width=.9\textwidth]{Pics/i-v-micro.png}
+%%		\label{fig:iv-micro}
+%%		\caption{View through the microscope}
+%	\end{subfigure}
+	\begin{subfigure}{0.48\textwidth}https://issues.csb.univie.ac.at/issues
 		\centering
-		\includegraphics[width=.9\textwidth]{Pics/i-v-micro.png}
-		\label{fig:iv-micro}
-		\caption{View through the microscope}
+		\includegraphics[width=.9\textwidth]{Pics/circuit.png}
+		\label{fig:circuit}
+        \caption{Sketch}
 	\end{subfigure}
 	\label{fig:iv}
     \caption{I-V curve abnehm aperature and sicht durch das micro scope.\td{make a sketch}}
 \end{figure}
+\fi
 
+
+\begin{figure}
+    \centering
+    \begin{circuitikz} \draw
+        (0,0) to[european voltage source] (0,2)
+        to[ammeter] (2,2) 
+        to[generic,l=Au] (4,2) 
+        to[generic,l=Al] (6,2)
+        -- (6,2)
+        to[R,l=ZrO$_2$] (6,0)
+        -- (6,0)
+        to[generic,l=steel] (4,0)
+        to[generic,l=Ag] (2,0)
+        to[generic,l=Au] (0,0) 
+            ;
+    \end{circuitikz}
+    \label{fig:circuit}
+    \caption{Sketch of circuit}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Finding base process/Preliminary study}
-Initially, glass plates were doctor bladed manually with aquatic solution and calcinated via HP1. 
-Glass was used because of its availability and in order to be able to make IR \td{transmission} spectra.
-In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} layered 
-glass plates (both conductive) were used as substrate.
-Conducting substrates were also needed to produce \gls{sem} micrographs. 
-\td{should maybe put this into beginning of section \ref{sec:exp}?}
+%Initially, glass plates were doctor bladed manually with aquatic solution and calcinated 
+%via HP1. 
+%Glass was used because of its availability and in order to be able to make IR 
+%\td{transmission} spectra.
+%In order to measure the resistivity of the produced layer \gls{fto} and \gls{ito} layered 
+%glass plates (both conductive) were used as substrate.
+%Conducting substrates were also needed to produce \gls{sem} micrographs. 
+%\td{should maybe put this into beginning of section \ref{sec:exp}?}
 %otherwise the sample would charge and can't be pictured anymore. 
 %this means if the produced layer is thick and homogeneous enough, it's difficult to see in sem
 %Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
 %\todo{different additives, heating programs (NT1-NT5 and HP1), blade distances (distance between blade and substrate) and layer counts were tried}
-Solution composition, heating program, blade distance (distance between blade and substrate) and layer count were varied but no homogeneous layers resulted. 
+Composition of the aquatic solution, heating program, blade distance (distance between blade and substrate) and layer count were varied but no homogeneous layers resulted. 
 Thus, 
-%\td{As no homogeneous layers resulted from any aquatic recipe}
-a the buthanolic recipe was introduced, which gave more homogeneous films.
-With this new buthanolic recipe the limits of the optimization problem were explored in a preliminary study.
+the buthanolic recipe was introduced, which gave rise to more homogeneous films.
+With this new buthanolic recipe the limits of the optimization problem were explored in a 
+preliminary study using the Plackett-Burman \cite{Plackett1946} design implemented in the 
+\texttt{python3} library \texttt{pyDOE}.
 %For the preliminary study a DB machine and NT were used and the steel. 
 In the preliminary study only steel was used as substrate.
-The Plackett-Burman \cite{Plackett1946} design implemented in the python3 library \texttt{pyDOE} was used to
+%The Plackett-Burman \cite{Plackett1946} design implemented in the python3 library \texttt{pyDOE} was used to
 get an overview of reasonable boundaries.
 %Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
 %See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
@@ -539,11 +595,6 @@ Some additional hand picked experiments were introduced to further narrow the li
 the optimization down as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 
-\td{p48 started with erichson? 
-used double sided tape to hold in place, which ofcourse gave extra thickness.
-0-\SI{3.5}{\micro\meter} in \SI{0.5}{\micro\meter} steps blade height were tested and did 
-not substantially alter the results p 56
-}
 \td{
 double calcination (2x400C) was tried instead of pyrolization (4x200 than 400C),p49
 so higher concentration of zro2 leads to less stable solution
@@ -619,6 +670,14 @@ look at last pages of notebook
 \td{maybe the observable/sumofsquareddistanceoflogofconductance is not a good metric.
 I should have a look at the raw data. maybe try to verarbeiten different and then fit 
 with KRR or SVM, is phd a sigmoid function? }
+
+\td{for 1F c(Zr) = 44.6 mmol/L
+if n is number of samples, and p is number of input variables, then n >> p 
+In this case n\~50 and p\~6 which give n/p=8+1/3
+in EMMA documentation example n=55and p=1-2, n/p=55-22.5
+plot x vs G and hold all other vars const
+write script to do that}
+
 
 %%%%%%%%%%%%%%%%%%
 %%% EVALUATION %%%
