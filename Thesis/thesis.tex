@@ -125,8 +125,11 @@ A non-toxic material which is suitable for this application is \gls{zro}.
 An economic and scalable method is doctor blading via a \gls{sg} process. 
 \gls{sg} processes often produce porous layers. 
 In this work a dense, insulating and homogeneous layer is pursued. 
-ML can help to uncover complex non-linear relations, such as the influence of the production factors on the thickness and resistance of the resulting layer.
-The minisation of the conductance if performed with a particle swarm optimization algorithm.
+\Gls{ml} can help to uncover complex non-linear relations, such as the influence of the 
+production factors on the thickness and resistance of the resulting layer.
+The optimisation of the conductance if performed with a particle swarm optimization 
+algorithm. 
+The resulting optimum is compared with other optimisation methods.
 %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +138,8 @@ The aim of this work is to develop a non-conducting layer on steel based on  non
 This layer can then be used as insulator for CIGS modules on steel sheets.
 Doctor blading - or tape casting - is a widely used precision coating method to apply thin films on large area surfaces\cite{Berni2004}.
 %The method of doctor blading, which is in principle a sol-gel process, 
-This sol-gel process was chosen because of the availability to the industrial partner.
+This sol-gel process was chosen over spin coating because of the availability to the 
+industrial partner.
 In order to optimize the resulting layer the multitude of parameters was optimized with an particle swarm optimization ansatz. %machine learning 
 The conductivity (dependent variable), the number of layers and calcination time (both independent variables) should be minimized.
 %The conductivity should be as small as possible.
@@ -227,7 +231,7 @@ The \gls{water}-\gls{ipo} mixture was added to the other solution and stirred ov
 The exact volumes can be taken from table~\ref{tab:rec1}.
 Unfortunately this solution failed to produce any thing near homogeneous solution. 
 Thus, an alternative solution was found.
-\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).}
+%\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).}
 \begin{table}[h]
 	\centering
 	\caption{Compositions of different aquatic solutions}
@@ -546,7 +550,7 @@ allowed to hold the sample in place through underpressure and heat it to a certa
 temperature. The bounds of the process were then explored in a preliminary study using 
 the Plackett-Burman \cite{Plackett1946} design implemented in the \texttt{python3} 
 library \texttt{pyDOE}.
-Especially the doctor blading velocity.
+%Especially the doctor blading velocity.
 %}
 %It was tried to reduce the waiting time and the resulting \td{drying stains}
 %by using a heat gun. The drying was
@@ -556,22 +560,42 @@ Especially the doctor blading velocity.
 %were explored in a preliminary study using the Plackett-Burman \cite{Plackett1946} design 
 %implemented in the \texttt{python3} library \texttt{pyDOE}.
 %For the preliminary study a DB machine and NT were used and the steel. 
-In the preliminary study only steel was used as substrate.
+\ds{In the preliminary study only steel was used as substrate.}
 %The Plackett-Burman \cite{Plackett1946} design implemented in the python3 library \texttt{pyDOE} was used to
 %get an overview of reasonable boundaries.
 %Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
 %See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
-Some additional hand picked experiments were introduced to further narrow the limits of 
-the optimization down as every reduction in variables or levels meant a faster convergence.
+Some additional hand picked experiments were introduced to further narrow down the limits of 
+the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Shortly before the \gls{pso} the stabilisation agent was changed from \gls{acoh} to 
-\gls{ipo}.
-After a fitting recipe was found and the boundaries were fixed the process variables to 
+\gls{ipo} because much better soltion stability.
+After 
+%a fitting recipe was found and 
+the boundaries were fixed the process variables to 
 produce an insulating layer was examined. 
 %There were many variables which had to be taken into account. 
-\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, DB velocity and DB temperature as input variables.}
-The final boundaries were
+%\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, DB velocity and DB temperature as input variables.}
+See table \ref{tab:space} for the space spanned for the optimisation.
+\begin{table}[ht!]
+    \caption{}
+    \label{tab:space}
+    \begin{tabular}{cccccc}
+        \hline\hline
+        concentration   &layers &\gls{db} velocity  &\gls{db} temperature   &heating rate   &calcination temperature    \\
+        \hline
+        2   &4  &10 &40 &120    &300    \\
+        3   &6  &12 &50 &360    &400    \\
+        4   &8  &14 &60 &600    &500    \\
+        5   &10 &16 &70 &840    &       \\
+            &12 &18 &80 &1080   &       \\
+            &   &20 &   &       &       \\
+        \hline\hline
+    \end{tabular}
+\end{table}
+
+\ds{The final boundaries were
 conc 2 - 5 (1) ,
 layers 4 - 12 (2),
 \gls{db} velocity 10 - 20 (2),
@@ -579,14 +603,27 @@ layers 4 - 12 (2),
 heating rate 120 - 1080 (240),
 calcination temp 300 - 500 (100),
 .
+}
 
 
-%%%%%%%%%%%%%%%%%%
-%%% EVALUATION %%%https://zoom.us/j/99673324815?pwd=QTg5b2VjcUVxQ2dMSUJJTlBhaGxpZz09
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% EVALUATION %%%
 %%%%%%%%%%%%%%%%%%
 \section{Evaluation and Computational Details}
 \subsection{Evaluation of Samples}
 \label{sec:eval}
+\td{describe problem and solution found}
+How to describe one sample in one number? 
+some kind of average
+For every sample multiple \gls{iv} curves were measured. 
+Each sample should be \td{characterized} by ideally one number. 
+The average of each conductance would be \td{nahe liegend} but difficult to represent a 
+sample correctly since the possible values span accross \td{größenordnungen}.
+So the average of logarithms of values is the next obvious \td{attempt,idea,ansatz}.
+\todo{why didn't i just take this?}
+\td{inspired by euclidean norm/L2 distance from ideal case} 
+
 For every I-V curve (aluminium dot) the gradient $g$ at $V=0$ is calculated by taking 
 each $n=5$ points after and before the origin at least $d=2$ points distance (which boils
 down to the values from \SI{0.02}{\volt} to \SI{0.07}{\volt}) , averaging their V and I values 
