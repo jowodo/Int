@@ -44,7 +44,8 @@
 \newcommand{\h}[1]{\SI{#1}{\hour}}
 \newcommand{\mmps}[1]{\SI{#1}{\milli\meter\per\second}}
 
-\title{Functional oxide layers for electrical isolation and chemical passivation of steel substrates}
+%\title{Functional oxide layers for electrical isolation and chemical passivation of steel substrates}
+\title{Optimisation of Zirconium Oxide layers for electrical isolation and chemical passivation of steel substrate}
 \author{Johann Dorn}
 
 \begin{document}
@@ -174,8 +175,13 @@ Begründung für die eigene Vorgehensweise
 \label{sec:exp}
 %\subsection{finding a solution}
 %\subsection{finding process variables}
-In this section the used chemicals and substrates, experimental procedures and any used equipment are described. 
-\td{Also, the long, exhaustive path to the base solution is described}
+In this section the used chemicals and substrates, experimental procedures and any used 
+equipment are described. 
+%\td{Also, the long, exhaustive path to the base solution is described}
+The Experiments can be split into three sections: 
+In the first section the base recipe and the base process were sought. 
+In the pre-optimisation section the boundaries for the optimisation were investigated. 
+And during the third and final step the experiments for the optimisation were performed.
 \subsection{Substrate Preparation}
 Five different substrates were used throughout this work: 
 microscope glass slides (\cm{2.5}\x\cm{7.5})\ds{ from Sigma Aldrich},\ds{ thinner,} squared glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{ito} glass plates (\cm{2.5}\x\cm{2.5})\ds{ from Sigma Aldrich}, \gls{fto} glass plates (\cm{5}\x\cm{5})\ds{ from Sigma Aldrich} and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
@@ -323,8 +329,9 @@ Lower \gls{db} velocities resulted in inhomogeneous layers and thus wasn't alter
 manual \gls{db} process. 
 One and two layers of adhesive tape were used to alter the depth of the valley. 
 
-Most
-steel substrates (all pre-optimisation and optimisation samples) were doctor bladed with 
+%Most steel substrates (all pre-optimisation and optimisation samples) 
+All steel substrates 
+were doctor bladed with 
 an Erichsen Coatmaster 510 film applicator with a heatable plate.
 The rest was doctor bladed on a glass plate, fixed with double sided adhesive tape and 
 partially heated with a heat gun.
@@ -383,7 +390,7 @@ The heating plate could hold temperature for a certain amount of time, but heate
 fixed rate of circa \oc{10}/\minutes{}.
 %The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
 In order to achieve a lower overall heating rate several temperature ramps and plateaus 
-were alternated (see table~\ref{tab:labtech} and figure~\ref{fig:heat}).
+were alternated (see table~\ref{tab:labtech}. % and figure~\ref{fig:heat}).
 This procedure was called HP1.
 The HP1 procedure was optimized for the available hardware by a colleague working on the 
 project prior to the author.
@@ -429,14 +436,14 @@ NT5 additionally used a calcination temperature T$_{\textrm{Cal}}$ of \SI{500}{\
 NT2-NT6 had 2 variables (heating rate and calcination temperature) in contrast to 
 NT1 which had 4 (three different heating rates and calcination temperature). 
 All heating programs were held at the calcination temperature for one hour.
-In figure \ref{fig:heat} the different heating curves are depicted. 
+%In figure \ref{fig:heat} the different heating curves are depicted. 
 %
-\begin{figure}
-	\centering
-	\includegraphics[width=.7\textwidth]{../Data/Graphs/hp1.png}
-	\caption{Different heatings curves}
-	\label{fig:heat}
-\end{figure}
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=.7\textwidth]{../Data/Graphs/hp1.png}
+%	\caption{Different heatings curves}
+%	\label{fig:heat}
+%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -472,35 +479,9 @@ Between sputtering and \gls{iv} measurements
 direct contacts to the steel subtrate were created by removing the \gls{zro} layer with 
 sand paper on two opposing edges of a sample and then by applying silver paste.
 %\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
-See figure \ref{fig:circuit} for a sketch of the connectivity.
-\iffalse
-\begin{figure}
-	\centering
-	\begin{subfigure}{0.48\textwidth}
-		\centering
-		\includegraphics[width=.9\textwidth]{Pics/i-v.png}
-		\label{fig:iv-agilent}
-		\caption{peripherals}
-	\end{subfigure}
-%	\begin{subfigure}{0.48\textwidth}
-%		\centering
-%		\includegraphics[width=.9\textwidth]{Pics/i-v-micro.png}
-%%		\label{fig:iv-micro}
-%%		\caption{View through the microscope}
-%	\end{subfigure}
-	\begin{subfigure}{0.48\textwidth}https://issues.csb.univie.ac.at/issues
-		\centering
-		\includegraphics[width=.9\textwidth]{Pics/circuit.png}
-		\label{fig:circuit}
-        \caption{Sketch}
-	\end{subfigure}
-	\label{fig:iv}
-    \caption{I-V curve abnehm aperature and sicht durch das micro scope.\td{make a sketch}}
-\end{figure}
-\fi
+See figure~\ref{fig:circuit} for a sketch of the connectivity.
 
-
-\begin{figure}
+\begin{figure}[hbt]
     \centering
     \begin{circuitikz} \draw
         (0,0) to[european voltage source] (0,2)
@@ -515,13 +496,15 @@ See figure \ref{fig:circuit} for a sketch of the connectivity.
         to[generic,l=Au] (0,0) 
             ;
     \end{circuitikz}
-    \label{fig:circuit}
     \caption{Sketch of circuit, from the source clockwise: varibale voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.}
+    \label{fig:circuit}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREOPTIMISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Pro-optimisation/Finding base process/Preliminary study}
+%\subsection{Preparatory Experiments/series (Pro-optimisation/Finding base process/Preliminary study)}
+\subsection{Pre-optimisation}
 %Initially, glass plates were doctor bladed manually with aquatic solution and calcinated 
 %via HP1. 
 %Glass was used because of its availability and in order to be able to make IR 
@@ -605,13 +588,13 @@ calcination temp 300 - 500 (100),
 .
 }
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% EVALUATION %%%
-%%%%%%%%%%%%%%%%%%
-\section{Evaluation and Computational Details}
-\subsection{Evaluation of Samples}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EVALUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Computational Details}
+\subsection{Data Processing}
 \label{sec:eval}
 \td{describe problem and solution found}
 How to describe one sample in one number? 
@@ -693,7 +676,7 @@ The response variables for the entire population space is calculated.
 The current population - each of the particles independently - moves towards the optimum solution.
 The population for the next time step is outputted and the experiments are again executed, measured and evaluated.
 
-\subsection{EMMA Propagation}
+%\subsection{EMMA Propagation}
 \begin{table}[htb]
 	\centering
 	\begin{tabular}{ccccccc}

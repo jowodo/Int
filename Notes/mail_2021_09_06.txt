@@ -1,0 +1,9 @@
+hallo philipp, 
+
+ich hab nach meinem Sommerloch endlich das experimentelle Kapitel fertig geschrieben. 
+
+Meine Motivation war nicht gerade berauschend als ich gemerkt hab, dass ich meinen Input-Variable-Space viel zu groß aufgespannt habe und, dass die Messfehler um einiges größer sind als ich dachte. Ein paar gescheiterte Fit-Versuche der Daten haben meiner Motivation auch nicht geholfen. Im Großen und Ganzen hab ich das Ausmaß der Arbeit unterschätzt. Ich weiß also nicht ob ich in der Nachfrist dieses Semesters fertig werde. Ich plane aber 2021 noch die Arbeit fertig zu schreiben. 
+
+Zu dem pdf: bis jetzt ist nur Kapitel 4 (Experimental) in einem einigermaßen akzeptablen Zustand. Als nächstes steht Kapitel 5 (Computational Details) auf meiner Liste. Sobald ich Data Processing (5.1), und Sample Selection (5.2) fertig hab, nehme ich mir das fitten von den Daten vor. Bis her hatte ich leider nicht so gute Ergebnisse, aber ich hab noch ein Paar ideen. Bis jetzt hab ich probiert: linear regression, SVM (sklearn) und KRR (sklearn). Da muss ich mich aber wieder einlesen müssen. Als Input-Daten habe ich dafür die gleichen wie für die Particle Swarm Optimisation benutzt. Eine Idee ist, die Daten anders zu verarbeiten bevor ich sie fitte. Sobald ich dann eine Möglichkeit gefunden habe die Daten zu fitten, werde ich das im Kapitel 5 ergänzen und mit den Results Kapitel beginnen. 
+
+Ich wollte dir auch noch explizit dafür danken, dass du mich betreust obwohl es nicht direkt mit deiner Froschung was zu tun hat!
