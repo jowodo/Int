@@ -446,6 +446,7 @@ All heating programs were held at the calcination temperature for one hour.
 %\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHARACTERISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Characterisation}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
@@ -590,22 +591,23 @@ calcination temp 300 - 500 (100),
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% EVALUATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% COMPUTATIONAL DETAILS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Computational Details}
 \subsection{Data Processing}
 \label{sec:eval}
-\td{describe problem and solution found}
-How to describe one sample in one number? 
-some kind of average
+%\td{describe problem and solution found}
 For every sample multiple \gls{iv} curves were measured. 
-Each sample should be \td{characterized} by ideally one number. 
-The average of each conductance would be \td{nahe liegend} but difficult to represent a 
-sample correctly since the possible values span accross \td{größenordnungen}.
-So the average of logarithms of values is the next obvious \td{attempt,idea,ansatz}.
+The main difficulty faced in processing the data was to present the measurements obtain 
+from a sample in one representative number. 
+The average of each conductance would be obvious but difficult to represent a 
+sample correctly since the possible values span accross several magnitudes.
+So the average of logarithms of values is the next obvious ansatz.
 \todo{why didn't i just take this?}
 \td{inspired by euclidean norm/L2 distance from ideal case} 
+\td{wanted to put more weight on bad shunts}
+\td{plot avg, avg(log), avg(log-13)}
 
 For every I-V curve (aluminium dot) the gradient $g$ at $V=0$ is calculated by taking 
 each $n=5$ points after and before the origin at least $d=2$ points distance (which boils
