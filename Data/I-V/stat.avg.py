@@ -12,12 +12,16 @@ def get_conductance(filename):
     n_comments=40
     print(filename)
     for r in range(n_comments):
+#        print(r)
         try:
-            df=pd.read_csv(filename,"\t",header=r,names=("V","I","i","J","j"))
+            #df=pd.read_csv(filename,sep="\t",header=r,names=("V","I","i","J","j"))
+            #df=pd.read_csv(filename,sep="\t",header=0,names=("V","I","absI","J","jcm"))
+            df=pd.read_csv(filename,sep="\t",names=("V","I","absI","J","jcm"))
         except:
             pass
-            #print("could not read",filename)
+            print("could not read",filename)
         else:
+            print(df)
             i=0             #first 
             j=len(df)-1     #last
             #TODO find pos at which V=0
@@ -38,6 +42,7 @@ def get_conductance(filename):
                     iup=iup + float(df["I"][i])
                 dv= vup-vdown
                 di= iup-idown
+                print(dv,di)
                 i=i+1
                 j=j-1
             R = dv/di
@@ -83,17 +88,46 @@ def make_stat(G):
     avg=avg/n
     lavg=lavg/n
     return msd,holes,avg,lavg
+
+def get_last_iteration(filenames):
+    subset=[]
+    position_list=[]
+    count_list=[]
+    for filename in filenames: 
+        try:
+            position,count=filename.split("_0")
+        except:
+            continue
+        if (position in position_list):
+            #position_index = [i for i,pos in enumerate(position_list) if pos = position]
+            index = position_list.index(position)
+            if ( count_list[index] < count): 
+                subset[index] = filename
+                count_list[index] = count
+        else:
+            subset.append(filename)
+            position_list.append(position)
+            count_list.append(count)
+        
+#    return subset
+    return [subset[0]]
+
+
     
 
 #######################
 def main():
     sample_name,no = get_sample_name()
     files=get_files(sample_name)
+    files=get_last_iteration(files)
+#    print(files)
     Gs=[]
     for filename in files:
         G=get_conductance(filename)
+    #    print(G)
         Gs.append(G)
     msd,holes,avg,lavg=make_stat(Gs)
+    #print(msd,holes,avg,lavg)
     print(f"{sample_name:s}\t{no:s}\t{msd:.5f}\t{holes:.5f}\t{avg:.5f}\t{lavg:.5f}")
 
 if __name__ == "__main__":
