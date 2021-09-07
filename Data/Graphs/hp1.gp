@@ -1,5 +1,7 @@
-set term pngcairo
-set out "hp1.png"
+#set term pngcairo
+#set out "hp1.png"
+set term svg
+set out "hp1.svg"
 filename="hp1.csv"
 width=2
 set xlabel "Time [min]"
