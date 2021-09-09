@@ -84,7 +84,7 @@ def make_stat(G):
         lavg=lavg+lgg
     msd=msd/n
     holes=holes/n
-    avg=np.log10(avg/n)
+    #avg=np.log10(avg/n)
     avg=avg/n
     lavg=lavg/n
     return msd,holes,avg,lavg
@@ -128,7 +128,7 @@ def main():
         Gs.append(G)
     msd,holes,avg,lavg=make_stat(Gs)
     #print(msd,holes,avg,lavg)
-    print(f"{sample_name:s}\t{no:s}\t{msd:.5f}\t{holes:.5f}\t{avg:.5f}\t{lavg:.5f}")
+    print(f"{sample_name:s}\t{no:s}\t{msd:.5f}\t{holes:.5f}\t{avg:.5e}\t{lavg:.5f}")
 
 if __name__ == "__main__":
     main()
