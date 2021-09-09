@@ -10,7 +10,7 @@ def get_sample_name():
     return name,no
 def get_conductance(filename):
     n_comments=40
-    print(filename)
+#    print(filename)
     for r in range(n_comments):
 #        print(r)
         try:

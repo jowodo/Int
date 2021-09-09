@@ -33,7 +33,7 @@ Timing:		Integration Time:	medium
 Secondary Source (VAR2):	OFF
 
 
-   V1	   I1	Abs(I)	J (A\um²)	Abs(J)
+   V1	   I1	Abs(I)	J (A\umÂ²)	Abs(J)
 -5.000000E-1	-2.615120E-2	2.615120E-2	-6.659333E-4	6.659333E-4
 -4.900000E-1	-2.577990E-2	2.577990E-2	-6.564782E-4	6.564782E-4
 -4.800000E-1	-2.533690E-2	2.533690E-2	-6.451973E-4	6.451973E-4
