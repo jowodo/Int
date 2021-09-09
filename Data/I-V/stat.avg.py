@@ -14,14 +14,14 @@ def get_conductance(filename):
     for r in range(n_comments):
 #        print(r)
         try:
-            #df=pd.read_csv(filename,sep="\t",header=r,names=("V","I","i","J","j"))
+            df=pd.read_csv(filename,sep="\t",header=r,names=("V","I","i","J","j"))
             #df=pd.read_csv(filename,sep="\t",header=0,names=("V","I","absI","J","jcm"))
-            df=pd.read_csv(filename,sep="\t",names=("V","I","absI","J","jcm"))
+            #df=pd.read_csv(filename,sep="\t",names=("V","I","absI","J","jcm"))
         except:
             pass
-            print("could not read",filename)
+#            print("could not read",filename)
         else:
-            print(df)
+#            print(df)
             i=0             #first 
             j=len(df)-1     #last
             #TODO find pos at which V=0
@@ -42,9 +42,9 @@ def get_conductance(filename):
                     iup=iup + float(df["I"][i])
                 dv= vup-vdown
                 di= iup-idown
-                print(dv,di)
                 i=i+1
                 j=j-1
+#            print(dv,di)
             R = dv/di
             G = di/dv
             return np.absolute(G)
@@ -109,8 +109,8 @@ def get_last_iteration(filenames):
             position_list.append(position)
             count_list.append(count)
         
-#    return subset
-    return [subset[0]]
+    return subset
+#    return [subset[0]]
 
 
     
