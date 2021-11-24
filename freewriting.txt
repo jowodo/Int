@@ -1,0 +1,42 @@
+2021 October 23
+===============
+1. was ich schon habe und weiss, was ich mir noch ueberlegen muss..
+was isch schon habe ist, den experimentellen teil und das war es eignelicht schon, eigenlicht ich der auch noch nicht ganz fertig faellt mir gerade eine weil, ich ja noch die daen fitten muss, aber es bis jetzt noch nicht geschafft habe und das kommt ja auch noch in den experimentellen teil. 
+Aso AA o Aso AA o a
+Da muss ich mich also noch einlesen, damit ich etwas finde womit ich die daten fitten kann, aber ich hab dein gefuehl, dass ich die daten nicht fitten werden koennen. was natuerlich eher suboptimal ist. Aber ich werd mich auf jeden fall einlesen und die VO vom philip noch einmalk alle ganz genau durchgehen. 
+Was ich auch machen kann ist meine date so aufarbeiten, dass jemand der die daten zum ersten mal sieht, sie fitten kann. 
+Ich kann auch erwaehnen was meine erwartungen sind nach dem ich ja auch, bzw mein gehinrm neuronales lernen gemacht hat und abwaegen kann welche inputs zu eher guten outputs fuehren. 
+vielleicht muss ich auch den fehler mit einberechnen beim fitten. gibt es da gute verfahren? Wen koennte ich da fragen. Ich muss auf jeden fall meine Frage noch genau definieren. das w"are zum beispiel: Meine Fehler sind in ca dieser groessen ordnung und ich moechte diese Inputs mit diesen outputs korrelieren. Ich moechte vorhersagen treffen koennen. Ich koennte auch eine metric verwenden, wie gut eine vorhersage ist. 
+2. Heute werde ich ... 
+3. Das Interessante an meinem Thema ist...
+4. Ich schreibe am besten, wenn /ich schreibe nicht so gut, wenn...
+5. Wenn ich meine Arbeite einem 12-jaehrigen kind erklaeren muesste, ...
+
+feature selection
+-----------------
+input features: conc layers vDOC, TDOC, vCal, TCal
+influence of input features: TCal < vCal < TDOC,vDOC  <? conc,layers
+unter der annahme dass Tcal und vCal keinen einfluss haben, nur noch 4 input vars und ~30
+daten punkte. 2**4=16; 3**4=81... noch immer zu wenig proben... 
+
+conc    nconc   layr    nlayr   vDOC    nvDOC   TDOC    nTDOC   vCal    nvCal   TCal    nTCal
+2       8       4       10      10      10      40      9       2       9       300     16
+3       10      6       5       12      2       50      4       6       1       400     5
+4       5       8       3       14      5       60      8       10      7       500     9
+5       7       10      6       16      3       70      2       14      1
+                12      6       18      3       80      7       18      12
+                                20      7
+
+
+
+2021 November 09
+================
+mutlible lineare regression is machbar unter der voraussetzung, dass es das wahre model 
+gut abbildet. Sollte das der Fall sein, aber zu wenig datenpunkte da sein, dann koennten 
+man die annahme treffen, dass die cal temperatur nicht zu dem ausgangs produkt bei traegt 
+oder innerhalb der fehler dingesn ist. Was man ssagen kann, wenn es weder mit und ohne 
+cal temp funktioniert, ist dass entweder die fehler zu gross sind und die experimente 
+nicht reproduzierbar genug waren. oder, dass die zusammenhaenge nicht linear sind. 
+Das ganze wuerde glaub ich schon mal nicht funktionieren, wenn nur eine abhaengigi keit 
+von einer variable nicht linear ist...
+
