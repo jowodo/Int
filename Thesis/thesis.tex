@@ -165,7 +165,12 @@ Begründung für die eigene Vorgehensweise
 \url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
 \subsection{Particle Swarm Optimization}
 \subsection{Machine Learning}
+\subsubsection{History}
+\subsubsection{different kinds} 
+supervised vs unsupervised
+classification (discrete) vs regression
 \subsection{Princlipal Component Analysis}
+reinforcement learning could also have been a nice option
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%% EXPERIMENTAL %%%%%%%%%%%%%%%%%%
@@ -601,10 +606,11 @@ calcination temp 300 - 500 (100),
 For every sample multiple \gls{iv} curves were measured. 
 The main difficulty faced in processing the data was to present the measurements obtain 
 from a sample in one representative number. 
-The average of each conductance would be obvious but difficult to represent a 
-sample correctly since the possible values span accross several magnitudes.
-So the average of logarithms of values is the next obvious ansatz.
+The average of each conductance would be an obvious choice but difficult to represent a 
+sample correctly since the possible values of conductance span accross several magnitudes.
+So the average of logarithms of conductances is the next nearby ansatz.
 \todo{why didn't i just take this?}
+\td{L2 norm because it might be easier to compare to other methods. }
 \td{inspired by euclidean norm/L2 distance from ideal case} 
 \td{wanted to put more weight on bad shunts}
 \td{plot avg, avg(log), avg(log-13)}
