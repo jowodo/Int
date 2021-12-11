@@ -40,3 +40,41 @@ nicht reproduzierbar genug waren. oder, dass die zusammenhaenge nicht linear sin
 Das ganze wuerde glaub ich schon mal nicht funktionieren, wenn nur eine abhaengigi keit 
 von einer variable nicht linear ist...
 
+
+2021 November 26
+================
+- Very important is the FEATURE SELECTION, ie how a sample/exeriment will be discribed digitally 
+- CLASSIFIER DESIGN: will a linear model do ? and if not what kind of non-linear model will? 
+  Also what type of optimization criterion will be chosen? 
+- SYSTEM EVALUTAION STAGE: asses performance of designed classifiere, what is the classification error rate 
+[see pattern recognition Section 1.2: FEATURES, FEATURE VECTORS, AND CLASSIFIERS]
+
+
+2021 November 27
+================
+FEATURE SELECTION:
+------------------
+Feature selection: cite patern recognition chapter 5: if there is a limited number of 
+patterns N to learn from, then it is advantageous to reduce the number of free [classifier] 
+parameters p , which means to reduce the number of input variables? the ratio of N/p > 10? 
+adding more input vars? can even be disadvantageuous because it surely adds computational 
+complexety, but the input vars? might not be independent? might not carry orthogonal info
+PREPROCESSING: Outlier removal
+Outlier removal was done at best during the PSO process, before i
+PREPROCESSING: normalisation
+
+Chapters to read from "UNDERSTANDING MACHINE LEARNING from theory to algorithms"
+Chapter 1 Introduction
+Chapter 5 The Bias-Complexity Tradeoff
+Chapter 9 Linear Predictors
+Chapter 11 Model Selection and Validation
+Chapter 12 Convex Learning Problems 
+Chapter 14 Stochastic Gradient Descent 
+Chapter 15 Support Vector Machines
+Chapter 16 Kernel Methods 
+Chapter 20 Neural Networks 
+Chapter 23 Dimensionality Reduction
+Chapter 25 Feature Selection and Generation 
+
+
+
