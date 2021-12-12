@@ -77,4 +77,18 @@ Chapter 23 Dimensionality Reduction
 Chapter 25 Feature Selection and Generation 
 
 
+2021 Dezember 11
+Was ich schon habe und weiss eund was ich mir noch ueberlegen muss: 
+Ich hab den experimentellen teil schon
+Es fehlt nocht alles also, theorie, ergebnisse, diskussion, einleitung und abstract 
+Heute werde ich, Theo auf die Email antworten und ein bisschen Theorie schreiben, vielleicht zu machine learning ? 
+Das interessante an meinem thema ist, dass ich mit maschine lerning in beruehrung komme und es wirkich anwendne kann 
+Insbesondere
+eigentlich besteht meine arbeit aus zwei feldern, der Material chemische und das machine learning wobei man sagen kann
+dass der MC teil recht gut verlaufen ist und der ML teil nicht sehr gut verlaufen/geplant worden ist. 
+Ich schreibe am besten in der fruhe glaube ich. und nicht so gut am Abend 
+Wenn ich mein Thema einem 12 jahreigen kind erklaeren muesste, dann wuerde es ca so gehen. 
+Metall leitet den Strom gut und wir wollen, aber dass das Metal nicht gut leitet, darum muessen wir so wie um ein kabel etwas 
+darfau geben, sodass es nicht mehr leitet. Ich hab aber nicht versucht plastik sonder eine keramik, also so etwas wie 
+das material aus dem teller sind. Dazu habe ich eine duennfluessige paste angeruehrt diese auf das metall geschmiert und dann trocknen lassen 
 
