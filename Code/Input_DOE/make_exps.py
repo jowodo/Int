@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 import pyDOE as p
 import get_exps as get
 import numpy as np
