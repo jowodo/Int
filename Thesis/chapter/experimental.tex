@@ -1,9 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%% EXPERIMENTAL %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\label{sec:exp}
-%\subsection{finding a solution}
-%\subsection{finding process variables}
 In this section the used chemicals and substrates, experimental procedures and any used 
 equipment are described. 
 %\td{Also, the long, exhaustive path to the base solution is described}
@@ -32,7 +29,6 @@ After the last cleaning step, the samples were blown dry with dry \gls{n2} gas a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Solutions}
-%Two main recipes were used and their compositions were varied. 
 All recipes for solutions can be divided into two categories:
 the first recipe - adopted from Anwar et. al. \cite{Anwar2017} - was based on \gls{zrpro} in \gls{acac} and \gls{water}.
 The second recipe - adopted from Hu et. al. \cite{Hu2016} - was based on \gls{zrpro} in \gls{buoh}.
@@ -124,7 +120,7 @@ the heat treatment between layers (\SI{200}{\celsius} \gls{vs} \SI{200}{\celsius
 
 \begin{table}[h]
 	\centering
-	\caption{}
+	\caption{Composition of different buthanolic solutions}
 	\label{tab:rec2}
 	\begin{tabular}{rlllll}
 		\hline
@@ -217,7 +213,6 @@ A LabTech EH45C heating plate and a Naberterm LB410 muffle furnace were used to 
 the doctor bladed samples. 
 The heating plate could hold temperature for a certain amount of time, but heated with a 
 fixed rate of circa \oc{10}/\minutes{}.
-%The heating plate heated with a steady rate of \td{\oc{5}/\minutes{}}.
 In order to achieve a lower overall heating rate several temperature ramps and plateaus 
 were alternated (see table~\ref{tab:labtech}). % and figure~\ref{fig:heat}).
 This procedure was called HP1.
@@ -226,8 +221,8 @@ project prior to the author.
 
 \begin{table}[h]
 	\centering
-	%\caption{Time the temperature was held constant at certain temperatures on the heating plate}
     \caption{Heating programs}
+	\label{tab:heating}
     \subcaption{Heating program HP1 used with the Labtech EH45C heating plate}
 	\label{tab:labtech}
 	\begin{tabular}{rl ll ll ll ll ll ll }%ll ll ll ll ll ll ll}
@@ -289,26 +284,21 @@ Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter} - \SI{5
 (\SI{500}{\nano\meter} - \SI{1.2}{\micro\meter}). For transmittance the light
 entered the sample from the side with the layer. The UV and VIS+IR spectra were merged 
 in Opus software. % included in the spectrometer. 
-%\td{IR around page 45
-%REFLECTIVITY? can also be used for determination of thickness p47
-%}
 \Gls{xrd} spectra were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
 All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 
 The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
 Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of 
 \SI{10}{\milli\volt}.
-%
 Prior to \gls{iv} measurements the samples were sputtered with aluminium 
 through a mask to produce a multitude of equidistant contacts with a Leybold 
 UNIVEX450C Sputter System.
-%https://en.wikipedia.org/wiki/Sputter_deposition
 Directional current sputtering was used with Argon as inert gas at \SI{0.005}{\milli\bar} 
 and with a power of \SI{40}{\watt} for \SI{700}{\second}.
 Between sputtering and \gls{iv} measurements 
-direct contacts to the steel subtrate were created by removing the \gls{zro} layer with 
+direct contacts to the steel substrate were created by removing a patch the \gls{zro}
+layer with 
 sand paper on two opposing edges of a sample and then by applying silver paste.
-%\td{scratched until short circuit was produced (aka the steel foil was reached under the \gls{zro} layer).  }
 See figure~\ref{fig:circuit} for a sketch of the connectivity.
 
 \begin{figure}[hbt]
@@ -335,7 +325,6 @@ See figure~\ref{fig:circuit} for a sketch of the connectivity.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREOPTIMISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{Preparatory Experiments/series (Pro-optimisation/Finding base process/Preliminary study)}
 \subsection{Pre-optimisation}
 %Initially, glass plates were doctor bladed manually with aquatic solution and calcinated 
 %via HP1. 
@@ -356,27 +345,32 @@ the buthanolic recipe was introduced, which gave rise to more homogeneous films.
 After the blade moved over the substrate the remaining liquid needed about a minute 
 to evaporate. 
 %\td{
-The then current procedure produced clear and continuous films, but was plagued from 
+The then current procedure resulted in clear and continuous films, but was plagued from 
 inhomogeneities due to drying stains. 
 The drying stains could be circumvented by using a heat gun, but the results were not 
 reproducible. 
 The glass plate of the film applicator was therefore exchanged with a metal plate which 
-allowed to hold the sample in place through underpressure and heat it to a certain 
+allowed to hold the sample in place through underpressure and simultaneously heat it to a certain 
 temperature. The bounds of the process variables were then explored in a preliminary study 
 using the Plackett-Burman \cite{Plackett1946} design implemented in the \texttt{python3} 
 library \texttt{pyDOE}. With 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
-relative concentration $conc$, number of layers $layers$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively. 
-After testing the first samples, the \gls{db} velocities altered to 1 and 5 (see table \ref{tab:pre-opt1}).
-\begin{table}[htb]
+relative concentration of Zr $c_{Zr}$, number of layers $n_{l}$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively. 
+After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see table \ref{tab:pre-opt1}).
+\begin{table}[hbt]
 	\centering
+	\caption{Pre-optimization experiments}
+	\label{tab:pre-opt}
 	\begin{subtable}{0.5\linewidth}
+		\centering
+		\subcaption{Placket-Burman style experiments}
+		\label{tab:pre-opt1}
 		\begin{tabular}{cccccc}
 			\hline
 			\hline
 	%		&80-150\oc{} [\oc{}/\minutes{}]	&150-200\oc{} [\oc{}/\minutes{}]	&200\oc{}-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] &t$_{\textrm{Cal}}$ [\minutes{}]	\\
-	conc	&layers	&$v_{\textrm{DB}}$	&$T_{\textrm{DB}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
+			$c_{Zr}$	&$n_l$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
 			\hline
 	1	&10	&5	&20	&120	&400	\\
 	1	&4	&0.1	&20	&120	&500	\\
@@ -388,31 +382,30 @@ After testing the first samples, the \gls{db} velocities altered to 1 and 5 (see
 	5	&10	&5	&80	&480	&500	\\
 			\hline\hline
 		\end{tabular}
-		\subcaption{Placket-Burman style experiments}
-		\label{tab:pre-opt1}
 	\end{subtable}%
 	\begin{subtable}{0.5\linewidth}
+		\centering
+		\subcaption{Hand picked experiments}
+		\label{tab:pre-opt2}
 		\begin{tabular}{cccccc}
 	%conc	&layers	&vDOC	&TDOC	&vCal	&Tcal		\\
 			\hline\hline
-	conc	&layers	&$v_{\textrm{DB}}$	&$T_{\textrm{DB}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
+			$c_{Zr}$	&$n_l$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+	%conc	&layers	&$v_{\textrm{DB}}$	&$T_{\textrm{DB}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
 			\hline
 	2	&8	&0.5	&40	&360	&470	\\
 	2	&6	&2	&40	&360	&430	\\
 	1	&4	&12	&70	&120	&500	\\
 	1	&9	&18	&80	&240	&400	\\
-	4	&6	&14	&60	&240	&500	\\
-	4	&6	&14	&60	&240	&500	\\
-	4	&6	&14	&60	&240	&500	\\
-\\
+	4*	&6	&14	&60	&240	&500	\\
+	4*	&6	&14	&60	&240	&500	\\
+	4*	&6	&14	&60	&240	&500	\\
 			\hline
 			\hline
+			\\
+%			\multicolumn{6}{c}{*different stabilisation reagent compositions}\\
 		\end{tabular}
-		\subcaption{Hand picked experiments}
-		\label{tab:pre-opt2}
 	\end{subtable}
-	\caption{}
-	\label{tab:pre-opt}
 \end{table}
 
 %$T_{DB}$[\oc{}]
@@ -439,7 +432,10 @@ the optimization as every reduction in variables or levels meant a faster conver
 %ooooh 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Shortly before the \gls{pso} the stabilisation agent was changed from \gls{acoh} to 
-\gls{ipo} because of much better soltion stability.
+\gls{ipo} because of much better solution stability.
+The up to this moment best process was chosen to be tested with \ml{1} \gls{acoh}, \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} and \ml{1} \gls{ipo}.
+%\td{As the sample showed the best all ex were proceeded with ipo as stabilatin agent. }
+The sample produced with \gls{ipo} as stabilization agent showed comparable passivation results and better stability. Therefore \gls{ipo} was used  as stabilisation in further experiments.
 After 
 %a fitting recipe was found and 
 the boundaries were fixed the process variables to 
@@ -448,11 +444,13 @@ produce an insulating layer was examined.
 %\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, DB velocity and DB temperature as input variables.}
 See table \ref{tab:space} for the space spanned for the optimisation.
 \begin{table}[ht!]
-    \caption{}
+	\centering
+	\caption{Final values used in the \gls{pso}.}
     \label{tab:space}
     \begin{tabular}{cccccc}
         \hline\hline
-        concentration   &layers &\gls{db} velocity  &\gls{db} temperature   &heating rate   &calcination temperature    \\
+		$c_{Zr}$	&$n_l$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+%        concentration   &layers &\gls{db} velocity  &\gls{db} temperature   &heating rate   &calcination temperature    \\
         \hline
         2   &4  &10 &40 &120    &300    \\
         3   &6  &12 &50 &360    &400    \\
