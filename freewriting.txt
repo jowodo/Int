@@ -1,16 +1,16 @@
 2021 October 23
 ===============
 1. was ich schon habe und weiss, was ich mir noch ueberlegen muss..
+2. Heute werde ich ... 
+3. Das Interessante an meinem Thema ist...
+4. Ich schreibe am besten, wenn /ich schreibe nicht so gut, wenn...
+5. Wenn ich meine Arbeite einem 12-jaehrigen kind erklaeren muesste, ...
 was isch schon habe ist, den experimentellen teil und das war es eignelicht schon, eigenlicht ich der auch noch nicht ganz fertig faellt mir gerade eine weil, ich ja noch die daen fitten muss, aber es bis jetzt noch nicht geschafft habe und das kommt ja auch noch in den experimentellen teil. 
 Aso AA o Aso AA o a
 Da muss ich mich also noch einlesen, damit ich etwas finde womit ich die daten fitten kann, aber ich hab dein gefuehl, dass ich die daten nicht fitten werden koennen. was natuerlich eher suboptimal ist. Aber ich werd mich auf jeden fall einlesen und die VO vom philip noch einmalk alle ganz genau durchgehen. 
 Was ich auch machen kann ist meine date so aufarbeiten, dass jemand der die daten zum ersten mal sieht, sie fitten kann. 
 Ich kann auch erwaehnen was meine erwartungen sind nach dem ich ja auch, bzw mein gehinrm neuronales lernen gemacht hat und abwaegen kann welche inputs zu eher guten outputs fuehren. 
 vielleicht muss ich auch den fehler mit einberechnen beim fitten. gibt es da gute verfahren? Wen koennte ich da fragen. Ich muss auf jeden fall meine Frage noch genau definieren. das w"are zum beispiel: Meine Fehler sind in ca dieser groessen ordnung und ich moechte diese Inputs mit diesen outputs korrelieren. Ich moechte vorhersagen treffen koennen. Ich koennte auch eine metric verwenden, wie gut eine vorhersage ist. 
-2. Heute werde ich ... 
-3. Das Interessante an meinem Thema ist...
-4. Ich schreibe am besten, wenn /ich schreibe nicht so gut, wenn...
-5. Wenn ich meine Arbeite einem 12-jaehrigen kind erklaeren muesste, ...
 
 feature selection
 -----------------
@@ -92,3 +92,25 @@ Metall leitet den Strom gut und wir wollen, aber dass das Metal nicht gut leitet
 darfau geben, sodass es nicht mehr leitet. Ich hab aber nicht versucht plastik sonder eine keramik, also so etwas wie 
 das material aus dem teller sind. Dazu habe ich eine duennfluessige paste angeruehrt diese auf das metall geschmiert und dann trocknen lassen 
 
+If the result is that the parameter space was too large and the fitting is problematic, then this is still a result.  Propose what would have been the correct approach, with solid arguments based on the theory.  Still, you have a lot of experiment results that need to be reported, such as the resistance as a function of the different parameters.  Take a look at the presentation attached with some of your results.
+To proceed, this is my suggestion:
+2) Write the theory on the prediction model and the theory related to the material
+1) Write a detailed report on the experiments and characterization, including graphs such as the ones in the attached file.  Try to draw conclusions about the influence of certain parameters.  For example, for me it is clear that with the increase of the sintering temperature the film becomes more textured, but that leads to a deterioration of the resistance.  Also, the texturing increases with the film thickness.  Describe the effects of the other process parameters on the resistance.
+3)  Fit your data with the models and describe where the problems are.
+4) Propose remedies and adjusted approaches to address the problems.
+In any case, you have enough material to write the thesis, even if retrospectively you would have done some things different.  In 90% of the cases it is like that.  
+So, when you have your data plotted and you have a draft on the experimental results, please send it to me for feedback.
+We can have a TelCo as well when you have time,
+
+2022 Jänner 08
+===============
+1. was ich schon habe und weiss, was ich mir noch ueberlegen muss..
+2. Heute werde ich ... 
+3. Das Interessante an meinem Thema ist...
+4. Ich schreibe am besten, wenn /ich schreibe nicht so gut, wenn...
+5. Wenn ich meine Arbeite einem 12-jaehrigen kind erklaeren muesste, ...
+1> ich hab den experimentellen teil, jetzt sollte ich noch die Theorie vom material und vom predictivie model niederschreiben. womit soll ich beginnen? Ich mach mal das Materiel 
+2> Heute werde ich ein bisschen über das material schreiben und dann lesen und im ideal fall wieders chreiben 
+3> Das interesaante an meinem Thema ist, dass PV hoch actuell sind 
+4> ich schreibe am besten, wenn ich in einer umgebung bin wo ich wenig abgelenkt werden kann 
+5> Wenn ich meine arbeit einem 12 jahreichgen kind erklaraen muesste: Kabel werden durch plastic isoliert damit man keinen stromschlag bekommt, aber nach einiger Zeit wird das Brüchig. Also Nimmt man etwas anderes nämlich keramik, das woraus die teller sind, dazu mischt man eine Paste zusammen und lässt sie bei hoher temperatur trocknen. Die frage die sich stellt ist, was geb ich und wivieil wovon geb ich in die Paste rein. Ich hab versucht diese zusammensetzung der paste so zu ändern, dass die resultierende keramik möglichst wenig strom durch laesst. ... balbalbabla 
