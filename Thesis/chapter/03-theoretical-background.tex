@@ -5,7 +5,7 @@ ueber den MC prozess berichten, also DB, i-v curven, sputtering, sem, ir, xrd
 ueber den it ml stuff und statistisch, also ML algemein, pso im speziellen 
 perfekt fuer intro einfach mal erwaehnen was wo in diesem capitel zu finden sein wird. 
 Books PV, analytic otto? 
-\subsection{Photovoltaic and CSGI}
+\subsection{Photovoltaic and CIGS}
 \iffalse
 The grundlage for all pvs is the photovoltaik effect which was entdeckt by Albert Einstein adn for which he got the nobel price. 
 The Prinziple is easy: When the energy (E = hv) of the light is \td{large,strong,big,high}er than the binding energy of an electron the electron is ejected with the remaining energy as kinetic energy 
@@ -33,29 +33,28 @@ Even though this time period is not exact and highly dependent on external facto
 %die ersten solarzellen wurden in den 1950s in Nieschen anwendungen wie der Raumfahrt mit einem wirkungsgrad unter 10 prozent 
 %durch die oelkriese 1973 stieg das interesse an pv und alternativen energiequellen und 1977 das erste salor...? 
 The photoelectric effect was first described in 1839 by french scientist Alexandre Edmond Becquerel\cite{becquerel1839memoire}, the father of Henri Becquerel. 
-With the discovery of 
-photo conductivity of selenium
+With the discovery of photo conductivity of selenium
 %the correlation between the {change of the }resistance and the irradiating light 
-by British engineer Willouhgby Smith and his assistant Joseph May another relevant piece of the photovoltaic jigsaw was discovered. 
-In 1876 William Adam and Richard Day showed that 
+by British engineer Willouhgby Smith\cite{Smith1873Selenium} 
+%and his assistant Joseph May 
+another relevant piece of the photovoltaic jigsaw was discovered. 
+In 1876 William Adams and Richard Day\cite{Adams1876Selenium} showed that 
 the energy of light can be directly converted into electrical energy by a bar of selenium with attached platinum electrodes.
 And finally, in 1905 Einstein described the physical background of the photoelectric effect with his light quantum theory\cite{einstein1905erzeugung}.
 In the 1950s the first solar cells were used in niche applications such as the space flight with efficiencies under 10 percent. 
 Eventually, the interest in photovoltaic and alternative energy sources in general rose fuelled by the oil crisis in 1973 
 and the development of photovoltaic for the consumer market was boosted. \\
 
-K5\\
+\subsection{CIGS}
 %Neben der g"ngigen kristallienen Siliziem Zelle gibt es auch Duennnschichtzellen wegen dem hohen Absorptionskoeffizenten und der geringen Eindringtiefe von veispielsweise amorphem Silizium oder auch CIS (siehe table p 84) wird nur wenig Material benötigt und flexible Zellen konnen hergestellt werden 
-Besides the common crystalline silicon cells 
-there are thin film cells 
-which have a higher absorption coefficient that classical crystalline silicon cell. 
+Amorphous silicon and copper indium selenide (CIS) \td{(see next chapter)} have much higher absorption coefficients of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}) and can therefore be much thinner and use less material. 
+Another vorteil of thin film cells is that they can be flexible. 
+%which because of their high absorption coefficient of light %and therefore shallow penetration depth of light%need less material and can be used to produce flexible cells \\%of amorph silicon or CIS (see table p84) 
+Besides the common crystalline silicon cells there are thin film cells which have a higher absorption coefficient that classical crystalline silicon cell. 
 Therefore, the penetration depth of light is more shallow and less material is needed to produce a cell which can be flexible.
-%which because of their high absorption coefficient of light 
-%and therefore shallow penetration depth of light
-%need less material and can be used to produce flexible cells \\
-%of amorph silicon or CIS (see table p84) 
 
-\begin{table}
+\begin{table}[htb]
+	\small
     \begin{tabular}{cccccc}
         \hline
         \hline
@@ -66,10 +65,12 @@ Therefore, the penetration depth of light is more shallow and less material is n
         c-Si&   indirect&   1.12&   1100&    3.5/cm&    290\\
         a-Si&   direct&      1.7&    600&    40,000/cm&  0.25\\
         CdTe&   direct&      1.45&    600&    37,000/cm&  0.3\\
-		\td{a-Si}&   direct&      1.42&    600&    40,000/cm&  0.2\\
+		GaAs&   direct&      1.42&    600&    40,000/cm&  0.2\\
         \hline
         \hline
     \end{tabular}
+	\caption{\td{citeauthor(mertens)}}
+	\label{tab:cigs:alpha}
 \end{table}
 
 CIGS\\ 
@@ -82,7 +83,7 @@ Durch den hohen Unterschied der Bandabstaedne von CuInSe2 und CuGaSe2 kamnn durc
 Because of the large difference of band gaps of CuInSe2 and CuGaSe2 the band gap can be configured by mixing ratio of inidum and gallium (see table \ref{tab:cigs}).
 
 {Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glas substrat} 
-\begin{table}
+\begin{table}[htb]
     \begin{tabular}{cccc}
         \hline\hline
         Materialkombination&    Name&   Bandabstand&    Kürzel\\
