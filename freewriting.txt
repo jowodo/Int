@@ -119,4 +119,5 @@ We can have a TelCo as well when you have time,
 2022 April 08 
 ===========
 von neuman elefant https://wwwusers.ts.infn.it/~milotti/Didattica/StatisticaAvanzata/Mayer&al_2010.pdf
-
+https://medium.com/@LightOnIO/beyond-overfitting-and-beyond-silicon-the-double-descent-curve-18b6d9810e1b
+https://www.nature.com/articles/427297a
