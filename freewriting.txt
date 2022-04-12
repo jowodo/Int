@@ -117,7 +117,23 @@ We can have a TelCo as well when you have time,
 
 
 2022 April 08 
-===========
+==============
 von neuman elefant https://wwwusers.ts.infn.it/~milotti/Didattica/StatisticaAvanzata/Mayer&al_2010.pdf
 https://medium.com/@LightOnIO/beyond-overfitting-and-beyond-silicon-the-double-descent-curve-18b6d9810e1b
 https://www.nature.com/articles/427297a
+
+2022 April 12 
+==============
+12-13h: cigs paper lesen 
+13-14h: IR 
+14-15h: ZrO2
+15-16h: sputtering
+
+
+############3
+reading list: 
+https://www.sciencedirect.com/science/article/abs/pii/S0040609001015164
+https://ieeexplore.ieee.org/abstract/document/6656789
+https://www.sciencedirect.com/science/article/abs/pii/S0038092X04000854
+https://www.sciencedirect.com/science/article/abs/pii/S007964251930101X
+
