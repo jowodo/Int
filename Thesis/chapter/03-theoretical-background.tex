@@ -5,10 +5,14 @@ ueber den MC prozess berichten, also DB, i-v curven, sputtering, sem, ir, xrd
 ueber den it ml stuff und statistisch, also ML algemein, pso im speziellen 
 perfekt fuer intro einfach mal erwaehnen was wo in diesem capitel zu finden sein wird. 
 Books PV, analytic otto? 
+\\
+This chapter aims to shine light on the evolution of PV and 
+give some introduction on methods used during experimental and \td{analytical} phase of this work. 
 \subsection{Photovoltaics}
 \iffalse
 The grundlage for all pvs is the photovoltaik effect which was entdeckt by Albert Einstein adn for which he got the nobel price. 
-The Prinziple is easy: When the energy (E = hv) of the light is \td{large,strong,big,high}er than the binding energy of an electron the electron is ejected with the remaining energy as kinetic energy 
+The Prinziple is easy: When the energy (E = hv) of the light is \td{large,strong,high}er 
+than the binding energy of an electron the electron is ejected with the remaining energy as kinetic energy 
 \begin{math}
 	E_{kin}=hv - Eb
 \end{math}
@@ -21,10 +25,12 @@ duennschicht pv, haben eine effeftivitaet von 7-16\% vs 15-22\% \cite{Mertens201
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Problems of current energy supply}
-The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
+The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} 
+and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
 will be exhausted within the next 100 years. 
 %This time period must of course taken with a grain of salt as it can happen that even though the resource are being exhausted they can rise from one year to another as new reserves are being discovered and explored. 
-Even though this time period is not exact and highly dependent on external factors, this number is rather small and brings us in zugzwang
+Even though this time period is not exact and highly dependent on detection methods, 
+this number is rather small and brings us in zugzwang. 
 
 \subsubsection{History of Photovoltaics}
 %aenderung von widestand vonhalbleiter selen von bit ing willouhgby smith und ass joseph may fuer pv relevanten innere photoeket
@@ -39,27 +45,34 @@ by British engineer Willouhgby Smith\cite{Smith1873Selenium}
 %and his assistant Joseph May 
 another relevant piece of the photovoltaic jigsaw was discovered. 
 In 1876 William Adams and Richard Day\cite{Adams1876Selenium} showed that 
-the energy of light can be directly converted into electrical energy by a bar of selenium with attached platinum electrodes.
-And finally, in 1905 Einstein described the physical background of the photoelectric effect with his light quantum theory\cite{einstein1905erzeugung}.
-In the 1950s the first solar cells were used in niche applications such as the space flight with efficiencies under 10 percent. 
-Eventually, the interest in photovoltaic and alternative energy sources in general rose fuelled by the oil crisis in 1973 
+the energy of light can be directly converted into electrical energy by a bar of 
+selenium with attached platinum electrodes.
+And finally, in 1905 Einstein described the physical background of the photoelectric 
+effect with his light quantum theory\cite{einstein1905erzeugung}.
+In the 1950s the first solar cells (with efficiencies under 10 percent) were used in niche applications such as space flight. 
+Eventually, the interest in photovoltaic and other alternative energy sources 
+rose - fuelled by the oil crisis in 1973 - 
 and the development of photovoltaic for the consumer market was boosted. \\
 
 \subsection{CIGS}
-%Neben der g"ngigen kristallienen Siliziem Zelle gibt es auch Duennnschichtzellen wegen dem hohen Absorptionskoeffizenten und der geringen Eindringtiefe von veispielsweise amorphem Silizium oder auch CIS (siehe table p 84) wird nur wenig Material benötigt und flexible Zellen konnen hergestellt werden 
-Amorphous silicon and copper indium selenide (CIS) \td{(see next chapter)} have much higher absorption coefficients of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}) and can therefore be much thinner and use less material. 
-Another advantage of thin film cells is that they can be used in flexible applications. 
+%%%
+%Materials from the chalcopyrite group (tetragonal crystal system) (eg CuInGaSe(CIGS)) can be used as absorber in such thin film cells.
+CIGS ($\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$) is of the chalcopyrite group (tetragonal crystal system) and can be used as thin film PV. 
+Just like CdTe, GaAs and amorphoous silicon CIGS have much higher absorption coeffiecients 
+(lower penetration depth) of visible light than crystlline silicon (see table \ref{tab:cigs:alpha}). 
+These thin film PVs not only use less material, but also can be used in flexible applications. 
+%%%
+%Amorphous silicon and copper indium selenide (CIS) \td{(see next chapter)} have much higher absorption coefficients of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}) and can therefore be much thinner and use less material. 
+%Another advantage of thin film cells is that they can be used in flexible applications. 
 %which because of their high absorption coefficient of light %and therefore shallow penetration depth of light%need less material and can be used to produce flexible cells \\%of amorph silicon or CIS (see table p84) 
 
-%Besides the common crystalline silicon cells there are thin film cells which have a higher absorption coefficient that classical crystalline silicon cell. 
-%Therefore, the penetration depth of light is more shallow and less material is needed to produce a cell which can be flexible.
 
 \begin{table}[htb]
 	\small
     \begin{tabular}{cccccc}
         \hline
         \hline
-        Material&   Art&    Bandluecke [eV]&    Wavelenght [nm]&    Absorptionskoeffizent alpha&    Eindringtiefe [um]\\
+        Material&   Type&    Band Gap [eV]&    Wavelenght [nm]&    sbsortption coef. alpha&    penetration depth [um]\\
         \hline
         c-Si&   indirect&   1.12&   600&    4000/cm&    2.5\\
         c-Si&   indirect&   1.12&   1000&    64/cm&    150\\
@@ -77,21 +90,24 @@ Another advantage of thin film cells is that they can be used in flexible applic
 CIGS\\ 
 %Materialien aus der Grupper der Chalkopyrite wisen allesamt eine XXX Gitterstruktur auf genauso wie Namengeber der Gruppe, das Chalkopyrit (CuFeS2). 
 %Meist wird ein Material mit der Summenformel $CuIn_XGA_{(1-x)}Se_2$ verwendet. 
-Materials from the chalcopyrite group (tetragonal crystal system) (eg CuInGaSe(CIGS)) can be used as absorber in such thin film cells.
-Mostly a Material with the chemical formula  $\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$ (CIGS).
-The awesome thing about CIGS is that the band gap can be varied by between 1eV and 1.7eV by varying the inidum gallium ratio accordingly. 
-Durch den hohen Unterschied der Bandabstaedne von CuInSe2 und CuGaSe2 kamnn durch entsprechende Mischverhaeltnisse von In und Ga der Bandabstand eingestellt werden (Tablep 142) Abbildung Bild 5.22 p143) beschreiben und bild für Modul 
-Because of the large difference of band gaps of CuInSe2 and CuGaSe2 the band gap can be configured by mixing ratio of inidum and gallium (see table \ref{tab:cigs}).
+%Materials from the chalcopyrite group (tetragonal crystal system) (eg CuInGaSe(CIGS)) can be used as absorber in such thin film cells.
+%Mostly a Material with the chemical formula  $\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$ (CIGS).
+%The awesome thing about CIGS is that the band gap can be varied by between 1eV and 1.7eV by varying the inidum gallium ratio accordingly. 
+The band gap of CIGS can be varied by between 1eV and 1.7eV by varying the inidum gallium 
+ratio, accordingly.
+This is a result of the large difference of band gaps of CuInSe2 and CuGaSe2 (see table \ref{tab:cigs}). 
+%Durch den hohen Unterschied der Bandabstaedne von CuInSe2 und CuGaSe2 kamnn durch entsprechende Mischverhaeltnisse von In und Ga der Bandabstand eingestellt werden (Tablep 142) Abbildung Bild 5.22 p143) beschreiben und bild für Modul 
+%Because of the large difference of band gaps of CuInSe2 and CuGaSe2 the band gap can be configured by mixing ratio of inidum and gallium (see table \ref{tab:cigs}).
 
 {Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glas substrat} 
 \begin{table}[htb]
     \begin{tabular}{cccc}
         \hline\hline
-        Materialkombination&    Name&   Bandabstand&    Kürzel\\
+        Empirical Formula&    Name&   Band Gap&    Abbreviation\\
         \hline
-        CuInSe2&        copper indium di selenide&  1&  CISe\\
+        CuInSe2&       copper indium di selenide&  1&  CISe\\
         CuInS2&        copper indium di sulfide&  1.5&  CIS\\
-        CuGaSe2&        copper gallium di selenide&  1.7&  CIGSe\\
+        CuGaSe2&       copper gallium di selenide&  1.7&  CIGSe\\
         CuGaS2&        copper gallium di sulfide&  1.55&  CIGS\\
         \hline\hline
     \end{tabular}
@@ -105,10 +121,21 @@ Allerdings wird ein Isolater zwischen Stahsubstrat und CIGS Zelle benötigt
 
 
 \subsection{Zirconium oxide}
+Zirconium oxide \td{(Zr02)} is ceramic with a bandgap of 5-7 eV and dielectric constant of 15-22\cite{Anwar2017}. 
+This makes it attractive as an insulator for semiconductor and \td{PV} industry. 
+It is monoclinic below 1170 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C. \td{[R. Stevens, 1986. Introduction to Zirconia. Magnesium Elektron Publication No 113]}
+%Ralph Nielsen "Zirconium and Zirconium Compounds" in Ullmann's Encyclopedia of Industrial Chemistry, 2005, Wiley-VCH, Weinheim. doi:10.1002/14356007.a28_543
+\td{COMMENT: solution age was not accounted for}
+what is important properites of zro2? 
 \subsection{Sputtering}
 %https://en.wikipedia.org/wiki/Sputter_deposition
+what is the principle behind sputtering
+what is sputtering, how does it work, what different kinds of sputtering is there, 
+what is is used for? 
+what was it used for in this work? 
 \subsection{SEM}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
+what is sputtering, how does it work, what different kinds of sputtering is there, what is is used for? 
 \subsection{Infrared absorption}
 \td{IR around page 45;
 REFLECTIVITY? can also be used for determination of thickness p47
@@ -124,3 +151,4 @@ supervised vs unsupervised
 classification (discrete) vs regression
 \subsection{Princlipal Component Analysis}
 reinforcement learning could also have been a nice option
+\subsection{Linear Regression}
