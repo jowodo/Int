@@ -1,16 +1,32 @@
 %\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
+\ds{what is it? What is it used for? How does it work? What different kinds are there? }
+\ds{
 \todo{Structure: Free writing} 
 Ueber das Material, also PV und speziell CIGS (copper indium gallium sulfide) 
 ueber den MC prozess berichten, also DB, i-v curven, sputtering, sem, ir, xrd
 ueber den it ml stuff und statistisch, also ML algemein, pso im speziellen 
 perfekt fuer intro einfach mal erwaehnen was wo in diesem capitel zu finden sein wird. 
 Books PV, analytic otto? 
-\\
-This chapter aims to shine light on the evolution of PV and 
-give some introduction on methods used during experimental and \td{analytical} phase of this work. 
+}
+This chapter can be broken down into three section. 
+The first chapter tries to shine light on the evolution of PV and give some background on \gls{cigs}.
+The second chapter reads about material-scientific methods which were used during the practical part of this work. 
+The last and third part focuses on the information technological, algorithmic and analytics methods used to optimize and predict material properties. 
+%This chapter aims to shine light on the evolution of PV and on CIGSand 
+%give some introduction on methods used during experimental and \td{analytical} phase of this work. 
 \subsection{Photovoltaics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Problems of current energy supply}
+The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} 
+and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
+will be exhausted within the next 100 years. 
+%This time period must of course taken with a grain of salt as it can happen that even though the resource are being exhausted they can rise from one year to another as new reserves are being discovered and explored. 
+Even though this time period is not exact and highly dependent on detection methods, 
+this number is rather small and brings us in zugzwang to develop sustainable energy sources. 
+One viable options is \gls{pv}.
+
 \iffalse
-The grundlage for all pvs is the photovoltaik effect which was entdeckt by Albert Einstein adn for which he got the nobel price. 
+The basis for all pvs is the photovoltaik effect which was entdeckt by Albert Einstein adn for which he got the Nobel price. 
 The Prinziple is easy: When the energy (E = hv) of the light is \td{large,strong,high}er 
 than the binding energy of an electron the electron is ejected with the remaining energy as kinetic energy 
 \begin{math}
@@ -23,15 +39,6 @@ The next generation of PVs.
 CIGS has in contrast to silicon based PV a direct band gap\td{source and what does that mean?}
 duennschicht pv, haben eine effeftivitaet von 7-16\% vs 15-22\% \cite{Mertens2018}
 \fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Problems of current energy supply}
-The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} 
-and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
-will be exhausted within the next 100 years. 
-%This time period must of course taken with a grain of salt as it can happen that even though the resource are being exhausted they can rise from one year to another as new reserves are being discovered and explored. 
-Even though this time period is not exact and highly dependent on detection methods, 
-this number is rather small and brings us in zugzwang. 
-
 \subsubsection{History of Photovoltaics}
 %aenderung von widestand vonhalbleiter selen von bit ing willouhgby smith und ass joseph may fuer pv relevanten innere photoeket
 %1876 william adam und richard Day zeigten mit Selenstab mit platin elektroden dass festkörper Lichenergie direkt in elekt energie umwalndeln 
@@ -39,11 +46,9 @@ this number is rather small and brings us in zugzwang.
 %die ersten solarzellen wurden in den 1950s in Nieschen anwendungen wie der Raumfahrt mit einem wirkungsgrad unter 10 prozent 
 %durch die oelkriese 1973 stieg das interesse an pv und alternativen energiequellen und 1977 das erste salor...? 
 The photoelectric effect was first described in 1839 by french scientist Alexandre Edmond Becquerel\cite{becquerel1839memoire}, the father of Henri Becquerel. 
-With the discovery of photo conductivity of selenium
-%the correlation between the {change of the }resistance and the irradiating light 
-by British engineer Willouhgby Smith\cite{Smith1873Selenium} 
-%and his assistant Joseph May 
-another relevant piece of the photovoltaic jigsaw was discovered. 
+Another relevant piece of the photovoltaic jigsaw was discovered 
+with the discovery of photo conductivity of selenium
+by British engineer Willouhgby Smith\cite{Smith1873Selenium}.
 In 1876 William Adams and Richard Day\cite{Adams1876Selenium} showed that 
 the energy of light can be directly converted into electrical energy by a bar of 
 selenium with attached platinum electrodes.
@@ -54,13 +59,17 @@ Eventually, the interest in photovoltaic and other alternative energy sources
 rose - fuelled by the oil crisis in 1973 - 
 and the development of photovoltaic for the consumer market was boosted. \\
 
-\subsection{CIGS}
+\subsubsection{Crystalline Silicon Photovoltaics}
+The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still have the biggest market share in the \gls{pv} segment including polycrystalline and monocrystalline silicon.
+\td{what is it? What is it used for? How does it work? What different kinds are there? }
+
+\subsubsection{CIGS}
 %%%
 %Materials from the chalcopyrite group (tetragonal crystal system) (eg CuInGaSe(CIGS)) can be used as absorber in such thin film cells.
-CIGS ($\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$) is of the chalcopyrite group (tetragonal crystal system) and can be used as thin film PV. 
-Just like CdTe, GaAs and amorphoous silicon CIGS have much higher absorption coeffiecients 
-(lower penetration depth) of visible light than crystlline silicon (see table \ref{tab:cigs:alpha}). 
-These thin film PVs not only use less material, but also can be used in flexible applications. 
+CIGS ($\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$) is of the chalcopyrite group (tetragonal crystal system) and can be used as thin film \gls{pv}. 
+Just like CdTe, GaAs and amorphous silicon CIGS have much higher absorption coefficients 
+(lower penetration depth) of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}). 
+These thin film \gls{pv}s not only use less material, but also can be used in flexible applications. 
 %%%
 %Amorphous silicon and copper indium selenide (CIS) \td{(see next chapter)} have much higher absorption coefficients of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}) and can therefore be much thinner and use less material. 
 %Another advantage of thin film cells is that they can be used in flexible applications. 
@@ -73,7 +82,7 @@ These thin film PVs not only use less material, but also can be used in flexible
     \begin{tabular}{cccccc}
         \hline
         \hline
-        Material&   Type&    Band Gap [eV]&    Wavelenght [nm]&    sbsortption coef. alpha&    penetration depth [um]\\
+		Material&   Type&    Band Gap [\ev{}]&    Wavelength [\nm{}]&    Absorption coef. $\alpha$    &Penetration Depth [\um{}]\\
         \hline
         c-Si&   indirect&   1.12&   600&    4000/cm&    2.5\\
         c-Si&   indirect&   1.12&   1000&    64/cm&    150\\
@@ -88,47 +97,50 @@ These thin film PVs not only use less material, but also can be used in flexible
 	\label{tab:cigs:alpha}
 \end{table}
 
-%CIGS\\ 
-%Materialien aus der Grupper der Chalkopyrite wisen allesamt eine XXX Gitterstruktur auf genauso wie Namengeber der Gruppe, das Chalkopyrit (CuFeS2). 
-%Meist wird ein Material mit der Summenformel $CuIn_XGA_{(1-x)}Se_2$ verwendet. 
-%Materials from the chalcopyrite group (tetragonal crystal system) (eg CuInGaSe(CIGS)) can be used as absorber in such thin film cells.
-%Mostly a Material with the chemical formula  $\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$ (CIGS).
-%The awesome thing about CIGS is that the band gap can be varied by between 1eV and 1.7eV by varying the inidum gallium ratio accordingly. 
-The band gap of CIGS can be varied by between 1eV and 1.7eV by varying the inidum gallium ratio.
+Amazingly, the band gap of CIGS can be varied by between 1eV and 1.7eV by varying the indium gallium ratio.
 This is a result of the large difference of band gaps of CuInSe2 and CuGaSe2 (see table \ref{tab:cigs}). 
 %Durch den hohen Unterschied der Bandabstaedne von CuInSe2 und CuGaSe2 kamnn durch entsprechende Mischverhaeltnisse von In und Ga der Bandabstand eingestellt werden (Tablep 142) Abbildung Bild 5.22 p143) beschreiben und bild für Modul 
 %Because of the large difference of band gaps of CuInSe2 and CuGaSe2 the band gap can be configured by mixing ratio of inidum and gallium (see table \ref{tab:cigs}).
 
-{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glas substrat, borrow book} 
-The standard substrate is glass \td{why?}. A flexible substrate is needed for a flexible module. 
-Plastics have a very low metling points and metals are conducting, but can be coated with a non conducting material such as \td{ZrO2}.
+\td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book} 
+The standard substrate is glass 
+because of it's high thermal stability, resistance and hardness. 
+A flexible substrate is needed for a flexible module, though. 
+Plastics have a very low melting points and metals are conducting, but can be coated with a non conducting material such as \gls{zro}.
 \begin{table}[htb]
     \center
     \begin{tabular}{cccc}
         \hline\hline
         Empirical Formula&    Name&   Band Gap&    Abbreviation\\
         \hline
-        CuInSe2&       copper indium di selenide&  1&  CISe\\
-        CuInS2&        copper indium di sulfide&  1.5&  CIS\\
-        CuGaSe2&       copper gallium di selenide&  1.7&  CIGSe\\
-        CuGaS2&        copper gallium di sulfide&  1.55&  CIGS\\
+		\ch{CuInSe2}&       copper indium di selenide&  1&  CISe\\
+		\ch{CuInS2}&        copper indium di sulfide&  1.5&  CIS\\
+		\ch{CuGaSe2}&       copper gallium di selenide&  1.7&  CIGSe\\
+		\ch{CuGaS2}&        copper gallium di sulfide&  1.55&  CIGS\\
         \hline\hline
     \end{tabular}
 	\caption{band gaps of different chalcopyrites}
 	\label{tab:cigs}
 \end{table}
 
-
-%Um ein Modul flexibel zu machen kann statt Glas Stahl als stbstrat verwendet werden. 
-%Allerdings wird ein Isolater zwischen Stahsubstrat und CIGS Zelle benötigt
-
-
-\subsection{Zirconium oxide}
-Zirconium oxide \td{(Zr02)} is ceramic with a bandgap of 5-7 eV and dielectric constant of 15-22\cite{Anwar2017}. 
-This makes it attractive as an insulator for semiconductor and \td{PV} industry. 
-It is monoclinic below 1170 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C. \td{[R. Stevens, 1986. Introduction to Zirconia. Magnesium Elektron Publication No 113]}
+\subsubsection{Zirconium oxide}
+Zirconium oxide \gls{zro} is a ceramic with a band gap of 5-7 eV and dielectric constant of 15-22 at room temperature\cite{Anwar2017}. 
+This makes it attractive as an insulator for semiconductor and \gls{pv} industry. 
+It is monoclinic below 1050 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C\cite{Nielsen2005}.
+The cubic phase can be stabilzed down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}) which avoids mechanical failing due to shrinkage due to phase transition\cite{Nielsen2005}.
+%\td{[R. Stevens, 1986. Introduction to Zirconia. Magnesium Elektron Publication No 113]}
 %Ralph Nielsen "Zirconium and Zirconium Compounds" in Ullmann's Encyclopedia of Industrial Chemistry, 2005, Wiley-VCH, Weinheim. doi:10.1002/14356007.a28_543
-what is important properites of zro2? 
+It is not poisonous. \td{cite?}
+It is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and alkalis\cite{Nielsen2005}.
+See ref \cite{Nielsen2005} for 2.3 Hydrous Zirconium Oxide 2.3 and 2.20 Zirconium Alkoxides.
+
+\td{what is important properites of zro2? }
+\td{what is it? What is it used for? How does it work? What different kinds are there? }
+
+\subsubsection{Sol-Gel}
+\td{what is it? What is it used for? How does it work? What different kinds are there? }
+One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
+
 
 \subsection{Sputtering}
 % https://en.wikipedia.org/wiki/Sputter_deposition
@@ -136,6 +148,13 @@ what is important properites of zro2?
 what is sputtering, how does it work, what different kinds of sputtering is there, 
 what is is used for? 
 what was it used for in this work? 
+}
+\td{
+- phenomon of high energy particle bombardement know off particles from a source
+- options to create high energy particles: electron gun, thermal evaporation or cathode? 
+- vorteile sind: Swann p 67(2)
+- need low pressure bcs of MFP but plasma needs gas to sustain
+- source is target and target is substrate
 }
 %Sputtering is a physical deposition method. 
 Sputtering describes the process of particles being sputtered from a surface after 
@@ -174,11 +193,42 @@ By ausrüsten the target with a mask, arbitrary musters can be obtained (e.g. co
 How are the electrons erzeugt? 
 \td{With a magnetron (a micro wave erzeuging high vacuum bauteil) a plasma is sustained. 
 }
-Find source
+Find source\\\\
+
+SPUTTERING FREEWRITING: 
+what is sputtering? \\
+sputtering is the processes of highly energetic ions (only ions?) hitting a surface and atoms or molecules being expelled. 
+This is a physical vapor deposition technique (PVD). PVD can be unterteils in thermal and highly energetic activated. Sputtering is part of HEA, which hast the convenience, that some substrates don't withstand high temperatures. 
+what can it be used for?\\
+Sputtering moved from being a curious experiment to having multi anwendungen in science (forschung) and engineering, becuase the sputtered materials can be deposited on  substrate. 
+anwendungen reichen from, thin films for PV, electrical circuits, storage media such as CDs and DVDs etc. 
+Vorteile of sputtering are also a good adherent to the substrate and good step coverage and what else? 
+different styles\\
+The most successful durchgesetzte kind of sputtering devices are magnetron sputtering devices, which wiederum can be unterteilt in DC (directional current) RF (radio frequency) sputtering and reactive sputtering. 
+how does it work? \\
+A high voltage is applied to the source (make skizze), which acts as a cathode. 
+The cathode, then, emits electrons which collide with XXX gas (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
+The argon may get ionized by electron and the argon cation will be accelerated to the cathode. If the cation has enough energy it will bump off a target atom or molecule. 
+This happens by a cascade of momentum transfers, which can reach the surface again. 
+If the suface particle gets momentum pointing from the surface and the remaining kinetic energy is higher then the binding energy, the particle is sputtered. 
+The pressure should be small, such that the sputtered particle has a moeglichst long mean free path (MFP), but on the other hand there is a minimum pressure to keep the plasma going. 
+Usual pressures are around (1 mPa?).
+\td{mention the substrate parallel to the target}
+
+A magnetron can be placed behind the cathode (target) in order to trap ejected ions close to the electron source. 
+This prevents high energy electrons from reaching the target and undoing the deposited layer and increasing the probability of an electron colliding with an argon atom and ionizing it 
 
 \subsection{SEM}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
-what is sputtering, how does it work, what different kinds of sputtering is there, what is is used for? 
+what is sputtering, 
+how does it work, 
+what different kinds of sputtering is there, 
+what is is used for? 
+\cite{McMullan1995}
+\cite{Vernon2000}
+\cite{Kaliva2020}
+
+
 \subsection{Infrared absorption}
 \td{IR around page 45;
 REFLECTIVITY? can also be used for determination of thickness p47

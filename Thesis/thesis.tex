@@ -12,6 +12,7 @@
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{siunitx}
 \usepackage{circuitikz}
+\usepackage{chemformula}
 \hypersetup{
     colorlinks = true,
     colorlinks = false,
@@ -23,6 +24,7 @@
 }
 \usepackage{acronym}
 \usepackage[acronym,nomain]{glossaries}
+
 \makeglossaries
 \newcommand{\todo}[1]{\textbf{\textcolor{red}{#1}}}
 %\newcommand{\td}[1]{\textbf{\textcolor{red}{#1}}}
@@ -35,15 +37,17 @@
 %SI UNITS
 \newcommand{\cm}[1]{\SI{#1}{\centi\meter}}
 \newcommand{\mm}[1]{\SI{#1}{\milli\meter}}
+\newcommand{\um}[1]{\SI{#1}{\micro\meter}}
+\newcommand{\nm}[1]{\SI{#1}{\nano\meter}}
 \newcommand{\mg}[1]{\SI{#1}{\milli\gram}}
 \newcommand{\ml}[1]{\SI{#1}{\milli\liter}}
-\newcommand{\um}[1]{\SI{#1}{\micro\meter}}
 \newcommand{\ul}[1]{\SI{#1}{\micro\liter}}
 \newcommand{\minutes}[1]{\SI{#1}{\minute}}
-\newcommand{\oc}[1]{\SI{#1}{\degreeCelsius}}
 \newcommand{\s}[1]{\SI{#1}{\second}}
 \newcommand{\h}[1]{\SI{#1}{\hour}}
+\newcommand{\oc}[1]{\SI{#1}{\degreeCelsius}}
 \newcommand{\mmps}[1]{\SI{#1}{\milli\meter\per\second}}
+\newcommand{\ev}[1]{\SI{#1}{\electronvolt}}
 
 %\title{Functional oxide layers for electrical isolation and chemical passivation of steel substrates}
 %\title{Optimisation of Zirconium Oxide layers for electrical isolation and chemical passivation of steel substrate}
