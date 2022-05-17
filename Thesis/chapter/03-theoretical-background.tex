@@ -14,8 +14,7 @@ This chapter can be broken down into three section.
 The first chapter tries to shine light on the evolution of PV and give some background on \gls{cigs}.
 The second chapter reads about material-scientific methods which were used during the practical part of this work. 
 The last and third part focuses on the information technological, algorithmic and analytics methods used to optimize and predict material properties. 
-%This chapter aims to shine light on the evolution of PV and on CIGSand 
-%give some introduction on methods used during experimental and \td{analytical} phase of this work. 
+
 \subsection{Photovoltaics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Problems of current energy supply}
@@ -125,6 +124,9 @@ Plastics have a very low melting points and metals are conducting, but can be co
 	\label{tab:cigs}
 \end{table}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Materials and Their Analysis}
 \subsubsection{Zirconium oxide}
 Zirconium oxide \gls{zro} is a ceramic with a band gap of 5-7 eV and dielectric constant of 15-22 at room temperature\cite{Anwar2017}. 
 This makes it attractive as an insulator for semiconductor and \gls{pv} industry. 
@@ -147,92 +149,34 @@ Hydrous Zirconium Oxide (\ch{Zr(OH)8 * 16 H2O}) gel can be produced by neutral h
 \td{what is it? What is it used for? How does it work? What different kinds are there? }
 One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
 
-
-\subsection{Sputtering}
-% https://en.wikipedia.org/wiki/Sputter_deposition
-\iffalse
-\td{what is the principle behind sputtering
-what is sputtering, how does it work, what different kinds of sputtering is there, 
-what is is used for? 
-what was it used for in this work? 
-}
-\td{
-- phenomon of high energy particle bombardement know off particles from a source
-- options to create high energy particles: electron gun, thermal evaporation or cathode? 
-- vorteile sind: Swann p 67(2)
-- need low pressure bcs of MFP but plasma needs gas to sustain
-- source is target and target is substrate
-}
-%Sputtering is a physical deposition method. 
-Sputtering describes the process of particles being sputtered from a surface after 
-impact of highly energetic particles.
-These high energy particles start cascades of momentum transfers (see figure \td{cp sigmund 1969}). 
-If a path of such a momentum transfer cascade reaches back to the surface and the kinetic energy of a surface 
-particle exceeds the binding energy, it is ejected (or sputtered).
-
-%Sputtering describes the process when highly energetic particles collide with a surface 
-%and through a cascade of momentum transfers surface particles are depleted and sputter from the surface.
-This process occurs naturally in outer space (through alpha particles, electrons etc.) 
-and is used in science and technology for 
-sputter cleaning, thin film deposition, analysis or etching. 
-The phenomenon was discovered and identified as an atomic collision phenomenon in the 
-middle of the 20th century and is now a field of research with its own niche subfields 
-(e.g. sputtering of exotic materials (such as condensed gases, planetary
-atmospheres, lunar dust grains, proteins and viruses), high density cascades and 
-linear cascades, which could be called classical sputtering)
-%sputtering of insulators and biomolecular material)
-\cite{Sigmund1987}.
-%
-In this work it was used to deposit thin gold contacts through a mask. 
-A directional current sputtering machine was used. 
-\td{describe the machine}
-An argon plasma in a strong electrical field (some kV) provides the highly energetic particles. 
-Argon ions are accelerated through the field to the source (a metal wafer), which acts as cathode, and start cascades. 
-In order to maximise the yield (sputtering speed) a magnet is used to trap the plasma close to source. 
-Plasma sputtering with a strong magnet to 
-1.5h 
-\\
-\td{A high voltage is angelegt at the source (a metal wafer). 
-Electrons with a high kinetic energy bump into the source and herausschießen metal atoms, 
-which will deposit on a target. 
-By ausrüsten the target with a mask, arbitrary musters can be obtained (e.g. contact arrays).
-}
-How are the electrons erzeugt? 
-\td{With a magnetron (a micro wave erzeuging high vacuum bauteil) a plasma is sustained. 
-}
-Find source\\\\
-\fi
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sputtering}
 %SPUTTERING FREEWRITING: 
 %what is sputtering? \\
 Sputtering is the processes of highly energetic ions hitting a surface and atoms or molecules being expelled. 
 This is called a physical vapor deposition (PVD) technique. 
-PVD can be divided into activation by thermal energy and activation by energetic particle bombardment. %\td{high-energy particles}.
-%thermal and highly energetic particles activated. 
+PVD can be divided into activation by thermal energy and activation by energetic particle bombardment. 
 Sputtering is of the latter, which 
 is advantageous if substrates can't withstand high temperatures.
-%has the convenience, that some substrates can't withstand high temperatures. 
 %\td{what can it be used for?}\\
 Sputtering evolved from being a curious experiment in the middle of the 20th century to having various applications in research and engineering.
 Use cases vary from thin films depositions for \gls{pv}, for electrical circuits or for storage media such as CDs and DVDs 
 over sputter cleaning and etching to analysis.
 Advantages of 
 sputtered thin films include good adhesion to the substrate and good step coverage. 
-%sputtering are also a good adherent to the substrate and good step coverage and what else? 
 
 %\td{how does it work?}\\
 A high voltage is applied to 
 two parallel electrode with low pressure gas in between. 
 The target acts as cathode and the substrate (holder) as anode (see \td{fig}).
 %the target which acts as a cathode with the substrate as anode in a parallel geometry (see \td{fig}).
-%(the substrate represents the anode). 
 The cathode, then, emits electrons which collide with a gas particle (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
 Some gas particles may get ionized by the collision and the gas cation is accelerated to the cathode. 
 If the cation has enough energy it will bump off a target atom or molecule from the surface. 
 This happens by a cascade of momentum transfers, which can reach the surface again (see fig \td{cp sigmund69}). 
 If the surface particle gets momentum pointing away from the bulk and the remaining kinetic energy is higher then the binding energy, the particle is sputtered. 
-The pressure should be small, such that the sputtered particle has a long mean free path (MFP), but on the other hand there is a minimum pressure to keep the plasma going. 
-Usual pressures are around 1 mPa (1 mbar) or lower\cite{Swann}.
+The pressure should be small, such that the sputtered particle has a long \gls{mfp}, but on the other hand there is a minimum pressure to keep the plasma going. 
+Usual pressures are around 1 Pa ($10^{-2}$ mbar) or lower\cite{Swann1988}.
 
 A magnetron can be placed behind the cathode (target) in order to trap ejected electrons close to the source. 
 This prevents high energy electrons from reaching the target and undoing the deposited layer and this also increases the probability of an electron colliding with an argon atom and ionizing it.
@@ -244,15 +188,23 @@ The stoichiometry of the resulting layer can be regulated by gas ratios, but too
 The limitation of only being able to use conducting materials as targets can be circumvented by using a radio frequency electrical field. 
 This prevents a charge building up on the target. \td{why is a charge?}
 Although RF sputtering is more versatile, DC sputtering is more common because of it's simpler system and economical reasons.
-%Through this method only conducting materials can be sputtered, be
 \td{sputtered particles are neutral and not influenced by the electrical field}
-%\td{different styles}\\
-%The most successful/common/established type of sputtering devices are magnetron sputtering machines, which 
-%Sputtering devices can be separated in DC (directional current) and RF (radio frequency) sputtering and reactive sputtering. 
-%During RF sputtering, the voltage is wobbling which prevents charge accumulation on the target and thus also non conduction targets can be sputtered. 
 
-\subsection{SEM}
+\subsubsection{Scanning electron Microscopy}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
+\Gls{sem} is a microscopical technique which allows visualisation of surfaces with features in the nano meter regime. 
+While optical microscopes use visible light and optical lenses the \gls{sem} uses accelerated electron beams and electrostatic and electromagnetic lenses.
+%Instead of light, it uses electrons with shorter wavelengths. zum abbilden
+This allows the generation of much more detailed images due to the shorter wavelengths of electrons compared to light\cite{Kaliva2020}.
+The electron beam produces X-rays, elastically backscattered (primary) electrons, inelastic (secondary) electrons and Auger electrons. 
+Secondary electrons carry information to conclude morphology and topology of the sample while X-rays can be used to identify the elements. 
+Electrons are \td{created} by either \gls{feg}, where are strong electrical field rips electrons from the bulk and thermionic guns where the filament (tungsten W or \ch{LaB6} (brigther and longer lasting but more expensive)) is heated until electrons are emitted. 
+Electrons are then accelerated by a voltage of 2 to 40 kV and bundled into narrow beams\cite{Vernon2000} by lenses.
+\td{A high \gls{mfp} is needed for electrons to travel from the source to the sample and to the detector. Thus, a very low pressure is in the inside.}
+It was used as a preliminary way of checking the surface condition. 
+%This allows greater detail. 
+why? 
+\td{what? how? why?}
 what is sputtering, 
 how does it work, 
 what different kinds of sputtering is there, 
@@ -262,19 +214,25 @@ what is is used for?
 \cite{Kaliva2020}
 
 
-\subsection{Infrared absorption}
+\subsubsection{Infrared absorption}
 \td{IR around page 45;
 REFLECTIVITY? can also be used for determination of thickness p47
 }
-\subsection{X-Ray Diffraction}
-\url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
+\subsubsection{X-Ray Diffraction}
+\gls{xrd} is used to study the crystalline strucutre of materlias since X-rays wavelengths (between 0.2 and \nm{10}) are comparable to the interatomic spacing of crystalline solids.  \cite{Kaliva2020}.
+Each crystalline material has discreet atomc structure, which upon irradiation with X-rays causes constructive and destructive interference and generates unique diffraction patterns. 
+XRD \td{spectra} of crystalline materials feature distinct peaks, whereas amorphous materials exhibit a broad cruve with a maximum extending over several degrees (2$\theta$).
+
 \url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
-\subsection{Particle Swarm Optimization}
+
+
 \subsection{Machine Learning}
-\subsubsection{History}
-\subsubsection{different kinds} 
+\paragraph{History}
+some text to test
+\paragraph{different kinds} 
 supervised vs unsupervised
 classification (discrete) vs regression
-\subsection{Princlipal Component Analysis}
+\paragraph{Particle Swarm Optimization}
+\paragraph{Princlipal Component Analysis}
 reinforcement learning could also have been a nice option
-\subsection{Linear Regression}
+\paragraph{Linear Regression}
