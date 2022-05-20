@@ -1,15 +1,6 @@
-%\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 \td{https://en.wikipedia.org/wiki/Thesis}
 \ds{what is it? What is it used for? How does it work? What different kinds are there? }
 \ds{what? how? why?}
-\ds{
-\todo{Structure: Free writing} 
-Ueber das Material, also PV und speziell CIGS (copper indium gallium sulfide) 
-ueber den MC prozess berichten, also DB, i-v curven, sputtering, sem, ir, xrd
-ueber den it ml stuff und statistisch, also ML algemein, pso im speziellen 
-perfekt fuer intro einfach mal erwaehnen was wo in diesem capitel zu finden sein wird. 
-Books PV, analytic otto? 
-}
 This chapter can be broken down into three section. 
 The first chapter tries to shine light on the evolution of PV and give some background on \gls{cigs}.
 The second chapter reads about material-scientific methods which were used during the practical part of this work. 
@@ -17,36 +8,19 @@ The last and third part focuses on the information technological, algorithmic an
 
 \subsection{Photovoltaics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Problems of current energy supply}
 The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} 
 and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
 will be exhausted within the next 100 years. 
-%This time period must of course taken with a grain of salt as it can happen that even though the resource are being exhausted they can rise from one year to another as new reserves are being discovered and explored. 
 Even though this time period is not exact and highly dependent on detection methods, 
 this number is rather small and brings us in zugzwang to develop sustainable energy sources. 
 One viable options is \gls{pv}.
 
-\iffalse
-The basis for all pvs is the photovoltaik effect which was entdeckt by Albert Einstein adn for which he got the Nobel price. 
-The Prinziple is easy: When the energy (E = hv) of the light is \td{large,strong,high}er 
-than the binding energy of an electron the electron is ejected with the remaining energy as kinetic energy 
-\begin{math}
-	E_{kin}=hv - Eb
-\end{math}
-Different Materials have different binding energies. 
-Metals do have in general lower binding energies than covalent bound material and semiconductors do have even lowers E_b. Really? 
-That's Silica is in a lot of PVs. 
-The next generation of PVs. 
-CIGS has in contrast to silicon based PV a direct band gap\td{source and what does that mean?}
-duennschicht pv, haben eine effeftivitaet von 7-16\% vs 15-22\% \cite{Mertens2018}
-\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{History of Photovoltaics}
-%aenderung von widestand vonhalbleiter selen von bit ing willouhgby smith und ass joseph may fuer pv relevanten innere photoeket
-%1876 william adam und richard Day zeigten mit Selenstab mit platin elektroden dass festkörper Lichenergie direkt in elekt energie umwalndeln 
-%1905 erklaertle die physiklischen hinterdr'ünde mit seinem lichtquantentheorie einstein 
-%die ersten solarzellen wurden in den 1950s in Nieschen anwendungen wie der Raumfahrt mit einem wirkungsgrad unter 10 prozent 
-%durch die oelkriese 1973 stieg das interesse an pv und alternativen energiequellen und 1977 das erste salor...? 
-The photoelectric effect was first described in 1839 by french scientist Alexandre Edmond Becquerel\cite{becquerel1839memoire}, the father of Henri Becquerel. 
+The photoelectric effect was first described in 1839 by french scientist Alexandre 
+Edmond Becquerel, the father of Henri Becquerel\cite{becquerel1839memoire}. 
 Another relevant piece of the photovoltaic jigsaw was discovered 
 with the discovery of photo conductivity of selenium
 by British engineer Willouhgby Smith\cite{Smith1873Selenium}.
@@ -60,22 +34,17 @@ Eventually, the interest in photovoltaic and other alternative energy sources
 rose - fuelled by the oil crisis in 1973 - 
 and the development of photovoltaic for the consumer market was boosted. \\
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Crystalline Silicon Photovoltaics}
 The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still have the biggest market share in the \gls{pv} segment including polycrystalline and monocrystalline silicon.
 \td{what is it? What is it used for? How does it work? What different kinds are there? }
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{CIGS}
-%%%
-%Materials from the chalcopyrite group (tetragonal crystal system) (eg CuInGaSe(CIGS)) can be used as absorber in such thin film cells.
 CIGS ($\text{CuIn}_\text{x}\text{Ga}_{\text{(1-x)}}\text{Se}_2$) is of the chalcopyrite group (tetragonal crystal system) and can be used as thin film \gls{pv}. 
 Just like CdTe, GaAs and amorphous silicon CIGS have much higher absorption coefficients 
 (lower penetration depth) of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}). 
 These thin film \gls{pv}s not only use less material, but also can be used in flexible applications. 
-%%%
-%Amorphous silicon and copper indium selenide (CIS) \td{(see next chapter)} have much higher absorption coefficients of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}) and can therefore be much thinner and use less material. 
-%Another advantage of thin film cells is that they can be used in flexible applications. 
-%which because of their high absorption coefficient of light %and therefore shallow penetration depth of light%need less material and can be used to produce flexible cells \\%of amorph silicon or CIS (see table p84) 
-
 
 \begin{table}[htb]
 	\small
@@ -100,8 +69,6 @@ These thin film \gls{pv}s not only use less material, but also can be used in fl
 
 Amazingly, the band gap of CIGS can be varied by between 1eV and 1.7eV by varying the indium gallium ratio.
 This is a result of the large difference of band gaps of CuInSe2 and CuGaSe2 (see table \ref{tab:cigs}). 
-%Durch den hohen Unterschied der Bandabstaedne von CuInSe2 und CuGaSe2 kamnn durch entsprechende Mischverhaeltnisse von In und Ga der Bandabstand eingestellt werden (Tablep 142) Abbildung Bild 5.22 p143) beschreiben und bild für Modul 
-%Because of the large difference of band gaps of CuInSe2 and CuGaSe2 the band gap can be configured by mixing ratio of inidum and gallium (see table \ref{tab:cigs}).
 
 \td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book} 
 The standard substrate is glass 
@@ -133,19 +100,12 @@ This makes it attractive as an insulator for semiconductor and \gls{pv} industry
 It is monoclinic below 1050 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C\cite{Nielsen2005}.
 The cubic phase can be stabilzed down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}) which avoids mechanical failing due to shrinkage 
 when cooling and undergoing phase transistion\cite{Nielsen2005}.
-%due to phase transition\cite{Nielsen2005}.
-%\td{[R. Stevens, 1986. Introduction to Zirconia. Magnesium Elektron Publication No 113]}
-%Ralph Nielsen "Zirconium and Zirconium Compounds" in Ullmann's Encyclopedia of Industrial Chemistry, 2005, Wiley-VCH, Weinheim. doi:10.1002/14356007.a28_543
-%It is not poisonous. \td{cite?}
 It is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and alkalis\cite{Nielsen2005}.
-%See ref \cite{Nielsen2005} for 2.3 Hydrous Zirconium Oxide 2.3 and 2.20 Zirconium Alkoxides.
 Hydrous Zirconium Oxide (\ch{Zr(OH)8 * 16 H2O}) gel can be produced by neutral hydrolysis of sodium zirconate (\ch{NaZrO3}). 
 "Zirconium alkoxides hyrdolize quite easily, [providing] a route to high purity, high-surface-area zirconium oxide"\cite{Nielsen2005}.
 
-%\td{what is important properites of zro2? }
-%\td{what is it? What is it used for? How does it work? What different kinds are there? }
-
-\subsubsection{Sol-Gel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sol-Gel and Doctor Blading}
 \td{what is it? What is it used for? How does it work? What different kinds are there? }
 One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
 
@@ -190,6 +150,7 @@ This prevents a charge building up on the target. \td{why is a charge?}
 Although RF sputtering is more versatile, DC sputtering is more common because of it's simpler system and economical reasons.
 \td{sputtered particles are neutral and not influenced by the electrical field}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Scanning electron Microscopy}
 \url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
 \Gls{sem} is a microscopical technique which allows visualisation of surfaces with features in the nano meter regime. 
@@ -214,17 +175,19 @@ what is is used for?
 \cite{Kaliva2020}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Infrared absorption}
 \td{IR around page 45;
 REFLECTIVITY? can also be used for determination of thickness p47
 }
 \td{what, how, why?}
-\Gls{ir} spectroscopy is molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of between $10^{-3}$ and $10^{-6}$ \nm{}) with molecules. \cite{Schwedt2008}
+
+\Gls{ir} spectroscopy is molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of between $10^{-3}$ and $10^{-6}$ \m{}) with molecules. \cite{Schwedt2008}
 \td{FREE WRITING:}
 light is described as periodic electro magnetic wave which moves. 
 All \gls{em} waves move with the speed of light c = 300k km /s in vacuum. 
 talk about $E=h\cdot v$ and $\nu=c/\lambda$ and $\bar{\nu}=1/\lambda$
-shorter wavelengths (higher frequencies) carry more energy. 
+shorter wavelength (higher frequencies) carry more energy. 
 In practice the spectrum \gls{em} waves are unterteilt in different things. 
 from high to low energie: Xray, \gls{uv}, vis, (near, middle and far) \gls{ir}, microwaves and radiowaves. 
 Xrays interact with core electrons, \gls{uv} and vis with valence electrons, ir with schwingungne mol rot and translation, microwaves with rotation and radio with electron and nuclear spin. 
@@ -244,7 +207,9 @@ differences to UVVis: transmission instead of absorbance, higher energy left ins
  In the \gls{ft}\gls{ir} spectrometer the beam is send thourhg the sample, split and reflected from a static and from a moving mirror, recombined and detected by a photo multiplier (a bauteil which transforms photons into electircal signals).
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{X-Ray Diffraction}
+%\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 \gls{xrd} is used to study the crystalline strucutre of materlias since X-rays wavelengths (between 0.2 and \nm{10}) are comparable to the interatomic spacing of crystalline solids.  \cite{Kaliva2020}.
 Each crystalline material has discreet atomc structure, which upon irradiation with X-rays causes constructive and destructive interference and generates unique diffraction patterns. 
 XRD \td{spectra} of crystalline materials feature distinct peaks, whereas amorphous materials exhibit a broad cruve with a maximum extending over several degrees (2$\theta$).
@@ -252,13 +217,15 @@ XRD \td{spectra} of crystalline materials feature distinct peaks, whereas amorph
 \url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Machine Learning}
-\paragraph{History}
+\subsubsection{History}
 some text to test
-\paragraph{different kinds} 
+\subsubsection{different kinds} 
 supervised vs unsupervised
 classification (discrete) vs regression
-\paragraph{Particle Swarm Optimization}
-\paragraph{Princlipal Component Analysis}
+\subsubsection{Particle Swarm Optimization}
+\subsubsection{Princlipal Component Analysis}
 reinforcement learning could also have been a nice option
-\paragraph{Linear Regression}
+\subsubsection{Linear Regression}
