@@ -52,14 +52,14 @@ These thin film \gls{pv}s not only use less material, but also can be used in fl
     \begin{tabular}{cccccc}
         \hline
         \hline
-		Material&   Type&    Band Gap [\ev{}]&    Wavelength [\nm{}]&    Absorption coef. $\alpha$    &Penetration Depth [\um{}]\\
+		Material&   Type&    Band Gap [\ev{}]&    Wavelength [\nm{}]&    Absorption coef. $\alpha$ [\pcm{}]    &Penetration Depth [\um{}]\\
         \hline
-        c-Si&   indirect&   1.12&   600&    4000/cm&    2.5\\
-        c-Si&   indirect&   1.12&   1000&    64/cm&    150\\
-        c-Si&   indirect&   1.12&   1100&    3.5/cm&    290\\
-        a-Si&   direct&      1.7&    600&    40,000/cm&  0.25\\
-        CdTe&   direct&      1.45&    600&    37,000/cm&  0.3\\
-		GaAs&   direct&      1.42&    600&    40,000/cm&  0.2\\
+		c-Si&   indirect&   1.12&   600&    \num{4000}&    2.5\\
+		c-Si&   indirect&   1.12&   1000&    \num{64}&    150\\
+		c-Si&   indirect&   1.12&   1100&    \num{3.5}&    290\\
+		a-Si&   direct&      1.7&    600&    \num{40000}&  0.25\\
+		CdTe&   direct&      1.45&    600&    \num{37000}&  0.3\\
+		GaAs&   direct&      1.42&    600&    \num{40000}&  0.2\\
         \hline
         \hline
     \end{tabular}
@@ -123,32 +123,35 @@ Sputtering evolved from being a curious experiment in the middle of the 20th cen
 Use cases vary from thin films depositions for \gls{pv}, for electrical circuits or for storage media such as CDs and DVDs 
 over sputter cleaning and etching to analysis.
 Advantages of 
-sputtered thin films include good adhesion to the substrate and good step coverage. 
+sputtered thin films include good adhesion to the substrate and good step coverage\cite{Swann1988}.
 
 %\td{how does it work?}\\
 A high voltage is applied to 
-two parallel electrode with low pressure gas in between. 
+two parallel electrodes with low pressure gas in between. 
 The target acts as cathode and the substrate (holder) as anode (see \td{fig}).
 %the target which acts as a cathode with the substrate as anode in a parallel geometry (see \td{fig}).
-The cathode, then, emits electrons which collide with a gas particle (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
-Some gas particles may get ionized by the collision and the gas cation is accelerated to the cathode. 
-If the cation has enough energy it will bump off a target atom or molecule from the surface. 
+The cathode, then, emits electrons which collide with a gas particles (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
+Some gas particles may get ionized by the collision and the gas cations are accelerated to the cathode. 
+If a cation has enough energy it will bump off one or more atoms or molecules from the surface. 
 This happens by a cascade of momentum transfers, which can reach the surface again (see fig \td{cp sigmund69}). 
-If the surface particle gets momentum pointing away from the bulk and the remaining kinetic energy is higher then the binding energy, the particle is sputtered. 
-The pressure should be small, such that the sputtered particle has a long \gls{mfp}, but on the other hand there is a minimum pressure to keep the plasma going. 
-Usual pressures are around 1 Pa ($10^{-2}$ mbar) or lower\cite{Swann1988}.
+If a surface particle obtains momentum pointing away from the bulk and its kinetic energy is higher than the binding energy, the particle is sputtered. 
+This sputtered particle travels unaffected by the electrical field perpendicular to the surface towards the substrate and condenses with other particles to form a layer.
+The pressure should be small, such that the sputtered particle has a long \gls{mfp}, but on the other hand 
+a minimum pressure is needed to keep the plasma "alive". 
+Usual pressures are around \SI{1}{\Pa} (\num{e-2}\SI{}{\milli\bar}) or lower\cite{Swann1988}.
 
 A magnetron can be placed behind the cathode (target) in order to trap ejected electrons close to the source. 
-This prevents high energy electrons from reaching the target and undoing the deposited layer and this also increases the probability of an electron colliding with an argon atom and ionizing it.
+This prevents high energy electrons from reaching the target and undoing the deposited layer and this also increases the probability of an electron colliding with an argon atom and ionizing it, increasing the yield.
 
 When oxygen or nitrogen are added to the  gas this is called reactive sputtering.
 Sputtered atoms will react with the gas and result in oxide or nitrides layers, respectively.
-The stoichiometry of the resulting layer can be regulated by gas ratios, but too much reactive gas can lead to target poisoning\td{cite? What is poisoned?}.
+The stoichiometry of the resulting layer can be regulated by gas ratios, but too much reactive gas can lead to target poisoning. 
+Meaning the target begin covered by an insulating layers which can lead to defects in the growing film\cite{Kelly2000}. 
 
 The limitation of only being able to use conducting materials as targets can be circumvented by using a radio frequency electrical field. 
-This prevents a charge building up on the target. \td{why is a charge?}
+This prevents a charge building up on the target. %\td{why is a charge?}
 Although RF sputtering is more versatile, DC sputtering is more common because of it's simpler system and economical reasons.
-\td{sputtered particles are neutral and not influenced by the electrical field}
+%\td{sputtered particles are neutral and not influenced by the electrical field}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Scanning electron Microscopy}
@@ -178,10 +181,12 @@ REFLECTIVITY? can also be used for determination of thickness p47
 	how does detector work? two different for UVVis and MIR
 }
 
-\Gls{ir} spectroscopy is a molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of between $10^{-3}$ and $10^{-6}$\m{} or wave numbers of 500 to \pcm{4000} ) with molecules. \cite{Schwedt2008}
+%%% WHAT? 
+\Gls{ir} spectroscopy is a molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of between \num{e-3} and \num{e-6}\m{}
+or wave numbers of 500 to \pcm{4000} ) with molecules. \cite{Schwedt2008}
 In general, light is described as periodic \gls{em} wave 
 which - in vacuum - moves with the speed of light ($c = \mps{299792458}$).
-The relation of energy $E$ of a photon, its frequency $\nu$, wavelength $\lambda$ and wave number $\bar{\nu}$ are as follows:
+The relation of energy~$E$ of a photon, its frequency~$\nu$, wavelength~$\lambda$ and wave number~$\bar{\nu}$ are as follows:
 \begin{align*}
 	E &= h \cdot \nu \\
 	\nu &= c/ \lambda \\
@@ -189,35 +194,37 @@ The relation of energy $E$ of a photon, its frequency $\nu$, wavelength $\lambda
 \end{align*}
 where $h$ is the Planck's constant.
 %In words: shorter wavelength (higher frequency) photons are more energetic.
-In practice the spectrum of \gls{em} waves is sectioned in different ranges; 
-\td{see figure?}
+In practice the spectrum of \gls{em} waves is sectioned into different ranges (\td{see figure?});
 from high to low energy: X-ray, \gls{uv}, \gls{vis}, (near, middle and far) \gls{ir}, microwaves and radio waves. 
 \td{with number?}
 X-rays interact with core electrons, \gls{uv}\gls{vis} with valence electrons, \gls{ir} with molecular vibrations, microwaves with molecular rotations and radio with electron and nuclear spins. 
-Molecular vibrations can be separated in valence and deformation vibrations.
-
-\td{FREE WRITING:}
-Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
-The absorbance intensity is dependent on wave length and molecule structure. 
-%\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
-
-A molecule has $F=3N$ ($N$ number of atoms) degrees of freedom, including translation $F_T=3$ and rotational $F_R=3$ (2 for linear molecules) movements. 
-
+%Molecular vibrations can be separated in valence and deformation vibrations.
+%
+A molecule has $F=3N$ ($N$ number of atoms) degrees of freedom, including translational $F_T=3$ and rotational $F_R=3$ (2 for linear molecules) movements. 
+%
 The number of vibrations can therefore calculated as 
 \begin{align*}
 	F_V &= 3N - F_T - F_R = 3N - 6 \\
 	F_V &= 3N - F_T - F_R = 3N - 5 \textrm{ (for linear molecules)}.
 \end{align*}
 %wodurch sich die anzahl der vibration reduces to $F_V=3N-6$ ($3N-5$) for vibrations. 
-Vibrations are classified in valence vibrations (change of bond length) and deformation (change of bindungs angle). 
+Vibrations are classified in valence vibrations (change of bond length) and deformation (change of bindungs angle) vibrations\cite{Melker2006}. 
 Only vibrations that change the dipole moment of the molecule are \gls{ir} active. 
 
-%differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
-\td{describe simple IR with monochromator}
+%\td{describe simple IR with monochromator}
+%\paragraph{\Gls{IR} Spectrometer}
+
 \paragraph{(Fourier Transform) Infrared spectrometer}
  A ceramic material (Nernst glower) is heated to \oc{1600} as light source. 
- In the two strahlen spectrometer the light is split, send through the sample and a reference, combined and send through a monochromator to a detector. 
- In the \gls{ft}\gls{ir} spectrometer the beam is send thourhg the sample, split and reflected from a static and from a moving mirror, recombined and detected by a photo multiplier (a bauteil which transforms photons into electircal signals).
+ In the two beam spectrometer the light is split, send through the sample and a reference and alternately send through a monochromator to a detector (thermocouple). 
+In the \gls{ft}\gls{ir} spectrometer the beam is send through the sample, split and reflected from a static and from a moving mirror, recombined and detected by a photo multiplier (a device which transforms photons into electrical signals). 
+\td{In a \gls{ft}\gls{ir} spectrometer the reference has to be measured before the sample, individually}
+
+\td{FREE WRITING:}
+Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
+The absorbance intensity is dependent on wave length and molecule structure. 
+%\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
+%differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
