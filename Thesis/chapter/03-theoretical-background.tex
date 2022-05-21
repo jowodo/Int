@@ -152,55 +152,68 @@ Although RF sputtering is more versatile, DC sputtering is more common because o
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Scanning electron Microscopy}
-\url{https://doi.org/10.1016/B978-0-12-816806-6.00017-0}\\
+The history of \gls{sem} can be traced back to 1843 when Scottish clockmaker Alexander Bain filed a patent for dissecting an image by scanning. A detailed history of \gls{sem} can be read in a open-to-read paper by McMullan from 1995\cite{McMullan1995}. 
 \Gls{sem} is a microscopical technique which allows visualisation of surfaces with features in the nano meter regime. 
-While optical microscopes use visible light and optical lenses the \gls{sem} uses accelerated electron beams and electrostatic and electromagnetic lenses.
-%Instead of light, it uses electrons with shorter wavelengths. zum abbilden
+While optical microscopes use visible light and optical lenses, \gls{sem} uses accelerated electron beams and electrostatic and electromagnetic lenses.
 This allows the generation of much more detailed images due to the shorter wavelengths of electrons compared to light\cite{Kaliva2020}.
 The electron beam produces X-rays, elastically backscattered (primary) electrons, inelastic (secondary) electrons and Auger electrons. 
 Secondary electrons carry information to conclude morphology and topology of the sample while X-rays can be used to identify the elements. 
-Electrons are \td{created} by either \gls{feg}, where are strong electrical field rips electrons from the bulk and thermionic guns where the filament (tungsten W or \ch{LaB6} (brigther and longer lasting but more expensive)) is heated until electrons are emitted. 
+Electrons originate from either \gls{feg}, where are strong electrical field rips electrons from the bulk, or from thermionic guns where the filament (tungsten W or \ch{LaB6} (brighter and longer lasting but more expensive)) is heated until electrons are emitted. 
 Electrons are then accelerated by a voltage of 2 to 40 kV and bundled into narrow beams\cite{Vernon2000} by lenses.
-\td{A high \gls{mfp} is needed for electrons to travel from the source to the sample and to the detector. Thus, a very low pressure is in the inside.}
-It was used as a preliminary way of checking the surface condition. 
-%This allows greater detail. 
-why? 
-\td{what? how? why?}
-what is sputtering, 
-how does it work, 
-what different kinds of sputtering is there, 
-what is is used for? 
-\cite{McMullan1995}
-\cite{Vernon2000}
-\cite{Kaliva2020}
+A high \gls{mfp} is needed for electrons to travel from the source to the sample (and to the detector). 
+Thus, a very low pressure is in the inside. 
+In this work \gls{sem} was used as a preliminary way of checking the surface condition. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Infrared absorption}
+\subsubsection{Infrared Absorption and Spectroscopy}
 \td{IR around page 45;
 REFLECTIVITY? can also be used for determination of thickness p47
 }
 \td{what, how, why?}
+\td{QUESTIONS: 
+	how does a IR spectr work? monochromator or FT 
+	how does FT work 
+	how does a beam splitter work? 
+	how does detector work? two different for UVVis and MIR
+}
 
-\Gls{ir} spectroscopy is molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of between $10^{-3}$ and $10^{-6}$ \m{}) with molecules. \cite{Schwedt2008}
+\Gls{ir} spectroscopy is a molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of between $10^{-3}$ and $10^{-6}$\m{} or wave numbers of 500 to \pcm{4000} ) with molecules. \cite{Schwedt2008}
+In general, light is described as periodic \gls{em} wave 
+which - in vacuum - moves with the speed of light ($c = \mps{299792458}$).
+The relation of energy $E$ of a photon, its frequency $\nu$, wavelength $\lambda$ and wave number $\bar{\nu}$ are as follows:
+\begin{align*}
+	E &= h \cdot \nu \\
+	\nu &= c/ \lambda \\
+	\bar{\nu} &= 1/\lambda,
+\end{align*}
+where $h$ is the Planck's constant.
+%In words: shorter wavelength (higher frequency) photons are more energetic.
+In practice the spectrum of \gls{em} waves is sectioned in different ranges; 
+\td{see figure?}
+from high to low energy: X-ray, \gls{uv}, \gls{vis}, (near, middle and far) \gls{ir}, microwaves and radio waves. 
+\td{with number?}
+X-rays interact with core electrons, \gls{uv}\gls{vis} with valence electrons, \gls{ir} with molecular vibrations, microwaves with molecular rotations and radio with electron and nuclear spins. 
+Molecular vibrations can be separated in valence and deformation vibrations.
+
 \td{FREE WRITING:}
-light is described as periodic electro magnetic wave which moves. 
-All \gls{em} waves move with the speed of light c = 300k km /s in vacuum. 
-talk about $E=h\cdot v$ and $\nu=c/\lambda$ and $\bar{\nu}=1/\lambda$
-shorter wavelength (higher frequencies) carry more energy. 
-In practice the spectrum \gls{em} waves are unterteilt in different things. 
-from high to low energie: Xray, \gls{uv}, vis, (near, middle and far) \gls{ir}, microwaves and radiowaves. 
-Xrays interact with core electrons, \gls{uv} and vis with valence electrons, ir with schwingungne mol rot and translation, microwaves with rotation and radio with electron and nuclear spin. 
-molecular vibrations are unterteilt in valenz and deformation vibration.
-absorbance pre din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
-The absorbance intensity is abhaengig von wave length and molecule structure. 
-Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. 
+Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
+The absorbance intensity is dependent on wave length and molecule structure. 
+%\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
 
-Ein molekule hat $F=3N$ (N anzahl der atome) freiheitsgrade, wobei $F_T=3$ translation und $F_R=3$ (2 für lineare molecules) wodurch sich die anzahl der vibration reduces to $F_V=3N-6$ ($3N-5$) for vibrations. 
-vibrations are unterteils in valence vibrations (change of bond length) and deformation (change of bindungs angle). 
-only vibrations with change in dipole momemnt are \gls{ir} active. 
+A molecule has $F=3N$ ($N$ number of atoms) degrees of freedom, including translation $F_T=3$ and rotational $F_R=3$ (2 for linear molecules) movements. 
 
-differences to UVVis: transmission instead of absorbance, higher energy left instead right, base line on top instead of bottom.
+The number of vibrations can therefore calculated as 
+\begin{align*}
+	F_V &= 3N - F_T - F_R = 3N - 6 \\
+	F_V &= 3N - F_T - F_R = 3N - 5 \textrm{ (for linear molecules)}.
+\end{align*}
+%wodurch sich die anzahl der vibration reduces to $F_V=3N-6$ ($3N-5$) for vibrations. 
+Vibrations are classified in valence vibrations (change of bond length) and deformation (change of bindungs angle). 
+Only vibrations that change the dipole moment of the molecule are \gls{ir} active. 
+
+%differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
+\td{describe simple IR with monochromator}
 \paragraph{(Fourier Transform) Infrared spectrometer}
  A ceramic material (Nernst glower) is heated to \oc{1600} as light source. 
  In the two strahlen spectrometer the light is split, send through the sample and a reference, combined and send through a monochromator to a detector. 
