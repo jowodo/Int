@@ -9,9 +9,6 @@
 \usepackage{hyperref}
 \usepackage{subcaption}
 \usepackage[font=small,labelfont=bf]{caption}
-\usepackage{siunitx}
-%\usepackage[inter-unit-product =\cdot]{siunitx}
-\sisetup{exponent-product = \cdot}
 \usepackage{circuitikz}
 \usepackage{chemformula}
 \hypersetup{
@@ -36,6 +33,9 @@
 \newcommand{\picwidth}{0.7\textwidth}
 
 %SI UNITS
+\usepackage{siunitx}
+%\usepackage[inter-unit-product =\cdot]{siunitx}
+\sisetup{exponent-product = \cdot}
 \newcommand{\m}[1]{\SI{#1}{\meter}}
 \newcommand{\cm}[1]{\SI{#1}{\centi\meter}}
 \newcommand{\pcm}[1]{\SI{#1}{\per\centi\meter}}
