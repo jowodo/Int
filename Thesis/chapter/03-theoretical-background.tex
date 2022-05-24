@@ -170,14 +170,6 @@ In this work \gls{sem} was used as a preliminary way of checking the surface con
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Infrared Absorption and Spectroscopy}
-\td{IR around page 45;
-REFLECTIVITY? can also be used for determination of thickness p47\cite{Dumin1967}
-}
-\td{QUESTIONS: 
-	how does a beam splitter work? 
-	how does detector work? two different for UVVis and MIR
-}
-
 %%% WHAT? 
 \Gls{ir} spectroscopy is a molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of \num{e-3} to \num{e-6}\m{}
 or wave numbers $\bar{\nu}$ of 500 to \pcm{4000} ) with molecules. \cite{Schwedt2008}
@@ -211,20 +203,25 @@ Only vibrations that change the dipole moment of the molecule are \gls{ir} activ
 
 \paragraph{(Fourier Transform) Infrared spectrometer}
  A ceramic material (Nernst glower) is heated to around \oc{1600} as light source. 
- In the two-beam-spectrometer the light is split, sent through the sample and a reference and alternately sent through a monochromator to a detector (thermocouple). 
+ In the two-beam-spectrometer the light is split, sent through the sample and a reference and one of the two beams is alternately sent through a monochromator to a detector (\td{thermocouple}). 
 %
 In the \gls{ft}\gls{ir} spectrometer the beam is sent through the sample, split and 
 reflected from a static and from a moving mirror, recombined and detected by a photo 
 multiplier (a device which transforms photons into electrical signals). 
-How the two beams will interfere upon recombination depends on the optical path difference (also called retardation) of the two light beams.
-\td{In a \gls{ft}\gls{ir} spectrometer the reference has to be measured before the sample, individually}
+How the two beams will interfere upon recombination depends on the optical path difference (also called retardation) of the two light beams\cite{Schwedt2008}.
+In a \gls{ft}\gls{ir} spectrometer the reference has to be measured before the sample.
+%
+When the refractive index of two layers differ, \gls{ir} can be used to measure the thickness\cite{Dumin1967} of optical less dense material.
 
-\td{FREE WRITING:}
-Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
-The absorbance intensity is dependent on wave length and molecule structure. 
 %\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
 %differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
-When the refractive index of two layers differ, \gls{ir} can be used to measure the thickness\cite{Dumin1967}.
+
+\td{QUESTIONS: 
+	how does detector work? two different for UVVis and MIR
+	IR around page 45;
+The absorbance intensity is dependent on wave length and molecule structure. 
+Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,7 +240,10 @@ X-rays causes constructive and destructive interference according to Bragg's law
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Machine Learning}
 \subsubsection{History}
-some text to test
+find cool examples like in https://pubs.rsc.org/en/content/articlehtml/2019/sc/c9sc01742a
+noteable mentions: GAN, language processing, self driving cars, image recognition, playing board games (and beating humans). 
+See protocoll
+dall-e 2 \cite{Marcus2022}
 \subsubsection{different kinds} 
 supervised vs unsupervised
 classification (discrete) vs regression

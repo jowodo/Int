@@ -33,12 +33,14 @@
 \newcommand{\picwidth}{0.7\textwidth}
 
 %SI UNITS
+% https://mirror.kumi.systems/ctan/macros/latex/contrib/siunitx/siunitx.pdf
 \usepackage{siunitx}
 %\usepackage[inter-unit-product =\cdot]{siunitx}
 \sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
 \newcommand{\m}[1]{\SI{#1}{\meter}}
 \newcommand{\cm}[1]{\SI{#1}{\centi\meter}}
-\newcommand{\pcm}[1]{\SI{#1}{\per\centi\meter}}
+\newcommand{\pcm}[1]{\SI{#1}{\centi\meter^{-1}}}
 \newcommand{\mm}[1]{\SI{#1}{\milli\meter}}
 \newcommand{\um}[1]{\SI{#1}{\micro\meter}}
 \newcommand{\nm}[1]{\SI{#1}{\nano\meter}}
