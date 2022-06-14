@@ -239,53 +239,69 @@ X-rays causes constructive and destructive interference according to Bragg's law
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Statistics, Regressin and Machine Learning}
-\subsubsection{History}
-find cool examples like in \url{https://pubs.rsc.org/en/content/articlehtml/2019/sc/c9sc01742a}  \\
-\url{https://medium.com/@LightOnIO/beyond-overfitting-and-beyond-silicon-the-double-descent-curve-18b6d9810e1b}  \\
-\url{https://www.nature.com/articles/427297a}\\
-\url{https://www.sciencedirect.com/science/article/abs/pii/S0040609001015164} \\
-\url{https://ieeexplore.ieee.org/abstract/document/6656789}\\
-\url{https://www.sciencedirect.com/science/article/abs/pii/S0038092X04000854}\\
-\url{https://www.sciencedirect.com/science/article/abs/pii/S007964251930101X}\\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Statistics, Regression and Machine Learning}
+\subsection{Artificial Inteligence}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-noteable mentions: GAN, language processing, self driving cars, image recognition, playing board games (and beating humans). 
-See protocoll
-Chapters to read from "UNDERSTANDING MACHINE LEARNING from theory to algorithms" 1,5,9,11,12,14,15,16,20,23,25
-dall-e 2 \cite{Marcus2022}\\
-vNeumann 4 param elephant \cite{Dyson2004}\\
-4 param elephant \cite{Mayer2010}\\
-"All models are wrong but some are useful" \cite{Box1979}\\
-"THE NEED FOR SIMPLE SCIENTIFIC MODELS - PARSIMONY" \cite{Box1979}\\
-"Breakthroughs in machine learning are rapidly changing science and society, yet our fundamental understanding of this technology has lagged far behind." \cite{Belkin2018}\\
+The history of \gls{ai} goes back to the middle of the \nth{20} century. 
+Researchers from the emerging field came together at the Dartmouth conference and the term "\gls{ai}" was coined\cite{McCarthy1955}. 
+For a more in depth dive into the history of AI consult the beautifully written review\cite{Apter1982} of McCorduck's 1982 book "Machines Who Think"\cite{McCorduck1982}, which focuses also on the great minds behind advances of \gls{ai}.
+Pioneers like Alan Turing thought a lot about how to define, test and implement \gls{ai}\cite{Howard2019}. 
+One example how to measure \gls{ai} is to let it play chess against a human\cite{Silver2017} 
+(in 1997 a chess computer called Deep Blue won against the World Chess Champion Garry Kasparov for the first time\cite{Feng1999}).
+%the best humans don't stand a chance against the best computers since \td{early 2000s}).\cite{Silver2017}
+Another test ingenioussed by Alan Turing, is that a human who communicates with a unknown entity (in written form) and must judge if they are dealing with a machine or a human being. 
+It is easy for humans to come up with question to detect and AI, 
+but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the near future. 
+
+But fear not, that doesn't mean that computers are more intelligent than humans and certainly not that research is over. 
+AI is still a young field, which is strongly growing and is gaining ubiquitous status. 
+it is slowly creeping into every aspect of modern human life just like electricity around one hundred years ago. 
+Now, we can't - it's hard to - imagine to live without electricity. 
+Realms in which AI is gaining traction are: 
+%
+playing board games (and beating humans)\cite{Silver2017}, 
+image recognition (in medicine)\cite{Li2020,Deo2015,Topol2019,Fujiyoshi2019}, 
+in chemistry\cite{Westermayr2019,goh2017chemception,jha2018elemnet}, 
+cyber security\cite{Sarker2021},
+facial recognition to prevent theft of toilet paper \cite{Andrews2017},
+financial sector (as robo-advisors)\cite{Littman2021}
+natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021}
+and even creative tasks like 
+creating non existing faces\cite{Mansourifar2020}, 
+create artwork (DALL-E 2)\cite{Marcus2022} or 
+making video games \cite{Guzdial2016}
+.
+It is nearly hard to find a field where \gls{ai} isn't used in some way. 
+This steady incorporation of \gls{ai} leads to the so called \gls{ai} effect\cite{McCorduck1982,ai100}: 
+certain fields get incorporated into \gls{ai} research and practice and after some time of general use are no more considered \gls{ai} (e.g. spam filter or web searches).
+Google CEO Sundar Pichai (Google CEO) even goes as far and said: 
+"AI is one of the most important things humanity is working on. It is more profound than [...] electricity or fire"\cite{Hassan2020}
+
+%which fields will be incorporated by AI in the near future? 
+%which questions have to be answered? philosophical and ethical questions. 
+%Humans, now, must mit sich selbst auseinaner setzen 
+%
+
+\subsubsection{AI vs statistics}
 \subsubsection{different kinds} 
 supervised vs unsupervised
 classification (discrete) vs regression
 \subsubsection{Design of Experiment}
-=======
-\subsection{Artificial Inteligence}
-\subsubsection{History}
 
-\todo{freewrinting}: The history of AI goes back to the middle of the \nth{20} century. 
-Researchers from the emerging field came together at the Dartmouth conference and the term "\gls{ai}" was coined. 
-Pioneers like Alan Turing thought a lot about how to define and how to test and how to implement \gls{ai}. 
-One example how to measure \gls{ai} is to let it play chess against a human, which was managed to, the human was defeated by a computer in the early 2000. 
-But fear not, that doesn't mean that computers are more intelligent than humans and certainly not that research is over. 
-AI is still a young field, strongly growing and gaining ubiquitous status. 
-Slowly creeping into every human aspect just like electricity around one hundred years ago. 
-Now we cant - it's hard to - imagine to live without electricity. 
-Another test ingenioused by Alan Turing, is that a human must communicate with a unknown entity (in written form) and judge if they are dealing with a machine or a human being. 
-It is easy for humans to come up with question to bring AI out of concept, but when reading AI written articles (see GPT), it's easy to see this test being passed in the near future. 
-Realms in which AI is gaining traction are: 
-An interesting effect is the so called \gls{ai} effect: 
-
-effect \cite{McCorduck1982,ai100} (e.g. spam filter or web search) \\
-
-certain fields get incorporated into AI research and practical and after some time of general use are no more considered AI such as spam filter, web searches and and. 
-which fields will be incorporated by AI in the near future? 
-which questions have to be answered? philosophical and ethical questions. 
-Humans, now, must mit sich selbst auseinaner setzen 
+\subsubsection{different kinds} 
+supervised vs unsupervised
+classification (discrete) vs regression
 %
+\subsubsection{Particle Swarm Optimization}
+%
+\subsubsection{Princlipal Component Analysis}
+reinforcement learning could also have been a nice option
+%
+\subsubsection{Linear Regression}
+%
+\iffalse
 \clearpage
 %
 \todo{ETC}\\
@@ -362,14 +378,13 @@ Humans, now, must mit sich selbst auseinaner setzen
  discussion: ein nachteil ist, dass bei EMMA im vornhinein festgelegt wurde welche parameter und danach konnte man entweder die parameter nicht aendern oder einen winzigen Bruchteil der Daten verwenden. whereas a human would (not unlike a GAN) extrapolate unusable data into the usable regime per bauchgefühl
 
 
-\subsubsection{different kinds} 
-supervised vs unsupervised
-classification (discrete) vs regression
-%
-\subsubsection{Particle Swarm Optimization}
-%
-\subsubsection{Princlipal Component Analysis}
-reinforcement learning could also have been a nice option
-%
-\subsubsection{Linear Regression}
-%
+noteable mentions: GAN, language processing, self driving cars, image recognition, playing board games (and beating humans). 
+See protocoll
+Chapters to read from "UNDERSTANDING MACHINE LEARNING from theory to algorithms" 1,5,9,11,12,14,15,16,20,23,25
+dall-e 2 \cite{Marcus2022}\\
+vNeumann 4 param elephant \cite{Dyson2004}\\
+4 param elephant \cite{Mayer2010}\\
+"All models are wrong but some are useful" \cite{Box1979}\\
+"THE NEED FOR SIMPLE SCIENTIFIC MODELS - PARSIMONY" \cite{Box1979}\\
+"Breakthroughs in machine learning are rapidly changing science and society, yet our fundamental understanding of this technology has lagged far behind." \cite{Belkin2018}\\
+\fi
