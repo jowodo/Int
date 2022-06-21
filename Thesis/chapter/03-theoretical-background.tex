@@ -240,9 +240,18 @@ X-rays causes constructive and destructive interference according to Bragg's law
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Statistics, Regression and Machine Learning}
-\subsection{Artificial Inteligence}
+\subsection{Statistics and Machine Learning}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Design of Experiment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Statistics vs Regression}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{AI vs statistics}
+\td{let GPT-3 write}
+check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
+see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Artificial Inteligence and Machine Learning}
 
 The history of \gls{ai} goes back to the middle of the \nth{20} century. 
 Researchers from the emerging field came together at the Dartmouth conference and the term "\gls{ai}" was coined\cite{McCarthy1955}. 
@@ -283,6 +292,49 @@ Google CEO Sundar Pichai (Google CEO) even goes as far and said:
 %which questions have to be answered? philosophical and ethical questions. 
 %Humans, now, must mit sich selbst auseinaner setzen 
 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Machine Learning Methods}
+There is a platitude of different machine learning methods: 
+they can be divided into supervised (there is a known solution) and unsupervised (exploratory).  
+An orthogonal division can be made by regression (continuous) versus classification (discrete). 
+Independent from these $2\times2$ categories there are multiple ways to let machines learn from data.
+%One which is really popular now a days is neural networks (NN) and deep learning. 
+\Gls{nn} (one of the most popular architectures for big data\cite{Chiroma2019}) are loosely modeled after the brain\cite{bishop1994neural}.
+%
+Artificial neurons (also called nodes), which are arranged in layers, 
+are connected to each of the neurons of previous and next layers
+and the weights (parameters), with which the data is routed from one neuron to another, 
+are optimised during training. 
+%
+%There are of course many more \gls{ml} designs for different tasks. 
+%Although, mainly \gls{nn} are in the media and take up a lot of space in the field 
+%DL shines when it is used for complex data with massive data sets. 
+Convolutional-layer neural networks excel in picture recognition\cite{Lecun1995conv} and in quantum mechanics too\cite{westermayr2020combining}.
+%One architecture which distinguishes itself for picture recognition is a convolutional networks.\td{cite some}
+Other common architectures are linear regression, kernel ridge regression, support vector regression.
+There are also lesser know algorithms like \gls{ga} (part of evolutionary algorithms) and \gls{pso}. 
+One advantage of the last two is that they start with a small data set
+%don't require the massive amount of data like \gls{dl} 
+and periodically request new data and try to solve the problem iteratively.
+
+"A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found."
+
+\Gls{ga} uses a starting population of size $p$ ($p \in$ \td{N$^+$}) where each experiment (or data point) 
+is represented by a fixed size genome of 0's and 1's in most cases. 
+Each individual is then given a fitness value. 
+New genomes are added and discarded from the population using 
+selection, mutation and crossover operations.
+%The best n ($n \in$ \td{N}) will be selected to produce offspring, 
+%whose genome is a combination of both genomes with potential mutations 
+%and a (mostly) random c
+
+\Gls{pso} also uses a starting population of particles of size $p$ where each experiment 
+is represented by its independent and dependent variables. 
+It was originally inspired by the behaviour of bird flocks and fish school.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Free writing about AI}
 I chose an evolutionary algorithm which is - i think - also part of machine learning, 
 which is a part of AI. 
@@ -291,25 +343,7 @@ There are many different types of AI. what are the most haeufig sub domains of t
 classification (discrete) and continuous prediction. 
 These are mainly machine learning algos. other machine learning tasks are EA, PSO, 
 
-\subsubsection{AI vs statistics}
-let GPT-3 write 
-check out links at \url{https://yewtu.be/watch?v=PqbB07n_uQ4}
-\subsubsection{different kinds} 
-supervised vs unsupervised
-classification (discrete) vs regression
-\subsubsection{Design of Experiment}
 
-\subsubsection{different kinds} 
-supervised vs unsupervised
-classification (discrete) vs regression
-%
-\subsubsection{Particle Swarm Optimization}
-%
-\subsubsection{Princlipal Component Analysis}
-reinforcement learning could also have been a nice option
-%
-\subsubsection{Linear Regression}
-%
 \subsubsection{2022-06-19-Free-Writing}
 The problem which presents it self is in principle a search problem.
 A large space of possible combinations of experimental anordnungen presents it self
@@ -328,13 +362,42 @@ latin squares are about orthogonality
 PB is a factorial experiment desing in contrast to one-fator-at-a-time methods.
 reliability and validity are low due to experiments not replicated 
 
-https://en.wikipedia.org/wiki/Design_of_experiments
-https://en.wikipedia.org/wiki/The_Design_of_Experiments
-https://en.wikipedia.org/wiki/Response_surface_methodology
-https://en.wikipedia.org/wiki/Optimal_design
-https://sci-hub.st/https://doi.org/10.2307/2332195
-https://en.wikipedia.org/wiki/Latin_square
-https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence
-https://en.wikipedia.org/wiki/Evolutionary_algorithm
-https://en.wikipedia.org/wiki/Particle_swarm_optimization
-EMMA doesn't allow for reproducibility
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Particle Swarm Optimization}
+%
+%\subsubsection{Princlipal Component Analysis}
+\textbf{things I should try if they work:}
+\begin{itemize}
+    \item what is reinforcement learning? 
+    \item PCA
+    \item linear regression
+    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
+    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
+    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
+\end{itemize}
+
+%    https://en.wikipedia.org/wiki/Design_of_experiments
+%    https://en.wikipedia.org/wiki/The_Design_of_Experiments
+%    https://en.wikipedia.org/wiki/Response_surface_methodology
+%    https://en.wikipedia.org/wiki/Optimal_design
+%    https://sci-hub.st/https://doi.org/10.2307/2332195
+%    https://en.wikipedia.org/wiki/Latin_square
+%    https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence
+%    https://en.wikipedia.org/wiki/Evolutionary_algorithm
+%    https://en.wikipedia.org/wiki/Particle_swarm_optimization
+%    EMMA doesn't allow for reproducibility
+
+\td{
+\url{https://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai}
+In principle both AI and stat use math to get information out of data. 
+AI might use machine learning to create "intelligent" acting (playing a game or driving a  car). machine learning tries to predict unseen data points  and statistics is a subfield of maths which tries to get insight into a given data. 
+For example, in a statistical model, it is desirable to reduce the number of inputs. This allows the statistician to better study how a change in the input variable can be directly affected by the output variable.\cite{gontcharov2019}
+pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+    }
+\begin{itemize}
+    \item[( )] machine learning and diff fields in ML
+    \item[( )] Genetical algorithm 
+    \item[( )] particle swarm optimisation
+\end{itemize}
+
+
