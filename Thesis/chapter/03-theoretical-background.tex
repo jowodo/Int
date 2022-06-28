@@ -240,16 +240,7 @@ X-rays causes constructive and destructive interference according to Bragg's law
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Statistics and Machine Learning}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Design of Experiment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Statistics vs Regression}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{AI vs statistics}
-\td{let GPT-3 write}
-check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
-see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+\subsection{Machine Learning and Statistics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Artificial Inteligence and Machine Learning}
 
@@ -259,66 +250,59 @@ For a more in depth dive into the history of AI consult the beautifully written 
 Pioneers like Alan Turing thought a lot about how to define, test and implement \gls{ai}\cite{Howard2019}. 
 One example how to measure \gls{ai} is to let it play chess against a human\cite{Silver2017} 
 (in 1997 a chess computer called Deep Blue won against the World Chess Champion Garry Kasparov for the first time\cite{Feng1999}).
-%the best humans don't stand a chance against the best computers since \td{early 2000s}).\cite{Silver2017}
-Another test ingenioused by Alan Turing, is that a human who communicates with a unknown entity (in written form) and must judge if they are dealing with a machine or a human being. 
+Another test ingenioused by Alan Turing, is that a human communicates with an unknown entity (in written form) and must judge if they are dealing with a machine or a human being. 
 It is easy for humans to come up with question to detect an AI, 
 but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the near future. 
 
-But fear not, that doesn't mean that computers are more intelligent than humans\cite{searle1999married,searle1980} and certainly not that research is over. 
+But fear not, that doesn't mean that computers are sentient or more intelligent than humans\cite{searle1980,searle1999married} and certainly not that research is over. 
 AI is still a young field, which is strongly growing and is gaining ubiquitous status. 
 It is slowly creeping into every aspect of modern human life just like electricity around one hundred years ago. 
 %Now, we can't - it's hard to - imagine to live without electricity. 
 Realms in which AI is gaining traction are: 
 %
-playing board games (and beating humans)\cite{Silver2017}, 
+playing board games (and beating humans)\cite{Silver2017,Feng1999,Campbell2002}, 
 image recognition (in medicine)\cite{Li2020,Deo2015,Topol2019,Fujiyoshi2019}, 
 in chemistry\cite{Westermayr2019,goh2017chemception,jha2018elemnet}, 
 cyber security\cite{Sarker2021},
-facial recognition to prevent theft of toilet paper \cite{Andrews2017},
-financial sector (as robo-advisors)\cite{Littman2021}
-natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021}
+facial recognition (to prevent theft of toilet paper \cite{Andrews2017}),
+financial sector (as robo-advisors)\cite{Littman2021},
+natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021} (which can also create pictures through scalable vector graphics (SVG) and code)
 and even creative tasks like 
 creating non existing faces\cite{Mansourifar2020}, 
 create artwork (DALL-E 2)\cite{Marcus2022} or 
-making video games \cite{Guzdial2016}
-.
+making video games\cite{Guzdial2016}.
+%
 It is nearly hard to find a field where \gls{ai} isn't used in some way. 
 This steady incorporation of \gls{ai} leads to the so called \gls{ai} effect\cite{McCorduck1982,ai100}: 
 certain fields get incorporated into \gls{ai} research and practice and after some time of general use are no more considered \gls{ai} (e.g. spam filter or web searches).
-Google CEO Sundar Pichai (Google CEO) even goes as far and said: 
+Google CEO Sundar Pichai even goes as far and said: 
 "AI is one of the most important things humanity is working on. It is more profound than [...] electricity or fire"\cite{Hassan2020}
 
-%which fields will be incorporated by AI in the near future? 
-%which questions have to be answered? philosophical and ethical questions. 
-%Humans, now, must mit sich selbst auseinaner setzen 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Machine Learning Methods}
 There is a platitude of different machine learning methods: 
-they can be divided into supervised (there is a known solution) and unsupervised (exploratory).  
+they can be divided into supervised (training set is labeled) and unsupervised (exploratory).  
 An orthogonal division can be made by regression (continuous) versus classification (discrete). 
 Independent from these $2\times2$ categories there are multiple ways to let machines learn from data.
-%One which is really popular now a days is neural networks (NN) and deep learning. 
 \Gls{nn} (one of the most popular architectures for big data\cite{Chiroma2019}) are loosely modeled after the brain\cite{bishop1994neural}.
 %
 Artificial neurons (also called nodes), which are arranged in layers, 
 are connected to each of the neurons of previous and next layers
-and the weights (parameters), with which the data is routed from one neuron to another, 
+and the weights (parameters of intensity), with which the data is routed from one neuron to another, 
 are optimised during training. 
 %
-%There are of course many more \gls{ml} designs for different tasks. 
-%Although, mainly \gls{nn} are in the media and take up a lot of space in the field 
-%DL shines when it is used for complex data with massive data sets. 
-Convolutional-layer neural networks excel in picture recognition\cite{Lecun1995conv} and in quantum mechanics too\cite{westermayr2020combining}.
-%One architecture which distinguishes itself for picture recognition is a convolutional networks.\td{cite some}
-Other common architectures are linear regression, kernel ridge regression, support vector regression.
-There are also lesser know algorithms like \gls{ga} (part of evolutionary algorithms) and \gls{pso}. 
-One advantage of the last two is that they start with a small data set
-%don't require the massive amount of data like \gls{dl} 
-and periodically request new data and try to solve the problem iteratively.
+Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} and in quantum mechanics too\cite{westermayr2020combining}.
+Other common \td{architectures} are linear regression, kernel ridge regression, support vector regression.
+There are also lesser know algorithms like 
+evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
+%
+One advantage of evolutionary algorithms is that they start with a small data set
+and periodically request new data in order to solve the problem iteratively.
 
-"A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found."
+A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} providing the input "Introduction to genetic algorithms: "}
 
+\iffalse
 \Gls{ga} uses a starting population of size $p$ ($p \in$ \td{N$^+$}) where each experiment (or data point) 
 is represented by a fixed size genome of 0's and 1's in most cases. 
 Each individual is then given a fitness value. 
@@ -327,12 +311,11 @@ selection, mutation and crossover operations.
 %The best n ($n \in$ \td{N}) will be selected to produce offspring, 
 %whose genome is a combination of both genomes with potential mutations 
 %and a (mostly) random c
+\fi
 
 \Gls{pso} also uses a starting population of particles of size $p$ where each experiment 
 is represented by its independent and dependent variables. 
 It was originally inspired by the behaviour of bird flocks and fish school.
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Free writing about AI}
@@ -364,10 +347,14 @@ reliability and validity are low due to experiments not replicated
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Particle Swarm Optimization}
+it has been shown that \gls{pso} works well on problems wher \gls{ga}s work well\cite{Kennedy1995}. 
+It can be seen as in the middle of \gls{ga} (taking eons) and \gls{nn} taking seconds regarding time scale\cite{Kennedy1995}.
+it is a stochastic process
+are there iterative optimisation processes without stochastic? 
 %
-%\subsubsection{Princlipal Component Analysis}
-\textbf{things I should try if they work:}
+\subsubsection{things I should try if they work:}
 \begin{itemize}
+    \item GA 
     \item what is reinforcement learning? 
     \item PCA
     \item linear regression
@@ -394,10 +381,16 @@ AI might use machine learning to create "intelligent" acting (playing a game or 
 For example, in a statistical model, it is desirable to reduce the number of inputs. This allows the statistician to better study how a change in the input variable can be directly affected by the output variable.\cite{gontcharov2019}
 pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
     }
-\begin{itemize}
-    \item[( )] machine learning and diff fields in ML
-    \item[( )] Genetical algorithm 
-    \item[( )] particle swarm optimisation
-\end{itemize}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Design of Experiment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Linear Regression}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{AI vs statistics}
+\td{let GPT-3 write}
+check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
+see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+\url{https://journals.sagepub.com/doi/pdf/10.1177/1352458520978648}
+\url{https://journals.sagepub.com/doi/full/10.1177/1352458520978648}
