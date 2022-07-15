@@ -1,9 +1,9 @@
-\td{https://en.wikipedia.org/wiki/Thesis}
+%\td{https://en.wikipedia.org/wiki/Thesis}
 \ds{what is it? What is it used for? How does it work? What different kinds are there? }
 \ds{what? how? why?}
-This chapter can be broken down into three section. 
-The first chapter tries to shine light on the evolution of PV and give some background on \gls{cigs}.
-The second chapter reads about material-scientific methods which were used during the practical part of this work. 
+This chapter can be broken down into three sections. 
+The first section tries to shine light on the evolution of PV and give some background on \gls{cigs}.
+The middle section reads about material-scientific methods which were used during the practical part of this work. 
 The last and third part focuses on the information technological, algorithmic and analytics methods used to optimize and predict material properties. 
 
 \subsection{Photovoltaics}
@@ -13,15 +13,15 @@ The last and third part focuses on the information technological, algorithmic an
 The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} 
 and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
 will be exhausted within the next 100 years. 
-Even though this time period is not exact and highly dependent on detection methods, 
+Even though this time period is not exact and highly dependent on detection methods of resources, 
 this number is rather small and brings us in zugzwang to develop sustainable energy sources. 
 One viable options is \gls{pv}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{History of Photovoltaics}
 The photoelectric effect was first described in 1839 by french scientist Alexandre 
-Edmond Becquerel, the father of Henri Becquerel\cite{becquerel1839memoire}. 
-Another relevant piece of the photovoltaic jigsaw was discovered 
+Edmond Becquerel, the father of Henri Becquerel\cite{becquerel1839memoire} (the person after whom the unit is named).
+Another relevant piece of the \gls{pv} jigsaw was discovered 
 with the discovery of photo conductivity of selenium
 by British engineer Willouhgby Smith\cite{Smith1873Selenium}.
 In 1876 William Adams and Richard Day\cite{Adams1876Selenium} showed that 
@@ -32,12 +32,20 @@ effect with his light quantum theory\cite{einstein1905erzeugung}.
 In the 1950s the first solar cells (with efficiencies under 10 percent) were used in niche applications such as space flight. 
 Eventually, the interest in photovoltaic and other alternative energy sources 
 rose - fuelled by the oil crisis in 1973 - 
-and the development of photovoltaic for the consumer market was boosted. \\
+and the development of photovoltaic for the consumer market was boosted. 
+This development lead to a drop in 
+average price for \gls{pv} module from \$ 100 per watt in 1975 to \$ 4 per watt in 2007\cite{pagliaro2008flexible}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Crystalline Silicon Photovoltaics}
+\td{aka PV basics}
+The vorgang of conversion of photons into voltaic energy can be broken down into two essential steps ( egal ob in silicon based or in plants): the creation of an electron hole pair and then their separation by the structure of the device. 
+This means that \gls{pv} cells are basically diodes, which have a low resistance in one direction and a high resistance in the other direction.
+\td{stop}
 The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still have the biggest market share in the \gls{pv} segment including polycrystalline and monocrystalline silicon.
 \td{what is it? What is it used for? How does it work? What different kinds are there? }
+\cite{markvart2013principles}
+\td{CIGS has higher absorption coefficient because of direct band gap in contrast to crystalline silicon which has an indirect band gap and therefore less absorption probability.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{CIGS}
@@ -67,8 +75,8 @@ These thin film \gls{pv}s not only use less material, but also can be used in fl
 	\label{tab:cigs:alpha}
 \end{table}
 
-Amazingly, the band gap of CIGS can be varied by between 1eV and 1.7eV by varying the indium gallium ratio.
-This is a result of the large difference of band gaps of CuInSe2 and CuGaSe2 (see table \ref{tab:cigs}). 
+Amazingly, the band gap of CIGS can be varied between 1eV and 1.7eV by varying the indium gallium ratio.
+This is a result of the large difference of band gaps of \ch{CuInSe2} and \ch{CuGaSe2} (see table \ref{tab:cigs}). 
 
 \td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book (Recreated based on\cite{mertens2015photovoltaik}) or (Image source:\cite{mertens2015photovoltaik})}
 
