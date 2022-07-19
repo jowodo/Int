@@ -4,7 +4,7 @@
 This chapter can be broken down into three sections. 
 The first section tries to shine light on the evolution of PV and give some background on \gls{cigs}.
 The middle section reads about material-scientific methods which were used during the practical part of this work. 
-The last and third part focuses on the information technological, algorithmic and analytics methods used to optimize and predict material properties. 
+The last and third part focuses on the information technological, algorithmic and analytical methods used to optimize and predict material properties. 
 
 \subsection{Photovoltaics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -15,13 +15,14 @@ and according to recent studies both fossil\cite{BGR2017} and uranium sources\ci
 will be exhausted within the next 100 years. 
 Even though this time period is not exact and highly dependent on detection methods of resources, 
 this number is rather small and brings us in zugzwang to develop sustainable energy sources. 
-One viable options is \gls{pv}.
+One viable option is \gls{pv}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{History of Photovoltaics}
 The photoelectric effect was first described in 1839 by french scientist Alexandre 
-Edmond Becquerel, the father of Henri Becquerel\cite{becquerel1839memoire} (the person after whom the unit is named).
-Another relevant piece of the \gls{pv} jigsaw was discovered 
+Edmond Becquerel\cite{becquerel1839memoire}, the father of Henri Becquerel (the person after whom the unit is named).
+Another relevant piece of the \gls{pv} jigsaw was brought to light
+%discovered
 with the discovery of photo conductivity of selenium
 by British engineer Willouhgby Smith\cite{Smith1873Selenium}.
 In 1876 William Adams and Richard Day\cite{Adams1876Selenium} showed that 
@@ -40,7 +41,7 @@ average price for \gls{pv} module from \$ 100 per watt in 1975 to \$ 4 per watt 
 \subsubsection{Crystalline Silicon Photovoltaics}
 \td{aka PV basics}
 The proecess of conversion of photons into voltaic energy can be broken down into two essential steps (both in silicon based \gls{pv} or in plants): 
-the creation of an electron hole pair and then their separation by the structure of the device. 
+the creation of an electron-hole pair and then its separation by the structure of the material.
 This means that \gls{pv} cells are basically diodes, which have a low resistance in one direction and a high resistance in the other direction.
 \td{stop}
 The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still have the biggest market share in the \gls{pv} segment including polycrystalline and monocrystalline silicon.
@@ -82,6 +83,8 @@ This is a result of the large difference of band gaps of \ch{CuInSe2} and \ch{Cu
 \td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book (Recreated based on\cite{mertens2015photovoltaik}) or (Image source:\cite{mertens2015photovoltaik})}
 \begin{figure}
 	\includegraphics[width=\textwidth]{./Pics/cigs.png}
+	\caption{Schematic layer sequence of a standard \ch{ZnO}/\ch{CdS}/\ch{Cu(In,Ga)Se2} thin-film solar cell.}
+	\label{fig:cigs}
 \end{figure}
 
 The standard substrate is glass 
@@ -119,8 +122,12 @@ Hydrous Zirconium Oxide (\ch{Zr(OH)8 * 16 H2O}) gel can be produced by neutral h
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Sol-Gel and Doctor Blading}
-\td{what is it? What is it used for? How does it work? What different kinds are there? }
-One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
+%\td{what is it? What is it used for? How does it work? What different kinds are there? }One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
+%
+\Gls{dbc} Doctor blade coating (also known as tape casting) is widely used in the textile, paper, photographic film, printing, and ceramic industries.
+The roll to roll compatible process can fabricate highly uniform flat films over large areas\cite{yang2010large}.
+A blade is moved over a substrate spreading a slurry at a fixed distance with a fixed velocity.
+In roll-to-roll processes the substrate moves instead of the blade. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Sputtering}
