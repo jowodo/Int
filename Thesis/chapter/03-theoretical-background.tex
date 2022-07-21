@@ -42,25 +42,36 @@ average price for \gls{pv} module from \$ 100 per watt in 1975 to \$ 4 per watt 
 The process of conversion of photons into voltaic energy can be broken down into two essential steps (both in silicon based \gls{pv} or in plants): 
 the creation of an electron-hole pair and then its separation by the structure of the material.\cite{markvart2013principles}
 This means that \gls{pv} cells are basically diodes, which have a low resistance in one direction and a high resistance in the other direction. Diodes are also 
-This is often achieved through a p-n junction.\cite{breitenstein2013understanding}
+%This is often achieved through a p-n junction.\cite{breitenstein2013understanding}
+This is often achieved through a p-n junction.
+The n-type side has excess electrons and p-type side has excess electron holes. 
+If the n- and p-type are of the same basis material, they are called homojunctions (silicon); if not, heterojunctions e.g. \ch{CdS}/\gls{cigs} and \ch{CdS/CdTe}.\cite{breitenstein2013understanding}
 %
 The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still have the biggest market share in the \gls{pv} segment including polycrystalline and monocrystalline silicon.
 Together with amorphous silicon 2010 over 88\% of all sold \gls{pv} where made of silicon\cite{breitenstein2013understanding}.
 A comprehensive overview over different \gls{pv} technologies can be found in \cite{markvart2013principles}.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{CIGS}
 \gls{cigs} (\ch{CuIn_{x}Ga_{1-x}Se2}) is of the chalcopyrite (\ch{CuFeS2}) group (tetragonal crystal system). 
 %It was 
-\ch{CuInSe2} and \ch{CuGaSe2} were first synthesised in 1953 by Harry Hahn et al.\cite{hahn1953untersuchungen} 
-and potential use of \ch{CuInSe2} as \gls{pv} material in combination with \ch{CdS} was first mentioned in 1974\cite{wagner1974cuinse2}.
-\td{Already in 1975 efficiencies of over 10\% were achieved.\cite{kazmerski1976thin}}
+\ch{CuInSe2} and \ch{CuGaSe2} were first synthesised in 1953 by Harry Hahn et al.\cite{hahn1953untersuchungen}.
+The potential use of \ch{CuInSe2} as \gls{pv} material in combination with \ch{CdS} was first mentioned in 1974\cite{wagner1974cuinse2}.
+%Already in 1975 efficiencies of cells of over 10\% were achieved.\cite{kazmerski1976thin}
+Cells with efficiencies of over 10\% were achieved already by 1975.\cite{kazmerski1976thin}
+Today, 
+\gls{cigs} modules (multiple \gls{pv} cells in series) 
+reach efficiencies of up to 16\%\cite{feurer2017cigs},
+monocrystalline silicon \gls{pv} modules reach efficiencies of 14-20\%
+and polycrystalline silicon \gls{pv} modules 12-17\%\cite{mcevoy2011practical}.
+
 Just like CdTe, GaAs and amorphous silicon CIGS has much higher absorption coefficients 
 (lower penetration depth) of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}). 
 This is due to a direct band gap rather than an indirect band gap (like crystalline silicon). 
 These thin film \gls{pv}s not only use less material, but also can be used in flexible applications. 
 
-\begin{table}[htb]
+\begin{table}[tbh]
 	\small
     \center
     \begin{tabular}{cccccc}
@@ -79,34 +90,13 @@ These thin film \gls{pv}s not only use less material, but also can be used in fl
     \end{tabular}
 	\caption{data from \cite{mertens2015photovoltaik}}
 	\label{tab:cigs:alpha}
-\end{table}
-
-Amazingly, the band gap of CIGS can be varied between 1eV and 1.7eV by varying the indium gallium ratio.
-This is a result of the large difference of band gaps of \ch{CuInSe2} and \ch{CuGaSe2} (see table \ref{tab:cigs}). 
-
-\begin{figure}
-	\includegraphics[width=\textwidth]{./Pics/cigs.png}
-	\caption{Schematic layer sequence of a standard \ch{ZnO}/\ch{CdS}/\ch{Cu(In,Ga)Se2} thin-film solar cell.}
-	\label{fig:cigs}
-\end{figure}
-
-\td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book (Recreated based on\cite{mertens2015photovoltaik}) or (Image source:\cite{mertens2015photovoltaik})}
-\td{On the top of a \gls{cigs} cell there is a conducting and durchsichtige layer of \ch{ZnO}. 
-Why is there this doped \ch{ZnO} layer? 
-Why is there this \ch{CdS} layer? (n-material)
-\gls{cigs} is p-material.
-}
-The glass substrate is located under the molybdenum electrode. 
-It is the standard substrate because of it's high thermal stability, electrical resistance and mechanical hardness. 
-A flexible substrate is needed for a flexible module, though. 
-Plastics have a very low melting points and metals are conducting, but can be coated with a non conducting material such as \gls{zro}.
-\begin{table}[htb]
-    \center
+%
+	\vspace{1cm}
     \begin{tabular}{cccc}
         \hline\hline
-        Empirical Formula&    Name&   Band Gap&    Abbreviation\\
+		Empirical Formula&    Name&   Band Gap [\si{eV}{}]&    Abbreviation\\
         \hline
-		\ch{CuInSe2}&       copper indium di selenide&  1&  CISe\\
+		\ch{CuInSe2}&       copper indium di selenide&  1.04&  CISe\\
 		\ch{CuInS2}&        copper indium di sulfide&  1.5&  CIS\\
 		\ch{CuGaSe2}&       copper gallium di selenide&  1.7&  CIGSe\\
 		\ch{CuGaS2}&        copper gallium di sulfide&  1.55&  CIGS\\
@@ -116,6 +106,37 @@ Plastics have a very low melting points and metals are conducting, but can be co
 	\label{tab:cigs}
 \end{table}
 
+\begin{figure}
+	\includegraphics[width=\textwidth]{./Pics/cigs.png}
+	\caption{Schematic layer sequence of a standard \ch{ZnO}/\ch{CdS}/\ch{Cu(In,Ga)Se2} thin-film solar cell.}
+	\label{fig:cigs}
+\end{figure}
+
+%\td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book (Recreated based on\cite{mertens2015photovoltaik}) or (Image source:\cite{mertens2015photovoltaik})}
+%\td{On the top of a \gls{cigs} cell there is a conducting and durchsichtige layer of \ch{ZnO}. 
+%Why is there this doped \ch{ZnO} layer? 
+
+Amazingly, the band gap of CIGS can be varied between \ev{1} and \ev{1.7} by varying the indium gallium ratio.
+This is a result of the large difference of band gaps of \ch{CuInSe2} and \ch{CuGaSe2} (see table \ref{tab:cigs}). 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In figure \ref{fig:cigs} the schematic layer sequence of a standard \gls{cigs} thin film cell is shown. 
+Typically a \um{1} thick molybdenum layer is deposited on soda lime glass. 
+The sodium in the glass diffuses through the molybdenum layer and increases efficiency and reliability by directing the growth of \gls{cigs} in 112 direction\cite{hedstrom1993cigs}.
+A \gls{cigs} layer of 1-\um{2} thickness is applied on top via co-evaporated from elemental sources controlled by a mass spectrometer.\cite{hedstrom1993cigs}
+The p-type doping of \gls{cigs} is achieved by adding more than stoichiometric copper to the mix. 
+The heterojunction is then completed by deposition of \ch{CdS} (typically \nm{50} thick).
+\ch{CdS} was earlier used as front contact, but now only acts as n-type wide-gap window and buffer. 
+\ch{ZnO} has a band gap of \ev{3.2} and is therefore transparent for visible light. 
+The \ch{ZnO} window layer (usually of thickness 50-\nm{70} is highly conductive (especially the \ch{Al} doped layer) and acts as front contact. 
+
+%
+Instead of glass as substrate, steel and plastics (e.g. polyimide\cite{feurer2017cigs}) can be used to create flexible \gls{cigs} modules. 
+They both come with their own inconveniences. 
+Plastics generally have very low melting points which restrict preparation temperatures.
+Steel, on the other hand, is temperature resistant enough, but is an electric conductor. 
+The conductance of steel can be masked by a insulator layer (e.g. \ch{ZrO2}, \ch{Al2O3}).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Materials and Their Analysis}
@@ -123,11 +144,11 @@ Plastics have a very low melting points and metals are conducting, but can be co
 Zirconium oxide \gls{zro} is a ceramic with a band gap of 5-7 eV and dielectric constant of 15-22 at room temperature\cite{Anwar2017}. 
 This makes it attractive as an insulator for semiconductor and \gls{pv} industry. 
 It is monoclinic below 1050 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C\cite{Nielsen2005}.
-The cubic phase can be stabilzed down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}) which avoids mechanical failing due to shrinkage 
-when cooling and undergoing phase transistion\cite{Nielsen2005}.
+The cubic phase can be stabilized down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}) which avoids mechanical failing due to shrinkage 
+when cooling and undergoing phase transition\cite{Nielsen2005}.
 It is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and alkalis\cite{Nielsen2005}.
 Hydrous Zirconium Oxide (\ch{Zr(OH)8 * 16 H2O}) gel can be produced by neutral hydrolysis of sodium zirconate (\ch{NaZrO3}). 
-"Zirconium alkoxides hyrdolize quite easily, [providing] a route to high purity, high-surface-area zirconium oxide"\cite{Nielsen2005}.
+"Zirconium alkoxides hydrolyze quite easily, [providing] a route to high purity, high-surface-area zirconium oxide"\cite{Nielsen2005}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Sol-Gel and Doctor Blading}
