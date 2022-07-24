@@ -434,10 +434,41 @@ pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Design of Experiment}
+In two cases a deliberate design of experiment makes sense. 
+If the query of a new data point is very expensive it favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
+If the query space is so vast, that randomly querying might lead to information about uninteresting part of the domain.
+Continuous state spaces must be accommodated by arbitrary discretization.
+\cite{cohn1996neural}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{AI vs statistics}
+General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998learning}
+\begin{enumerate}
+	\item State the problem 
+	\item Formulate the hypothesis
+	\item Design the experiment/generate the data
+	\item Collect the data and perform preprocessing
+	\item Estimate the model 
+	\item Interpret the model/draw the conclusions
+\end{enumerate}
+\textbf{1. Statement of the Problem} There was no clear statement of the problem. Now I would formulate it: "How to produce most insulating layer with least energy? How do we define most insulating?" That's why there are two output variables rather than one.
+\textbf{2. Hypothesis Formulation} formulate an unknown dependency and define input and output variables.
+\textbf{3. Data Generation and Experiment Design} can be either in control of the modeler (designed experiment) or in an observational setting. The data collection can affect the sampling distribution and influence the next steps. 
+\textbf{4. Collect the Data and Perform Preprocessing} here outliers are detected and data preprocessing/encoding/feature selection. Scaling by standard deviation might be a good idea, but independent scaling of variables can lead to suboptimal representation for the learning task. Feature selection: A small number of informative features make the task of estimating dependencies easier. 
+\textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
+\textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. 
+
+There are not only \textbf{x}(input) and y(output) variables, but also \textbf{z}(uncontrolled/unobserved input variables).
+Issues of methods for learning from data: 
+\begin{itemize}
+	\item How to incorporate a priori assumptions into learning? 
+	\item How to measure model complexity (i.e. flexibility to fit the training data)?
+	\item How to find a optimal balance between the data and a priori knowledge? 
+\end{itemize}
+
+\cite{cherkassky1998learning}
+%%
 \td{let GPT-3 write}
 check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
 see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}

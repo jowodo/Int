@@ -1,3 +1,27 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{XRD}
+\begin{figure}
+	\centering
+	\includegraphics[width=\picwidth]{Pics/xrd.png}
+	\caption{XRD spectra}
+	\label{fig:xrd}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{SEM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{V-I and PSO//Optimization}
+\td{the input vars were not regularized/normalized, naively like a small child eating old food and regretting not informing oneself earlier}
+\td{too much data as input, dimensionality reduction (PCA) and optimization}
+
+\td{show results between 1ml acoh (199), acoh+ipo 1:1 (201) and ipo (192). Show graph of the three vs log pondus G and pinhole density and maybe distribution of single point measurements? 
+\texttt{set boxwidth 2; set xtics 5; p "stat.dat" u 1:3 with boxes} 
+}
+
 \td{base/best sample was somewhot 150, 5 layers 3F 2K/min 400C} what was the best result?
 \td{
 double calcination (2x400C) was tried instead of pyrolization (4x200 then 400C),p49
@@ -125,17 +149,4 @@ short time can produces faster and the resulting solution is longer stable
 could have been verhindert durch lesen the docu and more papers more thoughoughly. 
 Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
-\subsection{XRD}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=\picwidth]{Pics/xrd.png}
-	\caption{XRD spectra}
-	\label{fig:xrd}
-\end{figure}
-
-\td{show results between 1ml acoh (199), acoh+ipo 1:1 (201) and ipo (192). Show graph of the three vs log pondus G and pinhole density and maybe distribution of single point measurements? 
-\texttt{set boxwidth 2; set xtics 5; p "stat.dat" u 1:3 with boxes} 
-}
-
 \td{I wanted to exhaust the possibilities of EA (not having enough data). i should have rather einengen the search raum as much as possible (spreading the search room too much) and then do optimisation: fix layer count to 3 fix conc to 3F and fix calc temp and rate (or only use two extreme values)}
