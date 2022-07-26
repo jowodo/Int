@@ -443,6 +443,17 @@ Continuous state spaces must be accommodated by arbitrary discretization.
 \subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{AI vs statistics}
+\begin{itemize}
+	\item \td{let GPT-3 write}
+	\item check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
+	\item see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+	\item 
+		\href
+		{https://doi.org/10.1177\%2F1352458520978648}
+		{Machine and deep learning in MS research are just powerful statistics – No}
+\end{itemize}
+
+\subsubsection{Learning from Data}
 General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998learning}
 \begin{enumerate}
 	\item State the problem 
@@ -458,6 +469,7 @@ General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998lea
 \textbf{4. Collect the Data and Perform Preprocessing} here outliers are detected and data preprocessing/encoding/feature selection. Scaling by standard deviation might be a good idea, but independent scaling of variables can lead to suboptimal representation for the learning task. Feature selection: A small number of informative features make the task of estimating dependencies easier. 
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. 
+\cite{cherkassky1998learning}
 
 There are not only \textbf{x}(input) and y(output) variables, but also \textbf{z}(uncontrolled/unobserved input variables).
 Issues of methods for learning from data: 
@@ -466,11 +478,63 @@ Issues of methods for learning from data:
 	\item How to measure model complexity (i.e. flexibility to fit the training data)?
 	\item How to find a optimal balance between the data and a priori knowledge? 
 \end{itemize}
-
 \cite{cherkassky1998learning}
+
+"Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
+
+The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
+
+"Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
+
+"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
+
+Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
+Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
+
+Any learning process requires the following(p40): 
+\begin{itemize}
+	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
+	\item A priori knowledge to impose contrains
+	\item An inductive principle (what needs to be done)
+		\begin{itemize}
+			\item penalizeation (regularization) inductive principle
+			\item early stopping rules (with ANN, difficult to control and interpret)
+			\item structural risk minimization (SRM) (order according to complexity)
+			\item Bayesian Inference (add subjectivity to learning machine)
+			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
+		\end{itemize}
+	\item A learning method (how does it need to be done,implementation)
+\end{itemize}
+
+\textbf{Curse and Complexity of Dimensionality}
+goal is to estimate function with finite samples, so it's always inaccurate (biased). 
+meaning full estimate only possible with high sampling density, which is difficult for high dimensional functions.
+\begin{enumerate}
+	\item Sample sizes yielding the same denisty increse exponentially with dimension .
+	\item A large radius is needed to enclose a fraction of the data points in a high-dimensional space.
+	\item Almost every point is closer to an edge than to another point.
+	\item Almost every point  is an outlier in its own projection.
+\end{enumerate}
+
+
+
 %%
-\td{let GPT-3 write}
-check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
-see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
-\url{https://journals.sagepub.com/doi/pdf/10.1177/1352458520978648}
-\url{https://journals.sagepub.com/doi/full/10.1177/1352458520978648}
+Further Literature: 
+\begin{itemize}
+	\item 
+		\href
+		{https://doi.org/10.1016/0893-6080(94)90066-3}
+		{Pedagogical pattern selection strategies}
+	\item 
+		\href
+		{https://doi.org/10.1016/0893-6080(95)00137-9}
+		{Neural Network Exploration Using Optimal Experiment Design}
+	\item 
+		\href
+		{https://doi.org/10.1016/S0076-5392(08)63235-X} 
+		{Chapter 6 Experiment Design}
+	\item 
+		\href
+		{https://doi.org/10.1177\%2F1352458520978648}
+		{Machine and deep learning in MS research are just powerful statistics – No}
+\end{itemize}
