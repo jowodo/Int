@@ -433,12 +433,21 @@ pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Design of Experiment}
+\subsubsection{Design of Experiment} %DOE
+"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."\cite{goodwin1977experiment}
+Contstraints might include range constraints of input and output variables as well as total time available and total number of samples/experiments that can be taken.\cite{goodwin1977experiment}
+"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
+
 In two cases a deliberate design of experiment makes sense. 
 If the query of a new data point is very expensive it favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
 If the query space is so vast, that randomly querying might lead to information about uninteresting part of the domain.
 Continuous state spaces must be accommodated by arbitrary discretization.
 \cite{cohn1996neural}
+
+DOEs: randomization, latin square
+\url{https://www.jstor.org/stable/2238570}\cite{karlin1966optimal}
+\url{https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}
+maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?via\%3Dihub}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -510,7 +519,7 @@ Any learning process requires the following(p40):
 goal is to estimate function with finite samples, so it's always inaccurate (biased). 
 meaning full estimate only possible with high sampling density, which is difficult for high dimensional functions.
 \begin{enumerate}
-	\item Sample sizes yielding the same denisty increse exponentially with dimension .
+	\item Sample sizes yielding the same density increse exponentially with dimension.
 	\item A large radius is needed to enclose a fraction of the data points in a high-dimensional space.
 	\item Almost every point is closer to an edge than to another point.
 	\item Almost every point  is an outlier in its own projection.
@@ -531,8 +540,8 @@ Further Literature:
 		{Neural Network Exploration Using Optimal Experiment Design}
 	\item 
 		\href
-		{https://doi.org/10.1016/S0076-5392(08)63235-X} 
-		{Chapter 6 Experiment Design}
+		{hArticlettps://doi.org/10.1016/S0076-5392(08)63235-X} 
+        {Chapter 6 Experiment Design}\cite{goodwin1977experiment}
 	\item 
 		\href
 		{https://doi.org/10.1177\%2F1352458520978648}
