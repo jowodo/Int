@@ -444,10 +444,16 @@ If the query space is so vast, that randomly querying might lead to information 
 Continuous state spaces must be accommodated by arbitrary discretization.
 \cite{cohn1996neural}
 
-DOEs: randomization, latin square
+DOEs: randomization, latin square, orthogonal experiment design, full/2-lvl factorial design, placket burman, 
 \url{https://www.jstor.org/stable/2238570}\cite{karlin1966optimal}
 \url{https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}
 maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?via\%3Dihub}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Analysis of Variance} % ANOVA
+The statistical significance of the experiment is determined by a ratio of two variances. This ratio is independent of several possible alterations to the experimental observations: Adding a constant to all observations does not alter significance. Multiplying all observations by a constant does not alter significance. 
+So ANOVA statistical significance result is independent of constant bias and scaling errors as well as the units used in expressing observations. %https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions
+\td{make analysis with EMMA dataset and EMMA+DOE}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
