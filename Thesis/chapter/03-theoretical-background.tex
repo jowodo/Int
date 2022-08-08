@@ -453,6 +453,24 @@ maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?v
 The statistical significance of the experiment is determined by a ratio of two variances. This ratio is independent of several possible alterations to the experimental observations: Adding a constant to all observations does not alter significance. Multiplying all observations by a constant does not alter significance. 
 So ANOVA statistical significance result is independent of constant bias and scaling errors as well as the units used in expressing observations. %https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions
 \td{make analysis with EMMA dataset and EMMA+DOE}
+\url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical
+\url{https://pypi.org/project/pynova/}
+\textbf{Assumptions of ANOVA}
+from \url{https://statsandr.com/blog/anova-in-r/}
+\begin{itemize}
+    \item variable type: continuous dependent variable and categorial qualitative independent variable (also called treatments or levels). The input variables are discretized an can therefore be seen as categorial.
+    \item Independence: groups and levels should be independent
+    \item Normality: the residual (that is the durchschnittliche dependance of uncontrollable variables ,like room temperature or humidity) should approximately follow a normal distribution. 
+    \item Equality of variance: variance in differenct groups should be equal (compare with homoscedasticity).
+    \item No outliers
+\end{itemize}
+
+\textbf{Other statistics}
+\begin{itemize}
+    \item f-test 
+    \item p-value 
+    \item t-test
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Linear Regression}
