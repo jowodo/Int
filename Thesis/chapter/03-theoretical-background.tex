@@ -289,13 +289,42 @@ X-rays causes constructive and destructive interference according to Bragg's law
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ds{
+introduction 
+    why I chose this practicum, 
+        bcs wanted to check if lab is for me 
+    why i chose to include ml 
+        bcs I wanted what i learned during undergrad courses help me find a good solution and 
+        wanted to dive deeper into the ml field as it is very interesting for 
+what is ML? 
+what kind of ML techniques? 
+statistics:
+what is the difference between ml and stat? 
+    superficially very similar but different goals and diff rahmenbedingungen 
+DOE is a very old, much information less experiments 
+    how to design experiment: already many insights for next time 
+statistics: 
+    help me find insight from data 
+    ANOVA 
+    linear regression 
+}
+
+
+    
+
+
 \subsection{Machine Learning and Statistics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Artificial Inteligence and Machine Learning}
+Why introduce machine learning to this project? 
+I wanted to apply and delve into what I've been studying during my undergrad courses. 
+This seemed like the perfect oppurtunity. 
 
+\subsubsection{Artificial Inteligence and Machine Learning}
+%How can \gls{ai} and \gls{ml} be defined? 
 The history of \gls{ai} goes back to the middle of the \nth{20} century. 
 Researchers from the emerging field came together at the Dartmouth conference and the term "\gls{ai}" was coined\cite{McCarthy1955}. 
-For a more in depth dive into the history of AI consult the beautifully written review\cite{Apter1982} of McCorduck's 1982 book "Machines Who Think"\cite{McCorduck1982}, which focuses also on the great minds behind advances of \gls{ai}.
+\Gls{ai}'s  history is beautifully depicted by McCorducks' 1982 book "Machines Who Think"\cite{McCorduck1982,Apter1982}, which focuses on the great minds behind the advances.
+%For a more in depth dive into the history of AI consult the beautifully written review\cite{Apter1982} of McCorduck's 1982 book "Machines Who Think"\cite{McCorduck1982}, which focuses also on the great minds behind advances of \gls{ai}.
 Pioneers like Alan Turing thought a lot about how to define, test and implement \gls{ai}\cite{Howard2019}. 
 One example how to measure \gls{ai} is to let it play chess against a human\cite{Silver2017} 
 (in 1997 a chess computer called Deep Blue won against the World Chess Champion Garry Kasparov for the first time\cite{Feng1999}).
@@ -318,7 +347,7 @@ financial sector (as robo-advisors)\cite{Littman2021},
 natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021} (which can also create pictures through scalable vector graphics (SVG) and code)
 and even creative tasks like 
 creating non existing faces\cite{Mansourifar2020}, 
-create artwork (DALL-E 2)\cite{Marcus2022} or 
+create graphic artwork (DALL-E 2)\cite{Marcus2022} or 
 making video games\cite{Guzdial2016}.
 %
 It is nearly hard to find a field where \gls{ai} isn't used in some way. 
@@ -330,6 +359,10 @@ Google CEO Sundar Pichai even goes as far and said:
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Machine Learning Methods}
+%
+\Gls{ml} is at the base of most \gls{ai}s.
+It is a umbrella term for programs with instructions to learn from data, i.e. gain knowledge, categorise, predict and make decisions based on data. 
+%
 There is a platitude of different machine learning methods: 
 they can be divided into supervised (training set is labeled) and unsupervised (exploratory).  
 An orthogonal division can be made by regression (continuous) versus classification (discrete). 
@@ -348,6 +381,7 @@ evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
 %
 One advantage of evolutionary algorithms is that they start with a small data set
 and periodically request new data in order to solve the problem iteratively.
+\td{This is exactly what I needed because every experiment is very time intensive.} 
 
 A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} providing the input "Introduction to genetic algorithms: "}
 
@@ -367,70 +401,13 @@ is represented by its independent and dependent variables.
 It was originally inspired by the behaviour of bird flocks and fish school.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Free writing about AI}
-I chose an evolutionary algorithm which is - i think - also part of machine learning, 
-which is a part of AI. 
-There are many different types of AI. what are the most haeufig sub domains of the AI field? 
-(natural) language processing, image erkennung, and prediction which can be geteilt in 
-classification (discrete) and continuous prediction. 
-These are mainly machine learning algos. other machine learning tasks are EA, PSO, 
-
-
-\subsubsection{2022-06-19-Free-Writing}
-The problem which presents it self is in principle a search problem.
-A large space of possible combinations of experimental anordnungen presents it self
-and out of these we want to find the optimial parameter combination. 
-The best way with unlimitied resources would be the brute-force approach to try every possibility. 
-But due to limited time this is unfeasable. 
-But a new questions arises: how should the ausmasse of the search space be eingeschraenkt? 
-What are the upper and lower limits and which intervals/step size/grid size should be used. 
-Also even before, we have to answer which dimensions/parameters should we include in the search? 
-Which parameters should we keep constant and at which value? 
-And finally which features should we use to measure the goodness of an experiment? 
-
-I tried different methods to answer the first X questions: Latin square and Plackett-Burman design.
-Unfortunately, I was faced with similar questions. How many levels and which end points? 
-latin squares are about orthogonality 
-PB is a factorial experiment desing in contrast to one-fator-at-a-time methods.
-reliability and validity are low due to experiments not replicated 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Particle Swarm Optimization}
+
 it has been shown that \gls{pso} works well on problems wher \gls{ga}s work well\cite{Kennedy1995}. 
 It can be seen as in the middle of \gls{ga} (taking eons) and \gls{nn} taking seconds regarding time scale\cite{Kennedy1995}.
 it is a stochastic process
 are there iterative optimisation processes without stochastic? 
 %
-\subsubsection{things I should try if they work:}
-\begin{itemize}
-    \item GA 
-    \item what is reinforcement learning? 
-    \item PCA
-    \item linear regression
-    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
-    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
-    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
-\end{itemize}
-
-%    https://en.wikipedia.org/wiki/Design_of_experiments
-%    https://en.wikipedia.org/wiki/The_Design_of_Experiments
-%    https://en.wikipedia.org/wiki/Response_surface_methodology
-%    https://en.wikipedia.org/wiki/Optimal_design
-%    https://sci-hub.st/https://doi.org/10.2307/2332195
-%    https://en.wikipedia.org/wiki/Latin_square
-%    https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence
-%    https://en.wikipedia.org/wiki/Evolutionary_algorithm
-%    https://en.wikipedia.org/wiki/Particle_swarm_optimization
-%    EMMA doesn't allow for reproducibility
-
-\td{
-\url{https://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai}
-In principle both AI and stat use math to get information out of data. 
-AI might use machine learning to create "intelligent" acting (playing a game or driving a  car). machine learning tries to predict unseen data points  and statistics is a subfield of maths which tries to get insight into a given data. 
-For example, in a statistical model, it is desirable to reduce the number of inputs. This allows the statistician to better study how a change in the input variable can be directly affected by the output variable.\cite{gontcharov2019}
-pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
-    }
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Design of Experiment} %DOE
@@ -448,10 +425,15 @@ DOEs: randomization, latin square, orthogonal experiment design, full/2-lvl fact
 \url{https://www.jstor.org/stable/2238570}\cite{karlin1966optimal}
 \url{https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}
 maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?via\%3Dihub}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Analysis of Variance} % ANOVA
-The statistical significance of the experiment is determined by a ratio of two variances. This ratio is independent of several possible alterations to the experimental observations: Adding a constant to all observations does not alter significance. Multiplying all observations by a constant does not alter significance. 
-So ANOVA statistical significance result is independent of constant bias and scaling errors as well as the units used in expressing observations. %https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions
+The statistical significance of the experiment is determined by a ratio of two variances. 
+This ratio is independent of several possible alterations to the experimental observations: 
+Adding a constant to all observations does not alter significance. 
+Multiplying all observations by a constant does not alter significance. 
+So ANOVA statistical significance result is independent of constant bias and scaling errors 
+as well as the units used in expressing observations. %https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions
 \td{make analysis with EMMA dataset and EMMA+DOE}
 \url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical
 \url{https://pypi.org/project/pynova/}
@@ -485,6 +467,8 @@ somebody very wise (my superviser) once said: we need to able to predict it othe
 \subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{AI vs statistics}
+As \gls{ml} failed me or rather I failed in \gls{ml} (see Learning from Data) I tried to extract as much insight as possible using statistics. 
+What is statistics, though and what seperates it from \gls{ml}? 
 \begin{itemize}
 	\item \td{let GPT-3 write}
 	\item check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
@@ -580,3 +564,62 @@ Further Literature:
 		{https://doi.org/10.1177\%2F1352458520978648}
 		{Machine and deep learning in MS research are just powerful statistics – No}
 \end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Free writing about AI}
+I chose an evolutionary algorithm which is - i think - also part of machine learning, 
+which is a part of AI. 
+There are many different types of AI. what are the most haeufig sub domains of the AI field? 
+(natural) language processing, image erkennung, and prediction which can be geteilt in 
+classification (discrete) and continuous prediction. 
+These are mainly machine learning algos. other machine learning tasks are EA, PSO, 
+
+
+\subsubsection{2022-06-19-Free-Writing}
+The problem which presents it self is in principle a search problem.
+A large space of possible combinations of experimental anordnungen presents it self
+and out of these we want to find the optimial parameter combination. 
+The best way with unlimitied resources would be the brute-force approach to try every possibility. 
+But due to limited time this is unfeasable. 
+But a new questions arises: how should the ausmasse of the search space be eingeschraenkt? 
+What are the upper and lower limits and which intervals/step size/grid size should be used. 
+Also even before, we have to answer which dimensions/parameters should we include in the search? 
+Which parameters should we keep constant and at which value? 
+And finally which features should we use to measure the goodness of an experiment? 
+
+I tried different methods to answer the first X questions: Latin square and Plackett-Burman design.
+Unfortunately, I was faced with similar questions. How many levels and which end points? 
+latin squares are about orthogonality 
+PB is a factorial experiment desing in contrast to one-fator-at-a-time methods.
+reliability and validity are low due to experiments not replicated 
+
+\subsubsection{things I should try if they work:}
+\begin{itemize}
+    \item GA 
+    \item what is reinforcement learning? 
+    \item PCA
+    \item linear regression
+    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
+    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
+    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
+\end{itemize}
+
+%    https://en.wikipedia.org/wiki/Design_of_experiments
+%    https://en.wikipedia.org/wiki/The_Design_of_Experiments
+%    https://en.wikipedia.org/wiki/Response_surface_methodology
+%    https://en.wikipedia.org/wiki/Optimal_design
+%    https://sci-hub.st/https://doi.org/10.2307/2332195
+%    https://en.wikipedia.org/wiki/Latin_square
+%    https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence
+%    https://en.wikipedia.org/wiki/Evolutionary_algorithm
+%    https://en.wikipedia.org/wiki/Particle_swarm_optimization
+%    EMMA doesn't allow for reproducibility
+
+\td{
+\url{https://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai}
+In principle both AI and stat use math to get information out of data. 
+AI might use machine learning to create "intelligent" acting (playing a game or driving a  car). machine learning tries to predict unseen data points  and statistics is a subfield of maths which tries to get insight into a given data. 
+For example, in a statistical model, it is desirable to reduce the number of inputs. This allows the statistician to better study how a change in the input variable can be directly affected by the output variable.\cite{gontcharov2019}
+pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+    }
+

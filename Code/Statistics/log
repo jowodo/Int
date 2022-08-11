@@ -2,6 +2,7 @@
 2) does the heating velocity influence the resistance? hardly 
 3) do conc and layers number influence resistance? linear 
 4) do db velocity and db temperautre influence resistance? how
+5) do 
 
     1) does the heating temperature influence the resistance? 
 gnuplot -e "set xrange [250:550]; p \"db_final.dat\" u 12:3; pause -1 "
@@ -21,6 +22,8 @@ gnuplot -e "set xrange [1:13]; p 'db_final.dat' u 8:3 pt 4 ; pause -1"
 only use xrange [4:12] why are there 3,5 values
 
     4) do db velocity and db temperautre influence resistance? 
+see http://gnuplot.sourceforge.net/demo/pm3d.html
+'''
 get(samples,position,value):
     array={}
     for i in samples: 
@@ -34,6 +37,7 @@ for vDOC in {10,12,14,16,18,20}:
         mean = samples.mean()
         variance = samples.variance()
         print vDOC, TDOC, mean, variacnce
+'''
 
 
 
