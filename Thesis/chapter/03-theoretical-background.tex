@@ -375,7 +375,7 @@ and the weights (parameters of intensity), with which the data is routed from on
 are optimised during training. 
 %
 Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} and in quantum mechanics too\cite{westermayr2020combining}.
-Other common \td{architectures} are linear regression, kernel ridge regression, support vector regression.
+Other common architectures include linear regression, kernel ridge regression, support vector regression.
 There are also lesser know algorithms like 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
 %
@@ -383,7 +383,7 @@ One advantage of evolutionary algorithms is that they start with a small data se
 and periodically request new data in order to solve the problem iteratively.
 \td{This is exactly what I needed because every experiment is very time intensive.} 
 
-A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} providing the input "Introduction to genetic algorithms: "}
+A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
 
 \iffalse
 \Gls{ga} uses a starting population of size $p$ ($p \in$ \td{N$^+$}) where each experiment (or data point) 
@@ -411,12 +411,18 @@ are there iterative optimisation processes without stochastic?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Design of Experiment} %DOE
-"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."\cite{goodwin1977experiment}
+%\epigraph{"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."}{Grahem C. Goodwin\cite{goodwin1977experiment}}
+%
+\begin{quote}
+	{"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."}
+	- {Grahem C. Goodwin\cite{goodwin1977experiment}}
+\end{quote}
+%
 Contstraints might include range constraints of input and output variables as well as total time available and total number of samples/experiments that can be taken.\cite{goodwin1977experiment}
 "Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
 
 In two cases a deliberate design of experiment makes sense. 
-If the query of a new data point is very expensive it favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
+If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
 If the query space is so vast, that randomly querying might lead to information about uninteresting part of the domain.
 Continuous state spaces must be accommodated by arbitrary discretization.
 \cite{cohn1996neural}
@@ -463,12 +469,15 @@ do db velocity and db temperautre influence resistance? how\\
 
 somebody very wise (my superviser) once said: we need to able to predict it otherwise it is just an engineering problem \td{(look at mail)}
 
+"Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{AI vs statistics}
 As \gls{ml} failed me or rather I failed in \gls{ml} (see Learning from Data) I tried to extract as much insight as possible using statistics. 
 What is statistics, though and what seperates it from \gls{ml}? 
+more genau mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of of \td{finding correlation from data, finding mathematical models to describe the data} where as (classical) statistics is the domain of representing the data. 
 \begin{itemize}
 	\item \td{let GPT-3 write}
 	\item check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
