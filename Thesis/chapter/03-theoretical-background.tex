@@ -344,12 +344,13 @@ It is slowly creeping into every aspect of modern human life just like electrici
 Realms in which AI is gaining traction are: 
 %
 playing board games (and beating humans)\cite{Silver2017,Feng1999,Campbell2002}, 
-image recognition (in medicine)\cite{Li2020,Deo2015,Topol2019,Fujiyoshi2019}, 
-in chemistry\cite{Westermayr2019,goh2017chemception,jha2018elemnet}, 
+image recognition (very popular for medical diagnosis)\cite{Li2020,Deo2015,Topol2019,Fujiyoshi2019}, 
+chemistry\cite{Westermayr2019,goh2017chemception,jha2018elemnet}, 
 cyber security\cite{Sarker2021},
 facial recognition (to prevent theft of toilet paper \cite{Andrews2017}),
 financial sector (as robo-advisors)\cite{Littman2021},
-natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021} (which can also create pictures through scalable vector graphics (SVG) and code)
+natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021} 
+(which can also create code and pictures through scalable vector graphics (SVG))
 and even creative tasks like 
 creating non existing faces\cite{Mansourifar2020}, 
 create graphic artwork (DALL-E 2)\cite{Marcus2022} or 
@@ -357,7 +358,8 @@ making video games\cite{Guzdial2016}.
 %
 It is nearly hard to find a field where \gls{ai} isn't used in some way. 
 This steady incorporation of \gls{ai} leads to the so called \gls{ai} effect\cite{McCorduck1982,ai100}: 
-certain fields get incorporated into \gls{ai} research and practice and after some time of general use are no more considered \gls{ai} (e.g. spam filter or web searches).
+certain fields get incorporated into \gls{ai} research and practice.
+Such that, after some time of general use it is no more considered \gls{ai} (e.g. spam filter or web searches).
 Google CEO Sundar Pichai even goes as far and said: 
 "AI is one of the most important things humanity is working on. It is more profound than [...] electricity or fire"\cite{Hassan2020}
 
@@ -370,7 +372,7 @@ It is a umbrella term for programs with instructions to learn from data, i.e. ga
 %
 There is a platitude of different machine learning methods: 
 they can be divided into supervised (training set is labeled) and unsupervised (exploratory).  
-An orthogonal division can be made by regression (continuous) versus classification (discrete). 
+An orthogonal division can be made by regression (continuous data) versus classification (discrete, categorical data). 
 Independent from these $2\times2$ categories there are multiple ways to let machines learn from data.
 \Gls{nn} (one of the most popular architectures for big data\cite{Chiroma2019}) are loosely modeled after the brain\cite{bishop1994neural}.
 %
@@ -401,18 +403,11 @@ selection, mutation and crossover operations.
 %and a (mostly) random c
 \fi
 
-\Gls{pso} also uses a starting population of particles of size $p$ where each experiment 
+\Gls{pso} also uses a starting population of particles where each experiment (particle) 
 is represented by its independent and dependent variables. 
-It was originally inspired by the behaviour of bird flocks and fish school.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Particle Swarm Optimization}
-
-it has been shown that \gls{pso} works well on problems wher \gls{ga}s work well\cite{Kennedy1995}. 
-It can be seen as in the middle of \gls{ga} (taking eons) and \gls{nn} taking seconds regarding time scale\cite{Kennedy1995}.
-it is a stochastic process
-are there iterative optimisation processes without stochastic? 
-%
+It was originally inspired by the behaviour of bird flocks and fish schools.
+Each particle has an associated position and velocity. 
+Every movement across the search space is stochastic and influenced by its particle velocity and position as well as its and the swarm's best known position.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Design of Experiment} %DOE
@@ -423,18 +418,42 @@ are there iterative optimisation processes without stochastic?
 	- {Grahem C. Goodwin\cite{goodwin1977experiment}}
 \end{quote}
 %
-Contstraints might include range constraints of input and output variables as well as total time available and total number of samples/experiments that can be taken.\cite{goodwin1977experiment}
-"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
-
-In two cases a deliberate design of experiment makes sense. 
+In two cases a deliberate design of experiment is beneficial.
 If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
 If the query space is so vast, that randomly querying might lead to information about uninteresting part of the domain.
-Continuous state spaces must be accommodated by arbitrary discretization.
+% 
+At the beginning of an experiment its constraints must be determined. 
+%
+Constraints for a given experiment might include range of input and output variables as well as total time available and total number of samples/experiments that can be taken.\cite{goodwin1977experiment}
+%
+
+A naive approach to an experiment design is the full factorial \gls{doe}.
+Each possible combination of discrete values is tested. 
+While this is the best design it will more often than not be infeasible due the curse of dimensionality.
+The 2-level factorial design provides an alternative with $2^d$ (where d is the dimensionality of the problem) experiments. 
+Drawbacks of 2-level factorial include no data about the inside of the search space and infeasibility for moderate dimensional problems.
+
+The Plackett-Burman\cite{vanaja2007design,miller2001using,wang1995hidden} design is a special case of the two level fractional factorial design, 
+where the number of needed experiments is smaller than $d+2$ and 
+each combination of levels for any pair of factors appears the same number of times. 
+In order to overcome these obstacles a certain number of experiments can be chosen randomly from the search space. 
+%A straight forward design can be to randomly chose a certain number of experiments from the search space. 
+A drawback of randomization is that sample set is likely not evenly distributed across the search space\cite{viana2016tutorial}. 
+The Hammersley design\cite{viana2016tutorial,diwekar1997efficient} is based on the Hammersley sequence and produces space filling data points. 
+The Latin hypercube \gls{doe}\cite{viana2016tutorial,diwekar1997efficient} is a type of orthogonal \gls{doe}, 
+which has the advantage that 
+each level for each variable will be tested only once. 
+A Latin hypercube \gls{doe} can be also created such that data points more uniformly distribute over the search space. 
+%"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
+%
+%Continuous state spaces must be accommodated by arbitrary discretization.
 \cite{cohn1996neural}
+%
+At 
 
 DOEs: randomization, latin square, orthogonal experiment design, full/2-lvl factorial design, placket burman, 
-\url{https://www.jstor.org/stable/2238570}\cite{karlin1966optimal}\\
-\url{https://doi.org/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}
+\url{https://www.jstor.org/stable/2238570}\cite{karlin1966optimal} very math intensive  \\
+\url{https://doi.org/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}  \\
 maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?via\%3Dihub}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

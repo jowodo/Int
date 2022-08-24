@@ -15,8 +15,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{V-I and PSO//Optimization}
-\td{the input vars were not regularized/normalized, naively like a small child eating old food and regretting not informing oneself earlier}
-\td{too much data as input, dimensionality reduction (PCA) and optimization}
+\td{ideal objective is to create response surface approximation}\\
+\td{the input vars were not regularized/normalized, naively like a small child eating old food and regretting not informing oneself earlier}\\
+\td{too much data as input, dimensionality reduction (PCA) and optimization}\\
+\td{plot the predicted data for variables which should be excluded (Tcal, Vcal,Conc, layers)}
+\td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
+The primary goal of a screening experiment is to identify the active factors. 
+A secondary goal is to provide a simple model that captures the essential features of the 
+relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}
 
 \td{show results between 1ml acoh (199), acoh+ipo 1:1 (201) and ipo (192). Show graph of the three vs log pondus G and pinhole density and maybe distribution of single point measurements? 
 \texttt{set boxwidth 2; set xtics 5; p "stat.dat" u 1:3 with boxes} 
@@ -152,3 +158,6 @@ Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
 \td{I wanted to exhaust the possibilities of EA (not having enough data). i should have rather einengen the search raum as much as possible (spreading the search room too much) and then do optimisation: fix layer count to 3 fix conc to 3F and fix calc temp and rate (or only use two extreme values)}
 
 \td{I wanted to let the algorithm show what I already knew instead of letting my a priori knowledge constrain the model before starting.}
+
+\subsection{DOE}
+factorial design (classical \gls{doe} is more robust at feature extraction for error laden data \cite{giunta2003overview}
