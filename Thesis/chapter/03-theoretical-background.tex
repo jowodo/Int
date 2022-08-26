@@ -418,9 +418,9 @@ Every movement across the search space is stochastic and influenced by its parti
 	- {Grahem C. Goodwin\cite{goodwin1977experiment}}
 \end{quote}
 %
-In two cases a deliberate design of experiment is beneficial.
+In two cases a deliberate \gls{doe} is beneficial.
 If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
-If the query space is so vast, that randomly querying might lead to information about uninteresting part of the domain.
+If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
 % 
 At the beginning of an experiment its constraints must be determined. 
 %
@@ -429,27 +429,27 @@ Constraints for a given experiment might include range of input and output varia
 
 A naive approach to an experiment design is the full factorial \gls{doe}.
 Each possible combination of discrete values is tested. 
-While this is the best design it will more often than not be infeasible due the curse of dimensionality.
-The 2-level factorial design provides an alternative with $2^d$ (where d is the dimensionality of the problem) experiments. 
+While this is the most informative design it will more often than not be infeasible due the curse of dimensionality\cite{cherkassky1998learning}.
+The 2-level factorial design provides an alternative with $2^d$ (where $d$ is the number of independent variables) experiments. 
 Drawbacks of 2-level factorial include no data about the inside of the search space and infeasibility for moderate dimensional problems.
-
-The Plackett-Burman\cite{vanaja2007design,miller2001using,wang1995hidden} design is a special case of the two level fractional factorial design, 
-where the number of needed experiments is smaller than $d+2$ and 
-each combination of levels for any pair of factors appears the same number of times. 
+In a full factorial or 2-level factorial design most experiments are redundant and most resources will be spent exploring high-order interaction effects\cite{gunst2009fractional}.
 In order to overcome these obstacles a certain number of experiments can be chosen randomly from the search space. 
 %A straight forward design can be to randomly chose a certain number of experiments from the search space. 
-A drawback of randomization is that sample set is likely not evenly distributed across the search space\cite{viana2016tutorial}. 
+
+The Plackett-Burman\cite{vanaja2007design,miller2001using,wang1995hidden} design is a special case of 2-level fractional factorial design, 
+where the number of needed experiments is smaller than $d+2$ and 
+each combination of levels for any pair of factors appears the same number of times. 
+A drawback of randomization and 2-level factorial designs is that the sample set is likely not evenly distributed across the search space\cite{viana2016tutorial}. 
 The Hammersley design\cite{viana2016tutorial,diwekar1997efficient} is based on the Hammersley sequence and produces space filling data points. 
 The Latin hypercube \gls{doe}\cite{viana2016tutorial,diwekar1997efficient} is a type of orthogonal \gls{doe}, 
-which has the advantage that 
-each level for each variable will be tested only once. 
+which has the advantage that each level for each variable will be tested only once. 
 A Latin hypercube \gls{doe} can be also created such that data points more uniformly distribute over the search space. 
 %"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
 %
 %Continuous state spaces must be accommodated by arbitrary discretization.
 \cite{cohn1996neural}
 %
-At 
+\td{For a 2-level factorial applies: "The effect of any factor main effect (A, B, C) or interaction (AB, AC, BC, ABC) is the difference of two averages, the average of the responses correpsonding to +1 levels and the average of the responses corresponding to -1 levels. " - from Gunst2009\cite{gunst2009fractional}}
 
 DOEs: randomization, latin square, orthogonal experiment design, full/2-lvl factorial design, placket burman, 
 \url{https://www.jstor.org/stable/2238570}\cite{karlin1966optimal} very math intensive  \\
@@ -660,7 +660,8 @@ pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai
 }
 
 am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
-ist das modell fraglich, sollte man die Daten so erheben, als gälte das nächst kompliziertere Modell \cite{haertler2014statistisch}
+"ist das modell fraglich, sollte man die Daten so erheben, als gälte das nächst kompliziertere Modell" \cite{haertler2014statistisch}
 Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
 Eine gefährliche Fehlerquelle ist dei Erwartung eines bestimmten Ergebnisses durch den Experimentator. \cite{haertler2014statistisch}
 
+\td{if i want to learn about support vector machine, read chapter 4,7,8 from "Learning from Data" by Cherkassky\cite{cherkassky1998learning} (TUBib 726-1998)}
