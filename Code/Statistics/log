@@ -2,7 +2,7 @@
 2) does the heating velocity influence the resistance? hardly 
 3) do conc and layers number influence resistance? linear 
 4) do db velocity and db temperautre influence resistance? how
-5) do 
+5) do anova on pydoe data...
 
     1) does the heating temperature influence the resistance? 
 gnuplot -e "set xrange [250:550]; p \"db_final.dat\" u 12:3; pause -1 "

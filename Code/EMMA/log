@@ -1,0 +1,3 @@
+install.packages(c("earth","clusterSim","https://cran.r-project.org/src/contrib/Archive/emma/emma_0.1-0.tar.gz"), lib="~/.R/lib" ) 
+install.packages("https://cran.r-project.org/src/contrib/Archive/emma/emma_0.1-0.tar.gz", lib="~/.R/lib" ) 
+library(emma)
