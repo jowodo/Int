@@ -365,7 +365,8 @@ It is an umbrella term for programs with instructions to learn from data, i.e. g
 There is a platitude of different machine learning methods: 
 they can be divided into supervised (training set is labeled) and unsupervised (exploratory).  
 An orthogonal division can be made by regression (continuous data) versus classification (discrete, categorical data). 
-Independent from these $2\cdot2$ categories there are multiple ways to let machines learn from data.
+%Two architecture which don't quite fit into this classification are Generative Adversarial Network (GAN) and jk
+Independent from these $2\times2$ categories there are multiple ways to let machines learn from data.
 %
 \Gls{nn} (one of the most popular architectures for big data\cite{Chiroma2019}) are loosely modeled after the brain\cite{bishop1994neural}.
 Artificial neurons (also called nodes), which are arranged in layers, 
@@ -413,6 +414,7 @@ Every movement across the search space is stochastic and influenced by its parti
 In two cases a deliberate \gls{doe} is beneficial.
 If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
 If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
+%Both encompass nearly all cases. 
 % 
 At the beginning of any experiment its constraints must be determined. 
 %
@@ -434,6 +436,10 @@ In order to overcome these obstacles a certain number of experiments can be chos
 %Alternatively, a subset of from the 2-level factorial design can be chosen, which is called a fractional factorial design. 
 When a subset is chosen from the factorial design, it is called a fractional factorial design. 
 % PLACKETT_BURMAN
+%, a fractional factorial \gls{doe}. 
+%A straight forward design can be to randomly chose a certain number of experiments from the search space. 
+%
+%
 The Plackett-Burman\cite{vanaja2007design,miller2001using,wang1995hidden} design is a special case of 2-level fractional factorial design, 
 where the number of needed experiments $n$ is $n<d+4$ 
 (more precisely $n=(\lfloor d\div4\rfloor+1)\cdot4$, where $\lfloor x\rfloor$ denotes the floor function on $x$) 
@@ -449,25 +455,38 @@ Latin hypercube \gls{doe}s are mainly used in computer simulations which are pur
 %"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
 %
 %Continuous state spaces must be accommodated by arbitrary discretization.
-\cite{cohn1996neural}
+%\cite{cohn1996neural}
+\iffalse
 %
 \td{For any 2-level factorial DOE applies: "The effect of any factor main effect (A, B, C) or interaction (AB, AC, BC, ABC) is the difference of two averages, the average of the responses correpsonding to +1 levels and the average of the responses corresponding to -1 levels. " - from Gunst2009\cite{gunst2009fractional}}
 
 DOEs: randomization, latin square, orthogonal experiment design, full/2-lvl factorial design, placket burman, \\
 \url{https://doi.org/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}  \\
 maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?via\%3Dihub}
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Analysis of Variance} % ANOVA
+\Gls{anova} analyses the means by means of mincing variances.
+%of of the continuous outputs where inputs are categories. 
+The inputs of the model should be categorical and the outputs continuous. 
 The statistical significance of the experiment is determined by a ratio of two variances. 
-This ratio is independent of several possible alterations to the experimental observations: 
-Adding a constant to all observations does not alter significance. 
-Multiplying all observations by a constant does not alter significance. 
-So ANOVA statistical significance result is independent of constant bias and scaling errors 
-as well as the units used in expressing observations. %https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions
-\td{make analysis with EMMA dataset and EMMA+DOE}
-\url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical
-\url{https://pypi.org/project/pynova/}
+%This ratio is independent of several possible alterations to the experimental observations: 
+%Adding a constant to all observations does not alter significance. 
+%Multiplying all observations by a constant does not alter significance. 
+\Gls{anova} statistical significance results are independent of constant bias and 
+scaling errors as well as the units used in expressing observations. 
+\href{https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions}{(click here)}
+Addiitonal assumptions of \gls{anova}: groups and levels should be independent, 
+residual error should follow normal distribution, variance of groups should be equal. 
+\href{https://statsandr.com/blog/anova-in-r/}{(click here)}
+
+\textbf{Links}
+\url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical\\
+\url{https://pypi.org/project/pynova/}\\
+
+
+\iffalse
 \textbf{Assumptions of ANOVA}
 from \url{https://statsandr.com/blog/anova-in-r/}
 \begin{itemize}
@@ -477,31 +496,22 @@ from \url{https://statsandr.com/blog/anova-in-r/}
     \item Equality of variance: variance in differenct groups should be equal (compare with homoscedasticity).
     \item No outliers
 \end{itemize}
+\fi
 
 \textbf{Other statistics}
 \begin{itemize}
-    \item f-test 
+    \item f-test (include to ANOVA \url{https://quantifyinghealth.com/f-statistic-in-linear-regression/})
     \item p-value: Is the probability that a data point is observed under the null hypothesis. A small value argues against the null hypothesis. 
     \item t-test: will tell you if a variable is statistically significant. 
     \item f-test: will tell you if a group of variables is jointly significant
+    \item T-test (signal-noise-ratio \href{https://statisticsbyjim.com/hypothesis-testing/t-tests-1-sample-2-sample-paired-t-tests/}{(click here)}): if variable are stat. significant; 
+    \item F-test (ratio of variances \href{https://statisticsbyjim.com/anova/f-tests-anova/}{click here}): if group of vars stat. sig \url{https://quantifyinghealth.com/f-statistic-in-linear-regression/}
 \end{itemize}
 
-let's rule out different input variables: \\
-does the heating temperature influence the resistance?  no \\
-does the heating velocity influence the resistance?  hardly\\
-do conc and layers number influence resistance? linear \\
-do db velocity and db temperautre influence resistance? how\\
-
-somebody very wise (my superviser) once said: we need to able to predict it otherwise it is just an engineering problem \td{(look at mail)}
-
-"Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Linear Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{AI vs statistics}
 As \gls{ml} failed me or rather I failed in \gls{ml} (see Learning from Data) I tried to extract as much insight as possible using statistics. 
-What is statistics, though and what seperates it from \gls{ml}? 
+What is statistics, though, and what seperates it from \gls{ml}? 
 more genau mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of of \td{finding correlation from data, finding mathematical models to describe the data} where as (classical) statistics is the domain of representing the data. 
 \begin{itemize}
 	\item \td{let GPT-3 write}
@@ -529,8 +539,7 @@ General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998lea
 \textbf{3. Data Generation and Experiment Design} can be either in control of the modeler (designed experiment) or in an observational setting. The data collection can affect the sampling distribution and influence the next steps. 
 \textbf{4. Collect the Data and Perform Preprocessing} here outliers are detected and data preprocessing/encoding/feature selection. Scaling by standard deviation might be a good idea, but independent scaling of variables can lead to suboptimal representation for the learning task. Feature selection: A small number of informative features make the task of estimating dependencies easier. 
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
-\textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. 
-\cite{cherkassky1998learning}
+\textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
 
 There are not only \textbf{x}(input) and y(output) variables, but also \textbf{z}(uncontrolled/unobserved input variables).
 Issues of methods for learning from data: 
