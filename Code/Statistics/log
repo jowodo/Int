@@ -5,25 +5,25 @@
 5) do anova on pydoe data...
 
     1) does the heating temperature influence the resistance? 
-gnuplot -e "set xrange [250:550]; p \"db_final.dat\" u 12:3; pause -1 "
+`gnuplot -e "set xrange [250:550]; p \"db_final.dat\" u 12:3; pause -1 "`
 300 seems to be as expected not high enough calcination temp
 
     2) does the heating velocity influence the resistance? 
-gnuplot -e "set xrange [0:20]; set xtics 0,2 ; p \"db_final.dat\" u 11:3 pt 4 ; pause -1 "
+`gnuplot -e "set xrange [0:20]; set xtics 0,2 ; p \"db_final.dat\" u 11:3 pt 4 ; pause -1 "`
 very sparse data, only for vCal={2,10,18} barely enough data 
 higher vCal correlates with lower G (conductance)
 
     3) do conc and layers number influence resistance? 
     CONC
-gnuplot -e "set xrange [0:6]; p 'db_final.dat' u 7:3 pt 4 ; pause -1"
+`gnuplot -e "set xrange [0:6]; p 'db_final.dat' u 7:3 pt 4 ; pause -1"`
 need to see mean variance plot 
     LAYERS
-gnuplot -e "set xrange [1:13]; p 'db_final.dat' u 8:3 pt 4 ; pause -1"
+`gnuplot -e "set xrange [1:13]; p 'db_final.dat' u 8:3 pt 4 ; pause -1"`
 only use xrange [4:12] why are there 3,5 values
 
     4) do db velocity and db temperautre influence resistance? 
 see http://gnuplot.sourceforge.net/demo/pm3d.html
-'''
+```
 get(samples,position,value):
     array={}
     for i in samples: 
@@ -37,7 +37,21 @@ for vDOC in {10,12,14,16,18,20}:
         mean = samples.mean()
         variance = samples.variance()
         print vDOC, TDOC, mean, variacnce
-'''
+``` 
+
+
+ANOVA in R 
+-----------------
+```
+n="numeric"
+f="factor"
+d<-read.delim("db_final.tsv", colClasses=c(n,n,n,n,n,n,f,f,f,f,f,f))
+head(d)
+boxplot(G ~ TCal, data=d, main="Conductance by Calc. Temp", xlab="Calc Temp. [C]", ylab="Conductance [log(S)]", col="steelblue", border="black")
+G.TCal.aov<-aov(G ~ TCal, data = d)
+summary(G.TCal.aov)
+
+```
 
 
 
