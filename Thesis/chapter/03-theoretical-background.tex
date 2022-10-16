@@ -306,7 +306,7 @@ X-rays causes constructive and destructive interference according to Bragg's law
 statistics:
 	what is the difference between ml and stat? 
 		superficially very similar but different goals and diff rahmenbedingungen 
-    how can i usee ANOVA 
+    how can i use ANOVA 
     linear regression 
 }
 
@@ -314,10 +314,43 @@ statistics:
 %Why introduce machine learning to this project? 
 %I wanted to apply and delve into what I've been studying during my undergrad courses. 
 %This seemed like the perfect oppurtunity. 
-Is machine learning just hyped statistics? No! 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Is machine learning just hyped statistics? No! 
+		%\href
+		%{https://doi.org/10.1177\%2F1352458520978648}
+		%{Machine and deep learning in MS research are just powerful statistics – No}
 Although machine learning uses several statistical methods, their goal and frame conditions are different. 
-\td{The goal of machine learning is to ???}
+%\td{The goal of machine learning is to ???}
 
+%\begin{itemize}
+%	\item \td{let GPT-3 write}
+%	\item check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
+%	\item see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+%	\item 
+%		\href
+%		{https://doi.org/10.1177\%2F1352458520978648}
+%		{Machine and deep learning in MS research are just powerful statistics – No}
+%\end{itemize}
+
+%\td{
+%\url{https://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai}
+%In principle both \gls{ml} and statistics use math to get information out of data. 
+%AI might use machine learning to create "intelligent" acting (playing a game or driving a  car). 
+\Gls{ml} tries to predict unseen data points and statistics is a subfield of maths 
+which tries to get insight into a given data. 
+For example, in a statistical model, it is desirable to reduce the number of inputs. 
+This allows the statistician to better study how a change in the input variable can be 
+directly affected by the output variable.\cite{gontcharov2019}
+%pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+%}
+%What is statistics, though, and what seperates it from \gls{ml}? 
+More precisely, mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of of 
+\td{finding correlation from data, finding mathematical models to describe the data} 
+where as (classical) statistics is the domain of representing the data. 
+\td{talk about statistics, then the difference to Ml} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\td{if i want to learn about support vector machine, read chapter 4,7,8 from "Learning from Data" by Cherkassky\cite{cherkassky1998learning} (TUBib 726-1998)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Artificial Inteligence and Machine Learning}
@@ -376,6 +409,8 @@ Google CEO Sundar Pichai even goes as far and said:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Machine Learning Methods}
 %
+%\todo{check out SVM and KRR}
+%
 \Gls{ml} is at the base of most \gls{ai}s.
 It is an umbrella term for programs with instructions to learn from data, i.e. gain knowledge, categorise, predict and make decisions based on data. 
 %
@@ -395,11 +430,11 @@ Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} an
 Other common architectures include linear regression, kernel ridge regression and support vector regression.
 There are also lesser know algorithms like 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
-\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{Villannova2010}.
+\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{Villanova2010}.
 %
 One advantage of evolutionary algorithms is that they start with a small data set
 and periodically request new data in order to solve the problem iteratively.
-\td{This is exactly what I needed because every experiment is very time intensive.} 
+%\td{This is exactly what I needed because every experiment is very time intensive.} 
 
 A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
 
@@ -419,6 +454,12 @@ is represented by its independent and dependent variables.
 It was originally inspired by the behaviour of bird flocks and fish schools\cite{Kennedy1995}.
 Each particle has an associated position and velocity. 
 Every movement across the search space is stochastic and influenced by its particle velocity and position as well as its and the swarm's best known position.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{EMMA}
+\Gls{emma} and \gls{mars}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Design of Experiment} %DOE
@@ -486,6 +527,7 @@ maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?v
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Analysis of Variance} % ANOVA
 \Gls{anova} analyses the means by means of mincing variances.
+\td{at the basis of anova lies the F-test.}
 %of of the continuous outputs where inputs are categories. 
 The inputs of the model should be categorical and the outputs continuous. 
 The statistical significance of the experiment is determined by a ratio of two variances. 
@@ -516,183 +558,4 @@ from \url{https://statsandr.com/blog/anova-in-r/}
 \end{itemize}
 \fi
 
-\textbf{Other statistics}
-\begin{itemize}
-    \item f-test (include to ANOVA \url{https://quantifyinghealth.com/f-statistic-in-linear-regression/})
-    \item p-value: Is the probability that a data point is observed under the null hypothesis. A small value argues against the null hypothesis. 
-    \item t-test: will tell you if a variable is statistically significant. 
-    \item f-test: will tell you if a group of variables is jointly significant
-    \item T-test (signal-noise-ratio \href{https://statisticsbyjim.com/hypothesis-testing/t-tests-1-sample-2-sample-paired-t-tests/}{(click here)}): if variable are stat. significant; 
-    \item F-test (ratio of variances \href{https://statisticsbyjim.com/anova/f-tests-anova/}{click here}): if group of vars stat. sig \url{https://quantifyinghealth.com/f-statistic-in-linear-regression/}
-\end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{AI vs statistics}
-As \gls{ml} failed me or rather I failed in \gls{ml} (see Learning from Data) I tried to extract as much insight as possible using statistics. 
-What is statistics, though, and what seperates it from \gls{ml}? 
-more genau mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of of \td{finding correlation from data, finding mathematical models to describe the data} where as (classical) statistics is the domain of representing the data. 
-\begin{itemize}
-	\item \td{let GPT-3 write}
-	\item check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
-	\item see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
-	\item 
-		\href
-		{https://doi.org/10.1177\%2F1352458520978648}
-		{Machine and deep learning in MS research are just powerful statistics – No}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Learning from Data}
-General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998learning}
-\begin{enumerate}
-	\item State the problem 
-	\item Formulate the hypothesis
-	\item Design the experiment/generate the data
-	\item Collect the data and perform preprocessing
-	\item Estimate the model 
-	\item Interpret the model/draw the conclusions
-\end{enumerate}
-\textbf{1. Statement of the Problem} There was no clear statement of the problem. Now I would formulate it: "How to produce most insulating layer with least energy? How do we define most insulating?" That's why there are two output variables rather than one.
-\textbf{2. Hypothesis Formulation} formulate an unknown dependency and define input and output variables.
-\textbf{3. Data Generation and Experiment Design} can be either in control of the modeler (designed experiment) or in an observational setting. The data collection can affect the sampling distribution and influence the next steps. 
-\textbf{4. Collect the Data and Perform Preprocessing} here outliers are detected and data preprocessing/encoding/feature selection. Scaling by standard deviation might be a good idea, but independent scaling of variables can lead to suboptimal representation for the learning task. Feature selection: A small number of informative features make the task of estimating dependencies easier. 
-\textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
-\textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
-
-There are not only \textbf{x}(input) and y(output) variables, but also \textbf{z}(uncontrolled/unobserved input variables).
-Issues of methods for learning from data: 
-\begin{itemize}
-	\item How to incorporate a priori assumptions into learning? 
-	\item How to measure model complexity (i.e. flexibility to fit the training data)?
-	\item How to find a optimal balance between the data and a priori knowledge? 
-\end{itemize}
-\cite{cherkassky1998learning}
-
-"Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
-
-The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
-
-"Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
-
-"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
-
-Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
-Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
-
-Any learning process requires the following(p40): 
-\begin{itemize}
-	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
-	\item A priori knowledge to impose contrains
-	\item An inductive principle (what needs to be done)
-		\begin{itemize}
-			\item penalizeation (regularization) inductive principle
-			\item early stopping rules (with ANN, difficult to control and interpret)
-			\item structural risk minimization (SRM) (order according to complexity)
-			\item Bayesian Inference (add subjectivity to learning machine)
-			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
-		\end{itemize}
-	\item A learning method (how does it need to be done,implementation)
-\end{itemize}
-
-\textbf{Curse and Complexity of Dimensionality}
-goal is to estimate function with finite samples, so it's always inaccurate (biased). 
-meaning full estimate only possible with high sampling density, which is difficult for high dimensional functions.
-\begin{enumerate}
-	\item Sample sizes yielding the same density increse exponentially with dimension.
-	\item A large radius is needed to enclose a fraction of the data points in a high-dimensional space.
-	\item Almost every point is closer to an edge than to another point.
-	\item Almost every point  is an outlier in its own projection.
-\end{enumerate}
-
-
-
-%%
-Further Literature: 
-\begin{itemize}
-	\item 
-		\href
-		{https://doi.org/10.1016/0893-6080(94)90066-3}
-		{Pedagogical pattern selection strategies}
-	\item 
-		\href
-		{https://doi.org/10.1016/0893-6080(95)00137-9}
-		{Neural Network Exploration Using Optimal Experiment Design}
-	\item 
-		\href
-		{hArticlettps://doi.org/10.1016/S0076-5392(08)63235-X} 
-        {Chapter 6 Experiment Design}\cite{goodwin1977experiment}
-	\item 
-		\href
-		{https://doi.org/10.1177\%2F1352458520978648}
-		{Machine and deep learning in MS research are just powerful statistics – No}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Free writing about AI}
-I chose an evolutionary algorithm which is - i think - also part of machine learning, 
-which is a part of AI. 
-There are many different types of AI. what are the most haeufig sub domains of the AI field? 
-(natural) language processing, image erkennung, and prediction which can be geteilt in 
-classification (discrete) and continuous prediction. 
-These are mainly machine learning algos. other machine learning tasks are EA, PSO, 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{2022-06-19-Free-Writing}
-The problem which presents it self is in principle a search problem.
-A large space of possible combinations of experimental anordnungen presents it self
-and out of these we want to find the optimial parameter combination. 
-The best way with unlimitied resources would be the brute-force approach to try every possibility. 
-But due to limited time this is unfeasable. 
-But a new questions arises: how should the ausmasse of the search space be eingeschraenkt? 
-What are the upper and lower limits and which intervals/step size/grid size should be used. 
-Also even before, we have to answer which dimensions/parameters should we include in the search? 
-Which parameters should we keep constant and at which value? 
-And finally which features should we use to measure the goodness of an experiment? 
-
-I tried different methods to answer the first X questions: Latin square and Plackett-Burman design.
-Unfortunately, I was faced with similar questions. How many levels and which end points? 
-latin squares are about orthogonality 
-PB is a factorial experiment desing in contrast to one-fator-at-a-time methods.
-reliability and validity are low due to experiments not replicated 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{things I should try if they work:}
-\begin{itemize}
-    \item GA 
-    \item what is reinforcement learning? 
-    \item PCA
-    \item linear regression
-	\item t-test and anova but on what? 
-    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
-    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
-    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
-\end{itemize}
-
-%    https://en.wikipedia.org/wiki/Design_of_experiments
-%    https://en.wikipedia.org/wiki/The_Design_of_Experiments
-%    https://en.wikipedia.org/wiki/Response_surface_methodology
-%    https://en.wikipedia.org/wiki/Optimal_design
-%    https://sci-hub.st/https://doi.org/10.2307/2332195
-%    https://en.wikipedia.org/wiki/Latin_square
-%    https://en.wikipedia.org/wiki/Outline_of_artificial_intelligence
-%    https://en.wikipedia.org/wiki/Evolutionary_algorithm
-%    https://en.wikipedia.org/wiki/Particle_swarm_optimization
-%    EMMA doesn't allow for reproducibility
-
-\td{
-\url{https://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai}
-In principle both AI and stat use math to get information out of data. 
-AI might use machine learning to create "intelligent" acting (playing a game or driving a  car). machine learning tries to predict unseen data points  and statistics is a subfield of maths which tries to get insight into a given data. 
-For example, in a statistical model, it is desirable to reduce the number of inputs. This allows the statistician to better study how a change in the input variable can be directly affected by the output variable.\cite{gontcharov2019}
-pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
-}
-
-am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
-"ist das modell fraglich, sollte man die Daten so erheben, als gälte das nächst kompliziertere Modell" \cite{haertler2014statistisch}
-Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
-Eine gefährliche Fehlerquelle ist dei Erwartung eines bestimmten Ergebnisses durch den Experimentator. \cite{haertler2014statistisch}
-
-\td{if i want to learn about support vector machine, read chapter 4,7,8 from "Learning from Data" by Cherkassky\cite{cherkassky1998learning} (TUBib 726-1998)}
-
-%$\mathcal{Y}(Y)= E$
