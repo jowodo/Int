@@ -9,3 +9,8 @@ library("vioplot")
 library("ggplot2")
 mod<-lm(dat$G ~ dat$TCal)
 plot(dat$G ~ dat$TCal)
+
+# TODO 
+# small data set 
+# fit with earth 
+# plot earth fit

@@ -183,15 +183,21 @@ over sputter cleaning and etching to analysis.
 Advantages of 
 sputtered thin films include good adhesion to the substrate and good step coverage\cite{Swann1988}.
 
+\begin{figure}[htb]
+	\includegraphics[width=\textwidth]{./Pics/sputter0.png}
+    \caption{Propagation of energy in a dense cascade. Left graph: "Primary" shockwave. Right graph: "Thermal" pulse or "secondary" shockwave. Figure taken from Sigmund 1987\cite{sigmund1987}}
+	\label{fig:sputter}
+\end{figure}
+
 %\td{how does it work?}\\
 A high voltage is applied to 
 two parallel electrodes with low pressure gas in between. 
-The target acts as cathode and the substrate (holder) as anode (see \td{fig}).
+The target acts as cathode and the substrate (holder) as anode (see figure \ref{fig:sputter}).
 %the target which acts as a cathode with the substrate as anode in a parallel geometry (see \td{fig}).
 The cathode, then, emits electrons which collide with a gas particles (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
 Some gas particles may get ionized by the collision and the gas cations are accelerated to the cathode. 
 If a cation has enough energy it will bump off one or more atoms or molecules from the surface. 
-This happens by a cascade of momentum transfers, which can reach the surface again (see fig \td{cp sigmund69}). 
+This happens by a cascade of momentum transfers, which can reach the surface again (see fig \td{from \cite{sigmund1987}}). 
 If a surface particle obtains momentum pointing away from the bulk and its kinetic energy is higher than the binding energy, the particle is sputtered. 
 This sputtered particle travels unaffected by the electrical field perpendicular to the surface towards the substrate and condenses with other particles to form a layer.
 The pressure should be small, such that the sputtered particle has a long \gls{mfp}, but on the other hand 
@@ -241,9 +247,8 @@ The relation of energy~$E$ of a photon, its frequency~$\nu$, wavelength~$\lambda
 \end{align*}
 where $h$ is the Planck's constant.
 %In words: shorter wavelength (higher frequency) photons are more energetic.
-In practice the spectrum of \gls{em} waves is sectioned into different ranges (\td{see figure?});
+In practice the spectrum of \gls{em} waves is sectioned into different ranges (\td{see figure?+table});
 from high to low energy: X-ray, \gls{uv}, \gls{vis}, (near, middle and far) \gls{ir}, microwaves and radio waves. 
-\td{with number?}
 X-rays interact with core electrons, \gls{uv}\gls{vis} with valence electrons, \gls{ir} with molecular vibrations, microwaves with molecular rotations and radio with electron and nuclear spins. 
 %Molecular vibrations can be separated in valence and deformation vibrations.
 %
@@ -261,7 +266,7 @@ Only vibrations that change the dipole moment of the molecule are \gls{ir} activ
 
 \paragraph{(Fourier Transform) Infrared spectrometer}
  A ceramic material (Nernst glower) is heated to around \oc{1600} as light source. 
- In the two-beam-spectrometer the light is split, sent through the sample and a reference and one of the two beams is alternately sent through a monochromator to a detector (\td{thermocouple}). 
+ In the two-beam-spectrometer the light is split, sent through the sample and a reference and one of the two beams is alternately sent through a monochromator to a detector (often a thermopile).
 %
 In the \gls{ft}\gls{ir} spectrometer the beam is sent through the sample, split and 
 reflected from a static and from a moving mirror, recombined and detected by a photo 
@@ -274,8 +279,7 @@ When the refractive index of two layers differ, \gls{ir} can be used to measure 
 %\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
 %differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
 
-\td{QUESTIONS: 
-	how does detector work? two different for UVVis and MIR
+\td{
 	IR around page 45;
 The absorbance intensity is dependent on wave length and molecule structure. 
 Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
@@ -328,14 +332,19 @@ One example how to measure \gls{ai} is to let it play chess against a human\cite
 %Another test ingenioused by Alan Turing, is that a human communicates with an unknown entity (in written form) and must judge if they are dealing with a machine or a human being. 
 Another test ingenioused by Alan Turing, is the imitation game\cite{turing1950imitation}, now a days known as Turing test.
 An interrogator communicates with two unknown entities \textbf{A} and \textbf{B} (a woman and a man) and must find out who is who. 
-\textbf{A} will try to make to interrogator misjudge, whereas \textbf{B} is in the interrogators side.
-The question is if \textbf{A} is replaced with an computer how the ratio of outcomes would deviate from the original ratio. 
+\textbf{A} will try to make to interrogator misjudge, whereas \textbf{B} is on the interrogators side.
+The question is if \textbf{A} is replaced with a computer how the ratio of outcomes would deviate from the original ratio. 
 %
 %(in written form) and must judge who is the 
 %if they are dealing with a machine or a human being. 
 %
-\td{It is easy for humans to come up with question to detect an AI, 
-but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the near future.}
+%
+%\ds{It is easy for humans to come up with question to detect an AI, 
+%but when reading AI written articles\cite{gpt2020}, 
+%it's easy to see this test being passed in the near future.}
+%
+At the moment it's hard to imagine a computer getting a higher ratio than a human
+but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the future.
 
 But fear not, that doesn't mean that computers are sentient or more intelligent than humans\cite{searle1980,searle1999married} and certainly not that research is over. 
 AI is still a young field, which is strongly growing and is gaining ubiquitous status. 
@@ -386,6 +395,7 @@ Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} an
 Other common architectures include linear regression, kernel ridge regression and support vector regression.
 There are also lesser know algorithms like 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
+\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{Villannova2010}.
 %
 One advantage of evolutionary algorithms is that they start with a small data set
 and periodically request new data in order to solve the problem iteratively.
