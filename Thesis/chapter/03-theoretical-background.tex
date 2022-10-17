@@ -172,42 +172,68 @@ In roll-to-roll processes the substrate moves instead of the blade.
 %SPUTTERING FREEWRITING: 
 %what is sputtering? \\
 Sputtering is the processes of highly energetic ions hitting a surface and atoms or molecules being expelled. 
-This is called a physical vapor deposition (PVD) technique. 
-PVD can be divided into activation by thermal energy and activation by energetic particle bombardment. 
+This is called a \gls{pvd} technique in contrast to chemical vapor deposition. 
+\Gls{pvd} can be divided into activation by thermal energy and activation by energetic particle bombardment. 
 Sputtering is of the latter, which 
 is advantageous if substrates can't withstand high temperatures.
 %\td{what can it be used for?}\\
-Sputtering evolved from being a curious experiment in the middle of the 20th century to having various applications in research and engineering.
-Use cases vary from thin films depositions for \gls{pv}, for electrical circuits or for storage media such as CDs and DVDs 
+Sputtering evolved from being a curious experiment in the middle of the 20th century to 
+having various applications in research and engineering.
+Use cases vary from thin films depositions for \gls{pv}, 
+for electrical circuits or for storage media such as CDs and DVDs 
 over sputter cleaning and etching to analysis.
-Advantages of 
-sputtered thin films include good adhesion to the substrate and good step coverage\cite{Swann1988}.
+Advantages of sputtered thin films include good adhesion to the substrate 
+and good step coverage\cite{Swann1988}.
 
 \begin{figure}[htb]
-	\includegraphics[width=\textwidth]{./Pics/sputter0.png}
-    \caption{Propagation of energy in a dense cascade. Left graph: "Primary" shockwave. Right graph: "Thermal" pulse or "secondary" shockwave. Figure taken from Sigmund 1987\cite{sigmund1987}}
+    \centering
+    \begin{subfigure}[t]{.3\textwidth}
+        \includegraphics[width=\textwidth]{./Pics/sputter1.png}
+        \caption{}
+        \label{fig:sputter0}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}[t]{.3\textwidth}
+        \includegraphics[width=\textwidth]{./Pics/sputter2.png}
+        \caption{}
+        \label{fig:sputter1}
+    \end{subfigure}
+%    \caption{Propagation of energy in a dense cascade. Left graph: "Primary" shockwave. Right graph: "Thermal" pulse or "secondary" shockwave. Figure taken from Sigmund 1987\cite{sigmund1969}}
+    \caption{Schematic representation of the creation of sputter particles during sputter deposition. 
+    (a) creation of ions in the chamber: 
+        the top rectangle depicts the source/cathode/target, 
+        the bottom rectangle the anode/substrate holder and 
+        the lower rectangle the substrate to be sputtered. 
+    (b) example series of collision processes leading to sputtering of atoms: 
+        horizontal line represents the target surface, 
+        the small circle a high energetic ion and 
+        the large circles target particles. 
+    }
 	\label{fig:sputter}
 \end{figure}
 
 %\td{how does it work?}\\
 A high voltage is applied to 
 two parallel electrodes with low pressure gas in between. 
-The target acts as cathode and the substrate (holder) as anode (see figure \ref{fig:sputter}).
+The target acts as anode and the substrate (holder) as cathode (see \td{figure \ref{fig:sputter}}).
 %the target which acts as a cathode with the substrate as anode in a parallel geometry (see \td{fig}).
-The cathode, then, emits electrons which collide with a gas particles (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
-Some gas particles may get ionized by the collision and the gas cations are accelerated to the cathode. 
+The anode, then, emits electrons which collide with a gas particles (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
+Some gas particles may get ionized by the collision and the gas cations are accelerated to the anode. 
 If a cation has enough energy it will bump off one or more atoms or molecules from the surface. 
-This happens by a cascade of momentum transfers, which can reach the surface again (see fig \td{from \cite{sigmund1987}}). 
+This happens by a cascade of momentum transfers, which can reach the surface again (see figure \ref{fig:sputter}). 
 If a surface particle obtains momentum pointing away from the bulk and its kinetic energy is higher than the binding energy, the particle is sputtered. 
-This sputtered particle travels unaffected by the electrical field perpendicular to the surface towards the substrate and condenses with other particles to form a layer.
+This neutral sputtered particle travels unaffected by the electrical field perpendicular to the surface towards the substrate and condenses with other particles to form a layer.
 The pressure should be small, such that the sputtered particle has a long \gls{mfp}, but on the other hand 
 a minimum pressure is needed to keep the plasma "alive". 
 Usual pressures are around \SI{1}{\Pa} (\num{e-2}\SI{}{\milli\bar}) or lower\cite{Swann1988}.
 
-A magnetron can be placed behind the cathode (target) in order to trap ejected electrons close to the source. 
-This prevents high energy electrons from reaching the target and undoing the deposited layer and this also increases the probability of an electron colliding with an argon atom and ionizing it, increasing the yield.
+A magnetron can be placed behind the cathode (target) in order to trap the plasma close to the source. 
+This lowers the pressure needed to keep the plasma alive. 
+Furthermore, magnetrons prevent high energy electrons from reaching the substrate and 
+undoing the deposited layer and this also increases the probability of an electron 
+colliding with an argon atom and ionizing it, increasing the yield.
 
-When oxygen or nitrogen are added to the  gas this is called reactive sputtering.
+When oxygen or nitrogen are added to the gas this is called reactive sputtering.
 Sputtered atoms will react with the gas and result in oxide or nitrides layers, respectively.
 The stoichiometry of the resulting layer can be regulated by gas ratios, but too much reactive gas can lead to target poisoning. 
 Meaning the target begin covered by an insulating layers which can lead to defects in the growing film\cite{Kelly2000}. 
@@ -430,7 +456,7 @@ Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} an
 Other common architectures include linear regression, kernel ridge regression and support vector regression.
 There are also lesser know algorithms like 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
-\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{Villanova2010}.
+\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{villanova2010function}.
 %
 One advantage of evolutionary algorithms is that they start with a small data set
 and periodically request new data in order to solve the problem iteratively.
@@ -458,8 +484,16 @@ Every movement across the search space is stochastic and influenced by its parti
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{EMMA}
-\Gls{emma} and \gls{mars}
-
+%\Gls{emma} and \gls{mars}
+\Gls{emma} is an implementation of the \gls{pso} in the \texttt{R} programming language. 
+Each time step the dependent variables for all possible input variable combinations
+are predicted with the help of \gls{mars}. 
+\Gls{mars} is a regression method introduced by Friedman's 1991 paper 
+"Multivariate Adaptive Regression Splines"\cite{friedman1991mutlivariate}. 
+The \texttt{CRAN} package which implements \gls{mars} is called \texttt{earth} due to \gls{mars} being trade marked\cite{mars}.
+%by the \texttt{earth} package (available from CRAN). 
+%The name \texttt{earth} was chosen as \texttt{mars} has been trade marked\cite{mars}. 
+Advantages of \gls{mars} are its easy interpretability and flexibility to model non-linearity and of course ability to cope with high dimensional data\cite{villanova2010function}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Design of Experiment} %DOE
@@ -526,24 +560,30 @@ maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?v
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Analysis of Variance} % ANOVA
-\Gls{anova} analyses the means by means of mincing variances.
-\td{at the basis of anova lies the F-test.}
+\Gls{anova} is a statistical test for estimating the influence of multiple categorical independent variables on a dependent numerical variable. 
+At the heart of \gls{anova} lies the F-test. 
+The F-test was ingeniused by Ronald Fisher, an important figure in modern statistics. 
+The F-test uses a ratio of variances to determine if a null-hypothesis (observed difference is due to chance alone) is true. 
+The variance in the enumerator measures the "between-group variability" and the denominator measures the "within-group variability".
+%This ratio is unaltered by adding constants to all observations or scaling errors. 
+This ratio is unaffected by units, scaling errors and constant bias. 
+%
+%\Gls{anova} analyses the means by means of mincing variances.
 %of of the continuous outputs where inputs are categories. 
-The inputs of the model should be categorical and the outputs continuous. 
-The statistical significance of the experiment is determined by a ratio of two variances. 
+%The statistical significance of the experiment is determined by a ratio of two variances. 
 %This ratio is independent of several possible alterations to the experimental observations: 
 %Adding a constant to all observations does not alter significance. 
 %Multiplying all observations by a constant does not alter significance. 
-\Gls{anova} statistical significance results are independent of constant bias and 
-scaling errors as well as the units used in expressing observations. 
-\href{https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions}{(click here)}
-Addiitonal assumptions of \gls{anova}: groups and levels should be independent, 
+%\Gls{anova} statistical significance results are independent of constant bias and 
+%scaling errors as well as the units used in expressing observations. 
+%\href{https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions}{(click here)}
+Additional assumptions of \gls{anova} include: groups and levels should be independent, 
 residual error should follow normal distribution, variance of groups should be equal. 
-\href{https://statsandr.com/blog/anova-in-r/}{(click here)}
+%\href{https://statsandr.com/blog/anova-in-r/}{(click here)}
 
-\textbf{Links}
-\url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical\\
-\url{https://pypi.org/project/pynova/}\\
+%\textbf{Links}
+%\url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical\\
+%\url{https://pypi.org/project/pynova/}\\
 
 
 \iffalse
