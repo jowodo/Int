@@ -66,6 +66,8 @@ e=1
 trainx,trainy=get_sets(df,nr)
 testx=get_x(df2)
 ML = SVR(kernel=k, C=c, degree=d, epsilon=e)
+print(trainx)
+print(trainy)
 ML.fit(trainx,trainy)
 pred = ML.predict(testx)
 print(names[nr+7])

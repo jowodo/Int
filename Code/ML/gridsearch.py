@@ -1,7 +1,7 @@
-import math
+#!/usr/bin/env python3
+
 import numpy as np 
-#import sklearn.svm  as skl
-from sklearn.svm import SVR
+from sklearn.svm import SVR # Epsilon-support Vector Regression
 from sklearn.kernel_ridge import KernelRidge as KRR
 import pandas as pd
 
@@ -82,7 +82,7 @@ for g in gamma:
                     for nr in range(1,n+1):
                         varia=str(d)
                         trainx,testx,trainy,testy = get_sets(df,nr)
-                        ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
+#                        ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
                         ML = SVR(kernel=k, C=c, degree=d, epsilon=e)
                         ML.fit(trainx,trainy)
                         pred_testy = ML.predict(testx)
