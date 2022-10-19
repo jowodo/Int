@@ -12,48 +12,78 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{SEM}
+\begin{figure}
+    \centering
+    \begin{subfigure}{.4\textwidth}
+        \includegraphics[width=\textwidth]{Pics/sem/071_fto_old_1x.png}
+        \caption{sem1}
+        \label{fig:sem1}
+    \end{subfigure}
+    \begin{subfigure}{.4\textwidth}
+        \includegraphics[width=\textwidth]{Pics/sem/071_fto_old_2x.png}
+        \caption{sem2}
+        \label{fig:sem2}
+    \end{subfigure}
+    \caption{sem}
+    \label{fig:sem}
+\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Material Scientific}
 \subsubsection{First recipe} 
-alteration of pH etc no improvement 
+As already indicated in the experimental section the recipe adopted from \cite{Anwar2017} didn't produce any \td{good} results. 
+The solution was milky/cloudy and didn't produce homogeneous films. 
+Altering the composition, pH etc. didn't improve the resulting layers. 
 
-\subsubsection{Stability of the Solution}
-\begin{itemize}
-    \item compare AcOH vs AcOH+IPO 1:1 vs IPO (via boxplot) also G and phd? 
-    \item p68 solution became clear after being milky 
-    \item p74 
-    \item why does IPO stabilize? 
-    \item what is the reason for instability? 
-    \item why does increased Zr conc decrease stability
-    \item initial stirring time no influence on stability (and resulting layer?)
-\end{itemize}
+The sol-gel recipe optimized by \cite{Hu2016} for \ch{Al2O3} worked splendidly for our use even after (not so) minor changes.
+%An substantial improvement could be achieved by
+The stability of the solution could be increased a lot by replacing the stabilizing agent (\gls{acoh}) with \gls{ipo}.
+The stability was inspected visually. 
+As soon as the solution showed initial cloudiness, it was declared as unstable. 
+The regular solution was stable for approximately \td{24h} sealed with Parafilm. 
+A solution with \gls{ipo} as stabilizing agent stayed stable for \td{72h}. 
+As an increase of the \gls{zrpro} concentration decreased the \td{stable time}. 
+%5F ca 100min
+%4F ca 140min
+%3F ca 420min (7h)
+\Gls{ipo} solution allowed to even reuse high concentrated solution, which would otherwise become cloudy under 60 minutes. 
+Multiple question still need to be answered: 
+What causes the cloudiness (as stability increased through sealing probably \ch{H2O} from the air or \ch{O2}) and what's the mechanism? 
+How does \gls{ipo} increase the stability? 
+Does it do so because it "fits" better with the solvent. 
+As the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}. 
+It was even observed that the addition of \td{some drops of} \gls{ipo} to an acetic solution can clear the solution.
+5F acetic solution milky over night 5:1 dilution with \gls{ipo} and clear after one minute of stirring and stayed clear over 5 nights.
+% more details on pages 68ff
+No effect on the solution or the resulting layer was noticed \td{from the initial stirring}
+\todo{Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Material}
-\td{show results between 1ml acoh (199), acoh+ipo 1:1 (201) and ipo (192). Show graph of the three vs log pondus G and pinhole density and maybe distribution of single point measurements?}
-\td{p68 iPrOH to milky solution and solution becomes clear!!!! checked how much 
-is needed. 5F solution milky over night ~2ml, added 1ml IPO and clear.}
-\td{instead of changing the stabilisation agent before optimisation, could change after pso, was vor und nachteile?}
-\td{
-so higher concentration of zro2 leads to less stable solution
-5F ca 100min
-4F ca 140min
-3F ca 420min (7h)
-}
-- aquatic vs buthanolic: aquatic immidiately milky
-\texttt{set boxwidth 2; set xtics 5; p "stat.dat" u 1:3 with boxes} 
-\begin{itemize}
-    \item double calcination (2x400C) was tried instead of pyrolization (4x200 then 400C),p49
-\end{itemize}
+%\td{instead of changing the stabilisation agent before optimisation, could change after pso, was vor und nachteile?}
+after realizing the improved effectiveness of \gls{ipo} for experimentation, 
+it was decided that EMMA will be executed with \gls{ipo} solution.
+\begin{figure}
+    \centering
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\textwidth]{Pics/iv/iv-199-acoh.png}
+        \caption{iv acoh} \label{fig:iv-acoh}
+    \end{subfigure}
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\textwidth]{Pics/iv/iv-201-acoh-ipo.png}
+        \caption{iv acoh ipo} \label{fig:iv-acoh-ipo}
+    \end{subfigure}
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\textwidth]{Pics/iv/iv-192-ipo.png}
+        \caption{ipo} \label{fig:ipo}
+    \end{subfigure}
+    \caption{iv of 6x4F} \label{fig:iv}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{V-I and preoptimization}
-\td{plot the predicted data for variables which should be excluded (Tcal, Vcal,Conc, layers)}
 \td{varied doctor blading velocity: 10, 5, 1, 0.5, 0.2, 0.1. Slower less layer}
-\todo{Following stirring times (in minutes) were tested and didn't have an influence on stability of the solution: 10-10-20, 10-10-45, 30-30-180.}
 \td{extra PB-design with conc(2-4), layers(6-8), tcal(430-470), tvel(4-6),
 vdoc(0.5-2), tdoc(40-60). low vdoc very homogenuous but actually nearly no 
 deposition because miniscus is pulling liquid off the substrate.}
