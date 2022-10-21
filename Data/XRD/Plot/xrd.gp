@@ -11,9 +11,9 @@ set ylabel "Intensity [a.u.] "
 set xlabel "2{/symbol q} [°]"
 
 p [0:110]  "ref.txt" u 1:4 w i lw 2, \
-"ref.txt" u 1:($5*3) w i lw 2, \
-[0:110]  "231_0360_12x5F_v20T60_T300v2.txt" u 2:($3-4000) w l t "231" , \
-[0:110]  "steel.txt" u 2:($3 -5500) w l t "substrate"
+    "ref.txt" u 1:($5*3) w i lw 2, \
+    [0:110]  "231_0360_12x5F_v20T60_T300v2.txt" u 2:($3-3500) w l t "231" , \
+    [0:110]  "steel.txt" u 2:($3 -5500) w l t "substrate(steel)" 
 
 #p "207_6113_10x2F_v18T40_T500v2.txt" u 2:($3-0000) w l ,\
 #"a-Fe_ZrO2.csv" u 2:($3-0000) w l ,\
