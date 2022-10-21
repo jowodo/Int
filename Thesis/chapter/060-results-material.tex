@@ -9,24 +9,59 @@
 	\label{fig:xrd}
 \end{figure}
 
+In figure \ref{fig:xrd} the two strongest $\alpha$-Fe peaks can be seen clearly. 
+The highest peak of \gls{zro} is very \td{broadened} and is therefore not as distinct. 
+This wideness is is due to polycristalinity/amorphness of the material which is \td{erwartet due} to the sol-gel creation process. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{SEM}
 \begin{figure}
     \centering
-    \begin{subfigure}{.4\textwidth}
-        \includegraphics[width=\textwidth]{Pics/sem/071_fto_old_1x.png}
-        \caption{sem1}
-        \label{fig:sem1}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.8\textwidth]{Pics/sem/071_fto_old_1x.png}
+        \caption{71 fto old 1x} \label{fig:sem-old1}
     \end{subfigure}
-    \begin{subfigure}{.4\textwidth}
-        \includegraphics[width=\textwidth]{Pics/sem/071_fto_old_2x.png}
-        \caption{sem2}
-        \label{fig:sem2}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.8\textwidth]{Pics/sem/071_fto_old_2x.png}
+        \caption{71 fto old 2x} \label{fig:sem-old2}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.8\textwidth]{Pics/sem/115_fto_cs_1x.png}
+        \caption{115 fto cs 1x} \label{fig:sem-cs1}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \centering
+        \includegraphics[width=.8\textwidth]{Pics/sem/147_steel_ph_10x.png}
+        \caption{147 steel ph? 10x} \label{fig:sem-ph}
     \end{subfigure}
     \caption{sem}
     \label{fig:sem}
 \end{figure}
+
+The \gls{sem} pictures were not easy to take since we were trying to create an insulator 
+and the quality of the picture relies on the conductance of the material's surface. 
+This means that the better the quality of the resulting layer the more tedious it was to get/take a decent SEM image. 
+Figure \ref{fig:sem-old} shows ausschnitte of \gls{zro} (dark) on top of \gls{fto} (finely polycrystalline). 
+These were the results of a single (figure \ref{fig:sem-old1}) and double (figure \ref{fig:sem-old2}) "layer" of the aquatic recipe. 
+Large cracks and inhomogenity were part of (ausmachen) all samples created with the Anwar recipe; 
+also/even after several/multiple/various alteration to the recipe. 
+
+Figure \ref{fig:sem-cs1} shows the cross section of a single layers of \gls{zro} on \gls{fto} glass. 
+The large crystalline \td{range} which makes up most of the topper/top part of the image is \gls{fto}. 
+The úbergang to glass is gerade noch so zu sehen. 
+On the lower kante of the \gls{fto} a circa 100nm thick homogeneous layer can be observed, \gls{zro} produced by buthanolic recipe inspired by Hu et al..
+
+Figure \ref{fig:sem-ph} shows a top view of 10 layers of the buthanolic layer on top of a steel substrate. 
+The large unregularity on the bottom left could darstellen a pin hole a (tiny) hole that reaches the substrate. 
+These unregularites are rather the ausnahme. 
+Alternatively, the small, hardly visible  irregularities verstreut across surface could darstellen such pin holes. 
+These - I think - eher only are one layer deep irregularities since they are so haeufig 
+and very little pin holes were observed on similar samples. 
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,17 +132,7 @@ it was decided that EMMA will be executed with \gls{ipo} solution.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{V-I and preoptimization}
-The doctor blading velocity (i.e. the velocity with which the blade moves and spreads the sol over the sample) 
-was varied during preoptimization. 
-The slower the \gls{db} velocity the more \td{homogeneously} the solution evaporated. 
-If the \gls{db} was \td{too slow (lt 1 mm/s)} the surface tension pulled solvent over the sample without \td{leaving was zurk/forming a gel.}
-\td{deposition because miniscus is pulling liquid off the substrate.}
-Additionally the temperature while doctor blading affects the resulting layer together with the \gls{db} velocity. 
-
-\td{Assumption: Ideally solution evaporate shortly after DB but not before}
-due to the boiling point of \gls{buoh} at 117 C\cite{ncbi1butanol} the room temperature to 80 C were used as temperature during \gls{db}.
-- p76, 146 (10x1F) good, 154 (3x4F) okay, 156 (3x3F) bad visualisation
+\subsection{V-I}
 \begin{figure}
     \centering
     \begin{subfigure}{.3\textwidth}
@@ -134,7 +159,20 @@ due to the boiling point of \gls{buoh} at 117 C\cite{ncbi1butanol} the room temp
         \includegraphics[width=\textwidth]{Pics/iv/stat-156-bad-3x3F.png}
         \caption{stat} \label{fig:stat3}
     \end{subfigure}
-    \caption{maybe remove 146 and make 154 good AND set yrange [E-1:E-14]} \label{fig:sem}
+    \caption{maybe remove 146 and make 154 good AND set yrange [E-1:E-14]} \label{fig:iv}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Preoptimization}
+The doctor blading velocity (i.e. the velocity with which the blade moves and spreads the sol over the sample) 
+was varied during preoptimization. 
+The slower the \gls{db} velocity the more \td{homogeneously} the solution evaporated. 
+If the \gls{db} was \td{too slow (lt 1 mm/s)} the surface tension pulled solvent over the sample without \td{leaving was zurk/forming a gel.}
+\td{deposition because miniscus is pulling liquid off the substrate.}
+Additionally the temperature while doctor blading affects the resulting layer together with the \gls{db} velocity. 
+
+\td{Assumption: Ideally solution evaporate shortly after DB but not before}
+due to the boiling point of \gls{buoh} at 117 C\cite{ncbi1butanol} the room temperature to 80 C were used as temperature during \gls{db}.
+- p76, 146 (10x1F) good, 154 (3x4F) okay, 156 (3x3F) bad visualisation
 

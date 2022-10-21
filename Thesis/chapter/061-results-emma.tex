@@ -10,6 +10,7 @@
     \rho &=  -0.87 + 0.0047 * TCal  - 0.00036 * layr*TCal  +  0.0024 * h(layr-6)*TDOC \\
     \lambda &=  6.8 - 0.014 * TCal  + 0.0018 * layr*TCal  + 0.0060 * h(layr-6)*TDOC \\
     v_{cal} &= 29 - 0.052 * TCal  + 0.0011 * layr*TCal  -  0.011 * h(layr-6)*TDOC 
+    \label{eq:emma}
 \end{align}
 what was the best result? For each particle there is best and global best. 
 https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation
@@ -47,6 +48,14 @@ https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-p
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{how did model selection influence results}
+The heating rate of the calcination process $v_{cal}$ and the number of layers $\lambda$ were included as dependent variable with the objective to maximize with a relative weight of 0.05.
+The idea was to maximize $v_{cal}$ and minimize $\lambda$ in order to minimize the process time. 
+Another thought behind including $v_{cal}$ and $\lambda$ was to test if the alogrithm would correctly predict those. 
+Two major flaws behind this flaws became obvious with time: 
+(1) The algorithm would be influenced by those values to choose samples, which potenitally optimize $v_{cal}$ and/or $\lambda$ but not $G$ or $\rho$. 
+Neben making the problem unnoetiger weise more complicate, important time (around 10\% of the samples) could have been replaced with more insighful samples. 
+(2) The true function for predicting $v_{cal}$ and $\lambda$ are $v_cal*60$ ($C/h$ instead of $C/min$) and $\lambda$, respectively. 
+The algorithm will tend to include thos values into the prediction function for all dependent variables and possibly exclude others which have more influence on $G$ and $\rho$ (see \ref{eq:emma}).
 \begin{itemize}
     \item MARS chooses same set from independent variables for predicting all dependent variables. 
     \item flaws of MARS: all functions are dependent on same indep vars
@@ -60,6 +69,7 @@ Overall there were too many variables involved for such a small dataset
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{analyse data with other methods post optimization}
+Anova shows that the influence of TCal is significant as shown by the F 
 \begin{itemize}
     \item ANOVA (influence of TCal) \texttt{Code/Statistics/sub/anova.R}
     \item lin regression (influence of conc) \texttt{Code/Statistics/sub/linreg.py}
