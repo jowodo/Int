@@ -1,5 +1,6 @@
 set xrange [-0.5:0.5]
 set logscale y
+set yrange [1e-14:1e-1]
 set term pngcairo
 set out "log-i-v.png"
 plot "./154_L04C2_01_best_contactspot" u 1:(abs($2)) w l t "" ,\

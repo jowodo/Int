@@ -7,6 +7,7 @@ set out "G-t.png"
 #filename="../../db_final.sorted.tsv"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
+filename="../../db_final.gen.tsv"
 width=2
 set xlabel "sample number"
 set ylabel "conductivity G a.u." 
@@ -14,6 +15,7 @@ set ylabel "conductivity G a.u."
 #set yrange [0:550]
 #set xtics 0,60
 
-plot filename u 1:3 w l lw width notitle
+#plot filename u 1:3 w l lw width notitle
+plot filename u ($0+1):4 w l lw width notitle
 
 #pause -1
