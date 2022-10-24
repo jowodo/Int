@@ -1,27 +1,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{EMMA}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{what is best}
-\begin{align}
-%    G    & = -3.7 + 0.18 * TCal +  8.1 * max(0,6-layr)\\
-%    \rho & = -0.78 + 0.0024 * TCal + 0.13 * max(0,6-layr)
-    G &=      -19 + 0.28 * TCal  - 0.022 * layr*TCal  +  0.16 * h(layr-6)*TDOC \\
-    \rho &=  -0.87 + 0.0047 * TCal  - 0.00036 * layr*TCal  +  0.0024 * h(layr-6)*TDOC \\
-    \lambda &=  6.8 - 0.014 * TCal  + 0.0018 * layr*TCal  + 0.0060 * h(layr-6)*TDOC \\
-    v_{cal} &= 29 - 0.052 * TCal  + 0.0011 * layr*TCal  -  0.011 * h(layr-6)*TDOC 
-    \label{eq:emma}
-\end{align}
-what was the best result? For each particle there is best and global best. 
-https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation
+\subsubsection{all samples}
+%\input{chapter/emma.table.tex}
+A total of 30 recipes have been investigated in 
+five iterations of the algorithm ($t = 0, \dots,4$). 
+%The best recipe identified by the EMMA algorithm is as follows: 
+The best recipes for each generation can be seen in table \ref{tab:emma-Gb}. 
+The calcinatino heating $v_{cal}$ rate has been predicted perfectly 
+\td{even though $v_{cal}$ doesn't appear in the prediction function, how is this possible?}
+The number of layers $\lambda$ on the other hand was predicted poorly 
+even though the conversion factor wsa 1 and the prediction function dependent on $\lambda$. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{how did evolve over time?}
 
+\begin{figure}
+    \centering
+    \begin{subfigure}{.45\textwidth}
+        \includegraphics[width=.8\textwidth]{Pics/stats/gen-G.png}
+        \caption{emma G gen } \label{fig:emma-G-gen}
+    \end{subfigure}
+    \begin{subfigure}{.45\textwidth}
+        \includegraphics[width=.8\textwidth]{Pics/stats/gen-phd.png}
+        \caption{emma phd gen} \label{fig:emma-phd-gen}
+    \end{subfigure}
+    \caption{emma gen} \label{fig:emma-gen}
+\end{figure}
+
+In figure \ref{fig:emma-gen} we can see the two main optimizables at each generation
+for each particle.
+It shows a clear trend which indicates that the optimization worked even though 
+the predicted function and the chosen samples where not exactly as expected. 
+This might be due to the high error of samples. 
+
+
 \begin{table}[h]
 	\centering
     \caption{Global best per generation}
-	\label{tab:emma_gen}
+	\label{tab:emma-Gb}
 	\begin{tabular}{cccccccc}
         \hline\hline
     generation  &enr &conc &layr &vDOC &TDOC &vCal &TCal\\
@@ -33,18 +52,46 @@ https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-p
      5   &13      &2   &10   &10   &40  &120  &300\\
     \hline\hline
 	\end{tabular}
+\begin{tabular}{cccccc}
+    \hline\hline
+enr     &1st gen     &2nd gen        &3rd gen        &4th gen        &5th gen\\
+    \hline
+1       &1.214185    &       &       &       &38.7962       \\
+5       &       &4.196626       &       &       &25.47335       \\
+2947    &       &       &10.9594    &       &10.9594       \\
+2405    &       &       &       &20.04962   &25.47335       \\
+13      &       &       &       &       &24.87178   \\
+    \hline\hline
+\end{tabular}
 \end{table}
 
+%\iffalse
+%\fi
+
+%\iffalse
 \begin{figure}
-    \centering
-    \includegraphics[width=.6\textwidth]{Pics/stats/G-t.png}
+\centering
+\includegraphics[width=.6\textwidth]{Pics/stats/G-t.png}
     \caption{conductivity G [a.u.] against sample number (is this even correct?)}
     \label{fig:G-t}
 \end{figure}
 
 \td{TODO: check if the sorted correctly? Make generation graph with boxplot }
-    \td{TODO: visualize} how the population moved across the space (with parallel coordinates? or see page 121)
-        \url{https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation}
+\td{TODO: visualize} how the population moved across the space (with parallel coordinates? or see page 121)
+\url{https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation}
+%\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{what is best}
+\begin{align}
+    G &=      -19 + 0.28 * TCal  - 0.022 * layr*TCal  +  0.16 * h(layr-6)*TDOC \\
+    \rho &=  -0.87 + 0.0047 * TCal  - 0.00036 * layr*TCal  +  0.0024 * h(layr-6)*TDOC \\
+    \lambda &=  6.8 - 0.014 * TCal  + 0.0018 * layr*TCal  + 0.0060 * h(layr-6)*TDOC \\
+    v_{cal} &= 29 - 0.052 * TCal  + 0.0011 * layr*TCal  -  0.011 * h(layr-6)*TDOC 
+    \label{eq:emma}
+\end{align}
+%what was the best result? For each particle there is best and global best. 
+https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{how did model selection influence results}
@@ -67,16 +114,3 @@ Overall there were too many variables involved for such a small dataset
         that means that adding dependent variables influences \td{previous variables}
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{analyse data with other methods post optimization}
-Anova shows that the influence of TCal is significant as shown by the F 
-\begin{itemize}
-    \item ANOVA (influence of TCal) \texttt{Code/Statistics/sub/anova.R}
-    \item lin regression (influence of conc) \texttt{Code/Statistics/sub/linreg.py}
-    \item grid search 
-    \item KRR (???)
-    \item SVM (???)
-\end{itemize}
-
-and cite something pro forma \cite{ncbi1butanol}
-\td{plot the predicted data for variables which should be excluded (Tcal, Vcal,Conc, layers)}
