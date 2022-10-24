@@ -5,9 +5,60 @@ Anova shows that the influence of TCal is significant as shown by the F
 \begin{itemize}
     \item ANOVA (influence of TCal) \texttt{Code/Statistics/sub/anova.R}
     \item lin regression (influence of conc) \texttt{Code/Statistics/sub/linreg.py}
-    \item grid search 
+    \item grid search ???
     \item KRR (???)
     \item SVM (???)
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{Linear Regressin}
+I thought that the influnce of $conc$ and $\lambda$ are the biggest, but they are just the smalles absolute values. 
+Thus, eventhough $T_{cal}$ might have a smaller coefficient for lin reg, the influence on the dependent variable might be larger. 
+The biggest influece on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{doc}$. 
+Both $T_{cal}$ and $T_{doc}$ have positive coefficients, i.e. a negative influence on the resistance. 
+Then both $\lambda$ and $v_{doc}$ both have about a fift ob the largest influence and a negative influence. 
+An indication that the data is strongly tainted by error (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41, 
+which is (sad but true) even unterboten by the $R^2$ of lin fit of $G$, 0.34. 
+The coefficients, though share the signs. 
+This is only true if the extended data set is used and therefore again rather by chance. 
+It is even more \td{erstaunlich} that EMMA managed to decrease the average of $pG$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}. 
+Or was is only luck? 
+
+$v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a perfect direct proportionality. 
+Was zu erwarten war. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{ANOVA}\label{sec:res-anova}
+\Gls{anova} doesn't provide a lot of extra information. 
+It bestaetigt that TCal has influence on both G and phd. 
+It seems that the probability of getting such data per chance that Tcal has no influence 
+(null hypothesis is true) is less then 5\% (even less than 1\%). 
+wrong the second is not for phd but for extended data set
+but for phd even lower than 0.1 \%
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{Grid Search}
+For \gls{krr} and {svm} I had to find out what the ideal hyper parameters were. 
+So, I anstellen a grid search with the following hyperparameters: 
+%kernel=["poly","rbf"]#,"sigmoid"]
+%C= np.array(range(1,20))*0.05
+%degree=range(1,6)
+%epsilon= np.array(range(1,20))*0.2
+%gamma=[0.0,0.1,1.0,10.0]
+%#param = {"kernel":kernel, "C":C, "degree":degree, "epsilon":epsilon, "gamma":gamma }
+%C=[1,0.1]; degree=[3]; epsilon=[1,2]; gamma=['scale']
+Now what are C,epsilon and gamma? 
+
+Since the data set was very small, I could be generous with the grid search even on relatively humble hardware (intel i7-8550U). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{KRR}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{SVM}
 \td{plot the predicted data for variables which should be excluded (Tcal, Vcal,Conc, layers)}
+\fi
