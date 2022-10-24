@@ -33,7 +33,7 @@
 
 
 
-library("emma")
+suppressMessages(suppressWarnings(library("emma")))
 ### META PARAMETERS
 in.name <- 	c("conc",	"layr",	"vDOC",	"TDOC",	"vCal",	"TCal")
 nlev <- 	c(4,		5,		6,		5,		5,		3)

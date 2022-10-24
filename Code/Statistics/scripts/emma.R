@@ -2,7 +2,7 @@
 #
 # USAGE: execute script from within the folder
 
-library("dplyr")
+suppressMessages(suppressWarnings(library("dplyr")))
 load("../../EMMA/t5") 
 source("../../EMMA/inter.R") 
 #for (i in 1:4){

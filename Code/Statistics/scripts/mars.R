@@ -2,8 +2,8 @@
 #
 # USAGE: execute script from within the folder
 
-library("dplyr")
-library("earth")
+suppressMessages(suppressWarnings(library("dplyr")))
+suppressMessages(suppressWarnings(library("earth")))
 
 dat<-read.delim("../db_final.tsv") 
 d.all <- dat %>% select ( ! avg1.G.:avg2.G.) 
