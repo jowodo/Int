@@ -84,13 +84,12 @@ it was decided that EMMA will be executed with \gls{ipo} solution.
     \caption{IR} \label{fig:ir}
 \end{figure}
 
-
 In figure \ref{fig:ir-gt} transmission spectra of visible and \gls{nir} light can be seen. 
 Each sample had different numbers of layers. 
 The incident angle was 0 degree for each sample.
 differnt numbers of layers of \gls{zro} on a glass slide with 0 degree incident angle. 
 The more layers the more of the light is absorbed (800nm) by the \gls{zro} layers. 
-%The trend is not monotone due to 
+%The trend is not monotonic due to inhomogenities in the sample???b
 The thicker the layer is the more wavy the graph, which can be most likely be attributed to interferrence. 
 This trend can also be observed in figure \ref{fig:ir-gr}
 Figure \ref{fig:ir-gr} shows reflectance spectra of visible and \gls{nir} at an angle of 45 degrees. 
@@ -151,35 +150,50 @@ and very little pin holes were observed on similar samples.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{V-I}
+\subsubsection{Current Voltage Curves} 
 \begin{figure}
     \centering
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/log-154-good-3x4F.png}
-        \caption{log good 3x4F} \label{fig:log2}
+        \caption{log good 3x4F} \label{fig:iv-log-good}
     \end{subfigure}
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/log-146-okay-10x1F.png}
-        \caption{log okay 10x1F} \label{fig:log1}
+        \caption{log okay 10x1F} \label{fig:iv-log-okay}
     \end{subfigure}
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/log-156-bad-3x3F.png}
-        \caption{log bad 3x3F} \label{fig:log3}
+        \caption{log bad 3x3F} \label{fig:iv-log-bad}
     \end{subfigure}
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/stat-154-okay-3x4F.png}
-        \caption{stat good 3x4F} \label{fig:stat2}
+        \caption{stat good 3x4F} \label{fig:iv-stat-good}
     \end{subfigure}
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/stat-146-good-10x1F.png}
-        \caption{stat okay 10x1F} \label{fig:stat1}
+        \caption{stat okay 10x1F} \label{fig:iv-stat-okay}
     \end{subfigure}
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/stat-156-bad-3x3F.png}
-        \caption{stat bad 3x3F} \label{fig:stat3}
+        \caption{stat bad 3x3F} \label{fig:iv-stat-bad}
     \end{subfigure}
     \caption{maybe remove 146 and make 154 good AND set yrange [E-1:E-14] and show phd threshold} \label{fig:iv}
 \end{figure}
+
+%Figures \ref{fig:iv-log-good} and \ref{fig:iv-stat-good} are measurements from a good sample. 
+Figure \ref{fig:iv-log-good} shows \gls{iv} curves in logarithmic scale of a good sample. 
+Each line represents a I-V measurement at a distinct contact 
+The highest voltages are around 
+All of the curves show a max voltage of under \num{e-6} \SI{}{\volt}. 
+And quite a few show hardly any current which is the ideal. 
+For each measurement the conductivity (i.e. the gradient at V=0) was calculated (see section \ref{sec:eval}). 
+Figure \ref{fig:iv-stat-good} shows the distribution of gradients. 
+
+Figures \ref{fig:iv-log-okay} and \ref{fig:iv-stat-okay} show measurements from moderate sample. 
+Most of the \gls{iv}s have a maximum voltage of under \num{e-6} V, but there are some so called pin holes. 
+
+Finally, figures \ref{fig:iv-log-bad} and \ref{fig:iv-stat-bad} show a sample where all 
+measurement exhibit relatively high voltages. Which indicates a bad overall \gls{zro} layer. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -197,7 +211,7 @@ This wideness is is due to polycristalinity/amorphness of the material which is 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Preoptimization}
+\subsubsection{Preoptimization}
 The doctor blading velocity (i.e. the velocity with which the blade moves and spreads the sol over the sample) 
 was varied during preoptimization. 
 The slower the \gls{db} velocity the more \td{homogeneously} the solution evaporated. 
