@@ -1,5 +1,5 @@
-set xlabel "pondus G"
-set ylabel "percent %"
+set xlabel "-log_{10}(G)"
+set ylabel "occurence [%]"
 set xtics 1
 set xrange [0:13]
 set yrange [0:100]

@@ -8,6 +8,8 @@ png=1
 #### SETTINGS HEAD
 echo "set xrange [-0.5:0.5]"
 echo "set logscale y"
+echo 'set xlabel "voltage [V]"'
+echo 'set ylabel "current [I]"'
 if [ $png -eq 1 ]; then 
 	echo "set term pngcairo"
 	echo "set out \"log-i-v.png\""
