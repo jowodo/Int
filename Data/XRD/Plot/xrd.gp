@@ -1,19 +1,21 @@
+base="231_0360_12x5F_v20T60_T300v2.txt" 
 base="226_0001_4x2F_v10T40_T300v2"
+base="207_6113_10x2F_v18T40_T500v2.txt" 
 infile=base.".txt"
 outfile=base.".png"
 outfile="xrd.png"
-set term pngcairo
+set term pngcairo size 1200,900
 set out outfile
 set key autotitle columnhead
-set yrange [0:6000]
+set yrange [0:3500]
 set xrange [0:140]
 set ylabel "Intensity [a.u.] "
 set xlabel "2{/symbol q} [°]"
 
-p [0:110]  "ref.txt" u 1:4 w i lw 2, \
-    "ref.txt" u 1:($5*3) w i lw 2, \
-    [0:110]  "231_0360_12x5F_v20T60_T300v2.txt" u 2:($3-3500) w l t "231" , \
-    [0:110]  "steel.txt" u 2:($3 -5500) w l t "substrate(steel)" 
+p [0:110]  "ref.txt" u 1:4 w i lw 3, \
+    "ref.txt" u 1:($5*3) w i lw 3, \
+    [0:110]  base u ($2+0.5):($3-4500) w l t "6113" , \
+    [0:110]  "steel.txt" u ($2+0.5):($3 -5500) w l t "substrate(steel)" 
 
 #p "207_6113_10x2F_v18T40_T500v2.txt" u 2:($3-0000) w l ,\
 #"a-Fe_ZrO2.csv" u 2:($3-0000) w l ,\

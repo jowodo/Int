@@ -1,4 +1,4 @@
-Index	X	Acquisition
+#Index	X	Acquisition
 0	-2.81232614386501	3
 1	-2.78350594966904	12
 2	-2.75468575547306	46
