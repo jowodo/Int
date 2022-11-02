@@ -116,7 +116,15 @@ It is astonishing that the knot of the hinge function for equations \ref{eq:emma
 basically only including the influence of $\lambda=4$.
 On the positive site the calcination heating rate $v_{cal}$ (see equation \ref{eq:emma-vcal}) has been predicted perfectly within numerical precision. 
 
-It is interesting that measured 
+For each generation the \gls{mse} was calculated such that only samples were used which were available at that time. 
+It is 64, 158, 54 and 50 for $t=1,2,3,4$, respectively. 
+The high \gls{mse} can be explained because the prediction function is only a constant at $t=2$. 
+Appart from the second generation the \gls{mse} falls over time, which might be attributed to overfitting.
+The \gls{mse} for each generation was calculated between predicted values for pre-optimisation samples to check for overfitting, 
+but the the error sank with each generation (except for the second gen): 102, 118, 58, 50, respectively for $t=1,2,3,4$. 
+
+It is interesting that although prediction functions for $t=3$ perfectly predicted $v_{cal}$ 
+the combined \gls{mse} for $t=4$ is lower. 
 %%% MAIN INFLUENCE 
 %Even without considering the large maximum of $T_{cal}$, 
 
@@ -134,23 +142,23 @@ together with $T_{cal}$ and $T_{DB}$, which seems rather than an artefact.
 
 \begin{align}
 %
-    \label{eq:emma-phd1}
-    \hat{\rho}_1 &= -26  + 0.0025 \cdot T_{DB}\cdot T{Cal}  +  0.056 \cdot  h(6-\lambda)\cdot T_{Cal} \\
-    \label{eq:emma-G1}
-    \hat{\gamma}_1 &= -0.52 + 2.3\cdot 10^{-5} \cdot  T_{DB}\cdot T_{Cal} + 0.00080 \cdot h(6-layr)\cdot T_{cal}\\
-    \label{eq:emma-layr1}
-    \hat{\lambda}_1 &= 7.1 + 8.1\cdot 10^{-5} \cdot T_{DB}\cdot T_{cal} -  0.0056 \cdot  h(6-layr)\cdot T_{cal}\\
-    \label{eq:emma-vcal1}
-    \hat{v}_{cal,1} &= 19 - 0.00025 \cdot  T_{DB}\cdot T_{cal} - 0.0055 \cdot  h(6-layr)\cdot T_{cal}\\
+%    \label{eq:emma-phd1}
+%    \hat{\rho}_1 &= -26  + 0.0025 \cdot T_{DB}\cdot T{Cal}  +  0.056 \cdot  h(6-\lambda)\cdot T_{Cal} \\
+%    \label{eq:emma-G1}
+%    \hat{\gamma}_1 &= -0.52 + 2.3\cdot 10^{-5} \cdot  T_{DB}\cdot T_{Cal} + 0.00080 \cdot h(6-layr)\cdot T_{cal}\\
+%    \label{eq:emma-layr1}
+%    \hat{\lambda}_1 &= 7.1 + 8.1\cdot 10^{-5} \cdot T_{DB}\cdot T_{cal} -  0.0056 \cdot  h(6-layr)\cdot T_{cal}\\
+%    \label{eq:emma-vcal1}
+%    \hat{v}_{cal,1} &= 19 - 0.00025 \cdot  T_{DB}\cdot T_{cal} - 0.0055 \cdot  h(6-layr)\cdot T_{cal}\\
 %
-    \label{eq:emma-phd2}
-    \hat{\rho}_2 &= 47\\
-    \label{eq:emma-G2}
-    \hat{\gamma}_2 &= 0.23\\
-    \label{eq:emma-layr2}
-    \hat{\lambda}_2 &= 7.3\\
-    \label{eq:emma-vcal2}
-    \hat{v}_{cal,2} &= 10\\
+%    \label{eq:emma-phd2}
+%    \hat{\rho}_2 &= 47\\
+%    \label{eq:emma-G2}
+%    \hat{\gamma}_2 &= 0.23\\
+%    \label{eq:emma-layr2}
+%    \hat{\lambda}_2 &= 7.3\\
+%    \label{eq:emma-vcal2}
+%    \hat{v}_{cal,2} &= 10\\
 %
     \label{eq:emma-phd3}
     \hat{\rho}_3 &= 0.075  -   0.0014 \cdot  v_{cal}  +    0.18 \cdot  h(6-\lambda)  + 3.9\cdot 10^{-06} \cdot  v_{cal}\cdot T_{cal} \\
