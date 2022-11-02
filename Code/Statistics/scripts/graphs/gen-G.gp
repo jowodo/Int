@@ -7,7 +7,7 @@ set out "gen-G.png"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "generation number"
-set ylabel "conductivity pG [a.u.]"  
+set ylabel "MSE(pG) {/Symbol g} [a.u.]"  
 set xtics 0,1
 #set range
 
