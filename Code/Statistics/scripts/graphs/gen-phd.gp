@@ -7,7 +7,7 @@ set out "gen-phd.png"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "generation number"
-set ylabel "pin hole density {/Symbol r}"  
+set ylabel "{/Symbol r}"  
 set xtics 0,1
 set yrange [-0.1:1.1]
 

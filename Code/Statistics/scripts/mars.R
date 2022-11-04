@@ -19,7 +19,7 @@ format(mars.all)
 
 d.emma <- d.all %>% filter ( enr != 0 ) 
 x.emma <- d.emma %>% mutate(vC6=vCal*60) %>% select(conc:layr,vDOC,TDOC,vC6,TCal)
-y.emma <- d.emma %>% select(G,phd,layr,vCal)
+y.emma <- d.emma %>% select(G,phd,layr,vCal) # %>% select (vCal) 
 input <- cbind(x.emma,y.emma)
 fmla <- as.formula(paste(paste("data.matrix(input[,",ncol(x.emma)+1,":",ncol(x.emma)+ncol(y.emma),"])"),"~", paste(colnames(x.emma),collapse= "+")))
 mars.emma <- earth(fmla,degree=2,trace=0,minspan=1,data=input,keepxy=TRUE)
