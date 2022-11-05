@@ -1,0 +1,325 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\td{https://en.wikipedia.org/wiki/Thesis}
+\ds{what is it? What is it used for? How does it work? What different kinds are there? }
+\ds{what? how? why?}
+This chapter can be broken down into three sections. 
+The first section tries to shine light on the evolution of PV and give some background on \gls{cigs}.
+The middle section reads about material-scientific methods which were used during the practical part of this work. 
+The last and third part focuses on the information technological, algorithmic and analytical methods used to optimize and predict material properties. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Photovoltaics}
+%
+\subsubsection{Problems of current energy supply}
+The world wide energy consumption has more than doubled between 1970 and 2015\cite{BP2017} 
+and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
+will be exhausted within the next 100 years. 
+Even though this time period is not exact and highly dependent on detection methods of resources, 
+this number is rather small and brings us in zugzwang to develop sustainable energy sources. 
+One viable option is \gls{pv}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{History of Photovoltaics}
+The photoelectric effect was first described in 1839 by french scientist Alexandre 
+Edmond Becquerel\cite{becquerel1839memoire}, the father of Henri Becquerel (the person after whom the unit is named).
+Another relevant piece of the \gls{pv} jigsaw was brought to light
+%discovered
+with the discovery of photo conductivity of selenium
+by British engineer Willouhgby Smith\cite{Smith1873Selenium}.
+In 1876 William Adams and Richard Day\cite{Adams1876Selenium} showed that 
+the energy of light can be directly converted into electrical energy by a bar of 
+selenium with attached platinum electrodes.
+And finally, in 1905 Einstein described the physical background of the photoelectric 
+effect with his light quantum theory\cite{einstein1905erzeugung}.
+In the 1950s the first solar cells (with efficiencies under 10 percent) were used in niche applications such as space flight. 
+Eventually, the interest in photovoltaic and other alternative energy sources 
+rose - fuelled by the oil crisis in 1973 - 
+and the development of photovoltaic for the consumer market was boosted. 
+This development lead to a drop in 
+average price for \gls{pv} module from \$ 100 per watt in 1975 to \$ 4 per watt in 2007\cite{pagliaro2008flexible}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Photovoltaics Basics}
+The process of conversion of photons into voltaic energy can be broken down into two essential steps (both in silicon based \gls{pv} or in plants): 
+the creation of an electron-hole pair and then its separation by the structure of the material.\cite{markvart2013principles}
+This means that \gls{pv} cells are basically diodes, which have a low resistance in one direction and a high resistance in the other direction. Diodes are also 
+%This is often achieved through a p-n junction.\cite{breitenstein2013understanding}
+This is often achieved through a p-n junction.
+The n-type side has excess electrons and p-type side has excess electron holes. 
+If the n- and p-type are of the same basis material, they are called homojunctions (silicon); if not, heterojunctions e.g. \ch{CdS}/\gls{cigs} and \ch{CdS/CdTe}.\cite{breitenstein2013understanding}
+%
+The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still have the biggest market share in the \gls{pv} segment including polycrystalline and monocrystalline silicon.
+Together with amorphous silicon 2010 over 88\% of all sold \gls{pv} where made of silicon\cite{breitenstein2013understanding}.
+A comprehensive overview over different \gls{pv} technologies can be found in \cite{markvart2013principles}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{CIGS}
+\gls{cigs} (\ch{CuIn_{x}Ga_{1-x}Se2}) is of the chalcopyrite (\ch{CuFeS2}) group (tetragonal crystal system). 
+%It was 
+\ch{CuInSe2} and \ch{CuGaSe2} were first synthesised in 1953 by Harry Hahn et al.\cite{hahn1953untersuchungen}.
+The potential use of \ch{CuInSe2} as \gls{pv} material in combination with \ch{CdS} was first mentioned in 1974\cite{wagner1974cuinse2}.
+%Already in 1975 efficiencies of cells of over 10\% were achieved.\cite{kazmerski1976thin}
+Cells with efficiencies of over 10\% were achieved already by 1975.\cite{kazmerski1976thin}
+Today, 
+\gls{cigs} modules (multiple \gls{pv} cells in series) 
+reach efficiencies of up to 16\%\cite{feurer2017cigs},
+monocrystalline silicon \gls{pv} modules reach efficiencies of 14-20\%
+and polycrystalline silicon \gls{pv} modules 12-17\%\cite{mcevoy2011practical}.
+
+Just like CdTe, GaAs and amorphous silicon CIGS has much higher absorption coefficients 
+(lower penetration depth) of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}). 
+This is due to a direct band gap rather than an indirect band gap (like crystalline silicon). 
+These thin film \gls{pv}s not only use less material, but also can be used in flexible applications. 
+
+\begin{table}[tbh]
+	\small
+    \center
+    \begin{tabular}{cccccc}
+        \hline
+        \hline
+		Material&   Type&    Band Gap [\ev{}]&    Wavelength [\nm{}]&    Absorption coef. $\alpha$ [\pcm{}]    &Penetration Depth [\um{}]\\
+        \hline
+		c-Si&   indirect&   1.12&   600&    \num{4000}&    2.5\\
+		c-Si&   indirect&   1.12&   1000&    \num{64}&    150\\
+		c-Si&   indirect&   1.12&   1100&    \num{3.5}&    290\\
+		a-Si&   direct&      1.7&    600&    \num{40000}&  0.25\\
+		CdTe&   direct&      1.45&    600&    \num{37000}&  0.3\\
+		GaAs&   direct&      1.42&    600&    \num{40000}&  0.2\\
+        \hline
+        \hline
+    \end{tabular}
+	\caption{data from \cite{mertens2015photovoltaik}}
+	\label{tab:cigs:alpha}
+%
+	\vspace{1cm}
+    \begin{tabular}{cccc}
+        \hline\hline
+		Empirical Formula&    Name&   Band Gap [\si{eV}{}]&    Abbreviation\\
+        \hline
+		\ch{CuInSe2}&       copper indium di selenide&  1.04&  CISe\\
+		\ch{CuInS2}&        copper indium di sulfide&  1.5&  CIS\\
+		\ch{CuGaSe2}&       copper gallium di selenide&  1.7&  CIGSe\\
+		\ch{CuGaS2}&        copper gallium di sulfide&  1.55&  CIGS\\
+        \hline\hline
+    \end{tabular}
+	\caption{band gaps of different chalcopyrites}
+	\label{tab:cigs}
+\end{table}
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{./Pics/cigs.png}
+	\caption{Schematic layer sequence of a standard \ch{ZnO}/\ch{CdS}/\ch{Cu(In,Ga)Se2} thin-film solar cell.}
+	\label{fig:cigs}
+\end{figure}
+
+%\td{Bild: electrode + n-ZnO, [2.42eV] n-CdS 40nm, [1.15eV] p-CIGS 1.5um, Molybden 0.5 um, glass substrate, borrow book (Recreated based on\cite{mertens2015photovoltaik}) or (Image source:\cite{mertens2015photovoltaik})}
+%\td{On the top of a \gls{cigs} cell there is a conducting and durchsichtige layer of \ch{ZnO}. 
+%Why is there this doped \ch{ZnO} layer? 
+
+Amazingly, the band gap of CIGS can be varied between \ev{1} and \ev{1.7} by varying the indium gallium ratio.
+This is a result of the large difference of band gaps of \ch{CuInSe2} and \ch{CuGaSe2} (see table \ref{tab:cigs}). 
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In figure \ref{fig:cigs} the schematic layer sequence of a standard \gls{cigs} thin film cell is shown. 
+Typically a \um{1} thick molybdenum layer is deposited on soda lime glass. 
+The sodium in the glass diffuses through the molybdenum layer and increases efficiency and reliability by directing the growth of \gls{cigs} in 112 direction\cite{hedstrom1993cigs}.
+A \gls{cigs} layer of 1-\um{2} thickness is applied on top via co-evaporated from elemental sources controlled by a mass spectrometer.\cite{hedstrom1993cigs}
+The p-type doping of \gls{cigs} is achieved by adding more than stoichiometric copper to the mix. 
+The heterojunction is then completed by deposition of \ch{CdS} (typically \nm{50} thick).
+\ch{CdS} was earlier used as front contact, but now only acts as n-type wide-gap window and buffer. 
+\ch{ZnO} has a band gap of \ev{3.2} and is therefore transparent for visible light. 
+The \ch{ZnO} window layer (usually of thickness 50-\nm{70} is highly conductive (especially the \ch{Al} doped layer) and acts as front contact. 
+
+%
+Instead of glass as substrate, steel and plastics (e.g. polyimide\cite{feurer2017cigs}) can be used to create flexible \gls{cigs} modules. 
+They both come with their own inconveniences. 
+Plastics generally have very low melting points which restrict preparation temperatures.
+Steel, on the other hand, is temperature resistant enough, but is an electric conductor. 
+The conductance of steel can be masked by a insulator layer (e.g. \ch{ZrO2}, \ch{Al2O3}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Materials and Their Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Zirconium oxide}
+Zirconium oxide \gls{zro} is a ceramic with a band gap of 5-7 eV and dielectric constant of 15-22 at room temperature\cite{Anwar2017}. 
+This makes it attractive as an insulator for semiconductor and \gls{pv} industry. 
+It is monoclinic below 1050 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C\cite{Nielsen2005}.
+The cubic phase can be stabilized down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}) which avoids mechanical failing due to shrinkage 
+when cooling and undergoing phase transition\cite{Nielsen2005}.
+It is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and alkalis\cite{Nielsen2005}.
+Hydrous Zirconium Oxide (\ch{Zr(OH)8 * 16 H2O}) gel can be produced by neutral hydrolysis of sodium zirconate (\ch{NaZrO3}). 
+"Zirconium alkoxides hydrolyze quite easily, [providing] a route to high purity, high-surface-area zirconium oxide"\cite{Nielsen2005}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sol-Gel and Doctor Blading}
+%\td{what is it? What is it used for? How does it work? What different kinds are there? }One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
+%
+\Gls{dbc} Doctor blade coating (also known as tape casting) is widely used in the textile, paper, photographic film, printing, and ceramic industries.
+The roll to roll compatible process can fabricate highly uniform flat films over large areas\cite{yang2010large}.
+A blade is moved over a substrate spreading a slurry at a fixed distance with a fixed velocity.
+In roll-to-roll processes the substrate moves instead of the blade. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Sputtering}
+%SPUTTERING FREEWRITING: 
+%what is sputtering? \\
+Sputtering is the processes of highly energetic ions hitting a surface and atoms or molecules being expelled. 
+This is called a \gls{pvd} technique in contrast to chemical vapor deposition. 
+\Gls{pvd} can be divided into activation by thermal energy and activation by energetic particle bombardment. 
+Sputtering is of the latter, which 
+is advantageous if substrates can't withstand high temperatures.
+%\td{what can it be used for?}\\
+Sputtering evolved from being a curious experiment in the middle of the 20th century to 
+having various applications in research and engineering.
+Use cases vary from thin films depositions for \gls{pv}, 
+for electrical circuits or for storage media such as CDs and DVDs 
+over sputter cleaning and etching to analysis.
+Advantages of sputtered thin films include good adhesion to the substrate 
+and good step coverage\cite{Swann1988}.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[t]{.3\textwidth}
+        \includegraphics[width=\textwidth]{./Pics/sputter1.png}
+        \caption{}
+        \label{fig:sputter0}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}[t]{.3\textwidth}
+        \includegraphics[width=\textwidth]{./Pics/sputter2.png}
+        \caption{}
+        \label{fig:sputter1}
+    \end{subfigure}
+%    \caption{Propagation of energy in a dense cascade. Left graph: "Primary" shockwave. Right graph: "Thermal" pulse or "secondary" shockwave. Figure taken from Sigmund 1987\cite{sigmund1969}}
+    \caption{Schematic representation of the creation of sputter particles during sputter deposition. 
+    (a) creation of ions in the chamber: 
+        the top rectangle depicts the source/cathode/target, 
+        the bottom rectangle the anode/substrate holder and 
+        the lower rectangle the substrate to be sputtered. 
+    (b) example series of collision processes leading to sputtering of atoms: 
+        horizontal line represents the target surface, 
+        the small circle a high energetic ion and 
+        the large circles target particles. 
+    }
+	\label{fig:sputter}
+\end{figure}
+
+%\td{how does it work?}\\
+A high voltage is applied to 
+two parallel electrodes with low pressure gas in between. 
+The target acts as anode and the substrate (holder) as cathode (see \td{figure \ref{fig:sputter}}).
+%the target which acts as a cathode with the substrate as anode in a parallel geometry (see \td{fig}).
+The anode, then, emits electrons which collide with a gas particles (mostly argon because of it's inert properties and potential to transfer more kinetic than lighter noble gases). 
+Some gas particles may get ionized by the collision and the gas cations are accelerated to the anode. 
+If a cation has enough energy it will bump off one or more atoms or molecules from the surface. 
+This happens by a cascade of momentum transfers, which can reach the surface again (see figure \ref{fig:sputter}). 
+If a surface particle obtains momentum pointing away from the bulk and its kinetic energy is higher than the binding energy, the particle is sputtered. 
+This neutral sputtered particle travels unaffected by the electrical field perpendicular to the surface towards the substrate and condenses with other particles to form a layer.
+The pressure should be small, such that the sputtered particle has a long \gls{mfp}, but on the other hand 
+a minimum pressure is needed to keep the plasma "alive". 
+Usual pressures are around \SI{1}{\Pa} (\num{e-2}\SI{}{\milli\bar}) or lower\cite{Swann1988}.
+
+A magnetron can be placed behind the cathode (target) in order to trap the plasma close to the source. 
+This lowers the pressure needed to keep the plasma alive. 
+Furthermore, magnetrons prevent high energy electrons from reaching the substrate and 
+undoing the deposited layer and this also increases the probability of an electron 
+colliding with an argon atom and ionizing it, increasing the yield.
+
+When oxygen or nitrogen are added to the gas this is called reactive sputtering.
+Sputtered atoms will react with the gas and result in oxide or nitrides layers, respectively.
+The stoichiometry of the resulting layer can be regulated by gas ratios, but too much reactive gas can lead to target poisoning. 
+Meaning the target begin covered by an insulating layers which can lead to defects in the growing film\cite{Kelly2000}. 
+
+The limitation of only being able to use conducting materials as targets can be circumvented by using a radio frequency electrical field. 
+This prevents a charge building up on the target. %\td{why is a charge?}
+Although RF sputtering is more versatile, DC sputtering is more common because of it's simpler system and economical reasons.
+%\td{sputtered particles are neutral and not influenced by the electrical field}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Scanning electron Microscopy}
+The history of \gls{sem} can be traced back to 1843 when Scottish clockmaker Alexander Bain filed a patent for dissecting an image by scanning. A detailed history of \gls{sem} can be read in a open-to-read paper by McMullan from 1995\cite{McMullan1995}. 
+\Gls{sem} is a microscopical technique which allows visualisation of surfaces with features in the nano meter regime. 
+While optical microscopes use visible light and optical lenses, \gls{sem} uses accelerated electron beams and electrostatic and electromagnetic lenses.
+This allows the generation of much more detailed images due to the shorter wavelengths of electrons compared to light\cite{Kaliva2020}.
+The electron beam produces X-rays, elastically backscattered (primary) electrons, inelastic (secondary) electrons and Auger electrons. 
+Secondary electrons carry information to conclude morphology and topology of the sample while X-rays can be used to identify the elements. 
+Electrons originate from either \gls{feg}, where are strong electrical field rips electrons from the bulk, or from thermionic guns where the filament (tungsten W or \ch{LaB6} (brighter and longer lasting but more expensive)) is heated until electrons are emitted. 
+Electrons are then accelerated by a voltage of 2 to 40 kV and bundled into narrow beams\cite{Vernon2000} by lenses.
+A high \gls{mfp} is needed for electrons to travel from the source to the sample (and to the detector). 
+Thus, a very low pressure is in the inside. 
+In this work \gls{sem} was used as a preliminary way of checking the surface condition. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Infrared Absorption and Spectroscopy}
+%%% WHAT? 
+\Gls{ir} spectroscopy is a molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of \num{e-3} to \num{e-6}\m{}
+or wave numbers $\bar{\nu}$ of 500 to \pcm{4000} ) with molecules. \cite{Schwedt2008}
+In general, light is described as periodic \gls{em} wave 
+which - in vacuum - moves with the speed of light ($c = \mps{299792458}$).
+The relation of energy~$E$ of a photon, its frequency~$\nu$, wavelength~$\lambda$ and wave number~$\bar{\nu}$ are as follows:
+\begin{align*}
+	E &= h \cdot \nu \\
+	\nu &= c/ \lambda \\
+	\bar{\nu} &= 1/\lambda,
+\end{align*}
+where $h$ is the Planck's constant.
+%In words: shorter wavelength (higher frequency) photons are more energetic.
+In practice the spectrum of \gls{em} waves is sectioned into different ranges (\td{see figure?+table});
+from high to low energy: X-ray, \gls{uv}, \gls{vis}, (near, middle and far) \gls{ir}, microwaves and radio waves. 
+X-rays interact with core electrons, \gls{uv}\gls{vis} with valence electrons, \gls{ir} with molecular vibrations, microwaves with molecular rotations and radio with electron and nuclear spins. 
+%Molecular vibrations can be separated in valence and deformation vibrations.
+%
+A molecule has $F=3N$ ($N$ number of atoms) degrees of freedom, including translational $F_T=3$ and rotational $F_R=3$ (2 for linear molecules) movements. 
+%
+The number of vibrations can therefore calculated as 
+\begin{align*}
+	F_V &= 3N - F_T - F_R = 3N - 6 \\
+	F_V &= 3N - F_T - F_R = 3N - 5 \textrm{ (for linear molecules)}.
+\end{align*}
+Vibrations are classified in valence vibrations (change of bond length) and deformation (change of bond angle) vibrations\cite{Melker2006}. 
+Only vibrations that change the dipole moment of the molecule are \gls{ir} active. 
+
+%\td{describe simple IR with monochromator}
+
+\paragraph{(Fourier Transform) Infrared spectrometer}
+ A ceramic material (Nernst glower) is heated to around \oc{1600} as light source. 
+ In the two-beam-spectrometer the light is split, sent through the sample and a reference and one of the two beams is alternately sent through a monochromator to a detector (often a thermopile).
+%
+In the \gls{ft}\gls{ir} spectrometer the beam is sent through the sample, split and 
+reflected from a static and from a moving mirror, recombined and detected by a photo 
+multiplier (a device which transforms photons into electrical signals). 
+How the two beams will interfere upon recombination depends on the optical path difference (also called retardation) of the two light beams\cite{Schwedt2008}.
+In a \gls{ft}\gls{ir} spectrometer the reference has to be measured before the sample.
+%
+When the refractive index of two layers differ, \gls{ir} can be used to measure the thickness\cite{Dumin1967} of optical less dense material.
+
+%\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
+%differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
+
+\td{
+	IR around page 45;
+The absorbance intensity is dependent on wave length and molecule structure. 
+Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and transmission $\tau =T=D= \phi_{ex}/\phi_{in}$
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{X-Ray Diffraction}
+%\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
+\gls{xrd} is used to study the crystalline structure of materials.
+Since X-rays wavelengths (\num{0.2} to \nm{10}) are comparable to the interatomic spacing of crystalline solids the beams get reflected and contain information about the structure\cite{Kaliva2020}.
+Each crystalline material has a discreet atomic structure, which upon irradiation with 
+X-rays causes constructive and destructive interference according to Bragg's law and generates unique diffraction patterns. 
+\Gls{xrd} diffraction plots of crystalline materials feature distinct peaks, whereas amorphous materials exhibit a broad curve with a maximum extending over several degrees (2$\theta$).
+
+%\url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
+

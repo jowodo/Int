@@ -1,0 +1,303 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Machine Learning and Statistics}
+\ds{
+statistics:
+	what is the difference between ml and stat? 
+		superficially very similar but different goals and diff rahmenbedingungen 
+    how can i use ANOVA 
+    linear regression 
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Why introduce machine learning to this project? 
+%I wanted to apply and delve into what I've been studying during my undergrad courses. 
+%This seemed like the perfect oppurtunity. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Is machine learning just hyped statistics? No! 
+		%\href
+		%{https://doi.org/10.1177\%2F1352458520978648}
+		%{Machine and deep learning in MS research are just powerful statistics – No}
+Although machine learning uses several statistical methods, their goal and frame conditions are different. 
+%\td{The goal of machine learning is to ???}
+
+%\begin{itemize}
+%	\item \td{let GPT-3 write}
+%	\item check out links at \url{https://yewtu.be/watch?v=PqbB07n\_uQ4}
+%	\item see pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+%	\item 
+%		\href
+%		{https://doi.org/10.1177\%2F1352458520978648}
+%		{Machine and deep learning in MS research are just powerful statistics – No}
+%\end{itemize}
+
+%\td{
+%\url{https://stats.stackexchange.com/questions/5026/what-is-the-difference-between-data-mining-statistics-machine-learning-and-ai}
+%In principle both \gls{ml} and statistics use math to get information out of data. 
+%AI might use machine learning to create "intelligent" acting (playing a game or driving a  car). 
+\Gls{ml} tries to predict unseen data points and statistics is a subfield of maths 
+which tries to get insight into a given data. 
+For example, in a statistical model, it is desirable to reduce the number of inputs. 
+This allows the statistician to better study how a change in the input variable can be 
+directly affected by the output variable.\cite{gontcharov2019}
+%pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
+%}
+%What is statistics, though, and what seperates it from \gls{ml}? 
+More precisely, mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of of 
+\td{finding correlation from data, finding mathematical models to describe the data} 
+where as (classical) statistics is the domain of representing the data. 
+\td{talk about statistics, then the difference to Ml} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\td{if i want to learn about support vector machine, read chapter 4,7,8 from "Learning from Data" by Cherkassky\cite{cherkassky1998learning} (TUBib 726-1998)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Artificial Inteligence and Machine Learning}
+%How can \gls{ai} and \gls{ml} be defined? 
+\Gls{ai} is a trans-disciplinary field with roots in logic, statistics, cognitive psychology, decision theory, neuroscience, linguistics, cybernetics, and computer engineering.\cite{howard2019artificial}
+The history of \gls{ai} goes back to the middle of the \nth{20} century. 
+Researchers from the emerging field came together at the Dartmouth conference and the term "\gls{ai}" was coined\cite{McCarthy1955}. 
+\Gls{ai}'s  history is beautifully depicted by McCorducks' 1982 book "Machines Who Think"\cite{McCorduck1982,Apter1982}, which focuses on the great minds behind the advances.
+Pioneers like Alan Turing thought a lot about how to define, test and implement \gls{ai}\cite{howard2019artificial}. 
+One example how to measure \gls{ai} is to let it play chess against a human\cite{Silver2017} 
+(in 1997 a chess computer called Deep Blue won against the World Chess Champion Garry Kasparov for the first time\cite{Feng1999}).
+%Another test ingenioused by Alan Turing, is that a human communicates with an unknown entity (in written form) and must judge if they are dealing with a machine or a human being. 
+Another test ingenioused by Alan Turing, is the imitation game\cite{turing1950imitation}, now a days known as Turing test.
+An interrogator communicates with two unknown entities \textbf{A} and \textbf{B} (a woman and a man) and must find out who is who. 
+\textbf{A} will try to make to interrogator misjudge, whereas \textbf{B} is on the interrogators side.
+The question is if \textbf{A} is replaced with a computer how the ratio of outcomes would deviate from the original ratio. 
+%
+%(in written form) and must judge who is the 
+%if they are dealing with a machine or a human being. 
+%
+%
+%\ds{It is easy for humans to come up with question to detect an AI, 
+%but when reading AI written articles\cite{gpt2020}, 
+%it's easy to see this test being passed in the near future.}
+%
+At the moment it's hard to imagine a computer getting a higher ratio than a human
+but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the future.
+
+But fear not, that doesn't mean that computers are sentient or more intelligent than humans\cite{searle1980,searle1999married} and certainly not that research is over. 
+AI is still a young field, which is strongly growing and is gaining ubiquitous status. 
+It is slowly creeping into every aspect of modern human life just like electricity around one hundred years ago. 
+%Now, we can't - it's hard to - imagine to live without electricity. 
+Realms in which AI is gaining traction are: 
+%
+playing board games (and beating humans)\cite{Silver2017,Feng1999,Campbell2002}, 
+image recognition (very popular for medical diagnosis)\cite{Li2020,Deo2015,Topol2019,Fujiyoshi2019}, 
+chemistry\cite{Westermayr2019,goh2017chemception,jha2018elemnet}, 
+cyber security\cite{Sarker2021},
+facial recognition (to prevent theft of toilet paper \cite{Andrews2017}),
+financial sector (as robo-advisors)\cite{Littman2021},
+natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021} 
+(which can also create code and pictures through scalable vector graphics (SVG))
+and even creative tasks like 
+creating non existing faces\cite{Mansourifar2020}, 
+create graphic artwork (DALL-E 2)\cite{Marcus2022} or 
+making video games\cite{Guzdial2016}.
+%
+It is nearly hard to find a field where \gls{ai} isn't used in some way. 
+This steady incorporation of \gls{ai} leads to the so called \gls{ai} effect\cite{McCorduck1982,ai100}: 
+certain fields get incorporated into \gls{ai} research and practice.
+Such that, after some time of general use it is no more considered \gls{ai} (e.g. spam filter or web searches).
+Google CEO Sundar Pichai even goes as far and said: 
+"AI is one of the most important things humanity is working on. It is more profound than [...] electricity or fire"\cite{Hassan2020}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Machine Learning Methods}
+%
+%\todo{check out SVM and KRR}
+%
+\Gls{ml} is at the base of most \gls{ai}s.
+It is an umbrella term for programs with instructions to learn from data, i.e. gain knowledge, categorise, predict and make decisions based on data. 
+%
+There is a platitude of different machine learning methods: 
+they can be divided into supervised (training set is labeled) and unsupervised (exploratory).  
+An orthogonal division can be made by regression (continuous data) versus classification (discrete, categorical data). 
+%Two architecture which don't quite fit into this classification are Generative Adversarial Network (GAN) and jk
+Independent from these $2\times2$ categories there are multiple ways to let machines learn from data.
+%
+\Gls{nn} (one of the most popular architectures for big data\cite{Chiroma2019}) are loosely modeled after the brain\cite{bishop1994neural}.
+Artificial neurons (also called nodes), which are arranged in layers, 
+are connected to each of the neurons of previous and next layers
+and the weights (parameters of intensity), with which the data is routed from one neuron to another, 
+are optimised during training. 
+%
+Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} and in quantum mechanics too\cite{westermayr2020combining}.
+Other common architectures include linear regression, kernel ridge regression and support vector regression.
+There are also lesser know algorithms like 
+evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
+\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{villanova2010function}.
+%
+One advantage of evolutionary algorithms is that they start with a small data set
+and periodically request new data in order to solve the problem iteratively.
+%\td{This is exactly what I needed because every experiment is very time intensive.} 
+
+A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
+
+\iffalse
+\Gls{ga} uses a starting population of size $p$ ($p \in$ \td{N$^+$}) where each experiment (or data point) 
+is represented by a fixed size genome of 0's and 1's in most cases. 
+Each individual is then given a fitness value. 
+New genomes are added and discarded from the population using 
+selection, mutation and crossover operations.
+%The best n ($n \in$ \td{N}) will be selected to produce offspring, 
+%whose genome is a combination of both genomes with potential mutations 
+%and a (mostly) random c
+\fi
+
+\Gls{pso} also uses a starting population of particles where each experiment (particle) 
+is represented by its independent and dependent variables. 
+It was originally inspired by the behaviour of bird flocks and fish schools\cite{Kennedy1995}.
+Each particle has an associated position and velocity. 
+Every movement across the search space is stochastic and influenced by its particle velocity and position as well as its and the swarm's best known position.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{EMMA}
+%\Gls{emma} and \gls{mars}
+\Gls{emma} is an implementation of the \gls{pso} in the \texttt{R} programming language. 
+Each time step the dependent variables for all possible input variable combinations
+are predicted with the help of \gls{mars}. 
+\Gls{mars} is a regression method introduced by Friedman's 1991 paper 
+"Multivariate Adaptive Regression Splines"\cite{friedman1991multivariate}. 
+The \texttt{CRAN} package which implements \gls{mars} is called \texttt{earth} due to \gls{mars} being trade marked\cite{mars}.
+%%% MARS 
+\gls{mars} is an extension of multivariate linear regression.
+Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g. kernel functions), whose number of parameter quickly exceeds the practical for moderate dimensions (n>5). 
+%to higher dimensions (n > 2) is straightforward in principle but difficult in practice. 
+"These difficulties are related to the so-called “curse-of-dimensionality”, a phrase coined by Bellman (1961) to express the fact that exponentially increasing numbers of points are needed to densely populate Euclidean spaces of increasing dimension."\cite{friedman1988fitting}
+The main advancements are the ability to fit (possible complex) interactions and non-linearities. 
+%- "The key ingredient that advances this approach to general settings is the ability to fit (possibly complex) interactions among the variables through the product terms that are permitted to enter the approximation (9), if required by the fit."\cite{friedman1988fitting}
+%% MARS MODEL SELECTION
+%- "The approximation is developed in a forward/backwards stepwise recursive manner in analogy with the recursive partitioning approach. "\cite{friedman1988fitting}
+The \gls{rf} is developed in a forward/backward stepwise recursive manner. 
+During the forward recursion basis functions are added in pairs until a certain number of terms is reached. 
+Then, the backwards algorithm regularizes the function by removing terms. 
+The metric which decides if a term should be removed is called \gls{gcv} and was introduced by Wahba and Cravenin 1969\cite{wahba1979smoothing}.
+
+- "Choosing a previous term for multiplication (10) is analogous to choosing a (previous) region to split in (7). The optimization over 2, and t in (10) is quite similar to finding the optimal splitting variable and split point for partitioning a region. "\cite{friedman1988fitting}
+
+\begin{equation}
+    GCV(M) = \frac{1}{N} \sum_{i=1}^{N} \frac{ \left(y_i - \hat{f}(x_i) \right)^2 } {\left( 1- \frac{C(M)}{N}\right)^2 }
+\end{equation}
+with $M$ being the number of terms, $N$ the number of data points, $d$ the degrees of freedom and
+\begin{equation}
+    C(M) = (d + 1)M + 1
+\end{equation}
+
+%%Advantages of \gls{mars} are its easy interpretability and flexibility to model non-linearity and of course ability to cope with high dimensional data\cite{villanova2010function}. 
+
+
+- the interpretability of $\hat{f}(x)$ is important to understand $f(x)$ spaces of increasing dimension."\cite{friedman1988fitting}
+%
+- the error is due to unmeasured and uncontrolled 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Design of Experiment} %DOE
+%\epigraph{"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."}{Grahem C. Goodwin\cite{goodwin1977experiment}}
+%
+\begin{quote}
+	{"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."}
+	- {Grahem C. Goodwin\cite{goodwin1977experiment}}
+\end{quote}
+%
+In two cases a deliberate \gls{doe} is beneficial.
+If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
+If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
+%Both encompass nearly all cases. 
+% 
+At the beginning of any experiment its constraints must be determined. 
+%
+Constraints for a given experiment include range of input and output variables as well as total time available and total number of samples/experiments that can be taken.\cite{goodwin1977experiment}
+%
+
+%FULL FACTORIAL
+A naive approach to an experiment design is the full factorial \gls{doe}.
+Each possible combination of discrete values is tested. 
+While this is the most informative design it will more often than not be infeasible due the curse of dimensionality\cite{cherkassky1998learning}.
+% 2-LVL FACTORIAL
+The 2-level factorial design provides an alternative with $2^d$ (where $d$ is the number of independent variables) experiments. 
+Drawbacks of 2-level factorial \gls{doe}s include no data about the inside of the search space and infeasibility for high dimensional problems.
+In a full factorial or 2-level factorial design most experiments are redundant and most resources will be spent exploring high-order interaction effects\cite{gunst2009fractional}, which are often minimal to non-existent.
+% RANDOM 
+In order to overcome these obstacles a certain number of experiments can be chosen randomly from the search space. 
+%
+%A straight forward design can be to randomly chose a certain number of experiments from the search space. 
+%Alternatively, a subset of from the 2-level factorial design can be chosen, which is called a fractional factorial design. 
+When a subset is chosen from the factorial design, it is called a fractional factorial design. 
+% PLACKETT_BURMAN
+%, a fractional factorial \gls{doe}. 
+%A straight forward design can be to randomly chose a certain number of experiments from the search space. 
+%
+%
+The Plackett-Burman\cite{vanaja2007design,miller2001using,wang1995hidden} design is a special case of 2-level fractional factorial design, 
+where the number of needed experiments $n$ is $n<d+4$ 
+(more precisely $n=(\lfloor d\div4\rfloor+1)\cdot4$, where $\lfloor x\rfloor$ denotes the floor function on $x$) 
+and each combination of levels for any pair of factors appears the same number of times. 
+% HAMMERSLEY 
+A drawback of 2-level factorial and random fractional designs is that the sample set is likely not evenly distributed across the search space\cite{viana2016tutorial}. 
+The Hammersley design\cite{viana2016tutorial,diwekar1997efficient} is based on the Hammersley sequence and produces space filling data points. 
+% LATIN HYPER CUBE
+The Latin hypercube \gls{doe}\cite{viana2016tutorial,diwekar1997efficient} is a type of orthogonal \gls{doe}, 
+which has the advantage that each level for each variable will be tested only once. 
+A Latin hypercube \gls{doe} can be also created such that data points more uniformly distribute over the search space. 
+Latin hypercube \gls{doe}s are mainly used in computer simulations which are purely deterministic and therefore have no error. 
+%"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
+%
+%Continuous state spaces must be accommodated by arbitrary discretization.
+%\cite{cohn1996neural}
+\iffalse
+%
+\td{For any 2-level factorial DOE applies: "The effect of any factor main effect (A, B, C) or interaction (AB, AC, BC, ABC) is the difference of two averages, the average of the responses correpsonding to +1 levels and the average of the responses corresponding to -1 levels. " - from Gunst2009\cite{gunst2009fractional}}
+
+DOEs: randomization, latin square, orthogonal experiment design, full/2-lvl factorial design, placket burman, \\
+\url{https://doi.org/10.1111/j.2517-6161.1973.tb00944.x}\cite{whittle1973some}  \\
+maybe \url{https://www.sciencedirect.com/science/article/pii/S0167715212003343?via\%3Dihub}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Analysis of Variance} % ANOVA
+\Gls{anova} is a statistical test for estimating the influence of multiple categorical independent variables on a dependent numerical variable. 
+At the heart of \gls{anova} lies the F-test. 
+The F-test was ingeniused by Ronald Fisher, an important figure in modern statistics. 
+The F-test uses a ratio of variances to determine if a null-hypothesis (observed difference is due to chance alone) is true. 
+The variance in the enumerator measures the "between-group variability" and the denominator measures the "within-group variability".
+%This ratio is unaltered by adding constants to all observations or scaling errors. 
+This ratio is unaffected by units, scaling errors and constant bias. 
+%
+%\Gls{anova} analyses the means by means of mincing variances.
+%of of the continuous outputs where inputs are categories. 
+%The statistical significance of the experiment is determined by a ratio of two variances. 
+%This ratio is independent of several possible alterations to the experimental observations: 
+%Adding a constant to all observations does not alter significance. 
+%Multiplying all observations by a constant does not alter significance. 
+%\Gls{anova} statistical significance results are independent of constant bias and 
+%scaling errors as well as the units used in expressing observations. 
+%\href{https://en.wikipedia.org/wiki/Analysis_of_variance#Summary_of_assumptions}{(click here)}
+Additional assumptions of \gls{anova} include: groups and levels should be independent, 
+residual error should follow normal distribution, variance of groups should be equal. 
+%\href{https://statsandr.com/blog/anova-in-r/}{(click here)}
+
+%\textbf{Links}
+%\url{https://www.scribbr.com/statistics/anova-in-r/} just make input categorical\\
+%\url{https://pypi.org/project/pynova/}\\
+
+
+\iffalse
+\textbf{Assumptions of ANOVA}
+from \url{https://statsandr.com/blog/anova-in-r/}
+\begin{itemize}
+    \item variable type: continuous dependent variable and categorial qualitative independent variable (also called treatments or levels). The input variables are discretized an can therefore be seen as categorial.
+    \item Independence: groups and levels should be independent
+    \item Normality: the residual (that is the durchschnittliche dependance of uncontrollable variables ,like room temperature or humidity) should approximately follow a normal distribution. 
+    \item Equality of variance: variance in differenct groups should be equal (compare with homoscedasticity).
+    \item No outliers
+\end{itemize}
+\fi
+
+
