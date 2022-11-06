@@ -1,10 +1,10 @@
 \subsection{Post-EMMA}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{analyse data with other methods post optimization}
-Anova shows that the influence of TCal is significant as shown by the F 
 \begin{itemize}
     \item ANOVA (influence of TCal) \texttt{Code/Statistics/sub/anova.R}
-    \item lin regression (influence of conc) \texttt{Code/Statistics/sub/linreg.py}
+    \item lin regression (influence of conc) \texttt{Code/Statistics/sub/linreg.py
+    \item grid search
     \item KRR (start with grid search) (???)
     \item SVM (start with grid search) (???)
 \end{itemize}
@@ -29,6 +29,9 @@ Was zu erwarten war.
 
 Do multi linear reg like in Peprah et al. 2017\cite{peprah2017appraisal}.
 
+%MSE(data=all) =427
+%MSE(data=emma)=250
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{ANOVA}\label{sec:res-anova}
 \Gls{anova} doesn't provide a lot of extra information. 
@@ -37,6 +40,7 @@ It seems that the probability of getting such data per chance that Tcal has no i
 (null hypothesis is true) is less then 5\% (even less than 1\%). 
 wrong the second is not for phd but for extended data set
 but for phd even lower than 0.1 \%
+Anova shows that the influence of TCal is significant as shown by the F 
 
 \iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
