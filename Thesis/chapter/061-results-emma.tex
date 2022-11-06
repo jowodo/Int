@@ -95,7 +95,7 @@ Neither were the measurements for these samples, which might be due to the high 
 %%% EQUATION 
 %\subsubsection{Equation}
 Equations \ref{eq:emma-phd3}-\ref{eq:emma-vcal3} and \ref{eq:emma-phd4}-\ref{eq:emma-vcal4} represent the prediction functions at $t=3$ and $t=4$ rounded to 2 significant digits, respectively.
-$h(x)$ is the hinge function (also called a rectifier function) of the simple form $h(x) = max(0,x)$. 
+%$h(x)$ is the hinge function (also called a rectifier function) of the simple form $h(x) = max(0,x)$. 
 The expression $h(\lambda-6)$ translates into layer count only has an influence if larger than 6 
 and $h(6-\lambda)$ into layer count influential only if under 6.
 %
@@ -200,7 +200,7 @@ Or rather \gls{mse} at $t=2$ high because \gls{rf}s at $t=2$ poor and gen=2 samp
 %%% PROBLEMS 
 The two main problems were too many independent variables and too many dependent variables. 
 Both seem closely related and overcomplicate the optimization but both come with their own implications. 
-Too many independent variables make it harder to distinguish variance due to random error from variance due to dependency. 
+Too many independent variables make it harder to distinguish variance due to random error (due to unmeasured and uncontrolled variables) from variance due to dependency of chosen dependent varibales. 
 This is mainly because of the curse of dimensionality \td{cite} which makes it hard to collect enough data for each dimension. 
 The main problem about too many independent variables is that the same set of \gls{bf}s will be used to predict all \textit{optimizands}.
 This leads to competition between the \gls{bf}s as not all dependent variables may depend on the same independent variables. 
