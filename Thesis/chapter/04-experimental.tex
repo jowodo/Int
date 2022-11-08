@@ -276,7 +276,7 @@ All heating programs were held at the calcination temperature for one hour.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Characterisation}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
-\Gls{ft}\gls{uv}\gls{vis}\gls{nir} transmittance and reflectance spectra (at \SI{20}{\degree} incident 
+\Gls{ft}\gls{uv}/\gls{vis}/\gls{nir} transmittance and reflectance spectra (at \SI{20}{\degree} incident 
 angle) were recorded with a Bruker Vertex 70 
 %transmission [\%] and reflection?  which angle? 
 spectrometer with a quartz beam splitter, \SI{0.5}{\milli\meter} aperture and 
@@ -328,8 +328,12 @@ See figure~\ref{fig:circuit} for a sketch of the connectivity.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREOPTIMISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Pre-optimisation}\label{sec:exp-preopt}
-\td{the choice of grenzen for \gls{doe} was done by biotic reinforcement learning (i.e. my brain)}
-\td{Screening}
+%\td{the choice of grenzen for \gls{doe} was done by biotic reinforcement learning (i.e. my brain)}
+%\td{Screening}
+%The main part of the screening pre-optimisation samples were optimized via biotic reinforcement learning (i.e. my brain). 
+The main part of all samples (around 90\%) were pre-optimization samples, 
+from which the bulk were screening experiments optimized via biotic reinforcement learning 
+(i.e. my brain) in order to obtain reasonable constraints for pre-optimization. 
 %Initially, glass plates were doctor bladed manually with aquatic solution and calcinated 
 %via HP1. 
 %Glass was used because of its availability and in order to be able to make IR 
@@ -356,11 +360,11 @@ reproducible.
 The glass plate of the film applicator was therefore exchanged with a metal plate which 
 allowed to hold the sample in place through underpressure and simultaneously heat it to a certain 
 temperature. The bounds of the process variables were then explored in a preliminary study 
-using the Plackett-Burman \cite{Plackett1946} design implemented in the \texttt{python3} 
+using the Plackett-Burman\cite{Plackett1946} design implemented in the \texttt{python3} 
 library \texttt{pyDOE}. With 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
-relative concentration of Zr $c_{Zr}$, number of layers $n_{l}$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively. 
+relative concentration of Zr $c_{zr}$, number of layers $\lambda$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively. 
 After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see table \ref{tab:pre-opt1}).
 \begin{table}[hbt]
 	\centering
@@ -374,7 +378,7 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 			\hline
 			\hline
 	%		&80-150\oc{} [\oc{}/\minutes{}]	&150-200\oc{} [\oc{}/\minutes{}]	&200\oc{}-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] &t$_{\textrm{Cal}}$ [\minutes{}]	\\
-			$c_{Zr}$	&$n_l$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+			$c_{zr}$	&$\lambda$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
 			\hline
 	1	&10	&5	&20	&120	&400	\\
 	1	&4	&0.1	&20	&120	&500	\\
@@ -389,21 +393,21 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 	\end{subtable}%
 	\begin{subtable}{0.5\linewidth}
 		\centering
-		\subcaption{Hand picked experiments}
+        \subcaption{Hand picked experiments; $^*$varied stabilisation agent}
 		\label{tab:pre-opt2}
 		\begin{tabular}{cccccc}
 	%conc	&layers	&vDOC	&TDOC	&vCal	&Tcal		\\
 			\hline\hline
-			$c_{Zr}$	&$n_l$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+			$c_{zr}$	&$\lambda$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
 	%conc	&layers	&$v_{\textrm{DB}}$	&$T_{\textrm{DB}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
 			\hline
 	2	&8	&0.5	&40	&360	&470	\\
 	2	&6	&2	&40	&360	&430	\\
 	1	&4	&12	&70	&120	&500	\\
 	1	&9	&18	&80	&240	&400	\\
-	4*	&6	&14	&60	&240	&500	\\
-	4*	&6	&14	&60	&240	&500	\\
-	4*	&6	&14	&60	&240	&500	\\
+	4$^*$	&6	&14	&60	&240	&500	\\
+%	4$^\dagger$	&6	&14	&60	&240	&500	\\
+%	4$^\ddagger$	&6	&14	&60	&240	&500	\\
 			\hline
 			\hline
 			\\
@@ -437,13 +441,14 @@ the optimization as every reduction in variables or levels meant a faster conver
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Shortly before the \gls{pso} the stabilisation agent was changed from \gls{acoh} to 
 \gls{ipo} because of much better solution stability.
-The up to this moment best process was chosen to be tested with \ml{1} \gls{acoh}, \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} and \ml{1} \gls{ipo}.
-%\td{As the sample showed the best all ex were proceeded with ipo as stabilatin agent. }
-The sample produced with \gls{ipo} as stabilization agent showed comparable passivation results and better stability. Therefore \gls{ipo} was used  as stabilisation in further experiments.
-After 
-%a fitting recipe was found and 
-the boundaries were fixed the process variables to 
-produce an insulating layer was examined. 
+The - up to this moment - best process was chosen to be tested with 
+\ml{1} \gls{acoh}, \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} and \ml{1} \gls{ipo}.
+%\td{As the sample showed the best all ex were proceeded with ipo as stabilisation agent. }
+The sample produced with \gls{ipo} as stabilization agent 
+showed comparable passivization results and better stability. 
+Therefore \gls{ipo} was used  as stabilisation in further experiments.
+After the boundaries of the solution were fixed 
+the process variables to produce an insulating layer was examined. 
 %There were many variables which had to be taken into account. 
 %\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, DB velocity and DB temperature as input variables.}
 See table \ref{tab:space} for the space spanned for the optimisation.
@@ -453,7 +458,7 @@ See table \ref{tab:space} for the space spanned for the optimisation.
     \label{tab:space}
     \begin{tabular}{cccccc}
         \hline\hline
-		$c_{Zr}$	&$n_l$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+		$c_{zr}$	&$\lambda$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
 %        concentration   &layers &\gls{db} velocity  &\gls{db} temperature   &heating rate   &calcination temperature    \\
         \hline
         2   &4  &10 &40 &120    &300    \\
