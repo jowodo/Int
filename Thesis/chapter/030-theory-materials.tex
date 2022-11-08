@@ -258,10 +258,11 @@ In this work \gls{sem} was used as a preliminary way of checking the surface con
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Infrared Absorption and Spectroscopy}
+\subsubsection{UV/Vis/NIR Spectroscopy}
 %%% WHAT? 
-\Gls{ir} spectroscopy is a molecular spectroscopic method using interactions of \gls{ir} light (wavelengths $\lambda$ of \num{e-3} to \num{e-6}\m{}
-or wave numbers $\bar{\nu}$ of 500 to \pcm{4000}) with molecules\cite{Schwedt2008}.
+\Gls{uv}/\gls{vis}/\gls{nir} spectroscopy is a molecular spectroscopic method using 
+interactions of \gls{uv}, \gls{vis} and \gls{nir} light 
+(wavelengths $\lambda$ of \num{e-7} to \num{e-6}\m{}) with molecules\cite{Schwedt2008}.
 In general, light is described as periodic \gls{em} wave 
 which - in vacuum - moves with the speed of light ($c = \mps{299792458}$).
 In other materials light moves with the velocity $v=\frac{c}{n(\lambda)}$, where $n(\lambda)$ is the refractive index which is a function of the wavelength. 
@@ -273,11 +274,20 @@ The relation of energy~$E$ of a photon, its frequency~$\nu$, wavelength~$\lambda
 \end{align*}
 where $h$ is the Planck's constant.
 %In words: shorter wavelength (higher frequency) photons are more energetic.
-In practice the spectrum of \gls{em} waves is sectioned into different ranges (\td{see figure?+table});
+In practice the spectrum of \gls{em} waves is sectioned into different ranges; % (\td{see figure?+table});
 from high to low energy: X-ray, \gls{uv}, \gls{vis}, (near, middle and far) \gls{ir}, microwaves and radio waves. 
 X-rays interact with core electrons, \gls{uv}\gls{vis} with valence electrons, \gls{ir} with molecular vibrations, microwaves with molecular rotations and radio with electron and nuclear spins. 
 %Molecular vibrations can be separated in valence and deformation vibrations.
-%
+
+% UVVis
+Two prerequisites need to be fulfilled in order for a \gls{uv}\gls{vis} photon to be 
+absorbed by a molecule or atom.
+Firstly, the energy must be the same as the difference between two electronic states, a lower populated and a higher empty orbital. 
+The electron will then be excited into a energetically higher orbital.
+Secondly, the spin state of both states has to be the same otherwise the transition is "forbidden" and the absorption is extremely unlikely. 
+
+% IR
+\Gls{ir} photons interact with molecular vibrations, which is only a part of the degrees of freedom of a molecule.
 A molecule has $F=3N$ ($N$ number of atoms) degrees of freedom, including translational $F_T=3$ and rotational $F_R=3$ (2 for linear molecules) movements. 
 %
 The number of vibrations can therefore be calculated as 
@@ -287,20 +297,25 @@ The number of vibrations can therefore be calculated as
 \end{align*}
 Vibrations are classified in valence vibrations (change of bond length) and deformation (change of bond angle) vibrations\cite{Melker2006}. 
 Only vibrations that change the dipole moment of the molecule are \gls{ir} active. 
+The absorption of \Gls{nir} electromagnetic waves involves excitations of non-fundamental vibrations, overtones and combination modes. 
+These transition are mostly "forbidden" quantum mechanically and allow analysis of bulk matter without extensive preparation
+due to the deep penetration depth of \gls{nir} light\cite{bec2019breakthrough}.
 
 %\td{describe simple IR with monochromator}
 
-\paragraph{Fourier Transform Infrared Spectrometer}
- A ceramic material (Nernst glower) is heated to around \oc{1600} as light source. 
- In the two-beam-spectrometer the light is split, sent through the sample and a reference and one of the two beams is alternately sent through a monochromator to a detector (often a thermopile).
+\paragraph{Fourier Transform Spectrometer}
+ %A ceramic material (Nernst glower) is heated to around \oc{1600} as light source. 
+In the two-beam-spectrometer the light emitted from the light source is split, 
+sent through the sample and the reference and one of the two beams is alternately 
+sent through a monochromator to a detector (often a thermopile).
 %
-In the \gls{ft}\gls{ir} spectrometer the beam is sent through the sample, split and 
+In the \gls{ft} spectrometer the beam is sent through the sample, split and 
 reflected from a static and from a moving mirror, recombined and detected by a photo 
 multiplier (a device which transforms photons into electrical signals). 
 How the two beams will interfere upon recombination depends on the optical path difference (also called retardation) of the two light beams\cite{Schwedt2008}.
-In a \gls{ft}\gls{ir} spectrometer the reference has to be measured before the sample.
+In a \gls{ft} spectrometer the reference has to be measured before the sample.
 %
-When the refractive index of two layers differ, \gls{ir} can be used to measure the thickness\cite{Dumin1967} of the optical less dense material.
+When the refractive index of two layers differ, light can be used to measure the thickness\cite{Dumin1967} of the optical less dense material.
 
 %\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
 %differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
