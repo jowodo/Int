@@ -87,7 +87,7 @@ Next, the output variables (dependant variables), their weights in the objective
 	\centering
 	\begin{tabular}{cc cc cc}
 		\hline
-        $c_{zr}$ [21 g/L]	&$\lambda$	&$T_{DB}$[\oc{}]	&$v_{DB}$[\mm{}/\s{}]	&$T_{cal}$[\oc{}]	&$v_{cal}$[\oc{}/\h{}]	\\
+        $c_{zr}$ [\SI{22}{\milli\mol\per\liter}]	&$\lambda$	&$T_{DB}$[\oc{}]	&$v_{DB}$[\mm{}/\s{}]	&$T_{cal}$[\oc{}]	&$v_{cal}$[\oc{}/\h{}]	\\
 		\hline
 		2				&4		&40					&10				&300				&120	\\
 		3				&6		&50					&12				&400				&360	\\
@@ -97,20 +97,31 @@ Next, the output variables (dependant variables), their weights in the objective
 						&		&					&20				&					&		\\
 		\hline
 	\end{tabular}
-	\caption{Discrete levels of each input parameter \td{are concentrations correct?}}
+	\caption{Discrete levels of each input parameter }
 	\label{tab:input}
 \end{table}
 
-The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $\lambda$ and $v_{cal}$, which all should be minimized except $v_{cal}$.
-The next step is to select an initial population (ensemble of experiments), which is chosen randomly from the population space. 
-The experiments are executed, measured and evaluated according to section \ref{sec:exp} and $\gamma$ (see eq. \ref{eq:gamma}), $\rho_s$ (see eq. \ref{eq:rho}), $n_{layers}$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in \oc{}/\minutes{}) are supplied to the program. 
-\td{The program, then, uses this data to estimate a response for each output variable (and to choose a fraction of the initial population which is allowed to propagate).
-The response variables for the entire population space is calculated. 
+The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $\lambda$ and $v_{cal}$, 
+where $\gamma$, $\rho$ and $\lambda$ are to be minimized and $v_{cal}$ to be maximized.
+%which all should be minimized except for $v_{cal}$.
+The next step is to generate an initial population (ensemble of experiments), which is chosen randomly from the population space. 
+The experiments are executed, measured and evaluated according to section 
+\ref{sec:exp} and the responses $\gamma$ (see eq. \ref{eq:gamma}), $\rho_s$ (see eq. \ref{eq:rho}), 
+$n_{layers}$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in 
+\oc{}/\minutes{}) are supplied to the program. 
+The program, then, uses this data to estimate a response for each output variable 
+for the entire population space.
+(and to choose a fraction of the initial population which is allowed to propagate).
+\td{
+%The response variables for the entire population space is calculated. 
 }
-The current population - each of the particles independently - moves towards the optimum solution.
-The population for the next time step is outputted and the experiments are again executed, measured and evaluated.
+The current population - each of the particles independently - 
+have random velocity vector associated to them which is directed to the best predicted sample. 
+%moves towards the optimum solution.
+The population for the next time step is generated and the experiments are again executed, measured and evaluated.
+Each time step thus includes experiment identification, solution preparation, coating deposition and layer analysis. 
 
-\td{system behavior are discussed in Modeling the Results.
+\ds{system behavior are discussed in Modeling the Results.
 Algorithm and Coating Features. The theoretical efficiency
 of the proposed approach has been verified using a simulation
 based on a preliminary experimental model (48 recipes evalu-
@@ -118,86 +129,14 @@ ated, see the Supporting Information, S3). Then, 15 new experi-
 ments were selected for each subsequent time instant. Each time
 instant involves experiment identification, solution preparation,
 coating deposition, and spot analysis.
-Figure 2a presents the laser scanner measurement of a spot
-}\cite{Carta2011}
-%\subsection{EMMA Propagation}
-%\begin{table}[htb]
-%	\centering
-%	\begin{tabular}{ccccccc}
-%		\hline
-%		\hline
-%conc	&layers	&vDOC	&TDOC	&vCal	&Tcal	&	\\
-%		\hline
-%1	&10	&5	&20	&120	&400	&\\
-%1	&4	&0.1	&20	&120	&500	&\\
-%5	&10	&0.1	&20	&120	&500	&\\
-%5	&4	&5	&20	&480	&400	&\\
-%1	&5	&5	&80	&120	&500	&\\
-%1	&10	&1	&80	&480	&400	&\\
-%5	&5	&1	&80	&120	&400	&\\
-%5	&10	&5	&80	&480	&500	&\\
-%2	&8	&0.5	&40	&360	&470	&\\
-%2	&6	&2	&40	&360	&430	&\\
-%		\hline
-%%4	&12	&-	&-	&-	&-&\\
-%1	&4	&12	&70	&120	&500	&\\
-%1	&9	&18	&80	&240	&400	&\\
-%%2	&5	&18	&70	&-	&-		&\\
-%4	&6	&14	&60	&240	&500	&\\
-%4	&6	&14	&60	&240	&500	&\\
-%4	&6	&14	&60	&240	&500	&\\
-%		\hline
-%2	&10	&20	&40	&120	&500	&6113\\
-%3	&8	&18	&70	&1080	&300	&2850\\
-%3	&6	&10	&50	&1080	&400	&5526	\\
-%%3	&10	&14	&50	&600	&500	&-7374	\\
-%3	&10	&16	&80	&120	&500	&6554	\\
-%4	&6	&16	&80	&1080	&300	&2947	\\
-%3	&12	&12	&80	&840	&500	&8318	\\
-%3	&10	&14	&50	&600	&500	&7374	\\
-%5	&6	&10	&60	&1080	&400	&5648	\\
-%5	&10	&20	&60	&360	&300	&3956	\\
-%5	&12	&14	&60	&1080	&300	&2700	\\
-%		\hline
-%%2	&2	&10	&40	&600	&300	&-7201	\\
-%2	&4	&10	&80	&1080	&300	&6101	\\
-%%2	&4	&10	&40	&600	&300	&-7201	\\
-%2	&4	&10	&40	&600	&300	&7201	\\
-%3	&4	&12	&60	&600	&300	&1462	\\
-%4	&4	&10	&80	&1080	&300	&2883	\\
-%5	&12	&20	&70	&600	&300	&1680	\\
-%		\hline
-%2	&4	&10	&40	&120	&300	&1	\\
-%2	&4	&10	&40	&120	&500	&6001	\\
-%3	&4	&10	&40	&120	&500	&6102	\\
-%5	&4	&10	&80	&1080	&300	&2884	\\
-%5	&12	&20	&60	&120	&300	&360	\\
-%		\hline
-%3	&4	&10	&40	&600	&400	&4202	\\
-%2	&6	&20	&40	&120	&500	&6105	\\
-%%4	&4	&14	&80	&1080	&300	&-2923	\\
-%5	&12	&14	&60	&600	&300	&1500	\\
-%3	&6	&14	&60	&600	&300	&1486	\\
-%4	&4	&14	&80	&1080	&300	&2923	\\
-%		\hline
-%4	&8	&18	&80	&1080	&300	&2971	\\
-%3	&8	&10	&50	&1080	&300	&2530	\\
-%2	&12	&16	&40	&120	&400	&3077	\\
-%2	&10	&18	&60	&1080	&300	&2733	\\
-%4	&10	&10	&50	&1080	&300	&2535	\\
-%		\hline
-%		\hline
-%	\end{tabular}
-%	\caption{}
-%	\label{tab:emma}
-%\end{table}
-%
+}%\cite{Carta2011}
 
-
+\iffalse 
 \subsection{Fitting via Machine Learning}
 \td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
 Python and sci-kit learn \td{cite} was used to implement a linear fit model, and SVR with the kernels polynomial, rbf and sigmoid. 
 The space of hyper parameters C, the degree (in case of polynomial), epsilon and gamma was scaned. 
 
 The independent variables are located on a partially irregular grid.  
+\fi
 
