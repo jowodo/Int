@@ -30,18 +30,20 @@ from a sample in one representative number.
 %\td{plot avg, avg(log), avg(log-13)}
 %
 For every I-V curve (aluminium dot) the gradient $g$ at $V=0$ is calculated by taking 
-each $n=5$ points after and before the origin at least $d=2$ points distance (which boils
-down to the values from \SI{0.02}{\volt} to \SI{0.07}{\volt}), 
-averaging their V and I values and calculating
+each 5 points before and after the origin with at least 2 points distance (which boils
+down to the data points from $\pm$\SI{0.02}{\volt} to $\pm$\SI{0.07}{\volt}), 
+calculating averages of each point cloud $\overline{V}$ and $\overline{I}$ and taking the ratio of differences 
+%averaging their V and I values and calculating
 \begin{equation}
-    g = \frac{I_{+m+d} - I_n}{V_{n+1} - V_n}.
+    %g = \frac{I_{+m+d} - I_n}{V_{n+1} - V_n}.
+    g = \frac{\overline{I}_{+} - \overline{I}_-}{\overline{V}_{+} - \overline{V}_-}.
 \end{equation}
 %
 The average of each conductance would be an easy and naive choice but difficult to represent a 
 sample correctly since the possible values of conductance span across several magnitudes.
 So the average of base 10 logarithm of conductances is the next nearby \textit{ansatz}.
 %
-In order to make the metric closer and better comparable to the \gls{mse} the average of the squared difference 
+In order to make the metric closer and better comparable to the \gls{mse} (and to penalize deviation from ideal more than linearly) the average of the squared difference 
 to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the average of logarithms. 
 %As a measure of conductance a distance $D$ from an ideal non-conducting case. 
 %The average of the negative base 10 logarithm subtracted from an ideal non-conducting gradient of $10^{-13}$ 
