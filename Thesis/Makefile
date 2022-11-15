@@ -7,6 +7,7 @@ all: $(bibfile) $(basename).tex
 	bibtex $(basename).aux
 	makeglossaries $(basename)
 
+clean: clear
 clear: 
 	rm -f $(basename).aux \
 		$(basename).acn \
