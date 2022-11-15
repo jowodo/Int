@@ -1,19 +1,54 @@
-\subsection{Post-EMMA}
 \label{sec:res-post-emma}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{analyse data with other methods post optimization}
-\begin{itemize}
-    \item ANOVA (influence of TCal) \texttt{Code/Statistics/sub/anova.R}
-    \item lin regression (influence of conc) \texttt{Code/Statistics/sub/linreg.py}
-    \item grid search
-    \item KRR (start with grid search) (???)
-    \item SVM (start with grid search) (???)
-    \item \url{https://blog.minitab.com/en/adventures-in-statistics-2/regression-smackdown-stepwise-versus-best-subsets}
-    \item \url{https://blog.minitab.com/en/how-to-choose-the-best-regression-model}
-\end{itemize}
+\subsubsection{ANOVA}\label{sec:res-anova}
+\textbf{EMMA}
+The \gls{rf} produced by the last iteration of \gls{emma} put a high \td{significance} 
+on the calcination temperature $T_{cal}$. 
+Now \gls{anova} can be used to check if the data 
+From emma we saw that TCal seems to hav the biggest influence on 
+both gamma and rho. 
+
+\textbf{What can/did we test?}
+With anova we can check if the probability of arriving at these results was by pure chance or not. 
+With the null hypothesis that we arrive at results by pure chance and of that the probability. 
+We tested for each input variable the influence on rho and gamma 
+and also as a test on vcal and $\lambda$. 
+We used an alpha value of 0.05 which means that 1 out of 20 times this result could be 
+produced by pure chance. 
+If the f-value is below that value, then we choose to accept, that the data is not due to
+chance but due to the influence of the independent variables on the dependent variables. 
+Usually, the alpha-value is choosen to be 0.01-0.05\cite{hoffman2020concept,sellke2001pvalues}
+The choice of a relatively high alpha-value is gerechetfertigt by the rather small amount of data and \td{evn}.
+\td{could test anova on difference generation data sets} 
+
+\textbf{What were the results?}
+\td{anova shows that for the mentioned indep and dep pairs, the means divieded by 
+indep groups are not equal and that there is at least one group that is different. 
+Important to mention, that anova uses categorical data for inputs, 
+where our data is numerical and thus information is lost}
+For both gamma and lambda (for both the emma dataset and the extended dataset) 
+the F values for Tcal were in all cases under 0.01, 
+indicating a real influence of Tcal on the conductance.
+Both datasets exhibit a $p(>F) < 0.05$ for the interaction Tcal:vcal on phd. 
+\td{why tcal:vcal on phd the same for both datasets?}
+And the extended data set has pF samll er than 0.01 of vcal on phd. 
+
+\textbf{What do the results mean?} 
+Anova bestaetigt that TCal has influence on both G and phd. 
+\td{how to interpret p-values of 0.01 and 0.05? 
+They mean that under the assumption that the null hypothesis is correct, 
+there is a 1\% and 5\% chance of arriving at such data as observed.}
+It seems that the probability of getting such data per chance that Tcal has no influence 
+(null hypothesis is true) is less then 5\% (even less than 1\%). \td{NO bcs \cite{sellke2001pvalues}}
+
+%\textbf{Pre-writing:}
+%\Gls{anova} doesn't provide a lot of extra information. 
+%wrong the second is not for phd but for extended data set
+%but for phd even lower than 0.1 \%
+%Anova shows that the influence of TCal is significant as shown by the F 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{Linear Regressin}
+\subsubsection{Linear Regression}
 I thought that the influnce of $conc$ and $\lambda$ are the biggest, but they are just the smalles absolute values. 
 Thus, eventhough $T_{cal}$ might have a smaller coefficient for lin reg, the influence on the dependent variable might be larger. 
 The biggest influece on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{doc}$. 
@@ -35,21 +70,7 @@ Do multi linear reg like in Peprah et al. 2017\cite{peprah2017appraisal}.
 %MSE(data=all) =427
 %MSE(data=emma)=250
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{ANOVA}\label{sec:res-anova}
-\Gls{anova} doesn't provide a lot of extra information. 
-It bestaetigt that TCal has influence on both G and phd. 
-It seems that the probability of getting such data per chance that Tcal has no influence 
-(null hypothesis is true) is less then 5\% (even less than 1\%). 
-\td{why 0.5?\cite{hoffman2020concept}}
-wrong the second is not for phd but for extended data set
-but for phd even lower than 0.1 \%
-Anova shows that the influence of TCal is significant as shown by the F 
-
-\iffalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{Grid Search}
 For \gls{krr} and {svm} I had to find out what the ideal hyper parameters were. 
@@ -75,7 +96,16 @@ Since the data set was very small, I could be generous with the grid search even
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{PCR?}
 
-\fi
+%\fi
+
+\subsubsection{Further}
+\begin{itemize}
+    \item grid search
+    \item KRR (start with grid search) (???)
+    \item SVM (start with grid search) (???)
+    \item \url{https://blog.minitab.com/en/adventures-in-statistics-2/regression-smackdown-stepwise-versus-best-subsets}
+    \item \url{https://blog.minitab.com/en/how-to-choose-the-best-regression-model}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{Comparison} 
