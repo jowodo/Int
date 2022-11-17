@@ -13,7 +13,7 @@ set xlabel "T_{cal} [^oC]"
 set ylabel "pin hole density {/Symbol r}"
 set xrange [250:550]
 set yrange [0:1.2]
-#set xtics 0,60
+set xtics 300,100
 
 #plot filename u 13:5 pt 7 notitle
 
