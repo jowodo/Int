@@ -5,6 +5,7 @@ def get_goodness(g,phd, layers, vCal):
     w=weights=[0.4,0.5,0.05, 0.05]
     return w[0]*g+ w[1]*phd+ w[2]*layers+ w[3]*vCal
 
+# predicted from EMMA t=4? 
 infile="allspace.dat"
 names = ["nr", "conc", "layr", "vDOC", "TDOC", "vCal", "TCal", "G", "phd", "layers", "Cal_vel"]
 df=pd.read_csv(infile, skiprows=1, delim_whitespace=True, names = names)
@@ -17,11 +18,11 @@ for n in df.nr:
 #    print(n,i)
     v = values = [ df.G[i], df.phd[i], df.layers[i], df.Cal_vel[i] ] 
     measure = get_goodness(float(v[0]), float(v[1]), float(v[2]), float(v[3]) )
-    print(i,best_measure,bestvalues,measure)
     if measure < best_measure:
-        bestvalues=df.nr[i]
+        bestvalues=v #df.nr[i]
         best_measure = measure
-        print("yass")
+        print(i,best_measure,bestvalues,measure)
+#        print("yiss")
 
 #for line in f.readlines():
 #    values = line.split("\t")
