@@ -3,35 +3,39 @@
 \subsubsection{ANOVA}\label{sec:res-anova}
 \textbf{EMMA}
 The \gls{rf} produced by the last iteration of \gls{emma} put a high \td{significance} 
-on the calcination temperature $T_{cal}$. 
-Now \gls{anova} can be used to check if the data 
-From emma we saw that TCal seems to hav the biggest influence on 
-both gamma and rho. 
+on the calcination temperature $T_{cal}$ with regard to the \td{measurables} of the conductance. 
+\Gls{anova} is used to double check this. 
+%Now \gls{anova} can be used to check if the data 
 
 \textbf{What can/did we test?}
-With anova we can check if the probability of arriving at these results was by pure chance or not. 
-With the null hypothesis that we arrive at results by pure chance and of that the probability. 
-We tested for each input variable the influence on rho and gamma 
-and also as a test on vcal and $\lambda$. 
-We used an alpha value of 0.05 which means that 1 out of 20 times this result could be 
-produced by pure chance. 
-If the f-value is below that value, then we choose to accept, that the data is not due to
-chance but due to the influence of the independent variables on the dependent variables. 
-Usually, the alpha-value is choosen to be 0.01-0.05\cite{hoffman2020concept,sellke2001pvalues}
-The choice of a relatively high alpha-value is gerechetfertigt by the rather small amount of data and \td{evn}.
+With \gls{anova} we can check if the probability of arriving at these results was by pure chance or not. 
+The null hypothesis is that the results were obtained by pure chance without any dependence of the insulation of a sample on the process variables.
+%We tested for each input variable the influence on rho and gamma 
+A one-way \gls{anova} was performed for every independent variable on $\rho$ and $\gamma$. 
+%and also as a test on vcal and $\lambda$. 
+We used an $\alpha$ value of 0.05 which means that 
+the null hypothesis is rejected if the p-value is under 0.05. 
+Usually, the $\alpha$-value is chosen to be 0.01 or 0.05\cite{hoffman2020concept,sellke2001pvalues}.
+The choice of a relatively high alpha-value is motivated by the rather small amount of data and low \td{EPV}.
+As mentioned by Sellke et al.\cite{sellke2001pvalues} a p-value of 0.05 might tempt 
+to guess that in 1 out of 20 cases the results could be false positives, 
+whereas the frequency is much higher. 
+%1 out of 20 times this result could be 
+%produced by pure chance given that the null hypothesis is true. 
+%If the p-value is below that value, then we choose to accept, that the data is not due to
+%chance but due to the influence of the independent variables on the dependent variables. 
 \td{could test anova on difference generation data sets} 
 
 \textbf{What were the results?}
-\td{anova shows that for the mentioned indep and dep pairs, the means divieded by 
-indep groups are not equal and that there is at least one group that is different. 
-Important to mention, that anova uses categorical data for inputs, 
-where our data is numerical and thus information is lost}
-For both gamma and lambda (for both the emma dataset and the extended dataset) 
-the F values for Tcal were in all cases under 0.01, 
-indicating a real influence of Tcal on the conductance.
-Both datasets exhibit a $p(>F) < 0.05$ for the interaction Tcal:vcal on phd. 
-\td{why tcal:vcal on phd the same for both datasets?}
-And the extended data set has pF samll er than 0.01 of vcal on phd. 
+%\Gls{anova} shows that for the mentioned indep and dep pairs, the means divided by 
+%indep groups are not equal and that there is at least one group that is different. 
+For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the extended dataset) 
+the F values for $T_{cal}$ were in all cases under 0.01, 
+indicating a real influence of $T_{cal}$ on the conductance.
+Both datasets exhibit a p-value $< 0.05$ for the interaction $T_{cal}$:$v_{cal}$ on $\rho$.
+\td{And the extended data set has p-value smaller than 0.01 of vcal on phd. 
+Whereas vcal on phd for \gls{emma} dataset has p-value of slightly over 0.05.}
+\td{why tcal:vcal on phd the same for both datasets? zufall}
 
 \textbf{What do the results mean?} 
 Anova bestaetigt that TCal has influence on both G and phd. 
@@ -40,6 +44,8 @@ They mean that under the assumption that the null hypothesis is correct,
 there is a 1\% and 5\% chance of arriving at such data as observed.}
 It seems that the probability of getting such data per chance that Tcal has no influence 
 (null hypothesis is true) is less then 5\% (even less than 1\%). \td{NO bcs \cite{sellke2001pvalues}}
+Important to mention, that anova uses categorical data for inputs, 
+where our data is numerical and thus information is lost
 
 %\textbf{Pre-writing:}
 %\Gls{anova} doesn't provide a lot of extra information. 
