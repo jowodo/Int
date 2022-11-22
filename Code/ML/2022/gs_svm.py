@@ -62,27 +62,22 @@ if args.only_emma:
 X,Y=get_sets(df,names,args)
 X_train,X_test,Y_train,Y_test=cross_fold(X,Y,5)
 #
-# NUMBER OF PARAMETERS: 1=G; 2=G+phd; 3=G+phd+vCal; 4=G+phd+vCal+layr
-n=4
-#
-# KERNEL FOR KRR
+#################
+# KERNEL FOR SVM
 kernel=["poly","rbf"]#,"sigmoid"]
 # regularization parameter
 C= np.array(range(1,20))*0.05
 # DEGREE OF POLYNOMIAL; ignored by rest
-degree=range(1,6)
+degree=range(1,3)
 # epsilon-tube size for no penalty; rather large 
 epsilon= np.array(range(1,20))*0.2
 # some kind of scaling factor; can be set to auto/scale, include into list? 
-gamma=[0.0,0.1,1.0,10.0,"auto","scale"]
-#param = {"kernel":kernel, "C":C, "degree":degree, "epsilon":epsilon, "gamma":gamma }
+#gamma=[0.0,0.1,1.0,10.0,"auto","scale"]
+gamma=[0.01, 0.1, 1.0, "scale"]
 # temp short test
-C=[1,0.1]; degree=[3]; epsilon=[1,2]; gamma=["scale"] # ,"auto"]
+#C=[1,0.1]; degree=[3]; epsilon=[1,2]; gamma=["scale"] # ,"auto"]
 
-# HEADER LINE TO BE FILLED
-#hline=""
-#for nr in range(1,n+1):
-#    hline=hline+ names[nr+7]+"MAE\t\t"+ names[nr+7]+"MAE/AVG\t"
+# HEADER LINE 
 print("%s MAE \tMAE/AVG" % names[int(args.y_index)])
 
 #print(hline)
@@ -91,13 +86,10 @@ for k in kernel:
         for d in degree:
             for e in epsilon:
                 for g in gamma:
-                    print("K:"+k+" C:"+str(c)+" d:"+str(d)+" e:"+str(e)+" g:"+str(g) ) 
                     line=""
-                    varia=str(d)
                     ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
                     ML = SVR(kernel=k, C=c, degree=d, epsilon=e, gamma=g)
                     ML.fit(X_train,Y_train)
                     Y_test_pred = ML.predict(X_test)
                     line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MAE(Y_test,Y_test_pred)/np.average(Y_test):.6f}"+"\t"
-#                print(line+ k+ ",C="+f"{c:.1f}"+ ",deg="+str(d)+ ",e="+f"{e:.1f}" +"g="+f"{g:.1}")
-                    print(line+ k+ ",C="+f"{c:.1f}"+ ",deg="+str(d)+ ",e="+f"{e:.1f}" +"g="+g)
+                    print(line+ k+ "\tC="+f"{c:.1f}"+ "\tdeg="+str(d)+ "\te="+f"{e:.1f}" +"\tg="+str(g), flush=True)
