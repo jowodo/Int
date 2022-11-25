@@ -12,6 +12,7 @@ import argparse
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
 parser.add_argument('-e', '--emma', dest ='only_emma',action ='store_true', help ='only use emma data')
 parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'2','3','7','10'}, default='2', help ='y to fit: 2=G; 3=phd; 7=layers; 10=vCal [default=2]')
+parser.add_argument('-m', '--maxiter', dest ='maxiter',action ='store', default='10000', help ='Hard limit on itermations within solver, default: 10000, use -1 for unlimited') 
 args = parser.parse_args()
 #
 # DATA PRE-PROCESSING WITH 5-fold script 
@@ -64,7 +65,7 @@ X_train,X_test,Y_train,Y_test=cross_fold(X,Y,5)
 #
 #################
 # KERNEL FOR SVM
-kernel=["poly","rbf"]#,"sigmoid"]
+kernel=["poly","rbf","sigmoid"]
 # regularization parameter
 C= np.array(range(1,20))*0.05
 # DEGREE OF POLYNOMIAL; ignored by rest
@@ -73,23 +74,48 @@ degree=range(1,3)
 epsilon= np.array(range(1,20))*0.2
 # some kind of scaling factor; can be set to auto/scale, include into list? 
 #gamma=[0.0,0.1,1.0,10.0,"auto","scale"]
-gamma=[0.01, 0.1, 1.0, "scale"]
+gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"]
 # temp short test
-#C=[1,0.1]; degree=[3]; epsilon=[1,2]; gamma=["scale"] # ,"auto"]
+#C=[0.5,0.1]; degree=[1,2]; epsilon=[1,2]; gamma=["scale",0.1] # ,"auto"]
+n_exps=len(C)*(len(degree)+len(kernel)-1)*len(epsilon)*len(gamma)
 
 # HEADER LINE 
 print("%s MAE \tMAE/AVG" % names[int(args.y_index)])
-
+i=1
 #print(hline)
 for k in kernel:
-    for c in C:
+    if k=="poly":
         for d in degree:
+            for c in C:
+                for e in epsilon:
+                    for g in gamma:
+                        line=""
+                        ML = SVR(kernel=k, C=c, degree=d, epsilon=e, gamma=g, max_iter=int(args.maxiter))
+                        ML.fit(X_train,Y_train)
+                        Y_test_pred = ML.predict(X_test)
+                        line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MAE(Y_test,Y_test_pred)/np.average(Y_test):.6f}"+"\t"
+                        print(line+ k+ 
+                              "\tdeg="+str(d)+ 
+                              "\tC="+f"{c:.1f}"+ 
+                              "\te="+f"{e:.1f}"+
+                              "\tg="+str(g)+ 
+                              "\t"+str(i)+"/"+str(n_exps), 
+                              flush=True)
+                        i+=1
+    else:
+        for c in C:
             for e in epsilon:
                 for g in gamma:
                     line=""
-                    ML = SVR(kernel='poly', C=0.1, degree=3, epsilon=0.1)
-                    ML = SVR(kernel=k, C=c, degree=d, epsilon=e, gamma=g)
+                    ML = SVR(kernel=k, C=c, degree=d, epsilon=e, gamma=g, max_iter=int(args.maxiter))
                     ML.fit(X_train,Y_train)
                     Y_test_pred = ML.predict(X_test)
                     line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MAE(Y_test,Y_test_pred)/np.average(Y_test):.6f}"+"\t"
-                    print(line+ k+ "\tC="+f"{c:.1f}"+ "\tdeg="+str(d)+ "\te="+f"{e:.1f}" +"\tg="+str(g), flush=True)
+                    print(line+ k+ 
+                          "\tdeg="+str(0)+ 
+                          "\tC="+f"{c:.1f}"+ 
+                          "\te="+f"{e:.1f}"+
+                          "\tg="+str(g)+ 
+                          "\t"+str(i)+"/"+str(n_exps), 
+                          flush=True)
+                    i+=1
