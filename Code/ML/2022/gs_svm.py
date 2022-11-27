@@ -13,6 +13,7 @@ parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters'
 parser.add_argument('-e', '--emma', dest ='only_emma',action ='store_true', help ='only use emma data')
 parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'2','3','7','10'}, default='2', help ='y to fit: 2=G; 3=phd; 7=layers; 10=vCal [default=2]')
 parser.add_argument('-m', '--maxiter', dest ='maxiter',action ='store', default='10000', help ='Hard limit on itermations within solver, default: 10000, use -1 for unlimited') 
+parser.add_argument('-t', '--test', dest ='test',action ='store_true', default=False, help ='Test: Only use subset of hyperparameters') 
 args = parser.parse_args()
 #
 # DATA PRE-PROCESSING WITH 5-fold script 
@@ -52,7 +53,7 @@ if args.only_emma:
     df = df >>dfply.mask(df.enr !=0)
 #
 def get_MAE(y,ypred):
-    return (np.average(np.absolute(y-ypred)))
+    return (np.average(np.absolute(y-ypred))/len(y))
 #
 #
 # CHECK IF ONLY USE EMMA DATA
@@ -76,7 +77,8 @@ epsilon= np.array(range(1,20))*0.2
 #gamma=[0.0,0.1,1.0,10.0,"auto","scale"]
 gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"]
 # temp short test
-#C=[0.5,0.1]; degree=[1,2]; epsilon=[1,2]; gamma=["scale",0.1] # ,"auto"]
+if [ args.test ]: 
+    C=[0.5,0.1]; degree=[1,2]; epsilon=[1,2]; gamma=["scale",0.1] # ,"auto"]
 n_exps=len(C)*(len(degree)+len(kernel)-1)*len(epsilon)*len(gamma)
 
 # HEADER LINE 
