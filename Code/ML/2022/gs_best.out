@@ -1,0 +1,8 @@
+KRR EMMA G   9.29	133.46	73.67	0.00	sigmoid	deg=0	a=2.00	g=0.01	218/224
+KRR EMMA phd 0.06	0.00	0.02	0.01	rbf	deg=0	a=0.20	g=0.01	141/224
+KRR ALLE G   9.99	211.91	417.38	151.18	poly	deg=1	a=0.50	g=10	42/224
+KRR ALLE phd 0.21	0.08	0.14	0.03	poly	deg=1	a=0.01	g=0.01	1/224
+SVM EMMA G   8.11	88.28	73.67	103.17	poly	deg=1	C=0.7	e=3.0	g=10	2095/11552
+SVM EMMA phd 0.14	0.03	0.02	0.00	sigmoid	deg=0	C=0.7	e=0.2	g=scale	10496/11552
+SVM ALLE G   10.36	211.95	417.38	222.25	poly	deg=1	C=0.2	e=1.8	g=1.0	525/11552
+SVM ALLE phd 0.17	0.06	0.14	0.06	poly	deg=1	C=0.4	e=0.2	g=0.01	1065/11552
