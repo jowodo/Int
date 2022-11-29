@@ -25,23 +25,26 @@ def get_sets(df,names,args):
     X_names=names[6:]
     Y=data[:,int(args.y_index)].reshape(-1)
     return X,Y
-#
 # DO CROSS FOLD VALIDATION SPLIT 
 def cross_fold(X,Y,k,shuffle=True):
     train_min=0             # train minimum index
     train_max=int(len(df)/k*(k-1))
     test_min = train_max    # test  minimum index
     test_max=len(df)
-    #
     # shuffle before cross validation
     if shuffle:
         X, Y = sklearn.utils.shuffle(X, Y, random_state=0)
-    #
     X_train=X[train_min:train_max]
     X_test=X[test_min:test_max]
     Y_train=Y[train_min:train_max]
     Y_test=Y[test_min:test_max]
     return X_train,X_test,Y_train,Y_test
+# MEAN AVERAGE ERROR
+def get_MAE(y,ypred):
+    return np.average(np.absolute(y-ypred))
+# MEAN SQUARED ERROR 
+def get_MSE(y,ypred):
+    return np.average((y-ypred)*(y-ypred))
 #
 #LOAD DATA FROM FILE 
 infile="../../Statistics/db_final.tsv"
@@ -49,14 +52,6 @@ names = ["nr", "enr", "conductivity", "phdensity", "avg1(G)", "avg2(G)", "conc",
 #         0     1       2               3           4          5          6       7        8        9       10      11 
 df=pd.read_csv(infile, skiprows=1, delim_whitespace=True, names = names)
 # FILTER OUT NON EMMA SAMPLES
-if args.only_emma:
-    df = df >>dfply.mask(df.enr !=0)
-#
-def get_MAE(y,ypred):
-    return (np.average(np.absolute(y-ypred))/len(y))
-#
-#
-# CHECK IF ONLY USE EMMA DATA
 if args.only_emma:
     df = df >>dfply.mask(df.enr !=0)
 #
