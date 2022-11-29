@@ -10,13 +10,13 @@ import argparse
 #
 #################
 # KERNEL FOR SVM
-kernel=["poly","rbf","sigmoid"]
+kernel=["poly","rbf","sigmoid"] #HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
-degree=range(1,3)
+degree=range(1,3) #HPGS
 # some kind of scaling factor; can be set to auto/scale, include into list? 
-gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10]
+gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10] #HPGS
 # alpha: bigger alpha, bigger regularisation 
-alpha=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] #, 10, 50, 100]
+alpha=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] #, 10, 50, 100] #HPGS
 #
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
@@ -91,10 +91,10 @@ for k in kernel:
                     ML = KRR(kernel=k, alpha=a, degree=d, gamma=g)
                     ML.fit(X_train,Y_train)
                     Y_test_pred = ML.predict(X_test)
-                    line=f"{get_MAE(Y_test,Y_test_pred):.2f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.2f}"+"\t"+f"{get_var(Y_test):.2f}"+"\t"+f"{get_var(Y_test_pred):.2f}"+"\t"
+                    line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.6f}"+"\t"+f"{get_var(Y_test):.6f}"+"\t"+f"{get_var(Y_test_pred):.6f}"+"\t"
                     print(line+ k+ 
                             "\tdeg="+str(d)+ 
-                            "\ta="+f"{a:.2f}"+ 
+                            "\ta="+f"{a:.6f}"+ 
                             "\tg="+str(g)+ 
                             "\t"+str(i)+"/"+str(n_exps), 
                             flush=True)
@@ -106,10 +106,10 @@ for k in kernel:
                 ML = KRR(kernel=k, alpha=a, degree=d, gamma=g)
                 ML.fit(X_train,Y_train)
                 Y_test_pred = ML.predict(X_test)
-                line=f"{get_MAE(Y_test,Y_test_pred):.2f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.2f}"+"\t" +f"{get_var(Y_test):.2f}"+"\t"+f"{get_var(Y_test_pred):.2f}"+"\t"
+                line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.6f}"+"\t" +f"{get_var(Y_test):.6f}"+"\t"+f"{get_var(Y_test_pred):.6f}"+"\t"
                 print(line+ k+ 
                         "\tdeg="+str(0)+ 
-                        "\ta="+f"{a:.2f}"+ 
+                        "\ta="+f"{a:.6f}"+ 
                         "\tg="+str(g)+ 
                         "\t"+str(i)+"/"+str(n_exps), 
                         flush=True)

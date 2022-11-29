@@ -1,4 +1,5 @@
 #!/bin/bash 
+OUTFILE=gs_best.out
 source ../../../../pyvenv/bin/activate
 ./gs_krr.py -e -y2 2>/dev/null > gs_krr.g.emma # grid search with only EMMA samples as data set
 ./gs_krr.py -e -y3 2>/dev/null > gs_krr.p.emma # grid search with only EMMA samples as data set
@@ -8,29 +9,21 @@ source ../../../../pyvenv/bin/activate
 ./gs_svm.py -e -y3 2>/dev/null > gs_svm.p.emma 
 ./gs_svm.py    -y2 2>/dev/null > gs_svm.g.all
 ./gs_svm.py    -y3 2>/dev/null > gs_svm.p.all
-#echo "========= KRR EMMA G   ========="
-echo -n "KRR EMMA G   "
-sort -h -k2 gs_krr.g.emma | head -n2 | tail -n1
-#echo "========= KRR EMMA phd ========="
-echo -n "KRR EMMA phd "
-sort -h -k2 gs_krr.p.emma | head -n2 | tail -n1
-#echo "========= KRR ALLE G   ========="
-echo -n "KRR ALLE G   "
-sort -h -k2 gs_krr.g.all  | head -n2 | tail -n1
-#echo "========= KRR ALLE phd ========="
-echo -n "KRR ALLE phd "
-sort -h -k2 gs_krr.p.all  | head -n2 | tail -n1
-#echo "========= SVM EMMA G   ========="
-echo -n "SVM EMMA G   "
-sort -h -k2 gs_svm.g.emma | head -n2 | tail -n1
-#echo "========= SVM EMMA phd ========="
-echo -n "SVM EMMA phd "
-sort -h -k2 gs_svm.p.emma | head -n2 | tail -n1
-#echo "========= SVM ALLE G   ========="
-echo -n "SVM ALLE G   "
-sort -h -k2 gs_svm.g.all  | head -n2 | tail -n1
-#echo "========= SVM ALLE phd ========="
-echo -n "SVM ALLE phd "
-sort -h -k2 gs_svm.p.all  | head -n2 | tail -n1
+echo -n "KRR EMMA G   " | tee $OUTFILE
+sort -h gs_krr.g.emma | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "KRR EMMA phd " | tee -a $OUTFILE
+sort -h gs_krr.p.emma | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "KRR ALLE G   " | tee -a $OUTFILE
+sort -h gs_krr.g.all  | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "KRR ALLE phd " | tee -a $OUTFILE
+sort -h gs_krr.p.all  | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "SVM EMMA G   " | tee -a $OUTFILE
+sort -h gs_svm.g.emma | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "SVM EMMA phd " | tee -a $OUTFILE
+sort -h gs_svm.p.emma | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "SVM ALLE G   " | tee -a $OUTFILE
+sort -h gs_svm.g.all  | head -n2 | tail -n1 | tee -a $OUTFILE
+echo -n "SVM ALLE phd " | tee -a $OUTFILE
+sort -h gs_svm.p.all  | head -n2 | tail -n1 | tee -a $OUTFILE
 
 

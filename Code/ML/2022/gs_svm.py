@@ -9,15 +9,15 @@ import dfply
 import argparse
 #
 # KERNEL FOR SVM
-kernel=["poly","rbf","sigmoid"]
+kernel=["poly","rbf","sigmoid"] # HPGS
 # regularization parameter
-C= np.array(range(1,20))*0.05
+C= np.array(range(1,20))*0.05 # HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
-degree=range(1,3)
+degree=range(1,3) # HPGS
 # epsilon-tube size for no penalty; rather large 
-epsilon= np.array(range(1,20))*0.2
+epsilon= np.array(range(1,20))*0.2 # HPGS
 # some kind of scaling factor; can be set to auto/scale, include into list? 
-gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"]
+gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"] # HPGS
 #
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
@@ -94,7 +94,7 @@ for k in kernel:
                         ML.fit(X_train,Y_train)
                         Y_test_pred = ML.predict(X_test)
 #                        line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MAE(Y_test,Y_test_pred)/np.average(Y_test):.6f}"+"\t"
-                        line=f"{get_MAE(Y_test,Y_test_pred):.2f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.2f}"+"\t"+f"{get_var(Y_test):.2f}"+"\t"+f"{get_var(Y_test_pred):.2f}"+"\t"
+                        line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.6f}"+"\t"+f"{get_var(Y_test):.6f}"+"\t"+f"{get_var(Y_test_pred):.6f}"+"\t"
                         print(line+ k+ 
                               "\tdeg="+str(d)+ 
                               "\tC="+f"{c:.1f}"+ 
@@ -112,7 +112,7 @@ for k in kernel:
                     ML.fit(X_train,Y_train)
                     Y_test_pred = ML.predict(X_test)
 #                    line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MAE(Y_test,Y_test_pred)/np.average(Y_test):.6f}"+"\t"
-                    line=f"{get_MAE(Y_test,Y_test_pred):.2f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.2f}"+"\t"+f"{get_var(Y_test):.2f}"+"\t"+f"{get_var(Y_test_pred):.2f}"+"\t"
+                    line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.6f}"+"\t"+f"{get_var(Y_test):.6f}"+"\t"+f"{get_var(Y_test_pred):.6f}"+"\t"
                     print(line+ k+ 
                           "\tdeg="+str(0)+ 
                           "\tC="+f"{c:.1f}"+ 
