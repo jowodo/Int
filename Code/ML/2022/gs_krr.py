@@ -21,7 +21,7 @@ def get_sets(df,names,args):
     data=np.array(df)
     X=data[:,6:]
     # MUTLIply by 60 bcs C/h instead of C/min
-    X[4]=X[4]*60
+    X[:,4]=X[:,4]*60
     X_names=names[6:]
     Y=data[:,int(args.y_index)].reshape(-1)
     return X,Y
