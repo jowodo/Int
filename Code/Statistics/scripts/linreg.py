@@ -3,6 +3,7 @@
 import numpy as np 
 import pandas as pd
 import dfply
+from dfply import mask
 from sklearn.linear_model import LinearRegression
 import argparse
 #
@@ -10,8 +11,14 @@ import argparse
 def MSE(predicted,measured):
     pred=np.array(predicted)
     real=np.array(measured)
-    mse=np.square(pred-real).mean()
+    mse=sum(np.square(pred-real))/len(pred)
     return mse
+# DEFINE MEAN ABSOLUTE ERROR FUNCTION
+def MAE(predicted,measured):
+    pred=np.array(predicted)
+    real=np.array(measured)
+    mae=sum(np.absolute(pred-real))/len(pred)
+    return mae
 #
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Search some files')
@@ -27,7 +34,8 @@ df=pd.read_csv(infile, skiprows=1, names = names, delimiter="\t")
 #
 # CHECK IF ONLY USE EMMA DATA
 if args.only_emma:
-    df = df >>dfply.mask(df.enr !=0)
+    df_all = df 
+    df = df >> mask(df.enr !=0)
 #
 # DATA PREPROCESSING
 data=np.array(df)
@@ -39,6 +47,19 @@ if (int(args.y_index) == 0):
     y=data[:,[2,3,7,10]].reshape(len(data[:,[2,3,7,10]]),4)
 else:           
     y=data[:,int(args.y_index)].reshape(len(data[:,int(args.y_index)]),1)
+# PRE-EMMA DATASET
+data_pre=np.array(df_all >> mask(df_all.enr == 0))
+X_pre=data_pre[:,6:]
+Y_pre=data_pre[:,[2,3,7,10]].reshape(len(data_pre[:,[2,3,7,10]]),4)
+# PRE-EMMA DATASET WITHIN EMMA BOUNDARIES
+data_inter=np.array( df_all>> mask(dfply.X.enr == 0) \
+        >> mask(dfply.X.conc >1) \
+        >> mask(dfply.X.layers >=4) \
+        >> mask(dfply.X.vDOC >=10)\
+        >> mask(dfply.X.TDOC >=40)\
+        >> mask(dfply.X.vCal >=2) ) 
+X_inter=data_inter[:,6:]
+Y_inter=data_inter[:,[2,3,7,10]].reshape(len(data_inter[:,[2,3,7,10]]),4)
 #
 # DO LINEAR REGRESSION
 reg = LinearRegression().fit(X,y)
@@ -58,7 +79,12 @@ print("Reg score", reg.score(X,y))
 #print("Reg coef", X_names)
 #print("Reg coef", reg.coef_)
 #print("Reg intercept: ", reg.intercept_)
+print("MAE: ",MAE(y_pred,y))
 print("MSE: ",MSE(y_pred,y))
+print("MAE(pre): ",MAE(reg.predict(X_pre),Y_pre))
+print("MSE(pre): ",MSE(reg.predict(X_pre),Y_pre))
+print("MAE(inter): ",MAE(reg.predict(X_inter),Y_inter))
+print("MSE(inter): ",MSE(reg.predict(X_inter),Y_inter))
 #
 # PRINT NICELY FORMATTED: 
 if (int(args.y_index) == 0):
