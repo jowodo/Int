@@ -9,21 +9,14 @@ source ../../../../pyvenv/bin/activate
 ./gs_svm.py -e -y3 2>/dev/null > gs_svm.p.emma 
 ./gs_svm.py    -y2 2>/dev/null > gs_svm.g.all
 ./gs_svm.py    -y3 2>/dev/null > gs_svm.p.all
-echo -n "KRR EMMA G   " | tee $OUTFILE
-sort -h gs_krr.g.emma | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "KRR EMMA phd " | tee -a $OUTFILE
-sort -h gs_krr.p.emma | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "KRR ALLE G   " | tee -a $OUTFILE
-sort -h gs_krr.g.all  | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "KRR ALLE phd " | tee -a $OUTFILE
-sort -h gs_krr.p.all  | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "SVM EMMA G   " | tee -a $OUTFILE
-sort -h gs_svm.g.emma | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "SVM EMMA phd " | tee -a $OUTFILE
-sort -h gs_svm.p.emma | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "SVM ALLE G   " | tee -a $OUTFILE
-sort -h gs_svm.g.all  | head -n2 | tail -n1 | tee -a $OUTFILE
-echo -n "SVM ALLE phd " | tee -a $OUTFILE
-sort -h gs_svm.p.all  | head -n2 | tail -n1 | tee -a $OUTFILE
 
 
+rm $OUTFILE
+for file in $(ls gs*emma) 
+do 
+    for kernel in "deg=1" "deg=2" "deg=3" "rbf" "sigmoid"
+    do 
+        echo -ne "$file\t" | tee -a $OUTFILE
+        grep -e $kernel $file | sort -hr | tail -1 | tee -a $OUTFILE
+    done
+done
