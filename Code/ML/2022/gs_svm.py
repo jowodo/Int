@@ -13,7 +13,7 @@ kernel=["poly","rbf","sigmoid"] # HPGS
 # regularization parameter
 C= np.array(range(1,20))*0.05 # HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
-degree=range(1,3) # HPGS
+degree=range(1,4) # HPGS
 # epsilon-tube size for no penalty; rather large 
 epsilon= np.array(range(1,20))*0.2 # HPGS
 # some kind of scaling factor; can be set to auto/scale, include into list? 

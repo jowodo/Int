@@ -12,7 +12,7 @@ import argparse
 # KERNEL FOR SVM
 kernel=["poly","rbf","sigmoid"] #HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
-degree=range(1,3) #HPGS
+degree=range(1,4) #HPGS
 # some kind of scaling factor; can be set to auto/scale, include into list? 
 gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10] #HPGS
 # alpha: bigger alpha, bigger regularisation 
@@ -94,7 +94,7 @@ for k in kernel:
                     line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.6f}"+"\t"+f"{get_var(Y_test):.6f}"+"\t"+f"{get_var(Y_test_pred):.6f}"+"\t"
                     print(line+ k+ 
                             "\tdeg="+str(d)+ 
-                            "\ta="+f"{a:.6f}"+ 
+                            "\ta="+f"{a:.2f}"+ 
                             "\tg="+str(g)+ 
                             "\t"+str(i)+"/"+str(n_exps), 
                             flush=True)
@@ -109,7 +109,7 @@ for k in kernel:
                 line=f"{get_MAE(Y_test,Y_test_pred):.6f}"+"\t"+ f"{get_MSE(Y_test,Y_test_pred):.6f}"+"\t" +f"{get_var(Y_test):.6f}"+"\t"+f"{get_var(Y_test_pred):.6f}"+"\t"
                 print(line+ k+ 
                         "\tdeg="+str(0)+ 
-                        "\ta="+f"{a:.6f}"+ 
+                        "\ta="+f"{a:.2f}"+ 
                         "\tg="+str(g)+ 
                         "\t"+str(i)+"/"+str(n_exps), 
                         flush=True)
