@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np 
-from sklearn.kernel_ridge import KernelRidge as KRR
+from sklearn.svm import SVR # Epsilon-support Vector Regression
 import sklearn
 import pandas as pd
 import dfply
@@ -19,7 +19,8 @@ parser.add_argument('-s', '--show', dest ='show', action ='store_true', default=
 parser.add_argument('-k', '--kernel', dest ='kernel', action ='store', default='poly', help ='Choose kernel', choices={'poly', 'rbf', 'sigmoid'})
 parser.add_argument('-d', '--degree', dest ='degree', action ='store', default='3', help ='Degree of polynomial')
 parser.add_argument('-g', '--gamma', dest ='gamma', action ='store', default='0.1', help ='Scaling factor gamma')
-parser.add_argument('-a', '--alpha', dest ='alpha', action ='store', default='0.5', help ='Regularisation term alpha')
+parser.add_argument('-e', '--epsilon', dest ='epsilon', action ='store', default='0.5', help ='Tupe size without penalty epsilon')
+parser.add_argument('-C', dest ='C', action ='store', default='0.5', help ='Regularisation term')
 #
 args = parser.parse_args()
 #
@@ -89,13 +90,14 @@ if args.predall:
 k = args.kernel # ["poly","rbf","sigmoid"]
 d = int(args.degree) # range(1,3)
 g = float(args.gamma) # [0.01, 0.05, 0.1, 0.5, 1.0, 5, 10]
-a= float(args.alpha) # [0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100]
+c = float(args.C) # [0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100]
+e = float(args.epsilon) # [0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100]
 #
 # HEADER LINE 
 print("%s MAE \tMAE/AVG" % names[int(args.y_index)])
 print("%s real \t predicted" % names[int(args.y_index)])
 #print(hline)
-ML = KRR(kernel=k, alpha=a, degree=d, gamma=g)
+ML = SVR(kernel=k, C=c, degree=d, epsilon=e, gamma=g, max_iter=int(args.maxiter))
 ML.fit(X_train,Y_train)
 Y_emma_pred=ML.predict(X_emma)
 print("MAE(emma): ",MAE(Y_emma_pred,Y_emma))
