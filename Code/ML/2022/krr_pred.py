@@ -15,6 +15,7 @@ parser.add_argument('-c', '--clean', dest ='clean',action ='store_true', default
 parser.add_argument('-m', '--maxiter', dest ='maxiter',action ='store', default='10000', help ='Hard limit on itermations within solver, default: 10000, use -1 for unlimited') 
 parser.add_argument('-p', '--predall', dest ='predall', action ='store_true', default=False, help ='Predict all data')
 parser.add_argument('-s', '--show', dest ='show', action ='store_true', default=False, help ='Show prediction')
+parser.add_argument('-x', '--scale', dest ='scale', action ='store_true', default=False, help='Scale input before fitting')
 #
 parser.add_argument('-k', '--kernel', dest ='kernel', action ='store', default='poly', help ='Choose kernel', choices={'poly', 'rbf', 'sigmoid'})
 parser.add_argument('-d', '--degree', dest ='degree', action ='store', default='3', help ='Degree of polynomial')
@@ -42,7 +43,6 @@ def get_sets(df,names,y_index):
     X=data[:,6:]
     # MUTLIply by 60 bcs C/h instead of C/min
     X[:,4]=X[:,4]*60
-    #print(X)
     X_names=names[6:]
     Y=data[:,int(y_index)].reshape(-1)
     return X,Y
@@ -55,7 +55,6 @@ infile="../../Statistics/db_final.tsv"
 names = ["nr", "enr", "conductivity", "phdensity", "avg1(G)", "avg2(G)", "conc", "layers", "vDOC", "TDOC", "vCal", "TCal"]
 #         0     1       2               3           4          5          6       7        8        9       10      11 
 df=pd.read_csv(infile, skiprows=1, delim_whitespace=True, names = names)
-#df_all = df
 # ONLY USE DATA WHICH CAN BE INTERPOLATED FROM EMMA DATA SET
 df_inter = df >> mask(dfply.X.enr == 0) \
     >> mask(dfply.X.conc > 1) \
@@ -92,21 +91,25 @@ g = float(args.gamma) # [0.01, 0.05, 0.1, 0.5, 1.0, 5, 10]
 a= float(args.alpha) # [0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100]
 #
 # HEADER LINE 
-print("%s MAE \tMAE/AVG" % names[int(args.y_index)])
-print("%s real \t predicted" % names[int(args.y_index)])
-#print(hline)
+#print("%s MAE \tMAE/AVG" % names[int(args.y_index)])
+#print("%s real \t predicted" % names[int(args.y_index)])
 ML = KRR(kernel=k, alpha=a, degree=d, gamma=g)
-ML.fit(X_train,Y_train)
+ML.fit(X_train,np.squeeze(Y_train))
+if args.scale : ML.fit(sklearn.preprocessing.StandardScaler().fit_transform(X_train) ,np.squeeze(Y_train))
 Y_emma_pred=ML.predict(X_emma)
+Y_emma_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_emma))
 print("MAE(emma): ",MAE(Y_emma_pred,Y_emma))
 print("MSE(emma): ",MSE(Y_emma_pred,Y_emma))
 Y_pre_pred=ML.predict(X_pre)
+if args.scale : Y_pre_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_pre))
 print("MAE(pre): ",MAE(Y_pre_pred,Y_pre))
 print("MSE(pre): ",MSE(Y_pre_pred,Y_pre))
 Y_inter_pred=ML.predict(X_inter)
+if args.scale : Y_inter_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_inter))
 print("MAE(inter): ",MAE(Y_inter_pred,Y_inter))
 print("MSE(inter): ",MSE(Y_inter_pred,Y_inter))
 Y_all_pred=ML.predict(X_all)
+if args.scale : Y_all_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_all))
 print("MAE(all): ",MAE(Y_all_pred,Y_all))
 print("MSE(all): ",MSE(Y_all_pred,Y_all))
 if args.show: 

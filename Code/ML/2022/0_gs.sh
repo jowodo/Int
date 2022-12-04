@@ -1,25 +1,39 @@
 #!/bin/bash 
-OUTFILE=gs_best.out
-# IF THERE IS A COMMAND LINE ARGUMENT
-if [ "x$1" != "x" ] 
+recalculate="FALSE"
+scale="FALSE"
+
+for flag in "$@"
+do 
+    case $flag in 
+        -r) recalculate="TRUE";;
+        -x) scale="TRUE";;
+    esac
+done 
+
+if  [ $scale == "TRUE" ] 
 then 
-    # IF IT IS "-r", then recalculate
-    if [ "$1" = "-r" ] 
-    then
-        source ../../../../pyvenv/bin/activate
-        ./gs_krr.py -e -y2 2>/dev/null > gs_krr.g.emma # grid search with only EMMA samples as data set
-        ./gs_krr.py -e -y3 2>/dev/null > gs_krr.p.emma # grid search with only EMMA samples as data set
-        ./gs_krr.py    -y2 2>/dev/null > gs_krr.g.all # grid search with all samples as data set
-        ./gs_krr.py    -y3 2>/dev/null > gs_krr.p.all # grid search with all samples as data set
-        ./gs_svm.py -e -y2 2>/dev/null > gs_svm.g.emma 
-        ./gs_svm.py -e -y3 2>/dev/null > gs_svm.p.emma 
-        ./gs_svm.py    -y2 2>/dev/null > gs_svm.g.all
-        ./gs_svm.py    -y3 2>/dev/null > gs_svm.p.all
-    fi
+    scaleflag="--scale"
+    scalename=".scale"
 fi 
+OUTFILE=gs_best$scalename.out
+
+if [ $recalculate == "TRUE" ] 
+then
+    source ../../../../pyvenv/bin/activate
+    ./gs_krr.py --emma -y2 $scaleflag 2>/dev/null > gs_krr.g$scalename.emma # grid search with only EMMA samples as data set
+    ./gs_krr.py --emma -y3 $scaleflag 2>/dev/null > gs_krr.p$scalename.emma # grid search with only EMMA samples as data set
+    ./gs_krr.py        -y2 $scaleflag 2>/dev/null > gs_krr.g$scalename.all # grid search with all samples as data set
+    ./gs_krr.py        -y3 $scaleflag 2>/dev/null > gs_krr.p$scalename.all # grid search with all samples as data set
+    ./gs_svm.py --emma -y2 $scaleflag 2>/dev/null > gs_svm.g$scalename.emma 
+    ./gs_svm.py --emma -y3 $scaleflag 2>/dev/null > gs_svm.p$scalename.emma 
+    ./gs_svm.py        -y2 $scaleflag 2>/dev/null > gs_svm.g$scalename.all
+    ./gs_svm.py        -y3 $scaleflag 2>/dev/null > gs_svm.p$scalename.all
+fi
 
 rm $OUTFILE
-for file in $(ls gs*emma) 
+echo $OUTFILE
+echo -e "FILE\t\t MAE\t\t MSE\t\t sigma\t\t sigma_pred"
+for file in $(ls gs*${scalename}.emma) 
 do 
     for kernel in "deg=1" "deg=2" "deg=3" "rbf" "sigmoid"
     do 

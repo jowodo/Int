@@ -25,6 +25,7 @@ parser.add_argument('-e', '--emma', dest ='only_emma',action ='store_true', help
 parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'2','3','7','10'}, default='2', help ='y to fit: 2=G; 3=phd; 7=layers; 10=vCal [default=2]')
 parser.add_argument('-m', '--maxiter', dest ='maxiter',action ='store', default='10000', help ='Hard limit on itermations within solver, default: 10000, use -1 for unlimited') 
 parser.add_argument('-t', '--test', dest ='test',action ='store_true', help ='Test: Only use subset of hyperparameters') 
+parser.add_argument('-x', '--scale', dest ='scale', action ='store_true', default=False, help='Scale input before fitting')
 args = parser.parse_args()
 #
 # DATA PRE-PROCESSING WITH 5-fold script 
@@ -72,6 +73,7 @@ if args.only_emma:
 #
 #PREPROCESSING DATA 
 X,Y=get_sets(df,names,args)
+if args.scale : X=sklearn.preprocessing.StandardScaler().fit_transform(X)
 X_train,X_test,Y_train,Y_test=cross_fold(X,Y,5)
 #
 # temp short test
