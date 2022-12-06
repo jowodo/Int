@@ -11,10 +11,11 @@ import argparse
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
 parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'2','3','7','10'}, default='2', help ='y to fit: 2=G; 3=phd; 7=layers; 10=vCal [default=2]')
-parser.add_argument('-c', '--clean', dest ='clean',action ='store_true', default=False, help ='Only use test data which is in space spanned by train data') 
+#parser.add_argument('-c', '--clean', dest ='clean',action ='store_true', default=False, help ='Only use test data which is in space spanned by train data') 
 parser.add_argument('-m', '--maxiter', dest ='maxiter',action ='store', default='10000', help ='Hard limit on itermations within solver, default: 10000, use -1 for unlimited') 
 parser.add_argument('-p', '--predall', dest ='predall', action ='store_true', default=False, help ='Predict all data')
 parser.add_argument('-s', '--show', dest ='show', action ='store_true', default=False, help ='Show prediction')
+parser.add_argument('-t', '--stat', dest ='stat', action ='store_true', default=False, help ='Show statistics')
 parser.add_argument('-x', '--scale', dest ='scale', action ='store_true', default=False, help='Scale input before fitting')
 #
 parser.add_argument('-k', '--kernel', dest ='kernel', action ='store', default='poly', help ='Choose kernel', choices={'poly', 'rbf', 'sigmoid'})
@@ -97,9 +98,13 @@ e = float(args.epsilon) # [0.01, 0.05, 0.1, 0.5, 1, 5, 10, 50, 100]
 #print("%s real \t predicted" % names[int(args.y_index)])
 ML = SVR(kernel=k, C=c, degree=d, epsilon=e, gamma=g, max_iter=int(args.maxiter))
 ML.fit(X_train,np.squeeze(Y_train))
-if args.scale : ML.fit(sklearn.preprocessing.StandardScaler().fit_transform(X_train) ,np.squeeze(Y_train))
+if args.scale : 
+    ML.fit(sklearn.preprocessing.StandardScaler().fit_transform(X_train) ,np.squeeze(Y_train))
+    print("./svm_pred.py -k %s -d %s -C %s -e %s -g %s -x" %(args.kernel, args.degree, args.C, args.epsilon, args.gamma))
+else: 
+    print("./svm_pred.py -k %s -d %s -C %s -e %s -g %s" %(args.kernel, args.degree, args.C, args.epsilon, args.gamma))
 Y_emma_pred=ML.predict(X_emma)
-Y_emma_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_emma))
+if args.scale : Y_emma_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_emma))
 print("MAE(emma): ",MAE(Y_emma_pred,Y_emma))
 print("MSE(emma): ",MSE(Y_emma_pred,Y_emma))
 Y_pre_pred=ML.predict(X_pre)
@@ -114,13 +119,16 @@ Y_all_pred=ML.predict(X_all)
 if args.scale : Y_all_pred=ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X_all))
 print("MAE(all): ",MAE(Y_all_pred,Y_all))
 print("MSE(all): ",MSE(Y_all_pred,Y_all))
+if args.predall: 
+    X = X_all
+    Y = Y_all
+else:
+    X = X_emma
+    Y = Y_emma
+Y_pred= ML.predict(X)
+if args.scale: Y_pred= ML.predict(sklearn.preprocessing.StandardScaler().fit_transform(X))
 if args.show: 
-    if args.predall: 
-        X = X_all
-        Y = Y_all
-    else:
-        X = X_emma
-        Y = Y_emma
-    Y_pred= ML.predict(X)
+    print("%s real \t predicted" % names[int(args.y_index)])
     for i in range(len(Y)):
         print(X[i], Y[i], Y_pred[i])
+if args.stat: print ("Mean(Y): %.3f \tstd(Y): %.3f \tmean(Ypred): %.3f \tstd(Ypred): %.3f" %(Y.mean(), Y.std(), Y_pred.mean(), Y_pred.std()))
