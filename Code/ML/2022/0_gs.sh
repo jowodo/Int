@@ -35,9 +35,11 @@ echo $OUTFILE
 echo -e "FILE\t\t MAE\t\t MSE\t\t sigma\t\t sigma_pred"
 for file in $(ls gs*${scalename}.emma) 
 do 
+    [[ $scale == "FALSE" && $file == *scale* ]] && continue 
     for kernel in "deg=1" "deg=2" "deg=3" "rbf" "sigmoid"
     do 
         echo -ne "$file\t" | tee -a $OUTFILE
         grep -e $kernel $file | sort -hr | tail -1 | tee -a $OUTFILE
     done
+    echo "-"
 done
