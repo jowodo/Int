@@ -7,6 +7,24 @@ from dfply import mask
 from sklearn.linear_model import LinearRegression
 import argparse
 #
+# MAKE COMMAND LINE ARGUMENTS
+parser = argparse.ArgumentParser(description ='Linear regression with EMMA data and test with EMMA, pre-EMMA, pre-EMMA-intra and complete datasets')
+parser.add_argument('-a', '--all',dest ='print_all',action ='store_true', help ='print alls statistics')
+parser.add_argument('-i', '--influence',dest ='print_influence',action ='store_true', help ='print influence')
+parser.add_argument('-m', '--mse',dest ='print_mse',action ='store_true', help ='print MSE and MAE')
+#parser.add_argument('-p', '--predict',dest ='predict',action ='store_true', help ='predict Y values')
+parser.add_argument('--pa',dest ='pred_all',action ='store_true', help ='predict Y values with complete dataset')
+parser.add_argument('--pe',dest ='pred_emma',action ='store_true', help ='predict Y values with EMMA dataset')
+parser.add_argument('--pi',dest ='pred_intra',action ='store_true', help ='predict Y values with pre-EMMA-intra dataset')
+parser.add_argument('--pp',dest ='pred_pre',action ='store_true', help ='predict Y values with pre-EMMA dataset')
+parser.add_argument('-r', '--regresssion',dest ='print_reg',action ='store_true', help ='print regression functions')
+parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'0','2','3','7','10'}, default='0', help ='y to fit: 0=all; 2=G; 3=phd; 7=layers; 10=vCal [default=0]')
+args = parser.parse_args()
+if args.print_all: 
+    args.print_influence=True
+    args.print_mse=True
+    args.print_reg=True
+#
 # DEFINE MEAN SQUARED ERROR FUNCTION
 def MSE(predicted,measured):
     pred=np.array(predicted)
@@ -19,89 +37,88 @@ def MAE(predicted,measured):
     real=np.array(measured)
     mae=sum(np.absolute(pred-real))/len(pred)
     return mae
-#
-# MAKE COMMAND LINE ARGUMENTS
-parser = argparse.ArgumentParser(description ='Search some files')
-parser.add_argument('-i', '--influence',dest ='print_influence',action ='store_true', help ='print influence')
-parser.add_argument('-e', '--emma', dest ='only_emma',action ='store_true', help ='only use emma data')
-parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'0','2','3','7','10'}, default='0', help ='y to fit: 0=all; 2=G; 3=phd; 7=layers; 10=vCal [default=0]')
-args = parser.parse_args()
+# GET Y FROM DATA
+def get_y(data, y_index):
+    if (int(args.y_index) == 0):
+        y=data[:,[2,3,7,10]].reshape(len(data[:,[2,3,7,10]]),4)
+    else:           
+        y=data[:,int(args.y_index)].reshape(len(data[:,int(args.y_index)]),1)
+    return y
+def get_x(data):
+    X=data[:,6:]
+    # MUTLIply by 60 bcs C/h instead of C/min
+    X[:,4]=X[:,4]*60
+    return X
 #
 #LOAD DATA FROM FILE 
 infile="../db_final.tsv"
 names = ["nr", "enr", "conductivity", "phdensity", "avg1(G)", "avg2(G)", "conc", "layers", "vDOC", "TDOC", "vCal", "TCal"]
 df=pd.read_csv(infile, skiprows=1, names = names, delimiter="\t")
 #
-# CHECK IF ONLY USE EMMA DATA
-if args.only_emma:
-    df_all = df 
-    df = df >> mask(df.enr !=0)
-#
 # DATA PREPROCESSING
-data=np.array(df)
-X=data[:,6:]
-# MUTLIply by 60 bcs C/h instead of C/min
-X[4]=X[4]*60
 X_names=names[6:]
-if (int(args.y_index) == 0):
-    y=data[:,[2,3,7,10]].reshape(len(data[:,[2,3,7,10]]),4)
-else:           
-    y=data[:,int(args.y_index)].reshape(len(data[:,int(args.y_index)]),1)
+data=np.array(df)
+X_all=get_x(data)
+Y_all=get_y(data,args.y_index)
+# EMMA DATASET
+data_emma=np.array(df >> mask(df.enr != 0))
+X_emma=get_x(data_emma)
+Y_emma=get_y(data_emma,args.y_index)
 # PRE-EMMA DATASET
-data_pre=np.array(df_all >> mask(df_all.enr == 0))
-X_pre=data_pre[:,6:]
-Y_pre=data_pre[:,[2,3,7,10]].reshape(len(data_pre[:,[2,3,7,10]]),4)
+data_pre=np.array(df >> mask(df.enr == 0))
+X_pre=get_x(data_pre)
+Y_pre=get_y(data_pre,args.y_index)
 # PRE-EMMA DATASET WITHIN EMMA BOUNDARIES
-data_inter=np.array( df_all>> mask(dfply.X.enr == 0) \
+data_intra=np.array( df>> mask(dfply.X.enr == 0) \
         >> mask(dfply.X.conc >1) \
         >> mask(dfply.X.layers >=4) \
         >> mask(dfply.X.vDOC >=10)\
         >> mask(dfply.X.TDOC >=40)\
         >> mask(dfply.X.vCal >=2) ) 
-X_inter=data_inter[:,6:]
-Y_inter=data_inter[:,[2,3,7,10]].reshape(len(data_inter[:,[2,3,7,10]]),4)
+X_intra=get_x(data_intra)
+Y_intra=get_y(data_intra,args.y_index)
 #
 # DO LINEAR REGRESSION
-reg = LinearRegression().fit(X,y)
-y_pred = reg.predict(X)
+reg = LinearRegression().fit(X_emma,Y_emma)
+Y_emma_pred = reg.predict(X_emma)
+Y_pre_pred = reg.predict(X_pre)
+Y_intra_pred = reg.predict(X_intra)
+Y_all_pred = reg.predict(X_all)
 #
 # PRINT OUTPUT
-if args.y_index == 0: 
+if args.y_index == "0": 
     y_name = "all"
 else: 
     y_name = names[int(args.y_index)]
-if args.only_emma:
-    print("Lin regression for", y_name, "\tOnly EMMA data used:", args.only_emma)
-else:
-    print("Lin regression for", y_name)
-#    
-print("Reg score", reg.score(X,y))
-#print("Reg coef", X_names)
-#print("Reg coef", reg.coef_)
-#print("Reg intercept: ", reg.intercept_)
-print("MAE: ",MAE(y_pred,y))
-print("MSE: ",MSE(y_pred,y))
-print("MAE(pre): ",MAE(reg.predict(X_pre),Y_pre))
-print("MSE(pre): ",MSE(reg.predict(X_pre),Y_pre))
-print("MAE(inter): ",MAE(reg.predict(X_inter),Y_inter))
-print("MSE(inter): ",MSE(reg.predict(X_inter),Y_inter))
+print("Lin regression for", y_name)
+print("Reg score", reg.score(X_emma,Y_emma))
+if args.print_mse: 
+    print("MAE(emma): ",MAE(Y_emma_pred,Y_emma))
+    print("MSE(emma): ",MSE(Y_emma_pred,Y_emma))
+    print("MAE(pre): ",MAE(Y_pre_pred,Y_pre))
+    print("MSE(pre): ",MSE(Y_pre_pred,Y_pre))
+    print("MAE(intra): ",MAE(Y_intra_pred,Y_intra))
+    print("MSE(intra): ",MSE(Y_intra_pred,Y_intra))
+    print("MAE(all): ",MAE(Y_all_pred,Y_all))
+    print("MSE(all): ",MSE(Y_all_pred,Y_all))
 #
-# PRINT NICELY FORMATTED: 
-if (int(args.y_index) == 0):
-    j=0
-    for i in [2,3,7,10]:
-        print(names[i],"= ", sep="",end="")
+# PRINT NICELY FORMATTED REGRESSION FUNCTION: 
+if args.print_reg:
+    if (int(args.y_index) == 0):
+        j=0
+        for i in [2,3,7,10]:
+            print(names[i],"= ", sep="",end="")
+            for i in range(6):
+                print("%.2g*" % reg.coef_[j,i], sep="", end="")
+                print("%s + " % X_names[i], sep="", end="") 
+            print("%.2g" % reg.intercept_[j])
+            j+=1 
+    else:
+        print(y_name,"= ", sep="",end="")
         for i in range(6):
-            print("%.2g*" % reg.coef_[j,i], sep="", end="")
+            print("%.2g*" % reg.coef_[0,i], sep="", end="")
             print("%s + " % X_names[i], sep="", end="") 
-        print("%.2g" % reg.intercept_[j])
-        j+=1 
-else:
-    print(y_name,"= ", sep="",end="")
-    for i in range(6):
-        print("%.2g*" % reg.coef_[0,i], sep="", end="")
-        print("%s + " % X_names[i], sep="", end="") 
-    print("%.2g" % reg.intercept_)
+        print("%.2g" % reg.intercept_)
 #
 # PRINT INFLUCENCE
 if args.print_influence:
@@ -112,7 +129,24 @@ if args.print_influence:
               "coef:",
               reg.coef_[0,i], 
               "influence:",
-              reg.coef_[0,i]*max(X[:,i])/max(y[:,0]), 
+              reg.coef_[0,i]*max(X_emma[:,i])/max(Y_emma[:,0]), 
               sep="\t") 
 #
+## MEASURED VS PREDICTED
+#if args.predict: 
+#    if args.y_index != "0":
+#        print("MEASURED \tPREDICTED")
+#        for i in range(len(Y_emma)): 
+#            print ("%f\t%f" %(Y_emma[i], Y_emma_pred[i]))
+if args.pred_emma or args.pred_all or args.pred_intra or args.pred_pre:
+    if args.y_index != "0":
+        if args.pred_emma: X,Y,Yp= X_emma, Y_emma, Y_emma_pred
+        if args.pred_all: X,Y,Yp= X_all, Y_all, Y_all_pred
+        if args.pred_intra: X,Y,Yp= X_intra, Y_intra, Y_intra_pred
+        if args.pred_pre: X,Y,Yp= X_pre, Y_pre, Y_pre_pred
+        print("\t\t\t\tMEASURED \tPREDICTED")
+        for i in range(len(Y)): 
+            print (X[i], end="\t")
+            print ("%f\t%f" %(Y[i], Yp[i]))
+
 exit()
