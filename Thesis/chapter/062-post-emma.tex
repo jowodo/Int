@@ -92,6 +92,34 @@ Now what are C,epsilon and gamma?
 
 Since the data set was very small, I could be generous with the grid search even on relatively humble hardware (intel i7-8550U). 
 
+\begin{table}[htb]
+	\centering
+    \caption{Post EMMA vergleich}
+	\label{tab:post-emma}
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+    G&  MAEe&   MSEe&   MAEp&   MSEp&   MAEc&   MSEc&   MAEa& MSEa \\
+    \hline
+        MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
+        lin Reg&    13& 250&    24& 747&    34& 1327&   17& 454\\
+        ML KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
+        ML SVM& 15  415&    26& 1050&   28& 1588&   19& 677\\
+    \hline\hline
+	\end{tabular}
+    %
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+    p&  MAEe&   MSEe&   MAEp&   MSEp&   MAEc&   MSEc&   MAEa& MSEa \\
+    \hline
+        MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
+        lin Reg&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
+        ML KRR& 0.30&   0.22&   0.47&   0.38&   0.52&   0.44&   0.34&   0.26\\
+        ML SVM& 0.28&   0.12&   0.37&   0.21&   0.42&   0.25&   0.32&   0.16\\
+    \hline\hline
+	\end{tabular}
+\end{table}
+    
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{KRR}
 
