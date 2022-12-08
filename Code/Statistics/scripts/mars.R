@@ -57,6 +57,12 @@ if (only_emma){
     print(get_MAE(y.inter,y.pred))
     print("MSE(inter)")
     print(get_MSE(y.inter,y.pred))
+    # PRINT MAE AND MSE FOR ALL DATA 
+    y.pred <- predict(mars.emma, newdata=x.all)
+    print("MAE(all)")
+    print(get_MAE(y.all,y.pred))
+    print("MSE(all)")
+    print(get_MSE(y.all,y.pred))
     # PRINT REGRESSION FORMULA 
     print("MARS model for EMMA samples")
     format(mars.emma)
