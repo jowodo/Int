@@ -2,6 +2,7 @@ In this section the results will pe presented, explained and discussed.
 Starting with physical measurements and material properties. 
 Followed by the presentation and exploration of the results obtain by optimisation/exploration  with the \gls{emma} method. 
 Finally, the results of alternative optimisation methods were let loose on the data and compared with the \gls{emma} method. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Material Scientific and Pre-optimization}
@@ -152,6 +153,7 @@ Again, this effect is most likely not observed across the whole spectrum because
 \subsubsection{Current Voltage Curves} 
 \begin{figure}
     \centering
+	%
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/log-154-good-3x4F.png}
         \caption{log good 3x4F} \label{fig:iv-log-good}
@@ -164,6 +166,7 @@ Again, this effect is most likely not observed across the whole spectrum because
         \includegraphics[width=\textwidth]{Pics/iv/log-156-bad-3x3F.png}
         \caption{log bad 3x3F} \label{fig:iv-log-bad}
     \end{subfigure}
+	%
     \begin{subfigure}{.3\textwidth}
         \includegraphics[width=\textwidth]{Pics/iv/stat-154-okay-3x4F.png}
         \caption{stat good 3x4F} \label{fig:iv-stat-good}
@@ -176,6 +179,20 @@ Again, this effect is most likely not observed across the whole spectrum because
         \includegraphics[width=\textwidth]{Pics/iv/stat-156-bad-3x3F.png}
         \caption{stat bad 3x3F} \label{fig:iv-stat-bad}
     \end{subfigure}
+	%
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\textwidth]{Pics/iv/146-nocurrent.png}
+        \caption{no current} \label{fig:iv-nocurrent}
+    \end{subfigure}
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\textwidth]{Pics/iv/146-diodic.png}
+        \caption{diodic} \label{fig:iv-diodic}
+    \end{subfigure}
+    \begin{subfigure}{.3\textwidth}
+        \includegraphics[width=\textwidth]{Pics/iv/146-ohmic.png}
+        \caption{ohmic} \label{fig:iv-ohmic}
+    \end{subfigure}
+	%
 %    \caption{\td{maybe remove 146 and make 154 good AND set yrange [E-1:E-14] and show phd threshold}} \label{fig:iv}
     \caption{Current-voltage curves and the distribution of gradients for three representative samples, \td{include $\rho$ threshold}}  
     \label{fig:iv}
@@ -183,10 +200,11 @@ Again, this effect is most likely not observed across the whole spectrum because
 
 %Figures \ref{fig:iv-log-good} and \ref{fig:iv-stat-good} are measurements from a good sample. 
 %Figure \ref{fig:iv-log-good} shows \gls{iv} curves in logarithmic scale of an insulating sample. 
-Figure \ref{fig:iv-log-good} shows \gls{iv} curves of an insulating sample, where the abscissa shows the voltage in Volt and the ordinate shows the decimal logarithm of the absolute value of the current in Ampere. 
+Figure \ref{fig:iv-log-good} shows \gls{iv} curves of an insulating sample, where the abscissa shows the voltage in Volt and the ordinate shows the current in Ampere. 
 Each line represents a I-V measurement at a distinct contact applied by sputtering through a mask. 
 All of the curves show a max voltage of under \num{e-6} \SI{}{\volt} 
 and quite a few show hardly any current which is the ideal. 
+An example for very low conductance measurement in non-logarithmic scale can be seen in figure \ref{fig:iv-nocurrent}.
 For each measurement the conductivity (i.e. the gradient at V=0) was calculated (see section~\ref{sec:eval}). 
 Figure \ref{fig:iv-stat-good} shows the distribution of gradients for the same sample depicted in \ref{fig:iv-log-good}.
 %
@@ -195,16 +213,19 @@ Most of the \gls{iv} curves have a maximum voltage of under \num{e-6}\SI{}{\volt
 but there are some so called pin holes with conductance above the threshold of \num{e-5}\SI{}{\volt}. %\num{e-6} V. 
 %
 In figures \ref{fig:iv-log-good} and \ref{fig:iv-log-okay} the minimum of some curves 
-is not at \SI{0}{\volt}, which means that the function does not cross the origin. 
-This deviation is similar to the deviation because of the photo-currents\cite{perez2018solar}, 
+is not at \SI{0}{\volt}, which means that the function does not cross the origin in non-logarithmic representation. 
+%
+This deviation (see figure \ref{fig:iv-diodic}) looks similar to the deviation due to the photo-currents\cite{perez2018solar}, 
 but was not investigated further. 
-Though, the photo-current is compelling, it is most likely not zutreffend because of \gls{zro}'s band gap of \ev{5}\cite{sinhamahapatra2016oxygen}.
+Though, the explanation by photo-current is compelling, it does most likely not apply because of \gls{zro}'s band gap of \ev{5}\cite{sinhamahapatra2016oxygen}.
+A better explanation would be the tunneling effect, whose \gls{iv} curves look very similar\cite{feenstra1994scanning,datta1997current}.
+%\td{show some non log \gls{iv} curves and discuss form, some look like tunneling\cite{feenstra1994scanning,datta1997current}.}
 %
 Finally, figures \ref{fig:iv-log-bad} and \ref{fig:iv-stat-bad} show a sample 
 where all measurement exhibit relatively high voltages and high calculated conductances. 
 This indicates a overall bad condition of the \gls{zro} layer for insulating. 
+Figure \ref{fig:iv-ohmic} shows a graph circa following Ohm's law. 
 %
-\td{show some non log \gls{iv} curves and discuss form, some look like tunneling\cite{feenstra1994scanning,datta1997current}.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
