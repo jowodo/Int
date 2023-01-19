@@ -1,4 +1,5 @@
-set xlabel "-log_{10}(G)"
+#set xlabel "-log_{10}(G)"
+set xlabel "-log_{10}({/Symbol l})"
 set ylabel "occurence [%]"
 set xtics 1
 set xrange [0:13]
