@@ -11,7 +11,7 @@ The best recipes for each generation can be seen in table \ref{tab:emma-Gb}.
 The experiments for generation 5 where not executed but 
 predictions were already made
 with the information from the previous generations. 
-%%% BEST
+%%% BEST PREDICTED RECIPE
 The best sample predicted by the algorithm is experiment number 13 with 
 %lowest solution concentration, second highest layer count, lowest \gls{db} velocity and temperature, 
 %and lowest calcination heating rate and temperature. 
@@ -19,20 +19,19 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 %lowest solution concentration, second highest layer count, lowest \gls{db} velocity and temperature, 
 %and lowest calcination heating rate and temperature. 
 
-
 \begin{table}[htb]
 	\centering
     \caption{Global best per generation}
 	\label{tab:emma-Gb}
-	\begin{tabular}{cccccccc}
+	\begin{tabular}{ccccccccc}
         \hline\hline
-        generation  &enr &$c_{zr}$ &$\lambda$ &$v_{DB}$ &$T_{DB}$ &$v_{cal}$ &$T_{cal}$\\
+		generation& measurements &enr &$c_{zr}$ &$\lambda$ &$v_{DB}$ &$T_{DB}$ &$v_{cal}$ &$T_{cal}$\\
         \hline
-     1   &1       &2    &4   &10   &40  &120  &300\\
-     2   &5       &2    &6   &10   &40  &120  &300\\
-     3   &2947    &4    &6   &16   &80 &1080  &300\\
-     4   &2405    &2    &6   &10   &40 &1080  &300\\
-     5   &13      &2   &10   &10   &40  &120  &300\\
+	1  &10	&1       &2    &4   &10   &40  &120  &300\\
+	2  &15	&5       &2    &6   &10   &40  &120  &300\\
+	3  &20	&2947    &4    &6   &16   &80 &1080  &300\\
+	4  &25	&2405    &2    &6   &10   &40 &1080  &300\\
+	5  &30	&13      &2   &10   &10   &40  &120  &300\\
     \hline\hline
 	\end{tabular}
 \end{table}
@@ -57,9 +56,10 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 %%% OVER TIME 
 The only clear trend from table \ref{tab:emma-Gb} is the layer count, which rises with the generations. 
 The remaining input variables remained more or less the same except for the 3rd generation. 
+\td{why?}
 %
 In table \ref{tab:emma-pred-G} it can be seen that the predicted $\hat{\gamma}$ 
-(predicted with 5th generation \gls{rf}) lowered with each iteration, 
+(predicted with 5th generation \gls{rf}; see last column) lowered with each iteration, 
 except for sample 2947, which wasn't predicted but measured. 
 This shows that the easiest part of the algorithm - the selection of the optimum 
 from predicted values - works as expected. 
@@ -68,15 +68,16 @@ from predicted values - works as expected.
 Contrarily, the predicted $\hat{\gamma}$ for each generation's best 
 (predicted by the very generation's \gls{rf}) does increase with each iteration 
 (see diagonal in table~\ref{tab:emma-pred-G}). 
-This indicates an underestimation of $\gamma$ at the beginning and a correction with time. 
+This indicates an underestimation of $\hat\gamma$ at the beginning and a correction with time. 
 %The reason for is probably a 
 The underestimation probably stems from a lucky selection of initial experiments or a skew in the measurements. 
+Indeed, the samples with the lowest \textit{optimisands} are amoung the first generation (see appendix \ref{sec:app-emma}, \td{and maybe fig gen-g}).
 
-In figure \ref{fig:emma-gen} we can see the two measured main \textit{optimizands}, 
+In figure \ref{fig:emma-gen} we can see the two measured main \textit{optimisands}, 
 $\gamma$ and $\rho$, of each particle at generations 1 to 4. 
 %for each particle included in the optimization. 
 %It shows a clear trend which indicates that the optimization worked even though 
-Both variables were to be minimized and show a clear trend towards low values, 
+Both variables were to be minimized and show a clear trend towards low values with increasing generation, 
 indicating that the optimization worked even though 
 the prediction functions (see equations (\ref{eq:emma-phd3}) - (\ref{eq:emma-vcal4})) 
 and the chosen samples where not exactly as expected. 
@@ -84,17 +85,27 @@ Neither were the measurements for these samples, which might be due to the high 
 
 \begin{figure}[hb]
     \centering
-    \begin{subfigure}{.45\textwidth}
+    \begin{subfigure}{.24\textwidth}
         \centering
-        \includegraphics[width=.8\textwidth]{Pics/stats/gen-G.png}
+        \includegraphics[width=.98\textwidth]{Pics/stats/gen-G.png}
         \caption{} \label{fig:emma-G-gen}
     \end{subfigure}
-    \begin{subfigure}{.45\textwidth}
+    \begin{subfigure}{.24\textwidth}
         \centering
-        \includegraphics[width=.8\textwidth]{Pics/stats/gen-phd.png}
+        \includegraphics[width=.98\textwidth]{Pics/stats/gen-phd.png}
         \caption{} \label{fig:emma-phd-gen}
     \end{subfigure}
-    \caption{$\gamma$ (a) and of $\rho$ (b) of each particle and each generation after initial selection process} 
+    \begin{subfigure}{.24\textwidth}
+        \centering
+        \includegraphics[width=.98\textwidth]{Pics/stats/G-tcal.png}
+        \caption{} \label{fig:g-tcal}
+    \end{subfigure}
+    \begin{subfigure}{.24\textwidth}
+        \centering
+        \includegraphics[width=.98\textwidth]{Pics/stats/phd-tcal.png}
+        \caption{} \label{fig:phd-tcal}
+    \end{subfigure}
+	\caption{$\gamma$ (a) and of $\rho$ (b) of each particle and each generation after initial selection process; \td{add caption for c and d. check if can plot with t=0}} 
     \label{fig:emma-gen}
 \end{figure}
 
@@ -109,7 +120,7 @@ The first thing to notice is that prediction functions of each generation depend
 %This means that the algorithm must decide on the variables which explain the most variance independent of optimization weights.
 This stems from the fact that the algorithm choses a single minimal set of \gls{bf} to predict all dependent variables. 
 %
-%\td{Knowing this, makes the decision of adding $\lambda$ and $v_{cal}$ as \textit{optimizands} rather unfortunate. %highly questionable. 
+%\td{Knowing this, makes the decision of adding $\lambda$ and $v_{cal}$ as \textit{optimisands} rather unfortunate. %highly questionable. 
 %\td{This makes including $\lambda$ and $v_{cal}$ as dependent variables unfortunate decisions with hindsight.}
 %As the \gls{mars} algorithm is greedy,
 %Different independent variables compete to be used as \gls{bf} in the prediction functions because of the greediness of the \gls{mars} algorithm. 
@@ -155,7 +166,7 @@ This stems from the fact that the algorithm choses a single minimal set of \gls{
 \end{align}
 
 The coefficients in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) have the same signs and differ by a factor of roughly 100.
-This fits the data well, but the positive influence of the layer count $\lambda$ is counter intuitive 
+This fits the data well (see appendix \ref{sec:app-emma}), but the positive influence of the layer count $\lambda$ is counter intuitive 
 as one would expect more layers to be more insulating and thus result in lower conductance and a lower probability of holes going all the way trough the \gls{zro} layers. %pin hole density. 
 The coefficients of the $v_{cal} \cdot T_{cal}$ interaction in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) 
 seem low, but - considering the minimum value of the interaction of \num{36000} - have a higher influence on $\rho_3$ and $\gamma_3$ than the $h(6-\lambda)$ term. 
@@ -170,24 +181,29 @@ The coefficients of equations (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) show t
 as equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}): identical signs and factor 100. 
 The choice of \gls{bf}s in combination with their coefficient signs seems more plausibel
 for (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) than for (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}). 
-$\lambda$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally the lowest $\lambda$ increases the two \textit{optimizands}. 
-Highly interesting is the influence of $T_{cal}$ on the measure of conductance of a sample. 
-The optimzand $\hat{\gamma}$ increases with higher calcination temperature, 
-ergo the resistance decreases contrary to expectations.
+$\lambda$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally the lowest $\lambda$ increases the two \textit{optimisands}. 
+% TCAL ON OPTIMIZANDS
+The influence of $T_{cal}$ on the measures of conductance ($\rho$ and $\gamma$) is higly interesting. 
 It was expected that 
-%under \oc{400} the calcination does not fully \td{ablaufen} and 
-calcination under \oc{400} does not suffice and 
+calcination temperatures under \oc{400} do not suffice to produce compact layers and 
 that therefore the resulting layer does not insulate as well. 
-Furthermore, the influence of the $T_{cal}$ term is the largest of all terms on $\hat{\rho}$ and $\hat{\gamma}$.
-%This becomes clear when looking at the data.
-The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in size, 
-but has the extra factor of $\lambda$ of up to 12, resulting in the products being in the same order of magnitude.
+%\td{xxx}
+\textit{Optimsands} $\hat\rho$ and $\hat{\gamma}$ increase with higher calcination temperature 
+according to equations \ref{eq:emma-phd4} and \ref{eq:emma-G4}, 
+ergo the resistance decreases and the conductance increases with increasing calcination temperature contrary to expectations.
+% DESCRIBE COEFFEICIENTS
+Furthermore, the influence of the $T_{cal}$ term is the largest of all terms on $\hat{\rho}$ and $\hat{\gamma}$ and also on $\hat\lambda$ and $\hat{v}_{cal}$.
+The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in size of the $T_{cal}$ coefficient, 
+but has the extra factor $\lambda$ of up to 12, resulting in the products of coefficients and independent variable being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$.
 It can be noted that the coefficient of the $\lambda\cdot T_{cal}$ interaction always has contrary sign to $T_{cal}$ coefficient. 
-This could hint a compensation of the overestimated influence of $T_{cal}$ on the \textit{optimizands}.
+This negative correlation could hint a compensation of the overestimated influence of $T_{cal}$ on the \textit{optimisands}.
 %It should be doubted, though, that the $layr$ only appears as interaction term 
 %together with $T_{cal}$ and $T_{DB}$, which seems rather than an artefact. 
-It seems rather an artefact of noise that the $\lambda$ only appears as interaction 
-with $T_{cal}$ and $T_{DB}$. 
+%
+%It seems rather an artefact of noise that the $\lambda$ only appears as interaction 
+%with $T_{cal}$ and $T_{DB}$. 
+From the analysis of coefficients it can be said, that the most important factor according to EMMA is $T_{cal}$, followed by $\lambda$, then $T_DB$ and then the rest of the independent variables. 
+I highly doubt though that the specific interactions proposed by EMMA are indeed meaningful. 
 
 %%% MSE
 For each generation the \gls{mse} was calculated for which only samples 
@@ -216,8 +232,9 @@ the measure of conductance was underestimated and improved over time.
 %Or rather \gls{mse} at $t=2$ high because \gls{rf}s at $t=2$ poor and gen=2 samples are chosen with help of \gls{rf} at $t=2$? 
 %}
 
+\td{plot g and p vs TCal, calc avg of p and g for each gen, append pre-emma to appendix}
 %%% PROBLEMS 
-Even though the main \textit{optimizands} were minimized as required, the \gls{rf}s were not satisfactory. 
+Even though the main \textit{optimisands} were minimized as required, the \gls{rf}s were not satisfactory. 
 The two main problems were too many independent variables and too many dependent variables. 
 Both seem closely related and overcomplicate the optimization, but both come with their own implications. 
 Too many independent variables make it harder to distinguish variance due to random error (due to unmeasured and uncontrolled variables) from variance due to dependency of chosen dependent varibales. 
@@ -241,7 +258,7 @@ and an EVP of around 20 in the original \gls{emma} paper\cite{villanova2010funct
 %}
 %
 The main problem about too many independent variables specific to this optimisation procedure 
-is that the same set of \gls{bf}s will be used to predict all \textit{optimizands}.
+is that the same set of \gls{bf}s will be used to predict all \textit{optimisands}.
 This leads to competition between the \gls{bf}s as not all dependent variables may depend on the same independent variables. 
 This effect is reinforced by the choice of two independent variables as dependent variables. % (IVDV). 
 Independent variables as dependent variables will likely be chosen in \gls{bf}s, 
@@ -253,7 +270,7 @@ This in turn can lead to wrong predictions and therefore inefficient choice of f
 
 \td{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{rational behind including $v_{cal}$ and $\lambda$ as optimizands}
+\subsubsection{rational behind including $v_{cal}$ and $\lambda$ as optimisands}
 The heating rate of the calcination process $v_{cal}$ and the number of layers $\lambda$ 
 were included as dependent variables with the objective to maximize with a relative weight of 0.05 each.
 The idea was to maximize $v_{cal}$ and minimize $\lambda$ in order to minimize the process time. 

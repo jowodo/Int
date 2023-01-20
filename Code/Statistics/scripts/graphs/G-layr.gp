@@ -1,6 +1,6 @@
-#!/usr/bin/gnuplot 
+#!/usr/bin/gnuplot
 
-set term pngcairo size 1200, 900 font ",20"
+set term pngcairo size 1200, 900 font ",30"
 set out "G-layr.png"
 #set term svg
 #set out "G-layr.svg"
@@ -8,7 +8,7 @@ set out "G-layr.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=2
+width=3
 set xlabel "layers {/Symbol l}"
 set ylabel "MAE (pG) {/Symbol g} [a.u.]"
 set xrange [0.5:12.5]

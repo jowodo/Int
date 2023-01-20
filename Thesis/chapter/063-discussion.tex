@@ -243,3 +243,5 @@ As the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}.
 
 \href{https://pubs.acs.org/doi/10.1021/ci0342472}{overfitting}
 \td{COMMENT: solution age was not accounted for}
+
+\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}

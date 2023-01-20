@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot 
 
-set term pngcairo size 1200, 900 font ",20"
+set term pngcairo size 1200, 900 font ",30"
 set out "phd-conc.png"
 #set term svg
 #set out "phd-conc.svg"
@@ -8,7 +8,7 @@ set out "phd-conc.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=2
+width=3
 set xlabel "conc c_{zr}"
 set ylabel "pin hole density {/Symbol r}"
 set xrange [0.5:5.5]
@@ -21,6 +21,6 @@ set xtics 1,1
 #0    212  2947  10.95940  0.00000  -8.43005  -9.76459  4     6     16    80    18    300
 #plot filename u 8:4 pt 7 t "O"
 
-plot "../../db_final.tsv" u 7:4 pt 7 t "PO" ,\
-    filename u 8:5 pt 7 t "O"
+plot "../../db_final.tsv" u 7:4 pt 7 ps width t "PO" ,\
+    filename u 8:5 pt 7 ps width t "O"
 #pause -1

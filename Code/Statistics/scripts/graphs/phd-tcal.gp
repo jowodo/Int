@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot 
 
-set term pngcairo size 1200, 900 font ",20"
+set term pngcairo size 1200, 900 font ",30"
 set out "phd-tcal.png"
 #set term svg
 #set out "phd-tcal.svg"
@@ -8,16 +8,14 @@ set out "phd-tcal.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=2
+width=3
 set xlabel "T_{cal} [^oC]"
 set ylabel "pin hole density {/Symbol r}"
 set xrange [250:550]
-set yrange [0:1.2]
+set yrange [0:1.4]
 set xtics 300,100
 
-#plot filename u 13:5 pt 7 notitle
-
-plot "../../db_final.tsv" u 12:4 pt 7 t "PO" ,\
-    filename u 13:5 pt 7 t "O"
+plot "../../db_final.tsv" u 12:4 pt 7 ps width t "pre-EMMA" ,\
+    filename u 13:5 pt 7 ps width t "EMMA"
 
 #pause -1

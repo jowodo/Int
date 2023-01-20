@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot 
 
-set term pngcairo size 1200, 900 font ",20"
+set term pngcairo size 1200, 900 font ",30"
 set out "phd-layr.png"
 #set term svg
 #set out "phd-layr.svg"
@@ -8,7 +8,7 @@ set out "phd-layr.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=2
+width=3
 set xlabel "layers {/Symbol l}"
 set ylabel "pin hole density {/Symbol r}"
 set xrange [0.5:12.5]
@@ -21,6 +21,6 @@ set xtics 2,2
 #0    212  2947  10.95940  0.00000  -8.43005  -9.76459  4     6     16    80    18    300
 #plot filename u 8:4 pt 7 t "O"
 
-plot "../../db_final.tsv" u 8:4 pt 7 t "PO" ,\
-    filename u 9:5 pt 7 t "O"
+plot "../../db_final.tsv" u 8:4 pt 7 ps width t "PO" ,\
+    filename u 9:5 pt 7 ps width t "O"
 #pause -1

@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot 
 
-set term pngcairo
+set term pngcairo size 1200, 900 font ",30"
 set out "G-t.png"
 #set term svg
 #set out "G-t.svg"
@@ -8,7 +8,7 @@ set out "G-t.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=2
+width=3
 set xlabel "sample number"
 set ylabel "conductivity G a.u." 
 #set xrange [0:550]
