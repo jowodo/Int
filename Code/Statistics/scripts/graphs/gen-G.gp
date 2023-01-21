@@ -11,6 +11,8 @@ set ylabel "{/Symbol g} [a.u.]"
 set xtics 0,1
 #set range
 
-plot [1:4] filename u 1:4 w l lw width notitle
+#plot [1:4] filename u 1:4 w l lw width notitle
+plot filename every :::1 u 1:4 w l lw width notitle ,\
+    filename every :::0::0 u 1:4 pt 7 ps width notitle
 
 #pause -1
