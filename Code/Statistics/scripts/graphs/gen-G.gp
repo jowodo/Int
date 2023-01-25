@@ -13,6 +13,8 @@ set xtics 0,1
 
 #plot [1:4] filename u 1:4 w l lw width notitle
 plot filename every :::1 u 1:4 w l lw width notitle ,\
-    filename every :::0::0 u 1:4 pt 7 ps width notitle
+    filename every :::0::0 u 1:4 pt 7 ps width notitle ,\
+	"../../db_final.avg.tsv" u 1:2 w l lw 4 notitle ,\
+	"../../db_final.avg.tsv" u 1:4 w l lw 4 notitle
 
 #pause -1
