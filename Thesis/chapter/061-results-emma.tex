@@ -232,22 +232,23 @@ the measure of conductance was underestimated and improved over time.
 %Or rather \gls{mse} at $t=2$ high because \gls{rf}s at $t=2$ poor and gen=2 samples are chosen with help of \gls{rf} at $t=2$? 
 %}
 
-\td{plot g and p vs TCal, calc avg of p and g for each gen, append pre-emma to appendix}
 %%% PROBLEMS 
 Even though the main \textit{optimisands} were minimized as required, the \gls{rf}s were not satisfactory. 
 The two main problems were too many independent variables and too many dependent variables. 
 Both seem closely related and overcomplicate the optimization, but both come with their own implications. 
-Too many independent variables make it harder to distinguish variance due to random error (due to unmeasured and uncontrolled variables) from variance due to dependency of chosen dependent varibales. 
-This is mainly because of the curse of dimensionality\cite{friedman1988fitting} which makes it hard to collect enough data for each dimension. 
+Too many independent variables make it harder to distinguish variance due to random error (due to unmeasured and uncontrolled variables) from variance due to dependency. % of chosen dependent varibales. 
+The difficulty of identifying meaningful correlation is mainly owed to the curse of dimensionality\cite{friedman1988fitting} which makes it hard to collect enough data for each dimension. 
 %
-In the here presented optimisation model the data points per independent variable 
-(events per predictor variable EPV) are as low as 5. 
-By eliminating three independent variables the EVP could rise to 10, which is stated 
-as rule of tumb for mulitvariate regression\cite{vittinghoff2007relaxing}. 
+%In the here presented optimisation model 
+%the data points per independent variable 
+%(events per predictor variable EPV) are as low as 5. 
+The \gls{epv} (data points per independent varible) are as low as 5 in the here presented optimisation model. % and data acquisition method
+By eliminating three independent variables the \gls{epv} could rise to 10, which is stated 
+as rule of thumb for mulitvariate regression\cite{vittinghoff2007relaxing}. 
 The results obtained with limited sample number deliver some insightfulness %are quite respectable. 
-considering an EPV of 20-50 stated in the original \gls{mars} paper\cite{friedman1991multivariate} 
-and an EVP of around 20 in the original \gls{emma} paper\cite{villanova2010function}. 
-%In the original \gls{emma} paper\cite{villanova2010function} the EVP is 20.
+considering an \gls{epv} of 20-50 stated in the original \gls{mars} paper\cite{friedman1991multivariate} 
+and an \gls{epv} of around 20 in the original \gls{emma} paper\cite{villanova2010function}. 
+%In the original \gls{emma} paper\cite{villanova2010function} the \gls{epv} is 20.
 %\td{In the original \gls{mars} paper\cite{friedman1991multivariate} the model is said 
 %to work well on 20-50 events per predictor varibale.
 %In the current model EPV are around 5, which is even low for a conservative 
@@ -257,15 +258,21 @@ and an EVP of around 20 in the original \gls{emma} paper\cite{villanova2010funct
 %"The curse-of-dimensionality is fundamental and cannot be directly overcome."- Friedman 1988\cite{friedman1988fitting}.
 %}
 %
-The main problem about too many independent variables specific to this optimisation procedure 
-is that the same set of \gls{bf}s will be used to predict all \textit{optimisands}.
-This leads to competition between the \gls{bf}s as not all dependent variables may depend on the same independent variables. 
+
+On the other side, the main problem about too many dependent variables specific to this optimisation procedure 
+is that the same set of \gls{bf}s will be used to predict \textbf{all} \textit{optimisands}.
+This leads to competition between the \gls{bf}s, as not all dependent variables may depend on the same independent variables. 
 This effect is reinforced by the choice of two independent variables as dependent variables. % (IVDV). 
 Independent variables as dependent variables will likely be chosen in \gls{bf}s, 
-for including them in the \gls{rf}s is an easy way to reduce the \gls{mse}.
+for including them in the \gls{rf}s is an easy way to reduce the \gls{mse} and improve prediction accuracy.
 These \gls{bf}s then "take away places" of \gls{bf}s predicting other dependent variables in the \gls{rf}. %\td{(cf. musical chairs)} 
 This in turn can lead to wrong predictions and therefore inefficient choice of future samples. 
 
+The two independent variables $v{cal}$ and $\lambda$ were included as \textit{optimisands} for two reasons: 
+Maximizing the calcination velocity and minimizing the number of \td{layers/layer application iterations} leads to minimization of process time.
+This optimization would be better placed in a follow up study. 
+The second reason for including independent variables was to check if the model works. 
+This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimisands} and thus additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables. The second flaw is that there are obsiously better methods to assess the quality of a model that to make it more complex. Good alternatives would have been leave-one-out or cross validation.
 
 
 \td{
@@ -298,14 +305,15 @@ Overall there were too many variables involved for such a small dataset
         that means that adding dependent variables influences \td{previous variables}
 \end{itemize}
 }
-\td{look at emma papers}
-\td{change G to gamma and write enr to every figure}
-\td{in \cite{friedman1991multivariate} the model is said to work well on $\frac{N}{n}$ ratios (aka events per predictor varibale (EPV)) of 20-50. 
-EPV is around 5 for this model.
-Not even rule of thumb of 10 EPV \cite{vittinghoff2007relaxing}
+%\td{look at emma papers}
+%\td{change G to gamma and write enr to every figure}
+
+%\td{in \cite{friedman1991multivariate} the model is said to work well on $\frac{N}{n}$ ratios (aka events per predictor varibale (EPV)) of 20-50. 
+%EPV is around 5 for this model.
+%Not even rule of thumb of 10 EPV \cite{vittinghoff2007relaxing}
 Inspect \cite{friedman1988fitting,friedman1991multivariate} for further \gls{mars} discussion. 
-"The curse-of-dimensionality is fundamental and cannot be directly overcome."- Friedman 1988\cite{friedman1988fitting}.
-}
+%"The curse-of-dimensionality is fundamental and cannot be directly overcome."- Friedman 1988\cite{friedman1988fitting}.
+%}
 
 
 
