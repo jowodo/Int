@@ -21,7 +21,7 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 
 \begin{table}[htb]
 	\centering
-    \caption{Global best per generation}
+    \caption{Global best per generation with experiment numbers and dependent variables/experiment conditions}
 	\label{tab:emma-Gb}
 	\begin{tabular}{ccccccccc}
         \hline\hline
@@ -36,9 +36,20 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 	\end{tabular}
 \end{table}
 
+%%% OVER TIME 
+The only clear trend from table \ref{tab:emma-Gb} is the layer count, which rises with the generations. 
+The remaining input variables remained more or less the same except for the 3rd generation. 
+\td{why?}
+%
+In table \ref{tab:emma-pred-G} it can be seen that the predicted $\hat{\gamma}$ 
+(predicted with 5th generation \gls{rf}; see last column) lowered with each iteration, 
+except for sample 2947, which wasn't predicted but measured. 
+This shows that the easiest part of the algorithm - the selection of the optimum 
+from predicted values - works as expected. 
+% and that the predictions included more lower values over time
 \begin{table}
 	\centering
-    \caption{Predicted $\hat{\gamma}$} 
+    \caption{Predicted conductance measure $\hat{\gamma}$ for each generation by each generation's regression function}  
     \label{tab:emma-pred-G}
     \begin{tabular}{cccccc}
         \hline\hline
@@ -52,18 +63,6 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
         \hline\hline
     \end{tabular}
 \end{table}
-
-%%% OVER TIME 
-The only clear trend from table \ref{tab:emma-Gb} is the layer count, which rises with the generations. 
-The remaining input variables remained more or less the same except for the 3rd generation. 
-\td{why?}
-%
-In table \ref{tab:emma-pred-G} it can be seen that the predicted $\hat{\gamma}$ 
-(predicted with 5th generation \gls{rf}; see last column) lowered with each iteration, 
-except for sample 2947, which wasn't predicted but measured. 
-This shows that the easiest part of the algorithm - the selection of the optimum 
-from predicted values - works as expected. 
-% and that the predictions included more lower values over time
 %
 Contrarily, the predicted $\hat{\gamma}$ for each generation's best 
 (predicted by the very generation's \gls{rf}) does increase with each iteration 
@@ -105,7 +104,14 @@ Neither were the measurements for these samples, which might be due to the high 
         \includegraphics[width=.98\textwidth]{Pics/stats/phd-tcal.png}
         \caption{} \label{fig:phd-tcal}
     \end{subfigure}
-	\caption{$\gamma$ (a) and of $\rho$ (b) of each particle and each generation after initial selection process; \td{add caption for c and d.}} 
+	\caption{
+		(a)~calculated conductance measures~$\gamma$ of each particle against the generation number %blue shows average for each generation and yellow shows average of each generation without discarded particles from initial generation. 
+		(b)~calculated pin hole density~$\rho$ of each particle against the generation number %blue shows average for each generation and yellow shows average of each generation without discarded particles from initial generation. 
+		(c)~calculated conductance measures~$\gamma$ against calcination temperature $T_{cal}$
+		(d)~calculated pin hole density~$\rho$ against calcination temperature $T_{cal}$
+		\td{describe more in-depth in text}
+	}
+
     \label{fig:emma-gen}
 \end{figure}
 
@@ -334,3 +340,4 @@ Inspect \cite{friedman1988fitting,friedman1991multivariate} for further \gls{mar
 \td{TODO: visualize} how the population moved across the space (with parallel coordinates? or see page 121)
 \url{https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation}
 \fi
+\td{TODO: find expression for $\gamma$: conductance measure, conducticity}
