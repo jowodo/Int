@@ -1,9 +1,8 @@
 set xrange [-0.5:0.5]
 set logscale y
-set yrange [1e-14:1e-1]
 set xlabel "voltage [V]"
 set ylabel "current [A]"
-set term pngcairo
+set term pngcairo size 1200, 900 font ",30"
 set out "log-i-v.png"
 plot "./146_L02C1_01_dot" u 1:(abs($2)) w l t "" ,\
 	"./146_L02C2_01" u 1:(abs($2)) w l t "" ,\

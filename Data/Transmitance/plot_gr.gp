@@ -1,6 +1,6 @@
 set xrange[300:1200]
 set yrange[0:0.3]
-set term pngcairo
+set term pngcairo size 1200, 900 font ",30"
 set ylabel "Reflection"
 set xlabel "wavenumber [cm^{-1}]"
 set xlabel "wavelength [nm]"

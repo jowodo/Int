@@ -9,7 +9,7 @@ mkdir -p tmp
 pushd tmp 
 for i in $(ls ../*L*C*) ; do 
 	echo "
-	set term pngcairo
+	set term pngcairo size 1200, 900 font \",30\"
 	set xlabel \"voltage [V]\"
 	set ylabel \"current [A]\"
 	set out \"$i.png\"

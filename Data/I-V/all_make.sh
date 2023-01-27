@@ -1,3 +1,4 @@
+#USAGE ./all_make.sh
 for dir in $(ls -1 | grep -e "I-V*"); do 
 #	echo $dir
 	cd $dir
