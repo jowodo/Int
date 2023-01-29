@@ -282,18 +282,16 @@ This idea has two flaws: there is only one set of \gls{bf}s for all \textit{opti
 
 
 \td{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%\subsubsection{how did evolve over time?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{rational behind including $v_{cal}$ and $\lambda$ as optimisands}
-The heating rate of the calcination process $v_{cal}$ and the number of layers $\lambda$ 
-were included as dependent variables with the objective to maximize with a relative weight of 0.05 each.
-The idea was to maximize $v_{cal}$ and minimize $\lambda$ in order to minimize the process time. 
-Another thought behind including $v_{cal}$ and $\lambda$ was to test if the algorithm would correctly predict those. 
 }
 %
 %Three major flaws behind this consideration became obvious with time: 
 %
 \
-\ds{
+\td{
 (1) The true function for predicting $v_{cal}$ and $\lambda$ are $v_cal*60$ (\oc{}/\h{} instead of \oc{}/\minutes{}) and $\lambda$, respectively. 
 The algorithm will tend to include those values into the prediction function for 
 all dependent variables and possibly exclude others which have more influence 
@@ -311,12 +309,7 @@ Overall there were too many variables involved for such a small dataset
         that means that adding dependent variables influences \td{previous variables}
 \end{itemize}
 }
-%\td{look at emma papers}
-%\td{change G to gamma and write enr to every figure}
 
-%\td{in \cite{friedman1991multivariate} the model is said to work well on $\frac{N}{n}$ ratios (aka events per predictor varibale (EPV)) of 20-50. 
-%EPV is around 5 for this model.
-%Not even rule of thumb of 10 EPV \cite{vittinghoff2007relaxing}
 Inspect \cite{friedman1988fitting,friedman1991multivariate} for further \gls{mars} discussion. 
 %"The curse-of-dimensionality is fundamental and cannot be directly overcome."- Friedman 1988\cite{friedman1988fitting}.
 %}
@@ -324,20 +317,6 @@ Inspect \cite{friedman1988fitting,friedman1991multivariate} for further \gls{mar
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%\subsubsection{how did evolve over time?}
 
-
-\iffalse
-\begin{figure}
-\centering
-\includegraphics[width=.6\textwidth]{Pics/stats/G-t.png}
-    \caption{conductivity G [a.u.] against sample number (is this even correct?)}
-    \label{fig:G-t}
-\end{figure}
-
-\td{TODO: check if the sorted correctly? Make generation graph with boxplot }
-\td{TODO: visualize} how the population moved across the space (with parallel coordinates? or see page 121)
-\url{https://stackoverflow.com/questions/30228281/gnuplot-parallel-coordinates-axes-plot-key-annotation}
-\fi
 \td{TODO: find expression for $\gamma$: conductance measure, conducticity}
+\td{when adding dep var to model this has two folgen: - beeinflusst the BF and the optimization, but bcs relatiev weight is only 0.05 for each, no big beeinflussung on optimization} 

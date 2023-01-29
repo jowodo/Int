@@ -1,9 +1,9 @@
 \label{sec:res-post-emma}
 %describe what awaits the reader in this chapter:
-in this section the experimental results are analyzed with different methods and compared with the original method EMMA which was integrated into the optimization. 
+In this section the experimental results are analyzed with different methods and compared with the original method EMMA which was integrated into the experiment selection process. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{ANOVA}\label{sec:res-anova}
-\textbf{EMMA}
+%\textbf{EMMA}
 The \gls{rf} produced by the last iteration of \gls{emma} put a high \td{significance/effect/correlation} 
 on the calcination temperature $T_{cal}$ with regard to the \td{measurables} of the conductance. 
 \Gls{anova} is used to double check this. 
@@ -72,6 +72,20 @@ Or was is only luck?
 $v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a perfect direct proportionality. 
 Was zu erwarten war. 
 
+
+\begin{align}
+	\begin{split}
+		\label{eq:linreg-phd}
+		\hat{\rho} =&  -0.022\cdot c_{zr} -0.022\cdot \lambda -0.0029\cdot v_{DB} + 0.0058\cdot T_{DB} \\
+		& -8.5\cdot 10^{-5}\cdot v_{cal} + 0.0026\cdot T_{cal} -0.76
+	\end{split}
+	\\
+	\begin{split}
+		\label{eq:linreg-G}
+		\hat{\gamma} ={} & 3.2\cdot c_{zr} - 0.97\cdot \lambda - 1.2\cdot v_{DB} + 0.2\cdot T_{DB} \\
+			& - 0.014\cdot v_{cal} + 0.13\cdot T_{cal} + 7.2
+	\end{split}
+\end{align}
 
 Do multi linear reg like in Peprah et al. 2017\cite{peprah2017appraisal}.
 
@@ -149,3 +163,5 @@ compare all methods.
 How should I compare them? 
 What are the measurables. 
 
+
+\td{do regression for avg(-log(G)) instead of $\gamma$=avg( ( 13+log(G))**2)} 
