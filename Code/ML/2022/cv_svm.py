@@ -2,7 +2,6 @@
 
 import numpy as np 
 from sklearn.svm import SVR # Epsilon-support Vector Regression
-#from sklearn.kernel_ridge import KernelRidge as KRR
 import sklearn
 import pandas as pd
 import dfply
@@ -22,7 +21,7 @@ gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"] # HPGS
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
 parser.add_argument('-e', '--emma', dest ='only_emma',action ='store_true', help ='only use emma data')
-parser.add_argument('-k', '--kfold', dest ='kfold',action ='store', default='5', help ='Split into k set for k-fold cross validation') 
+parser.add_argument('-k', '--kfold', dest ='kfold',action ='store', default='5', help ='Split into k set for k-fold cross validation. Use 0 for Leave-One-Out') 
 parser.add_argument('-m', '--maxiter', dest ='maxiter',action ='store', default='10000', help ='Hard limit on itermations within solver, default: 10000, use -1 for unlimited') 
 parser.add_argument('-t', '--test', dest ='test',action ='store_true', help ='Test: Only use subset of hyperparameters') 
 parser.add_argument('-x', '--scale', dest ='scale', action ='store_true', default=False, help='Scale input before fitting')
@@ -41,25 +40,33 @@ def get_sets(df,names,args):
 #
 #LOAD DATA FROM FILE 
 infile="../../Statistics/db_final.tsv"
-names = ["nr", "enr", "conductivity", "phdensity", "avg1(G)", "avg2(G)", "conc", "layers", "vDOC", "TDOC", "vCal", "TCal"]
 #         0     1       2               3           4          5          6       7        8        9       10      11 
+names = ["nr", "enr", "conductivity", "phdensity", "avg1(G)", "avg2(G)", "conc", "layers", "vDOC", "TDOC", "vCal", "TCal"]
 df=pd.read_csv(infile, skiprows=1, delim_whitespace=True, names = names)
+#
 # FILTER OUT NON EMMA SAMPLES
 if args.only_emma:
     df = df >>dfply.mask(df.enr !=0)
+#
+# K-FOLD 
+if args.kfold == 0: 
+    # set k to number of samples
+    args.kfold=df.shape[0]
 #
 #PREPROCESSING DATA 
 X,Y=get_sets(df,names,args)
 if args.scale : X=sklearn.preprocessing.StandardScaler().fit_transform(X)
 #
-# temp short test
+# DUMMY RUN
 if args.test : 
     C=[0.5,0.1]; degree=[1,2]; epsilon=[1,2]; gamma=["scale",0.1] # ,"auto"]
 n_exps=len(C)*(len(degree)+len(kernel)-1)*len(epsilon)*len(gamma)
 #
-# HEADER LINE 
-print("%s accuracy \tstandard deviation" % names[int(args.y_index)])
+# PRINT HEADER LINE 
+print("%s accuracy with standard deviation", names[int(args.y_index)])
 i=1
+#
+# PRINT SCORES
 for k in kernel:
     if k=="poly":
         for d in degree:
