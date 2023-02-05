@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Machine Learning and Statistics}
+
+\subsubsection{Introduction to AI, ML and statistics}
+\textbf{What is AI?} It is the interdisciplinary field of making a artificial inteligent agent. 
+What is intelligence though?
+Intelligence is not easily defined. Some definitions I agree with is that intelligence 
+includes learning from experience, finding solutions to new problems. 
+Creativity is also substencial for intelligence. 
+It is a goal in the field AI to immitate (and surpass) human intelligence. 
+The turing tests aims to test a computers intelligience by testing if it can trick a person into believing that the computer is person while a person tries to make the person believe that they are in fact a person. 
+Approaches range from knowledge based systems over hard coded intstructions to machine learning. 
+%
+\textbf{Machine Learning} is the art of telling a machine or computer how to gain knowlegde from data (aka experience). 
+There are different problems and solutions. 
+The problems include image recognition, voice recognition, natural language processing, data prediction, classification, recommendation systems and so on. 
+%
+In order to solve these problems machine learning resorts to statistical methods such as
+linear regression, ridge regression. 
+Further machine learning methods not regularly seen in statistics are the 
+kernel trick, support vector machines, genetic algorithms and particle swarm algorithms. 
+The last two are special in the sense that they don't provide a certain regression method,
+but rather a frame work to choose the next sample which should be tested in a optimisation. 
+%
+\textbf{Statistics} is a subfield of mathematics and emerged from the aim to summerzie large data sets 
+and extract information. In contrast to descriptive statistic, there is stochastic. 
+Stochastic statistic aims on predicting data points with probabilities. 
+%
+\textbf{Linear regression} is one of the simplest methods to predict data. 
+It besticht by its computational simplicity and easy interpretation. 
+%Let's take this equation
+\begin{equation}
+\mathbf{y} = \mathbf{X} \mathbf{k} +c 
+\end{equation}
+Where $\mathbf{y}$ (size $\mathbb{R}^n$) is a vector of dependent variables and $\mathbf{X}$ (size $\mathbb{R}^{nxd}$) is a matrix of independent variables. 
+The parameters $\mathbf{k}$ (size $\mathbb{R}^n$) and $c$ (size $\mathbb{R}$) are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
+A typical function to minimize are the L1 and L2 error, i.e. \gls{mae} and \gls{mse}, respectively.
+\begin{align}
+L_1&= \sum |y_i - \hat y_i| = \sum \sum |y_i - x_{i,j}\cdot k_i+c| \\
+L_2&= \sum(y_i - \hat y_i)^2 = \sum (y_i - x_{i,j}\cdot k_i+c)^2
+\end{align}
+%
+\textbf{Ridge Regression} is like linear regression but with an extra term which penalizes steep regression functions.
+This extra term is scaled by a correction parameter $\lambda$. 
+The larger $\lambda$ the larger regularisation and the flatter the regression functions. 
+If $\lambda$ were infinite, then the regression function would be a flat line. 
+The correction term avoids overfitting. 
+\begin{equation}
+    L_{RR} = L_2 + \lambda \sum k_i = \sum(y_i - \hat y_i)^2 + \lambda \sum k_i
+\end{equation}
+\textbf{Kernel Ridge Regression}
+\gls{krr} combines ridge regression with the kernel method. 
+A kernel transforms data in such a way that a linear hyperplane (a line in one dimension, 
+a plane in two dimensions) can fit data in regression problem or seperate the data in classification problem. 
+A kernel is some kind of similarity measure. 
+The following equations show definitions for 
+linear (eq.~\ref{eq:lin-kernel}), 
+polynomial (eq.~\ref{eq:pol-kernel}), 
+sigmoidal (eq.~\ref{eq:sig-kernel}) and 
+radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}).
+\begin{align}
+    \label{eq:lin-kernel}
+    k_{lin}(\mathbf{x},\mathbf{y}) &= \mathbf{x}^{\top} \mathbf{y} \\
+    \label{eq:pol-kernel}
+    k_{pol}(\mathbf{x}, \mathbf{y}) &= (\gamma \mathbf{x}^{\top} \mathbf{y} + c_0)^d \\
+    \label{eq:sig-kernel}
+    k_{sig}(\mathbf{x}, \mathbf{y}) &= \text{tanh}(\gamma \mathbf{x}^{\top} \mathbf{y} + c_0) \\
+    \label{eq:rbf-kernel}
+    k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
+\end{align}
+These kernels fulfill the requirements of nonnegativity, symmetry, linearity\cite{rupp2015machine}.
+% https://scikit-learn.org/stable/modules/metrics.html#polynomial-kernel
+%
+\textbf{Support vector machines} often use the kernel method to ...
+
+    
+\begin{itemize}
+    \item \sout{intro to stat and ml}
+    \item \sout{say that although different will be abgehandelt in the same chapter}
+    \item \sout{basic statistics: MAE vs MSE, R, std, F-test} 
+    \item \sout{lin reg}
+    \item \sout{ridge regression}
+    \item kernel ridge regression 
+    \item support vector machine 
+    \item anova (categorical), PCA, step wise regression
+    \item all previous ananlyse data to predict, but don't tell me which data point is needed next 
+    \item DOE (add data acquisition)
+    \item genetic algorithm and pso (they combine data gen with regression/prediction and optimisation, actually incorporate prediction into selection process but don't per se specify which pred and optimisation)
+    \item comment: always tradeoff between complexity and interpretability
+    \item quesiton: which paragraph by GPT2?? 
+\end{itemize}
+
