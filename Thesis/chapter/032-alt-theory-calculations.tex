@@ -23,6 +23,7 @@ Further machine learning methods not regularly seen in statistics are the
 kernel trick, support vector machines, genetic algorithms and particle swarm algorithms. 
 The last two are special in the sense that they don't provide a certain regression method,
 but rather a frame work to choose the next sample which should be tested in a optimisation. 
+\td{mention classification vs regression and supervised vs supervised}
 %
 \textbf{Statistics} is a subfield of mathematics and emerged from the aim to summerzie large data sets 
 and extract information. In contrast to descriptive statistic, there is stochastic. 
@@ -71,10 +72,24 @@ radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}).
     k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
 \end{align}
 These kernels fulfill the requirements of nonnegativity, symmetry, linearity\cite{rupp2015machine}.
+\td{Note that when $\lambda$ tends to zero, the regularized loss function becomes the OLS loss function.
+When $\lambda$ tends to infinity, we get an intercept-only model}
+\td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
+% from https://medium.com/@zxr.nju/the-classical-linear-regression-model-is-good-why-do-we-need-regularization-c89dba10c8eb
+%
 % https://scikit-learn.org/stable/modules/metrics.html#polynomial-kernel
 %
-\textbf{Support vector machines} often use the kernel method to ...
-
+\textbf{Support vector machines} 
+\Gls{svm} are versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
+\Gls{svm} is mainly used for classification, but can also be used for regression. 
+Classifiction works by spanning a hyperplane between two categories in a way that the closest points from each category have the largest distance to the hyperplane. 
+The distance from the points to the hyperplane is called margin.
+These points are called support vectors and are used to define the hyperplane 
+A \gls{svm} avoids overfitting by only using a subset - the support vectors - to fit the model. 
+In the same manner as no data points are found within the margin for classification, 
+no data points should be found outside of the margin. 
+If the data is not seperable by a hyperplane the kernel trick can be used. 
+The downside of \gls{svm} is that it is very
     
 \begin{itemize}
     \item \sout{intro to stat and ml}
@@ -82,8 +97,8 @@ These kernels fulfill the requirements of nonnegativity, symmetry, linearity\cit
     \item \sout{basic statistics: MAE vs MSE, R, std, F-test} 
     \item \sout{lin reg}
     \item \sout{ridge regression}
-    \item kernel ridge regression 
-    \item support vector machine 
+    \item \sout{kernel ridge regression}
+    \item \sout{support vector machine}
     \item anova (categorical), PCA, step wise regression
     \item all previous ananlyse data to predict, but don't tell me which data point is needed next 
     \item DOE (add data acquisition)
