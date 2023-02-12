@@ -45,7 +45,7 @@ directly affected by the output variable.\cite{gontcharov2019}
 %pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
 %}
 %What is statistics, though, and what seperates it from \gls{ml}? 
-More precisely, mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of of 
+More precisely, mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of 
 finding mathematical models to describe the data 
 whereas (classical) statistics is the domain of representing the data. 
 \td{talk about statistics, then the difference to Ml} 
@@ -129,15 +129,18 @@ are optimised during training.
 %
 Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} and are useful in quantum mechanics too\cite{westermayr2020combining}.
 Other common architectures include linear regression, kernel ridge regression and support vector regression.
+
+\input{chapter/033-linreg-krr-svm.tex}
+
 There are also lesser know algorithms like 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
-\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simulta- neously\cite{villanova2010function}.
+\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simultaneously\cite{villanova2010function}.
 %
 One advantage of evolutionary algorithms is that they start with a small data set
 and periodically request new data in order to solve the problem iteratively.
 %\td{This is exactly what I needed because every experiment is very time intensive.} 
 
-A genetic algorithm (GA) is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
+A \gls{ga} is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
 
 \iffalse
 \Gls{ga} uses a starting population of size $p$ ($p \in$ \td{N$^+$}) where each experiment (or data point) 
@@ -150,14 +153,14 @@ selection, mutation and crossover operations.
 %and a (mostly) random c
 \fi
 
-\Gls{pso} also uses a starting population of particles where each experiment (particle) 
+A \gls{pso} also uses a starting population of particles where each experiment (particle) 
 is represented by its independent and dependent variables. 
-It was originally inspired by the behaviour of bird flocks and fish schools\cite{Kennedy1995,villanova2010function}.
+It was originally inspired by the behaviour of bird flocks and fish schools\cite{villanova2010function,Kennedy1995}.
 %"PSO is a population based heuristic inspired by the flocking behavior of birds. 
 %To simulate the behavior of a swarm, each bird (or particle) is allowed to fly towards the optimum solution."\cite{villanova2010function}
 Each particle has an associated position and velocity. 
-Every movement across the search space is 
-additionally to a stochastic term
+Every movement across the search space is, 
+additionally to a stochastic term, 
 %stochastic and 
 influenced by its particle velocity and position as well as its and the swarm's best visited position.
 
@@ -211,8 +214,8 @@ The coefficients for each term are then chosen via regular \gls{mse} minimisatio
 %%Advantages of \gls{mars} are its easy interpretability and flexibility to model non-linearity and of course ability to cope with high dimensional data\cite{villanova2010function}. 
 %- the interpretability of $\hat{f}(x)$ is important to understand $f(x)$ spaces of increasing dimension."\cite{friedman1988fitting}
 
+\iffalse
 \subsubsection{Kernel Ridge Regression and Support Vector Machine}
-
 \textbf{goal}
 \begin{itemize}
     \item intro to stat and ml 
@@ -240,6 +243,7 @@ The coefficients for each term are then chosen via regular \gls{mse} minimisatio
     \item DOE
     \item ANOVA
 \end{itemize}
+\fi
 
 
 
@@ -351,5 +355,14 @@ from \url{https://statsandr.com/blog/anova-in-r/}
 % https://stats.stackexchange.com/questions/39243/how-does-one-interpret-svm-feature-weights
 % gene (feature) selection with SVM https://link.springer.com/content/pdf/10.1023/A:1012487302797.pdf
 % Intro to feature selection https://axon.cs.byu.edu/Dan/778/papers/Feature%20Selection/guyon2.pdf
+\subsubsection{Validation}
+Validation is an important part of data analysis as it allows to estimate model errors. 
+Often used methods are cross validation, leave-
+statistical methods to bewerten a model are: 
+cross validation, leave-one-out validation ( special case of cross validation), correlation coefficient for linear fits, mean square error, mean absolute erro
+% https://www.researchgate.net/profile/Daniel-Berrar/publication/324701535_Cross-Validation/links/5cb4209c92851c8d22ec4349/Cross-Validation.pdf
+% https://www.sciencedirect.com/science/article/abs/pii/0304380093901052
+% https://www.eng.auburn.edu/~aesmith/files/janchap.pdf
+% https://www.sciencedirect.com/science/article/pii/S0379073806003239
+\td{cite from Hawkins 2004\cite{hawkins2004overfitting}}
 
-\td{statistical methods to bewerten a model are: cross validation, leave-one-out validation ( special case of cross validation), correlation coefficient for linear fits, mean square error. methods to fit data are: lin reg, polynomial regression, ridge regression, KRR, SVM and?} 

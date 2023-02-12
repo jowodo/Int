@@ -1,0 +1,121 @@
+%
+\textbf{Linear regression} is one of the simplest methods to predict data. 
+It persuades by its computational simplicity and easy interpretation. 
+%Let's take this equation
+\begin{equation}
+\mathbf{y} = \mathbf{X} \mathbf{k} +c 
+\end{equation}
+Where $\mathbf{y}$ (size $\mathbb{R}^n$, where $n$ is the number of data points) is a vector of dependent variables and $\mathbf{X}$ (size $\mathbb{R}^{n\times d}$, where $d$ is the the number of independent variables) is a matrix of independent variables. 
+The parameters $\mathbf{k}$ (size $\mathbb{R}^d$) and $c$ (size $\mathbb{R}$) are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
+A typical function to minimize are the L1 and L2 error, i.e. \gls{mae} and \gls{mse}, respectively.
+\begin{align}
+L_1&= \sum |y_i - \hat y_i| = \sum \sum |y_i - x_{i,j}\cdot k_i+c| \\
+L_2&= \sum(y_i - \hat y_i)^2 = \sum (y_i - x_{i,j}\cdot k_i+c)^2
+\end{align}
+%
+
+\textbf{Ridge Regression} is like linear regression but with an extra term which penalizes steep regression functions.
+This extra term which reduces overfitting is scaled by a correction parameter $\lambda$. 
+The larger, $\lambda$ the larger regularisation and the flatter the regression functions. 
+When $\lambda$ tends to infinity, we get an intercept-only model.
+When $\lambda$ is zero, the regularized loss function becomes the OLS loss function.
+%\td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
+\begin{equation}
+    L_{RR} = L_2 + \lambda \sum k_i = \sum(y_i - \hat y_i)^2 + \lambda \sum k_i
+\end{equation}
+
+%\textbf{Kernel Ridge Regression}
+\textbf{\gls{krr}} combines ridge regression with the kernel method. 
+A~kernel transforms data in such a way that a linear hyperplane (a line in one dimension, 
+a plane in two dimensions) can fit data in regression problems or seperate the data in classification problems. 
+A kernel is some kind of similarity measure 
+which fulfills the requirements of nonnegativity, symmetry, linearity\cite{rupp2015machine}.
+The following equations show definitions for 
+linear (eq.~\ref{eq:lin-kernel}), 
+polynomial (eq.~\ref{eq:pol-kernel}), 
+sigmoidal (eq.~\ref{eq:sig-kernel}) and 
+radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}), with $\gamma$ as fixed hyperparameter and $c_0$ as parameter to optimize.
+\begin{align}
+    \label{eq:lin-kernel}
+    k_{lin}(\mathbf{x},\mathbf{y}) &= \mathbf{x}^{\top} \mathbf{y} \\
+    \label{eq:pol-kernel}
+    k_{pol}(\mathbf{x}, \mathbf{y}) &= (\gamma \mathbf{x}^{\top} \mathbf{y} + c_0)^d \\
+    \label{eq:sig-kernel}
+    k_{sig}(\mathbf{x}, \mathbf{y}) &= \text{tanh}(\gamma \mathbf{x}^{\top} \mathbf{y} + c_0) \\
+    \label{eq:rbf-kernel}
+    k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
+\end{align}
+
+%\textbf{Support vector machines} 
+\textbf{\Gls{svm}} are versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
+%
+The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-sperable data and eventually adapted to solve regression problems.
+The concepts of \gls{svm} will be discussed in the same chronological order. 
+%
+Classifiction works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
+The distance from the points to the hyperplane is called margin $\tau$.
+These points are called support vectors and are used to define the hyperplane.
+A \gls{svm} avoids overfitting by only using a subset of the data - the support vectors - to fit the model. 
+The goal is to find the decision boundary which correctly classifies all samples with the biggest margin. 
+%
+The decision boundary can be expressed as an hyperplane
+\begin{equation}
+	\hat{\mathbf{y}} = h(\mathbf{x}) = \mathbf{w} \cdot \mathbf{x} + b
+\end{equation}
+with $
+\mathbf{y} \in \lbrace +1, -1 \rbrace^n ,\,
+\hat{\mathbf{y}} \in \mathbb{R}^n ,\,
+\mathbf{w} \in \mathbb{R}^d ,\,
+\mathbf{x} \in \mathbb{R}^{n \times d} 
+$.
+The constraint of the positive and negative support vectors ($x^+$ and $x^-$, respectively) satisfying
+\begin{align}
+	\mathbf{w} \cdot x^+ + b &= 1 \\
+	\mathbf{w} \cdot x^- + b &= -1 
+\end{align}
+can be generalized to 
+\begin{equation}
+	\label{eq:svm01}
+	y_i(\mathbf{w} \cdot \mathbf{x}_i + b ) \geqslant 1 %\qquad i=1,\dots,n
+\end{equation}
+where $y_i$ being the labels of the training data. 
+The width of the margin can be inferred by projecting the vector spanning between two support vectors 
+on opposite sides of the decision boundary onto the unit vector perpendicular to the hyperplane. 
+If we now take a vector from a positive support vector $x^+$ to a negative support vector $x^-$ and project it on to the unit vector of $w$ (which is perpendicular to the hyperplane), 
+we get the width of the margin. 
+\iffalse
+\begin{equation}
+	\label{eq:svm02}
+	\begin{aligned} 
+		2\tau &= (x^+ - x^-) \cdot \frac{\mathbf{w}}{\|\mathbf{w}\|} \\
+			&= (x^+ \cdot \mathbf{w} - x^-\cdot \mathbf{w} ) \cdot \frac{1}{\|\mathbf{w}\|} \\
+			&= ( (1-b) - (-1-b) ) \cdot \frac{1}{\|\mathbf{w}\|} \\
+			&= \frac{2}{\|w\|}
+	\end{aligned}
+\end{equation}
+\fi
+\begin{equation}
+	\label{eq:svm02}
+	\begin{aligned} 
+		2\tau &= (x^+ - x^-) \cdot \frac{\mathbf{w}}{\|\mathbf{w}\|} 
+			= (x^+ \cdot \mathbf{w} - x^-\cdot \mathbf{w} ) \cdot \frac{1}{\|\mathbf{w}\|} \\
+			&= ( (1-b) - (-1-b) ) \cdot \frac{1}{\|\mathbf{w}\|} 
+			= \frac{2}{\|\mathbf{w}\|}
+	\end{aligned}
+\end{equation}
+%\td{draw sketch and make \ref{eq:svm02} on two lines}
+Thus maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$.
+By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we arrive at the loss function: 
+\begin{equation}
+	\label{eq:svm03}
+	\mathcal{L} = \frac{1}{2} \|\mathbf{w}\| - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
+\end{equation}
+which can be rewritten by some mathematical wizardry (setting the partial derivatives of the Lagrangian function
+$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathcal{L}}{\partial b}$ 
+to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning}: 
+\begin{equation}
+	\mathcal{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
+\end{equation}
+%
+\td{write about kernel trick and non strick} 
+

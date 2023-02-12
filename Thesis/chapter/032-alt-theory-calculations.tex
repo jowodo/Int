@@ -151,16 +151,17 @@ we get the width of the margin.
 	\end{aligned}
 \end{equation}
 %\td{draw sketch and make \ref{eq:svm02} on two lines}
-Thus maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$. 
+Thus maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$.
 By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we arrive at the loss function: 
 \begin{equation}
 	\label{eq:svm03}
 	\mathcal{L} = \frac{1}{2} \|\mathbf{w}\| - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
 \end{equation}
-which can be rewritten by some mathematical wizardry (setting the partial derivatives of the lagrangian 
-$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathcal{L}}{\partial b}$ to zero and inserting into eq. (\ref{eq:svm03})): 
+which can be rewritten by some mathematical wizardry (setting the partial derivatives of the Lagrangian function
+$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathcal{L}}{\partial b}$ 
+to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning}: 
 \begin{equation}
-	\mathcal{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_i^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
+	\mathcal{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
 \end{equation}
 \td{write about kernel trick and non strick} 
 

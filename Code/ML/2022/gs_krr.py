@@ -9,7 +9,7 @@ import dfply
 import argparse
 #
 #################
-# KERNEL FOR SVM
+# KERNEL FOR KRR
 kernel=["poly","rbf","sigmoid"] #HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
 degree=range(1,4) #HPGS
