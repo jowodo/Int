@@ -25,6 +25,7 @@ When $\lambda$ is zero, the regularized loss function becomes the OLS loss funct
 \end{equation}
 
 %\textbf{Kernel Ridge Regression}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% { Kernel Ridge Regression } KRR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\gls{krr}} combines ridge regression with the kernel method. 
 A~kernel transforms data in such a way that a linear hyperplane (a line in one dimension, 
 a plane in two dimensions) can fit data in regression problems or seperate the data in classification problems. 
@@ -45,8 +46,11 @@ radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}), with $\gamma$ as fixe
     \label{eq:rbf-kernel}
     k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
 \end{align}
+A requirement for using kernels is having a dot product in the loss function. 
+This can be accomplished by expressing $\mathbf{k}$ with $\mathbf{X}$: $\mathbf{k}=\mathbf{X}^\top \mathbf{r}$
+\cite{rudin2020least}
 
-%\textbf{Support vector machines} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%% { Support vector machines } SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\Gls{svm}} are versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
 %
 The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-sperable data and eventually adapted to solve regression problems.
@@ -117,5 +121,15 @@ to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cher
 	\mathcal{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
 \end{equation}
 %
+\Gls{svm}s can handle non-perfect data by introducing a penalization for wrongly categorized samples. 
+\begin{equation}
+    L_H = sum_i^n max(0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) 
+\end{equation}
+if the prediction and the true category don't agree, they have opposite signs and 
+their product will be a negative number.
+This is called a soft-margin \gls{svm} in contrast to the previously hard-margin \gls{svm}.
+
+A big advantage of \gls{svm} is that through the kernel trick non-linearly separable data 
+can be divided. 
 \td{write about kernel trick and non strick} 
 
