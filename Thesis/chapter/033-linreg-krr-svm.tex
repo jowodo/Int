@@ -27,8 +27,8 @@ When $\lambda$ is zero, the regularized loss function becomes the OLS loss funct
 %\textbf{Kernel Ridge Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Kernel Ridge Regression } KRR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\gls{krr}} combines ridge regression with the kernel method. 
-A~kernel transforms data in such a way that a linear hyperplane (a line in one dimension, 
-a plane in two dimensions) can fit data in regression problems or seperate the data in classification problems. 
+A~kernel transforms data in such a way that a linear hyperplane (a line in two dimensions, 
+a plane in three dimensions) can fit data in regression problems or seperate the data in classification problems without actually doing the transormation for every data point. 
 A kernel is some kind of similarity measure 
 which fulfills the requirements of nonnegativity, symmetry, linearity\cite{rupp2015machine}.
 The following equations show definitions for 
@@ -48,10 +48,10 @@ radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}), with $\gamma$ as fixe
 \end{align}
 A requirement for using kernels is having a dot product in the loss function. 
 This can be accomplished by expressing $\mathbf{k}$ with $\mathbf{X}$: $\mathbf{k}=\mathbf{X}^\top \mathbf{r}$
-\cite{rudin2020least}
+\cite{rudin2020least}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Support vector machines } SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textbf{\Gls{svm}} are versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
+\textbf{\Gls{svm}} are versatile machine learning algorithm first mentioned in 1992\cite{boser1992training} . 
 %
 The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-sperable data and eventually adapted to solve regression problems.
 The concepts of \gls{svm} will be discussed in the same chronological order. 
@@ -109,27 +109,39 @@ we get the width of the margin.
 \end{equation}
 %\td{draw sketch and make \ref{eq:svm02} on two lines}
 Thus maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$.
-By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we arrive at the loss function: 
+By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we arrive at the loss function which should be maximized: 
 \begin{equation}
 	\label{eq:svm03}
-	\mathcal{L} = \frac{1}{2} \|\mathbf{w}\| - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
+	\mathfrak{L} = \frac{1}{2} \|\mathbf{w}\|^2 - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
 \end{equation}
 which can be rewritten by some mathematical wizardry (setting the partial derivatives of the Lagrangian function
-$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathcal{L}}{\partial b}$ 
+$\frac{\partial \mathfrak{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathfrak{L}}{\partial b}$ 
 to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning}: 
 \begin{equation}
-	\mathcal{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
+	\label{eq:svm04}
+	\mathfrak{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
 \end{equation}
 %
-\Gls{svm}s can handle non-perfect data by introducing a penalization for wrongly categorized samples. 
+%%%%%%%%%% SOFT MARGIN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Soft margin \gls{svm}} - in contrast to hard margin \gls{svm} is used if the data is non-seperable due to outliers\cite{cortes1995support}.
+Such data can be handeled by introducting a penalization term for wrongly categorized samples into the loss function. 
 \begin{equation}
-    L_H = sum_i^n max(0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) 
+	\label{eq:svm-soft}
+	L_{SM} = \frac{2} {\|\mathbf{w}\|} + \sum_i^n max(0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) 
 \end{equation}
-if the prediction and the true category don't agree, they have opposite signs and 
-their product will be a negative number.
-This is called a soft-margin \gls{svm} in contrast to the previously hard-margin \gls{svm}.
+If the prediction $\mathbf{w}\mathbf{x}_i+b$ and the true category $y_i$ don't agree, 
+they have opposite signs and their product will be a negative number.
+The substraction of a negative number will result in a positive penalizisation. 
+If the sample iis correctly predicted, the product will result in a positive number, 
+the substraction in a negative number and the maximum will be 0, if the sample is ousite of the margin. 
 
-A big advantage of \gls{svm} is that through the kernel trick non-linearly separable data 
-can be divided. 
-\td{write about kernel trick and non strick} 
+%%%%%%%%%%% KERNELS IN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%A big advantage of \gls{svm} is that through the kernel trick non-linearly separable data can be divided. 
+%As mentioned before, a inner product is need to use the kernel trick. 
+The function we want to optimize (see eq. \ref{eq:svm04}) and its soft margin equivalent can both be expressed as inner products. 
+This allows us to seperate data not only with hyperplanes 
+but also with komplex decision boundaries due to the kernel trick. 
+Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the innerproduct of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
+\td{write about sv regrgession}
+%\td{write about kernel} 
 
