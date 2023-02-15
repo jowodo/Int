@@ -142,6 +142,11 @@ The function we want to optimize (see eq. \ref{eq:svm04}) and its soft margin eq
 This allows us to seperate data not only with hyperplanes 
 but also with komplex decision boundaries due to the kernel trick. 
 Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the innerproduct of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
-\td{write about sv regrgession}
+%\td{write about sv regrgession}
+
+\Gls{svm}s can also be used for regression.
+The decision function becomes the regression function and the margin includes all data points instead of none. 
+In a soft margin \gls{svm} a few data point can lie outside the margin as outliers. 
+Non-linearity can be likewise introduced via the kernel trick. 
 %\td{write about kernel} 
 
