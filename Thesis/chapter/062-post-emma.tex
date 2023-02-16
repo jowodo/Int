@@ -1,18 +1,20 @@
+\subsection{Post-EMMA}
 \label{sec:res-post-emma}
 %describe what awaits the reader in this chapter:
 In this section the experimental results are analyzed with different methods and compared with the original method EMMA which was integrated into the experiment selection process. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{ANOVA}\label{sec:res-anova}
 %\textbf{EMMA}
-The \gls{rf} produced by the last iteration of \gls{emma} put a high \td{significance/effect/correlation} 
-on the calcination temperature $T_{cal}$ with regard to the \td{measurables} of the conductance. 
+The \gls{rf} produced by the last iteration of \gls{emma} (see equations \ref{eq:emma-phd4} and \ref{eq:emma-G4}) put a high significance
+%/effect/correlation
+on the calcination temperature $T_{cal}$ with regard to the 
+measures of the conductance. 
 \Gls{anova} is used to double check this. 
 %Now \gls{anova} can be used to check if the data 
-
-\td{ANOVA was used to check if \gls{bf} identified by \gls{emma} are reasonable.} 
+%\td{ANOVA was used to check if \gls{bf} identified by \gls{emma} are reasonable.} 
 
 \textbf{What can/did we test?}
-With \gls{anova} we can check if the probability of arriving at these results was by pure chance or not. 
+the probability of arriving at these results was by pure chance can be checked with \gls{anova}. 
 The null hypothesis is that the results were obtained by pure chance without any dependence of the insulation of a sample on the process variables.
 %We tested for each input variable the influence on rho and gamma 
 A one-way \gls{anova} was performed for every independent variable on $\rho$ and $\gamma$. 
@@ -20,36 +22,39 @@ A one-way \gls{anova} was performed for every independent variable on $\rho$ and
 We used an $\alpha$ value of 0.05 which means that 
 the null hypothesis is rejected if the p-value is under 0.05. 
 Usually, the $\alpha$-value is chosen to be 0.01 or 0.05\cite{hoffman2020concept,sellke2001pvalues}.
-The choice of a relatively high alpha-value is motivated by the rather small amount of data and low \td{EPV}.
+The choice of a relatively high $alpha$-value is motivated by the rather small amount of data and low events per varible ratio.
+\ds{
 As mentioned by Sellke et al.\cite{sellke2001pvalues} a p-value of 0.05 might tempt 
 to guess that in 1 out of 20 cases the results could be false positives, 
 whereas the frequency is much higher. 
+A p-value of 0.01 and 0.05  mean that under the assumption that the null hypothesis is correct, 
+there is a 1\% and 5\% chance of arriving at such data as observed.
+%The results should thus be taken with a grain of salt. 
+}
 %1 out of 20 times this result could be 
 %produced by pure chance given that the null hypothesis is true. 
 %If the p-value is below that value, then we choose to accept, that the data is not due to
 %chance but due to the influence of the independent variables on the dependent variables. 
-\td{could test anova on different generations data sets} 
+%\td{could test anova on different generations data sets} 
 
 \textbf{What were the results?}
 %\Gls{anova} shows that for the mentioned indep and dep pairs, the means divided by 
 %indep groups are not equal and that there is at least one group that is different. 
-For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the extended dataset) 
-the F values for $T_{cal}$ were in all cases under 0.01, 
+For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the extended dataset (=\gls{emma}+pre\gls{emma})) 
+the F-values for $T_{cal}$ were in all cases under 0.01, 
 indicating a real influence of $T_{cal}$ on the conductance.
-Both datasets exhibit a p-value $< 0.05$ for the interaction $T_{cal}$:$v_{cal}$ on $\rho$.
-\td{And the extended data set has p-value smaller than 0.01 of vcal on phd. 
-Whereas vcal on phd for \gls{emma} dataset has p-value of slightly over 0.05.}
-\td{why tcal:vcal on phd the same for both datasets? zufall}
+Furthermore, both datasets exhibit a p-value $< 0.05$ for the interaction $T_{cal}$:$v_{cal}$ on $\rho$
+and the extended data set has p-value smaller than 0.01 of $v_{cal}$ on $\rho$. 
+Whereas $v_{cal}$ on $\rho$ for \gls{emma} dataset has p-value of slightly over 0.05
+%\td{why tcal:vcal on phd the same for both datasets? zufall}
 
 \textbf{What do the results mean?} 
-Anova bestaetigt that TCal has influence on both G and phd. 
-\td{how to interpret p-values of 0.01 and 0.05? 
-They mean that under the assumption that the null hypothesis is correct, 
-there is a 1\% and 5\% chance of arriving at such data as observed.}
+\Gls{anova} confirms that $T_{cal}$ has influence on both $\gamma$ and $\rho$. 
 It seems that the probability of getting such data per chance that Tcal has no influence 
-(null hypothesis is true) is less then 5\% (even less than 1\%). \td{NO bcs \cite{sellke2001pvalues}}
-Important to mention, that anova uses categorical data for inputs, 
-where our data is numerical and thus information is lost
+(null hypothesis is true) is less then 5\% (even less than 1\%). 
+%\td{NO bcs \cite{sellke2001pvalues}}
+It is important to mention, that \gls{anova} assumes categorical data for inputs, 
+where our data is numerical and thus information is lost. 
 
 %\textbf{Pre-writing:}
 %\Gls{anova} doesn't provide a lot of extra information. 
@@ -59,20 +64,18 @@ where our data is numerical and thus information is lost
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{Linear Regression}
-I thought that the influnce of $conc$ and $\lambda$ are the biggest, but they are just the smalles absolute values. 
-Thus, eventhough $T_{cal}$ might have a smaller coefficient for lin reg, the influence on the dependent variable might be larger. 
-The biggest influece on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{doc}$. 
-Both $T_{cal}$ and $T_{doc}$ have positive coefficients, i.e. a negative influence on the resistance. 
-Then both $\lambda$ and $v_{doc}$ both have about a fift ob the largest influence and a negative influence. 
+I thought that the influence of $c_{zr}$ and $\lambda$ are the biggest, but they are the smallest absolute values. 
+Thus, even though $T_{cal}$ might have a smaller coefficient for linear reg, the influence on the dependent variable might be larger. 
+The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{DB}$. 
+Both $T_{cal}$ and $T_{DB}$ have positive coefficients, i.e. a negative influence on the resistance. 
+Then both $\lambda$ and $v_{DB}$ both have about a fifth ob the largest influence and a negative influence. 
 An indication that the data is strongly tainted by error (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41, 
-which is (sad but true) even unterboten by the $R^2$ of lin fit of $G$, 0.34. 
+which is (sad but true) even undercut by the $R^2$ of linear fit of $G$, 0.34. 
 The coefficients, though share the signs. 
 This is only true if the extended data set is used and therefore again rather by chance. 
-It is even more \td{erstaunlich} that EMMA managed to decrease the average of $pG$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}. 
-Or was is only luck? 
+It is even more astounding that \gls{emma} managed to decrease the average of $\gamma$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}. 
 
 $v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a perfect direct proportionality. 
-Was zu erwarten war. 
 
 
 \begin{align}

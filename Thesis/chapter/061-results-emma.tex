@@ -13,8 +13,6 @@ predictions were already made
 with the information from the previous generations. 
 %%% BEST PREDICTED RECIPE
 The best sample predicted by the algorithm is experiment number 13 with 
-%lowest solution concentration, second highest layer count, lowest \gls{db} velocity and temperature, 
-%and lowest calcination heating rate and temperature. 
 lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\lambda$. 
 %lowest solution concentration, second highest layer count, lowest \gls{db} velocity and temperature, 
 %and lowest calcination heating rate and temperature. 
@@ -39,7 +37,7 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 %%% OVER TIME 
 The only clear trend from table \ref{tab:emma-Gb} is the layer count, which rises with the generations. 
 The remaining input variables remained more or less the same except for the 3rd generation. 
-\td{why?}
+%\td{why?}
 %
 In table \ref{tab:emma-pred-G} it can be seen that the predicted $\hat{\gamma}$ 
 (predicted with 5th generation \gls{rf}; see last column) lowered with each iteration, 
@@ -70,17 +68,20 @@ Contrarily, the predicted $\hat{\gamma}$ for each generation's best
 This indicates an underestimation of $\hat\gamma$ at the beginning and a correction with time. 
 %The reason for is probably a 
 The underestimation probably stems from a lucky selection of initial experiments or a skew in the measurements. 
-Indeed, the samples with the lowest \textit{optimisands} are amoung the first generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
+Indeed, the samples with the lowest \textit{optimisands} are among the first generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
 
-In figure \ref{fig:emma-gen} we can see the two measured main \textit{optimisands}, 
-$\gamma$ and $\rho$, of each particle at generations 1 to 4. 
-%for each particle included in the optimization. 
-%It shows a clear trend which indicates that the optimization worked even though 
+In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimisands}, 
+$\gamma$ and $\rho$, of each particle at each generation.
+They points at generation indicate particles which were not included to be propagated. 
+Each violet line indicates a particle, the blue line depicts the average of all particles and the yellow line depicts the average of all particles which were propagated. 
+%
 Both variables were to be minimized and show a clear trend towards low values with increasing generation, 
 indicating that the optimization worked even though 
 the prediction functions (see equations (\ref{eq:emma-phd3}) - (\ref{eq:emma-vcal4})) 
 and the chosen samples where not exactly as expected. 
-Neither were the measurements for these samples, which might be due to the high measuring error of samples and variation of quality due to uncontrolled independent variables like room temperature or humidity. 
+Neither expected were the measurements for these samples, which might be due to the high measuring error of samples and variation of quality due to uncontrolled independent variables like room temperature or humidity. 
+%
+Figures \ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of calcination temperature $T_{cal}$ and $\gamma$ and $\rho$ can be seen clearly. 
 
 \begin{figure}[hb]
     \centering
@@ -109,7 +110,7 @@ Neither were the measurements for these samples, which might be due to the high 
 		(b)~calculated pin hole density~$\rho$ of each particle against the generation number %blue shows average for each generation and yellow shows average of each generation without discarded particles from initial generation. 
 		(c)~calculated conductance measures~$\gamma$ against calcination temperature $T_{cal}$
 		(d)~calculated pin hole density~$\rho$ against calcination temperature $T_{cal}$
-		\td{describe more in-depth in text}
+		%\td{describe more in-depth in text}
 	}
 
     \label{fig:emma-gen}
@@ -275,12 +276,16 @@ These \gls{bf}s then "take away places" of \gls{bf}s predicting other dependent 
 This in turn can lead to wrong predictions and therefore inefficient choice of future samples. 
 
 The two independent variables $v{cal}$ and $\lambda$ were included as \textit{optimisands} for two reasons: 
-Maximizing the calcination velocity and minimizing the number of \td{layers/layer application iterations} leads to minimization of process time.
+Maximizing the calcination velocity and minimizing the number of layer application iterations leads to minimization of process time.
 This optimization would be better placed in a follow up study. 
 The second reason for including independent variables was to check if the model works. 
-This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimisands} and thus additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables. The second flaw is that there are obsiously better methods to assess the quality of a model that to make it more complex. Good alternatives would have been leave-one-out or cross validation.
+This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimisands} and thus additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables. The second flaw is that there are obsiously better methods to assess the quality of a model than to make it more complex. 
+%Good alternatives would have been leave-one-out or cross validation.
+Validation methods for sparse data include resampling vie k-fold cross validation\cite{kartam1997artificial}.
 
 
+
+\iffalse
 \td{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %\subsubsection{how did evolve over time?}
@@ -313,7 +318,7 @@ Overall there were too many variables involved for such a small dataset
 Inspect \cite{friedman1988fitting,friedman1991multivariate} for further \gls{mars} discussion. 
 %"The curse-of-dimensionality is fundamental and cannot be directly overcome."- Friedman 1988\cite{friedman1988fitting}.
 %}
-
+\fi
 
 
 
