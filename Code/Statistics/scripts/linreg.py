@@ -17,6 +17,8 @@ parser.add_argument('--pa',dest ='pred_all',action ='store_true', help ='predict
 parser.add_argument('--pe',dest ='pred_emma',action ='store_true', help ='predict Y values with EMMA dataset')
 parser.add_argument('--pi',dest ='pred_intra',action ='store_true', help ='predict Y values with pre-EMMA-intra dataset')
 parser.add_argument('--pp',dest ='pred_pre',action ='store_true', help ='predict Y values with pre-EMMA dataset')
+parser.add_argument('--fe',dest ='fit_emma',action='store_true', help='fit with EMMA dataset [default]')
+parser.add_argument('--fa',dest ='fit_all',action='store_true', help='fit with complete dataset')
 parser.add_argument('-r', '--regresssion',dest ='print_reg',action ='store_true', help ='print regression functions')
 parser.add_argument('-y', '--yindex', dest ='y_index',action ='store', choices={'0','2','3','7','10'}, default='0', help ='y to fit: 0=all; 2=G; 3=phd; 7=layers; 10=vCal [default=0]')
 args = parser.parse_args()
@@ -79,7 +81,12 @@ X_intra=get_x(data_intra)
 Y_intra=get_y(data_intra,args.y_index)
 #
 # DO LINEAR REGRESSION
-reg = LinearRegression().fit(X_emma,Y_emma)
+if args.fit_all : 
+    reg = LinearRegression().fit(X_all,Y_all)
+    train_dataset="complete dataset"
+else:
+    reg = LinearRegression().fit(X_emma,Y_emma)
+    train_dataset="EMMA dataset"
 Y_emma_pred = reg.predict(X_emma)
 Y_pre_pred = reg.predict(X_pre)
 Y_intra_pred = reg.predict(X_intra)
@@ -90,7 +97,8 @@ if args.y_index == "0":
     y_name = "all"
 else: 
     y_name = names[int(args.y_index)]
-print("Lin regression for", y_name)
+#print("Lin regression for", y_name)
+print("Lin regression trained with", train_dataset)
 print("Reg score", reg.score(X_emma,Y_emma))
 if args.print_mse: 
     print("MAE(emma): ",MAE(Y_emma_pred,Y_emma))

@@ -5,7 +5,7 @@ In this section the experimental results are analyzed with different methods and
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{ANOVA}\label{sec:res-anova}
 %\textbf{EMMA}
-The \gls{rf} produced by the last iteration of \gls{emma} (see equations \ref{eq:emma-phd4} and \ref{eq:emma-G4}) put a high significance
+The \gls{rf}s produced by the last iteration of \gls{emma} (see equations \ref{eq:emma-phd4} and \ref{eq:emma-G4}) put a high significance
 %/effect/correlation
 on the calcination temperature $T_{cal}$ with regard to the 
 measures of the conductance. 
@@ -62,22 +62,14 @@ where our data is numerical and thus information is lost.
 %but for phd even lower than 0.1 \%
 %Anova shows that the influence of TCal is significant as shown by the F 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{Linear Regression}
-I thought that the influence of $c_{zr}$ and $\lambda$ are the biggest, but they are the smallest absolute values. 
-Thus, even though $T_{cal}$ might have a smaller coefficient for linear reg, the influence on the dependent variable might be larger. 
-The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{DB}$. 
-Both $T_{cal}$ and $T_{DB}$ have positive coefficients, i.e. a negative influence on the resistance. 
-Then both $\lambda$ and $v_{DB}$ both have about a fifth ob the largest influence and a negative influence. 
-An indication that the data is strongly tainted by error (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41, 
-which is (sad but true) even undercut by the $R^2$ of linear fit of $G$, 0.34. 
-The coefficients, though share the signs. 
-This is only true if the extended data set is used and therefore again rather by chance. 
-It is even more astounding that \gls{emma} managed to decrease the average of $\gamma$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}. 
-
-$v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a perfect direct proportionality. 
-
-
+%%%%%%%%%%%%%%%%%%%% LIN REG %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{Linear Regression} 
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influennced by the Zirconium concentrain in the starting solution $c_{zr}$ and the number of layers applied $\lambda$, but their coefficients are the smallest in absolute values. 
+The coefficients of
+the Zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$ are largest in value, but the values which are taken by $c_{zr}$ and $\lambda$ are the smallest among the input variables. 
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influennced by
+%but their coefficients are the smallest in absolute values. 
+%
 \begin{align}
 	\begin{split}
 		\label{eq:linreg-phd}
@@ -91,8 +83,44 @@ $v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a pe
 			& - 0.014\cdot v_{cal} + 0.13\cdot T_{cal} + 7.2
 	\end{split}
 \end{align}
+%
+All terms have the same signs in equations \ref{eq:linreg-phd} and \ref{eq:linreg-G} have the same sign except the intercept and $c_{zr}$. 
+$T_{cal}$ and $T_{DB}$ have positive coefficients, i.e. a negative influence on the resistance 
+and $\lambda$,$v_{DB}$ and $v_{cal}$ have negative coefficients, i.e. a positive influence on resistance. 
+An indication that the data is strongly tainted by error (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41 of $\hat\rho$, 
+which is (sad but true) even undercut by the $R^2$ of linear fit of $\hat\gamma$, 0.34. 
+%The coefficients, though share the signs. 
+%This is only true if the extended data set is used and therefore again rather by chance. 
+When the linear regression is trained on the complete data set, all terms have the same sign. 
+%It is even more astounding that \gls{emma} managed to decrease the average of $\gamma$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}. 
+%
+\begin{table}[htb]
+	\center
+	\begin{tabular}{cccccccc}
+		        & $c_{zr}$      & $\lambda$     & $v_{DB}$      & $T_{DB}$      & $v_{cal}$     & $T_{cal}$\\
+				\hline\hline
+				$\rho$          &2.04   &46.58  &1.15   &9.21   &13.50  &27.52\\
+				$\gamma$        &10.24  &7.10   &16.46  &10.97  &7.68   &47.55\\
+				\hline\hline
+	\end{tabular}
+	\label{tab:lin-reg-influence}
+	\caption{Influences of input variables on output variables in percent according to linear regression.}
+\end{table}
+%
+Thus, even though $T_{cal}$ might have a smaller coefficient in the linear \gls{rf}, the influence on the dependent variable might be larger. 
+The influence was calculated by the formula: $I_i=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i$ is average value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
+%The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{DB}$. 
+The biggest influence on $\hat\rho$ and $\hat\gamma$ are $\lambda$ and $T_{cal}$. 
+While $T_{cal}$ is the second largest influence on $\hat\rho$ as well it is noteworthy that $\lambda$ contributes the least to $\hat\gamma$. 
+Furthermore the influence on $\hat\rho$ is dominated by $\lambda$ and $T_{cal}$, while the influences on $\hat\gamma$ are distributed more evenly.
+Different distributions were not expected. 
+This can have two reasons: 
+either the *optimizands* darstellen differen properties and/or signal to noise ratio is too low.
+%
 
-Do multi linear reg like in Peprah et al. 2017\cite{peprah2017appraisal}.
+$v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a perfect direct proportionality. 
+%Do multi linear reg like in Peprah et al. 2017\cite{peprah2017appraisal}.
+%
 
 %MSE(data=all) =427
 %MSE(data=emma)=250
