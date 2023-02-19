@@ -42,9 +42,9 @@ for i in n:
     
 print("\\\\")
 print("\\hline\\hline")
-print("$\\rho$\t",end="")
+print("$\\hat\\rho$\t",end="")
 get_influence(p)
-print("$\\gamma$",end="")
+print("$\\hat\\gamma$",end="")
 get_influence(g)
 print("\\hline\\hline")
 
