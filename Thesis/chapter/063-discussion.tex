@@ -7,123 +7,26 @@
 %to discuss: results from EMMA or rather which the data present are counter intuitive. 
 %why lowest conductivity with lowest TCal and why is there a minimum for layers? 
 %low TDOC results in lower conductivity... okay 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{ad results}
 why correlation $\gamma$?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{tips for next time}
 \begin{itemize}
     \item \textbf{planning} gives chance of zooming out, force oneself to get an overview and to decide how much time on each task
-    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as deverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. 
+    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as deverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
     \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
-    \item \textbf{keep it simple}
-
+    \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
+%\td{In example of documentation 2 input variables and 1-2 responses initial population=10
+%, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
+%iterations (as in actual experiments) lead to suboptimal results.}
+    \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
+    \item factorial design (classical \gls{doe} is more robust at feature extraction for error laden data \cite{giunta2003overview}
+%
 \end{itemize}
-
-\td{"An important concept in inferential statistics is that the amount of information you can learn about a population is limited by the sample size. The more you want to learn, the larger your sample size must be." - by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} } 
-\td{"overfitting a regression model occurs when you attempt to estimate too many parameters from a sample that is too small." - same source}
-\td{"However, if the effect size is small or there is high multicollinearity, you may need more observations per term." -same source} 
-
-The mistake which I regret the most is that I overestimated the vereinfachenden factor of reducing the splits (or discrete points between two extrems, which a variable can take) instead of the reduction of dimensions which eleminates a whole degree of freedom. 
-I expected my algorithm of choice to perform magic. 
-A measurement to compare different algorithms could be, dimension and ratio of measured sampled to sample space. 
-Im vergleich to other algo I used a lot of dimensions and a low ratio.
-A low ratio gives rise to a high probability of the data being statistically insignificant, especially if the error is realtively large. 
-
-All the best and stay persistent, \\  
-Johann \\
-\fi
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Mistakes} 
-\td{the input vars were not regularized/normalized, naively like a small child eating old food and regretting not informing oneself earlier}\\
-\td{too much data as input, dimensionality reduction (PCA) and optimization}\\
-\td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
-\td{adding a extra variable to optimize was to optimistic and ich hab mir damit eindeutig 
-(im nachhinein) steine in den Weg gelegt.}
-The space seems to be too big for the small sample size.
-%-
-Look at relation of space size and sample size here and in Hu2016.:
-\td{In example of documentation 2 input variables and 1-2 responses initial population=10
-, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
-iterations (as in actual experiments) lead to suboptimal results.}
-%
-- The exploration-vs-exploitation parameters of the model were also not set accordingly.
-see \href{https://search.r-project.org/CRAN/refmans/emma/html/emma.html}{source}
-%
-- the data has a lot of error, but because the production process takes so long and the 
-limited time and the chosen optimisation method, the experiments weren't weiderholt
-how much variance is in data? 
-%
-data-points-to-indep-vars ratio as measurement
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Next time better}
-{The primary goal of a screening experiment is to identify the active factors.
-A secondary goal is to provide a simple model that captures the essential features of the 
-relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}}
-%
-\td{if i would plan the optimisation again, I would take less input variables (fokus on 
-conc,vdoc and tdoc or even only vdoc and tdoc) which may or may not have multiple maxima.}
-%
-- The most time consuming part was definitively the prelaminary studies.
-this time could have been verkürzt by testing a wide array of diverse recipes from the literature
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Next steps}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{diskussion and outlook}
-
-
-- The data is spread across the datenraum, such that it is not trivial to 
-(1) find the variable with the most variance and 
-(2) to fit in order to understand to impact of noise on the data. 
-
-- Dimension reduction bietet sich stark an bei solcher Datenlage. 
-
-Welche methode funktioniert bei relativ vielen variablen, wenig datenpunkten und Noise. 
-
-Am besten waere feature extraction (variable x1 hat am meisten einfluss) 
-ginge auch wenn man bei pca den einfluss von verschiedenen 
-I stand in front of this problem where the solution is to not use as many indep vars von vorne herein. 
-
--\td{for 1F c(Zr) = 44.6 mmol/L
-if n is number of samples, and p is number of input variables, then n >> p 
-In this case n\~50 and p\~6 which give n/p=8+1/3
-in EMMA documentation example n=55and p=1-2, n/p=55-22.5
-}
-\td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, 
-could have been verhindert durch lesen the docu and more papers more thoughoughly. 
-Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
-
-%\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
-
-- \td{I wanted to exhaust the possibilities of EA (not having enough data). i should have rather einengen the search raum as much as possible (spreading the search room too much) and then do optimisation: fix layer count to 3 fix conc to 3F and fix calc temp and rate (or only use two extreme values)}
-- \td{I wanted to let the algorithm show what I already knew instead of letting my a priori knowledge constrain the model before starting.}
-- factorial design (classical \gls{doe} is more robust at feature extraction for error laden data \cite{giunta2003overview}
--\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2007}
-but on the other hand: If one ain't sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
-- let's rule out different input variables: \\
-does the heating temperature influence the resistance?  no \\
-does the heating velocity influence the resistance?  hardly\\
-do conc and layers number influence resistance? linear \\
-do db velocity and db temperautre influence resistance? how\\
-- somebody very wise (my superviser) once said: we need to able to predict it otherwise it is just an engineering problem \td{(look at mail)}
-- "Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
-- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
--comparison of population size: 
-\verb|see Notes/ga_from_lit_summarj.txt|
-what is the minimum of population*generation and what is 10*5 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Learning from Data}
-General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998learning}
+%%% 
+General experimental procedure from Cherkassky and Mulier Learning from Data\cite{cherkassky1998learning}
 \begin{enumerate}
 	\item State the problem 
 	\item Formulate the hypothesis
@@ -132,21 +35,68 @@ General experimental procedure from Cherkassky and Mulier\cite{cherkassky1998lea
 	\item Estimate the model 
 	\item Interpret the model/draw the conclusions
 \end{enumerate}
+\iffalse
 \textbf{1. Statement of the Problem} There was no clear statement of the problem. Now I would formulate it: "How to produce most insulating layer with least energy? How do we define most insulating?" That's why there are two output variables rather than one.
 \textbf{2. Hypothesis Formulation} formulate an unknown dependency and define input and output variables.
 \textbf{3. Data Generation and Experiment Design} can be either in control of the modeler (designed experiment) or in an observational setting. The data collection can affect the sampling distribution and influence the next steps. 
 \textbf{4. Collect the Data and Perform Preprocessing} here outliers are detected and data preprocessing/encoding/feature selection. Scaling by standard deviation might be a good idea, but independent scaling of variables can lead to suboptimal representation for the learning task. Feature selection: A small number of informative features make the task of estimating dependencies easier. 
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
+\fi
 
-There are not only \textbf{x}(input) and y(output) variables, but also \textbf{z}(uncontrolled/unobserved input variables).
-Issues of methods for learning from data: 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsectoin{discussion}
 \begin{itemize}
-	\item How to incorporate a priori assumptions into learning? 
-	\item How to measure model complexity (i.e. flexibility to fit the training data)?
-	\item How to find a optimal balance between the data and a priori knowledge? 
+    \item regularization
+    \item reproducability (random in code and repeat sample)
+    \item error of a sample 
 \end{itemize}
-\cite{cherkassky1998learning}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Mistakes} 
+- The most time consuming part was definitively the prelaminary studies.
+this time could have been verkürzt by testing a wide array of diverse recipes from the literature
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{diskussion and outlook}
+- Dimension reduction bietet sich stark an bei solcher Datenlage. 
+
+%\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
+
+%- \td{I wanted to exhaust the possibilities of EA (not having enough data). i should have rather einengen the search raum as much as possible (spreading the search room too much) and then do optimisation: fix layer count to 3 fix conc to 3F and fix calc temp and rate (or only use two extreme values)}
+%- \td{I wanted to let the algorithm show what I already knew instead of letting my a priori knowledge constrain the model before starting.}
+
+%-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2007}
+%but on the other hand: If one ain't sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
+- let's rule out different input variables: \\
+does the heating temperature influence the resistance?  no \\
+does the heating velocity influence the resistance?  hardly\\
+do conc and layers number influence resistance? linear \\
+do db velocity and db temperautre influence resistance? how\\
+
+%- somebody very wise (my superviser) once said: we need to able to predict it otherwise it is just an engineering problem \td{(look at mail)}
+- "Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
+%- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
+-comparison of population size: 
+\verb|see Notes/ga_from_lit_summarj.txt|
+%what is the minimum of population*generation and what is 10*5 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Issues of methods for learning from data: 
+%\begin{itemize}
+%	\item How to incorporate a priori assumptions into learning? 
+%	\item How to measure model complexity (i.e. flexibility to fit the training data)?
+%	\item How to find a optimal balance between the data and a priori knowledge? 
+%\end{itemize}
+%\cite{cherkassky1998learning}
 
 "Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
 
@@ -154,26 +104,26 @@ The process informal part of selection of input and output variables, data encod
 
 "Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
 
-"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
+%"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
 
-Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
-Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
+%Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
+%Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
 
-Any learning process requires the following(p40): 
-\begin{itemize}
-	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
-	\item A priori knowledge to impose contrains
-	\item An inductive principle (what needs to be done)
-		\begin{itemize}
-			\item penalizeation (regularization) inductive principle
-			\item early stopping rules (with ANN, difficult to control and interpret)
-			\item structural risk minimization (SRM) (order according to complexity)
-			\item Bayesian Inference (add subjectivity to learning machine)
-			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
-		\end{itemize}
-	\item A learning method (how does it need to be done,implementation)
-\end{itemize}
-\cite{cherkassky1998learning}
+%Any learning process requires the following(p40): 
+%\begin{itemize}
+%	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
+%	\item A priori knowledge to impose contrains
+%	\item An inductive principle (what needs to be done)
+%		\begin{itemize}
+%			\item penalizeation (regularization) inductive principle
+%			\item early stopping rules (with ANN, difficult to control and interpret)
+%			\item structural risk minimization (SRM) (order according to complexity)
+%			\item Bayesian Inference (add subjectivity to learning machine)
+%			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
+%		\end{itemize}
+%	\item A learning method (how does it need to be done,implementation)
+%\end{itemize}
+%\cite{cherkassky1998learning}
 
 \textbf{Curse and Complexity of Dimensionality}
 goal is to estimate function with finite samples, so it's always inaccurate (biased). 
@@ -238,3 +188,8 @@ The second point is not the best comparison because one doesn't need to know how
 
 \td{don't try to solve a problem by solving a more general problem}
 \td{search i.e. and replace with i.e.\ }
+
+\td{"An important concept in inferential statistics is that the amount of information you can learn about a population is limited by the sample size. The more you want to learn, the larger your sample size must be." - by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} } 
+\td{"overfitting a regression model occurs when you attempt to estimate too many parameters from a sample that is too small." - same source}
+\td{"However, if the effect size is small or there is high multicollinearity, you may need more observations per term." -same source} 
+
