@@ -126,53 +126,48 @@ $v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a pe
 %MSE(data=emma)=250
 
 %\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ML %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRID SEARACH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{Grid Search}
 For \gls{krr} and {svm} I had to find out what the ideal hyper parameters were. 
 So, I anstellen a grid search with the following hyperparameters: 
-%kernel=["poly","rbf"]#,"sigmoid"]
-%C= np.array(range(1,20))*0.05
-%degree=range(1,6)
-%epsilon= np.array(range(1,20))*0.2
-%gamma=[0.0,0.1,1.0,10.0]
-%#param = {"kernel":kernel, "C":C, "degree":degree, "epsilon":epsilon, "gamma":gamma }
-%C=[1,0.1]; degree=[3]; epsilon=[1,2]; gamma=['scale']
-Now what are C,epsilon and gamma? 
-
-\td{which parameters}
-The parameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
-The kernel took the form of \gls{rbf}, sigmoid and polynomial with degree 1--4.
-The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit{optimizand}) took the values 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2
-and 0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, respectively.
-Note that $\gamma_{ml}$ is used differently in each kernel. 
-The kernels for \gls{svm} were the same and further hyper parameters were 
-$C$, $\varepsilon$ and $\gamma_{ml}$, where $C$ took the values 0.05--1 with 0.05 steps, $\varepsilon$ 0.02--4 with 0.2 steps and $\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
-Where \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
-and $\sigma(\mathbf{X})$ the variance of the input variables. 
-\td{how, every combination}
-Each grid search calculation was calculated with and without scaling the data before the optimisation. 
-For each optimisation \gls{mae}, \gls{mse}, $sigma(\mathbf{y})$ and $\sigma(\mathbf{\hat{y}})$ were calculated. 
-
-\td{what were best results/hyper parameters}
-
+%
+%https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
+%https://scikit-learn.org/stable/modules/svm.html#svc
 %# KRR
 %# some kind of scaling factor; can be set to auto/scale, include into list? 
 %gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10] #HPGS
 %# alpha: bigger alpha, bigger regularisation 
 %alpha=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] #, 10, 50, 100] #HPGS
-
+%
 % SVM
-%https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
-%https://scikit-learn.org/stable/modules/svm.html#svc
 %# regularization parameter
 %C= np.array(range(1,20))*0.05 # HPGS
 %# epsilon-tube size for no penalty; rather large 
 %epsilon= np.array(range(1,20))*0.2 # HPGS
 %# some kind of scaling factor; can be set to auto/scale, include into list?  
 %gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"] # HPGS 
+%
+\td{which parameters?}
+The parameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
+The kernel took the form of \gls{rbf}, sigmoid and polynomial with degree 1--4.
+The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit{optimizand}) took the values 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2
+and 0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, respectively.
+Note that $\gamma_{ml}$ is used differently in each kernel. 
+The kernels for \gls{svm} were the same and further hyper parameters were 
+$C$, $\varepsilon$ and $\gamma_{ml}$, where $C$ took the values 0.05--0.95 with 0.05 steps, $\varepsilon$ 0.02--3.8 with 0.2 steps and $\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
+Where \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
+and $\sigma(\mathbf{X})$ the variance of the input variables. 
+
+\td{how and what?}
+Each grid search calculation was calculated with and without scaling the data before the optimisation. 
+For each optimisation \gls{mae}, \gls{mse}, $sigma(\mathbf{y})$ and $\sigma(\mathbf{\hat{y}})$ were calculated. 
+For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with the lowest \gls{mae} were chosen. 
+
+\td{what were best results/hyper parameters}
 
 
-Since the data set was very small, I could be generous with the grid search even on relatively humble hardware (intel i7-8550U). 
+%Since the data set was very small, I could be generous with the grid search even on relatively humble hardware (intel i7-8550U). 
 
 \begin{table}[htb]
 	\centering
@@ -185,7 +180,7 @@ Since the data set was very small, I could be generous with the grid search even
         MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
         lin Reg&    13& 250&    24& 747&    34& 1327&   17& 454\\
         KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
-        SVM& 15  415&    26& 1050&   28& 1588&   19& 677\\
+        SVM& 15&  415&    26& 1050&   28& 1588&   19& 677\\
     \hline\hline
 	\end{tabular}
     %
@@ -209,11 +204,12 @@ Since the data set was very small, I could be generous with the grid search even
 \subsubsection{SVM}
 \td{plot the predicted data for variables which should be excluded (Tcal, Vcal,Conc, layers)}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{PCR?}
 
 %\fi
 
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsubsection{PCR?}
 \subsubsection{Further}
 \begin{itemize}
     \item grid search
@@ -228,6 +224,7 @@ Since the data set was very small, I could be generous with the grid search even
 compare all methods. 
 How should I compare them? 
 What are the measurables. 
+\fi
 
 
 \td{do regression for avg(-log(G)) instead of $\gamma$=avg( ( 13+log(G))**2)} 
