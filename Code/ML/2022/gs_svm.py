@@ -28,7 +28,7 @@ parser.add_argument('-t', '--test', dest ='test',action ='store_true', help ='Te
 parser.add_argument('-x', '--scale', dest ='scale', action ='store_true', default=False, help='Scale input before fitting')
 args = parser.parse_args()
 #
-# DATA PRE-PROCESSING WITH 5-fold script 
+# DATA PRE-PROCESSING 
 def get_sets(df,names,args):
     data=np.array(df)
     X=data[:,6:]

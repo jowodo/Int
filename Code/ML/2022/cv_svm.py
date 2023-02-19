@@ -7,16 +7,17 @@ import pandas as pd
 import dfply
 import argparse
 #
+#################
 # KERNEL FOR SVM
 kernel=["poly","rbf","sigmoid"] # HPGS
-# regularization parameter
-C= np.array(range(1,20))*0.05 # HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
 degree=range(1,4) # HPGS
+# regularization parameter
+C= np.array(range(1,21))*0.05 # HPGS
 # epsilon-tube size for no penalty; rather large 
-epsilon= np.array(range(1,20))*0.2 # HPGS
+epsilon= np.array(range(1,21))*0.05 # HPGS
 # some kind of scaling factor; can be set to auto/scale, include into list? 
-gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, "scale"] # HPGS
+gamma=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, "scale"] # HPGS
 #
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
@@ -60,10 +61,13 @@ if args.scale : X=sklearn.preprocessing.StandardScaler().fit_transform(X)
 # DUMMY RUN
 if args.test : 
     C=[0.5,0.1]; degree=[1,2]; epsilon=[1,2]; gamma=["scale",0.1] # ,"auto"]
-n_exps=len(C)*(len(degree)+len(kernel)-1)*len(epsilon)*len(gamma)
+#
+# CALCULATE NUMBER OF EXPERIMENTS
+n_exps=(len(degree)+len(kernel)-1)*len(gamma)*len(C)*len(epsilon)
 #
 # PRINT HEADER LINE 
-print("%s accuracy with standard deviation", names[int(args.y_index)])
+#print(f"%s accuracy with standard deviation", names[int(args.y_index)])
+print("mean(SCORE)\tvar(SCORE)\tparams")
 i=1
 #
 # PRINT SCORES

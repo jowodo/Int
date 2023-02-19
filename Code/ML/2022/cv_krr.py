@@ -8,14 +8,14 @@ import dfply
 import argparse
 #
 #################
-# KERNEL FOR SVM
-kernel=["poly","rbf","sigmoid"] #HPGS
+# KERNEL FOR KRR
+kernel=["poly","rbf","sigmoid"] # HPGS
 # DEGREE OF POLYNOMIAL; ignored by rest
-degree=range(1,4) #HPGS
-# some kind of scaling factor; can be set to auto/scale, include into list? 
-gamma=[0.01, 0.05, 0.1, 0.5, 1.0, 5, 10] #HPGS
+degree=range(1,4) # HPGS
 # alpha: bigger alpha, bigger regularisation 
-alpha=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2] #, 10, 50, 100] #HPGS
+alpha=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10] #, 10, 50, 100] # HPGS
+# some kind of scaling factor; can be set to auto/scale, include into list? 
+gamma=[0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10] #, 10, 50, 100] # HPGS
 #
 # MAKE COMMAND LINE ARGUMENTS
 parser = argparse.ArgumentParser(description ='Grid Search for hyper parameters')
@@ -58,11 +58,14 @@ if args.scale : X=sklearn.preprocessing.StandardScaler().fit_transform(X)
 #
 # DUMMY RUN
 if args.test : 
-    degree=[1,2]; gamma=[0.01,0.1]; alpha=[0.5,0.1]; 
-n_exps=len(alpha)*(len(degree)+len(kernel)-1)*len(gamma)
+    degree=[1,2]; gamma=[0.01,0.1,1]; alpha=[0.5,0.1,1]; 
+#
+# CALCULATE NUMBER OF EXPERIMENTS
+n_exps=(len(degree)+len(kernel)-1)*len(gamma)*len(alpha)
 #
 # PRINT HEADER LINE 
-print("%s accuracy with standard deviation", names[int(args.y_index)])
+#print(f"%s accuracy with standard deviation", names[int(args.y_index)])
+print("mean(SCORE)\tvar(SCORE)\tparams")
 i=1
 #
 # PRINT SCORES
