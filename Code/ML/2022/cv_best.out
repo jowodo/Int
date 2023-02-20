@@ -1,0 +1,20 @@
+cv_krr.g.emma	-0.362890	0.780509	poly	deg=1	a=10.00	g=0.01	91/500
+cv_krr.g.emma	-6.133800	5.455028	poly	deg=2	a=10.00	g=0.01	191/500
+cv_krr.g.emma	-258.488417	195.934233	poly	deg=3	a=10.00	g=0.01	291/500
+cv_krr.g.emma	-9.961606	12.002202	rbf	deg=0	a=0.01	g=0.01	301/500
+cv_krr.g.emma	-0.554924	0.380512	sigmoid	deg=0	a=2.00	g=5	479/500
+cv_krr.p.emma	-8.574332	10.049491	poly	deg=1	a=10.00	g=0.01	91/500
+cv_krr.p.emma	-131.931516	179.915226	poly	deg=2	a=10.00	g=0.01	191/500
+cv_krr.p.emma	-3395.815804	4530.009359	poly	deg=3	a=5.00	g=5	289/500
+cv_krr.p.emma	-1.007856	0.461186	rbf	deg=0	a=2.00	g=0.01	371/500
+cv_krr.p.emma	-17.216460	22.219469	sigmoid	deg=0	a=10.00	g=5	499/500
+cv_svm.g.emma	-0.304372	0.325525	poly	deg=1	C=0.7	e=0.1	g=0.01	2861/22000
+cv_svm.g.emma	-0.387427	0.153619	poly	deg=2	C=1.0	e=0.1	g=scale	8591/22000
+cv_svm.g.emma	-0.365749	0.211229	poly	deg=3	C=0.6	e=0.9	g=scale	11187/22000
+cv_svm.g.emma	-0.421525	0.281367	rbf	deg=0	C=1.0	e=1.0	g=scale	17600/22000
+cv_svm.g.emma	-0.421525	0.281367	sigmoid	deg=0	C=1.0	e=1.0	g=scale	22000/22000
+cv_svm.p.emma	-1.583940	0.617018	poly	deg=1	C=0.1	e=0.1	g=scale	11/22000
+cv_svm.p.emma	-4.323186	6.590698	poly	deg=2	C=0.1	e=0.1	g=scale	4631/22000
+cv_svm.p.emma	-4.486096	5.625925	poly	deg=3	C=0.2	e=0.2	g=scale	9493/22000
+cv_svm.p.emma	-185.784526	241.851788	rbf	deg=0	C=1.0	e=1.0	g=scale	17600/22000
+cv_svm.p.emma	-185.784526	241.851788	sigmoid	deg=0	C=1.0	e=1.0	g=scale	22000/22000
