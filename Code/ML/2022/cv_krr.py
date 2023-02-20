@@ -65,7 +65,7 @@ n_exps=(len(degree)+len(kernel)-1)*len(gamma)*len(alpha)
 #
 # PRINT HEADER LINE 
 #print(f"%s accuracy with standard deviation", names[int(args.y_index)])
-print("mean(SCORE)\tvar(SCORE)\tparams")
+print("mean(SCORE)\tvar(SCORE)\ty\tparams")
 i=1
 #
 # PRINT SCORES
@@ -77,8 +77,10 @@ for k in kernel:
                     line=""
                     ML = KRR(kernel=k, alpha=a, degree=d, gamma=g)
                     score=sklearn.model_selection.cross_val_score(ML,X,Y,cv=int(args.kfold))
-                    line=f"{score.mean():.6f}"+"\t"+ f"{score.std():.6f}"+"\t"
-                    print(line+ k+ 
+                    line=f"{score.mean():.6f}"+"\t"+ f"{score.std():.6f}" # +"\t"
+                    print(line+ 
+                            "\t"+str(args.y_index)+ 
+                            "\t"+str(k)+ 
                             "\tdeg="+str(d)+ 
                             "\ta="+f"{a:.2f}"+ 
                             "\tg="+str(g)+ 
@@ -91,8 +93,10 @@ for k in kernel:
                 line=""
                 ML = KRR(kernel=k, alpha=a, degree=d, gamma=g)
                 score=sklearn.model_selection.cross_val_score(ML,X,Y,cv=int(args.kfold))
-                line=f"{score.mean():.6f}"+"\t"+ f"{score.std():.6f}"+"\t"
-                print(line+ k+ 
+                line=f"{score.mean():.6f}"+"\t"+ f"{score.std():.6f}" #+"\t"
+                print(line+ 
+                        "\t"+str(args.y_index)+ 
+                        "\t"+k+ 
                         "\tdeg="+str(0)+ 
                         "\ta="+f"{a:.2f}"+ 
                         "\tg="+str(g)+ 

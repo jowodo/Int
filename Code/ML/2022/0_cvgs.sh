@@ -44,7 +44,7 @@ then
     set +x
 fi
 
-rm $OUTFILE
+if [ -f $OUTFILE ]; then rm $OUTFILE; fi 
 echo $OUTFILE
 #echo -e "FILE\t\t MAE\t\t MSE\t\t sigma\t\t sigma_pred"
 if [ $scale == "TRUE" ] 
@@ -59,7 +59,7 @@ do
     for kernel in "deg=1" "deg=2" "deg=3" "rbf" "sigmoid"
     do 
         echo -ne "$file\t" | tee -a $OUTFILE
-        grep -e $kernel $file | sort -hr -k1 | tail -1 | tee -a $OUTFILE
+        grep -e $kernel $file | sort -n -k1 | tail -1 | tee -a $OUTFILE
     done
     echo "-"
 done

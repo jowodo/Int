@@ -1,5 +1,5 @@
 #!/bin/bash 
-PRINT BEST G/phd FOR EACH ML method 
+echo "PRINT BEST G/phd FOR EACH ML method "
 
 # KKR best G unscaled
 ./krr_pred.py         -k sigmoid -a 0.01 -g 0.01 -t | head -1
