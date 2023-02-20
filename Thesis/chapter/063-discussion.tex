@@ -1,21 +1,19 @@
 \subsection{Discussion}
 \subsubsection{Mistakes and Solutions}
-%This chapter is structured as a letter 
-%which my present self thinks that would have helped my past self 
-%if recieved before the start of the practical part of my master practikum:\\
-
-%to discuss: results from EMMA or rather which the data present are counter intuitive. 
 %why lowest conductivity with lowest TCal and why is there a minimum for layers? 
-%low TDOC results in lower conductivity... okay 
+%low TDOC results in lower conductivity... okay somehow 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{ad results}
-why correlation $\gamma$?
+\begin{itemize}
+    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
+    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{tips for next time}
+\subsubsection{Tips for next time}
 \begin{itemize}
-    \item \textbf{planning} gives chance of zooming out, force oneself to get an overview and to decide how much time on each task
-    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as deverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
+    \item \textbf{planning} gives chance of zooming out and force oneself to get an overview and to decide how much time on each task
+    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as diverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
     \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
     \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
 %\td{In example of documentation 2 input variables and 1-2 responses initial population=10
@@ -28,12 +26,12 @@ why correlation $\gamma$?
 %%% 
 General experimental procedure from Cherkassky and Mulier Learning from Data\cite{cherkassky1998learning}
 \begin{enumerate}
-	\item State the problem 
-	\item Formulate the hypothesis
-	\item Design the experiment/generate the data
-	\item Collect the data and perform preprocessing
-	\item Estimate the model 
-	\item Interpret the model/draw the conclusions
+    \item \textbf{State the problem}
+    \item \textbf{Formulate the hypothesi}
+    \item \textbf{Design the experiment/generate the dat}
+    \item \textbf{Collect the data and perform preprocessin}
+    \item \textbf{Estimate the model}
+    \item \textbf{Interpret the model/draw the conclusion}
 \end{enumerate}
 \iffalse
 \textbf{1. Statement of the Problem} There was no clear statement of the problem. Now I would formulate it: "How to produce most insulating layer with least energy? How do we define most insulating?" That's why there are two output variables rather than one.
@@ -46,7 +44,7 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsectoin{discussion}
+\subsubsection{discussion}
 \begin{itemize}
     \item regularization
     \item reproducability (random in code and repeat sample)

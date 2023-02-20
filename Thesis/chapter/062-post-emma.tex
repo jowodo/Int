@@ -144,6 +144,7 @@ The two very different distributions of influence among the input variables can 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ML %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRID SEARACH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{Grid Search}
+\todo{reduce to results}
 The ideal hyper parameters have to be found for \gls{krr} and \gls{svm}.
 To do so a grid search over a set of hyper parameters was executed. 
 Both \gls{krr} and \gls{svm} following kernel: radial basis function, sigmoid, and polynomial with degree 1 to 4. 
@@ -168,6 +169,7 @@ For each optimisation \gls{mae}, \gls{mse}, $sigma(\mathbf{y})$ and $\sigma(\mat
 For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with the lowest \gls{mae} were chosen. 
 %
 \td{what were best results/hyper parameters}
+\td{procedure into diffferen capitel: choose hyperparaters, choose dataset (emma). Grid search over hyperparameters and score with default scorer with default cross validation settings, k-fold=5? chose lowest score for each optimizand and algo (svm/krr) combo. Fit model with emma-data and chosen hyper parameters, predict different data sets and calculate statistics (MAE+MSE) for each data set.} 
 
 
 %Since the data set was very small, I could be generous with the grid search even on relatively humble hardware (intel i7-8550U). 
@@ -182,7 +184,8 @@ For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with th
     \hline
         MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
         lin Reg&    13& 250&    24& 747&    34& 1327&   17& 454\\
-        KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
+%        KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
+        KRR &17 &548 &30 &1477 &35 &2167 &23 &931\\
         SVM& 15&  415&    26& 1050&   28& 1588&   19& 677\\
     \hline\hline
 	\end{tabular}
@@ -193,8 +196,10 @@ For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with th
     \hline
         MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
         lin Reg&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
-        KRR& 0.30&   0.22&   0.47&   0.38&   0.52&   0.44&   0.34&   0.26\\
-        SVM& 0.28&   0.12&   0.37&   0.21&   0.42&   0.25&   0.32&   0.16\\
+%        KRR& 0.30&   0.22&   0.47&   0.38&   0.52&   0.44&   0.34&   0.26\\
+        KRR &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
+%        SVM& 0.28&   0.12&   0.37&   0.21&   0.42&   0.25&   0.32&   0.16\\
+        SVM &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
     \hline\hline
 	\end{tabular}
 \end{table}
@@ -202,6 +207,19 @@ For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with th
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{KRR}
+
+\begin{verbatim}
+(int.venv) [pur@lithium 2022]$ ./01_show_best.sh
+cv_krr.g.scale.emma     -0.497302       0.252231        poly    deg=1   a=2.00  g=0.01  71/500
+cv_krr.p.scale.emma     -0.449674       0.517822        rbf     deg=0   a=10.00 g=0.2   395/500
+cv_svm.g.scale.emma     -0.368196       0.391125        poly    deg=2   C=0.7   e=1.0   g=0.5   7475/22000
+cv_svm.p.scale.emma     -0.948249       0.439029        poly    deg=3   C=0.1   e=0.1   g=0.01  8801/22000
+(int.venv) [pur@lithium 2022]$ ./3_calc_mse_of_best.sh -l
+krr g poly -d 1 a10.00 g0.01    &17.37 &548.36 &30.42 &1477.36 &34.78 &2167.38 &22.75 &931.00\\
+krr p rbf a2.00 g0.01   &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
+svm g poly -d 1 C0.7 e0.1 -g0.01        &14.55 &415.40 &25.68 &1049.23 &28.49 &1587.85 &19.13 &676.39\\
+svm p poly -d 1 C0.1 e0.1 -gscale       &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
+\end{verbatim}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsubsection{SVM}

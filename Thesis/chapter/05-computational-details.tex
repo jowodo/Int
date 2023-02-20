@@ -133,12 +133,32 @@ instant involves experiment identification, solution preparation,
 coating deposition, and spot analysis.
 }%\cite{Carta2011}
 
-\iffalse 
 \subsection{Fitting via Machine Learning}
-\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
-Python and sci-kit learn \td{cite} was used to implement a linear fit model, and SVR with the kernels polynomial, rbf and sigmoid. 
-The space of hyper parameters C, the degree (in case of polynomial), epsilon and gamma was scaned. 
-
-The independent variables are located on a partially irregular grid.  
-\fi
-
+%\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
+Python and sci-kit learn \cite{pedregosa2011scikit} was used to implement a linear fit model, \gls{krr} and \gls{svm} with the kernels polynomial, \gls{rbf} and sigmoid. 
+%\subsubsection{Grid Search}
+A grid search over a set of hyper parameters was executed. 
+%https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
+%https://scikit-learn.org/stable/modules/svm.html#svc
+% KRR 
+The parameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
+The kernel took the form of \gls{rbf}, sigmoid and polynomial with degree 1--4.
+The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit{optimizand}) took the values 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2
+and 0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, respectively.
+Note that $\gamma_{ml}$ is used differently in each kernel. 
+% SVM
+The kernels for \gls{svm} were the same as for \gls{krr}. 
+Further hyper parameters were $C$, $\varepsilon$ and $\gamma_{ml}$, 
+where $C$ took the values 0.05--0.95 with 0.05 steps, $\varepsilon$ 0.02--3.8 with 0.2 steps 
+and $\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
+Where \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
+and $\sigma(\mathbf{X})$ the variance of the input variables. 
+% GRID SEARCH 
+The input variables ($c_{zr}$, $\lambda$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$) 
+of the \gls{emma} data set were scaled before each calculation.
+For each calculation the \td{5-fold} cross validation score was calculated. 
+For each method (\gls{krr} and \gls{svm}) and each \textit{optimizand} ($\gamma$ and $\rho$) 
+the parameters with the highest score were noted.
+% 
+Finally, the different data sets were predicted for each model and \gls{mae} and \gls{mse} were calculated.
+These values were also calculated for \gls{emma} and the linear model in order to compare the different methods. 
