@@ -33,14 +33,14 @@ if [ $recalculate == "TRUE" ]
 then
     source ../../../../int.venv/bin/activate
     set -x 
-    ./cv_krr.py --emma -y2 $scaleflag 2>/dev/null > cs_krr.g$scalename.emma # grid search with only EMMA samples as data set
-    ./cv_krr.py --emma -y3 $scaleflag 2>/dev/null > cs_krr.p$scalename.emma # grid search with only EMMA samples as data set
-    ./cv_krr.py        -y2 $scaleflag 2>/dev/null > cs_krr.g$scalename.all # grid search with all samples as data set
-    ./cv_krr.py        -y3 $scaleflag 2>/dev/null > cs_krr.p$scalename.all # grid search with all samples as data set
-    ./cv_svm.py --emma -y2 $scaleflag 2>/dev/null > cs_svm.g$scalename.emma 
-    ./cv_svm.py --emma -y3 $scaleflag 2>/dev/null > cs_svm.p$scalename.emma 
-    ./cv_svm.py        -y2 $scaleflag 2>/dev/null > cs_svm.g$scalename.all
-    ./cv_svm.py        -y3 $scaleflag 2>/dev/null > cs_svm.p$scalename.all
+    ./cv_krr.py --emma -y2 $scaleflag > cv_krr.g$scalename.emma 2>/dev/null # grid search with only EMMA samples as data set
+    ./cv_krr.py --emma -y3 $scaleflag > cv_krr.p$scalename.emma 2>/dev/null # grid search with only EMMA samples as data set
+    ./cv_krr.py        -y2 $scaleflag > cv_krr.g$scalename.all  2>/dev/null # grid search with all samples as data set
+    ./cv_krr.py        -y3 $scaleflag > cv_krr.p$scalename.all  2>/dev/null # grid search with all samples as data set
+    ./cv_svm.py --emma -y2 $scaleflag > cv_svm.g$scalename.emma 2>/dev/null 
+    ./cv_svm.py --emma -y3 $scaleflag > cv_svm.p$scalename.emma 2>/dev/null 
+    ./cv_svm.py        -y2 $scaleflag > cv_svm.g$scalename.all  2>/dev/null
+    ./cv_svm.py        -y3 $scaleflag > cv_svm.p$scalename.all  2>/dev/null
     set +x
 fi
 
