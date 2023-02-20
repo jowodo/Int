@@ -3,16 +3,16 @@ HELPTEXT="This program executes grid seach on hyper parameters
 \nUSAGE: $0 [-hrx] 
 \n\t-h\t print this help message and exit 
 \n\t-r\t recalculate everthing
-\n\t-x\t scale before fitting"
+\n\t-x\t don't scale before fitting"
 recalculate="FALSE"
-scale="FALSE"
+scale="TRUE"
 help_bool="FALSE"
 
 for flag in "$@"
 do 
     case $flag in 
         -r) recalculate="TRUE";;
-        -x) scale="TRUE";;
+        -x) scale="FALSE";;
         -h) help_bool="TRUE";;
     esac
 done 

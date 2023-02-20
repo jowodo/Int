@@ -48,29 +48,28 @@ do
     esac
 done 
 
-
-
-
 #ITERATE OVER EACH LINE 
 while read line; 
 do 
+    # only print statistics
 if [ $tail == "TRUE" ] ; then 
     eval "${line}" | tail -1 ; 
+    # grep from output
 elif [ $grep == "TRUE" ] ; then 
     echo $@
     eval "$line" | grep $grep_opt
+    # output in latex tabular format
 elif [ $latex == "TRUE" ] ; then 
     eval $line > tmp
     FIRSTWORD=$(head -n1 tmp | awk '{print $1}')
-#    echo $FIRSTWORD
     if [[ $FIRSTWORD == "krr" ]] || [[ $FIRSTWORD == "svm" ]] ; then 
         echo -n $(cat tmp)
         echo -en "\t&"
     else
         cat tmp | tail -n9 | head -n8  | awk '{print $2}'| tr "\n" "\t" | sed "s/\t$/\\\\\\\\ \n/" | sed "s/\t/ \&/g"
     fi
+    rm tmp
 else 
     eval "$line" 
 fi 
 done < "${CONFIG_FILE}"
-rm tmp

@@ -1,0 +1,4 @@
+cv_krr.g.emma	-0.362890	0.780509	poly	deg=1	a=10.00	g=0.01	91/500
+cv_krr.p.emma	-1.007856	0.461186	rbf	deg=0	a=2.00	g=0.01	371/500
+cv_svm.g.emma	-0.304372	0.325525	poly	deg=1	C=0.7	e=0.1	g=0.01	2861/22000
+cv_svm.p.emma	-1.583940	0.617018	poly	deg=1	C=0.1	e=0.1	g=scale	11/22000
