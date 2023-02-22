@@ -1,35 +1,24 @@
 \subsection{Discussion}
-\subsubsection{Mistakes and Solutions}
-%why lowest conductivity with lowest TCal and why is there a minimum for layers? 
-%low TDOC results in lower conductivity... okay somehow 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{ad results}
-\begin{itemize}
-    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
-    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Tips for next time}
-\begin{itemize}
-    \item \textbf{planning} gives chance of zooming out and force oneself to get an overview and to decide how much time on each task
-    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as diverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
-    \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
-    \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
-%\td{In example of documentation 2 input variables and 1-2 responses initial population=10
-%, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
-%iterations (as in actual experiments) lead to suboptimal results.}
-    \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
-    \item factorial design (classical \gls{doe} is more robust at feature extraction for error laden data \cite{giunta2003overview}
+%\todo{search i.e. and replace with i.e.\ }
+%\todo{go to experimental and material (IV) discussion}
+%\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
+%todo{go to anova discussion}
+%- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Hindsight is easier than foresight}
+\begin{itemize}
+    \item The most time consuming part was definitively the prelaminary studies. this time could have been verkürzt by testing a wide array of diverse recipes from the literature
+    \item minimize prelaminary study time by testing a wide range of designs
+    \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
 \end{itemize}
-%%% 
-General experimental procedure from Cherkassky and Mulier Learning from Data\cite{cherkassky1998learning}
+%
+General experimental procedure from Cherkassky and Mulier Learning from Data\cite{cherkassky1998learning}:
 \begin{enumerate}
     \item \textbf{State the problem}
-    \item \textbf{Formulate the hypothesi}
-    \item \textbf{Design the experiment/generate the dat}
-    \item \textbf{Collect the data and perform preprocessin}
+    \item \textbf{Formulate the hypothesis}
+    \item \textbf{Design the experiment/data generation process}
+    \item \textbf{Collect the data and perform preprocessing}
     \item \textbf{Estimate the model}
     \item \textbf{Interpret the model/draw the conclusion}
 \end{enumerate}
@@ -42,90 +31,74 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
 \fi
 
-
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{ad results}
+\begin{itemize}
+    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
+    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
+\end{itemize}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Tips for next time}
+\begin{itemize}
+    \item \textbf{planning} gives chance of zooming out and force oneself to get an overview and to decide how much time on each task
+    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as diverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
+    \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
+    \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
+%\td{In example of documentation 2 input variables and 1-2 responses initial population=10
+%, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
+%iterations (as in actual experiments) lead to suboptimal results.}
+    \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
+    \item factorial design (classical \gls{doe}) is more robust at feature extraction for error laden data \cite{giunta2003overview}
+\end{itemize}
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{discussion}
 \begin{itemize}
     \item regularization
     \item reproducability (random in code and repeat sample)
     \item error of a sample 
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Mistakes} 
-- The most time consuming part was definitively the prelaminary studies.
-this time could have been verkürzt by testing a wide array of diverse recipes from the literature
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{diskussion and outlook}
-- Dimension reduction bietet sich stark an bei solcher Datenlage. 
-
-%\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
-
-%- \td{I wanted to exhaust the possibilities of EA (not having enough data). i should have rather einengen the search raum as much as possible (spreading the search room too much) and then do optimisation: fix layer count to 3 fix conc to 3F and fix calc temp and rate (or only use two extreme values)}
-%- \td{I wanted to let the algorithm show what I already knew instead of letting my a priori knowledge constrain the model before starting.}
-
+    \item only include relevant variables\cite{gunst2007fractional}, but include all variables which could contribute\cite{haertler2014statistisch}
 %-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2007}
 %but on the other hand: If one ain't sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
-- let's rule out different input variables: \\
-does the heating temperature influence the resistance?  no \\
-does the heating velocity influence the resistance?  hardly\\
-do conc and layers number influence resistance? linear \\
-do db velocity and db temperautre influence resistance? how\\
-
-%- somebody very wise (my superviser) once said: we need to able to predict it otherwise it is just an engineering problem \td{(look at mail)}
-- "Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
-%- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
--comparison of population size: 
-\verb|see Notes/ga_from_lit_summarj.txt|
-%what is the minimum of population*generation and what is 10*5 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Issues of methods for learning from data: 
-%\begin{itemize}
-%	\item How to incorporate a priori assumptions into learning? 
-%	\item How to measure model complexity (i.e. flexibility to fit the training data)?
-%	\item How to find a optimal balance between the data and a priori knowledge? 
-%\end{itemize}
-%\cite{cherkassky1998learning}
-
-"Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
-
-The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
-
-"Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
-
-%"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
-
-%Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
-%Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
-
-%Any learning process requires the following(p40): 
-%\begin{itemize}
-%	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
-%	\item A priori knowledge to impose contrains
-%	\item An inductive principle (what needs to be done)
-%		\begin{itemize}
-%			\item penalizeation (regularization) inductive principle
-%			\item early stopping rules (with ANN, difficult to control and interpret)
-%			\item structural risk minimization (SRM) (order according to complexity)
-%			\item Bayesian Inference (add subjectivity to learning machine)
-%			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
-%		\end{itemize}
-%	\item A learning method (how does it need to be done,implementation)
-%\end{itemize}
-%\cite{cherkassky1998learning}
-
-\textbf{Curse and Complexity of Dimensionality}
+    \item which input variables could have been left out? why? justify with intuition and maths
+    \item discuss epv and compare with lit: when searching for appropriate algo, came across multi papers \todo{where should be discussed?}
+%Ahmed 2017		generations 50  popu 20 2in 1out \cite{ahmed2017preparation}
+%Arabs 1994		about varying pop size
+%Fernandes 2010		MOGA 500gen 1000pop \cite{fernandes2010multi}
+%Hosseini 2016		GA 50 pop 1000 generations 3in 1out 
+%Kaczmarowski2015	GA 50 pop 50-100 generation data calculated \cite{kaczmarowski2015genetic}
+%Madhavi 2017		GA+ANN	46 data	18 hiddenlayers init pop 30, pop 100 % 5in 1out \cite{mahdavi2017hardness}
+%Soltananali 2014	GA+ANN	100 Generations 85 data points 6 input 8 hiden 1 output data from literature \cite{soltanali2014neural}
+%Panwar 2014		GA+Simulation	4 parameters    % 2in2out? \cite{panwar2014design}
+%schubert 2008		GA+simulation \cite{schubert2008design,
+%Shanaghi 2013 		MOGA (GA+ANN) population size 100 \cite{shanaghi2013experimental}
+    \item selection of in- and output vars is more important than coice of learning algorithm. 
+%The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
+    \item Eine gefährliche Fehlerquelle ist dei Erwartung eines bestimmten Ergebnisses durch den Experimentator. \cite{haertler2014statistisch}
+    \item \td{maybe the lowering of G and p are not because of better process variables but because of me getting better at creating the layers *sad* :0 } 
+    \item reasons for large error per sample: ageing of solution, varying humidity, varying room temperature?, impurities in solutions, inhomogeneity of film, measureing error, systematical/thinking error? what else? 
+%What is the reason for aging (O2,H2O?, not sealing accelerates) ? 
+%Why does \gls{ipo} decelerate the aging process? ( ipo fits better to solvent(buoh)?)
+%the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}.
+%\td{COMMENT: solution age was not accounted for}
+    \item main problems too many in and output vars
+%\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
+    \item what was goal of incorporating ml into this work? 
+%\td{The goal of introducing \gls{ml} to this project was to apply and delve/vertiefen into subject which I've been studying during my undergrad courses. This seemed like the perfect opputrunity. And indeed I learned a lot. Even if only although \gls{ml} is a hot topic at the moment, it can not solve every problem. Two important things have I learned regarding \gls{ml}: 
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \item curse of dimensionality
+%- "Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
+%\td{"An important concept in inferential statistics is that the amount of information you can learn about a population is limited by the sample size. The more you want to learn, the larger your sample size must be." - by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} } 
+%\td{"overfitting a regression model occurs when you attempt to estimate too many parameters from a sample that is too small." - same source}
+%by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} 
+%\td{"However, if the effect size is small or there is high multicollinearity, you may need more observations per term." -same source} 
+%by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} 
+\iffalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Curse and Complexity of Dimensionality}\cite{cherkassky1998learning} chapter 3.1.
 goal is to estimate function with finite samples, so it's always inaccurate (biased). 
-meaning full estimate only possible with high sampling density, which is difficult for high dimensional functions.
+Meaning, full estimate only possible with high sampling density, which is difficult for high dimensional functions.
 \begin{enumerate}
 	\item Sample sizes yielding the same density increse exponentially with dimension.
 	\item A large radius is needed to enclose a fraction of the data points in a high-dimensional space.
@@ -141,54 +114,49 @@ meaning full estimate only possible with high sampling density, which is difficu
     \item T-test (signal-noise-ratio \href{https://statisticsbyjim.com/hypothesis-testing/t-tests-1-sample-2-sample-paired-t-tests/}{(click here)}): if variable are stat. significant; 
     \item F-test (ratio of variances \href{https://statisticsbyjim.com/anova/f-tests-anova/}{click here}): if group of vars stat. sig \url{https://quantifyinghealth.com/f-statistic-in-linear-regression/}
 \end{itemize}
+\fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
-am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
-"ist das modell fraglich, sollte man die Daten so erheben, als gälte das nächst kompliziertere Modell" \cite{haertler2014statistisch}
-Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
-Eine gefährliche Fehlerquelle ist dei Erwartung eines bestimmten Ergebnisses durch den Experimentator. \cite{haertler2014statistisch}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{LINKS}
-\begin{itemize}
-    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
-    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
-    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Would be easier to fit with single factor at a time variation or latin hyper cuber? 
-%with same search-space to actual-data ratio
-%- Would it also be easier for MARS or ML to find fitting function?
-%plot predictions from EMMA and ML. or rather compare MAE
-
-\td{what are the reasons for large error?} 
-\begin{itemize} 
-    \item ageing of solution 
-    \item varying humidity
-    \item varying room temperature 
-    \item impurities in solutions
-    \item inhomogeneity of film 
-    \item measuring error
-    \item 
 \end{itemize}
 
-What is the reason for aging (O2,H2O?, not sealing accelerates) ? 
-Why does \gls{ipo} decelerate the aging process? ( ipo fits better to solvent(buoh)?)
-As the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\href{https://pubs.acs.org/doi/10.1021/ci0342472}{overfitting}
-\td{COMMENT: solution age was not accounted for}
-
-\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
-
-\td{The goal of introducing \gls{ml} to this project was to apply and delve/vertiefen into subject which I've been studying during my undergrad courses. This seemed like the perfect opputrunity. And indeed I learned a lot. Even if only although \gls{ml} is a hot topic at the moment, it can not solve every problem. Two important things have I learned regarding \gls{ml}: 
-1.) The methods bringen sich nix if one doesn't know how to apply them which directly leads into my second erkenntnis
-2.) If one wants to use a tool, one should know how to use it and its innerlichkeiten in order to use it well.
-The second point is not the best comparison because one doesn't need to know how a light switch works in order to use it effectively use it.} 
-
-\td{don't try to solve a problem by solving a more general problem}
-\td{search i.e. and replace with i.e.\ }
-
-\td{"An important concept in inferential statistics is that the amount of information you can learn about a population is limited by the sample size. The more you want to learn, the larger your sample size must be." - by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} } 
-\td{"overfitting a regression model occurs when you attempt to estimate too many parameters from a sample that is too small." - same source}
-\td{"However, if the effect size is small or there is high multicollinearity, you may need more observations per term." -same source} 
-
-\td{maybe the lowering of G and p are not because of better process variables but because of me getting better at creating the layers :'( :0 } 
+%Issues of methods for learning from data: 
+%\begin{itemize}
+%	\item How to incorporate a priori assumptions into learning? 
+%	\item How to measure model complexity (i.e. flexibility to fit the training data)?
+%	\item How to find a optimal balance between the data and a priori knowledge? 
+%\end{itemize}
+%\cite{cherkassky1998learning}
+%"Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
+%"Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
+%"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
+%Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
+%Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
+%Any learning process requires the following(p40): 
+%\begin{itemize}
+%	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
+%	\item A priori knowledge to impose contrains
+%	\item An inductive principle (what needs to be done)
+%		\begin{itemize}
+%			\item penalizeation (regularization) inductive principle
+%			\item early stopping rules (with ANN, difficult to control and interpret)
+%			\item structural risk minimization (SRM) (order according to complexity)
+%			\item Bayesian Inference (add subjectivity to learning machine)
+%			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
+%		\end{itemize}
+%	\item A learning method (how does it need to be done,implementation)
+%\end{itemize}
+%\cite{cherkassky1998learning}
+%am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
+%Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsubsection{LINKS}
+%\begin{itemize}
+%    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
+%    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
+%    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
