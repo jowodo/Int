@@ -143,44 +143,92 @@ The two very different distributions of influence among the input variables can 
 %\iffalse
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ML %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRID SEARACH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{Grid Search}
-\todo{reduce to results}
-The ideal hyper parameters have to be found for \gls{krr} and \gls{svm}.
-To do so a grid search over a set of hyper parameters was executed. 
-Both \gls{krr} and \gls{svm} following kernel: radial basis function, sigmoid, and polynomial with degree 1 to 4. 
-%
-%https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
-%https://scikit-learn.org/stable/modules/svm.html#svc
-%
-\td{which parameters?}
-The parameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
-The kernel took the form of \gls{rbf}, sigmoid and polynomial with degree 1--4.
-The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit{optimizand}) took the values 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2
-and 0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, respectively.
-Note that $\gamma_{ml}$ is used differently in each kernel. 
-The kernels for \gls{svm} were the same and further hyper parameters were 
-$C$, $\varepsilon$ and $\gamma_{ml}$, where $C$ took the values 0.05--0.95 with 0.05 steps, $\varepsilon$ 0.02--3.8 with 0.2 steps and $\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
-Where \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
-and $\sigma(\mathbf{X})$ the variance of the input variables. 
-%
-\td{how and what?}
-Each grid search calculation was calculated with and without scaling the data before the optimisation. 
-For each optimisation \gls{mae}, \gls{mse}, $sigma(\mathbf{y})$ and $\sigma(\mathbf{\hat{y}})$ were calculated. 
-For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with the lowest \gls{mae} were chosen. 
-%
-\td{what were best results/hyper parameters}
-\td{procedure into diffferen capitel: choose hyperparaters, choose dataset (emma). Grid search over hyperparameters and score with default scorer with default cross validation settings, k-fold=5? chose lowest score for each optimizand and algo (svm/krr) combo. Fit model with emma-data and chosen hyper parameters, predict different data sets and calculate statistics (MAE+MSE) for each data set.} 
+\subsubsection{Grid Search, KRR and SVM}
+The optimal parameters for each \textit{optimizand} ($\gamma$ and $\rho$) and method (KRR and SVM) 
+combination can be seen in table \ref{tab:grid-search}. 
+They parameters are often extrema.
+The hyperparameter $\gamma_{ml}$ took minimum value possibel twice. 
+In the polynomial kernel this leads to a lower influence of the input variables with respect to the intercept. 
+The range of the hyperparameter $\alpha$ was 0.01--10 in the grid search. 
+So 2 and 10 are high values for the regularization parameter of \gls{krr}.
+The hyperparameter $\varepsilon$ specifies the size of the tube within which data does not contribute to the loss 
+and the value 1 is the maximum during the grid search. 
+%The value 1 for $\varepsilon$ is the highest possible, 
+%$C$ is regularization parameter for SVM and $\varepsilon$ is var which defines loss less region in soft margin SVM}
+All these extreme values of hyperparameters stimulate regularisation and indicate noisy and difficult to fit data.
+\begin{table}
+    \center
+    \begin{tabular}{ccccccc}
+        \hline\hline
+        method  &kernel &degree &$\gamma_{ml}$   &$\alpha$    &$C$    &$\varepsilon$\\
+        \hline
+        KRR($\gamma$)   &poly   &1  &0.01   &2.00 &-&-\\
+        KRR($\rho  $)   &rbf    &-   &0.2    &10.00&-&-\\
+        SVM($\gamma$)   &poly   &2  &0.5    &-&0.7  &1.0  \\
+        SVM($\rho  $)   &poly   &3  &0.01   &-&0.1  &0.1  \\
+        \hline\hline
+    \end{tabular}
+    \caption{Best parameters for each \textit{optimisand}-method-combination}
+    \label{tab:grid-search}
+\end{table}
+% R2
+The $R^2$ values were calculated for each of the models using cross validation. 
+Resulting $R^2$ are all below zero (see equations \ref{eq:r2-krr-g}--\ref{eq:r2-svm-p}). 
+A negative $R^2$ value means that the prediction provided by the model is worse than predicting only the mean of $\gamma$ and $\rho$. 
 
+\begin{align}
+    \label{eq:r2-krr-g}
+    R^2(\gamma_{krr}) &= -0.50 \pm 0.25\\
+    \label{eq:r2-krr-p}
+    R^2(\rho_{krr})   &= -0.45 \pm 0.52\\
+    \label{eq:r2-svm-g}
+    R^2(\gamma_{svm}) &= -0.37 \pm 0.39\\
+    \label{eq:r2-svm-p}
+    R^2(\rho_{svm})   &= -0.95 \pm 0.44
+\end{align}
 
-%Since the data set was very small, I could be generous with the grid search even on relatively humble hardware (intel i7-8550U). 
+%
+Finally the \gls{mae} and \gls{mse} were calculated for different data sets with models 
+trained on the \gls{emma} data set (see table \ref{tab:post-emma}). 
+% EMMA 30 pts
+The first two columns show statistics for data the model was trained with and thus, 
+these columns contain the lowest numbers. 
+% pre-EMMA 21 pts 
+The next two columns were calculated with data obtained before the EMMA optimisation. 
+As the this pre-optimisation data set was mainly used to find appropriate boundaries for the input variables, 
+many data points are outside of the range of the \gls{emma} data set. 
+Thus, prediction for this data set are mainly extrapolations. 
+% inter/c/ pre-EMMA 5 pts
+The next two columns were produced by using pre-\gls{emma} data, 
+but only keeping points which sit inside the space spanned by the \gls{emma} constraints. 
+It should be expected that these statistics should be lower than in the previous two columns. 
+They are higher, though, because of the small sample size of 5 data points. 
+% all 51 
+The last two columns show data for prediction of all available data. 
+These statistics are lower because of the inclusion of the training set in the test set. 
 
+In the self test of the first two columns \gls{mars} is the one method to rule them all.
+But as soon as unseen data enters the field, linear regression excels with its simplicity. 
+The linear regression method is only under cut by when calculatting the \gls{mae} of $\gamma$
+for the interpolating unseen data with \gls{svm}. 
+%
+%\todo{could use mean as prediction and compare}
+%\todo{could plot pred vs true}
+%\todo{pcr}
+%\todo{step wise regression}
+%\todo{why chose mae and mse}
+%\todo{talk about sigma(pred) vs sigma(true)}
+%\todo\url{https://blog.minitab.com/en/adventures-in-statistics-2/regression-smackdown-stepwise-versus-best-subsets}}
+%\todo{\url{https://blog.minitab.com/en/how-to-choose-the-best-regression-model}}
+%\todo{do regression for avg(-log(G)) instead of $\gamma$=avg( ( 13+log(G))**2)} 
+%
 \begin{table}[htb]
 	\centering
     \caption{Post EMMA vergleich}
 	\label{tab:post-emma}
 	\begin{tabular}{c cc cc cc cc}
     \hline\hline
-    G&  MAEe&   MSEe&   MAEp&   MSEp&   MAEc&   MSEc&   MAEa& MSEa \\
+    $\gamma$&  MAEe&   MSEe&   MAEp&   MSEp&   MAEc&   MSEc&   MAEa& MSEa \\
     \hline
         MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
         lin Reg&    13& 250&    24& 747&    34& 1327&   17& 454\\
@@ -192,7 +240,7 @@ For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with th
     %
 	\begin{tabular}{c cc cc cc cc}
     \hline\hline
-    p&  MAEe&   MSEe&   MAEp&   MSEp&   MAEc&   MSEc&   MAEa& MSEa \\
+    $\rho$&  MAEe&   MSEe&   MAEp&   MSEp&   MAEc&   MSEc&   MAEa& MSEa \\
     \hline
         MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
         lin Reg&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
@@ -204,10 +252,7 @@ For each method (\gls{krr} and \gls{svm}) and each kernel the parameters with th
 	\end{tabular}
 \end{table}
     
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{KRR}
-
+\iffalse
 \begin{verbatim}
 (int.venv) [pur@lithium 2022]$ ./01_show_best.sh
 cv_krr.g.scale.emma     -0.497302       0.252231        poly    deg=1   a=2.00  g=0.01  71/500
@@ -220,32 +265,4 @@ krr p rbf a2.00 g0.01   &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
 svm g poly -d 1 C0.7 e0.1 -g0.01        &14.55 &415.40 &25.68 &1049.23 &28.49 &1587.85 &19.13 &676.39\\
 svm p poly -d 1 C0.1 e0.1 -gscale       &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
 \end{verbatim}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{SVM}
-\td{plot the predicted data for variables which should be excluded (Tcal, Vcal,Conc, layers)}
-
-
-%\fi
-
-\iffalse
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{PCR?}
-\subsubsection{Further}
-\begin{itemize}
-    \item grid search
-    \item KRR (start with grid search) (???)
-    \item SVM (start with grid search) (???)
-    \item \url{https://blog.minitab.com/en/adventures-in-statistics-2/regression-smackdown-stepwise-versus-best-subsets}
-    \item \url{https://blog.minitab.com/en/how-to-choose-the-best-regression-model}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsubsection{Comparison} 
-compare all methods. 
-How should I compare them? 
-What are the measurables. 
 \fi
-
-
-\td{do regression for avg(-log(G)) instead of $\gamma$=avg( ( 13+log(G))**2)} 

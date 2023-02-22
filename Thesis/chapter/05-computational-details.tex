@@ -56,8 +56,8 @@ to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the averag
 Another measure is the density of shorted species $\rho$, calculated in following way:
 \begin{equation}
 	s_i = \begin{cases}
-	1 &\text{if} \quad -log(g_i) < 5 \\
-	0 &\text{if} \quad -log(g_i) \geq 5 \\
+        1 &\text{if} \quad -log_{10}(g_i) < 5 \\
+        0 &\text{if} \quad -log_{10}(g_i) \geq 5 \\
 	\end{cases}
 \end{equation}
 \begin{equation}
@@ -114,9 +114,7 @@ $n_{layers}$ (numbers of layers) and $v_{cal}$ (heating rate of calcination proc
 The program, then, uses this data to estimate a response for each output variable 
 for the entire population space.
 (and to choose a fraction of the initial population which is allowed to propagate).
-\td{
 %The response variables for the entire population space is calculated. 
-}
 The current population - each of the particles independently - 
 have random velocity vector associated to them which is directed to the best predicted sample. 
 %moves towards the optimum solution.
@@ -135,7 +133,7 @@ coating deposition, and spot analysis.
 
 \subsection{Fitting via Machine Learning}
 %\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
-Python and sci-kit learn \cite{pedregosa2011scikit} was used to implement a linear fit model, \gls{krr} and \gls{svm} with the kernels polynomial, \gls{rbf} and sigmoid. 
+Python 3.10.9 and sci-kit learn 1.1.2\cite{pedregosa2011scikit} were used to implement a linear fit model, \gls{krr} and \gls{svm} with the kernels polynomial, \gls{rbf} and sigmoid. 
 %\subsubsection{Grid Search}
 A grid search over a set of hyper parameters was executed. 
 %https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
@@ -156,7 +154,11 @@ and $\sigma(\mathbf{X})$ the variance of the input variables.
 % GRID SEARCH 
 The input variables ($c_{zr}$, $\lambda$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$) 
 of the \gls{emma} data set were scaled before each calculation.
-For each calculation the \td{5-fold} cross validation score was calculated. 
+% https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html#sklearn.kernel_ridge.KernelRidge.score
+% https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.score
+For each calculation the 5-fold cross validation score was calculated. 
+The score equals to the coefficient of determination $R^2$ which defined as 
+$1-\frac{\sum (y_i - \hat{y}_i)}{\sum (y_i - \bar{y}_i)}$.
 For each method (\gls{krr} and \gls{svm}) and each \textit{optimizand} ($\gamma$ and $\rho$) 
 the parameters with the highest score were noted.
 % 
