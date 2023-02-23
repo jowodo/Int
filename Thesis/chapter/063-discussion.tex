@@ -1,18 +1,24 @@
-\subsection{Discussion}
+\subsection{Hindsight is easier than foresight}
+%\subsection{Discussion}
 %\todo{search i.e. and replace with i.e.\ }
 %\todo{go to experimental and material (IV) discussion}
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
 %todo{go to anova discussion}
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Hindsight is easier than foresight}
+%todo{british or US?} 
+This subsection will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
+Firstly, the research, exploration and design phase, then the pre-optimisation, \td{refinement} and narrowing phase, sequentially the optimisation, modelling and \td{main measurement}  phase and finally the evaluation, interpretation and outlook phase. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Research, exploration and design phase}
 \begin{itemize}
     \item The most time consuming part was definitively the prelaminary studies. this time could have been verkürzt by testing a wide array of diverse recipes from the literature
-    \item minimize prelaminary study time by testing a wide range of designs
-    \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
+    \item minimize prelaminary study time by testing a wide range of designs. scrutinize (hinterfragen) everything!
+    \item \textbf{planning} gives chance of zooming out and force oneself to get an overview and to decide how much time on each task
+    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as diverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
+    \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
+    \item what was goal of incorporating ml into this work? 
+%\td{The goal of introducing \gls{ml} to this project was to apply and delve/vertiefen into subject which I've been studying during my undergrad courses. This seemed like the perfect opputrunity. And indeed I learned a lot. Even if only although \gls{ml} is a hot topic at the moment, it can not solve every problem. Two important things have I learned regarding \gls{ml}: 
 \end{itemize}
-%
 General experimental procedure from Cherkassky and Mulier Learning from Data\cite{cherkassky1998learning}:
 \begin{enumerate}
     \item \textbf{State the problem}
@@ -30,39 +36,21 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
 \fi
-
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{ad results}
+\subsubsection{Narrowing, pre-optimisation and constraint phase}
 \begin{itemize}
-    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
-    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
-\end{itemize}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Tips for next time}
-\begin{itemize}
-    \item \textbf{planning} gives chance of zooming out and force oneself to get an overview and to decide how much time on each task
-    \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as diverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
-    \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
+    \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
     \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
 %\td{In example of documentation 2 input variables and 1-2 responses initial population=10
 %, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
 %iterations (as in actual experiments) lead to suboptimal results.}
-    \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
-    \item factorial design (classical \gls{doe}) is more robust at feature extraction for error laden data \cite{giunta2003overview}
-\end{itemize}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{discussion}
-\begin{itemize}
-    \item regularization
-    \item reproducability (random in code and repeat sample)
-    \item error of a sample 
-    \item only include relevant variables\cite{gunst2007fractional}, but include all variables which could contribute\cite{haertler2014statistisch}
+    \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $2\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
+    \item \textbf{factorial design} (classical \gls{doe}) is more robust at feature extraction for error laden data \cite{giunta2003overview} putting data on the extrems makes trend extraction easier. "By moving the samples to the boundaries of the design space, the effect of the random error terms is reduced."
+    \item only include relevant variables\cite{gunst2009fractional}, but include all variables which could contribute\cite{haertler2014statistisch}
 %-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2007}
 %but on the other hand: If one ain't sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
     \item which input variables could have been left out? why? justify with intuition and maths
+    \item selection of in- and output vars is more important than coice of learning algorithm. 
+%The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
     \item discuss epv and compare with lit: when searching for appropriate algo, came across multi papers \todo{where should be discussed?}
 %Ahmed 2017		generations 50  popu 20 2in 1out \cite{ahmed2017preparation}
 %Arabs 1994		about varying pop size
@@ -74,19 +62,7 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 %Panwar 2014		GA+Simulation	4 parameters    % 2in2out? \cite{panwar2014design}
 %schubert 2008		GA+simulation \cite{schubert2008design,
 %Shanaghi 2013 		MOGA (GA+ANN) population size 100 \cite{shanaghi2013experimental}
-    \item selection of in- and output vars is more important than coice of learning algorithm. 
-%The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
     \item Eine gefährliche Fehlerquelle ist dei Erwartung eines bestimmten Ergebnisses durch den Experimentator. \cite{haertler2014statistisch}
-    \item \td{maybe the lowering of G and p are not because of better process variables but because of me getting better at creating the layers *sad* :0 } 
-    \item reasons for large error per sample: ageing of solution, varying humidity, varying room temperature?, impurities in solutions, inhomogeneity of film, measureing error, systematical/thinking error? what else? 
-%What is the reason for aging (O2,H2O?, not sealing accelerates) ? 
-%Why does \gls{ipo} decelerate the aging process? ( ipo fits better to solvent(buoh)?)
-%the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}.
-%\td{COMMENT: solution age was not accounted for}
-    \item main problems too many in and output vars
-%\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
-    \item what was goal of incorporating ml into this work? 
-%\td{The goal of introducing \gls{ml} to this project was to apply and delve/vertiefen into subject which I've been studying during my undergrad courses. This seemed like the perfect opputrunity. And indeed I learned a lot. Even if only although \gls{ml} is a hot topic at the moment, it can not solve every problem. Two important things have I learned regarding \gls{ml}: 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \item curse of dimensionality
 %- "Je grösser nämlich die Anzahl freier Parameter im Modell ist, umso grösser ist der erforderliche Datenumfang und umso ungenauer wir die statistisch gewonnene Aussgae bei gleichem Datenumfang." - Gisela Härtler\cite{haertler2014statistisch}
@@ -115,9 +91,34 @@ Meaning, full estimate only possible with high sampling density, which is diffic
     \item F-test (ratio of variances \href{https://statisticsbyjim.com/anova/f-tests-anova/}{click here}): if group of vars stat. sig \url{https://quantifyinghealth.com/f-statistic-in-linear-regression/}
 \end{itemize}
 \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-
+\end{itemize}
+\subsubsection{Optimisation, modelling and data generation}
+\begin{itemize}
+    \item regularization
+    \item reproducability (random in code and repeat sample)
+    \item main problems too many in and output vars
+%\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
+\end{itemize}
+\subsubsection{Evaluation, interpretation and outlook phase}
+\begin{itemize}
+    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
+    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
+    \item reasons for large error per sample: ageing of solution, varying humidity, varying room temperature?, impurities in solutions, inhomogeneity of film, measureing error, systematical/thinking error? what else? 
+%What is the reason for aging (O2,H2O?, not sealing accelerates) ? 
+%Why does \gls{ipo} decelerate the aging process? ( ipo fits better to solvent(buoh)?)
+%the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}.
+%\td{COMMENT: solution age was not accounted for}
+    \item \td{maybe the lowering of G and p are not because of better process variables but because of me getting better at creating the layers *sad* :0 } 
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
