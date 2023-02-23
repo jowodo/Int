@@ -7,9 +7,36 @@
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
 %todo{british or US?} 
 This subsection will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
-Firstly, the research, exploration and design phase, then the pre-optimisation, \td{refinement} and narrowing phase, sequentially the optimisation, modelling and \td{main measurement}  phase and finally the evaluation, interpretation and outlook phase. 
+Firstly, the \textit{research, exploration and design phase}, followed by the \textit{narrowing, pre-optimisation and constraint phase}, thereupon the \textit{optimisation, modelling and data generation phase} and finally the \textit{evaluation, interpretation and outlook phase}. 
+%\subsubsection{Research, exploration and design phase}
+%\subsubsection{Narrowing, pre-optimisation and constraint phase}
+%\subsubsection{Optimisation, modelling and data generation}
+%\subsubsection{Evaluation, interpretation and outlook phase}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Research, exploration and design phase}
+\td{freewriting}: \textbf{Scrutinize everthing!} At the beginning of a project it is importatnt 
+to get a feel. I took the first recipe as only true recipe and tried to tune it to perfection. 
+The problem was that the base line of that recipe was so low such that no matter how much I improved it, it was still bad. 
+I only noticed this after trying out another recipe. 
+My tipp here is to read as much and mostly diverse literature as possible and then try to mimic what ever you can. 
+This will get you a "feel" of what works and what not. 
+Thinking back to some design classes I took for data visualization: create as many and different designs as possible. 
+Check what works, collect (dis-)advantages of methods and combine the best approaches. 
+This can save you a lot of time. 
+
+Moreover, it is important to define the objective of the project as clear and disambiguous as possible. 
+Again, try to reformulate the objective in mutliple ways and choose the most fitting. 
+Answer which question should be answered, and establish hypotheses with corresponding null hypotheses. 
+A general experimental procedure was stated by Cherkassky and Mulier\cite{cerkassky1998learning}:
+\begin{enumerate}
+    \item \textbf{State the problem}
+    \item \textbf{Formulate the hypothesis}
+    \item \textbf{Design the experiment/data generation process}
+    \item \textbf{Collect the data and perform preprocessing}
+    \item \textbf{Estimate the model}
+    \item \textbf{Interpret the model/draw the conclusion}
+\end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \begin{itemize}
     \item The most time consuming part was definitively the prelaminary studies. this time could have been verkürzt by testing a wide array of diverse recipes from the literature
     \item minimize prelaminary study time by testing a wide range of designs. scrutinize (hinterfragen) everything!
@@ -36,7 +63,9 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
 \fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \subsubsection{Narrowing, pre-optimisation and constraint phase}
+\td{This section is about 3. DAta Generation and Experiment Design from cherkessky's list. }
 \begin{itemize}
     \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
     \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
@@ -92,6 +121,7 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 \end{itemize}
 \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \subsubsection{Optimisation, modelling and data generation}
 \begin{itemize}
     \item regularization
@@ -99,6 +129,7 @@ Meaning, full estimate only possible with high sampling density, which is diffic
     \item main problems too many in and output vars
 %\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
 \end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \subsubsection{Evaluation, interpretation and outlook phase}
 \begin{itemize}
     \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
