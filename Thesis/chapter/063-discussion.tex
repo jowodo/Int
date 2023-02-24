@@ -7,13 +7,20 @@
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
 %todo{british or US?} 
 This subsection will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
-Firstly, the \textit{research, exploration and design phase}, followed by the \textit{narrowing, pre-optimisation and constraint phase}, thereupon the \textit{optimisation, modelling and data generation phase} and finally the \textit{evaluation, interpretation and outlook phase}. 
+Firstly, the 
+\ref{sec:phase1} \textit{\nameref{sec:phase1}}, followed by the 
+\ref{sec:phase2} \textit{\nameref{sec:phase2}}, thereupon the 
+\ref{sec:phase3} \textit{\nameref{sec:phase3}} and finally the 
+\ref{sec:phase3} \textit{\nameref{sec:phase4}}. 
 %\subsubsection{Research, exploration and design phase}
 %\subsubsection{Narrowing, pre-optimisation and constraint phase}
 %\subsubsection{Optimisation, modelling and data generation}
 %\subsubsection{Evaluation, interpretation and outlook phase}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Research, exploration and design phase}
+\label{sec:phase1}
 \td{freewriting}: \textbf{Scrutinize everthing!} At the beginning of a project it is importatnt 
 to get a feel. I took the first recipe as only true recipe and tried to tune it to perfection. 
 The problem was that the base line of that recipe was so low such that no matter how much I improved it, it was still bad. 
@@ -27,7 +34,7 @@ This can save you a lot of time.
 Moreover, it is important to define the objective of the project as clear and disambiguous as possible. 
 Again, try to reformulate the objective in mutliple ways and choose the most fitting. 
 Answer which question should be answered, and establish hypotheses with corresponding null hypotheses. 
-A general experimental procedure was stated by Cherkassky and Mulier\cite{cerkassky1998learning}:
+A general experimental procedure was stated by Cherkassky and Mulier\cite{cherkassky1998learning}:
 \begin{enumerate}
     \item \textbf{State the problem}
     \item \textbf{Formulate the hypothesis}
@@ -37,6 +44,7 @@ A general experimental procedure was stated by Cherkassky and Mulier\cite{cerkas
     \item \textbf{Interpret the model/draw the conclusion}
 \end{enumerate}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\iffalse
 \begin{itemize}
     \item The most time consuming part was definitively the prelaminary studies. this time could have been verkürzt by testing a wide array of diverse recipes from the literature
     \item minimize prelaminary study time by testing a wide range of designs. scrutinize (hinterfragen) everything!
@@ -63,9 +71,40 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
 \fi
+\fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Narrowing, pre-optimisation and constraint phase}
-\td{This section is about 3. DAta Generation and Experiment Design from cherkessky's list. }
+\label{sec:phase2}
+After having decided on a base recipe, it is important to define limits and decrease the number of independent varibles. 
+The later is more important due to the curse of dimensionality\cite{cherkassky1998learning}, 
+which states that with increasing dimensionality it get exponentially more difficult to arrive at the same density of datapoints. 
+By excluding input variables from the model 
+the complexity of the model can be drastically reduced. 
+This leads to more information which can be extrated from the remaining data, 
+be it in more detail of the dependence or higher confidence interval. 
+A good measure to compare with literature and other methods is the \gls{epv}. 
+In this work there around 5~\gls{epv}, which is pretty low. 
+This is ofcourse not just as straight forward as suggested. 
+How does one decide which variables to keep and which to incorporate into the model and which to discard? 
+There is the intuitive (expert) way and the mathematical way.
+mathematical ways include: pca, step-wise regression 
+%
+Additionally having wide limit can be an advantage when the data is noisy and the dependence is not too complicated.
+"By moving the samples to the boundaries of the design space, the effect of the random term is reduced\cite{giunta2003overview}."
+%
+There are two opposing principles which can be followed: 
+By introducing a lot of variables into a model presupposes that they and their interactions (!) have a statistically significant effect.\cite{gunst2009fractional}.
+On the other hand a model can be used to tell if a variable exerts an influence. 
+%
+One regime where overfitting occurs is when there are to many parameters to be fitted with not enough data. 
+Overfitting happens in the regime where to many parameters are fitted with not enough data. 
+%
+Another step/deed which is well placed in this phase is the estimating the error by reproducing a singel sample a certain number of times. 
+Where the number will then be higher than during optimisation 
+%
+%\td{This section is about 3. DAta Generation and Experiment Design from cherkessky's list. }
 \begin{itemize}
     \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
     \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
@@ -75,7 +114,7 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
     \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $2\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
     \item \textbf{factorial design} (classical \gls{doe}) is more robust at feature extraction for error laden data \cite{giunta2003overview} putting data on the extrems makes trend extraction easier. "By moving the samples to the boundaries of the design space, the effect of the random error terms is reduced."
     \item only include relevant variables\cite{gunst2009fractional}, but include all variables which could contribute\cite{haertler2014statistisch}
-%-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2007}
+%-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2009}
 %but on the other hand: If one ain't sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
     \item which input variables could have been left out? why? justify with intuition and maths
     \item selection of in- and output vars is more important than coice of learning algorithm. 
@@ -122,7 +161,10 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Optimisation, modelling and data generation}
+\label{sec:phase3}
 \begin{itemize}
     \item regularization
     \item reproducability (random in code and repeat sample)
@@ -130,7 +172,10 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 %\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Evaluation, interpretation and outlook phase}
+\label{sec:phase4}
 \begin{itemize}
     \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
     \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
