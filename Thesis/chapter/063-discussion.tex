@@ -1,25 +1,25 @@
-\subsection{Hindsight is easier than foresight}
-%\subsection{Discussion}
+\section{Hindsight is easier than foresight}
+%\section{Discussion}
 %\todo{search i.e. and replace with i.e.\ }
 %\todo{go to experimental and material (IV) discussion}
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
 %todo{go to anova discussion}
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
 %todo{british or US?: sation vs zation} 
-This subsection will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
+This section will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
 Firstly, the 
 \ref{sec:phase1} \textit{\nameref{sec:phase1}}, followed by the 
 \ref{sec:phase2} \textit{\nameref{sec:phase2}}, thereupon the 
 \ref{sec:phase3} \textit{\nameref{sec:phase3}} and finally the 
 \ref{sec:phase3} \textit{\nameref{sec:phase4}}. 
-%\subsubsection{Research, exploration and design phase}
-%\subsubsection{Narrowing, pre-optimisation and constraint phase}
-%\subsubsection{Optimisation, modelling and data generation}
-%\subsubsection{Evaluation, interpretation and outlook phase}
+%\subsection{Research, exploration and design phase}
+%\subsection{Narrowing, pre-optimisation and constraint phase}
+%\subsection{Optimisation, modelling and data generation}
+%\subsection{Evaluation, interpretation and outlook phase}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Research, exploration and design phase}
+\subsection{Research, exploration and design phase}
 \label{sec:phase1}
 \td{freewriting}: \textbf{Scrutinize everthing!} At the beginning of a project it is importatnt 
 to get a feel. I took the first recipe as only true recipe and tried to tune it to perfection. 
@@ -75,7 +75,7 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Narrowing, pre-optimisation and constraint phase}
+\subsection{Narrowing, pre-optimisation and constraint phase}
 \label{sec:phase2}
 After having decided on a base recipe, it is important to define limits and decrease the number of independent varibles. 
 The later is more important due to the curse of dimensionality\cite{cherkassky1998learning}, 
@@ -164,7 +164,7 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Optimisation, modelling and data generation}
+\subsection{Optimisation, modelling and data generation}
 \label{sec:phase3}
 During the optimisation the main problems were too many in- and output variables, reproducability and regularisation. The first, problem was already discussed in the previous section. When working with stochastic algorithms it is especially important to be introduce reproducability via a seed, which determine all subsequent pseudo-random numbers. 
 Finally, during the \gls{emma} optimisation es wurde auf regularisation verzichtet, 
@@ -183,7 +183,7 @@ rather $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} -
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsubsection{Evaluation, interpretation and outlook phase}
+\subsection{Evaluation, interpretation and outlook phase}
 \label{sec:phase4}
 \begin{itemize}
     \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
@@ -239,7 +239,7 @@ rather $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} -
 %am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
 %Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsubsection{LINKS}
+%\subsection{LINKS}
 %\begin{itemize}
 %    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
 %    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45

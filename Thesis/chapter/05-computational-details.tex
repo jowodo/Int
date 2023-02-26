@@ -1,4 +1,4 @@
-\subsection{Data Processing}
+\section{Data Processing}
 \label{sec:eval}
 %Reading list
 %\begin{itemize}
@@ -73,7 +73,7 @@ Another measure is the density of shorted species $\rho$, calculated in followin
 %	G_2 =  \sum_i^N \frac{log(g_i)}{N}
 %%\end{equation}
 
-\subsection{Sample Selection}
+\section{Sample Selection}
 \label{sec:ss}
 An evolutionary approach was chosen, namely a multi-objective 
 \gls{pso} algorithm called \gls{emma}\cite{villanova2010function,Kennedy1995,Breiman1997,Carta2011}.
@@ -131,10 +131,10 @@ instant involves experiment identification, solution preparation,
 coating deposition, and spot analysis.
 }%\cite{Carta2011}
 
-\subsection{Fitting via Machine Learning}
+\section{Fitting via Machine Learning}
 %\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
 Python 3.10.9 and sci-kit learn 1.1.2\cite{pedregosa2011scikit} were used to implement a linear fit model, \gls{krr} and \gls{svm} with the kernels polynomial, \gls{rbf} and sigmoid. 
-%\subsubsection{Grid Search}
+%\subsection{Grid Search}
 A grid search over a set of hyper parameters was executed. 
 %https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
 %https://scikit-learn.org/stable/modules/svm.html#svc
