@@ -1,4 +1,5 @@
 %\documentclass[a4paper]{article}
+%\documentclass[a4paper,titlepage,twoside]{scrreprt}
 \documentclass[a4paper,titlepage]{scrreprt}
 \input{chapter/0-usepackages.tex}
 
@@ -7,6 +8,8 @@
 
 \begin{document}
 \maketitle
+% ONLY IN TWOSIDED MODE
+%{\null\newpage}
 \input{chapter/0000-acronyms.tex}
 %\todo{read docu \url{https://en.wikibooks.org/wiki/LaTeX/Glossary#Defining\_acronyms}}
 
@@ -29,8 +32,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction}                                
 \label{sec:intro}
-%\input{chapter/01-introduction.tex}
-%\clearpage
+\input{chapter/01-introduction.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% 2 AIMS AND OBJECTIVES %%%%%%%%%%%%%%%%%%%
@@ -38,7 +40,6 @@
 %\chapter{Aims and Objectives}
 %\label{sec:aims}
 %\input{chapter/02-aims-and-objectives}
-%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% 3 THEORETICAL BACKGROUND %%%%%%%%%%%%%%%%%
@@ -48,7 +49,6 @@
 %\input{chapter/030-theory-materials.tex}
 %\input{chapter/031-theory-calculations.tex}
 %\input{chapter/032-alt-theory-calculations.tex}
-%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%% 4 EXPERIMENTAL %%%%%%%%%%%%%%%%%%%%%
@@ -56,15 +56,13 @@
 \chapter{Experimental}
 \label{sec:exp}
 %\input{chapter/04-experimental.tex}
-%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% 5 COMPUTATIONAL DETAILS %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Computational Details}
 \label{sec:comp}
-\input{chapter/05-computational-details.tex}
-%\clearpage
+%\input{chapter/05-computational-details.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% 6 RESULTS AND DISCUSSION %%%%%%%%%%%%%%%
@@ -72,18 +70,16 @@
 \chapter{Results and Discussion}
 \label{sec:results}
 %\input{chapter/060-results-material.tex}
-\input{chapter/061-results-emma.tex}
+%\input{chapter/061-results-emma.tex}
 \input{chapter/062-post-emma.tex}
 \input{chapter/063-discussion.tex}
-%\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%% 7 OUTLOOK %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Outlook}
 \label{sec:outlook}
-\input{chapter/07-outlook.tex}
-%\clearpage
+%\input{chapter/07-outlook.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

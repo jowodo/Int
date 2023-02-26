@@ -3,46 +3,193 @@
 %\todo{search i.e. and replace with i.e.\ }
 %\todo{go to experimental and material (IV) discussion}
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
-%todo{go to anova discussion}
+%\todo{go to anova discussion}
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
-%todo{british or US?: sation vs zation} 
+%\todo{british or US?: sation vs zation} 
+%\todo{ include last phase into previous section}
 This section will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
 Firstly, the 
-\ref{sec:phase1} \textit{\nameref{sec:phase1}}, followed by the 
-\ref{sec:phase2} \textit{\nameref{sec:phase2}}, thereupon the 
-\ref{sec:phase3} \textit{\nameref{sec:phase3}} and finally the 
-\ref{sec:phase3} \textit{\nameref{sec:phase4}}. 
-%\subsection{Research, exploration and design phase}
-%\subsection{Narrowing, pre-optimisation and constraint phase}
-%\subsection{Optimisation, modelling and data generation}
-%\subsection{Evaluation, interpretation and outlook phase}
+\ref{sec:phase1} \textit{\nameref{sec:phase1}}%
+, followed by the 
+\ref{sec:phase2} \textit{\nameref{sec:phase2}}%
+%, thereupon the 
+ and finally the 
+\ref{sec:phase3} \textit{\nameref{sec:phase3}}%
+%\ref{sec:phase3} \textit{\nameref{sec:phase4}}%
+ will be discussed.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Research, exploration and design phase}
 \label{sec:phase1}
-\td{freewriting}: \textbf{Scrutinize everthing!} At the beginning of a project it is importatnt 
-to get a feel. I took the first recipe as only true recipe and tried to tune it to perfection. 
+%\td{freewriting}: 
+\textbf{Scrutinize everything!} At the beginning of a project it is important 
+to get a ``feel''. I took the first recipe as only true recipe and tried to tune it to perfection. 
 The problem was that the base line of that recipe was so low such that no matter how much I improved it, it was still bad. 
 I only noticed this after trying out another recipe. 
-My tipp here is to read as much and mostly diverse literature as possible and then try to mimic what ever you can. 
-This will get you a "feel" of what works and what not. 
+My tip here is to read as much and mostly diverse literature as possible and then try to mimic what ever you can. 
+This will get you a ``feel'' of what works and what does not. 
 Thinking back to some design classes I took for data visualization: create as many and different designs as possible. 
 Check what works, collect (dis-)advantages of methods and combine the best approaches. 
 This can save you a lot of time. 
 
-Moreover, it is important to define the objective of the project as clear and disambiguous as possible. 
-Again, try to reformulate the objective in mutliple ways and choose the most fitting. 
+Moreover, it is important to define the objective of the project as clear and unambiguous as possible. 
+Again, try to reformulate the objective in multiple ways and choose the most fitting. 
 Answer which question should be answered, and establish hypotheses with corresponding null hypotheses. 
-A general experimental procedure was stated by Cherkassky and Mulier\cite{cherkassky1998learning}:
+A general experimental design procedure was stated by Cherkassky and Mulier in  ``Learning from Data''\cite{cherkassky1998learning}:
 \begin{enumerate}
-    \item \textbf{State the problem}
-    \item \textbf{Formulate the hypothesis}
-    \item \textbf{Design the experiment/data generation process}
-    \item \textbf{Collect the data and perform preprocessing}
-    \item \textbf{Estimate the model}
-    \item \textbf{Interpret the model/draw the conclusion}
+    \item {State the problem}
+    \item {Formulate the hypothesis}
+    \item {Design the experiment/data generation process}
+    \item {Collect the data and perform preprocessing}
+    \item {Estimate the model}
+    \item {Interpret the model/draw the conclusion}
 \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Narrowing, pre-optimisation and constraint phase}
+\label{sec:phase2}
+The selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} %(page 25)
+After having decided on a base recipe, it is important to define limits and decrease the number of independent variables. 
+The later is more important due to the curse of dimensionality\cite{cherkassky1998learning}, 
+which states that with increasing dimensionality it get exponentially more difficult to arrive at the same density of data points. 
+By excluding input variables from the model, 
+the complexity of the model can be drastically reduced. 
+This leads to more information which can be extracted from the remaining data, 
+be it in more detail of the dependence or higher confidence interval. 
+A good measure to compare with literature and other methods is the \gls{epv}. 
+The \gls{epv} in this work is round 5,
+which is low in comparison with literature consulted
+\cite{
+ahmed2017preparation,
+fernandes2010multi,
+kaczmarowski2015genetic,
+mahdavi2017hardness,
+soltanali2014neural,
+panwar2014design,
+schubert2008design,
+shanaghi2013experimental}.
+Reducing variables is of course no easy task.
+How does one decide which variables to keep and which to incorporate into the model and which to discard? 
+There is an intuitive (expert) way and a mathematical way.
+An expert would decide which variables to discard by his expert knowledge about the domain. 
+Mathematical ways include principal component analysis and step-wise regression.
+%
+Additionally, having wide limits can be an advantage when the data is noisy and the dependence is not too complicated, because by moving samples to the boundaries of the design space, the effect of the noise is reduced\cite{giunta2003overview}. 
+This suggest variable reduction favorable over limit narrowing.
+%"By moving the samples to the boundaries of the design space, the effect of the random term is reduced\cite{giunta2003overview}."
+%
+There are two opposing principles which should be kept in mind when reducing variables, though:
+By introducing a lot of variables into a model presupposes that they and their interactions (!) have a statistically significant effect\cite{gunst2009fractional}.
+On the other hand a model can be used to tell if a variable exerts an influence\cite{haertler2014statistisch}. 
+%
+%One regime where overfitting occurs is when there are to many parameters to be fitted with not enough data. 
+Another reason to avoid too many variables in a model is that they introduce more parameters to fit and overfitting happens in the regime where to many parameters are fitted with not enough data.
+%todo{Overfitting happens in the regime where to many parameters are fitted with not enough data. }
+
+Another step/deed which is well placed in this phase is the estimate the error by reproducing a single sample a certain number of times. 
+%Where the number will then be higher than during optimisation 
+%\todo{include curse of dimensionality.}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Optimisation, modelling and data generation}
+\label{sec:phase3}
+During the optimisation the main problems were too many in- and output variables, reproducibility and regularisation. 
+%The first problem 
+Variable selection has already been discussed in the previous section. 
+When working with stochastic algorithms it is especially important to introduce reproducibility via a seed, which determines all subsequent pseudo-random numbers. 
+Finally, during the \gls{emma} optimisation the input data were not regularized, %es wurde auf regularisation verzichtet, 
+because the regularization would be different for different generations.
+Regularizing with the mean and standard deviation would be either inconsistent across generations or over overvalue the distribution of the initial generation. 
+%because the distribution of 
+%
+%alter previous measurements, which alread beitragen to the model and the influence the decision of the next sample. 
+These were the reasons for not including regularization during \gls{emma} optimization. 
+On the other hand the input data could have been regularized to only take values $[-1;1]$ by defining
+$x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\text{min}}$.
+%On the other hand haette man auf jeden fall die input variablen normieren können. 
+%Normally, for standardisation the mean is substracted and it is devided by the standard deviation, which impplies a distribution of a random variable. 
+%One could have assumed a standard uniform distribution. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+\iffalse
+\begin{itemize}
+    \item regularization
+    \item reproducability (random in code and repeat sample)
+    \item main problems too many in and output vars
+%\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
+\end{itemize}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iffalse
+\subsection{Evaluation, interpretation and outlook phase}
+\label{sec:phase4}
+\begin{itemize}
+    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
+    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
+    \item reasons for large error per sample: ageing of solution, varying humidity, varying room temperature?, impurities in solutions, inhomogeneity of film, measureing error, systematical/thinking error? what else? 
+%What is the reason for aging (O2,H2O?, not sealing accelerates) ? 
+%Why does \gls{ipo} decelerate the aging process? ( ipo fits better to solvent(buoh)?)
+%the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}.
+%\td{COMMENT: solution age was not accounted for}
+    \item \td{maybe the lowering of G and p are not because of better process variables but because of me getting better at creating the layers *sad* :0 } 
+\end{itemize}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Issues of methods for learning from data: 
+%\begin{itemize}
+%	\item How to incorporate a priori assumptions into learning? 
+%	\item How to measure model complexity (i.e. flexibility to fit the training data)?
+%	\item How to find a optimal balance between the data and a priori knowledge? 
+%\end{itemize}
+%\cite{cherkassky1998learning}
+%"Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
+%"Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
+%"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
+%Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
+%Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
+%Any learning process requires the following(p40): 
+%\begin{itemize}
+%	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
+%	\item A priori knowledge to impose contrains
+%	\item An inductive principle (what needs to be done)
+%		\begin{itemize}
+%			\item penalizeation (regularization) inductive principle
+%			\item early stopping rules (with ANN, difficult to control and interpret)
+%			\item structural risk minimization (SRM) (order according to complexity)
+%			\item Bayesian Inference (add subjectivity to learning machine)
+%			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
+%		\end{itemize}
+%	\item A learning method (how does it need to be done,implementation)
+%\end{itemize}
+%\cite{cherkassky1998learning}
+%am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
+%Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{LINKS}
+%\begin{itemize}
+%    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
+%    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
+%    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \iffalse
 \begin{itemize}
@@ -72,40 +219,9 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 \textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
 \fi
 \fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Narrowing, pre-optimisation and constraint phase}
-\label{sec:phase2}
-After having decided on a base recipe, it is important to define limits and decrease the number of independent varibles. 
-The later is more important due to the curse of dimensionality\cite{cherkassky1998learning}, 
-which states that with increasing dimensionality it get exponentially more difficult to arrive at the same density of datapoints. 
-By excluding input variables from the model 
-the complexity of the model can be drastically reduced. 
-This leads to more information which can be extrated from the remaining data, 
-be it in more detail of the dependence or higher confidence interval. 
-A good measure to compare with literature and other methods is the \gls{epv}. 
-In this work there around 5~\gls{epv}, which is pretty low. 
-This is ofcourse not just as straight forward as suggested. 
-How does one decide which variables to keep and which to incorporate into the model and which to discard? 
-There is the intuitive (expert) way and the mathematical way.
-mathematical ways include: pca, step-wise regression 
-%
-Additionally having wide limit can be an advantage when the data is noisy and the dependence is not too complicated.
-"By moving the samples to the boundaries of the design space, the effect of the random term is reduced\cite{giunta2003overview}."
-%
-There are two opposing principles which can be followed: 
-By introducing a lot of variables into a model presupposes that they and their interactions (!) have a statistically significant effect.\cite{gunst2009fractional}.
-On the other hand a model can be used to tell if a variable exerts an influence. 
-%
-One regime where overfitting occurs is when there are to many parameters to be fitted with not enough data. 
-Overfitting happens in the regime where to many parameters are fitted with not enough data. 
-%
-Another step/deed which is well placed in this phase is the estimating the error by reproducing a singel sample a certain number of times. 
-Where the number will then be higher than during optimisation 
-\todo{include curse of dimensionality.}
-%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\td{This section is about 3. DAta Generation and Experiment Design from cherkessky's list. }
+\iffalse
 \begin{itemize}
     \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
     \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
@@ -161,88 +277,4 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 \end{itemize}
 \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Optimisation, modelling and data generation}
-\label{sec:phase3}
-During the optimisation the main problems were too many in- and output variables, reproducability and regularisation. The first, problem was already discussed in the previous section. When working with stochastic algorithms it is especially important to be introduce reproducability via a seed, which determine all subsequent pseudo-random numbers. 
-Finally, during the \gls{emma} optimisation es wurde auf regularisation verzichtet, 
-because the regularization would be different 
-because regularizing with the meand and std deviation would alter previous messurements, which alread beitragen to the model and the influence the decision of the next sample. 
-On the other hand haette man auf jeden fall die input variablen normieren können. 
-Normally, for standardisation the mean is substracted and it is devided by the standard deviation, which impplies a distribution of a random variable. 
-One could have assumed a standard uniform distribution. 
-rather $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\text{min}}$
-\begin{itemize}
-    \item regularization
-    \item reproducability (random in code and repeat sample)
-    \item main problems too many in and output vars
-%\td{two main problems: 1. too many input variables; 2. too many output varibales; at2: as some input variables were also output variables, MARS couldnt find correct BFs. This could be used though: use input var also as output var if you think they are inportant, this way they will be more likely to be choosen in basis function}
-\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Evaluation, interpretation and outlook phase}
-\label{sec:phase4}
-\begin{itemize}
-    \item why lowest $\gamma$ for lowest $T_{cal}$? according which eq? emma? 
-    \item why $\gamma ~ \lambda$? (minimum for layer count?) according which eq? emma? 
-    \item reasons for large error per sample: ageing of solution, varying humidity, varying room temperature?, impurities in solutions, inhomogeneity of film, measureing error, systematical/thinking error? what else? 
-%What is the reason for aging (O2,H2O?, not sealing accelerates) ? 
-%Why does \gls{ipo} decelerate the aging process? ( ipo fits better to solvent(buoh)?)
-%the original solvent was 2-methoxy-ethonanol instead of \ch{buoh}.
-%\td{COMMENT: solution age was not accounted for}
-    \item \td{maybe the lowering of G and p are not because of better process variables but because of me getting better at creating the layers *sad* :0 } 
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Issues of methods for learning from data: 
-%\begin{itemize}
-%	\item How to incorporate a priori assumptions into learning? 
-%	\item How to measure model complexity (i.e. flexibility to fit the training data)?
-%	\item How to find a optimal balance between the data and a priori knowledge? 
-%\end{itemize}
-%\cite{cherkassky1998learning}
-%"Learning is the process of estimating an unkown (input,output) dependency of structure of a system using a limit number of observations."\cite{cherkassky1998learning}
-%"Do not attempt to solve a specified problem by indirectly solving a harder general problem as an intermediate step."\cite{cherkassky1998learning}(p33)
-%"This approach works well only when the number of training samples is large relative to the (prespecified) model complexity (or the number of free parameters)".\cite{cherkassky1998learning}(p41)
-%Modeling bias in statistics is the discrepancy of the mismatch between parametric assumptions and the true dependency.
-%Modeling bias is overcome by using very flexible approximation function, with the tradeoff of more complex inductive (learning) steps. 
-%Any learning process requires the following(p40): 
-%\begin{itemize}
-%	\item A (wide, flexible) set of approximating functions $\mathbf{f}(\mathbf{x},\omega),\; \omega \in \Omega$
-%	\item A priori knowledge to impose contrains
-%	\item An inductive principle (what needs to be done)
-%		\begin{itemize}
-%			\item penalizeation (regularization) inductive principle
-%			\item early stopping rules (with ANN, difficult to control and interpret)
-%			\item structural risk minimization (SRM) (order according to complexity)
-%			\item Bayesian Inference (add subjectivity to learning machine)
-%			\item Minimum Description Length (MDL, cryptic complicated uninteresting)
-%		\end{itemize}
-%	\item A learning method (how does it need to be done,implementation)
-%\end{itemize}
-%\cite{cherkassky1998learning}
-%am wichtigsten is das Ziel der untersuchung! \cite{haertler2014statistisch}
-%Er könnte nun die Unterschiede zwischen den Schulen "statisteisch messen"un den Schuleinfluss in der abschliessenden Analyse "herausrechnen". \cite{haertler2014statistisch}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\subsection{LINKS}
-%\begin{itemize}
-%    \item stat vs ML \url{https://medium.com/source-institute/ai-vs-statistics-c2485f9df126} and 
-%    \item https://towardsdatascience.com/no-machine-learning-is-not-just-glorified-statistics-26d3952234e3?gi=3f94b919de45
-%    \item https://towardsdatascience.com/are-you-aware-how-difficult-your-regression-problem-is-b7dae830652b calculate error/smoothness etc
-%\end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\fi
