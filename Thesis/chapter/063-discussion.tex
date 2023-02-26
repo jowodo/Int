@@ -5,7 +5,7 @@
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
 %todo{go to anova discussion}
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
-%todo{british or US?} 
+%todo{british or US?: sation vs zation} 
 This subsection will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
 Firstly, the 
 \ref{sec:phase1} \textit{\nameref{sec:phase1}}, followed by the 
@@ -103,6 +103,7 @@ Overfitting happens in the regime where to many parameters are fitted with not e
 %
 Another step/deed which is well placed in this phase is the estimating the error by reproducing a singel sample a certain number of times. 
 Where the number will then be higher than during optimisation 
+\todo{include curse of dimensionality.}
 %
 %\td{This section is about 3. DAta Generation and Experiment Design from cherkessky's list. }
 \begin{itemize}
@@ -165,6 +166,14 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Optimisation, modelling and data generation}
 \label{sec:phase3}
+During the optimisation the main problems were too many in- and output variables, reproducability and regularisation. The first, problem was already discussed in the previous section. When working with stochastic algorithms it is especially important to be introduce reproducability via a seed, which determine all subsequent pseudo-random numbers. 
+Finally, during the \gls{emma} optimisation es wurde auf regularisation verzichtet, 
+because the regularization would be different 
+because regularizing with the meand and std deviation would alter previous messurements, which alread beitragen to the model and the influence the decision of the next sample. 
+On the other hand haette man auf jeden fall die input variablen normieren können. 
+Normally, for standardisation the mean is substracted and it is devided by the standard deviation, which impplies a distribution of a random variable. 
+One could have assumed a standard uniform distribution. 
+rather $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\text{min}}$
 \begin{itemize}
     \item regularization
     \item reproducability (random in code and repeat sample)
