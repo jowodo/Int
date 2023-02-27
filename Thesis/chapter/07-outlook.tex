@@ -1,23 +1,30 @@
-\todo{freewriting:} 
-what did i want to do? 
-The goal of this work was to find a sol-gel process resulting in a insulating zirconium ceramic on top of steel.
-This aufbau then can be used for thin layer photo voltaics. 
-The ceramic needs to be homoegeneous and defect free. 
-what was done? 
-A suitable recipe was found and optimized via \gls{emma}. 
-welche methoden wurden dafür verwendet? 
-after the optimsation the data was analysed with further/different machine learning methods like kernel ridge regression, support vector regression and linear regression. 
-was wurde herausgefunden? 
+%\todo{freewriting:} 
+%what did i want to do? 
+The goal of this work was to find a sol-gel doctor blading process resulting in a insulating zirconium ceramic on top of steel.
+This structure then can be used as substrate for thin layer photo voltaics. 
+The ceramic needs to be homoegeneous and defect free in order to insulate properly.
+%what was done? 
+A suitable recipe was found\cite{Hu2016} and the process variables were optimized via \gls{emma}. 
+The recipe was improved by increasing its stability. 
+The best parameters found by the emma optimisation were 
+$c_{zr}=2$, $\lambda=10$, $v_{DB}=10$, $T_{DB}=40$, $v_{cal}=120$ and $T_{cal}=300$.
+%\todo{$T_{cal}=300$}. 
+%welche methoden wurden dafür verwendet? 
+After optimsation the data was analysed with further machine learning methods like kernel ridge regression, support vector regression and linear regression. 
+The comparisson of methods showed that \gls{emma} performed well on predicting the correlation between conductance and process variables. 
+%was wurde herausgefunden? 
 A strong correlation of calcination temperature and conductance in the bereich of 300--400\oc{}. 
-was kann noch herausgefundne werden und wie? 
-
+%was kann noch herausgefundne werden und wie? 
+Next steps include to investigate if the correlation of condactance and calcination temperature are statistically significant or due to small sample size. 
+The aging process could be examined via infra red spectroscopy. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\iffalse
 was kann noch veraendert werden? 
 humidity 
 solution age
 vdb and tdb on g and phd 
 Tcal on g and phd 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 Making of the solution for the sol-gel process:
 For a single concentrated solution \ml{0.05} of \gls{zrpro} are added while stirring to \ml{4.95} of \gls{buoh} and stirred for \minutes{15}. 
@@ -34,3 +41,4 @@ but most time was used to find a vernuenfig base recipe and process
 It is still very human 
 Der process is - as it the case with all ML and most fitting processes - is very abhaengig von hyper parameters, 
 In the current work population size, number of generations, and most importantly boundaries (grenzen). 
+\fi
