@@ -81,20 +81,22 @@ These thin film \gls{pv}s not only use less material, but also can be used in fl
 \begin{table}[tbh]
 	\small
     \center
-    \begin{tabular}{cccccc}
-        \hline
-        \hline
-		Material&   Type&    Band Gap [\ev{}]&    $\lambda$ [\nm{}]&    Abs. coef. $\alpha$ [\pcm{}]    &Penetration Depth [\um{}]\\
-        \hline
-		c-Si&   indirect&   1.12&   600&    \num{4000}&    2.5\\
-		c-Si&   indirect&   1.12&   1000&    \num{64}&    150\\
-		c-Si&   indirect&   1.12&   1100&    \num{3.5}&    290\\
-		a-Si&   direct&      1.7&    600&    \num{40000}&  0.25\\
-		CdTe&   direct&      1.45&    600&    \num{37000}&  0.3\\
-		GaAs&   direct&      1.42&    600&    \num{40000}&  0.2\\
-        \hline
-        \hline
-    \end{tabular}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{cccccc}
+			\hline
+			\hline
+			Material&   Type&    Band Gap [\ev{}]&    $\lambda$ [\nm{}]&    Abs. coef. $\alpha$ [\pcm{}]    &Penetration Depth [\um{}]\\
+			\hline
+			c-Si&   indirect&   1.12&   600&    \num{4000}&    2.5\\
+			c-Si&   indirect&   1.12&   1000&    \num{64}&    150\\
+			c-Si&   indirect&   1.12&   1100&    \num{3.5}&    290\\
+			a-Si&   direct&      1.7&    600&    \num{40000}&  0.25\\
+			CdTe&   direct&      1.45&    600&    \num{37000}&  0.3\\
+			GaAs&   direct&      1.42&    600&    \num{40000}&  0.2\\
+			\hline
+			\hline
+		\end{tabular}
+	}
     \caption{Photonic properties of several established \gls{pv} materials (data from \cite{mertens2020photovoltaik})}
 	\label{tab:cigs:alpha}
 %
@@ -255,6 +257,8 @@ Electrons are then accelerated by a voltage of 2 to 40 kV and bundled into narro
 A high \gls{mfp} is needed for electrons to travel from the source to the sample (and to the detector). 
 Thus, a very low pressure is in the inside. 
 In this work \gls{sem} was used as a preliminary way of checking the surface condition. 
+% squeeze condition into this page 
+\enlargethispage{\baselineskip}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
