@@ -1,20 +1,31 @@
 [ ] finish writing:
-	[ ] 3.1 THEORY
+    [ ] 0 ABSTRACT
+    [ ] 1 INTRO/BACKGROUND
+	[X] 3.1 THEORY
 		[X] 3.1.4 CIGS
-		[ ] 3.3 ML & Statistic
+		[X] 3.3 ML & Statistic
 			[X] 3.3.7 Design of Experiment
 			[X] 3.3.5 PSO and GA
 			[X] 3.3.8 Linear Regression
-			[ ] 3.3.9 AI/ML vs Statistics
-	[ ] 4 EXPERIMENTAL 
-	[ ] 5 COMPUTATIONAL DETAILS
-	[ ] RESULTS
-		[ ] XRD
-		[ ] SEM 
-		[ ] V-I 
-		[ ] PSO 
+			[X] 3.3.9 AI/ML vs Statistics
+	[X] 4 EXPERIMENTAL 
+	[X] 5 COMPUTATIONAL DETAILS
+	[X] RESULTS
+		[X] XRD
+		[X] SEM 
+		[X] V-I 
+		[X] PSO 
+    [ ] 6 RESULTS
+        [X] material 
+        [X] pre-emma 
+        [X] emma 
+        [X] post emma 
+        [ ] discussion 
+    [ ] OUTLOOK
+
 - format 
 	- look at citation locations
+    - caption dots at end? 
 	- look if all SI units fit
 	- make giant table small or rotate
 
