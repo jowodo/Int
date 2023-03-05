@@ -258,9 +258,9 @@ A more detailed history of \gls{sem} can be read in a open-to-read paper by McMu
 \Gls{sem} is a microscopical technique which allows visualisation of surfaces with features in the nano meter regime. 
 While optical microscopes use visible light and optical lenses, \gls{sem} uses accelerated electron beams and electrostatic and electromagnetic lenses.
 This allows the generation of much more detailed images due to the shorter wavelengths of electrons compared to visible light\cite{Kaliva2020}.
-The electron beam produces X-rays, elastically backscattered (primary) electrons, inelastic (secondary) electrons and Auger electrons. 
+The electron beam produces X-rays, elastically backscattered (primary) electrons, inelastic (secondary) electrons and Auger electrons in the examined material. 
 Secondary electrons carry information to conclude morphology and topology of the sample while X-rays can be used to identify the elements. 
-Electrons originate from either a \gls{feg}, where a strong electrical field rips electrons from the bulk, or from thermionic guns where the filament (tungsten W or \ch{LaB6} (brighter and longer lasting but more expensive)) is heated until electrons are emitted. 
+Electrons originate from either a \gls{feg}, where a strong electrical field rips electrons from the bulk, or from thermionic guns where a filament (tungsten W or \ch{LaB6} (brighter and longer lasting but more expensive)) is heated until electrons are emitted. 
 Electrons are then accelerated by a voltage of \SI{2}{\kilo\volt} to \SI{40}{\kilo\volt} and bundled into narrow beams by lenses\cite{Vernon2000}.
 A high mean free path is needed for electrons to travel from the source to the sample (and to the detector). 
 Thus, a very low pressure is needed inside the microscope. 
@@ -276,21 +276,23 @@ In this work \gls{sem} was used as a preliminary way of checking the quality of 
 interactions of \gls{uv}, \gls{vis} and \gls{nir} light 
 (wavelengths of \num{e-7} to \num{e-6}\m{}) with molecules\cite{Schwedt2008}.
 In general, light is described as periodic \gls{em} wave 
-which - in vacuum - moves with the speed of light ($c = \mps{299792458}$).
-In other materials light moves with the velocity $v=\frac{c}{n(\lambda)}$, where $n(\lambda)$ is the refractive index which is a function of the wavelength $\lambda$. 
+which - in vacuum - moves with the speed of light ($c = \mps{299792458}$)\cite{gHobel2006international}.
+In other materials light moves with the velocity $v=\frac{c}{n(\lambda)}$, where $n(\lambda)$
+is the refractive index which is dependent on the wavelength $\lambda$. 
+%is the refractive index which is a function of the wavelength $\lambda$. 
 The relation of the energy of a photon~$E$, its frequency~$\nu$, wavelength~$\lambda$ and wave number~$\bar{\nu}$ are as follows:
 \begin{align*}
 	E &= h \cdot \nu \\
 	\nu &= c/ \lambda \\
 	\bar{\nu} &= 1/\lambda,
 \end{align*}
-where $h$ is the Planck's constant.
+where $h$ is Planck's constant.
 %In words: shorter wavelength (higher frequency) photons are more energetic.
 In practice the spectrum of \gls{em} waves is sectioned into different ranges; % (\td{see figure?+table});
 from high to low energy: X-ray, \gls{uv}, \gls{vis}, (near, middle and far) \gls{ir}, microwaves and radio waves. 
 X-rays interact with core electrons, \gls{uv}\gls{vis} with valence electrons, \gls{ir} with molecular vibrations, microwaves with molecular rotations and radio with electron and nuclear spins. 
 %Molecular vibrations can be separated in valence and deformation vibrations.
-
+%
 % UVVis
 Two prerequisites need to be fulfilled in order for a \gls{uv}\gls{vis} photon to be 
 absorbed by a molecule or atom.
@@ -309,13 +311,13 @@ The number of vibrations can therefore be calculated as
 \end{align*}
 Vibrations are classified in valence vibrations (change of bond length) and deformation (change of bond angle) vibrations\cite{Melker2006}. 
 Only vibrations that change the dipole moment of the molecule are \gls{ir} active. 
-The absorption of \Gls{nir} electromagnetic waves involves excitations of non-fundamental vibrations, overtones and combination modes. 
+The absorption of \Gls{nir} electromagnetic waves involves excitations of non-fundamental vibrations, overtones and combination modes which lead to intricate patterns called the fingerprint region. 
 These transition are mostly "forbidden" quantum mechanically and allow analysis of bulk matter without extensive preparation
 due to the deep penetration depth of \gls{nir} light\cite{bec2019breakthrough}.
 
 %\td{describe simple IR with monochromator}
 
-\paragraph{Fourier Transform Spectrometer}
+\subsubsection{Fourier Transform Spectrometer}
  %A ceramic material (Nernst glower) is heated to around \oc{1600} as light source. 
 In the classic two-beam-spectrometer the light emitted from the light source is split, 
 sent through the sample and the reference and one of the two beams is alternately 
@@ -327,7 +329,7 @@ multiplier (a device which transforms photons into electrical signals).
 How the two beams will interfere upon recombination depends on the optical path difference (also called retardation) of the two light beams\cite{Schwedt2008}.
 In a \gls{ft} spectrometer the reference has to be measured before the sample.
 %
-When the refractive index of two layers differ, light can be used to measure the thickness\cite{Dumin1967} of the optical less dense material.
+%When the refractive index of two layers differ, light can be used to measure the thickness\cite{Dumin1967} of the optical less dense material.
 
 %\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
 %differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
@@ -343,7 +345,8 @@ Absorbance per din 1349: $A(\lambda) = \log{\frac{\phi_{in}}{\phi_{ex}}}$ and tr
 \subsection{X-Ray Diffraction}
 %\url{https://link.springer.com/content/pdf/10.1186/2228-5326-3-8.pdf}
 \gls{xrd} is used to study the crystalline structure of materials.
-Since X-rays wavelengths (\num{0.2} to \nm{10}) are comparable to the interatomic spacing of crystalline solids the beams get reflected and contain information about the structure\cite{Kaliva2020}.
+Since X-rays wavelengths (\num{0.2} to \nm{10}) are comparable to the interatomic spacing of crystalline solids, 
+the beams get reflected and contain information about the structure\cite{Kaliva2020}.
 Each crystalline material has a discreet atomic structure, which upon irradiation with 
 X-rays causes constructive and destructive interference according to Bragg's law and generates unique diffraction patterns. 
 \Gls{xrd} diffraction plots of crystalline materials feature distinct peaks, whereas amorphous materials exhibit a broad curve with a maximum extending over several degrees (2$\theta$).

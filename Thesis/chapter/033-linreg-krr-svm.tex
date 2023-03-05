@@ -5,8 +5,8 @@ It persuades by its computational simplicity and easy interpretation.
 \begin{equation}
 \mathbf{y} = \mathbf{X} \mathbf{k} +c 
 \end{equation}
-Where $\mathbf{y}$ (size $\mathbb{R}^n$, where $n$ is the number of data points) is a vector of dependent variables which shall be predicted and $\mathbf{X}$ (size $\mathbb{R}^{n\times d}$, where $d$ is the the number of independent variables) is a matrix of independent variables. 
-The parameters $\mathbf{k}$ (size $\mathbb{R}^d$) and $c$ (size $\mathbb{R}$) are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
+Where $\mathbf{y} \in \mathbb{R}^n$ ($n$ is the number of data points) is a vector of dependent variables which shall be predicted and $\mathbf{X}\in \mathbb{R}^{n\times d}$ ($d$ is the the number of independent variables) is a matrix of independent variables. 
+The parameters $\mathbf{k} \in \mathbb{R}^d$ and $c \in \mathbb{R}$ are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
 A typical function to minimize are the $L_1$ and $L_2$ error, i.e. \gls{mae} and \gls{mse}, respectively.
 \begin{align}
 L_1&= \sum_i |y_i - \hat y_i| \\%= \sum_i \sum_j |y_i - x_{i,j}\cdot k_i+c| \\
@@ -14,28 +14,34 @@ L_2&= \sum_i(y_i - \hat y_i)^2 %= \sum_i \sum_j (y_i - x_{i,j}\cdot k_i+c)^2
 \end{align}
 %
 
-\textbf{Ridge Regression} is like linear regression but with an extra term which penalizes steep regression functions.
-This extra term which reduces overfitting is scaled by a correction parameter~$\alpha$. 
+\textbf{Ridge Regression} is like linear regression with an extra term which penalizes steep regression functions.
+The extra term reduces overfitting and is scaled by a correction parameter~$\alpha$. 
 The larger $\alpha$ is, the larger is the regularisation and the flatter is the regression functions. 
 When $\alpha$ tends to infinity, we get an intercept-only model.
 When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss function.
 %\td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
 \begin{equation}
-    L_{RR} = L_2 + \alpha \sum k_i = \sum(y_i - \hat y_i)^2 + \alpha \sum k_i
+    L_{RR} = L_2 + \alpha \sum |k_i| = \sum(y_i - \hat y_i)^2 + \alpha \sum |k_i| 
 \end{equation}
 
 %\textbf{Kernel Ridge Regression}
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Kernel Ridge Regression } KRR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\Gls{krr}} combines ridge regression with the kernel method. 
 A~kernel transforms data in such a way that a linear hyperplane (a point in one dimension, a line in two dimensions, 
-a plane in three dimensions) can fit data in regression problems or seperate the data in classification problems without actually doing the transormation for every data point. 
+a plane in three dimensions) can fit data in regression problems or seperate the data in classification problems without actually doing the transormation for every data point, which lowers computational costs.
 A kernel is some kind of similarity measure 
 which fulfills the requirements of nonnegativity, symmetry and linearity\cite{rupp2015machine}.
+%\enlargethispage{\baselineskip}
+%\looseness=-1
 The following equations show definitions for 
-linear (eq.~\ref{eq:lin-kernel}), 
+linear~(eq.~\ref{eq:lin-kernel}), 
 polynomial (eq.~\ref{eq:pol-kernel}), 
 sigmoidal (eq.~\ref{eq:sig-kernel}) and 
-radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}), with $\gamma$ as fixed hyperparameter and $c_0$ as parameter to optimize.
+radial basis functionial kernel~(eq.~\ref{eq:rbf-kernel}), with $\gamma$ as fixed hyperparameter and $c_0$ as parameter to optimize.
+A requirement for using kernels is having a dot product in the loss function. 
+This can be accomplished by expressing $\mathbf{k}$ in terms of $\mathbf{X}$: $\mathbf{k}=\mathbf{X}^\top \mathbf{r}$
+\cite{rudin2020least}.
+
 \begin{align}
     \label{eq:lin-kernel}
     k_{lin}(\mathbf{x},\mathbf{y}) &= \mathbf{x}^{\top} \mathbf{y} \\
@@ -46,14 +52,11 @@ radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}), with $\gamma$ as fixe
     \label{eq:rbf-kernel}
     k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
 \end{align}
-A requirement for using kernels is having a dot product in the loss function. 
-This can be accomplished by expressing $\mathbf{k}$ in terms of $\mathbf{X}$: $\mathbf{k}=\mathbf{X}^\top \mathbf{r}$
-\cite{rudin2020least}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Support vector machines } SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textbf{\Gls{svm}} is a versatile machine learning algorithm first mentioned in 1992\cite{boser1992training} . 
+\textbf{\Gls{svm}} is a versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
 %
-The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-sperable data and eventually adapted to solve regression problems.
+The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-separable data and eventually adapted to solve regression problems.
 The concepts of \gls{svm} will be discussed in the same chronological order. 
 %
 Classifiction works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
