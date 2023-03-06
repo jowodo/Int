@@ -28,7 +28,7 @@ When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss func
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Kernel Ridge Regression } KRR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\Gls{krr}} combines ridge regression with the kernel method. 
 A~kernel transforms data in such a way that a linear hyperplane (a point in one dimension, a line in two dimensions, 
-a plane in three dimensions) can fit data in regression problems or seperate the data in classification problems without actually doing the transormation for every data point, which lowers computational costs.
+a plane in three dimensions) can fit data in regression problems or separate the data in classification problems without actually doing the transormation for every data point, which lowers computational costs.
 A kernel is some kind of similarity measure 
 which fulfills the requirements of nonnegativity, symmetry and linearity\cite{rupp2015machine}.
 %\enlargethispage{\baselineskip}
@@ -56,7 +56,7 @@ This can be accomplished by expressing $\mathbf{k}$ in terms of $\mathbf{X}$: $\
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Support vector machines } SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\Gls{svm}} is a versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
 %
-The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-separable data and eventually adapted to solve regression problems.
+The \gls{svm} was initially developed by Vladimir Vapnik for the binary classification of separable data, then improved to handle non-separable data and eventually adapted to solve regression problems.
 The concepts of \gls{svm} will be discussed in the same chronological order. 
 %
 Classifiction works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
@@ -87,7 +87,7 @@ can be generalized to
 where $y_i$ being the labels of the training data. 
 The width of the margin can be inferred by projecting the vector spanning between two support vectors 
 on opposite sides of the decision boundary onto the unit vector perpendicular to the hyperplane. 
-If we now take a vector from a positive support vector $\mathbf{x}^+$ to a negative support vector $\mathbf{x}^-$ and project it on to the unit vector of $\mathbf{w}$ (which is perpendicular to the hyperplane), 
+If we now take a vector from a positive support vector $\mathbf{x}^+$ to a negative support vector $\mathbf{x}^-$ and project it onto the unit vector of $\mathbf{w}$ (which is perpendicular to the hyperplane), 
 we get the width of the margin. 
 \iffalse
 \begin{equation}
@@ -126,30 +126,32 @@ to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cher
 \end{equation}
 %
 %%%%%%%%%% SOFT MARGIN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\textbf{Soft margin \gls{svm}} - in contrast to hard margin \gls{svm} is used if the data is non-seperable due to outliers\cite{cortes1995support}.
-Such data can be handeled by introducting a penalization term for wrongly categorized samples into the loss function. 
+\textbf{Soft margin \gls{svm}} -- in contrast to hard margin \gls{svm} -- is used if the data is non-separable due to outliers\cite{cortes1995support}.
+Such data can be handeled by introducing a penalization term for wrongly categorized samples into the loss function. 
 \begin{equation}
 	\label{eq:svm-soft}
-	L_{SM} = \frac{2} {\|\mathbf{w}\|} + \sum_i^n max(0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) 
+	L_{SM} = \frac{1}{2} \|\mathbf{w}\|^2 + \sum_i^n max(0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) 
 \end{equation}
 If the prediction $\mathbf{w}\mathbf{x}_i+b$ and the true category $y_i$ don't agree, 
 they have opposite signs and their product will be a negative number.
 The substraction of a negative number will result in a positive penalizisation. 
-If the sample iis correctly predicted, the product will result in a positive number, 
-the substraction in a negative number and the maximum will be 0, if the sample is ousite of the margin. 
-
+If the sample is correctly predicted, the product will result in a positive number, 
+the substraction will lead to a negative number and the maximum will be 0, if the sample is ousite of the margin. 
+%
 %%%%%%%%%%% KERNELS IN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %A big advantage of \gls{svm} is that through the kernel trick non-linearly separable data can be divided. 
 %As mentioned before, a inner product is need to use the kernel trick. 
-The function we want to optimize (see eq. \ref{eq:svm04}) and its soft margin equivalent can both be expressed as inner products. 
-This allows us to seperate data not only with hyperplanes 
-but also with komplex decision boundaries due to the kernel trick. 
+The function we want to optimize (eq.~\ref{eq:svm04}) and its soft margin equivalent (eq.~\ref{eq:svm-soft}) can both be expressed as inner products. 
+This allows us to separate data not only by hyperplanes 
+but also by complex decision boundaries due to the kernel trick. 
 Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the innerproduct of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
 %\td{write about sv regrgession}
 
-\Gls{svm}s can also be used for regression.
+\Gls{svm}s can also be used for regression (support vector regression).
 The decision function becomes the regression function and the margin includes all data points instead of none. 
-In a soft margin \gls{svm} a few data point can lie outside the margin as outliers. 
+In soft margin support vector regression a few
+outliers are allowed.
+%data point can lie outside the margin as outliers. 
 Non-linearity can be likewise introduced via the kernel trick. 
 %\td{write about kernel} 
 

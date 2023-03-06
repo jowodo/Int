@@ -98,11 +98,12 @@ Other common methods include linear regression, kernel ridge regression and supp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Population Based Optimisation Algorithms}
 
-There are also lesser know algorithms like 
+There are also lesser know \gls{ml} algorithms like 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
-\gls{pso} algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simultaneously\cite{villanova2010function}.
+Evolutionary algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simultaneously\cite{villanova2010function}.
 %
-One advantage of evolutionary algorithms is that they start with a small data set
+%One advantage 
+One particular feature of evolutionary algorithms is that they start with a small data set
 and periodically request new data in order to solve the problem iteratively.
 %\td{This is exactly what I needed because every experiment is very time intensive.} 
 
@@ -133,7 +134,7 @@ influenced by its particle velocity and position as well as its and the swarm's 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{EMMA}
-\Gls{emma} is an implementation of the \gls{pso} in the \texttt{R} programming language. 
+\Gls{emma} is an implementation of \gls{pso} in the \texttt{R} programming language. 
 Each time step the dependent variables for all possible input variable combinations %$\mathbf{x} = \{x_1,\cdots ,x_N\}$ 
 are predicted with the help of \gls{mars}. 
 The \gls{mars} \gls{rf} is then used to chose the next position for each particle.
@@ -147,7 +148,7 @@ Friedman presented \gls{mars} as an alternative to piecewise polynomials (spline
 %to higher dimensions (n > 2) is straightforward in principle but difficult in practice. 
 %"These difficulties are related to the so-called “curse-of-dimensionality”, a phrase coined by Bellman (1961) to express the fact that exponentially increasing numbers of points are needed to densely populate Euclidean spaces of increasing dimension."\cite{friedman1988fitting}
 %
-The main advancements of \gls{mars} are the ability to fit (possibly complex) interactions and non-linearities without losing interpretability. 
+The main advancements of \gls{mars} is the ability to fit (possibly complex) interactions and non-linearities without losing interpretability. 
 %
 %- "The key ingredient that advances this approach to general settings is the ability to fit (possibly complex) interactions among the variables through the product terms that are permitted to enter the approximation (9), if required by the fit."\cite{friedman1988fitting}
 %% MARS MODEL SELECTION
@@ -159,7 +160,7 @@ During the forward recursion terms are added in pairs until a certain number of 
 Each pair consists of two hinge functions (also called rectifier functions) multiplied with a term already part of the \gls{rf} (including the constant term).
 The maximum degree of interaction is 2 for \gls{emma}, but can be varied. 
 This means that only two basis functions can be multiplied (excluding the constant term) to form a subsequent term.
-Pairwise added hinge functions are of the simple form $h(x-c)$ and $h(c-x)$ where $h(a)= max(0,a)$ and with $x$ being an independent variable, $c$ being a constant and $a$ being any expression. 
+Pairwise added hinge functions are of the simple form $h(x-c)$ and $h(c-x)$ where $h(e)= max(0,e)$ and with $x$ being an independent variable, $c$ being a constant and $e$ being any expression. 
 %%% BACKWARD EMMA
 Then, the backwards algorithm regularizes the function by removing individual terms. 
 The metric which decides if a term should be removed is called \gls{gcv} and was introduced by Wahba and Cravenin 1969\cite{wahba1979smoothing}.
@@ -224,9 +225,9 @@ The coefficients for each term are then chosen via regular \gls{mse} minimisatio
 	- {Grahem C. Goodwin\cite{goodwin1977experiment}}
 \end{quote}
 %
-In two cases a deliberate \gls{doe} is beneficial.
-If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
-If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
+In two cases a deliberate \gls{doe} is especially beneficial.
+(1) If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
+(2) If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
 %Both encompass nearly all cases. 
 % 
 At the beginning of any experiment its constraints must be determined. 
@@ -255,7 +256,7 @@ A drawback of 2-level factorial (incl. \gls{pb}) and random fractional designs i
 The Hammersley design\cite{viana2016tutorial,diwekar1997efficient} is based on the Hammersley sequence and produces space filling data points. 
 % LATIN HYPER CUBE
 The Latin hypercube \gls{doe}\cite{viana2016tutorial,diwekar1997efficient} is a type of orthogonal \gls{doe}, 
-which has the advantage that each level for each variable will be tested only once. 
+which has the feature that each level for each variable will be tested only once. 
 A Latin hypercube \gls{doe} can be also created such that data points distribute more uniformly over the search space. 
 Latin hypercube \gls{doe}s are mainly used in computer simulations which are purely deterministic and therefore are very precise.
 %
