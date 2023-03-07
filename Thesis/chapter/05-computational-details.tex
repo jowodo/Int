@@ -20,7 +20,7 @@
 %\end{itemize}
 %\td{describe problem and solution found}
 Multiple \gls{iv} curves were measured for every sample.
-The main difficulty faced in processing the data was to present the measurements obtain 
+The main difficulty faced in processing the data was to present the measurements obtained 
 from a sample in one representative number. 
 %
 %\todo{why didn't i just take this?}
@@ -29,22 +29,24 @@ from a sample in one representative number.
 %\td{wanted to put more weight on bad shunts}
 %\td{plot avg, avg(log), avg(log-13)}
 %
-For every I-V curve (aluminium dot) the gradient $g$ at $V=0$ is calculated by taking 
-each 5 points before and after the origin with at least 2 points distance (which boils
+For every I-V curve (i.e.\,for every aluminium dot contact) the gradient $g$ at $V=0$ (conductance) is calculated by taking 
+5 points before and 5 points after the origin with at one point distance from zero (which boils
 down to the data points from $\pm$\SI{0.02}{\volt} to $\pm$\SI{0.07}{\volt}), 
-calculating averages of each point cloud $\overline{V}$ and $\overline{I}$ and taking the ratio of differences 
+calculating averages $\overline{V}$ and $\overline{I}$ of each point cloud and taking the ratio of differences:
 %averaging their V and I values and calculating
 \begin{equation}
     %g = \frac{I_{+m+d} - I_n}{V_{n+1} - V_n}.
-    g = \frac{\overline{I}_{+} - \overline{I}_-}{\overline{V}_{+} - \overline{V}_-}.
+    g = \frac{\overline{I}_{+} - \overline{I}_-}{\overline{V}_{+} - \overline{V}_-}
 \end{equation}
 %
 The average of each conductance would be an easy and naive choice but difficult to represent a 
 sample correctly since the possible values of conductance span across several magnitudes.
 So the average of base 10 logarithm of conductances is the next nearby \textit{ansatz}.
 %
-In order to make the metric closer and better comparable to the \gls{mse} (and to penalize deviation from ideal more than linearly) the average of the squared difference 
-to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the average of logarithms. 
+In order to make the metric closer 
+%and better comparable to the 
+\gls{mse} (and to penalize deviation from ideal more than linearly) the average of the squared difference 
+to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the average of logarithms and shall be called conducticity hereafter for lack of a better term. 
 %As a measure of conductance a distance $D$ from an ideal non-conducting case. 
 %The average of the negative base 10 logarithm subtracted from an ideal non-conducting gradient of $10^{-13}$ 
 %and the mean of all conductances was taken
@@ -53,7 +55,7 @@ to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the averag
     \gamma = \sum_i^N \frac{ (-log_{10}(g_i) - 13)^2}{N}
 	\label{eq:gamma}
 \end{equation}
-Another measure is the density of shorted species $\rho$, calculated in following way:
+Another measure is the density of shorted species $\rho$ (pin hole density), calculated in following way:
 \begin{equation}
 	s_i = \begin{cases}
         1 &\text{if} \quad -log_{10}(g_i) < 5 \\
@@ -108,15 +110,15 @@ where $\gamma$, $\rho$ and $\lambda$ are to be minimized and $v_{cal}$ to be max
 %which all should be minimized except for $v_{cal}$.
 The next step is to generate an initial population (ensemble of experiments), which is chosen randomly from the population space. 
 The experiments are executed, measured and evaluated according to section 
-\ref{sec:exp} and the responses $\gamma$ (see eq. \ref{eq:gamma}), $\rho_s$ (see eq. \ref{eq:rho}), 
-$n_{layers}$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in 
+\ref{sec:exp} and the responses conducticity $\gamma$ (see eq. \ref{eq:gamma}), pin hole density $\rho_s$ (see eq. \ref{eq:rho}), 
+$\lambda$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in 
 \oc{}/\minutes{}) are supplied to the program. 
 The program, then, uses this data to estimate a response for each output variable 
-for the entire population space.
+for the entire population space
 (and to choose a fraction of the initial population which is allowed to propagate).
 %The response variables for the entire population space is calculated. 
 The current population - each of the particles independently - 
-have random velocity vector associated to them which is directed to the best predicted sample. 
+are given a random velocity vector associated to them which is directed to the best predicted sample. 
 %moves towards the optimum solution.
 The population for the next time step is generated and the experiments are again executed, measured and evaluated.
 Each time step thus includes experiment identification, solution preparation, coating deposition and layer analysis. 
@@ -133,21 +135,21 @@ coating deposition, and spot analysis.
 
 \section{Fitting via Machine Learning}
 %\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
-Python 3.10.9 and sci-kit learn 1.1.2\cite{pedregosa2011scikit} were used to implement a linear fit model, \gls{krr} and \gls{svm} with the kernels polynomial, \gls{rbf} and sigmoid. 
+Python 3.10.9 and sci-kit learn 1.1.2\cite{pedregosa2011scikit} were used to implement a linear fit model, \gls{krr} and \gls{svm} with polynomial, \gls{rbf} and sigmoid kernels. 
 %\subsection{Grid Search}
-A grid search over a set of hyper parameters was executed. 
+A grid search over a set of hyperparameters was executed. 
 %https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
 %https://scikit-learn.org/stable/modules/svm.html#svc
 % KRR 
-The parameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
-The kernel took the form of \gls{rbf}, sigmoid and polynomial with degree 1--4.
+The hyperparameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
+The kernel took the form of \gls{rbf}, sigmoid or polynomial with degree 1--3.
 The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit{optimizand}) took the values 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2
 and 0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, respectively.
 Note that $\gamma_{ml}$ is used differently in each kernel. 
 % SVM
 The kernels for \gls{svm} were the same as for \gls{krr}. 
 Further hyper parameters were $C$, $\varepsilon$ and $\gamma_{ml}$, 
-where $C$ took the values 0.05--0.95 with 0.05 steps, $\varepsilon$ 0.02--3.8 with 0.2 steps 
+where $C$ took the values 0.05--0.95 with step size 0.05, $\varepsilon$ 0.02--3.8 with 0.2 steps 
 and $\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
 Where \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
 and $\sigma(\mathbf{X})$ the variance of the input variables. 
