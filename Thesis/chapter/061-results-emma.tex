@@ -70,9 +70,9 @@ This indicates an underestimation of $\hat\gamma$ at the beginning and a correct
 %The reason for is probably a 
 The underestimation probably stems from a lucky selection of initial experiments or a skew in the measurements. 
 \linebreak[4]
-Indeed, the samples with the lowest \textit{optimisands} are among the initial generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
+Indeed, the samples with the lowest \textit{optimizands} are among the initial generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
 
-In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimisands}, 
+In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimizands}, 
 conducticity $\gamma$ and pin hole density $\rho$, of each particle at each generation.
 The points at generation number 0 indicate particles which were not included to be propagated. 
 %Each violet line indicates a particle, the blue line depicts the average of all particles and the yellow line depicts the average of all particles which were propagated. 
@@ -132,7 +132,7 @@ The first thing to notice is that prediction functions of each generation depend
 %This means that the algorithm must decide on the variables which explain the most variance independent of optimization weights.
 This stems from the fact that the algorithm choses a single minimal set of basis functions to predict all dependent variables. 
 %
-%\td{Knowing this, makes the decision of adding $\lambda$ and $v_{cal}$ as \textit{optimisands} rather unfortunate. %highly questionable. 
+%\td{Knowing this, makes the decision of adding $\lambda$ and $v_{cal}$ as \textit{optimizands} rather unfortunate. %highly questionable. 
 %\td{This makes including $\lambda$ and $v_{cal}$ as dependent variables unfortunate decisions with hindsight.}
 %As the \gls{mars} algorithm is greedy,
 %Different independent variables compete to be used as \gls{bf} in the prediction functions because of the greediness of the \gls{mars} algorithm. 
@@ -193,7 +193,7 @@ The coefficients of equations (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) show t
 as equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}): identical signs and factor 100. 
 %The choice of basis functions in combination with their coefficient signs seems more plausible
 %for (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) than for (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}). 
-%$\lambda$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally, the lowest $\lambda$ increases the two \textit{optimisands}. 
+%$\lambda$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally, the lowest $\lambda$ increases the two \textit{optimizands}. 
 %LAMBDA 
 % TCAL ON OPTIMIZANDS
 The influence of $T_{cal}$ on the measures of conductance ($\rho$ and $\gamma$) is highly interesting. 
@@ -209,7 +209,7 @@ Furthermore, the coefficient of the $T_{cal}$ term is the largest of all terms o
 The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in size of the $T_{cal}$ coefficient, 
 but has the extra factor $\lambda$ (range: 4--12), resulting in the products of coefficients and process variables being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$.
 It can be noted that the coefficient of the $\lambda\cdot T_{cal}$ interaction always has contrary sign to $T_{cal}$ coefficient in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}). 
-This negative correlation could hint a compensation of the overestimated influence of $T_{cal}$ on the \textit{optimisands}.
+This negative correlation could hint a compensation of the overestimated influence of $T_{cal}$ on the \textit{optimizands}.
 Similarly, signs of coefficients of $\lambda \cdot T_{cal}$ and $h(\lambda -6) \cdot T_{DB}$ correlate negatively in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) and the product of coefficients and input variables are again similar in order of magnitude. 
 %It should be doubted, though, that the $layr$ only appears as interaction term 
 %together with $T_{cal}$ and $T_{DB}$, which seems rather than an artefact. 
@@ -251,7 +251,7 @@ the measure of conductance was underestimated and and the estimate improved over
 %}
 
 %%% PROBLEMS 
-Even though the main \textit{optimisands} were minimized as required, the \gls{rf}s were not satisfactory. 
+Even though the main \textit{optimizands} were minimized as required, the \gls{rf}s were not satisfactory. 
 The two main problems were too many independent variables and too many dependent variables. 
 Both seem closely related and overcomplicate the optimization, but both come with their own implications. 
 Too many independent variables make it harder to distinguish variance due to random error (e.g. unmeasured and uncontrolled variables) from variance due to dependency. % of chosen dependent variables. 
@@ -279,7 +279,7 @@ and an \gls{epv} of around 20 in the original \gls{emma} paper\cite{villanova201
 
 %On the other side, 
 The main problem about too many dependent variables specific to this optimisation procedure 
-is that the same set of basis functions will be used to predict \textbf{all} \textit{optimisands}.
+is that the same set of basis functions will be used to predict \textbf{all} \textit{optimizands}.
 This leads to competition between the \gls{bf}s, as not all dependent variables may depend on the same independent variables. 
 This effect is reinforced by the choice of two independent variables as dependent variables. % (IVDV). 
 Independent variables as dependent variables will likely be chosen in \gls{bf}s, 
@@ -288,11 +288,11 @@ for including them in the \gls{rf}s is an easy way to reduce the \gls{mse} and i
 These \gls{bf}s then "take away places" of \gls{bf}s predicting other dependent variables in the \gls{rf}. %\td{(cf. musical chairs)} 
 This in turn can lead to wrong predictions and therefore inefficient choice of future samples. 
 
-The two independent variables $v_{cal}$ and $\lambda$ were included as \textit{optimisands} for two reasons: 
+The two independent variables $v_{cal}$ and $\lambda$ were included as \textit{optimizands} for two reasons: 
 Maximizing the calcination velocity and minimizing the number of layer application iterations leads to minimization of process time.
 This optimization would be better placed in a follow up study. 
 The second reason for including independent variables was to check if the model works. 
-This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimisands} and thus 
+This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimizands} and thus 
 additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables and chose future data points. 
 The second flaw is that there are obsiously better methods to assess the quality of a model than to make it more complex. 
 %Good alternatives would have been leave-one-out or cross validation.
@@ -305,7 +305,7 @@ Validation methods for sparse data include resampling via leave-one-out or $k$-f
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %\subsection{how did evolve over time?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{rational behind including $v_{cal}$ and $\lambda$ as optimisands}
+\subsection{rational behind including $v_{cal}$ and $\lambda$ as optimizands}
 }
 %
 %Three major flaws behind this consideration became obvious with time: 
