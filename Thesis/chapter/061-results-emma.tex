@@ -67,11 +67,11 @@ Contrarily, the predicted conducticity $\hat{\gamma}$ for each generation's best
 (predicted by the very generation's \gls{rf}) does increase with each iteration 
 (see diagonal in table~\ref{tab:emma-pred-G}). 
 This indicates an underestimation of $\hat\gamma$ at the beginning and a correction with time. 
-%The reason for is probably a 
 The underestimation probably stems from a lucky selection of initial experiments or a skew in the measurements. 
 \linebreak[4]
 Indeed, the samples with the lowest \textit{optimizands} are among the initial generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
 
+%GENERATIONS
 In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimizands}, 
 conducticity $\gamma$ and pin hole density $\rho$, of each particle at each generation.
 The points at generation number 0 indicate particles which were not included to be propagated. 
@@ -123,14 +123,14 @@ In the scatter plots~\ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of 
 
 %%% EQUATION 
 %\subsection{Equation}
-Equations~(\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) and (\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) represent the regression functions at $t=3$ and $t=4$, respsectively, rounded to 2 significant digits.
+Equations~(\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) and (\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) represent the regression functions at $t=3$ and $t=4$, respectively, rounded to 2 significant digits.
 %$h(x)$ is the hinge function (also called a rectifier function) of the simple form $h(x) = max(0,x)$. 
 The expression $h(\lambda-6)$ translates into layer count only has an influence if larger than 6 
 and $h(6-\lambda)$ into layer count influential only if under 6.
 %
 The first thing to notice is that prediction functions of each generation depend on the same variables. 
 %This means that the algorithm must decide on the variables which explain the most variance independent of optimization weights.
-This stems from the fact that the algorithm choses a single minimal set of basis functions to predict all dependent variables. 
+This stems from the fact that the algorithm chooses a single minimal set of basis functions to predict all dependent variables. 
 %
 %\td{Knowing this, makes the decision of adding $\lambda$ and $v_{cal}$ as \textit{optimizands} rather unfortunate. %highly questionable. 
 %\td{This makes including $\lambda$ and $v_{cal}$ as dependent variables unfortunate decisions with hindsight.}
@@ -194,16 +194,17 @@ as equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}): identical signs and fa
 %The choice of basis functions in combination with their coefficient signs seems more plausible
 %for (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) than for (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}). 
 %$\lambda$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally, the lowest $\lambda$ increases the two \textit{optimizands}. 
-%LAMBDA 
+%
 % TCAL ON OPTIMIZANDS
 The influence of $T_{cal}$ on the measures of conductance ($\rho$ and $\gamma$) is highly interesting. 
 It was expected that 
 calcination temperatures under \oc{400} do not suffice to produce compact layers and 
 that therefore the resulting layer does not insulate as well. 
-%\td{xxx}
-\textit{Optimisands} $\hat\rho$ and $\hat{\gamma}$ increase with higher calcination temperature 
+The original recipe by Hu et al.\cite{Hu2016} used \oc{500} and thus even \oc{400} are low.
+\textit{Optimizands} $\hat\rho$ and $\hat{\gamma}$ increase with higher calcination temperature 
 according to equations~(\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) (see also figures~\ref{fig:g-tcal} and \ref{fig:phd-tcal}), 
 ergo the resistance decreases and the conductance increases with increasing calcination temperature contrary to expectations.
+%
 % DESCRIBE COEFFICIENTS
 Furthermore, the coefficient of the $T_{cal}$ term is the largest of all terms on $\hat{\rho}$ and $\hat{\gamma}$; interestingly also on $\hat\lambda$ and $\hat{v}_{cal}$.
 The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in size of the $T_{cal}$ coefficient, 
@@ -225,7 +226,7 @@ This can hint the importance of these variables in the process.
 For each generation the \gls{mse} was calculated for which only samples 
 from the optimisation were used which were available at the time of prediction. 
 That means 15, 20, 25 and 30 samples 
-%for $t=0$, 15 samples for $t=1$ and 30 sampes for $t=4$ 
+%for $t=0$, 15 samples for $t=1$ and 30 samples for $t=4$ 
 were used to calculate \gls{mse}s at $t=1,2,3,4$, respectively (compare with table~\ref{tab:emma-Gb}).
 The \gls{mse}s are 64, 158, 54 and 50 for $t=1,2,3,4$, respectively. 
 It is interesting that although prediction functions for $t=3$ predicted $v_{cal}$ perfectly, the combined \gls{mse} for $t=4$ is lower. 
@@ -241,11 +242,11 @@ The decrease of \gls{mse} with out-of-sample data shows that the regularization 
 of the \gls{mars} algorithm in principle works on investigated samples and that decrease of \gls{mse} is not due to overfitting. 
 %
 %\td{It should be noted, that the validation \gls{mse} for $t=1$ is much higher.}
-When compraring the out-of-sample and in-sample \gls{mse}s it can be noted that at $t=1$ the out-of-sample \gls{mse} is close to 1.5 fold of in-sample and at $t=2$ vice versa.
+When comparing the out-of-sample and in-sample \gls{mse}s it can be noted that at $t=1$ the out-of-sample \gls{mse} is close to 1.5 fold of in-sample and at $t=2$ vice versa.
 %The high validation \gls{mse} for $t=1$ (nearly 1.5 fold instead of circa 1 fold of \gls{mse}) 
 This shows the poor prediction ability at the beginning of the optimisation which improved with generations.
 This decrease in validation (out-of-sample) \gls{mse} supports the hypothesis stated at the beginning of this section: 
-the measure of conductance was underestimated and and the estimate improved over time (see table~\ref{tab:emma-pred-G}).
+the measure of conductance was underestimated and the estimate improved over time (see table~\ref{tab:emma-pred-G}).
 %\td{why is \gls{mse} higher with higher values? No homoscedasticity ( equality of variance)?
 %Or rather \gls{mse} at $t=2$ high because \gls{rf}s at $t=2$ poor and gen=2 samples are chosen with help of \gls{rf} at $t=2$? 
 %}
@@ -262,8 +263,8 @@ The difficulty of identifying meaningful correlation is mainly owed to the curse
 %(events per predictor variable EPV) are as low as 5. 
 The \gls{epv} (data points per independent varible) are as low as 5 in the here presented optimisation. % model and data acquisition method
 By eliminating three independent variables the \gls{epv} could rise to 10, which is stated 
-as rule of thumb for mulitvariate regression\cite{vittinghoff2007relaxing}. 
-The results obtained with limited sample number deliver remarkable insightfulness %are quite respectable. 
+as rule of thumb for multivariate regression\cite{vittinghoff2007relaxing}. 
+The results obtained with limited sample number deliver remarkable insight %are quite respectable 
 comparing to an \gls{epv} of 20-50 stated in the original \gls{mars} paper\cite{friedman1991multivariate} 
 and an \gls{epv} of around 20 in the original \gls{emma} paper\cite{villanova2010function}. 
 %In the original \gls{emma} paper\cite{villanova2010function} the \gls{epv} is 20.
@@ -294,9 +295,10 @@ This optimization would be better placed in a follow up study.
 The second reason for including independent variables was to check if the model works. 
 This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimizands} and thus 
 additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables and chose future data points. 
-The second flaw is that there are obsiously better methods to assess the quality of a model than to make it more complex. 
+Moreover, $v_{cal}$ and $\lambda$ were only considered with 5\% weight. 
+The second flaw is that there are obviously better methods to assess the quality of a model than to make it more complex. 
 %Good alternatives would have been leave-one-out or cross validation.
-Validation methods for sparse data include resampling via leave-one-out or $k$-fold cross validation\cite{kartam1997artificial}.
+Validation methods for sparse data include re-sampling via leave-one-out or $k$-fold cross validation\cite{kartam1997artificial}.
 
 
 
@@ -315,7 +317,7 @@ Validation methods for sparse data include resampling via leave-one-out or $k$-f
 (1) The true function for predicting $v_{cal}$ and $\lambda$ are $v_cal*60$ (\oc{}/\h{} instead of \oc{}/\minutes{}) and $\lambda$, respectively. 
 The algorithm will tend to include those values into the prediction function for 
 all dependent variables and possibly exclude others which have more influence 
-on $\gamma$ and $\rho$ (see equations (\ref{eq:emma-G4})? and (\ref{eq:emma-phd4})?).
+on $\gamma$ and $\rho$ (see equations (\ref{eq:emma-G4})? And (\ref{eq:emma-phd4})?).
 %
 (2) The algorithm would be influenced by those values to choose samples, which potentially optimize $v_{cal}$ and/or $\lambda$ but not $G$ or $\rho$. 
 %
@@ -335,8 +337,3 @@ Inspect \cite{friedman1988fitting,friedman1991multivariate} for further \gls{mar
 %}
 \fi
 
-
-
-
-\td{TODO: find expression for $\gamma$: conductance measure, conducticity}
-\td{when adding dep var to model this has two folgen: - beeinflusst the BF and the optimization, but bcs relatiev weight is only 0.05 for each, no big beeinflussung on optimization} 
