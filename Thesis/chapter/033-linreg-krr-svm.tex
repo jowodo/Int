@@ -16,7 +16,7 @@ L_2&= \sum_i(y_i - \hat y_i)^2 %= \sum_i \sum_j (y_i - x_{i,j}\cdot k_i+c)^2
 
 \textbf{Ridge Regression} is like linear regression with an extra term which penalizes steep regression functions.
 The extra term reduces overfitting and is scaled by a correction parameter~$\alpha$. 
-The larger $\alpha$ is, the larger is the regularisation and the flatter is the regression functions. 
+The larger $\alpha$ is, the larger is the regularization and the flatter is the regression functions. 
 When $\alpha$ tends to infinity, we get an intercept-only model.
 When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss function.
 %\td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
@@ -134,7 +134,7 @@ Such data can be handeled by introducing a penalization term for wrongly categor
 \end{equation}
 If the prediction $\mathbf{w}\mathbf{x}_i+b$ and the true category $y_i$ don't agree, 
 they have opposite signs and their product will be a negative number.
-The substraction of a negative number will result in a positive penalizisation. 
+The substraction of a negative number will result in a positive penalizization. 
 If the sample is correctly predicted, the product will result in a positive number, 
 the substraction will lead to a negative number and the maximum will be 0, if the sample is ousite of the margin. 
 %

@@ -1,7 +1,8 @@
 \section{Post-EMMA}
 \label{sec:res-post-emma}
 %describe what awaits the reader in this chapter:
-In this section the experimental results are analyzed with different methods and compared with the original method EMMA which was integrated into the experiment selection process. 
+In this section the experimental results are analyzed with different methods and compared 
+with the optimization method EMMA which was integrated into the experiment selection process. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{ANOVA}\label{sec:res-anova}
 %\textbf{EMMA}
@@ -67,7 +68,7 @@ where our data is numerical and thus information is lost.
 %Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influennced by the Zirconium concentrain in the starting solution $c_{zr}$ and the number of layers applied $\lambda$, but their coefficients are the smallest in absolute values. 
 
 %\todo{what was fitted how?}
-The data obtained from the \gls{emma} optimisation was used to fit a linear model. 
+The data obtained from the \gls{emma} optimization was used to fit a linear model. 
 The biggest difference of the linear model to \gls{emma} is that all variables are included, that the \gls{bf}s are strictly linear and that there are no interaction terms. 
 The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:emma-phd3},\ref{eq:emma-G3},\ref{eq:emma-phd4},\ref{eq:emma-G4} (\gls{emma} \gls{rf}s) and \ref{eq:linreg-phd},\ref{eq:linreg-G} and have comparable magnitudes too. 
 %
@@ -155,7 +156,7 @@ The hyperparameter $\varepsilon$ specifies the size of the tube within which dat
 and the value 1 is the maximum during the grid search. 
 %The value 1 for $\varepsilon$ is the highest possible, 
 %$C$ is regularization parameter for SVM and $\varepsilon$ is var which defines loss less region in soft margin SVM}
-All these extreme values of hyperparameters stimulate regularisation and indicate noisy and difficult to fit data.
+All these extreme values of hyperparameters stimulate regularization and indicate noisy and difficult to fit data.
 \begin{table}
     \center
     \begin{tabular}{ccccccc}
@@ -194,8 +195,8 @@ trained on the \gls{emma} data set (see table \ref{tab:post-emma}).
 The first two columns show statistics for data the model was trained with and thus, 
 these columns contain the lowest numbers. 
 % pre-EMMA 21 pts 
-The next two columns were calculated with data obtained before the EMMA optimisation. 
-As the this pre-optimisation data set was mainly used to find appropriate boundaries for the input variables, 
+The next two columns were calculated with data obtained before the EMMA optimization. 
+As the this pre-optimization data set was mainly used to find appropriate boundaries for the input variables, 
 many data points are outside of the range of the \gls{emma} data set. 
 Thus, prediction for this data set are mainly extrapolations. 
 % inter/c/ pre-EMMA 5 pts

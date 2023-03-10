@@ -5,7 +5,7 @@
 %\td{I-V: 2 terminal measurement one terminal was varibale and the other the ground from $-5*10^{-3}$ V to $5*10^{-3}$ V with steps of $10^{-2}$ measure current from back bone to backbone if shorted, then can measure actual resistance of layer. resistance of steel is neglectable. In order to get an impression of the quality of the layer mutliple contact (picture) are sputtered (throuhg a mask) and statistics: Two angabewerte: the weighted durchschnit and the number of pinholes, ie the number of contacts which were shorted, have an resistance below an threshold. if tunneling, iv follows powerlaw, if direct contact, iv follows linear }
 %\todo{go to anova discussion}
 %- \td{The disadvantage of ANOVA is that information is lost because independent variables are assumed categorical even though they are ordinal}
-%\todo{british or US?: sation vs zation} 
+%\todo{british or US?: zation vs zation} 
 %\todo{ include last phase into previous section}
 This section will discuss mistakes, improvements and lessons learned for each phase of this project in chronological order. 
 Firstly, the 
@@ -48,7 +48,7 @@ A general experimental design procedure was stated by Cherkassky and Mulier in  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Narrowing, pre-optimisation and constraint phase}
+\subsection{Narrowing, pre-optimization and constraint phase}
 \label{sec:phase2}
 The selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} %(page 25)
 After having decided on a base recipe, it is important to define limits and decrease the number of independent variables. 
@@ -89,19 +89,19 @@ Another reason to avoid too many variables in a model is that they introduce mor
 %todo{Overfitting happens in the regime where to many parameters are fitted with not enough data. }
 
 Another step/deed which is well placed in this phase is the estimate the error by reproducing a single sample a certain number of times. 
-%Where the number will then be higher than during optimisation 
+%Where the number will then be higher than during optimization 
 %\todo{include curse of dimensionality.}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Optimisation, modelling and data generation}
+\subsection{Optimization, modelling and data generation}
 \label{sec:phase3}
-During the optimisation the main problems were too many in- and output variables, reproducibility and regularisation. 
+During the optimization the main problems were too many in- and output variables, reproducibility and regularization. 
 %The first problem 
 Variable selection has already been discussed in the previous section. 
 When working with stochastic algorithms it is especially important to introduce reproducibility via a seed, which determines all subsequent pseudo-random numbers. 
-Finally, during the \gls{emma} optimisation the input data were not regularized, %es wurde auf regularisation verzichtet, 
+Finally, during the \gls{emma} optimization the input data were not regularized, %es wurde auf regularization verzichtet, 
 because the regularization would be different for different generations.
 Regularizing with the mean and standard deviation would be either inconsistent across generations or over overvalue the distribution of the initial generation. 
 %because the distribution of 
@@ -111,7 +111,7 @@ These were the reasons for not including regularization during \gls{emma} optimi
 On the other hand the input data could have been regularized to only take values $[-1;1]$ by defining the regularized varible as 
 $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\text{min}}$.
 %On the other hand haette man auf jeden fall die input variablen normieren können. 
-%Normally, for standardisation the mean is substracted and it is devided by the standard deviation, which impplies a distribution of a random variable. 
+%Normally, for standardization the mean is substracted and it is devided by the standard deviation, which impplies a distribution of a random variable. 
 %One could have assumed a standard uniform distribution. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
 \iffalse
@@ -223,12 +223,12 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 %\td{This section is about 3. DAta Generation and Experiment Design from cherkessky's list. }
 \iffalse
 \begin{itemize}
-    \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimisation!
+    \item Dimension reduction bietet sich stark an bei solcher Datenlage. in pre-optimization!
     \item \textbf{keep it simple}: include what you already know and reduce model size to minimum, such that \gls{epv} is high.  Low \gls{epv} leads to low statistical significance, especially if the error is realtively large. (confere orig papers)
 %\td{In example of documentation 2 input variables and 1-2 responses initial population=10
 %, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
 %iterations (as in actual experiments) lead to suboptimal results.}
-    \item \textbf{pre-optimisation}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $2\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
+    \item \textbf{pre-optimization}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $2\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
     \item \textbf{factorial design} (classical \gls{doe}) is more robust at feature extraction for error laden data \cite{giunta2003overview} putting data on the extrems makes trend extraction easier. "By moving the samples to the boundaries of the design space, the effect of the random error terms is reduced."
     \item only include relevant variables\cite{gunst2009fractional}, but include all variables which could contribute\cite{haertler2014statistisch}
 %-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2009}
@@ -278,3 +278,6 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 \fi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \end{itemize}
 \fi
+
+
+\td{when adding dep var to model this has two folgen: - beeinflusst the BF and the optimization, but bcs relatiev weight is only 0.05 for each, no big beeinflussung on optimization} 

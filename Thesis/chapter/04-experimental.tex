@@ -6,8 +6,8 @@ equipment are described.
 %\td{Also, the long, exhaustive path to the base solution is described}
 The experiments can be split into three sections: 
 In the first section the base recipe and the base process were sought. 
-In the pre-optimisation section the boundaries for the optimisation were investigated. 
-And during the third and final step the experiments for the optimisation were performed.
+In the pre-optimization section the boundaries for the optimization were investigated. 
+And during the third and final step the experiments for the optimization were performed.
 \section{Substrate Preparation}
 %\ds{
 Five different substrates were used throughout this work: 
@@ -107,9 +107,9 @@ starting materials had to be chosen from the available inventory.
 %\td{p34}
 Different solvents (Butane-1,2-diol, \gls{buoh} and Propan-1-ol) and chelating agents 
 (\gls{acac} and citric acid) were tested and later in the process - just before the 
-\gls{pso} started - the stabilisation compound (\gls{acoh}) was changed to \gls{ipo}.
-The most promising combination of solvent, chelating agent and stabilisation reagent was 
-\gls{buoh}, \gls{acac} and \gls{ipo}, respectively, which was used for the final optimisation.
+\gls{pso} started - the stabilization compound (\gls{acoh}) was changed to \gls{ipo}.
+The most promising combination of solvent, chelating agent and stabilization reagent was 
+\gls{buoh}, \gls{acac} and \gls{ipo}, respectively, which was used for the final optimization.
 The main differences between the used recipe and the recipe mentioned by \cite{Hu2016} were 
 precursor (transition metal complex \gls{zrpro}	\gls{vs} post-transition metal 
 complex aluminium isopropoxide), solvent (\gls{buoh} \gls{vs} 2-ethoxyethanol), reaction temperature 
@@ -147,7 +147,7 @@ the heat treatment between layers (\SI{200}{\celsius} \gls{vs} \SI{200}{\celsius
 The solvent (\gls{buoh}) was put into a beaker glass (or similar, preferably with an 
 air-tight cap) with a magnetic stirring bar and \gls{zrpro} was added while stirring. After 
 stirring \minutes{\ds{10 to }15} one mole equivalent chelating agent (\gls{acac}) was 
-added and stirred for another \minutes{\ds{10 to }15}. Finally, the stabilisation 
+added and stirred for another \minutes{\ds{10 to }15}. Finally, the stabilization 
 solvent\cite{Hu2016} (\gls{ipo} or \gls{acoh}) was added to the mixture and stirred for 
 additional \minutes{\ds{20-}30}. 
 In order to make a \gls{2f} solution, the volume of \gls{zrpro} and \gls{acac} was 
@@ -164,7 +164,7 @@ Lower \gls{db} velocities resulted in less homogeneous layers.
 Thus, the \gls{db} velocity was not altered in the manual \gls{db} process. 
 One and two layers of adhesive tape were used to alter the depth of the valley. 
 
-%Most steel substrates (all pre-optimisation and optimisation samples) 
+%Most steel substrates (all pre-optimization and optimization samples) 
 All steel substrates 
 were doctor bladed with 
 an Erichsen Coatmaster 510 film applicator with a heatable plate.
@@ -185,7 +185,7 @@ After setting the temperature of the heating plate to
 \gls{db} velocity (\mmps{10}, \mmps{12}, \mmps{14}, \mmps{16}, \mmps{18} or \mmps{20}), 
 the blade was put into its initial position, the sample was placed on the vacuum plate and the vacuum 
 was switched on. 
-During pre-optimisation samples, lower \gls{db} velocities (\mmps{0.1}, \mmps{0.5}, 
+During pre-optimization samples, lower \gls{db} velocities (\mmps{0.1}, \mmps{0.5}, 
 \mmps{1}, \mmps{2} and \mmps{5}) were tested. 
 \ul{100} of solution were 
 applied with a 10 - \ul{1000} pipette and the blade moved over the sample distributing the 
@@ -296,7 +296,7 @@ All heating programs were held at the calcination temperature for one hour.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHARACTERISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Characterisation}
+\section{Characterization}
 All \gls{sem} micrographs were taken with a Zeiss Supra 40. 
 \Gls{ft}\gls{uv}/\gls{vis}/\gls{nir} transmittance and reflectance spectra (at \SI{20}{\degree} incident 
 angle) were recorded with a Bruker Vertex 70 
@@ -349,10 +349,10 @@ See figure~\ref{fig:circuit} for a sketch of the connectivity.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREOPTIMISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Pre-optimisation}\label{sec:exp-preopt}
+\section{Pre-optimization}\label{sec:exp-preopt}
 %\td{the choice of grenzen for \gls{doe} was done by biotic reinforcement learning (i.e. my brain)}
 %\td{Screening}
-%The main part of the screening pre-optimisation samples were optimized via biotic reinforcement learning (i.e. my brain). 
+%The main part of the screening pre-optimization samples were optimized via biotic reinforcement learning (i.e. my brain). 
 The main part of all samples (around 90\%) were pre-optimization samples, 
 from which the bulk were screening experiments optimized via biotic reinforcement learning 
 (i.e. my brain) in order to obtain reasonable constraints for computerized pre-optimization. 
@@ -415,7 +415,7 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 	\end{subtable}%
 	\begin{subtable}{0.5\linewidth}
 		\centering
-        \subcaption{Hand picked experiments; $^*$varied stabilisation agent}
+        \subcaption{Hand picked experiments; $^*$varied stabilization agent}
 		\label{tab:pre-opt2}
 		\begin{tabular}{cccccc}
 	%conc	&layers	&vDOC	&TDOC	&vCal	&Tcal		\\
@@ -433,7 +433,7 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 			\hline
 			\hline
 			\\ \\  \\
-%			\multicolumn{6}{c}{*different stabilisation reagent compositions}\\
+%			\multicolumn{6}{c}{*different stabilization reagent compositions}\\
 		\end{tabular}
 	\end{subtable}
 \end{table}
@@ -461,19 +461,19 @@ Some additional hand picked experiments (see table \ref{tab:pre-opt2}) were intr
 the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Shortly before the \gls{pso} the stabilisation agent was changed from \gls{acoh} to 
+Shortly before the \gls{pso} the stabilization agent was changed from \gls{acoh} to 
 \gls{ipo} because of much better solution stability.
 The - up to this moment - best process was chosen to be tested with 
 \ml{1} \gls{acoh}, \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} and \ml{1} \gls{ipo}.
-%\td{As the sample showed the best all ex were proceeded with ipo as stabilisation agent. }
+%\td{As the sample showed the best all ex were proceeded with ipo as stabilization agent. }
 The sample produced with \gls{ipo} as stabilization agent 
 showed comparable passivization results and better stability. 
-Therefore \gls{ipo} was used  as stabilisation in further experiments.
+Therefore \gls{ipo} was used  as stabilization in further experiments.
 After the boundaries of the solution were fixed 
 the process variables to produce an insulating layer was examined. 
 %There were many variables which had to be taken into account. 
 %\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, DB velocity and DB temperature as input variables.}
-See table \ref{tab:input} for the input space spanned during the optimisation.
+See table \ref{tab:input} for the input space spanned during the optimization.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iffalse
 \begin{table}[ht!]
