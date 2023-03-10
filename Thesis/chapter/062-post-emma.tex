@@ -14,48 +14,46 @@ measures of the conductance.
 %Now \gls{anova} can be used to check if the data 
 %\td{ANOVA was used to check if \gls{bf} identified by \gls{emma} are reasonable.} 
 
-\textbf{What can/did we test?}
-the probability of arriving at these results was by pure chance can be checked with \gls{anova}. 
+%WHAT CAN/DID WE TEST?
 The null hypothesis is that the results were obtained by pure chance without any dependence of the insulation of a sample on the process variables.
-%We tested for each input variable the influence on rho and gamma 
 A one-way \gls{anova} was performed for every independent variable on $\rho$ and $\gamma$. 
-%and also as a test on vcal and $\lambda$. 
 We used an $\alpha$ value of 0.05 which means that 
 the null hypothesis is rejected if the p-value is under 0.05. 
 Usually, the $\alpha$-value is chosen to be 0.01 or 0.05\cite{hoffman2020concept,sellke2001pvalues}.
-The choice of a relatively high $alpha$-value is motivated by the rather small amount of data and low events per varible ratio.
-\ds{
-As mentioned by Sellke et al.\cite{sellke2001pvalues} a p-value of 0.05 might tempt 
-to guess that in 1 out of 20 cases the results could be false positives, 
-whereas the frequency is much higher. 
-A p-value of 0.01 and 0.05  mean that under the assumption that the null hypothesis is correct, 
-there is a 1\% and 5\% chance of arriving at such data as observed.
+The choice of a relatively high $alpha$-value is motivated by the rather small amount of data and low events per variable ratio.
+%As mentioned by Sellke et al.\cite{sellke2001pvalues} a p-value of 0.05 might tempt 
+%to guess that in 1 out of 20 cases the results could be false positives, 
+%whereas the frequency is much higher. 
+%A p-value of 0.01 and 0.05  mean that under the assumption that the null hypothesis is correct, 
+%there is a 1\% and 5\% chance of arriving at such data as observed.
 %The results should thus be taken with a grain of salt. 
-}
+%
 %1 out of 20 times this result could be 
 %produced by pure chance given that the null hypothesis is true. 
 %If the p-value is below that value, then we choose to accept, that the data is not due to
 %chance but due to the influence of the independent variables on the dependent variables. 
 %\td{could test anova on different generations data sets} 
 
-\textbf{What were the results?}
+%WHAT WERE THE RESULTS?
 %\Gls{anova} shows that for the mentioned indep and dep pairs, the means divided by 
 %indep groups are not equal and that there is at least one group that is different. 
-For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the extended dataset (=\gls{emma}+pre\gls{emma})) 
+For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the whole dataset (=\gls{emma}+pre-\gls{emma})) 
 the F-values for $T_{cal}$ were in all cases under 0.01, 
 indicating a real influence of $T_{cal}$ on the conductance.
 Furthermore, both datasets exhibit a p-value $< 0.05$ for the interaction $T_{cal}$:$v_{cal}$ on $\rho$
-and the extended data set has p-value smaller than 0.01 of $v_{cal}$ on $\rho$. 
+and the whole data set has p-value smaller than 0.01 of $v_{cal}$ on $\rho$. 
 Whereas $v_{cal}$ on $\rho$ for \gls{emma} dataset has p-value of slightly over 0.05
-%\td{why tcal:vcal on phd the same for both datasets? zufall}
-
-\textbf{What do the results mean?} 
-\Gls{anova} confirms that $T_{cal}$ has influence on both $\gamma$ and $\rho$. 
-It seems that the probability of getting such data per chance that Tcal has no influence 
-(null hypothesis is true) is less then 5\% (even less than 1\%). 
+%\td{why tcal:vcal on phd the same for both datasets? Chance?}
+%
+%WHAT DO THE RESULTS MEAN?
+\Gls{anova} confirms that $T_{cal}$ has influence on both $\gamma$ and $\rho$ 
+and therefore agrees with \gls{emma}.
+%It seems that the probability of getting such data per chance without $T_{cal}$ influencing the \textit{optimizands}
+%(null hypothesis is true) is less then 5\% (even less than 1\%) for corresponding p-values, but Sellke et al.\cite{sellke2001pvalues} showed in 2001 that in fact the . 
 %\td{NO bcs \cite{sellke2001pvalues}}
-It is important to mention, that \gls{anova} assumes categorical data for inputs, 
-where our data is numerical and thus information is lost. 
+It is important to mention, that \gls{anova} assumes categorical data for inputs. 
+Categorical inputs have no order and thus information is lost when using numerical data. 
+%where our data is numerical and thus information is lost. 
 
 %\textbf{Pre-writing:}
 %\Gls{anova} doesn't provide a lot of extra information. 
@@ -65,12 +63,12 @@ where our data is numerical and thus information is lost.
 
 %%%%%%%%%%%%%%%%%%%% LIN REG %% lin reg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Linear Regression} 
-%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influennced by the Zirconium concentrain in the starting solution $c_{zr}$ and the number of layers applied $\lambda$, but their coefficients are the smallest in absolute values. 
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by the Zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$, but their coefficients are the smallest in absolute values. 
 
 %\todo{what was fitted how?}
-The data obtained from the \gls{emma} optimization was used to fit a linear model. 
-The biggest difference of the linear model to \gls{emma} is that all variables are included, that the \gls{bf}s are strictly linear and that there are no interaction terms. 
-The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:emma-phd3},\ref{eq:emma-G3},\ref{eq:emma-phd4},\ref{eq:emma-G4} (\gls{emma} \gls{rf}s) and \ref{eq:linreg-phd},\ref{eq:linreg-G} and have comparable magnitudes too. 
+The data obtained from the \gls{emma} optimisation was used to fit a linear model. 
+The biggest difference between the linear model and \gls{emma} is that the linear regression function will include all input variables, that the \gls{bf}s are strictly linear and that there are no interaction terms. 
+The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:emma-phd3}, \ref{eq:emma-G3}, \ref{eq:emma-phd4}, \ref{eq:emma-G4} (\gls{emma} \gls{rf}s) and \ref{eq:linreg-phd}, \ref{eq:linreg-G} and have comparable magnitudes too. 
 %
 %Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by
 %but their coefficients are the smallest in absolute values. 
@@ -78,20 +76,21 @@ The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:e
 \begin{align}
 	\begin{split}
 		\label{eq:linreg-phd}
-		\hat{\rho} &=  -0.022\cdot c_{zr} -0.022\cdot \lambda -0.0029\cdot v_{DB} + 0.0058\cdot T_{DB} \\
+		\hat{\rho} =&  -0.022\cdot c_{zr} -0.022\cdot \lambda -0.0029\cdot v_{DB} + 0.0058\cdot T_{DB} \\
 		& -8.5\cdot 10^{-5}\cdot v_{cal} + 0.0026\cdot T_{cal} -0.76
 	\end{split}
 	\\
 	\begin{split}
 		\label{eq:linreg-G}
-		\hat{\gamma} &={}  \qquad 3.2\cdot c_{zr} \,\, - 0.97\cdot \lambda \,\,\quad - 1.2\cdot v_{DB} + \,\,\,\quad 0.2\cdot T_{DB} \\
+		\hat{\gamma} =&  \,\,\qquad 3.2\cdot c_{zr} \,\, - 0.97\cdot \lambda \,\,\quad - 1.2\cdot v_{DB}  \,\,\,\quad +0.2\cdot T_{DB} \\
 			& \qquad - 0.014\cdot v_{cal} \quad + 0.13\cdot T_{cal} + 7.2
 %		\hat{\gamma} ={} & 3.2\cdot c_{zr} - 0.97\cdot \lambda - 1.2\cdot v_{DB} + 0.2\cdot T_{DB} \\
 %			& - 0.014\cdot v_{cal} + 0.13\cdot T_{cal} + 7.2
 	\end{split}
 \end{align}
 %
-All terms in equations \ref{eq:linreg-phd} and \ref{eq:linreg-G} have the same sign except the intercept and $c_{zr}$. 
+All terms in equations \ref{eq:linreg-phd} and \ref{eq:linreg-G} have the same sign 
+except $c_{zr}$ and the intercept. 
 %
 More particularly, $T_{cal}$ and $T_{DB}$ have positive coefficients, i.e. a negative influence on the resistance 
 and $\lambda$, $v_{DB}$ and $v_{cal}$ have negative coefficients, i.e. a positive influence on resistance. 
@@ -99,9 +98,9 @@ An indication that the data is strongly tainted by noise (see also section \ref{
 which is (sad but true) even undercut by the $R^2$ of linear fit of $\hat\gamma$, 0.34. 
 %The coefficients, though share the signs. 
 %This is only true if the extended data set is used and therefore again rather by chance. 
-When the linear regression is trained on the complete data set, all terms have the same sign compared to the \gls{emma} data set trained linear model. 
+When the linear regression is trained on the whole data set, all terms have the same sign compared to the \gls{emma} data set trained linear model. 
 %It is even more astounding that \gls{emma} managed to decrease the average of $\gamma$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}.
-$v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a perfect direct proportionality and thus are not displayed here. 
+$v_{cal}$ and $\lambda$ are perfectly predicted by linear regression as there is an exact direct proportionality and thus are not displayed here. 
 %
 \begin{table}[htb]
 	\center
@@ -117,9 +116,9 @@ $v_{cal}$ and $\lambda$ are well predicted by linear regression as there is a pe
 \end{table}
 
 %
-Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$ are largest in value, but the values which are taken by $c_{zr}$ and $\lambda$ itself are the smallest among the input variables. 
+Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$ are largest in value, but the values which are factored with these coefficients - i.e.\, $c_{zr}$ and $\lambda$ themselves -- are the smallest among the input variables. 
 Thus, even though $T_{cal}$ might have a smaller coefficient in the linear \gls{rf}, the influence on the dependent variable might be larger. 
-In order to compare, the influence was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{min}+x_{max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
+In order to compare, the influence of an input variable was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{min}+x_{max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
 %The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{DB}$. 
 The biggest influence on $\hat\rho$ is  $\lambda$, followed by $T_{cal}$. 
 While $T_{cal}$ is the second largest influence on $\hat\rho$ as well it is noteworthy that $\lambda$ contributes the least to $\hat\gamma$. 
@@ -147,13 +146,14 @@ The two very different distributions of influence among the input variables can 
 \subsection{Grid Search, KRR and SVM}
 The optimal parameters for each \textit{optimizand} ($\gamma$ and $\rho$) and method (KRR and SVM) 
 combination can be seen in table \ref{tab:grid-search}. 
-They parameters are often extrema.
-The hyperparameter $\gamma_{ml}$ took minimum value possibel twice. 
+The parameters are often extrema.
+The hyperparameter $\gamma_{ml}$ took minimum value from the grid search twice. 
 In the polynomial kernel this leads to a lower influence of the input variables with respect to the intercept. 
 The range of the hyperparameter $\alpha$ was 0.01--10 in the grid search. 
-So 2 and 10 are high values for the regularization parameter of \gls{krr}.
+So 2 and 10 are high values for the regularization parameter $\alpha$ of \gls{krr}.
 The hyperparameter $\varepsilon$ specifies the size of the tube within which data does not contribute to the loss 
-and the value 1 is the maximum during the grid search. 
+and the value 1 is the maximum for $\varepsilon$ during this grid search. 
+%\td{why can R2 be negative? https://stats.stackexchange.com/a/279358/374563 } 
 %The value 1 for $\varepsilon$ is the highest possible, 
 %$C$ is regularization parameter for SVM and $\varepsilon$ is var which defines loss less region in soft margin SVM}
 All these extreme values of hyperparameters stimulate regularization and indicate noisy and difficult to fit data.
@@ -163,8 +163,8 @@ All these extreme values of hyperparameters stimulate regularization and indicat
         \hline\hline
         method  &kernel &degree &$\gamma_{ml}$   &$\alpha$    &$C$    &$\varepsilon$\\
         \hline
-        KRR($\gamma$)   &poly   &1  &0.01   &2.00 &-&-\\
-        KRR($\rho  $)   &rbf    &-   &0.2    &10.00&-&-\\
+        KRR($\gamma$)   &poly   &1  &0.01   &2 &-&-\\
+        KRR($\rho  $)   &rbf    &-   &0.2   &10&-&-\\
         SVM($\gamma$)   &poly   &2  &0.5    &-&0.7  &1.0  \\
         SVM($\rho  $)   &poly   &3  &0.01   &-&0.1  &0.1  \\
         \hline\hline
@@ -210,7 +210,7 @@ These statistics are lower because of the inclusion of the training set in the t
 
 In the self test of the first two columns \gls{mars} is the one method to rule them all.
 But as soon as unseen data enters the field, linear regression excels with its simplicity. 
-The linear regression method is only under cut by when calculatting the \gls{mae} of $\gamma$
+The linear regression method is only under cut by when calculating the \gls{mae} of $\gamma$
 for the interpolating unseen data with \gls{svm}. 
 %
 %\todo{could use mean as prediction and compare}
