@@ -145,13 +145,14 @@ The two very different distributions of influence among the input variables can 
 \subsection{Grid Search, KRR and SVM}
 The optimal parameters for each \textit{optimizand} ($\gamma$ and $\rho$) and method (KRR and SVM) 
 combination can be seen in table \ref{tab:grid-search}. 
-They parameters are often extrema.
-The hyperparameter $\gamma_{ml}$ took minimum value possible twice. 
+The parameters are often extrema.
+The hyperparameter $\gamma_{ml}$ took minimum value from the grid search twice. 
 In the polynomial kernel this leads to a lower influence of the input variables with respect to the intercept. 
 The range of the hyperparameter $\alpha$ was 0.01--10 in the grid search. 
-So 2 and 10 are high values for the regularization parameter of \gls{krr}.
+So 2 and 10 are high values for the regularization parameter $\alpha$ of \gls{krr}.
 The hyperparameter $\varepsilon$ specifies the size of the tube within which data does not contribute to the loss 
-and the value 1 is the maximum during the grid search. 
+and the value 1 is the maximum for $\varepsilon$ during this grid search. 
+%\td{why can R2 be negative? https://stats.stackexchange.com/a/279358/374563 } 
 %The value 1 for $\varepsilon$ is the highest possible, 
 %$C$ is regularization parameter for SVM and $\varepsilon$ is var which defines loss less region in soft margin SVM}
 All these extreme values of hyperparameters stimulate regularisation and indicate noisy and difficult to fit data.
@@ -161,8 +162,8 @@ All these extreme values of hyperparameters stimulate regularisation and indicat
         \hline\hline
         method  &kernel &degree &$\gamma_{ml}$   &$\alpha$    &$C$    &$\varepsilon$\\
         \hline
-        KRR($\gamma$)   &poly   &1  &0.01   &2.00 &-&-\\
-        KRR($\rho  $)   &rbf    &-   &0.2    &10.00&-&-\\
+        KRR($\gamma$)   &poly   &1  &0.01   &2 &-&-\\
+        KRR($\rho  $)   &rbf    &-   &0.2   &10&-&-\\
         SVM($\gamma$)   &poly   &2  &0.5    &-&0.7  &1.0  \\
         SVM($\rho  $)   &poly   &3  &0.01   &-&0.1  &0.1  \\
         \hline\hline
