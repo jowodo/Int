@@ -203,6 +203,8 @@ The next two columns (p) were calculated with data obtained before the EMMA opti
 As the pre-optimization data set was mainly used to find appropriate boundaries for the input variables, 
 many data points are outside of the range of the \gls{emma} data set. 
 Thus, prediction for this data set are mainly extrapolations. 
+It must be explicitly noted at this point that pre-EMMA samples differ from EMMA samples 
+in the stabilization agent and therefore might underperform. 
 % inter/c/ pre-EMMA 5 pts
 The next two columns (c) were produced by using pre-\gls{emma} data for validation, 
 but only keeping points which sit inside the space spanned by the \gls{emma} constraints (5 data points). 
@@ -214,9 +216,9 @@ The last two columns show data for predictions of all available data (51 data po
 These statistics are lower because of the inclusion of the training set in the test set. 
 
 In the self test of the first two columns \gls{mars} is the one method to rule them all and provides the lowest metrics.
-But as soon as unseen data enters the field, linear regression excels by its simplicity. 
-\td{The linear regression method is only under cut by \gls{svm} when calculating the \gls{mae} of $\gamma$}
-for the interpolating unseen data (c).
+But as soon as unseen data is examined, linear regression excels by its simplicity. 
+%\td{The linear regression method is only undercut by \gls{svm} when calculating 
+%the \gls{mae} of $\gamma$} for the interpolating unseen data (c).
 %
 %\todo{could use mean as prediction and compare}
 %\todo{could plot pred vs true}
