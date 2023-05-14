@@ -1,13 +1,14 @@
 %\documentclass[a4paper]{article}
-\documentclass[a4paper,titlepage,twoside]{report}
 %\documentclass[a4paper,titlepage]{scrreprt}
+\documentclass[a4paper,twoside]{report}
 \input{chapter/0-usepackages.tex}
 
 \title{Particle Swarm Optimisation of Chemical Passivation of Steel Substrate with Zirconium Oxide Layers through Sol-Gel Process}
 \author{Johann Dorn}
 
 \begin{document}
-\maketitle
+%\maketitle
+\includepdf{deckblatt.pdf}
 % ONLY IN TWOSIDED MODE
 %{\null\newpage}
 \input{chapter/0000-acronyms.tex}
@@ -57,6 +58,7 @@
 \label{sec:exp}
 \input{chapter/04-experimental.tex}
 
+\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% 5 COMPUTATIONAL DETAILS %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,6 +87,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%% BIBLIO %%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliographystyle{plain}
 \bibliographystyle{ieeetr}
 \bibliography{int}
 \clearpage
@@ -93,8 +96,14 @@
 %%%%%%%%%%%%%%%%%%% 8 APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
+%
+\chapter{Pre-EMMA Experiments}
+\label{sec:app-pre-emma}
+\input{chapter/082-pre-emma-table.tex}
+%
 \chapter{EMMA Experiments}
 \label{sec:app-emma}
-\input{chapter/08-appendix.tex}
+\input{chapter/081-emma-table.tex}
+%
 
 \end{document}

@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFIG_FILE=calc_best_cmds.sh # this file is created by executing 1
+CONFIG_FILE=calc_best_cmds.sh # this file is created by executing 1_best_of_algo.sh
 
 # COMMAND LINE ARGUMENTS
 HELPTEXT="This program executes grid seach on hyper parameters
