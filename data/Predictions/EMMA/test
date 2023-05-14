@@ -1,6 +1,0 @@
-testvar=1024
-echo $testvar
-for i in {1..5}; do 
-	testvar=$((testvar/2))
-	echo $i $testvar 
-done
