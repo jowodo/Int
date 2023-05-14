@@ -1,0 +1,403 @@
+Functional oxide layers for electrical isolation and chemical passivation of steel substrates
+
+LINKS:
+https://en.wikipedia.org/wiki/Kernel_method
+latin square paper 
+incorporate ascii data into git 
+make usb to ntfs
+
+NEXT:
+plot I-V
+how many shortcuts over cm2
+- read EMMA
+- understand different DOEs
+- try and choose DOE
+- interpret sem 
+- make sem of ??? (CS 154,159,160,161)
+size of sample should be max 
+different DB velocities 10,5,1,0.5,0.1,0.05,0.01,0.005,0.001
+gold:142-147,150-158
+XRD:
+reproducibility not given with heatgun ... spin coating
+cross section on steel
+make new steel foils 
+
+press steel foils before DBing between teflon plates
+make on FTO to make cross section 1F,2F,3F,4F
+pH? 
+- make 2x and 10 layers on machine - make blade at higher/lower height
+- make even higher conc 1,2,4,8,16?
+4 is already very unstable
+gnuplot script make output 
+write new samples into list and on old and newtray 
+come up with parallelization
+store solution at high/low temperature to make stable
+how to make one layer thicker? higher conc or more liquid ... 
+!!! make temperature like in paper (i.e. spincoating and 200/400/500) 
+!!! spin coating? to make more uniform layer
+!!! doctor blade on large substrate
+
+Util end of March 
+11 Weeks -> 11*5= 55 DAYS - 5 days 
+8 Weeks -> 8*5 = 40 DAYS!!!
+
+pot chel: citrussaure, oxalsaure, bernstein, edta
+pot sol: 1-PrOH, AcOH
+
+######################################################################
+
+21.12.2020-23.12.2020 >> 4 Tage 
+
+data point for ML:
+recipe: ml of zr, acac, acoh, buoh
+	time: pyrolizing,calcination(rate), 
+	temperature: pyrolizing, calcination
+	thickness: from SEM
+	resistance
+parameters:
+Volume:
+	Zr solution
+	AcAc
+	iPrOH
+	H2O
+	Base? organic? pH regulation
+	Acid?
+	Surfactant?
+	high molecular co-polymer?
+		Time:
+	Mixing Time (minimum)
+	waiting before spreading (minimum)
+		Temperature:
+	Heating rate (maximum)
+The heating rate could be split into 
+100-150, 150-200, 200-250, 250-300, 300-350, 350-400 ie 6 parameters
+and the sum of these should be maximized
+would be nice to know what was already tried
+	Max temperature (min)
+	Heating method oven/hot plate 
+oven could be better for programmability
+	Calcination holding time (minimum)
+make new solutions but only half  volume and -25%
+#######################################################################################
+zr	ac2	h20	ipo	| #solution
+4	4	1	1	| 8
+4	4	0.5	1	| 9
+4	4	1	0.5	| 10
+4	3	1	1	| 11
+
+i need a lot of measurements
+each week one parameter? 
+but first i need a decent layer
+
+
+100 samples
+10 % on steel
+80 % on fto 
+10 % on ito 
+
+6 weeks until Xmas
+6*5 = 30 
+30 working days
+3 samples per day 
+
+todo: use oven with standard heating procedure
+	find finding of elif
+
+experiments
+12 oven
+8 ink pm 50%
+3 pH (NaOH,HCl,H2SO4)
+
+oven:
+	1 standard heating
+	2 linear heating 1C/min
+	3 lin heating 2C/min
+
+	4 1C/min 100-150 rest 2C/min
+	5 1C/min 150-200 rest 2C/min
+	6 1C/min 200-250 rest 2C/min
+	7 1C/min 250-300 rest 2C/min
+	8 1C/min 300-350 rest 2C/min
+	9 1C/min 350-400 rest 2C/min
+	
+	10 top T 300 with lin heating best 
+	11 top T 400 with lin heating best 
+	12 top T 500 with lin heating best 
+	13 top T 600 with lin heating best 
+	does this make sense?
+	melting point of ZrO2 is ~3000K
+	structure change at ~1500K
+	
+	14 calcination holding time 
+=
+	
+
+MACHINE LEARNING PART
+define architectures
+
+ML:	NN	KRR	linmod
+small data set modifications
++
+GA:	MOGA	bin	real
+
+//
+
+EMMA
+
+
+SAMPLES
+
+FTO and ITO each with 1.4 and 2.1 in stove and then second layer on ITO 1.4 2.1, 
+clean more substrate 3*FTO + 2*glass 
+
+FTO second layer for stove
+Prepare H2O (4.1), HCl(5.1), H2SO4(6.1) and NaOH(7.1) solutions with 0.5ml + 2ml H2O
+	16.11.20201
+second layer on 62-69 with NT3 (3K/min) and solutions 4-7
+	17.11.2020
+first layer on 70-77 with NT4 (4K/min) and solutions 4-7
+	18.11.2020
+secon layer on 70-77 with NT4 (4K/min) and solutions 4-7
+clean new substrate 82-97
+	19.11.2020
+first layer on 78-85 with NT4 (4K/min) and solutions 4-7 and double tape
+	20.11.2020
+second layer on 78-85 with NT4 (4K/min) and solutions 4-7 and double tape
+	23.11.2020
+first layer 86-93 with NT5 (80C-4K/min-500C)
+clean ready samples from  35-85
+	24.11.2020
+second layer 86-93 with NT5
+clean new subtrate 98-113
+	25.11.2020
+zr	Chel		solv			solv2		#solution
+0.1	Acac 0.025	iPrOH 9.9		AcOH 2		8
+0.1	Acac 0.05	iPrOH 9.8		AcOH 2		9
+0.1	Acac 0.025	1,2-BuOH 9.9	AcOH 2		10
+0.1	Citr 0.065	iPrOH 9.9		AcOH 2		11
+0.1 Acac 0.025	1-BuOH 9.9		AcOH 2		12
+first layer 94-103 with NT6 (80C-1K/min-400C) and solutions 8-12
+	26.11.2020
+[ml]		[ml]	[ml]/[g]		[ml]			
+solv		zr		Chel			solv2		#solution
+1-BuOH 9.9	0.1 	Acac 0.025		AcOH 2		13
+1-BuOH 9.9	0.1 	Citr 0.065		AcOH 2		14
+1-PrO* 9.9	0.1 	Acac 0.025		AcOH 2		15
+1-PrO* 9.9	0.1 	Citr 0.065		AcOH 2		16
+*=4.95ml 1-BoOH + 4.95ml 1-PrOH
+clean new substrate 114-129
+first layer 104-111 with NT6 and solutions 13-16
+	27.11.2020
+cleaned ready samples 86-111 by sonic bath in iPrOH
+sem of 103,107,109,111
+	30.11.2020
+sem of 103 with theo
+first layer on 113 with aged sol 13 by dropping
+	01.12.2020
+prepared sol 17-20 and doctor bladed 114-115 wit sol 17 5 times 
+between doctor blading steps dried at RT and air
+sol	[ml]		[ml]	[ml]	[ml]			
+#	solv		Zr(OPr)	Acac	AcOH		
+17	1-BuOH 4.95	0.05 	0.013	1+0		
+18	1-BuOH 4.95	0.05 	0.013	1+1
+19	1-BuOH 4.95	0.05 	0.013	1+2
+20	1-BuOH 4.95	0.05 	0.013	1+5
+	02.12.2020
+solution 20 was clear in the morning 10 layers of 20 on samples 116-117
+doctor blade -> dried for ~5min -> hot plate 5min 200C repeat 
+calcinated with NT6 (80-400C 1K/min)
+added 5 and 10ml to sol 18 and 19 resp 
+	03.12.2020
+cleaned 113-117 in iPrOH for 15min in ultrasonic bath
+SEM of 113,115,117, both 115 and 117 ~<100nm
+	04.12.2020
+make sol 17 with different stiring times
+21-1	10-10-20 	(118-121)
+22-1	10-10-40	(122-125)
+17-2	30-30-180	(126-129)
+doctor bladed 118-129 with 3 layers each 
+21-1 added 8ml  AcOH
+22-1 added 16ml AcOH
+17-2 added 32ml	AcOH
+after weekend not stable
+	07.12.2020
+cleaned ready 118,119,122,123,126,127 and cut for SEM 
+heated 120,121,124,125,128,129 at NT6 (after 72h rest)
+cleaned new 130-141 (131,133 ITO)
+minimize mixing time
+use fresh sol 17 and 
+try if stable after doctor blading? 
+ask adhi if can use dip coater
+make 17-2 
+make 21-1 with 10+10+30min
+make 22-1 with 10+5+15min
+make each two samples 
+only calcinate one each 
+then add extra AcOH to sol 
+	09.12.2020
+solution 21-2 10-15-20+min
+doctor bladed on 130,131,134,135
+each 10layers (\pm 2)
+120,121,124,125,128,129 cleaned in iPrOH
+and soaked for some hours, then dry blown
+	10.12.2020
+make SEM of 121,125,129 + CS
+microscope pictures
+	11.12.2020
+cut and clean steel foil  142-147
+clean new sample tray 
+reuse first tray? 
+	14.12.2020
+from 1-8. layer 50 um, then 75 um [microliters]
+132,133,136,137 11 layers
+142 10 layers
+143 11 layers
+all in naber term with 2K/min standard heating NT2
+	15.12.2020
+measured UVVis spectra for 
+		glass	fto
+00L		138		139
+03L		118		119
+05L		114		115
+10dL	116		117
+10L		130		135
+11L		136		137
+	16.12.2020
+sol 23-1: 4.9ml BuOH + 0.1ml Zr(OPr) +5-10min
+			+ 0.025ml AcAc +5-10min
+			+ 1ml AcOH +20min
+138+139+144+145 each 5 layers of double conc 23-1
+	17.12.2020
+141(FTO),147(steel),148(glass 1"x1")
+spin coated, one drop in the middle, at 500rpm for 10sec
+with sol 23.2
+	18.12.2020
+make solution 21-4 and 23.3
+(comment 04.01.2020:
+doctor bladed 5? layers with machine on steel with 21.4)
+	11.01.2021 
+solution 21.5 prepared with 9.9 buoh, 0.1 zr, 0.025 Acac, 2 Acoh
+10, 10, 20 min geruehrt
+doctor blading via machine
+5,05 mm height, 0.5ml of sol, v=10mm/s 
+after one layer, dried at air and 5min at 200C on hotplate, cool to RT
+5 layers
+after ~12h of stirring the solution is still not milky. 
+The solution wasn't capped with parafilm but merely with a watch-glass
+there was also a 5mm diameter whole 
+	12.01.2021
+soltion 23.3 prepared (9.8,0.2,0.025,2/buOH,zr,acac,acOH) 10-10-20++
+146 10x with sol 21.5 on doctorblade machine (DOC) dried with heatgun
+150 5x with sp; 23.3 on DOC dried with heatgun (HG)
+	13.01.2021
+make double conc and quadruple conc 
+23.4 (DC) and 24.1 4 fold (4F)
+102 after calcination at NT6 put in oven and heated to 500C for 1h
+151 with 23.4 DOC & HG
+152 with 24.1 DOC & HG
+um 12:30 (nach ca 2-3h) ist 24.1 schon trueb
+um 13:30 auch 23.4 trueb
+made new samples 153-164
+made new 24.1 and 23.4 because of milkyness and used for 2nd layer
+zweite schicht auf 152 mit leicht truber 24.1, 200C auf HP fur 5min
+	14.01.2021
+at 11:00-11:30 the sol 24.2 was ready 
+by 13:45 it started to get milky
+153 sol 24.2 (4F) DOC,HG
+154 sol 24.2 (4F) DOC,HG
+	15.01.2021
+doctorbladed one layer on 155 with old 24.2 but no good result
+155 sol 24.2(old) DOC, HG
+made new 3F sol 25.1 with 4.85 buOH, 0.15 zr, 0.038 acac, 2 acOH
+solution 25.1 milky at 13:30
+made until around 11:10
+	20.01.2021
+made solutions 25.1 (3F), 24.3 (4F), 26.1 (5F)
+165 not cleaned and 3x 5F without pyrolyzing inbetween
+166,167 1x 5F HG noDoc 0.1ml
+168,169 1x 4F HG noDoc 0.1ml
+170,171 1x 3F HG noDoc 0.1ml
+100min nach zugabe von AcOH beginnt 5F zu milchen 
+135-140 nach zugabe von AcOH beginnt 5F zu milchen 
+140-145 nach zugabe von AcOH beginnt 5F zu milchen 
+	21.01.2021
+145 and 159 put into NT7 500C 1h
+116 500C 30min (added after 30min)
+make sol 4F 24.4, 4F 27.1 with more AcOH
+172 1st layer:DOC with 24.4 and 2nd layer:HG with 24.4
+spin coating with 24.4 5layers on glass 
+161 flattened and DOC,HG with milky 27.1 2x
+150,151,152 sputtering contacts
+	22.01.2021
+sol 3F				23.5
+sol 3F*	(3ml AcOH) 	28.1
+10:44 BuOH + ZrOPr4
+11:00 AcAc
+11:16 AcOH
+11:46 started DB
+160 \
+162  |
+163  } 4x, 3F, DOC, HG
+164_/
+	25.12.2021
+moved Erichsen DB machine and changed to vacuum board
+182-193 new samples cleaned **2.7mm x 2.7mm** instead of 2.5^2mm^2
+	26.01.2021 
+URLAUB
+	27.01.2021
+SEM: 147,150,151 CS # not found ...?
+and 159,154,160,161
+	154 147 named wrong 
+
+
+ga_from_lit_summary.txt
+----
+Soltananali 2014	GA+ANN	100 Generations 85 data points 6 input 8 hiden 1 output data from literature
+Shanaghi 2013 		MOGA (GA+ANN) population size 100
+schubert 2008		GA+simulation
+Panwar 2014		GA+Simulation	4 parameters
+Madhavi 2017		GA+ANN	46 data	18 hiddenlayers init pop 30, pop 100
+Luna-Moreno 2001	GA	300 pop size ???
+Kaczmarowski2015	GA 50 pop 50-100 generation data calculated
+Hosseini 2016		GA 50 pop 1000 generations
+Fernandes 2010		MOGA + calc 400 pop, 50 genererations
+Deb 1999		on small and big populations
+Arabs 1994		about varying pop size
+Ahmed 2017		generations 50  popu 20 
+
+
+todo.txt
+---
+[ ] finish writing:
+    [ ] 0 ABSTRACT
+    [ ] 1 INTRO/BACKGROUND
+	[X] 3.1 THEORY
+		[X] 3.1.4 CIGS
+		[X] 3.3 ML & Statistic
+			[X] 3.3.7 Design of Experiment
+			[X] 3.3.5 PSO and GA
+			[X] 3.3.8 Linear Regression
+			[X] 3.3.9 AI/ML vs Statistics
+	[X] 4 EXPERIMENTAL 
+	[X] 5 COMPUTATIONAL DETAILS
+	[X] RESULTS
+		[X] XRD
+		[X] SEM 
+		[X] V-I 
+		[X] PSO 
+    [ ] 6 RESULTS
+        [X] material 
+        [X] pre-emma 
+        [X] emma 
+        [X] post emma 
+        [ ] discussion 
+    [ ] OUTLOOK
+
+- format 
+	- look at citation locations
+    - caption dots at end? 
+	- look if all SI units fit
+	- make giant table small or rotate
+    - check if all caption are well written 
+
+

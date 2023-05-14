@@ -1,0 +1,40 @@
+The aim of this work is to develop a non-conducting layer on steel based on  non-toxic materials like aluminium or zirconium via doctor blading. 
+This layer can then be used as insulator for CIGS modules on steel sheets.
+Doctor blading - or tape casting - is a widely used precision coating method to apply thin films on large area surfaces\cite{Berni2004}.
+%The method of doctor blading, which is in principle a sol-gel process, 
+This sol-gel process was chosen over spin coating because of 
+its scalability.
+%the availability to the industrial partner.
+In order to optimize the resulting layer the multitude of parameters was optimized with an particle swarm optimization ansatz. %machine learning 
+The conductivity (dependent variable), the number of layers and calcination time (both independent variables) should be minimized.
+%The conductivity should be as small as possible.
+%The number of layers should be held small and the calcination heating rate should be maximized. 
+\iffalse
+Defensio: Argumente in der Arbeit noch mal sichten, Feedback von Betreuungsperson im Kopf haben - da könnten Fragen kommen, 
+sich selbst aufnehmen 
+
+Präsentieren: Visualisierungen sinnvoll? 
+Antworten überlegen/Argumente überlegen
+Limitation, Rahmen der Arbeit
+Begründung für die eigene Vorgehensweise
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{2022-06-19-Free-Writing}
+The problem which presents it self is in principle a search problem.
+A large space of possible combinations of experimental anordnungen presents it self
+and out of these we want to find the optimial parameter combination. 
+The best way with unlimitied resources would be the brute-force approach to try every possibility. 
+But due to limited time this is unfeasable. 
+But a new questions arises: how should the ausmasse of the search space be eingeschraenkt? 
+What are the upper and lower limits and which intervals/step size/grid size should be used. 
+Also even before, we have to answer which dimensions/parameters should we include in the search? 
+Which parameters should we keep constant and at which value? 
+And finally which features should we use to measure the goodness of an experiment? 
+
+I tried different methods to answer the first X questions: Latin square and Plackett-Burman design.
+Unfortunately, I was faced with similar questions. How many levels and which end points? 
+latin squares are about orthogonality 
+PB is a factorial experiment desing in contrast to one-fator-at-a-time methods.
+reliability and validity are low due to experiments not replicated 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,109 @@
+%\documentclass[a4paper]{article}
+%\documentclass[a4paper,titlepage]{scrreprt}
+\documentclass[a4paper,twoside]{report}
+\input{chapter/0-usepackages.tex}
+
+\title{Particle Swarm Optimisation of Chemical Passivation of Steel Substrate with Zirconium Oxide Layers through Sol-Gel Process}
+\author{Johann Dorn}
+
+\begin{document}
+%\maketitle
+\includepdf{deckblatt.pdf}
+% ONLY IN TWOSIDED MODE
+%{\null\newpage}
+\input{chapter/0000-acronyms.tex}
+%\todo{read docu \url{https://en.wikibooks.org/wiki/LaTeX/Glossary#Defining\_acronyms}}
+
+%\clearpage
+\chapter*{Abstract}
+\input{chapter/000-abstract.tex}
+%\td{cite something pro forma \cite{ncbi1butanol}}
+
+\chapter*{Preface}
+\input{chapter/00-preface.tex}
+%\clearpage
+
+\tableofcontents
+\clearpage
+\printglossaries
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% 1 INTRODUCTION %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}                                
+\label{sec:intro}
+\input{chapter/01-introduction.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% 2 AIMS AND OBJECTIVES %%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\chapter{Aims and Objectives}
+%\label{sec:aims}
+%\input{chapter/02-aims-and-objectives}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% 3 THEORETICAL BACKGROUND %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Theoretical Background}
+\label{sec:theoretical}
+\input{chapter/030-theory-materials.tex}
+\input{chapter/031-theory-calculations.tex}
+%\input{chapter/032-alt-theory-calculations.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%% 4 EXPERIMENTAL %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Experimental}
+\label{sec:exp}
+\input{chapter/04-experimental.tex}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% 5 COMPUTATIONAL DETAILS %%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Computational Details}
+\label{sec:comp}
+\input{chapter/05-computational-details.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% 6 RESULTS AND DISCUSSION %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Results and Discussion}
+\label{sec:results}
+\input{chapter/060-results-material.tex}
+\input{chapter/061-results-emma.tex}
+\input{chapter/062-post-emma.tex}
+\input{chapter/063-discussion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% 7 OUTLOOK %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Summary and Outlook}
+\label{sec:outlook}
+\input{chapter/07-outlook.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%% BIBLIO %%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliographystyle{plain}
+\bibliographystyle{ieeetr}
+\bibliography{int}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% 8 APPENDIX %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+%
+\chapter{Pre-EMMA Experiments}
+\label{sec:app-pre-emma}
+\input{chapter/082-pre-emma-table.tex}
+%
+\chapter{EMMA Experiments}
+\label{sec:app-emma}
+\input{chapter/081-emma-table.tex}
+%
+
+\end{document}

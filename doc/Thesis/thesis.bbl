@@ -1,0 +1,578 @@
+\begin{thebibliography}{100}
+
+\bibitem{dyson1960search}
+F.~J. Dyson, ``Search for artificial stellar sources of infrared radiation,''
+  {\em Science}, vol.~131, no.~3414, pp.~1667--1668, 1960.
+
+\bibitem{Vasekar2010}
+P.~S. Vasekar, A.~H. Jahagirdar, and N.~G. Dhere, ``Photovoltaic
+  characterization of copper–indium–gallium sulfide (cigs2) solar cells for
+  lower absorber thicknesses,'' {\em Thin Solid Films}, vol.~518, no.~7,
+  pp.~1788--1790, 2010.
+\newblock Photovoltaics, solar energy materials and thin films - IMRC 2008,
+  Cancun, Mexico.
+
+\bibitem{BP2017}
+B.~Petroleum, ``Bp statistical review of world energy 2017,'' {\em Statistical
+  review of world energy}, vol.~65, 2017.
+
+\bibitem{BGR2017}
+B.~für Geowissenschaften~und Rohstoffe, ``Daten und entwicklungen der
+  deutschen und globalen energieversorgung,'' {\em Statistical review of world
+  energy}, vol.~65, 2017.
+
+\bibitem{Uran2006}
+D.~L{\"u}bbert and F.~Lange, ``Uran als kernbrennstoff: Vorräte und
+  reichweite,'' {\em Wissenschaftliche Dienste des deutschen Bundestages,
+  Info-Brief WF VIII G--069/06}, 2006.
+
+\bibitem{becquerel1839memoire}
+M.~Becquerel, ``M{\'e}moire sur les effets {\'e}lectriques produits sous
+  l'influence des rayons solaires,'' {\em Comptes rendus hebdomadaires des
+  s{\'e}ances de l'Acad{\'e}mie des sciences}, vol.~9, pp.~561--567, 1839.
+
+\bibitem{Smith1873Selenium}
+W.~Smith, ``Effect of light on selenium during the passage of an electric
+  current*,'' {\em Nature}, vol.~7, p.~303, 1873.
+
+\bibitem{Adams1876Selenium}
+W.~G. Adams and R.~E. Day, ``V. the action of light on selenium,'' {\em
+  Proceedings of the Royal Society of London}, vol.~25, no.~171-178,
+  pp.~113--117, 1877.
+
+\bibitem{einstein1905erzeugung}
+A.~Einstein, ``{\"U}ber einem die erzeugung und verwandlung des lichtes
+  betreffenden heuristischen gesichtspunkt,'' {\em Annalen der physik}, vol.~4,
+  1905.
+
+\bibitem{pagliaro2008flexible}
+M.~Pagliaro, G.~Palmisan, and R.~Ciriminna, {\em Flexible Solar Cells}.
+\newblock Wiley-VCH, 2008.
+
+\bibitem{markvart2013principles}
+T.~Markvart and L.~Castañer, ``Chapter ia-1 - principles of solar cell
+  operation,'' in {\em Solar Cells (Second Edition)} (A.~McEvoy, L.~Castañer,
+  and T.~Markvart, eds.), pp.~3--25, Elsevier, second edition~ed., 2013.
+
+\bibitem{breitenstein2013understanding}
+O.~Breitenstein, ``Understanding the current-voltage characteristics of
+  industrial crystalline silicon solar cells by considering inhomogeneous
+  current distributions,'' {\em Opto-Electronics Review}, vol.~21, no.~3,
+  pp.~259--282, 2013.
+
+\bibitem{hahn1953untersuchungen}
+H.~Hahn, G.~Frank, W.~Klingler, A.-D. Meyer, and G.~St{\"o}rger,
+  ``Untersuchungen {\"u}ber tern{\"a}re chalkogenide. v. {\"u}ber einige
+  tern{\"a}re chalkogenide mit chalkopyritstruktur,'' {\em Zeitschrift f{\"u}r
+  anorganische und allgemeine Chemie}, vol.~271, no.~3-4, pp.~153--170, 1953.
+
+\bibitem{wagner1974cuinse2}
+S.~Wagner, J.~Shay, P.~Migliorato, and H.~Kasper, ``Cuinse2/cds heterojunction
+  photovoltaic detectors,'' {\em Applied Physics Letters}, vol.~25, no.~8,
+  pp.~434--435, 1974.
+
+\bibitem{kazmerski1976thin}
+L.~Kazmerski, F.~White, and G.~Morgan, ``Thin-film cuinse2/cds heterojunction
+  solar cells,'' {\em Applied Physics Letters}, vol.~29, no.~4, pp.~268--270,
+  1976.
+
+\bibitem{feurer2017cigs}
+T.~Feurer, P.~Reinhard, E.~Avancini, B.~Bissig, J.~Löckinger, P.~Fuchs,
+  R.~Carron, T.~P. Weiss, J.~Perrenoud, S.~Stutterheim, S.~Buecheler, and A.~N.
+  Tiwari, ``Progress in thin film cigs photovoltaics – research and
+  development, manufacturing, and applications,'' {\em Progress in
+  Photovoltaics: Research and Applications}, vol.~25, no.~7, pp.~645--667,
+  2017.
+
+\bibitem{mcevoy2011practical}
+A.~McEvoy, L.~Castañer, and T.~Markvart, eds., {\em Practical handbook of
+  photovoltaics. Fundamentals and applications(Second Edition)}.
+\newblock Elsevier, second edition~ed., 2011.
+
+\bibitem{mertens2020photovoltaik}
+K.~Mertens, {\em Photovoltaik: Lehrbuch zu Grundlagen, Technologie und Praxis}.
+\newblock Carl Hanser Verlag GmbH Co KG, 2020.
+
+\bibitem{rau2013cigs}
+U.~Rau and H.~Schock, ``Chapter ic-3 - cu(in,ga)se2 thin-film solar cells,'' in
+  {\em Solar Cells (Second Edition)} (A.~McEvoy, L.~Castañer, and T.~Markvart,
+  eds.), pp.~261--304, Elsevier, second edition~ed., 2013.
+
+\bibitem{hedstrom1993cigs}
+J.~Hedstrom, H.~Ohlsen, M.~Bodegard, A.~Kylner, L.~Stolt, D.~Hariskos,
+  M.~Ruckh, and H.-W. Schock, ``Zno/cds/cu(in,ga)se/sub 2/ thin film solar
+  cells with improved performance,'' in {\em Conference Record of the Twenty
+  Third IEEE Photovoltaic Specialists Conference - 1993 (Cat. No.93CH3283-9)},
+  pp.~364--371, 1993.
+
+\bibitem{Anwar2017}
+M.~A. Anwar, T.~Kurniawan, Y.~P. Asmara, W.~S.~W. Harun, A.~N. Oumar, and
+  A.~B.~D. Nandyanto, ``Morphology evaluation of {ZrO}2dip coating on mild
+  steel and its corrosion performance in {NaOH} solution,'' {\em {IOP}
+  Conference Series: Materials Science and Engineering}, vol.~257, p.~012087,
+  oct 2017.
+
+\bibitem{kukli2001dielectric}
+K.~Kukli, K.~Forsgren, M.~Ritala, M.~Leskel{\"a}, J.~Aarik, and A.~Ha{\aa}rsta,
+  ``Dielectric properties of zirconium oxide grown by atomic layer deposition
+  from iodide precursor,'' {\em Journal of The Electrochemical Society},
+  vol.~148, no.~12, p.~F227, 2001.
+
+\bibitem{Nielsen2005}
+R.~H. Nielsen and G.~Wilfing, {\em Zirconium and Zirconium Compounds}.
+\newblock John Wiley \& Sons, Ltd, 2010.
+
+\bibitem{yang2010large}
+H.~Yang and P.~Jiang, ``Large-scale colloidal self-assembly by doctor blade
+  coating,'' {\em Langmuir}, vol.~26, no.~16, pp.~13173--13182, 2010.
+
+\bibitem{Swann1988}
+S.~Swann, ``Magnetron sputtering,'' {\em Physics in Technology}, vol.~19,
+  pp.~67--75, mar 1988.
+
+\bibitem{Kelly2000}
+P.~J. Kelly and R.~D. Arnell, ``Magnetron sputtering: a review of recent
+  developments and applications,'' {\em Vacuum}, vol.~56, no.~3, pp.~159--172,
+  2000.
+
+\bibitem{McMullan1995}
+D.~McMullan, ``Scanning electron microscopy 1928–1965,'' {\em Scanning},
+  vol.~17, no.~3, pp.~175--185, 1995.
+
+\bibitem{Kaliva2020}
+M.~Kaliva and M.~Vamvakaki, ``Chapter 17 - nanomaterials characterization,'' in
+  {\em Polymer Science and Nanotechnology} (R.~Narain, ed.), pp.~401--433,
+  Elsevier, 2020.
+
+\bibitem{Vernon2000}
+K.~Vernon-Parry, ``Scanning electron microscopy: an introduction,'' {\em III-Vs
+  Review}, vol.~13, no.~4, pp.~40--44, 2000.
+
+\bibitem{Schwedt2008}
+G.~Schwedt, {\em Analytische chemie: Grundlagen, Methoden und Praxis}.
+\newblock John Wiley \& Sons, 2008.
+
+\bibitem{gHobel2006international}
+E.~G{\H{o}}bel, I.~Mills, and A.~Wallard, {\em The international system of
+  units (SI)}.
+\newblock Bureau International de Poids et Mesures, 2006.
+
+\bibitem{Melker2006}
+A.~I. Melker and M.~A. Vorobyeva, ``{Electronic theory of molecule
+  vibrations},'' in {\em Ninth International Workshop on Nondestructive Testing
+  and Computer Simulations} (A.~I. Melker, ed.), vol.~6253, pp.~42 -- 56,
+  International Society for Optics and Photonics, SPIE, 2006.
+
+\bibitem{bec2019breakthrough}
+K.~B. Be{\'c} and C.~W. Huck, ``Breakthrough potential in near-infrared
+  spectroscopy: Spectra simulation. a review of recent developments,'' {\em
+  Frontiers in chemistry}, vol.~7, p.~48, 2019.
+
+\bibitem{gontcharov2019}
+A.~Gontcharov, ``No, ai is not statistics,'' 2019.
+\newblock Last Accessed 2022-06-21.
+
+\bibitem{haertler2014statistisch}
+G.~H{\"a}rtler, {\em Statistisch gesichert und trotzdem falsch?}
+\newblock Springer Spektrum, 2014.
+
+\bibitem{howard2019artificial}
+J.~Howard, ``Artificial intelligence: Implications for the future of work,''
+  {\em American Journal of Industrial Medicine}, vol.~62, no.~11, pp.~917--926,
+  2019.
+
+\bibitem{McCarthy1955}
+M.~J, M.~ML, R.~N, and S.~CE, ``A proposal for the dartmouth summer research
+  project on artificial intelligence,'' 1955.
+
+\bibitem{McCorduck1982}
+P.~McCorduck and C.~Cfe, {\em Machines who think: A personal inquiry into the
+  history and prospects of artificial intelligence}.
+\newblock CRC Press, 1982.
+
+\bibitem{Apter1982}
+M.~A. Apter, ``Machines who think: A personal inquiry into the history and
+  prospects of artificial intelligence by pamela mccorduck,'' {\em Leonardo},
+  vol.~15, no.~3, p.~242, 1982.
+
+\bibitem{Silver2017}
+D.~Silver, T.~Hubert, J.~Schrittwieser, I.~Antonoglou, M.~Lai, A.~Guez,
+  M.~Lanctot, L.~Sifre, D.~Kumaran, T.~Graepel, T.~Lillicrap, K.~Simonyan, and
+  D.~Hassabis, ``Mastering chess and shogi by self-play with a general
+  reinforcement learning algorithm,'' 2017.
+
+\bibitem{Feng1999}
+F.-H. Hsu, ``Ibm's deep blue chess grandmaster chips,'' {\em IEEE Micro},
+  vol.~19, no.~2, pp.~70--81, 1999.
+
+\bibitem{turing1950imitation}
+A.~M. Turing, ``The imitation game,'' {\em Mind}, vol.~59, no.~236,
+  pp.~433--460, 1950.
+
+\bibitem{gpt2020}
+{GPT-3}, ``A robot wrote this entire article. are you scared yet, human?.''
+\newblock Last Accessed 2022-06-14.
+
+\bibitem{dis2023chatgpt}
+E.~A.~M. van Dis, J.~Bollen, W.~Zuidema, R.~van Rooij, and L.~Bockting,
+  ``Chatgpt: five priorities for research,'' 2023.
+
+\bibitem{searle1980}
+J.~R. Searle, ``Minds, brains, and programs,'' {\em Behavioral and Brain
+  Sciences}, vol.~3, no.~3, p.~417–424, 1980.
+
+\bibitem{searle1999married}
+J.~Searle, ``I married a computer,'' {\em The New York Review of Books},
+  vol.~8, 1999.
+
+\bibitem{tiku2022google}
+N.~Tiku, ``The google engineer who thinks the company’s ai has come to
+  life,'' {\em The Washington Post}, vol.~11, 2022.
+
+\bibitem{Campbell2002}
+M.~Campbell, A.~Hoane, and F.~hsiung Hsu, ``Deep blue,'' {\em Artificial
+  Intelligence}, vol.~134, no.~1, pp.~57--83, 2002.
+
+\bibitem{Li2020}
+L.-F. Li, X.~Wang, W.-J. Hu, N.~N. Xiong, Y.-X. Du, and B.-S. Li, ``Deep
+  learning in skin disease image recognition: A review,'' {\em IEEE Access},
+  vol.~8, pp.~208264--208280, 2020.
+
+\bibitem{Deo2015}
+R.~C. Deo, ``Machine learning in medicine,'' {\em Circulation}, vol.~132,
+  no.~20, pp.~1920--1930, 2015.
+
+\bibitem{Topol2019}
+E.~J. Topol, ``High-performance medicine: the convergence of human and
+  artificial intelligence,'' {\em Nature medicine}, vol.~25, no.~1, pp.~44--56,
+  2019.
+
+\bibitem{Fujiyoshi2019}
+H.~Fujiyoshi, T.~Hirakawa, and T.~Yamashita, ``Deep learning-based image
+  recognition for autonomous driving,'' {\em IATSS Research}, vol.~43, no.~4,
+  pp.~244--252, 2019.
+
+\bibitem{Westermayr2019}
+J.~Westermayr, M.~Gastegger, M.~F. S.~J. Menger, S.~Mai, L.~González, and
+  P.~Marquetand, ``Machine learning enables long time scale molecular
+  photodynamics simulations,'' {\em Chem. Sci.}, vol.~10, pp.~8100--8107, 2019.
+
+\bibitem{goh2017chemception}
+G.~B. Goh, C.~Siegel, A.~Vishnu, N.~O. Hodas, and N.~Baker, ``Chemception: A
+  deep neural network with minimal chemistry knowledge matches the performance
+  of expert-developed qsar/qspr models,'' 2017.
+
+\bibitem{jha2018elemnet}
+D.~Jha, L.~Ward, A.~Paul, W.-k. Liao, A.~Choudhary, C.~Wolverton, and
+  A.~Agrawal, ``Elemnet: Deep learning the chemistry of materials from only
+  elemental composition,'' {\em Scientific reports}, vol.~8, no.~1, pp.~1--13,
+  2018.
+
+\bibitem{Sarker2021}
+I.~H. Sarker, M.~H. Furhad, and R.~Nowrozy, ``Ai-driven cybersecurity: An
+  overview, security intelligence modeling and research directions,'' {\em SN
+  Computer Science}, vol.~2, p.~173, 2021.
+
+\bibitem{Andrews2017}
+T.~M. Andrews, 2017.
+\newblock Last Accessed on 2022-06-03.
+
+\bibitem{Littman2021}
+M.~L. Littman, I.~Ajunwa, G.~Berger, C.~Boutilier, M.~Currie, F.~Doshi-Velez,
+  G.~Hadfield, M.~C.~Horowitz, C.~Isbell, H.~Kitano, K.~Levy, T.~Lyons,
+  M.~Mitchell, J.~Shah, S.~Sloman, S.~Vallor, and T.~Walsh, ``Gathering
+  strength, gathering storms: The one hundred year study on artificial
+  intelligence (ai100) 2021 study panel report.,'' 2021.
+
+\bibitem{Koroteev2021}
+M.~V. Koroteev, ``Bert: A review of applications in natural language processing
+  and understanding,'' 2021.
+
+\bibitem{Liu2021gpt}
+X.~Liu, Y.~Zheng, Z.~Du, M.~Ding, Y.~Qian, Z.~Yang, and J.~Tang, ``Gpt
+  understands, too,'' 2021.
+
+\bibitem{Parviainen2021}
+J.~Parviainen and M.~Coeckelbergh, ``The political choreography of the sophia
+  robot: beyond robot rights and citizenship to political performances for the
+  social robotics market,'' {\em AI \& SOCIETY}, vol.~36, pp.~715--724, 2021.
+
+\bibitem{Mansourifar2020}
+H.~Mansourifar and W.~Shi, ``One-shot gan generated fake face detection,''
+  2020.
+
+\bibitem{Marcus2022}
+G.~Marcus, E.~Davis, and S.~Aaronson, ``A very preliminary analysis of dall-e
+  2,'' 2022.
+
+\bibitem{Guzdial2016}
+M.~Guzdial and M.~Riedl, ``Toward game level generation from gameplay videos,''
+  2016.
+
+\bibitem{ai100}
+last accessed 2022-06-13.
+
+\bibitem{Hassan2020}
+O.~Hassan, ``Artificial intelligence, neom and saudi arabia's economic
+  diversification from oil and gas,'' {\em The Political Quarterly}, vol.~91,
+  no.~1, pp.~222--227, 2020.
+
+\bibitem{Chiroma2019}
+H.~Chiroma, U.~A. Abdullahi, S.~M. Abdulhamid, A.~Abdulsalam~Alarood, L.~A.
+  Gabralla, N.~Rana, L.~Shuib, I.~A. Targio~Hashem, D.~E. Gbenga, A.~I.
+  Abubakar, A.~M. Zeki, and T.~Herawan, ``Progress on artificial neural
+  networks for big data analytics: A survey,'' {\em IEEE Access}, vol.~7,
+  pp.~70535--70551, 2019.
+
+\bibitem{bishop1994neural}
+C.~M. Bishop, ``Neural networks and their applications,'' {\em Review of
+  scientific instruments}, vol.~65, no.~6, pp.~1803--1832, 1994.
+
+\bibitem{Lecun1995conv}
+Y.~LeCun, Y.~Bengio, {\em et~al.}, ``Convolutional networks for images, speech,
+  and time series,'' {\em The handbook of brain theory and neural networks},
+  vol.~3361, no.~10, p.~1995, 1995.
+
+\bibitem{westermayr2020combining}
+J.~Westermayr, M.~Gastegger, and P.~Marquetand, ``Combining schnet and sharc:
+  The schnarc machine learning approach for excited-state dynamics,'' {\em The
+  journal of physical chemistry letters}, vol.~11, no.~10, pp.~3828--3834,
+  2020.
+
+\bibitem{rupp2015machine}
+M.~Rupp, ``Machine learning for quantum mechanics in a nutshell,'' {\em
+  International Journal of Quantum Chemistry}, vol.~115, no.~16,
+  pp.~1058--1073, 2015.
+
+\bibitem{rudin2020least}
+C.~Rudin, ``Least squares and friends,'' 2020.
+\newblock last accessed 2022-11-08.
+
+\bibitem{boser1992training}
+B.~E. Boser, I.~M. Guyon, and V.~N. Vapnik, ``A training algorithm for optimal
+  margin classifiers,'' in {\em Proceedings of the Fifth Annual Workshop on
+  Computational Learning Theory}, COLT '92, (New York, NY, USA), p.~144–152,
+  Association for Computing Machinery, 1992.
+
+\bibitem{winston1992artificial}
+P.~H. Winston, {\em Artificial Intelligence}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., 1992.
+
+\bibitem{cherkassky1998learning}
+V.~Cherkassky and F.~Mulier, {\em Learning from Data}.
+\newblock Wiley, 1998.
+
+\bibitem{cortes1995support}
+C.~Cortes and V.~Vapnik, ``Support-vector networks,'' {\em Machine learning},
+  vol.~20, pp.~273--297, 1995.
+
+\bibitem{villanova2010function}
+L.~Villanova, P.~Falcaro, D.~Carta, I.~Poli, R.~Hyndman, and K.~Smith-Miles,
+  ``Functionalization of microarray devices: Process optimization using a
+  multiobjective pso and multiresponse mars modeling,'' in {\em IEEE Congress
+  on Evolutionary Computation}, pp.~1--8, IEEE, 2010.
+
+\bibitem{Kennedy1995}
+J.~Kennedy and R.~Eberhart, ``Particle swarm optimization,'' in {\em
+  Proceedings of ICNN'95-international conference on neural networks}, vol.~4,
+  pp.~1942--1948, IEEE, 1995.
+
+\bibitem{friedman1991multivariate}
+J.~H. Friedman, ``Multivariate adaptive regression splines,'' {\em Annals of
+  Statistics}, vol.~19, pp.~1 -- 67, March 1991.
+
+\bibitem{mars}
+last accessed 2022-10-17.
+
+\bibitem{friedman1988fitting}
+J.~H. Friedman, ``Fitting functions to noisy data in high dimensions,'' {\em
+  Department of Statistics-Stanford University Technical Report}, vol.~101,
+  pp.~1--36, 1988.
+
+\bibitem{wahba1979smoothing}
+G.~Wahba and P.~Craven, ``Smoothing noisy data with spline functions.
+  estimating the correct degree of smoothing by the method of generalized
+  cross-validation.,'' {\em Numerische Mathematik}, vol.~31, pp.~377--404,
+  1979.
+
+\bibitem{goodwin1977experiment}
+G.~C. Goodwin and R.~L. Payne, ``Chapter 6 experiment design,'' in {\em Dynamic
+  System Identification} (G.~C. Goodwin and R.~L. Payne, eds.), vol.~136 of
+  {\em Mathematics in Science and Engineering}, pp.~124--174, Elsevier, 1977.
+
+\bibitem{gunst2009fractional}
+R.~F. Gunst and R.~L. Mason, ``Fractional factorial design,'' {\em WIREs
+  Computational Statistics}, vol.~1, no.~2, pp.~234--244, 2009.
+
+\bibitem{vanaja2007design}
+K.~Vanaja and R.~S. Rani, ``Design of experiments: Concept and applications of
+  plackett burman design,'' {\em Clinical Research and Regulatory Affairs},
+  vol.~24, no.~1, pp.~1--23, 2007.
+
+\bibitem{miller2001using}
+A.~Miller and R.~R. Sitter, ``Using the folded-over 12-run plackett—burman
+  design to consider interactions,'' {\em Technometrics}, vol.~43, no.~1,
+  pp.~44--55, 2001.
+
+\bibitem{wang1995hidden}
+J.~C. Wang and C.~F.~J. Wu, ``A hidden projection property of plackett-burman
+  and related designs,'' {\em Statistica Sinica}, vol.~5, no.~1, pp.~235--250,
+  1995.
+
+\bibitem{viana2016tutorial}
+F.~A.~C. Viana, ``A tutorial on latin hypercube design of experiments,'' {\em
+  Quality and Reliability Engineering International}, vol.~32, no.~5,
+  pp.~1975--1985, 2016.
+
+\bibitem{diwekar1997efficient}
+U.~M. Diwekar and J.~R. Kalagnanam, ``Efficient sampling technique for
+  optimization under uncertainty,'' {\em AIChE Journal}, vol.~43, no.~2,
+  pp.~440--447, 1997.
+
+\bibitem{fisher1921on}
+R.~A. Fisher {\em et~al.}, ``On the "probable error" of a coefficient of
+  correlation deduced from a small sample.,'' {\em Metron}, vol.~1, pp.~3--32,
+  1921.
+
+\bibitem{Hu2016}
+B.~Hu, E.~Jia, B.~Du, and Y.~Yin, ``A new sol-gel route to prepare dense al2o3
+  thin films,'' {\em Ceramics International}, vol.~42, no.~15,
+  pp.~16867--16871, 2016.
+\newblock
+  \url{https://www.sciencedirect.com/science/article/pii/S0272884216312548}.
+
+\bibitem{Plackett1946}
+R.~Plackett and L.~Burman, ``The design of optimal multifactorial
+  experiments,'' {\em Biometrika}, vol.~33, pp.~305--325, 1946.
+
+\bibitem{Breiman1997}
+L.~Breiman and J.~H. Friedman, ``Predicting multivariate responses in multiple
+  linear regression,'' {\em Journal of the Royal Statistical Society: Series B
+  (Statistical Methodology)}, vol.~59, no.~1, pp.~3--54, 1997.
+
+\bibitem{Carta2011}
+D.~Carta, L.~Villanova, S.~Costacurta, A.~Patelli, I.~Poli, S.~Vezzu,
+  P.~Scopece, F.~Lisi, K.~Smith-Miles, R.~J. Hyndman, {\em et~al.}, ``Method
+  for optimizing coating properties based on an evolutionary algorithm
+  approach,'' {\em Analytical chemistry}, vol.~83, no.~16, pp.~6373--6380,
+  2011.
+
+\bibitem{pedregosa2011scikit}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, {\em et~al.},
+  ``Scikit-learn: Machine learning in python,'' {\em the Journal of machine
+  Learning research}, vol.~12, pp.~2825--2830, 2011.
+
+\bibitem{gkatz1971xray}
+J.~GKatz, ``X-ray diffraction powder pattern of metastable cubic zro\_2,'' {\em
+  Am. Ceram, Soc.}, vol.~54, p.~531, 1971.
+
+\bibitem{Purohit2006Combustion}
+R.~Purohit, S.~Saha, and A.~Tyagi, ``Combustion synthesis of nanocrystalline
+  zro2 powder: Xrd, raman spectroscopy and tem studies,'' {\em Materials
+  Science and Engineering: B}, vol.~130, no.~1-3, pp.~57--60, 2006.
+
+\bibitem{Dumin1967}
+D.~J. Dumin, ``Measurement of film thickness using infrared interference,''
+  {\em Review of Scientific Instruments}, vol.~38, no.~8, pp.~1107--1109, 1967.
+
+\bibitem{delimafilho2017film}
+J.~B. {de Lima Filho} and Ángel Alberto~Hidalgo, ``Film thickness by
+  interference pattern and optical characterization of polyaniline by
+  spectroscopic ellipsometry,'' {\em Synthetic Metals}, vol.~223, pp.~80--86,
+  2017.
+
+\bibitem{perez2018solar}
+A.~Pérez-Tomás, A.~Lima, Q.~Billon, I.~Shirley, G.~Catalan, and
+  M.~Lira-Cantú, ``A solar transistor and photoferroelectric memory,'' {\em
+  Advanced Functional Materials}, vol.~28, no.~17, p.~1707099, 2018.
+
+\bibitem{sinhamahapatra2016oxygen}
+A.~Sinhamahapatra, J.-P. Jeon, J.~Kang, B.~Han, and J.-S. Yu,
+  ``Oxygen-deficient zirconia (zro2-x): A new material for solar light
+  absorption,'' {\em Scientific Reports}, vol.~6, 2016.
+
+\bibitem{feenstra1994scanning}
+R.~M. Feenstra, ``Scanning tunneling spectroscopy,'' {\em Surface science},
+  vol.~299, pp.~965--979, 1994.
+
+\bibitem{datta1997current}
+S.~Datta, W.~Tian, S.~Hong, R.~Reifenberger, J.~I. Henderson, and C.~P. Kubiak,
+  ``Current-voltage characteristics of self-assembled monolayers by scanning
+  tunneling microscopy,'' {\em Physical Review Letters}, vol.~79, no.~13,
+  p.~2530, 1997.
+
+\bibitem{vittinghoff2007relaxing}
+E.~Vittinghoff and C.~E. McCulloch, ``Relaxing the rule of ten events per
+  variable in logistic and cox regression,'' {\em American journal of
+  epidemiology}, vol.~165, no.~6, pp.~710--718, 2007.
+
+\bibitem{kartam1997artificial}
+N.~Kartam, I.~Flood, and J.~H. Garrett, ``Validation and verification,'' in
+  {\em Artificial neural networks for civil engineers: fundamentals and
+  applications}, ASCE, 1997.
+
+\bibitem{hoffman2020concept}
+R.~Hoffman, ``The concept of statistical significance,'' 2020.
+\newblock last accessed 2022-11-08.
+
+\bibitem{sellke2001pvalues}
+T.~Sellke, M.~J. Bayarri, and J.~O. Berger, ``Calibration of p-values for
+  testing precise null hypotheses,'' {\em The American Statistician}, vol.~55,
+  no.~1, pp.~62--71, 2001.
+
+\bibitem{ahmed2017preparation}
+M.~A. Ahmed Al-dujaili, S.~Jaheel, and H.~N. Abbas, ``Preparation of
+  ha/$\beta$-tcp scaffold and mechanical strength optimization using a genetic
+  algorithm method,'' {\em Journal of the Australian Ceramic Society}, vol.~53,
+  pp.~41--48, 2017.
+
+\bibitem{fernandes2010multi}
+V.~R. Fernandes, C.~M. Vicente, N.~Wada, P.~S. Andr{\'e}, and R.~A. Ferreira,
+  ``Multi-objective genetic algorithm applied to spectroscopic ellipsometry of
+  organic-inorganic hybrid planar waveguides,'' {\em Optics Express}, vol.~18,
+  no.~16, pp.~16580--16586, 2010.
+
+\bibitem{kaczmarowski2015genetic}
+A.~Kaczmarowski, S.~Yang, I.~Szlufarska, and D.~Morgan, ``Genetic algorithm
+  optimization of defect clusters in crystalline materials,'' {\em
+  Computational Materials Science}, vol.~98, pp.~234--244, 2015.
+
+\bibitem{mahdavi2017hardness}
+M.~Mahdavi~Jafari, S.~Soroushian, and G.~R. Khayati, ``Hardness optimization
+  for al6061-mwcnt nanocomposite prepared by mechanical alloying using
+  artificial neural networks and genetic algorithm,'' {\em Journal of Ultrafine
+  Grained and Nanostructured Materials}, vol.~50, no.~1, pp.~23--32, 2017.
+
+\bibitem{soltanali2014neural}
+S.~Soltanali, R.~Halladj, S.~Tayyebi, and A.~Rashidi, ``Neural network and
+  genetic algorithm for modeling and optimization of effective parameters on
+  synthesized zsm-5 particle size,'' {\em Materials Letters}, vol.~136,
+  pp.~138--140, 2014.
+
+\bibitem{panwar2014design}
+R.~Panwar, V.~Agarwala, and D.~Singh, ``Design and experimental verification of
+  a thin broadband nanocomposite multilayer microwave absorber using genetic
+  algorithm based approach,'' {\em AIP Conference Proceedings}, vol.~1620,
+  no.~1, pp.~406--415, 2014.
+
+\bibitem{schubert2008design}
+M.~F. Schubert, F.~W. Mont, S.~Chhajed, D.~J. Poxson, J.~K. Kim, and E.~F.
+  Schubert, ``Design of multilayer antireflection coatings made from
+  co-sputtered and low-refractive-index materials by genetic algorithm,'' {\em
+  Optics express}, vol.~16, no.~8, pp.~5290--5298, 2008.
+
+\bibitem{shanaghi2013experimental}
+A.~Shanaghi, A.~Sabour~Rouhaghdam, S.~A. Tabatabaei, M.~Shariatpanahi,
+  A.~Rastgoo, A.~K. Yousefi, and M.~Samadzadeh, ``An experimental investigation
+  of corrosion resistance of mild steel by sol-gel process using tio2
+  nanostructure coating and prediction of optimal parameters,'' {\em
+  Proceedings of the Institution of Mechanical Engineers, Part N: Journal of
+  Nanoengineering and Nanosystems}, vol.~227, no.~2, pp.~105--111, 2013.
+
+\bibitem{giunta2003overview}
+A.~Giunta, S.~Wojtkiewicz, and M.~Eldred, ``Overview of modern design of
+  experiments methods for computational simulations (invited),'' {\em 41st
+  Aerospace Sciences Meeting and Exhibit}, 2003.
+
+\end{thebibliography}

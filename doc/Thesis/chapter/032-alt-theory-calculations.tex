@@ -1,0 +1,184 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Machine Learning and Statistics}
+
+\subsection{Introduction to AI, ML and statistics}
+\textbf{What is AI?} It is the interdisciplinary field of making a artificial inteligent agent. 
+What is intelligence though?
+Intelligence is not easily defined. Some definitions I agree with is that intelligence 
+includes learning from experience, finding solutions to new problems. 
+Creativity is also substencial for intelligence. 
+It is a goal in the field AI to immitate (and surpass) human intelligence. 
+The turing tests aims to test a computers intelligience by testing if it can trick a person into believing that the computer is person while a person tries to make the person believe that they are in fact a person. 
+Approaches range from knowledge based systems over hard coded intstructions to machine learning. 
+%
+\textbf{Machine Learning} is the art of telling a machine or computer how to gain knowlegde from data (aka experience). 
+There are different problems and solutions. 
+The problems include image recognition, voice recognition, natural language processing, data prediction, classification, recommendation systems and so on. 
+%
+In order to solve these problems machine learning resorts to statistical methods such as
+linear regression, ridge regression. 
+Further machine learning methods not regularly seen in statistics are the 
+kernel trick, support vector machines, genetic algorithms and particle swarm algorithms. 
+The last two are special in the sense that they don't provide a certain regression method,
+but rather a frame work to choose the next sample which should be tested in a optimization. 
+\td{mention classification vs regression and supervized vs supervized}
+%
+\textbf{Statistics} is a subfield of mathematics and emerged from the aim to summerzie large data sets 
+and extract information. In contrast to descriptive statistic, there is stochastic. 
+Stochastic statistic aims on predicting data points with probabilities. 
+%
+\textbf{Linear regression} is one of the simplest methods to predict data. 
+It besticht by its computational simplicity and easy interpretation. 
+%Let's take this equation
+\begin{equation}
+\mathbf{y} = \mathbf{X} \mathbf{k} +c 
+\end{equation}
+Where $\mathbf{y}$ (size $\mathbb{R}^n$, where $n$ is the number of data points) is a vector of dependent variables and $\mathbf{X}$ (size $\mathbb{R}^{n\times d}$, where $d$ is the the number of independent variables) is a matrix of independent variables. 
+The parameters $\mathbf{k}$ (size $\mathbb{R}^d$) and $c$ (size $\mathbb{R}$) are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
+A typical function to minimize are the L1 and L2 error, i.e. \gls{mae} and \gls{mse}, respectively.
+\begin{align}
+L_1&= \sum |y_i - \hat y_i| = \sum \sum |y_i - x_{i,j}\cdot k_i+c| \\
+L_2&= \sum(y_i - \hat y_i)^2 = \sum (y_i - x_{i,j}\cdot k_i+c)^2
+\end{align}
+%
+
+\textbf{Ridge Regression} is like linear regression but with an extra term which penalizes steep regression functions.
+This extra term is scaled by a correction parameter $\lambda$. 
+The larger $\lambda$ the larger regularization and the flatter the regression functions. 
+If $\lambda$ were infinite, then the regression function would be a flat line. 
+The correction term avoids overfitting. 
+\begin{equation}
+    L_{RR} = L_2 + \lambda \sum k_i = \sum(y_i - \hat y_i)^2 + \lambda \sum k_i
+\end{equation}
+
+\textbf{Kernel Ridge Regression}
+\gls{krr} combines ridge regression with the kernel method. 
+A kernel transforms data in such a way that a linear hyperplane (a line in one dimension, 
+a plane in two dimensions) can fit data in regression problem or seperate the data in classification problem. 
+A kernel is some kind of similarity measure. 
+The following equations show definitions for 
+linear (eq.~\ref{eq:lin-kernel}), 
+polynomial (eq.~\ref{eq:pol-kernel}), 
+sigmoidal (eq.~\ref{eq:sig-kernel}) and 
+radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}).
+\begin{align}
+    \label{eq:lin-kernel}
+    k_{lin}(\mathbf{x},\mathbf{y}) &= \mathbf{x}^{\top} \mathbf{y} \\
+    \label{eq:pol-kernel}
+    k_{pol}(\mathbf{x}, \mathbf{y}) &= (\gamma \mathbf{x}^{\top} \mathbf{y} + c_0)^d \\
+    \label{eq:sig-kernel}
+    k_{sig}(\mathbf{x}, \mathbf{y}) &= \text{tanh}(\gamma \mathbf{x}^{\top} \mathbf{y} + c_0) \\
+    \label{eq:rbf-kernel}
+    k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
+\end{align}
+These kernels fulfill the requirements of nonnegativity, symmetry, linearity\cite{rupp2015machine}.
+\td{Note that when $\lambda$ tends to zero, the regularized loss function becomes the OLS loss function.
+When $\lambda$ tends to infinity, we get an intercept-only model}
+\td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
+% from https://medium.com/@zxr.nju/the-classical-linear-regression-model-is-good-why-do-we-need-regularization-c89dba10c8eb
+%
+% https://scikit-learn.org/stable/modules/metrics.html#polynomial-kernel
+%
+
+\textbf{Support vector machines} 
+\Gls{svm} are versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
+%
+The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-sperable data and eventually adapted to solve regression problems.
+The concepts of \gls{svm} will be discussed in the same chronological order. 
+%
+%\Gls{svm} is mainly used for classification, but can also be used for regression. 
+Classifiction works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
+The distance from the points to the hyperplane is called margin $\tau$.
+These points are called support vectors and are used to define the hyperplane.
+A \gls{svm} avoids overfitting by only using a subset - the support vectors - to fit the model. 
+%Among the many advantages of \gls{svm} are the 
+%convex loss function, avoidance of overfitting by only using a subset of input vectors (the support vectors) to fit the model.
+The goal is to find the decision boundary which correctly classifies all samples with the biggest margin. 
+%\td{The goal is to fit $w$ and $b$ such that the margin (the distance from the descission boundary is maximal.
+%As this the margin is inversely proportional to $\|w\|$, we aim to minimize $\|w\|$.
+%With the contraint that all data points are correctly classified $y_i(x_iw-b)\geqslant1$.}
+%In the same manner as no data points are found within the margin for classification, 
+%no data points should be found outside of the margin. 
+%If the data is not seperable by a hyperplane the kernel trick can be used. 
+%\td{$\text{min}\frac{1}{N} \sum_{i=1}^{N} max(0,1- y_i(\mathbf{x}x_i-b)) + \lambda \|w\|$
+%The downside of \gls{svm} is that it is very sensitive to outliers.}
+%
+%$\min_{w,b} \|w\|$ 
+%
+%$ y_i(w \cdot x_i - b)\leqslant 1$ 
+%
+%Summary of SVM from Cherkassky's \textit{Learning from Data}\cite{cherkassky1998learning}
+%The \gls{svm} was initially developed by V. Vapnik for the binary classification of seperable data, then improved to handle non-sperable data and eventually adapted to solve regression problems.
+%The concepts of \gls{svm} will be discussed in the same chronological order. 
+%
+The decision boundary can be expressed as an hyperplane
+\begin{equation}
+	\hat{\mathbf{y}} = h(\mathbf{x}) = \mathbf{w} \cdot \mathbf{x} + b
+\end{equation}
+with $
+\mathbf{y} \in \lbrace +1, -1 \rbrace^n ,\,
+\hat{\mathbf{y}} \in \mathbb{R}^n ,\,
+\mathbf{w} \in \mathbb{R}^d ,\,
+\mathbf{x} \in \mathbb{R}^{n \times d} 
+$.
+The constraint of the positive and negative support vectors ($x^+$ and $x^-$, respectively) satisfying
+\begin{align}
+	\mathbf{w} \cdot x^+ + b &= 1 \\
+	\mathbf{w} \cdot x^- + b &= -1 
+\end{align}
+can be generalized to 
+%A hyperplane which separate the data will satisfy the following equation: 
+\begin{equation}
+	\label{eq:svm01}
+	y_i(\mathbf{w} \cdot \mathbf{x}_i + b ) \geqslant 1 %\qquad i=1,\dots,n
+\end{equation}
+where $y_i$ being the labels of the training data. 
+The width of the margin can be inferred by projecting the vector spanning between two support vectors 
+on opposite sides of the decision boundary onto the unit vector perpendicular to the hyperplane. 
+%The distance from the decision boundary to the nearest points shall be denoted as $\tau$ and should be maximized. 
+%Inequality \ref{eq:svm01} is an equation for the support vectors. 
+If we now take a vector from a positive support vector $x^+$ to a negative support vector $x^-$ and project it on to the unit vector of $w$ (which is perpendicular to the hyperplane), 
+we get the width of the margin. 
+\begin{equation}
+	\label{eq:svm02}
+	\begin{aligned} 
+		2\tau &= (x^+ - x^-) \cdot \frac{\mathbf{w}}{\|\mathbf{w}\|} \\
+			&= (x^+ \cdot \mathbf{w} - x^-\cdot \mathbf{w} ) \cdot \frac{1}{\|\mathbf{w}\|} \\
+			&= ( (1-b) - (-1-b) ) \cdot \frac{1}{\|\mathbf{w}\|} \\
+			&= \frac{2}{\|w\|}
+	\end{aligned}
+\end{equation}
+%\td{draw sketch and make \ref{eq:svm02} on two lines}
+Thus maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$.
+By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we arrive at the loss function: 
+\begin{equation}
+	\label{eq:svm03}
+	\mathcal{L} = \frac{1}{2} \|\mathbf{w}\| - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
+\end{equation}
+which can be rewritten by some mathematical wizardry (setting the partial derivatives of the Lagrangian function
+$\frac{\partial \mathcal{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathcal{L}}{\partial b}$ 
+to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning}: 
+\begin{equation}
+	\mathcal{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
+\end{equation}
+\td{write about kernel trick and non strick} 
+
+
+\begin{itemize}
+    \item \sout{intro to stat and ml}
+    \item \sout{say that although different will be abgehandelt in the same chapter}
+    \item \sout{basic statistics: MAE vs MSE, R, std, F-test} 
+    \item \sout{lin reg}
+    \item \sout{ridge regression}
+    \item \sout{kernel ridge regression}
+    \item \sout{support vector machine}
+    \item anova (categorical), PCA, step wise regression
+    \item all previous ananlyse data to predict, but don't tell me which data point is needed next 
+    \item DOE (add data acquisition)
+    \item genetic algorithm and pso (they combine data gen with regression/prediction and optimization, actually incorporate prediction into selection process but don't per se specify which pred and optimization)
+    \item comment: always tradeoff between complexity and interpretability
+    \item quesiton: which paragraph by GPT2?? 
+\end{itemize}
+

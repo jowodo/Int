@@ -1,0 +1,278 @@
+\section{Post-EMMA}
+\label{sec:res-post-emma}
+%describe what awaits the reader in this chapter:
+In this section the experimental results are analyzed with different methods and compared 
+with the optimization method EMMA which was integrated into the experiment selection process. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsection{ANOVA}\label{sec:res-anova}
+%\textbf{EMMA}
+The \gls{rf}s produced by the last iteration of \gls{emma} (see equations \ref{eq:emma-phd4} and \ref{eq:emma-G4}) put a high significance
+%/effect/correlation
+on the calcination temperature $T_{cal}$ with regard to the 
+measures of the conductance. 
+\Gls{anova} is used to double check this. 
+%Now \gls{anova} can be used to check if the data 
+%\td{ANOVA was used to check if \gls{bf} identified by \gls{emma} are reasonable.} 
+
+%WHAT CAN/DID WE TEST?
+The null hypothesis is that the results were obtained by pure chance without any dependence of the insulation of a sample on the process variables.
+A one-way \gls{anova} was performed for every independent variable on $\rho$ and $\gamma$. 
+We used an $\alpha$ value of 0.05 which means that 
+the null hypothesis is rejected if the p-value is under 0.05. 
+Usually, the $\alpha$-value is chosen to be 0.01 or 0.05\cite{hoffman2020concept,sellke2001pvalues}.
+The choice of a relatively high $alpha$-value is motivated by the rather small amount of data and low events per variable ratio.
+%As mentioned by Sellke et al.\cite{sellke2001pvalues} a p-value of 0.05 might tempt 
+%to guess that in 1 out of 20 cases the results could be false positives, 
+%whereas the frequency is much higher. 
+%A p-value of 0.01 and 0.05  mean that under the assumption that the null hypothesis is correct, 
+%there is a 1\% and 5\% chance of arriving at such data as observed.
+%The results should thus be taken with a grain of salt. 
+%
+%1 out of 20 times this result could be 
+%produced by pure chance given that the null hypothesis is true. 
+%If the p-value is below that value, then we choose to accept, that the data is not due to
+%chance but due to the influence of the independent variables on the dependent variables. 
+%\td{could test anova on different generations data sets} 
+
+%WHAT WERE THE RESULTS?
+%\Gls{anova} shows that for the mentioned indep and dep pairs, the means divided by 
+%indep groups are not equal and that there is at least one group that is different. 
+For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the whole dataset (=\gls{emma}+pre-\gls{emma})) 
+the F-values for $T_{cal}$ were in all cases under 0.01, 
+indicating a real influence of $T_{cal}$ on the conductance.
+Furthermore, both datasets exhibit a p-value $< 0.05$ for the interaction $T_{cal}$:$v_{cal}$ on $\rho$
+and the whole data set has p-value smaller than 0.01 of $v_{cal}$ on $\rho$. 
+Whereas $v_{cal}$ on $\rho$ for \gls{emma} dataset has p-value of slightly over 0.05
+%\td{why tcal:vcal on phd the same for both datasets? Chance?}
+%
+%WHAT DO THE RESULTS MEAN?
+\Gls{anova} confirms that $T_{cal}$ has influence on both $\gamma$ and $\rho$ 
+and therefore agrees with \gls{emma}.
+%It seems that the probability of getting such data per chance without $T_{cal}$ influencing the \textit{optimizands}
+%(null hypothesis is true) is less then 5\% (even less than 1\%) for corresponding p-values, but Sellke et al.\cite{sellke2001pvalues} showed in 2001 that in fact the . 
+%\td{NO bcs \cite{sellke2001pvalues}}
+It is important to mention, that \gls{anova} assumes categorical data for inputs. 
+Categorical inputs have no order and thus information is lost when using numerical data. 
+%where our data is numerical and thus information is lost. 
+
+%\textbf{Pre-writing:}
+%\Gls{anova} doesn't provide a lot of extra information. 
+%wrong the second is not for phd but for extended data set
+%but for phd even lower than 0.1 \%
+%Anova shows that the influence of TCal is significant as shown by the F 
+
+%%%%%%%%%%%%%%%%%%%% LIN REG %% lin reg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsection{Linear Regression} 
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by the Zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$, but their coefficients are the smallest in absolute values. 
+
+%\todo{what was fitted how?}
+The data obtained from the \gls{emma} optimisation was used to fit a linear model. 
+The biggest difference between the linear model and \gls{emma} is that the linear regression function will include all input variables, that the \gls{bf}s are strictly linear and that there are no interaction terms. 
+The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:emma-phd3}, \ref{eq:emma-G3}, \ref{eq:emma-phd4}, \ref{eq:emma-G4} (\gls{emma} \gls{rf}s) and \ref{eq:linreg-phd}, \ref{eq:linreg-G} and have comparable magnitudes too. 
+%
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by
+%but their coefficients are the smallest in absolute values. 
+%
+\begin{align}
+	\begin{split}
+		\label{eq:linreg-phd}
+		\hat{\rho} =&  -0.022\cdot c_{zr} -0.022\cdot \lambda -0.0029\cdot v_{DB} + 0.0058\cdot T_{DB} \\
+		& -8.5\cdot 10^{-5}\cdot v_{cal} + 0.0026\cdot T_{cal} -0.76
+	\end{split}
+	\\
+	\begin{split}
+		\label{eq:linreg-G}
+		\hat{\gamma} =&  \,\,\qquad 3.2\cdot c_{zr} \,\, - 0.97\cdot \lambda \,\,\quad - 1.2\cdot v_{DB}  \,\,\,\quad +0.2\cdot T_{DB} \\
+			& \qquad - 0.014\cdot v_{cal} \quad + 0.13\cdot T_{cal} + 7.2
+%		\hat{\gamma} ={} & 3.2\cdot c_{zr} - 0.97\cdot \lambda - 1.2\cdot v_{DB} + 0.2\cdot T_{DB} \\
+%			& - 0.014\cdot v_{cal} + 0.13\cdot T_{cal} + 7.2
+	\end{split}
+\end{align}
+%
+All terms in equations \ref{eq:linreg-phd} and \ref{eq:linreg-G} have the same sign 
+except $c_{zr}$ and the intercept. 
+%
+More particularly, $T_{cal}$ and $T_{DB}$ have positive coefficients, i.e. a negative influence on the resistance 
+and $\lambda$, $v_{DB}$ and $v_{cal}$ have negative coefficients, i.e. a positive influence on resistance. 
+An indication that the data is strongly tainted by noise (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41 of $\hat\rho$, 
+which is (sad but true) even undercut by the $R^2$ of linear fit of $\hat\gamma$, 0.34. 
+%The coefficients, though share the signs. 
+%This is only true if the extended data set is used and therefore again rather by chance. 
+When the linear regression is trained on the whole data set, all terms have the same sign compared to the \gls{emma} data set trained linear model. 
+%It is even more astounding that \gls{emma} managed to decrease the average of $\gamma$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}.
+$v_{cal}$ and $\lambda$ are perfectly predicted by linear regression as there is an exact direct proportionality and thus are not displayed here. 
+%
+\begin{table}[htb]
+	\center
+	\begin{tabular}{cccccccc}
+		        & $c_{zr}$      & $\lambda$     & $v_{DB}$      & $T_{DB}$      & $v_{cal}$     & $T_{cal}$\\
+				\hline\hline
+				$\hat\rho$          &2.04   &46.58  &1.15   &9.21   &13.50  &27.52\\
+				$\hat\gamma$        &10.24  &7.10   &16.46  &10.97  &7.68   &47.55\\
+				\hline\hline
+	\end{tabular}
+	\label{tab:lin-reg-influence}
+	\caption{Influences of input variables on output variables in percent according to linear regression.}
+\end{table}
+
+%
+Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$ are largest in value, but the values which are factored with these coefficients - i.e.\, $c_{zr}$ and $\lambda$ themselves -- are the smallest among the input variables. 
+Thus, even though $T_{cal}$ might have a smaller coefficient in the linear \gls{rf}, the influence on the dependent variable might be larger. 
+In order to compare, the influence of an input variable was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{min}+x_{max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
+%The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{DB}$. 
+The biggest influence on $\hat\rho$ is  $\lambda$, followed by $T_{cal}$. 
+While $T_{cal}$ is the second largest influence on $\hat\rho$ as well it is noteworthy that $\lambda$ contributes the least to $\hat\gamma$. 
+That means that according to the linear regression, the number of layers increases the overall resistance of the zirconium ceramics while a lower calcination temperature leads to less defects. 
+Interestingly, the number of layers has the least amount of influence on the number probability of defects, which seems to be an artefact of the noise rather than a process property. 
+%Furthermore the influence on $\hat\rho$ is dominated by $\lambda$ and $T_{cal}$, while the influences on $\hat\gamma$ are distributed more evenly.
+%Different distributions were not expected. 
+The two very different distributions of influence among the input variables can have three reasons:
+%This can have two reasons: 
+(1) the linear function is not a suitable regression function for the data distribution.
+(2) the signal to noise ratio is so low that the noise rather than the signal was fitted.
+(3) the \textit{optimizands} indeed represent different properties of the material.
+%either the *optimizands* darstellen differen properties and/or signal to noise ratio is too low.
+%
+
+%Do multi linear reg like in Peprah et al. 2017\cite{peprah2017appraisal}.
+%
+
+%MSE(data=all) =427
+%MSE(data=emma)=250
+
+%\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ML %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GRID SEARACH %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsection{Grid Search, KRR and SVM}
+The optimal parameters for each combination of 
+\textit{optimizand} ($\gamma$ and $\rho$) and method (KRR and SVM) 
+can be seen in table \ref{tab:grid-search}. 
+The parameters are often extrema.
+The hyperparameter $\gamma_{ml}$ took the smallest possible value (within the grid search) twice. 
+In the polynomial kernel this leads to a lower influence of the input variables with respect to the intercept. 
+The range of the hyperparameter $\alpha$ was 0.01--10 in the grid search. 
+So, 2 and 10 are high values for the regularization parameter $\alpha$ of \gls{krr}.
+The hyperparameter $\varepsilon$ specifies the size of the tube within which data does not contribute to the loss 
+and the value 1 is the maximum for $\varepsilon$ during this grid search. 
+%\td{why can R2 be negative? https://stats.stackexchange.com/a/279358/374563 } 
+%The value 1 for $\varepsilon$ is the highest possible, 
+%$C$ is regularization parameter for SVM and $\varepsilon$ is var which defines loss less region in soft margin SVM}
+All these extreme values of hyperparameters (stimulate regularization and indicate noisy and difficult to fit data.
+\begin{table}
+    \center
+    \begin{tabular}{cccccccc}
+        \hline\hline
+        method  &$R^2$   &kernel &degree &$\gamma_{ml}$   &$\alpha$    &$C$    &$\varepsilon$\\
+        \hline
+        KRR($\gamma$) & $-0.50 \pm 0.25$  &poly   &1  &0.01   &2 &-&-\\
+        KRR($\rho  $) & $-0.45 \pm 0.52$  &rbf    &-   &0.2   &10&-&-\\
+        SVM($\gamma$) & $-0.37 \pm 0.39$  &poly   &2  &0.5    &-&0.7  &1.0  \\
+        SVM($\rho  $) & $-0.95 \pm 0.44$  &poly   &3  &0.01   &-&0.1  &0.1  \\
+        \hline\hline
+    \end{tabular}
+    \caption{$R^2$ values and best hyperparameters for each \textit{optimizand}-method-combination}
+    \label{tab:grid-search}
+\end{table}
+% R2
+The $R^2$ values were calculated for each of the models using cross validation. 
+Resulting $R^2$ are all below zero (see table~\ref{tab:grid-search}). 
+A negative $R^2$ value means that the prediction provided by the model is worse than predicting only the mean of $\gamma$ and $\rho$. 
+
+\iffalse
+\begin{align}
+    \label{eq:r2-krr-g}
+    R^2(\gamma_{krr}) &= -0.50 \pm 0.25\\
+    \label{eq:r2-krr-p}
+    R^2(\rho_{krr})   &= -0.45 \pm 0.52\\
+    \label{eq:r2-svm-g}
+    R^2(\gamma_{svm}) &= -0.37 \pm 0.39\\
+    \label{eq:r2-svm-p}
+    R^2(\rho_{svm})   &= -0.95 \pm 0.44
+\end{align}
+\fi
+
+%
+Finally, the \gls{mae} and \gls{mse} were calculated for different data sets 
+(see table \ref{tab:post-emma}). 
+Each models was trained on the \gls{emma} data set.
+% EMMA 30 pts
+The first two columns (e) show statistics validated with data the model was trained with (30 data points) and thus, 
+these columns contain the lowest numbers. 
+% pre-EMMA 21 pts 
+The next two columns (p) were calculated with data obtained before the EMMA optimization (21 data points). 
+As the pre-optimization data set was mainly used to find appropriate boundaries for the input variables, 
+many data points are outside of the range of the \gls{emma} data set. 
+Thus, prediction for this data set are mainly extrapolations. 
+It must be explicitly noted at this point that pre-EMMA samples differ from EMMA samples 
+in the stabilization agent and therefore might underperform. 
+% inter/c/ pre-EMMA 5 pts
+The next two columns (c) were produced by using pre-\gls{emma} data for validation, 
+but only keeping points which sit inside the space spanned by the \gls{emma} constraints (5 data points). 
+It should be expected that these statistics should be lower than in the previous two columns. 
+They are only lower for MARS($\rho$) and LR($\rho$), though. 
+This is likely due to the small sample size.
+% all 51 
+The last two columns show data for predictions of all available data (51 data points). 
+These statistics are lower because of the inclusion of the training set in the test set. 
+
+In the self test of the first two columns \gls{mars} is the one method to rule them all and provides the lowest metrics.
+But as soon as unseen data is examined, linear regression excels by its simplicity. 
+%\td{The linear regression method is only undercut by \gls{svm} when calculating 
+%the \gls{mae} of $\gamma$} for the interpolating unseen data (c).
+%
+%\todo{could use mean as prediction and compare}
+%\todo{could plot pred vs true}
+%\todo{pcr}
+%\todo{step wise regression}
+%\todo{why chose mae and mse}
+%\todo{talk about sigma(pred) vs sigma(true)}
+%\todo\url{https://blog.minitab.com/en/adventures-in-statistics-2/regression-smackdown-stepwise-versus-best-subsets}}
+%\todo{\url{https://blog.minitab.com/en/how-to-choose-the-best-regression-model}}
+%\todo{do regression for avg(-log(G)) instead of $\gamma$=avg( ( 13+log(G))**2)} 
+%
+\begin{table}[htb]
+	\centering
+%    \caption{Post EMMA vergleich}
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+        $\gamma$&  MAE(e)&   MSE(e)&   MAE(p)&   MSE(p)&   MAE(c)&   MSE(c)&   MAE(a)& MSE(a) \\
+    \hline
+        MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
+        LR&    13& 250&    24& 747&    34& 1327&   17& 454\\
+%        KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
+        KRR &17 &548 &30 &1477 &35 &2167 &23 &931\\
+        SVM& 15&  415&    26& 1050&   28& 1588&   19& 677\\
+        \hline
+%    \hline\hline
+	\end{tabular}
+    %
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+        $\rho$&  MAE(e)&   MSE(e)&   MAE(p)&   MSE(p)&   MAE(c)&   MSE(c)&   MAE(a)& MSE(a) \\
+    \hline
+        MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
+        LR&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
+%        KRR& 0.30&   0.22&   0.47&   0.38&   0.52&   0.44&   0.34&   0.26\\
+        KRR &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
+%        SVM& 0.28&   0.12&   0.37&   0.21&   0.42&   0.25&   0.32&   0.16\\
+        SVM &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
+    \hline\hline
+	\end{tabular}
+    \caption{Comparison of MAE and MSE of different prediction methods for different data sets: EMMA data set~(e), pre-EMMA data set~(p), pre-EMMA data set within EMMA bounds~(c) and complete dataset~(a)}
+	\label{tab:post-emma}
+\end{table}
+    
+\iffalse
+\begin{verbatim}
+(int.venv) [pur@lithium 2022]$ ./01_show_best.sh
+cv_krr.g.scale.emma     -0.497302       0.252231        poly    deg=1   a=2.00  g=0.01  71/500
+cv_krr.p.scale.emma     -0.449674       0.517822        rbf     deg=0   a=10.00 g=0.2   395/500
+cv_svm.g.scale.emma     -0.368196       0.391125        poly    deg=2   C=0.7   e=1.0   g=0.5   7475/22000
+cv_svm.p.scale.emma     -0.948249       0.439029        poly    deg=3   C=0.1   e=0.1   g=0.01  8801/22000
+(int.venv) [pur@lithium 2022]$ ./3_calc_mse_of_best.sh -l
+krr g poly -d 1 a10.00 g0.01    &17.37 &548.36 &30.42 &1477.36 &34.78 &2167.38 &22.75 &931.00\\
+krr p rbf a2.00 g0.01   &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
+svm g poly -d 1 C0.7 e0.1 -g0.01        &14.55 &415.40 &25.68 &1049.23 &28.49 &1587.85 &19.13 &676.39\\
+svm p poly -d 1 C0.1 e0.1 -gscale       &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
+\end{verbatim}
+\fi

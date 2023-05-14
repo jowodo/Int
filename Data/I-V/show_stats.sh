@@ -1,2 +1,0 @@
-feh $(ls */stat.png)                                  │
-

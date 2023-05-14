@@ -1,0 +1,1568 @@
+\glsdefs@newdocentry{zrpro}%
+{%
+name={\ch {Zr(PrO)4}},%
+sort={\ch {Zr(PrO)4}},%
+type={acronym},%
+first={zirconium(IV)propoxide\glsspace (\ch {Zr(PrO)4})},%
+firstplural={zirconium(IV)propoxide\acrpluralsuffix \glsspace (\ch {Zr(PrO)4}\acrpluralsuffix )},%
+text={\ch {Zr(PrO)4}},%
+plural={\ch {Zr(PrO)4}\acrpluralsuffix },%
+description={zirconium(IV)propoxide},%
+descriptionplural={zirconium(IV)propoxide\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={zirconium(IV)propoxide},%
+longplural={zirconium(IV)propoxides},%
+short={\ch {Zr(PrO)4}},%
+shortplural={\ch {Zr(PrO)4}s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{acac}%
+{%
+name={Hacac},%
+sort={Hacac},%
+type={acronym},%
+first={acetylacetone\glsspace (Hacac)},%
+firstplural={acetylacetone\acrpluralsuffix \glsspace (Hacac\acrpluralsuffix )},%
+text={Hacac},%
+plural={Hacac\acrpluralsuffix },%
+description={acetylacetone},%
+descriptionplural={acetylacetone\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={acetylacetone},%
+longplural={acetylacetones},%
+short={Hacac},%
+shortplural={Hacacs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{acoh}%
+{%
+name={AcOH},%
+sort={AcOH},%
+type={acronym},%
+first={glacial acetic acid\glsspace (AcOH)},%
+firstplural={glacial acetic acid\acrpluralsuffix \glsspace (AcOH\acrpluralsuffix )},%
+text={AcOH},%
+plural={AcOH\acrpluralsuffix },%
+description={glacial acetic acid},%
+descriptionplural={glacial acetic acid\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={glacial acetic acid},%
+longplural={glacial acetic acids},%
+short={AcOH},%
+shortplural={AcOHs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{buoh}%
+{%
+name={BuOH},%
+sort={BuOH},%
+type={acronym},%
+first={Butan-1-ol\glsspace (BuOH)},%
+firstplural={Butan-1-ol\acrpluralsuffix \glsspace (BuOH\acrpluralsuffix )},%
+text={BuOH},%
+plural={BuOH\acrpluralsuffix },%
+description={Butan-1-ol},%
+descriptionplural={Butan-1-ol\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Butan-1-ol},%
+longplural={Butan-1-ols},%
+short={BuOH},%
+shortplural={BuOHs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ipo}%
+{%
+name={IPO},%
+sort={IPO},%
+type={acronym},%
+first={Propan-2-ol\glsspace (IPO)},%
+firstplural={Propan-2-ol\acrpluralsuffix \glsspace (IPO\acrpluralsuffix )},%
+text={IPO},%
+plural={IPO\acrpluralsuffix },%
+description={Propan-2-ol},%
+descriptionplural={Propan-2-ol\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Propan-2-ol},%
+longplural={Propan-2-ols},%
+short={IPO},%
+shortplural={IPOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ito}%
+{%
+name={ITO},%
+sort={ITO},%
+type={acronym},%
+first={indium doped tin oxide\glsspace (ITO)},%
+firstplural={indium doped tin oxide\acrpluralsuffix \glsspace (ITO\acrpluralsuffix )},%
+text={ITO},%
+plural={ITO\acrpluralsuffix },%
+description={indium doped tin oxide},%
+descriptionplural={indium doped tin oxide\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={indium doped tin oxide},%
+longplural={indium doped tin oxides},%
+short={ITO},%
+shortplural={ITOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{fto}%
+{%
+name={FTO},%
+sort={FTO},%
+type={acronym},%
+first={fluorine doped tin oxide\glsspace (FTO)},%
+firstplural={fluorine doped tin oxide\acrpluralsuffix \glsspace (FTO\acrpluralsuffix )},%
+text={FTO},%
+plural={FTO\acrpluralsuffix },%
+description={fluorine doped tin oxide},%
+descriptionplural={fluorine doped tin oxide\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={fluorine doped tin oxide},%
+longplural={fluorine doped tin oxides},%
+short={FTO},%
+shortplural={FTOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{n2}%
+{%
+name={\ch {N2}},%
+sort={\ch {N2}},%
+type={acronym},%
+first={nitrogen\glsspace (\ch {N2})},%
+firstplural={nitrogen\acrpluralsuffix \glsspace (\ch {N2}\acrpluralsuffix )},%
+text={\ch {N2}},%
+plural={\ch {N2}\acrpluralsuffix },%
+description={nitrogen},%
+descriptionplural={nitrogen\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={nitrogen},%
+longplural={nitrogens},%
+short={\ch {N2}},%
+shortplural={\ch {N2}s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{water}%
+{%
+name={\ch {H2O}},%
+sort={\ch {H2O}},%
+type={acronym},%
+first={deionized water\glsspace (\ch {H2O})},%
+firstplural={deionized water\acrpluralsuffix \glsspace (\ch {H2O}\acrpluralsuffix )},%
+text={\ch {H2O}},%
+plural={\ch {H2O}\acrpluralsuffix },%
+description={deionized water},%
+descriptionplural={deionized water\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={deionized water},%
+longplural={deionized waters},%
+short={\ch {H2O}},%
+shortplural={\ch {H2O}s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sds}%
+{%
+name={SDS},%
+sort={SDS},%
+type={acronym},%
+first={sodium dodecyl sulfate\glsspace (SDS)},%
+firstplural={sodium dodecyl sulfate\acrpluralsuffix \glsspace (SDS\acrpluralsuffix )},%
+text={SDS},%
+plural={SDS\acrpluralsuffix },%
+description={sodium dodecyl sulfate},%
+descriptionplural={sodium dodecyl sulfate\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={sodium dodecyl sulfate},%
+longplural={sodium dodecyl sulfates},%
+short={SDS},%
+shortplural={SDSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{hcl}%
+{%
+name={HCl},%
+sort={HCl},%
+type={acronym},%
+first={hydrochloric acid\glsspace (HCl)},%
+firstplural={hydrochloric acid\acrpluralsuffix \glsspace (HCl\acrpluralsuffix )},%
+text={HCl},%
+plural={HCl\acrpluralsuffix },%
+description={hydrochloric acid},%
+descriptionplural={hydrochloric acid\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={hydrochloric acid},%
+longplural={hydrochloric acids},%
+short={HCl},%
+shortplural={HCls},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{h2so4}%
+{%
+name={\ch {H2SO4}},%
+sort={\ch {H2SO4}},%
+type={acronym},%
+first={sulfuric acid\glsspace (\ch {H2SO4})},%
+firstplural={sulfuric acid\acrpluralsuffix \glsspace (\ch {H2SO4}\acrpluralsuffix )},%
+text={\ch {H2SO4}},%
+plural={\ch {H2SO4}\acrpluralsuffix },%
+description={sulfuric acid},%
+descriptionplural={sulfuric acid\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={sulfuric acid},%
+longplural={sulfuric acids},%
+short={\ch {H2SO4}},%
+shortplural={\ch {H2SO4}s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{naoh}%
+{%
+name={\ch {NaOH}},%
+sort={\ch {NaOH}},%
+type={acronym},%
+first={sodium hydroxide\glsspace (\ch {NaOH})},%
+firstplural={sodium hydroxide\acrpluralsuffix \glsspace (\ch {NaOH}\acrpluralsuffix )},%
+text={\ch {NaOH}},%
+plural={\ch {NaOH}\acrpluralsuffix },%
+description={sodium hydroxide},%
+descriptionplural={sodium hydroxide\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={sodium hydroxide},%
+longplural={sodium hydroxides},%
+short={\ch {NaOH}},%
+shortplural={\ch {NaOH}s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{zro}%
+{%
+name={\ch {ZrO2}},%
+sort={\ch {ZrO2}},%
+type={acronym},%
+first={zirconium dioxide\glsspace (\ch {ZrO2})},%
+firstplural={zirconium dioxide\acrpluralsuffix \glsspace (\ch {ZrO2}\acrpluralsuffix )},%
+text={\ch {ZrO2}},%
+plural={\ch {ZrO2}\acrpluralsuffix },%
+description={zirconium dioxide},%
+descriptionplural={zirconium dioxide\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={zirconium dioxide},%
+longplural={zirconium dioxides},%
+short={\ch {ZrO2}},%
+shortplural={\ch {ZrO2}s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{1f}%
+{%
+name={1F},%
+sort={1F},%
+type={acronym},%
+first={one-fold concentrated solution\glsspace (1F)},%
+firstplural={one-fold concentrated solution\acrpluralsuffix \glsspace (1F\acrpluralsuffix )},%
+text={1F},%
+plural={1F\acrpluralsuffix },%
+description={one-fold concentrated solution},%
+descriptionplural={one-fold concentrated solution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={one-fold concentrated solution},%
+longplural={one-fold concentrated solutions},%
+short={1F},%
+shortplural={1Fs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{2f}%
+{%
+name={2F},%
+sort={2F},%
+type={acronym},%
+first={two-fold concentrated solution\glsspace (2F)},%
+firstplural={two-fold concentrated solution\acrpluralsuffix \glsspace (2F\acrpluralsuffix )},%
+text={2F},%
+plural={2F\acrpluralsuffix },%
+description={two-fold concentrated solution},%
+descriptionplural={two-fold concentrated solution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={two-fold concentrated solution},%
+longplural={two-fold concentrated solutions},%
+short={2F},%
+shortplural={2Fs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{3f}%
+{%
+name={3F},%
+sort={3F},%
+type={acronym},%
+first={three-fold concentrated solution\glsspace (3F)},%
+firstplural={three-fold concentrated solution\acrpluralsuffix \glsspace (3F\acrpluralsuffix )},%
+text={3F},%
+plural={3F\acrpluralsuffix },%
+description={three-fold concentrated solution},%
+descriptionplural={three-fold concentrated solution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={three-fold concentrated solution},%
+longplural={three-fold concentrated solutions},%
+short={3F},%
+shortplural={3Fs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{4f}%
+{%
+name={4F},%
+sort={4F},%
+type={acronym},%
+first={four-fold concentrated solution\glsspace (4F)},%
+firstplural={four-fold concentrated solution\acrpluralsuffix \glsspace (4F\acrpluralsuffix )},%
+text={4F},%
+plural={4F\acrpluralsuffix },%
+description={four-fold concentrated solution},%
+descriptionplural={four-fold concentrated solution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={four-fold concentrated solution},%
+longplural={four-fold concentrated solutions},%
+short={4F},%
+shortplural={4Fs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{5f}%
+{%
+name={5F},%
+sort={5F},%
+type={acronym},%
+first={five-fold concentrated solution\glsspace (5F)},%
+firstplural={five-fold concentrated solution\acrpluralsuffix \glsspace (5F\acrpluralsuffix )},%
+text={5F},%
+plural={5F\acrpluralsuffix },%
+description={five-fold concentrated solution},%
+descriptionplural={five-fold concentrated solution\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={five-fold concentrated solution},%
+longplural={five-fold concentrated solutions},%
+short={5F},%
+shortplural={5Fs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{db}%
+{%
+name={DB},%
+sort={DB},%
+type={acronym},%
+first={doctor blading\glsspace (DB)},%
+firstplural={doctor blading\acrpluralsuffix \glsspace (DB\acrpluralsuffix )},%
+text={DB},%
+plural={DB\acrpluralsuffix },%
+description={doctor blading},%
+descriptionplural={doctor blading\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={doctor blading},%
+longplural={doctor bladings},%
+short={DB},%
+shortplural={DBs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{dbc}%
+{%
+name={DBC},%
+sort={DBC},%
+type={acronym},%
+first={doctor blade coating\glsspace (DBC)},%
+firstplural={doctor blade coating\acrpluralsuffix \glsspace (DBC\acrpluralsuffix )},%
+text={DBC},%
+plural={DBC\acrpluralsuffix },%
+description={doctor blade coating},%
+descriptionplural={doctor blade coating\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={doctor blade coating},%
+longplural={doctor blade coatings},%
+short={DBC},%
+shortplural={DBCs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{pv}%
+{%
+name={PV},%
+sort={PV},%
+type={acronym},%
+first={photovoltaic\glsspace (PV)},%
+firstplural={photovoltaic\acrpluralsuffix \glsspace (PV\acrpluralsuffix )},%
+text={PV},%
+plural={PV\acrpluralsuffix },%
+description={photovoltaic},%
+descriptionplural={photovoltaic\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={photovoltaic},%
+longplural={photovoltaics},%
+short={PV},%
+shortplural={PVs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{cigs}%
+{%
+name={CIGS},%
+sort={CIGS},%
+type={acronym},%
+first={\ch {CuIn_{x}Ga_{1-x}Se2}\glsspace (CIGS)},%
+firstplural={\ch {CuIn_{x}Ga_{1-x}Se2}\acrpluralsuffix \glsspace (CIGS\acrpluralsuffix )},%
+text={CIGS},%
+plural={CIGS\acrpluralsuffix },%
+description={\ch {CuIn_{x}Ga_{1-x}Se2}},%
+descriptionplural={\ch {CuIn_{x}Ga_{1-x}Se2}\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={\ch {CuIn_{x}Ga_{1-x}Se2}},%
+longplural={\ch {CuIn_{x}Ga_{1-x}Se2}s},%
+short={CIGS},%
+shortplural={CIGSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{pvd}%
+{%
+name={PVD},%
+sort={PVD},%
+type={acronym},%
+first={physical vapor deposition\glsspace (PVD)},%
+firstplural={physical vapor deposition\acrpluralsuffix \glsspace (PVD\acrpluralsuffix )},%
+text={PVD},%
+plural={PVD\acrpluralsuffix },%
+description={physical vapor deposition},%
+descriptionplural={physical vapor deposition\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={physical vapor deposition},%
+longplural={physical vapor depositions},%
+short={PVD},%
+shortplural={PVDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sg}%
+{%
+name={SG},%
+sort={SG},%
+type={acronym},%
+first={sol-gel\glsspace (SG)},%
+firstplural={sol-gel\acrpluralsuffix \glsspace (SG\acrpluralsuffix )},%
+text={SG},%
+plural={SG\acrpluralsuffix },%
+description={sol-gel},%
+descriptionplural={sol-gel\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={sol-gel},%
+longplural={sol-gels},%
+short={SG},%
+shortplural={SGs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ir}%
+{%
+name={IR},%
+sort={IR},%
+type={acronym},%
+first={infrafred\glsspace (IR)},%
+firstplural={infrafred\acrpluralsuffix \glsspace (IR\acrpluralsuffix )},%
+text={IR},%
+plural={IR\acrpluralsuffix },%
+description={infrafred},%
+descriptionplural={infrafred\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={infrafred},%
+longplural={infrafreds},%
+short={IR},%
+shortplural={IRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{nir}%
+{%
+name={NIR},%
+sort={NIR},%
+type={acronym},%
+first={near-infrafred\glsspace (NIR)},%
+firstplural={near-infrafred\acrpluralsuffix \glsspace (NIR\acrpluralsuffix )},%
+text={NIR},%
+plural={NIR\acrpluralsuffix },%
+description={near-infrafred},%
+descriptionplural={near-infrafred\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={near-infrafred},%
+longplural={near-infrafreds},%
+short={NIR},%
+shortplural={NIRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ft}%
+{%
+name={FT},%
+sort={FT},%
+type={acronym},%
+first={Fourier transform\glsspace (FT)},%
+firstplural={Fourier transform\acrpluralsuffix \glsspace (FT\acrpluralsuffix )},%
+text={FT},%
+plural={FT\acrpluralsuffix },%
+description={Fourier transform},%
+descriptionplural={Fourier transform\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Fourier transform},%
+longplural={Fourier transforms},%
+short={FT},%
+shortplural={FTs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{sem}%
+{%
+name={SEM},%
+sort={SEM},%
+type={acronym},%
+first={scanning electron microscopy\glsspace (SEM)},%
+firstplural={scanning electron microscopy\acrpluralsuffix \glsspace (SEM\acrpluralsuffix )},%
+text={SEM},%
+plural={SEM\acrpluralsuffix },%
+description={scanning electron microscopy},%
+descriptionplural={scanning electron microscopy\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={scanning electron microscopy},%
+longplural={scanning electron microscopys},%
+short={SEM},%
+shortplural={SEMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{xrd}%
+{%
+name={XRD},%
+sort={XRD},%
+type={acronym},%
+first={X-ray diffraction\glsspace (XRD)},%
+firstplural={X-ray diffraction\acrpluralsuffix \glsspace (XRD\acrpluralsuffix )},%
+text={XRD},%
+plural={XRD\acrpluralsuffix },%
+description={X-ray diffraction},%
+descriptionplural={X-ray diffraction\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={X-ray diffraction},%
+longplural={X-ray diffractions},%
+short={XRD},%
+shortplural={XRDs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{feg}%
+{%
+name={FEG},%
+sort={FEG},%
+type={acronym},%
+first={field emission gun\glsspace (FEG)},%
+firstplural={field emission gun\acrpluralsuffix \glsspace (FEG\acrpluralsuffix )},%
+text={FEG},%
+plural={FEG\acrpluralsuffix },%
+description={field emission gun},%
+descriptionplural={field emission gun\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={field emission gun},%
+longplural={field emission guns},%
+short={FEG},%
+shortplural={FEGs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mfp}%
+{%
+name={MFP},%
+sort={MFP},%
+type={acronym},%
+first={mean free path\glsspace (MFP)},%
+firstplural={mean free path\acrpluralsuffix \glsspace (MFP\acrpluralsuffix )},%
+text={MFP},%
+plural={MFP\acrpluralsuffix },%
+description={mean free path},%
+descriptionplural={mean free path\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={mean free path},%
+longplural={mean free paths},%
+short={MFP},%
+shortplural={MFPs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{pso}%
+{%
+name={PSO},%
+sort={PSO},%
+type={acronym},%
+first={particle swarm optimization\glsspace (PSO)},%
+firstplural={particle swarm optimization\acrpluralsuffix \glsspace (PSO\acrpluralsuffix )},%
+text={PSO},%
+plural={PSO\acrpluralsuffix },%
+description={particle swarm optimization},%
+descriptionplural={particle swarm optimization\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={particle swarm optimization},%
+longplural={particle swarm optimizations},%
+short={PSO},%
+shortplural={PSOs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ml}%
+{%
+name={ML},%
+sort={ML},%
+type={acronym},%
+first={machine learning\glsspace (ML)},%
+firstplural={machine learning\acrpluralsuffix \glsspace (ML\acrpluralsuffix )},%
+text={ML},%
+plural={ML\acrpluralsuffix },%
+description={machine learning},%
+descriptionplural={machine learning\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={machine learning},%
+longplural={machine learnings},%
+short={ML},%
+shortplural={MLs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{vs}%
+{%
+name={vs.},%
+sort={vs.},%
+type={acronym},%
+first={versus\glsspace (vs.)},%
+firstplural={versus\acrpluralsuffix \glsspace (vs.\acrpluralsuffix )},%
+text={vs.},%
+plural={vs.\acrpluralsuffix },%
+description={versus},%
+descriptionplural={versus\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={versus},%
+longplural={versuss},%
+short={vs.},%
+shortplural={vs.s},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{iv}%
+{%
+name={I-V},%
+sort={I-V},%
+type={acronym},%
+first={current-voltage\glsspace (I-V)},%
+firstplural={current-voltage\acrpluralsuffix \glsspace (I-V\acrpluralsuffix )},%
+text={I-V},%
+plural={I-V\acrpluralsuffix },%
+description={current-voltage},%
+descriptionplural={current-voltage\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={current-voltage},%
+longplural={current-voltages},%
+short={I-V},%
+shortplural={I-Vs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{em}%
+{%
+name={EM},%
+sort={EM},%
+type={acronym},%
+first={electro magnetic\glsspace (EM)},%
+firstplural={electro magnetic\acrpluralsuffix \glsspace (EM\acrpluralsuffix )},%
+text={EM},%
+plural={EM\acrpluralsuffix },%
+description={electro magnetic},%
+descriptionplural={electro magnetic\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={electro magnetic},%
+longplural={electro magnetics},%
+short={EM},%
+shortplural={EMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{uv}%
+{%
+name={UV},%
+sort={UV},%
+type={acronym},%
+first={ultraviolet\glsspace (UV)},%
+firstplural={ultraviolet\acrpluralsuffix \glsspace (UV\acrpluralsuffix )},%
+text={UV},%
+plural={UV\acrpluralsuffix },%
+description={ultraviolet},%
+descriptionplural={ultraviolet\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={ultraviolet},%
+longplural={ultraviolets},%
+short={UV},%
+shortplural={UVs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{vis}%
+{%
+name={Vis},%
+sort={Vis},%
+type={acronym},%
+first={visible\glsspace (Vis)},%
+firstplural={visible\acrpluralsuffix \glsspace (Vis\acrpluralsuffix )},%
+text={Vis},%
+plural={Vis\acrpluralsuffix },%
+description={visible},%
+descriptionplural={visible\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={visible},%
+longplural={visibles},%
+short={Vis},%
+shortplural={Viss},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ai}%
+{%
+name={AI},%
+sort={AI},%
+type={acronym},%
+first={artificial intelligence\glsspace (AI)},%
+firstplural={artificial intelligence\acrpluralsuffix \glsspace (AI\acrpluralsuffix )},%
+text={AI},%
+plural={AI\acrpluralsuffix },%
+description={artificial intelligence},%
+descriptionplural={artificial intelligence\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={artificial intelligence},%
+longplural={artificial intelligences},%
+short={AI},%
+shortplural={AIs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{nn}%
+{%
+name={ANN},%
+sort={ANN},%
+type={acronym},%
+first={artificial neural networks\glsspace (ANN)},%
+firstplural={artificial neural networks\acrpluralsuffix \glsspace (ANN\acrpluralsuffix )},%
+text={ANN},%
+plural={ANN\acrpluralsuffix },%
+description={artificial neural networks},%
+descriptionplural={artificial neural networks\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={artificial neural networks},%
+longplural={artificial neural networkss},%
+short={ANN},%
+shortplural={ANNs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{ga}%
+{%
+name={GA},%
+sort={GA},%
+type={acronym},%
+first={genetic algorithm\glsspace (GA)},%
+firstplural={genetic algorithm\acrpluralsuffix \glsspace (GA\acrpluralsuffix )},%
+text={GA},%
+plural={GA\acrpluralsuffix },%
+description={genetic algorithm},%
+descriptionplural={genetic algorithm\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={genetic algorithm},%
+longplural={genetic algorithms},%
+short={GA},%
+shortplural={GAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{krr}%
+{%
+name={KRR},%
+sort={KRR},%
+type={acronym},%
+first={kernel ridge regression\glsspace (KRR)},%
+firstplural={kernel ridge regression\acrpluralsuffix \glsspace (KRR\acrpluralsuffix )},%
+text={KRR},%
+plural={KRR\acrpluralsuffix },%
+description={kernel ridge regression},%
+descriptionplural={kernel ridge regression\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={kernel ridge regression},%
+longplural={kernel ridge regressions},%
+short={KRR},%
+shortplural={KRRs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{svm}%
+{%
+name={SVM},%
+sort={SVM},%
+type={acronym},%
+first={support vector machine\glsspace (SVM)},%
+firstplural={support vector machine\acrpluralsuffix \glsspace (SVM\acrpluralsuffix )},%
+text={SVM},%
+plural={SVM\acrpluralsuffix },%
+description={support vector machine},%
+descriptionplural={support vector machine\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={support vector machine},%
+longplural={support vector machines},%
+short={SVM},%
+shortplural={SVMs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rbf}%
+{%
+name={RBF},%
+sort={RBF},%
+type={acronym},%
+first={radial basis function\glsspace (RBF)},%
+firstplural={radial basis function\acrpluralsuffix \glsspace (RBF\acrpluralsuffix )},%
+text={RBF},%
+plural={RBF\acrpluralsuffix },%
+description={radial basis function},%
+descriptionplural={radial basis function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={radial basis function},%
+longplural={radial basis functions},%
+short={RBF},%
+shortplural={RBFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{doe}%
+{%
+name={DOE},%
+sort={DOE},%
+type={acronym},%
+first={design of experiment\glsspace (DOE)},%
+firstplural={design of experiment\acrpluralsuffix \glsspace (DOE\acrpluralsuffix )},%
+text={DOE},%
+plural={DOE\acrpluralsuffix },%
+description={design of experiment},%
+descriptionplural={design of experiment\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={design of experiment},%
+longplural={design of experiments},%
+short={DOE},%
+shortplural={DOEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{anova}%
+{%
+name={ANOVA},%
+sort={ANOVA},%
+type={acronym},%
+first={Analysis of Variance\glsspace (ANOVA)},%
+firstplural={Analysis of Variance\acrpluralsuffix \glsspace (ANOVA\acrpluralsuffix )},%
+text={ANOVA},%
+plural={ANOVA\acrpluralsuffix },%
+description={Analysis of Variance},%
+descriptionplural={Analysis of Variance\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Analysis of Variance},%
+longplural={Analysis of Variances},%
+short={ANOVA},%
+shortplural={ANOVAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{pb}%
+{%
+name={PB},%
+sort={PB},%
+type={acronym},%
+first={Plackett-Burman\glsspace (PB)},%
+firstplural={Plackett-Burman\acrpluralsuffix \glsspace (PB\acrpluralsuffix )},%
+text={PB},%
+plural={PB\acrpluralsuffix },%
+description={Plackett-Burman},%
+descriptionplural={Plackett-Burman\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Plackett-Burman},%
+longplural={Plackett-Burmans},%
+short={PB},%
+shortplural={PBs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{emma}%
+{%
+name={EMMA},%
+sort={EMMA},%
+type={acronym},%
+first={evolutionary model-based multiresponse approach\glsspace (EMMA)},%
+firstplural={evolutionary model-based multiresponse approach\acrpluralsuffix \glsspace (EMMA\acrpluralsuffix )},%
+text={EMMA},%
+plural={EMMA\acrpluralsuffix },%
+description={evolutionary model-based multiresponse approach},%
+descriptionplural={evolutionary model-based multiresponse approach\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={evolutionary model-based multiresponse approach},%
+longplural={evolutionary model-based multiresponse approachs},%
+short={EMMA},%
+shortplural={EMMAs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mars}%
+{%
+name={MARS},%
+sort={MARS},%
+type={acronym},%
+first={multivariate adaptive regression splines\glsspace (MARS)},%
+firstplural={multivariate adaptive regression splines\acrpluralsuffix \glsspace (MARS\acrpluralsuffix )},%
+text={MARS},%
+plural={MARS\acrpluralsuffix },%
+description={multivariate adaptive regression splines},%
+descriptionplural={multivariate adaptive regression splines\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={multivariate adaptive regression splines},%
+longplural={multivariate adaptive regression spliness},%
+short={MARS},%
+shortplural={MARSs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mse}%
+{%
+name={MSE},%
+sort={MSE},%
+type={acronym},%
+first={mean squared error\glsspace (MSE)},%
+firstplural={mean squared error\acrpluralsuffix \glsspace (MSE\acrpluralsuffix )},%
+text={MSE},%
+plural={MSE\acrpluralsuffix },%
+description={mean squared error},%
+descriptionplural={mean squared error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={mean squared error},%
+longplural={mean squared errors},%
+short={MSE},%
+shortplural={MSEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{mae}%
+{%
+name={MAE},%
+sort={MAE},%
+type={acronym},%
+first={mean absolute error\glsspace (MAE)},%
+firstplural={mean absolute error\acrpluralsuffix \glsspace (MAE\acrpluralsuffix )},%
+text={MAE},%
+plural={MAE\acrpluralsuffix },%
+description={mean absolute error},%
+descriptionplural={mean absolute error\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={mean absolute error},%
+longplural={mean absolute errors},%
+short={MAE},%
+shortplural={MAEs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{bf}%
+{%
+name={BF},%
+sort={BF},%
+type={acronym},%
+first={basis function\glsspace (BF)},%
+firstplural={basis function\acrpluralsuffix \glsspace (BF\acrpluralsuffix )},%
+text={BF},%
+plural={BF\acrpluralsuffix },%
+description={basis function},%
+descriptionplural={basis function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={basis function},%
+longplural={basis functions},%
+short={BF},%
+shortplural={BFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{rf}%
+{%
+name={RF},%
+sort={RF},%
+type={acronym},%
+first={regression function\glsspace (RF)},%
+firstplural={regression function\acrpluralsuffix \glsspace (RF\acrpluralsuffix )},%
+text={RF},%
+plural={RF\acrpluralsuffix },%
+description={regression function},%
+descriptionplural={regression function\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={regression function},%
+longplural={regression functions},%
+short={RF},%
+shortplural={RFs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{gcv}%
+{%
+name={GCV},%
+sort={GCV},%
+type={acronym},%
+first={generalized cross validation\glsspace (GCV)},%
+firstplural={generalized cross validation\acrpluralsuffix \glsspace (GCV\acrpluralsuffix )},%
+text={GCV},%
+plural={GCV\acrpluralsuffix },%
+description={generalized cross validation},%
+descriptionplural={generalized cross validation\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={generalized cross validation},%
+longplural={generalized cross validations},%
+short={GCV},%
+shortplural={GCVs},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{epv}%
+{%
+name={EPV},%
+sort={EPV},%
+type={acronym},%
+first={events per predictor variable\glsspace (EPV)},%
+firstplural={events per predictor variable\acrpluralsuffix \glsspace (EPV\acrpluralsuffix )},%
+text={EPV},%
+plural={EPV\acrpluralsuffix },%
+description={events per predictor variable},%
+descriptionplural={events per predictor variable\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={events per predictor variable},%
+longplural={events per predictor variables},%
+short={EPV},%
+shortplural={EPVs},%
+counter={page},%
+parent={},%
+%
+}%
+

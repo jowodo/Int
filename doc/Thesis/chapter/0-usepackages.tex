@@ -1,0 +1,68 @@
+\usepackage[utf8]{inputenc}
+\usepackage[margin=3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pdfpages}
+\usepackage{url}
+%\usepackage[backref=page]{hyperref}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{circuitikz}
+\usepackage{chemformula}
+\usepackage{epigraph}
+\usepackage{ulem}
+\hypersetup{
+    colorlinks = true,
+    colorlinks = false,
+	urlcolor = {blue},
+%	linkbordercolor = {transparent},
+    pdfborder = {0 0 0},
+	linkcolor = {blue},
+	citecolor = {blue}
+}
+\usepackage{acronym}
+\usepackage[acronym,nomain]{glossaries}
+\usepackage[super]{nth}
+%\usepackage[noadjust]{cite}
+\usepackage{cite}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeglossaries
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\todo}[1]{\textbf{\textcolor{red}{#1}}}
+%\newcommand{\td}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\td}[1]{\textcolor{red}{#1}}
+\newcommand{\me}[1]{\textcolor{gray}{#1}}
+\newcommand{\ds}[1]{}
+\newcommand{\x}{$\times$}
+\newcommand{\picwidth}{0.7\textwidth}
+
+%SI UNITS
+% https://mirror.kumi.systems/ctan/macros/latex/contrib/siunitx/siunitx.pdf
+\usepackage{siunitx}
+\DeclareSIUnit\bar{bar}
+%\usepackage[inter-unit-product =\cdot]{siunitx}
+\sisetup{exponent-product = \cdot}
+\sisetup{per-mode = symbol}
+\newcommand{\m}[1]{\SI{#1}{\meter}}
+\newcommand{\cm}[1]{\SI{#1}{\centi\meter}}
+\newcommand{\pcm}[1]{\SI{#1}{\centi\meter^{-1}}}
+\newcommand{\mm}[1]{\SI{#1}{\milli\meter}}
+\newcommand{\um}[1]{\SI{#1}{\micro\meter}}
+\newcommand{\nm}[1]{\SI{#1}{\nano\meter}}
+\newcommand{\mg}[1]{\SI{#1}{\milli\gram}}
+\newcommand{\ml}[1]{\SI{#1}{\milli\liter}}
+\newcommand{\ul}[1]{\SI{#1}{\micro\liter}}
+\newcommand{\minutes}[1]{\SI{#1}{\minute}}
+\newcommand{\s}[1]{\SI{#1}{\second}}
+\newcommand{\h}[1]{\SI{#1}{\hour}}
+\newcommand{\oc}[1]{\SI{#1}{\degreeCelsius}}
+\newcommand{\mmps}[1]{\SI{#1}{\milli\meter\per\second}}
+\newcommand{\mps}[1]{\SI{#1}{\meter\per\second}}
+\newcommand{\ev}[1]{\SI{#1}{\electronvolt}}
+
