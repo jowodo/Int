@@ -1,4 +1,4 @@
-DATA, CODE, RESULTS AND THESIS OF MASTER INTERNSHIP
+Data, code, results and thesis of master internship
 ===================================================
 
 This project is organised according to [Noble 2009](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)
