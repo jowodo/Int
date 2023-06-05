@@ -8,4 +8,7 @@ This project is organised according to [Noble 2009](https://journals.plos.org/pl
 - `code`: contains project specific programs or scripts
 - `doc`: contains documentation, instructions and manuscripts.
 
-
+Dependencies
+------------
+- python: argparse, dfply, numpy, pandas, pyDOE, scikit-learn, scipy 
+- R: earth, emma (manual installation necessary), dplyr
