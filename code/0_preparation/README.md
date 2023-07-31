@@ -9,6 +9,10 @@ Abbreviations
 | G   | pondus conducti      |
 | g   | conductance          | 
 
+Steps: 
+0. extract raw data from a file 
+1. create file with each gradient/conductance of sample
+2. create file with sampe, phd and G
 
 - summarize single sample 
     - calculate conductance g for each measurements
