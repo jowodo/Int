@@ -28,7 +28,7 @@ When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss func
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Kernel Ridge Regression } KRR %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\Gls{krr}} combines ridge regression with the kernel method. 
 A~kernel transforms data in such a way that a linear hyperplane (a point in one dimension, a line in two dimensions, 
-a plane in three dimensions) can fit data in regression problems or separate the data in classification problems without actually doing the transormation for every data point, which lowers computational costs.
+a plane in three dimensions) can fit data in regression problems or separate the data in classification problems without actually doing the transformation for every data point, which lowers computational costs.
 A kernel is some kind of similarity measure 
 which fulfills the requirements of nonnegativity, symmetry and linearity\cite{rupp2015machine}.
 %\enlargethispage{\baselineskip}
@@ -56,7 +56,7 @@ This can be accomplished by expressing $\mathbf{k}$ in terms of $\mathbf{X}$: $\
 %%%%%%%%%%%%%%%%%%%%%%%%%%% { Support vector machines } SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{\Gls{svm}} is a versatile machine learning algorithm first mentioned in 1992\cite{boser1992training}. 
 %
-The \gls{svm} was initially developed by Vladimir Vapnik for the binary classification of separable data, then improved to handle non-separable data and eventually adapted to solve regression problems.
+The \gls{svm} was initially developed by Vladimir Vapnik for the binary classification of separable data, then improved to handle non-separable data\cite{cortes1995support} and eventually adapted to solve regression problems\cite{drucker1996support}.
 The concepts of \gls{svm} will be discussed in the same chronological order. 
 %
 Classifiction works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
@@ -110,16 +110,16 @@ we get the width of the margin.
 	\end{aligned}
 \end{equation}
 %\td{draw sketch and make \ref{eq:svm02} on two lines}
-Thus maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$ (mathematical convenience for further steps).
+Thus, maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$ (mathematical convenience for further steps).
 By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we 
-mathemagically arrive at the loss function which should be maximized: 
+\textit{mathemagically} arrive at the loss function which should be maximized: 
 \begin{equation}
 	\label{eq:svm03}
 	\mathfrak{L} = \frac{1}{2} \|\mathbf{w}\|^2 - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
 \end{equation}
 which can be rewritten by some mathematical wizardry (setting the partial derivatives of the Lagrangian function
 $\frac{\partial \mathfrak{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathfrak{L}}{\partial b}$ 
-to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning}: 
+to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning} in the following way: 
 \begin{equation}
 	\label{eq:svm04}
 	\mathfrak{L} = \sum_i^n \alpha_i - \frac{1}{2} \sum_i^n \sum_j^n \alpha_i \alpha_j y_i y_j \mathbf{x}_i \cdot \mathbf{x}_j 
@@ -130,20 +130,20 @@ to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cher
 Such data can be handeled by introducing a penalization term for wrongly categorized samples into the loss function. 
 \begin{equation}
 	\label{eq:svm-soft}
-	L_{SM} = \frac{1}{2} \|\mathbf{w}\|^2 + \sum_i^n max(0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) 
+	L_{SM} = \frac{1}{2} \|\mathbf{w}\|^2 + \sum_i^n max \left( 0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) \right) 
 \end{equation}
-If the prediction $\mathbf{w}\mathbf{x}_i+b$ and the true category $y_i$ don't agree, 
+If the prediction $(\mathbf{w}\mathbf{x}_i+b)$ and the true category $y_i$ don't agree, 
 they have opposite signs and their product will be a negative number.
-The substraction of a negative number will result in a positive penalizization. 
+The substraction of a negative number will result in a positive penalization. 
 If the sample is correctly predicted, the product will result in a positive number, 
-the substraction will lead to a negative number and the maximum will be 0, if the sample is ousite of the margin. 
+the substraction will lead to a negative number and the maximum will be 0 if the sample is ousite of the margin. 
 %
 %%%%%%%%%%% KERNELS IN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %A big advantage of \gls{svm} is that through the kernel trick non-linearly separable data can be divided. 
 %As mentioned before, a inner product is need to use the kernel trick. 
 The function we want to optimize (eq.~\ref{eq:svm04}) and its soft margin equivalent (eq.~\ref{eq:svm-soft}) can both be expressed as inner products. 
 This allows us to separate data not only by hyperplanes 
-but also by complex decision boundaries due to the kernel trick. 
+but also by intricate decision boundaries due to the kernel trick. 
 Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the innerproduct of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
 %\td{write about sv regrgession}
 
