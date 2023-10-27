@@ -17,7 +17,7 @@ measures of the conductance.
 %WHAT CAN/DID WE TEST?
 The null hypothesis is that the results were obtained by pure chance without any dependence of the insulation of a sample on the process variables.
 A one-way \gls{anova} was performed for every independent variable on $\rho$ and $\gamma$. 
-We used an $\alpha$ value of 0.05 which means that 
+We used an $\alpha$-value of 0.05 which means that 
 the null hypothesis is rejected if the p-value is under 0.05. 
 Usually, the $\alpha$-value is chosen to be 0.01 or 0.05\cite{hoffman2020concept,sellke2001pvalues}.
 The choice of a relatively high $alpha$-value is motivated by the rather small amount of data and low events per variable ratio.
@@ -118,10 +118,10 @@ $v_{cal}$ and $\lambda$ are perfectly predicted by linear regression as there is
 %
 Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$ are largest in value, but the values which are factored with these coefficients - i.e.\, $c_{zr}$ and $\lambda$ themselves -- are the smallest among the input variables. 
 Thus, even though $T_{cal}$ might have a smaller coefficient in the linear \gls{rf}, the influence on the dependent variable might be larger. 
-In order to compare, the influence of an input variable was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{min}+x_{max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
+For better comparison, the influence of an input variable was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{i,min}+x_{i,max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
 %The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{DB}$. 
 The biggest influence on $\hat\rho$ is  $\lambda$, followed by $T_{cal}$. 
-While $T_{cal}$ is the second largest influence on $\hat\rho$ as well it is noteworthy that $\lambda$ contributes the least to $\hat\gamma$. 
+While $T_{cal}$ is the second largest influence on $\hat\rho$ as well, it is noteworthy that $\lambda$ contributes the least to $\hat\gamma$. 
 That means that according to the linear regression, the number of layers increases the overall resistance of the zirconium ceramics while a lower calcination temperature leads to less defects. 
 Interestingly, the number of layers has the least amount of influence on the number probability of defects, which seems to be an artefact of the noise rather than a process property. 
 %Furthermore the influence on $\hat\rho$ is dominated by $\lambda$ and $T_{cal}$, while the influences on $\hat\gamma$ are distributed more evenly.
@@ -150,14 +150,14 @@ can be seen in table \ref{tab:grid-search}.
 The parameters are often extrema.
 The hyperparameter $\gamma_{ml}$ took the smallest possible value (within the grid search) twice. 
 In the polynomial kernel this leads to a lower influence of the input variables with respect to the intercept. 
-The range of the hyperparameter $\alpha$ was 0.01--10 in the grid search. 
+The range of the hyperparameter $\alpha$ (see section~\ref{sec:ml-methods}) was 0.01--10 in the grid search. 
 So, 2 and 10 are high values for the regularization parameter $\alpha$ of \gls{krr}.
 The hyperparameter $\varepsilon$ specifies the size of the tube within which data does not contribute to the loss 
 and the value 1 is the maximum for $\varepsilon$ during this grid search. 
 %\td{why can R2 be negative? https://stats.stackexchange.com/a/279358/374563 } 
 %The value 1 for $\varepsilon$ is the highest possible, 
 %$C$ is regularization parameter for SVM and $\varepsilon$ is var which defines loss less region in soft margin SVM}
-All these extreme values of hyperparameters (stimulate regularization and indicate noisy and difficult to fit data.
+All these extreme values of hyperparameters stimulate regularization and indicate noisy and difficult to fit data.
 \begin{table}
     \center
     \begin{tabular}{cccccccc}
@@ -177,6 +177,8 @@ All these extreme values of hyperparameters (stimulate regularization and indica
 The $R^2$ values were calculated for each of the models using cross validation. 
 Resulting $R^2$ are all below zero (see table~\ref{tab:grid-search}). 
 A negative $R^2$ value means that the prediction provided by the model is worse than predicting only the mean of $\gamma$ and $\rho$. 
+\td{how can R2 be below zero?}
+% https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html#sklearn.kernel_ridge.KernelRidge.score
 
 \iffalse
 \begin{align}
@@ -196,15 +198,15 @@ Finally, the \gls{mae} and \gls{mse} were calculated for different data sets
 (see table \ref{tab:post-emma}). 
 Each models was trained on the \gls{emma} data set.
 % EMMA 30 pts
-The first two columns (e) show statistics validated with data the model was trained with (30 data points) and thus, 
+The first two columns ((e)) show statistics validated with data the model was trained with (30 data points) and thus, 
 these columns contain the lowest numbers. 
 % pre-EMMA 21 pts 
 The next two columns (p) were calculated with data obtained before the EMMA optimization (21 data points). 
 As the pre-optimization data set was mainly used to find appropriate boundaries for the input variables, 
 many data points are outside of the range of the \gls{emma} data set. 
-Thus, prediction for this data set are mainly extrapolations. 
+Thus, predictions for this data set are mainly extrapolations. 
 It must be explicitly noted at this point that pre-EMMA samples differ from EMMA samples 
-in the stabilization agent and therefore might underperform. 
+in the stabilization agent and therefore might deviate even more. 
 % inter/c/ pre-EMMA 5 pts
 The next two columns (c) were produced by using pre-\gls{emma} data for validation, 
 but only keeping points which sit inside the space spanned by the \gls{emma} constraints (5 data points). 
@@ -213,7 +215,7 @@ They are only lower for MARS($\rho$) and LR($\rho$), though.
 This is likely due to the small sample size.
 % all 51 
 The last two columns show data for predictions of all available data (51 data points). 
-These statistics are lower because of the inclusion of the training set in the test set. 
+These statistics are lower than the middle columns because of the inclusion of the training set in the test set. 
 
 In the self test of the first two columns \gls{mars} is the one method to rule them all and provides the lowest metrics.
 But as soon as unseen data is examined, linear regression excels by its simplicity. 

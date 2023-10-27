@@ -83,9 +83,9 @@ yellow lines connect averages of each generation of only those particles which w
 Both $\gamma$ and $\rho$ were to be minimized and show a clear trend towards low values with increasing generation, 
 indicating that the optimization worked even though 
 the prediction functions (see equations~(\ref{eq:emma-phd3})--(\ref{eq:emma-vcal4})) 
-and the chosen samples where not exactly as expected. 
+and the chosen samples (i.e. chosen input variables) where not exactly as expected. 
 Neither expected were the measurements for these samples.
-The deviation from expectation might be due to high measuring error of samples and variation of quality due to uncontrolled independent variables such as room temperature, humidity or solution age. 
+The deviation from expectation might be due to measuring error of samples and variation of quality due to uncontrolled independent variables such as room temperature, humidity or solution age. 
 Measurements were expected to show clear correlation of optimizands $\gamma$ and $\rho$ with mainly $c_{Zr}$ and $\lambda$.
 The only statistically relevant correlation was observed for $T_{cal}$ with the optimizands.
 %\td{why}
@@ -121,7 +121,7 @@ In the scatter plots~\ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of 
 		\td{
 		(d)~calculated pin hole density~$\rho$ against calcination temperature $T_{cal}$
 	change colors }
-		%\td{describe more in-depth in text}
+	\td{increase font in gnuplot, change y-axis of (c)}
 	}
 
     \label{fig:emma-gen}
@@ -217,7 +217,7 @@ ergo the resistance decreases and the conductance increases with increasing calc
 % DESCRIBE COEFFICIENTS
 Furthermore, the coefficient of the $T_{cal}$ term is the largest of all terms on $\hat{\rho}$ (\ref{eq:emma-phd4}) and $\hat{\gamma}$ (\ref{eq:emma-G4}); interestingly also on $\hat\lambda$ (\ref{eq:emma-layr4}) and $\hat{v}_{cal}$ (\ref{eq:emma-vcal4}).
 The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in size of the $T_{cal}$ coefficient, 
-but has the extra factor $\lambda$ (range: 4--12), resulting in the products of coefficients and process variables being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$.
+but has the extra factor $\lambda$ (range: 4--12), resulting in the products of coefficients and process variables being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$ terms.
 It can be noted that the coefficient of the $\lambda\cdot T_{cal}$ interaction always has contrary sign to $T_{cal}$ coefficient in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}). 
 This negative correlation could hint a compenzation of the overestimated influence of $T_{cal}$ on the \textit{optimizands}.
 Similarly, signs of coefficients of $\lambda \cdot T_{cal}$ and $h(\lambda -6) \cdot T_{DB}$ correlate negatively in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) and the product of coefficients and input variables are again similar in order of magnitude. 
@@ -301,10 +301,10 @@ This in turn can lead to wrong predictions and therefore inefficient choice of f
 The two independent variables $v_{cal}$ and $\lambda$ were included as \textit{optimizands} for two reasons: 
 Maximizing the calcination velocity and minimizing the number of layer application iterations leads to minimization of process time.
 The process time optimization would be better placed in a follow up study. 
-The second reason for including independent variables was to check if the model works. 
+The second reason for including independent variables as \textit{optimizands} was to check if the model works. 
 This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimizands} and thus 
 additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables and chose future data points. 
-Moreover, $v_{cal}$ and $\lambda$ were only considered with 5\% weight. 
+Moreover, $v_{cal}$ and $\lambda$ were only considered with 5\% weight in the overall objective function.
 The second flaw is that there are obviously better methods to assess the quality of a model than to make it more complex. 
 %Good alternatives would have been leave-one-out or cross validation.
 Validation methods for sparse data include re-sampling via leave-one-out or $k$-fold cross validation\cite{kartam1997artificial}.
