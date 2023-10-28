@@ -30,7 +30,7 @@ from a sample in one representative number.
 %\td{plot avg, avg(log), avg(log-13)}
 %
 For every I-V curve (i.e.\,for every aluminium dot contact) the gradient $g$ at $V=0$ (conductance) is calculated by taking 
-5 points before and 5 points after the origin with \td{at one point distance from zero} (which boils
+5 points before and 5 points after the origin with minimum one point distance from zero (which boils
 down to the data points from $\pm$\SI{0.02}{\volt} to $\pm$\SI{0.07}{\volt}), 
 calculating averages $\overline{V}$ and $\overline{I}$ of each point cloud and taking the ratio of differences:
 %averaging their V and I values and calculating
@@ -149,18 +149,21 @@ The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit
 Note that $\gamma_{ml}$ is used differently in each kernel. 
 % SVM
 The kernels for \gls{svm} were the same as for \gls{krr}. 
-Further hyper parameters were $C$, $\varepsilon$ and $\gamma_{ml}$, 
-where $C$ and $\varepsilon$ took the values 0.05--1 with step size 0.05 %, $\varepsilon$ 0.05--4.0 with 0.2 steps 
-\td{and was the same as for \gls{krr} plus \texttt{scale}.} %$\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
-Where \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
+Further hyper parameters were $C$, $\varepsilon$ and $\gamma_{ml}$. 
+$C$ and $\varepsilon$ took the values 0.05--1 with step size 0.05 for \gls{svm} and \gls{krr}.
+\Gls{svm} additionally used the \texttt{scale} for $\gamma_{ml}$.
+%\td{and was the same as for \gls{krr} plus \texttt{scale}.} %$\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
+\texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
 and $\sigma(\mathbf{X})$ the variance of the input variables. 
 % GRID SEARCH 
 The input variables ($c_{zr}$, $\lambda$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$) 
-of the \gls{emma} data set were \td{scaled before each calculation.}
+of the \gls{emma} data set were scaled with the routine \texttt{sklearn.preprocessing.StandardScaler().fit\_transform()}. %\td{scaled before each calculation.}
 % https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html#sklearn.kernel_ridge.KernelRidge.score
 % https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.score
 For each calculation the 5-fold cross validation score was calculated. 
-The score equals to the coefficient of determination $R^2$ which \td{ is defined the following for non linear regression functions:}
+The score equals to the coefficient of determination $R^2$ which is defined the following for non-linear regression functions
+%\footnote{see https://scikit-learn.org/stable/modules/generated/sklearn.kernel\_ridge.KernelRidge.html\#sklearn.kernel\_ridge.KernelRidge.score}
+\footnote{see \href{https://scikit-learn.org/stable/modules/generated/sklearn.kernel\_ridge.KernelRidge.html}{https://scikit-learn.org/stable/modules/generated/sklearn.kernel\_ridge.KernelRidge.html}}
 \begin{equation}
 	\label{eq:r2}
 	R^2 = 1-\frac{\sum (y_i - \hat{y}_i)}{\sum (y_i - \bar{y}_i)}

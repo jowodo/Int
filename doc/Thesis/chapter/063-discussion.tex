@@ -63,9 +63,9 @@ The later is more important due to the curse of dimensionality\cite{cherkassky19
 which states that with increasing dimensionality it get exponentially more difficult to arrive at the same density of data points. 
 By excluding input variables from the model, 
 the complexity of the model can be drastically reduced. 
-This leads to more information which can be extracted from the remaining data, 
+This leads to more information which can be extracted from the same amount of data, 
 be it in more detail of the dependence or higher confidence interval. 
-A good measure to compare with literature and other methods is the \gls{epv}. 
+A good measure to compare data density with literature and other methods is the element per variable ratio.
 The \gls{epv} in this work is round 5,
 which is low in comparison with literature consulted
 \cite{
@@ -92,10 +92,10 @@ By introducing a lot of variables into a model presupposes that they and their i
 On the other hand a model can be used to tell if a variable exerts an influence\cite{haertler2014statistisch}. 
 %
 %One regime where overfitting occurs is when there are to many parameters to be fitted with not enough data. 
-Another reason to avoid too many variables in a model is that they introduce more parameters to fit and overfitting happens in the regime where to many parameters are fitted with not enough data.
+Another reason to avoid too many variables in a model is that they introduce more parameters to fit and overfitting happens in the regime where too many parameters are fitted with not enough data.
 %todo{Overfitting happens in the regime where to many parameters are fitted with not enough data. }
-
-Another step/deed which is well placed in this phase is the estimate the error by reproducing a single sample a certain number of times. 
+%
+Another step which is well placed in this phase is the estimate the measuring error by reproducing a single sample a certain number of times. 
 %Where the number will then be higher than during optimization 
 %\todo{include curse of dimensionality.}
 %
@@ -108,14 +108,16 @@ During the optimization the main problems were too many in- and output variables
 %The first problem 
 Variable selection has already been discussed in the previous section. 
 When working with stochastic algorithms it is especially important to introduce reproducibility via a seed, which determines all subsequent pseudo-random numbers. 
-Finally, during the \gls{emma} optimization the input data were not regularized, %es wurde auf regularization verzichtet, 
-because the regularization would be different for different generations.
-Regularizing with the mean and standard deviation would be either inconsistent across generations or over overvalue the distribution of the initial generation. 
+Finally, during the \gls{emma} optimization the input data were not regularized (scaled), %es wurde auf regularization verzichtet, 
+although this could have increased the efficiency of the model.
+%because the regularization would be different for different generations.
+%Regularizing with the mean and standard deviation would be either inconsistent across generations or \td{overvalue the distribution of the initial generation.}
 %because the distribution of 
 %
 %alter previous measurements, which alread beitragen to the model and the influence the decision of the next sample. 
-These were the reasons for not including regularization during \gls{emma} optimization. 
-On the other hand the input data could have been regularized to only take values $[-1;1]$ by defining the regularized varible as 
+%These were the reasons for not including regularization during \gls{emma} optimization. 
+%On the other hand 
+The input data could have been regularized to only take values $[-1;1]$ by defining the regularized variable as 
 $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\text{min}}$.
 %On the other hand haette man auf jeden fall die input variablen normieren können. 
 %Normally, for standardization the mean is substracted and it is devided by the standard deviation, which impplies a distribution of a random variable. 
@@ -287,4 +289,4 @@ Meaning, full estimate only possible with high sampling density, which is diffic
 \fi
 
 
-\td{when adding dep var to model this has two folgen: - beeinflusst the BF and the optimization, but bcs relatiev weight is only 0.05 for each, no big beeinflussung on optimization} 
+%\td{0when adding dep var to model this has two folgen: - beeinflusst the BF and the optimization, but bcs relatiev weight is only 0.05 for each, no big beeinflussung on optimization} 

@@ -1,6 +1,6 @@
 #!/usr/bin/gnuplot 
 
-set term pngcairo size 1200, 900 font ",30"
+set term pngcairo size 1200, 900 font ",45"
 set out "gen-G.png"
 #set term svg
 #set out "gen-G.svg"
@@ -9,7 +9,8 @@ width=3
 set xlabel "generation number"
 set ylabel "{/Symbol g} [a.u.]"  
 set xtics 0,1
-#set range
+set ytics 0,20
+set yrange [0:120]
 
 #plot [1:4] filename u 1:4 w l lw width notitle
 plot filename every :::1 u 1:4 w l lw width notitle ,\
