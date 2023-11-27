@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Machine Learning and Statistics}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Why introduce machine learning to this project? 
@@ -21,17 +21,17 @@ For example, in a statistical model, it is desirable to reduce the number of inp
 This allows a statistician to better study how a change in input variables can 
 directly affect a output variable\cite{gontcharov2019}.
 %pic from \url{https://towardsdatascience.com/notes-on-artificial-intelligence-ai-machine-learning-ml-and-deep-learning-dl-for-56e51a2071c2}
-More precisely, mathematical statistics (stochastic)\cite{haertler2014statistisch} is the subject of 
+More precisely, mathematical statistics (stochastics)\cite{haertler2014statistisch} is the subject of 
 finding mathematical models to describe the data 
 whereas (classical) statistics is the domain of representing the data. 
 Nonetheless, statistics and maths is at the very basis of \gls{ml}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Artificial Inteligence and Machine Learning}
+\subsection{Artificial Intelligence and Machine Learning}
 %How can \gls{ai} and \gls{ml} be defined? 
 \Gls{ai} is a trans-disciplinary field with roots in logic, statistics, cognitive psychology, decision theory, neuroscience, linguistics, cybernetics, and computer engineering\cite{howard2019artificial}.
 The history of \gls{ai} goes back to the middle of the \nth{20} century. 
-Researchers from the emerging field came together at the Dartmouth conference and the term "\gls{ai}" was coined\cite{McCarthy1955}. 
+Researchers from the emerging field came together at a 1956 Dartmouth conference and the term "\gls{ai}" was coined\cite{McCarthy1955}. 
 \Gls{ai}'s  history is beautifully depicted by McCorducks' 1982 book "Machines Who Think"\cite{McCorduck1982,Apter1982}, which focuses on the great minds behind the advances.
 Pioneers like Alan Turing thought a lot about how to define, test and implement \gls{ai}\cite{howard2019artificial}. 
 One example how to measure \gls{ai} is to let it play chess against a human\cite{Silver2017} 
@@ -41,10 +41,10 @@ an interrogator communicates with two unknown entities \textbf{A} and \textbf{B}
 \textbf{A} will try to make to interrogator misjudge, whereas \textbf{B} is on the interrogators side.
 The question is if \textbf{A} is replaced with a computer how the ratio of outcomes would deviate from the original ratio. 
 %
-At the moment it's hard to imagine a computer getting a higher ratio than a human
+At the moment it is hard to imagine a computer getting a higher ratio than a human
 but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the near future; especially with ChatGPT's convincingly human-like answers\cite{dis2023chatgpt}.
 
-But fear not, that doesn't mean that computers are 
+But fear not, that does not mean that computers are 
 more intelligent than humans
 or \linebreak[4]
 sentient\cite{searle1980,searle1999married} even though some claim\cite{tiku2022google} and it certainly does not mean that research is over. 
@@ -56,7 +56,7 @@ playing board games (and beating humans)\cite{Silver2017,Feng1999,Campbell2002},
 image recognition (very popular for medical diagnosis)\cite{Li2020,Deo2015,Topol2019,Fujiyoshi2019}, 
 chemistry\cite{Westermayr2019,goh2017chemception,jha2018elemnet}, 
 cyber security\cite{Sarker2021},
-facial recognition (to prevent theft of toilet paper \cite{Andrews2017}),
+facial recognition (to prevent theft of lavatory paper at public toilet in China\cite{Andrews2017}),
 financial sector (as robo-advisors)\cite{Littman2021},
 natural language processing (NLP)\cite{Koroteev2021,Liu2021gpt,Parviainen2021} 
 (which can also create code and pictures through scalable vector graphics (SVG))
@@ -65,7 +65,7 @@ creating non existing faces\cite{Mansourifar2020},
 create graphic artwork (DALL-E 2)\cite{Marcus2022} or 
 making video games\cite{Guzdial2016}.
 %
-It is nearly hard to find a field where \gls{ai} isn't used in some way. 
+It is nearly hard to find a field where \gls{ai} is not used in some way. 
 This steady incorporation of \gls{ai} leads to the so called \gls{ai} effect\cite{McCorduck1982,ai100}: 
 certain fields get incorporated into \gls{ai} research and practice,
 such that after some time of general use it is no more considered \gls{ai} (e.g. spam filter or web searches).
@@ -78,13 +78,12 @@ Google CEO Sundar Pichai even goes as far and said:
 \label{sec:ml-methods}
 %
 \Gls{ml} is at the base of most \gls{ai}s.
-It is an umbrella term for programs with instructions to learn from data, i.e. gain knowledge, categorize, predict and make decisions based on data. 
+It is an umbrella term for programs with instructions to learn from data, i.e.\ gain knowledge, categorize, predict and make decisions based on data. 
 %
-There is a platitude of different machine learning methods: 
-they can be divided into supervized (training set is labeled) and unsupervized (exploratory).  
+There is a platitude of different machine learning methods and most of them can be divided into supervised (training set is labeled) and unsupervised (exploratory).  
 An orthogonal division can be made by regression (continuous data) versus classification (discrete, categorical data). 
 Independent from these $2\times2$ categories there are multiple ways to let machines learn from data.
-%
+
 \Gls{nn} (one of the most popular architectures for big data\cite{Chiroma2019}) are loosely modeled after the brain\cite{bishop1994neural}.
 Artificial neurons (also called nodes), which are arranged in layers, 
 are connected to each of the neurons of previous and next layers
@@ -99,7 +98,7 @@ Other common methods include linear regression, kernel ridge regression and supp
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Population Based Optimization Algorithms}
 
-There are also lesser know \gls{ml} algorithms like 
+There are also lesser known \gls{ml} algorithms such as 
 evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
 Evolutionary algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simultaneously\cite{villanova2010function}.
 %
@@ -108,7 +107,7 @@ One particular feature of evolutionary algorithms is that they start with a smal
 and periodically request new data in order to solve the problem iteratively.
 %\td{This is exactly what I needed because every experiment is very time intensive.} 
 
-A \gls{ga} is a search algorithm that uses principles of natural selection and genetics to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a satisfactory solution is found.\footnote{This paragraph was written by GPT\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
+A \gls{ga} is a search algorithm that uses principles of natural selection and \td{genetics} to optimize a search space. A GA starts with a population of randomly generated solutions, or chromosomes, and then proceeds to breed them together to create new solutions. The new solutions are then tested for fitness, and the best solutions are selected to create the next generation of chromosomes. This process is repeated until a \td{satisfactory} solution is found.\footnote{This paragraph was written by GPT3\cite{Liu2021gpt} given the input "Introduction to genetic algorithms: "}
 
 \iffalse
 \Gls{ga} uses a starting population of size $p$ ($p \in$ \td{N$^+$}) where each experiment (or data point) 
@@ -134,17 +133,18 @@ influenced by its particle velocity and position as well as its and the swarm's 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{EMMA}
+%\subsection{EMMA}
+\subsection{Evolutionary Model-based Multiresponse Approach}
 \Gls{emma} is an implementation of \gls{pso} in the \texttt{R} programming language. 
 Each time step the dependent variables for all possible input variable combinations %$\mathbf{x} = \{x_1,\cdots ,x_N\}$ 
 are predicted with the help of \gls{mars}. 
 The \gls{mars} \gls{rf} is then used to chose the next position for each particle.
 \Gls{mars} is a regression method introduced by Friedman's 1991 paper 
 "Multivariate Adaptive Regression Splines"\cite{friedman1991multivariate}. 
-The \texttt{CRAN} package which implements \gls{mars} is called \texttt{earth} due to \gls{mars} being trade marked\cite{mars}.
+The \texttt{CRAN} (Comprehensive R Archive Network) package which implements \gls{mars} is called \texttt{earth} due to \gls{mars} being trade marked\cite{mars}.
 %%% MARS 
 \gls{mars} is an extension of multivariate linear regression.
-Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g. kernel functions), whose number of parameter quickly exceeds the practical for moderate dimensional problems ($n>5$). 
+Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g. kernel functions), whose number of parameter quickly \td{exceeds the practical} for moderate dimensional problems ($n>5$). 
 %
 %to higher dimensions (n > 2) is straightforward in principle but difficult in practice. 
 %"These difficulties are related to the so-called “curse-of-dimensionality”, a phrase coined by Bellman (1961) to express the fact that exponentially increasing numbers of points are needed to densely populate Euclidean spaces of increasing dimension."\cite{friedman1988fitting}
@@ -164,7 +164,7 @@ This means that only two basis functions can be multiplied (excluding the consta
 Pairwise added hinge functions are of the simple form $h(x-c)$ and $h(c-x)$ where $h(e)= max(0,e)$ and with $x$ being an independent variable, $c$ being a constant and $e$ being any expression. 
 %%% BACKWARD EMMA
 Then, the backwards algorithm regularizes the function by removing individual terms. 
-The metric which decides if a term should be removed is called \gls{gcv} and was introduced by Wahba and Cravenin 1969\cite{wahba1979smoothing}.
+The metric which decides if a term should be removed is called \gls{gcv} and was introduced by Wahba and Cravenin 1969\cite{wahba1979smoothing}:
 
 \begin{equation}
     GCV(M) = \frac{1}{N} \sum_{i=1}^{N} \frac{ \left(y_i - \hat{f}(x_i) \right)^2 } {\left( 1- \frac{C(M)}{N}\right)^2 }
@@ -217,7 +217,7 @@ The coefficients for each term are then chosen via regular \gls{mse} minimizatio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%% STATISTICS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Design of Experiment} %DOE
+\subsection{Design of Experiments} %DOE
 %\epigraph{"The real purpose of experiment design is to maximize the information content of the data within the limits imposed by the given constraints."}{Grahem C. Goodwin\cite{goodwin1977experiment}}
 %"Our ability to design a good experiment should depend upon our prior knowledge regarding the nature of the data generating mechanism."\cite{goodwin1977experiment}
 %
@@ -228,6 +228,7 @@ The coefficients for each term are then chosen via regular \gls{mse} minimizatio
 %
 In two cases a deliberate \gls{doe} is especially beneficial.
 (1) If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
+
 (2) If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
 %Both encompass nearly all cases. 
 % 

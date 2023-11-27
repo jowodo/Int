@@ -16,7 +16,7 @@ L_2&= \sum_i(y_i - \hat y_i)^2 %= \sum_i \sum_j (y_i - x_{i,j}\cdot k_i+c)^2
 
 \textbf{Ridge Regression} is like linear regression with an extra term which penalizes steep regression functions.
 The extra term reduces overfitting and is scaled by a correction parameter~$\alpha$. 
-The larger $\alpha$ is, the larger is the regularization and the flatter is the regression functions. 
+The larger $\alpha$ is, the larger is the regularization and the flatter is the regression function. 
 When $\alpha$ tends to infinity, we get an intercept-only model.
 When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss function.
 %\td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
@@ -117,7 +117,7 @@ By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplie
 	\label{eq:svm03}
 	\mathfrak{L} = \frac{1}{2} \|\mathbf{w}\|^2 - \sum_i^n \alpha_i [ y_i ( w_i \cdot x_i + b) -1 ] 
 \end{equation}
-which can be rewritten by some mathematical wizardry (setting the partial derivatives of the Lagrangian function
+which can be rewritten by some \td{mathematical wizardry} (setting the partial derivatives of the Lagrangian function
 $\frac{\partial \mathfrak{L}}{\partial \mathbf{w}}$ and $\frac{\partial \mathfrak{L}}{\partial b}$ 
 to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cherkassky1998learning} in the following way: 
 \begin{equation}
@@ -132,7 +132,7 @@ Such data can be handeled by introducing a penalization term for wrongly categor
 	\label{eq:svm-soft}
 	L_{SM} = \frac{1}{2} \|\mathbf{w}\|^2 + \sum_i^n max \left( 0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) \right) 
 \end{equation}
-If the prediction $(\mathbf{w}\mathbf{x}_i+b)$ and the true category $y_i$ don't agree, 
+If the prediction $(\mathbf{w}\mathbf{x}_i+b)$ and the true category $y_i$ do not agree, 
 they have opposite signs and their product will be a negative number.
 The substraction of a negative number will result in a positive penalization. 
 If the sample is correctly predicted, the product will result in a positive number, 
@@ -144,6 +144,7 @@ the substraction will lead to a negative number and the maximum will be 0 if the
 The function we want to optimize (eq.~\ref{eq:svm04}) and its soft margin equivalent (eq.~\ref{eq:svm-soft}) can both be expressed as inner products. 
 This allows us to separate data not only by hyperplanes 
 but also by intricate decision boundaries due to the kernel trick. 
+
 Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the innerproduct of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
 %\td{write about sv regrgession}
 
