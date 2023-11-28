@@ -229,18 +229,17 @@ The coefficients for each term are then chosen via regular \gls{mse} minimizatio
 In two cases a deliberate \gls{doe} is especially beneficial.
 (1) If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
 
-(2) If the query space is so vast, that randomly querying might explore domains which might lead to uninteresting or even misleading information.
+(2) If the query space is so vast, that randomly querying might explore domains\td{, which} might lead to uninteresting or even misleading information.
 %Both encompass nearly all cases. 
 % 
 At the beginning of any experiment its constraints must be determined. 
 %
-Constraints for a given experiment include range of input and output variables as well as total time available and total number of samples/experiments that can be taken.\cite{goodwin1977experiment}
-%
+Constraints for a given experiment include range of input and output variables as well as total time available and total number of samples/experiments that can be taken\cite{goodwin1977experiment}.
 
 %FULL FACTORIAL
 A naive approach to an experiment design is the full factorial \gls{doe}.
-Each possible combination of discrete values is tested. 
-While this is the most informative design it will more often than not be infeasible due the curse of dimensionality\cite{cherkassky1998learning}.
+Each possible combination of discrete values is tested.
+\td{While} this is the most informative design it will more often than not be infeasible due the curse of dimensionality\cite{cherkassky1998learning}.
 % 2-LVL FACTORIAL
 The 2-level factorial design provides an alternative with $2^d$ experiments (where $d$ is the number of independent variables). 
 Drawbacks of 2-level factorial \gls{doe}s include no data about the inside of the search space and infeasibility for high dimensional problems.

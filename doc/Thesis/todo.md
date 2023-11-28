@@ -1,5 +1,6 @@
 
 [ ] check if all headings are descriptive in TOC 
+[ ] check all headings for consistent capitalization
 [ ] check if all \cite are in front of fullstops
 [ ] check abriviations e.g. DB, optimisands (lambda, ...)
 [ ] check all spellings!
