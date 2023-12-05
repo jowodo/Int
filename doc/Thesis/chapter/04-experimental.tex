@@ -66,7 +66,7 @@ The second recipe - adopted from Hu~et~al.~\cite{Hu2016} - was based on \gls{zrp
 	\label{fig:sol}
 	\caption{Aquatic and buthanolic solution with magnetic stirring bars in beaker glass sealed with Parafilm} 
 \end{figure}
-\iffalse
+\fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -314,8 +314,8 @@ Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter}--\SI{58
 (\SI{500}{\nano\meter}--\SI{1.2}{\micro\meter}). For transmittance the light
 entered the sample from the side with the layer. The \gls{uv} and \gls{vis}/\gls{nir} spectra were merged 
 in Opus software. % included in the spectrometer. 
-\Gls{xrd} diffractograms were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. 
-All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared to the internal database.
+\td{\Gls{xrd} diffractograms were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. (where are the conditions?)}
+All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 
 \begin{figure}[htb]
 	\centering
@@ -355,7 +355,7 @@ All \gls{xrd} spectra were taken at \SI{5}{\degree} incident angle and compared 
 	\label{fig:micro}
 	(a) Sputtered silver contacts on sample with gilded wolfram contact probe touching one of the contacts. 
 	(b) Edge of a sample with the probe touching silver paste on top of a sanded patch.
-	(c) From the source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.}
+	(c) From the source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.\td{(what is XXX circuit?)}}
 \end{figure}
 
 The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
@@ -364,7 +364,7 @@ Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of
 Prior to \gls{iv} measurements the samples were sputtered with aluminium 
 through a mask to produce a multitude of equidistant contacts with a Leybold 
 UNIVEX450C Sputter System.
-Directional current sputtering was used with Argon as inert gas at \SI{0.005}{\milli\bar} 
+Directional current sputtering was used with argon as inert gas at \SI{0.005}{\milli\bar} 
 and with a power of \SI{40}{\watt} for \SI{700}{\second}.
 Between sputtering and \gls{iv} measurements 
 direct contacts to the steel substrate were created by removing a patch of the \gls{zro}
@@ -399,12 +399,13 @@ See figure~\ref{fig:circuit} for a sketch of the connectivity.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREOPTIMISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Pre-optimization}\label{sec:exp-preopt}
+\td{preopt of what? recipe?}
 %\td{the choice of grenzen for \gls{doe} was done by biotic reinforcement learning (i.e. my brain)}
 %\td{Screening}
 %The main part of the screening pre-optimization samples were optimized via biotic reinforcement learning (i.e. my brain). 
 The main part of all samples (200 out of 244) were pre-optimization samples, 
 from which the bulk were screening experiments optimized via biotic reinforcement learning 
-(i.e. my brain) in order to obtain reasonable constraints for computerized pre-optimization. 
+(i.e.\ my brain) in order to obtain reasonable constraints for computerized pre-optimization. \td{(xxx but using a completely untested recipe!)} 
 %Initially, glass plates were doctor bladed manually with aquatic solution and calcinated 
 %via HP1. 
 %Glass was used because of its availability and in order to be able to make IR 
@@ -417,12 +418,11 @@ from which the bulk were screening experiments optimized via biotic reinforcemen
 %this means if the produced layer is thick and homogeneous enough, it's difficult to see in sem
 %Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
 %\todo{different additives, heating programs (NT1-NT5 and HP1), blade distances (distance between blade and substrate) and layer counts were tried}
-Composition of the aquatic solution, heating program, blade distance (distance between 
+Composition of the \td{aquatic solution (I thought this did not work?)}, heating program, blade distance (distance between 
 blade and substrate) and layer count were varied but no homogeneous layers resulted. 
 Thus, 
 the buthanolic recipe was introduced, which gave rise to homogeneous films.
-After the blade moved over the substrate the remaining liquid needed about a minute 
-to evaporate at room temperature. 
+\td{After the blade moved over the substrate the remaining liquid needed about a minute to evaporate at room temperature. (2x mentioned this before!)}
 %\td{
 The then current procedure resulted in clear and continuous films, but was plagued from 
 inhomogeneities due to drying stains. 
@@ -435,11 +435,11 @@ using the Plackett-Burman\cite{Plackett1946} design implemented in the \texttt{p
 library \texttt{pyDOE}. With 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
-relative concentration of Zr $c_{zr}$, number of layers $\lambda$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively. 
+relative concentration of Zr $c_{zr}$, \td{number of layers $\lambda$ (layers of what?)}, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively.
 After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see table \ref{tab:pre-opt1}).
 \begin{table}[hbt]
 	\centering
-	\caption{Pre-optimization experiments}
+	\caption{Pre-optimization experiments \td{(still smaller?? why? what am I supposed to learn?)} }
 	\label{tab:pre-opt}
 	\begin{subtable}{0.5\linewidth}
 		\centering
@@ -510,13 +510,12 @@ Some additional hand picked experiments (see table \ref{tab:pre-opt2}) were intr
 the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Shortly before the \gls{pso} the stabilization agent was changed from \gls{acoh} to 
-\gls{ipo} because of much better solution stability.
+Shortly before the \gls{pso} the stabilization agent was changed from \todo{ \gls{acoh} to \gls{ipo} (but why?)} because of much better \td{solution stability. (how did yo test this??)}
 The - up to this moment - best process was chosen to be tested with 
 \ml{1} \gls{acoh}, \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} and \ml{1} \gls{ipo}.
 %\td{As the sample showed the best all ex were proceeded with ipo as stabilization agent. }
 The sample produced with \gls{ipo} as stabilization agent 
-showed comparable passivization results and better stability of the solution. 
+showed \td{comparable passivization results (but where are they?)} and better stability of the solution. 
 Therefore \gls{ipo} was used  as stabilzier in further experiments.
 %\td{After the boundaries of the solution were fixed }
 After the base recipe for the solution has been decided

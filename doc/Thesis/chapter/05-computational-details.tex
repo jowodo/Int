@@ -1,5 +1,7 @@
+\todo{ To me this does not follow any logical order!}
 \section{Data Processing}
 \label{sec:eval}
+\todo{Why this procedure? Sounds quite arbitrary?}
 %Reading list
 %\begin{itemize}
     %\item https://de.wikipedia.org/wiki/Globaler_F-Test
@@ -19,7 +21,7 @@
 %    \item 
 %\end{itemize}
 %\td{describe problem and solution found}
-Multiple \gls{iv} curves were measured for every sample.
+\td{Multiple \gls{iv} curves were measured (where are they?)} for every sample.
 The main difficulty faced in processing the data was to present the measurements obtained 
 from a sample in one representative number. 
 %
@@ -55,7 +57,7 @@ to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the averag
     \gamma = \sum_i^N \frac{ (-log_{10}(g_i) - 13)^2}{N}
 	\label{eq:gamma}
 \end{equation}
-Another measure is the density of shorted species $\rho$ (pin hole density), calculated in following way:
+Another measure is the density of shorted species $\rho$ (pinhole density), calculated in following way:
 \begin{equation}
 	s_i = \begin{cases}
         1 &\text{if} \quad -log_{10}(g_i) < 5 \\
@@ -78,6 +80,7 @@ The density is 1 if every measurement has a conductance larger than $10^{-5} \, 
 
 \section{Sample Selection}
 \label{sec:ss}
+\todo{for what?}
 An evolutionary approach was chosen, namely a multi-objective 
 \gls{pso} algorithm called \gls{emma}\cite{villanova2010function,Kennedy1995,Breiman1997,Carta2011}.
 %
@@ -106,22 +109,22 @@ Next, the output variables (dependant variables), their weights in the objective
 	\label{tab:input}
 \end{table}
 
-The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $\lambda$ and $v_{cal}$, 
+The \textit{optimizands} where chosen to be \td{$\gamma$, $\rho$, $\lambda$ and $v_{cal}$, (here it would help me to remind the reader what the symbols are!)}
 where $\gamma$, $\rho$ and $\lambda$ are to be minimized and $v_{cal}$ to be maximized.
 %which all should be minimized except for $v_{cal}$.
 The next step is to generate an initial population (ensemble of experiments), which is chosen randomly from the population space. 
-The experiments are executed, measured and evaluated according to section 
-\ref{sec:exp} and the responses conducticity $\gamma$ (see eq. \ref{eq:gamma}), pin hole density $\rho_s$ (see eq. \ref{eq:rho}), 
-$\lambda$ (numbers of layers) and $v_{cal}$ (heating rate of calcination process in 
+The \td{experiments} are executed, \td{measured (unclear!)} and evaluated according to section 
+\ref{sec:exp} and the responses conducticity $\gamma$ (see eq. \ref{eq:gamma}), pinhole density $\rho_s$ (see eq. \ref{eq:rho}), 
+\todo{$\lambda$ (numbers of layers) (tstill not clear! what is meant?!)} and $v_{cal}$ (heating rate of calcination process in 
 \oc{}/\minutes{}) are supplied to the program. 
 The program, then, uses this data to estimate a response for each output variable 
 for the entire population space
 (and to choose a fraction of the initial population which is allowed to propagate).
 %The response variables for the entire population space is calculated. 
 The current population - each of the particles independently - 
-are given a random velocity vector associated to them which is directed to the best predicted sample. 
+are given a random velocity vector associated to them, which is directed to the best predicted sample. 
 %moves towards the optimum solution.
-The population for the next time step is generated and the experiments are again executed, measured and evaluated.
+The population for the next time step is generated and the experiments are again \td{executed, measured and evaluated. (unclear!)}
 Each time step thus includes experiment identification, solution preparation, coating deposition and layer analysis. 
 
 \ds{system behavior are discussed in Modeling the Results.
@@ -138,6 +141,7 @@ coating deposition, and spot analysis.
 %\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
 Python 3.10.9 and sci-kit learn 1.1.2\cite{pedregosa2011scikit} were used to implement a linear fit model, \gls{krr} and \gls{svm} with polynomial, \gls{rbf} and sigmoid kernels. 
 %\subsection{Grid Search}
+
 A grid search over a set of hyperparameters was executed. 
 %https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
 %https://scikit-learn.org/stable/modules/svm.html#svc
@@ -149,8 +153,8 @@ The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit
 Note that $\gamma_{ml}$ is used differently in each kernel. 
 % SVM
 The kernels for \gls{svm} were the same as for \gls{krr}. 
-Further hyper parameters were $C$, $\varepsilon$ and $\gamma_{ml}$. 
-$C$ and $\varepsilon$ took the values 0.05--1 with step size 0.05 for \gls{svm} and \gls{krr}.
+Further hyper parameters were \td{$C$, $\varepsilon$ and $\gamma_{ml}$. 
+$C$ and $\varepsilon$ (define again, forgotten until now) } took the values 0.05--1 with step size 0.05 for \gls{svm} and \gls{krr}.
 \Gls{svm} additionally used the \texttt{scale} for $\gamma_{ml}$.
 %\td{and was the same as for \gls{krr} plus \texttt{scale}.} %$\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
 \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
@@ -160,8 +164,8 @@ The input variables ($c_{zr}$, $\lambda$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal
 of the \gls{emma} data set were scaled with the routine \texttt{sklearn.preprocessing.StandardScaler().fit\_transform()}. %\td{scaled before each calculation.}
 % https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html#sklearn.kernel_ridge.KernelRidge.score
 % https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.score
-For each calculation the 5-fold cross validation score was calculated. 
-The score equals to the coefficient of determination $R^2$ which is defined the following for non-linear regression functions
+For each calculation the 5-fold cross-validation score was calculated. 
+The score equals to the coefficient of determination $R^2$, which is defined the following for non-linear regression functions:
 %\footnote{see https://scikit-learn.org/stable/modules/generated/sklearn.kernel\_ridge.KernelRidge.html\#sklearn.kernel\_ridge.KernelRidge.score}
 \footnote{see \href{https://scikit-learn.org/stable/modules/generated/sklearn.kernel\_ridge.KernelRidge.html}{https://scikit-learn.org/stable/modules/generated/sklearn.kernel\_ridge.KernelRidge.html}}
 \begin{equation}
@@ -170,6 +174,7 @@ The score equals to the coefficient of determination $R^2$ which is defined the 
 \end{equation}
 For each method (\gls{krr} and \gls{svm}) and each \textit{optimizand} ($\gamma$ and $\rho$) 
 the parameters with the highest score were noted.
-% 
+ 
 Finally, the different data sets were predicted for each model and \gls{mae} and \gls{mse} were calculated.
 These values were also calculated for \gls{emma} and the linear model in order to compare the different methods. 
+\todo{(and how did this output help you to optimize your exp. procedure??)}
