@@ -7,7 +7,7 @@
 A total of 30 recipes (see appendix \ref{sec:app-emma}) was investigated in 
 five iterations ($t = 0, \dots, 4$) of the algorithm. 
 Where the first generation encompassed 10 particles and each subsequent generation encompassed 5 particles. 
-The \td{best (what is "best"? How do you measure that?	 recipes for each generation can be seen in table \ref{tab:emma-Gb}. 
+The \td{best (what is "best"? How do you measure that?)} recipes for each generation can be seen in table \ref{tab:emma-Gb}. 
 The experiments for generation 5 where not executed but 
 predictions were already made
 with the information from the previous generations. 
@@ -35,14 +35,14 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 \end{table}
 
 %%% OVER TIME 
-The only clear trend from table \ref{tab:emma-Gb} is the layer count, which rises with the generations. 
+The only clear trend from table \ref{tab:emma-Gb} is the \td{layer count (again not yet clear)}, which rises with \td{the generations (which?)}. 
 The remaining input variables remained more or less the same except for the 3rd generation. 
 %\td{why?}
 %
 It can be seen in table~\ref{tab:emma-pred-G} 
 that the predicted conducticity $\hat{\gamma}$ 
 (predicted with 5th generation \gls{rf}; see last column) lowered with each iteration, 
-except for sample 2947, which wasn't predicted but measured. 
+except for sample 2947, which was not predicted but measured. 
 This shows that the easiest part of the algorithm - the selection of the optimum 
 from predicted values - works as expected. 
 % and that the predictions included more lower values over time
@@ -63,7 +63,7 @@ from predicted values - works as expected.
     \end{tabular}
 \end{table}
 %
-Contrarily, the predicted conducticity $\hat{\gamma}$ for each generation's best 
+Contrarily, the predicted conducticity $\hat{\gamma}$ for each generation's \td{best (best in what?)}
 (predicted by the very generation's \gls{rf}) does increase with each iteration 
 (see diagonal in table~\ref{tab:emma-pred-G}). 
 This indicates an underestimation of $\hat\gamma$ at the beginning and a correction with time. 
@@ -72,13 +72,14 @@ The underestimation probably stems from a lucky selection of initial experiments
 Indeed, the samples with the lowest \textit{optimizands} are among the initial generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
 
 %GENERATIONS
+\td{How did you determine the pinhole densisty}
 In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimizands}, 
 conducticity $\gamma$ and pin hole density $\rho$, of each particle at each generation.
-The green points at generation number 0 indicate particles which were not included to be propagated. 
+The \td{green} points at generation number 0 indicate particles which were not included to be propagated. 
 %Each violet line indicates a particle, the blue line depicts the average of all particles and the yellow line depicts the average of all particles which were propagated. 
-Violet lines connect individual particles in time. 
-The blue line connects averages of particles of each generation (including initial non-propagated particles) and 
-yellow lines connect averages of each generation of only those particles which were propagated. 
+\td{Violet} lines connect individual particles in time. 
+The \td{blue} line connects averages of particles of each generation (including initial non-propagated particles) and 
+\td{yellow} lines connect averages of each generation of only those particles which were propagated. 
 %
 Both $\gamma$ and $\rho$ were to be minimized and show a clear trend towards low values with increasing generation, 
 indicating that the optimization worked even though 
@@ -181,14 +182,14 @@ This stems from the fact that the algorithm chooses a single minimal set of basi
 \end{align}
 
 The coefficients in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) have the same signs and differ by a factor of roughly 100.
-This fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $\lambda$ is counter intuitive 
+\td{This (what is "this?)} fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $\lambda$ is counter intuitive 
 %as one would expect more layers to be more insulating and thus result in lower conductance and a lower probability of holes going all the way trough the \gls{zro} layers. %pin hole density. 
 The coefficients of the $v_{cal} \cdot T_{cal}$ interaction in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) 
 seem low, but the interaction has -- considering the minimum value of the interaction of $300 \cdot 120 =$  \num{36000} -- several orders of magnitude higher influence on $\rho_3$ and $\gamma_3$ than the $h(6-\lambda)$ term. 
 %It's positive the hinge
 It is astonishing that the knot of the hinge function for equations (\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) was chosen so low; 
 basically only including the influence of the lowest layer count $\lambda=4$.
-Meaning for equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}), that the lowest layer count produces worse samples which is intuitive, but more than 6 layers don't improve the insulation. 
+Meaning for equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}), that the lowest layer count produces worse samples which is intuitive, but more than 6 layers do not improve the insulation. 
 Encouragingly, the calcination heating rate $v_{cal}$ (see equation (\ref{eq:emma-vcal3})) has been predicted perfectly within numerical precision. 
 
 %%% T=4
@@ -205,7 +206,7 @@ calcination temperatures under \oc{400} do not suffice to produce compact layers
 and 
 that therefore the resulting layer does not insulate well if $T_{cal}$ is low. 
 %This would correspond to $+h(400-T_{cal})$
-The original recipe by Hu et al.\cite{Hu2016} used \oc{500} and thus even \oc{400} are low.
+The \td{original recipe by Hu et al.\cite{Hu2016} used \oc{500} (but to produce Al2O3, so not a surprise? or?)} and thus even \oc{400} are low.
 \textit{Optimizands} $\hat\rho$ and $\hat{\gamma}$ increase with higher calcination temperature 
 according to equations~(\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) (see also figures~\ref{fig:g-tcal} and \ref{fig:phd-tcal}), 
 ergo the resistance decreases and the conductance increases with increasing calcination temperature contrary to expectations.
