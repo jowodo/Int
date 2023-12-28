@@ -93,7 +93,7 @@ are optimised during training.
 Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} and are useful in quantum mechanics too\cite{westermayr2020combining}.
 Other common methods include linear regression, kernel ridge regression and support vector regression.
 
-\input{chapter/033-linreg-krr-svm.tex}
+\input{chapter/023-linreg-krr-svm.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Population Based Optimization Algorithms}
@@ -144,17 +144,19 @@ The \gls{mars} \gls{rf} is then used to chose the next position for each particl
 The \texttt{CRAN} (Comprehensive R Archive Network) package which implements \gls{mars} is called \texttt{earth} due to \gls{mars} being trade marked\cite{mars}.
 %%% MARS 
 \gls{mars} is an extension of multivariate linear regression.
-Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g. kernel functions), whose number of parameter quickly \td{exceeds the practical} for moderate dimensional problems ($n>5$). 
+Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g. kernel functions). %, whose number of parameter quickly \td{exceeds the practical} for moderate dimensional problems ($n>5$). 
+Advantages of \Gls{mars} are that it uses less parameters and it produces continuous models with continous derivatives.
 %
 %to higher dimensions (n > 2) is straightforward in principle but difficult in practice. 
 %"These difficulties are related to the so-called “curse-of-dimensionality”, a phrase coined by Bellman (1961) to express the fact that exponentially increasing numbers of points are needed to densely populate Euclidean spaces of increasing dimension."\cite{friedman1988fitting}
 %
-The main advancements of \gls{mars} is the ability to fit (possibly complex) interactions and non-linearities without losing interpretability. 
+Furthermore, \gls{mars} has the ability to fit (possibly complex) interactions and non-linearities without losing interpretability. 
 %
 %- "The key ingredient that advances this approach to general settings is the ability to fit (possibly complex) interactions among the variables through the product terms that are permitted to enter the approximation (9), if required by the fit."\cite{friedman1988fitting}
 %% MARS MODEL SELECTION
 %- "The approximation is developed in a forward/backwards stepwise recursive manner in analogy with the recursive partitioning approach. "\cite{friedman1988fitting}
 %
+
 %%% FORWARD MARS
 The \gls{rf} is developed in a forward/backward stepwise recursive manner\cite{friedman1988fitting}. 
 During the forward recursion, terms are added in pairs until a certain number of terms is reached. 
@@ -229,7 +231,7 @@ The coefficients for each term are then chosen via regular \gls{mse} minimizatio
 In two cases a deliberate \gls{doe} is especially beneficial.
 (1) If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
 
-(2) If the query space is so vast, that randomly querying might explore domains\td{, which} might lead to uninteresting or even misleading information.
+(2) If the query space is so vast, that randomly querying might explore domains, which might lead to uninteresting or even misleading information.
 %Both encompass nearly all cases. 
 % 
 At the beginning of any experiment its constraints must be determined. 
@@ -239,7 +241,7 @@ Constraints for a given experiment include range of input and output variables a
 %FULL FACTORIAL
 A naive approach to an experiment design is the full factorial \gls{doe}.
 Each possible combination of discrete values is tested.
-\td{While} this is the most informative design it will more often than not be infeasible due the curse of dimensionality\cite{cherkassky1998learning}.
+The full factorial design will mostly be infeasible due the curse of dimensionality\cite{cherkassky1998learning} despite it being the most informative design.
 % 2-LVL FACTORIAL
 The 2-level factorial design provides an alternative with $2^d$ experiments (where $d$ is the number of independent variables). 
 Drawbacks of 2-level factorial \gls{doe}s include no data about the inside of the search space and infeasibility for high dimensional problems.

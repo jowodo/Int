@@ -11,5 +11,5 @@
 [ ] check if all elements are lowercase
 [ ] check if all pin hole changed to pinhole
 [ ] check if all cross validaiton changed to cross-validation
-
+[ ] check UVVis to UV/Vis
 
