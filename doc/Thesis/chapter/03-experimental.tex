@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%% EXPERIMENTAL %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo{materials section and sources (incl. purities is missing!}
-In this section the used chemicals, substrates, experimental procedures and any used
-\td{equipment (what do you mean?)} are described. 
+\todo{materials section and sources (incl. purities is missing!) }
+In this section the used chemicals, substrates, experimental procedures and any used lab equipment are described. 
+\td{All chemicals used in this work are of reagent-grade purity and without further purification.}
 %\td{Also, the long, exhaustive path to the base solution is described}
 %\td{The experiments can be split into three sections: }
 First, the base recipe and the base process settings were explored. 
@@ -20,14 +20,12 @@ squared glass plates (\cm{2.5}\x\cm{2.5}) from Sigma Aldrich,
 \gls{ito} plates (\cm{2.5}\x\cm{2.5}) from Sigma Aldrich, 
 \gls{fto} plates (\cm{5}\x\cm{5}) from Sigma Aldrich and steel foil (10~cm~x~10~cm) provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
 %}
-\ds{
-Four different substrates were used throughout this work: 
-microscope glass slides, \gls{ito} glass plates, \gls{fto} glass plates and steel foil provided by Sunplugged GmbH (\url{http://sunplugged.at/)}.
-}
 %
-Glass was used because of its availability and to measure transmission and reflectance 
-spectra. \gls{fto} and \gls{ito} were used in order to have a conducting substrate, which
-is needed to measure the conductivity of the applied layer and \td{for \gls{sem} micrographs. (don't follow?)}
+Glass was used because of its low price point and availability and to measure transmission and reflectance spectra. 
+\gls{fto} and \gls{ito} were used in order to have a conducting substrate. 
+%, which is needed to measure the conductivity of the applied layer and \td{for \gls{sem} micrographs. (don't follow?)}
+The conducting substrate allows for easy measurement of electric conductance in vertical direction.
+Furthermore, while taking a \gls{sem} micrograph the sample would quickly accumulate negative charge and repell further electrons without a conducting substrate.
 The glass slides and \gls{fto} were scored with a diamond scribe \ds{\td{(diamond scratcher/scraper)} }and broken with a running plier into pieces of dimensions \cm{2.5}\x\cm{2.5}.
 The steel foil was cut with a foil cutter into squares of the same dimensions. 
 %, a cutter knife (repeatedly), a paper cutter or a scissors (ordered by increasing curvature of resulting plates).
@@ -70,14 +68,16 @@ The second recipe - adopted from Hu~et~al.~\cite{Hu2016} - was based on \gls{zrp
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Aquatic Precursor Solutions}\label{sec:exp-sol-aq}
+\subsection{Aquatic Precursor Solutions}
+\label{sec:exp-sol-aq}
 \gls{zrpro} was added to acetylacetone (\gls{acac}) while stirring and in a separate vessel \gls{water} 
 (including any optional additives such as \gls{sds}, \gls{hcl}, \gls{h2so4} or \gls{naoh}) 
 was added to isopropyl aclohol (\gls{ipo}) and both were stirred for one hour. 
-These additives were added to influence pH and surface tension with the goal to \td{influence the resulting layer (in terms of what?)}. % \td{see Parvulescu2015}
-The \gls{water}-\gls{ipo} mixture was added to the \td{other solution (which? NOT CLEAR!)} and stirred over night. 
+These additives were added to influence pH and surface tension with the goal to influence the homogeneity of the resulting layer. %(in terms of what?)}. % \td{see Parvulescu2015}
+The \gls{water}-\gls{ipo} mixture was added to the \gls{zrpro}-gls{acac} solution and stirred over night. 
 The exact volumes can be taken from table~\ref{tab:rec1}.
-Unfortunately, this solution failed to produce \td{anything near homogeneous layers (??)}.
+%Unfortunately, this solution failed to produce \td{anything near homogeneous layers (??)}.
+Unfortunately, this solution failed to produce homogeneous layers, but instead only resulted in sparse patches of \gls{zro} on the substrate.
 Thus, an alternative solution was found.
 %\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).}
 \begin{table}[h]
@@ -103,19 +103,25 @@ Thus, an alternative solution was found.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Buthanolic solution}\label{sec:exp-sol-bu}
-\todo{what did you did you do percisely! It must be logical and should be followed}
+%\todo{what did you did you do percisely! It must be logical and should be followed}
 Five different concentrations of the buthanolic solutions were prepared.
+\ds{
 \td{Not all (which?)} chemicals mentioned by Hu~et~al.\cite{Hu2016} were available, so chemically similar 
 starting materials had to be chosen from the available inventory. 
+}
+The base recipe (\gls{1f}) was inspired by Hu~et~al.\cite{Hu2016}.
+\Gls{buoh}, \gls{zrpro}, \gls{acac} and \gls{ipo}/\gls{acoh} were used as solvent, precursor, chelating agent and stabilization agent, respectively.
 
-The \td{\gls{1f}} was closest to the recipe proposed by Hu~et~al.~\cite{Hu2016}. 
-The other four solutions (\gls{2f}, \gls{3f}, \gls{4f} and \gls{5f}) were similar 
+%The \td{\gls{1f}} was closest to the recipe proposed by Hu~et~al.~\cite{Hu2016}. 
+The other four buthanolic solutions (\gls{2f}, \gls{3f}, \gls{4f} and \gls{5f}) were similar 
 but with higher concentrations of \gls{zrpro} (see table \ref{tab:rec2})
 with the aim of producing thicker layers.
 %\td{p34}
-\td{Different} solvents (butane-1,2-diol, \gls{buoh} and Propan-1-ol) and chelating agents 
-(\gls{acac} and citric acid) were tested and later in the process - just before the 
-\td{particle swarm optimisation} started - the stabilization compound (\gls{acoh}) was changed to \gls{ipo}.
+Solvents (butane-1,2-diol, \gls{buoh} and Propan-1-ol) and chelating agents 
+(\gls{acac} and citric acid) were tested and later in the process - just before 
+starting the optimization of the process variables
+%the \td{particle swarm optimisation} started 
+- the stabilization compound (\gls{acoh}) was changed to \gls{ipo}.
 The most promising combination of solvent, chelating agent and stabilization reagent was 
 \gls{buoh}, \gls{acac} and \gls{ipo}, respectively, which was used for the final optimization.
 The main differences between the used recipe and the recipe mentioned in \cite{Hu2016} were 
@@ -132,7 +138,7 @@ the heat treatment between layers (\SI{200}{\celsius} \gls{vs} \SI{200}{\celsius
 %1-BuOH      2-MeO-EtOH  
 %RT          80-105
 %15-15-30    30-30-120
-%DB          spin coating
+%C          spin coating
 %200C        200/400C
 %400C        500C
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -168,7 +174,8 @@ doubled and the volume of \gls{buoh} was decreased by the increase of volume of 
 \label{sec:exp-db}
 All glass substrates were doctor bladed manually with a smooth stainless steel wire bar coater. 
 On two opposing edges adhesive tape was applied to create a valley in between. 
-After the layer was applied and dried, the tape was removed and the substrate heat treated \td{(at which T?)}.
+After the layer was applied and dried, the tape was removed and the substrate heat treated (see table~\ref{tab:heating}).
+%\td{(at which T?)}.
 Lower \gls{db} velocities resulted in less homogeneous layers.
 Thus, the \gls{db} velocity was not altered in the manual \gls{db} process. 
 One and two layers of adhesive tape were used to alter the depth of the valley. 
@@ -178,19 +185,16 @@ One and two layers of adhesive tape were used to alter the depth of the valley.
 Steel substrates were doctor bladed with an Erichsen Coatmaster 510 film applicator with a heatable plate.
 %The rest was doctor bladed on a glass plate, initially fixed with double sided adhesive tape and 
 %partially heated with a heat gun.
-The blade height was varied from \SI{0}{\milli\meter} to \SI{0.35}{\milli\meter} in 
-\SI{0.05}{\milli\meter} steps and \td{did not substantially alter the results. (what do you mean?)}
-For the rest of the experiments a blade height of \SI{0.2}{\milli\meter} was used.
+%The blade height was varied from \SI{0}{\milli\meter} to \SI{0.35}{\milli\meter} in \SI{0.05}{\milli\meter} steps and \td{did not substantially alter the results. (what do you mean?)}
+%For the rest of the experiments a blade height of \SI{0.2}{\milli\meter} was used.
+All experiments were performed with a blade height of \SI{0.2}{\milli\meter}.
 %
 %Eventually, a heatable vacuum plate was used. It 
-The heatable vacuum plate
-had equally spaced circular \SI{2.5}{\milli\meter} diameter patches of porous metal where 
-underpressure could be applied to keep the substrate in place. 
-Most of them were covered with tape to increase the suction intensity at the remaining ones \td{(see figure~\ref{fig:eric}).
-After} setting the temperature of the heating plate to 
-\SI{200}{\celsius}, the temperature of the vacuum plate (room temperature, \SI{40}{\celsius}, 
-\SI{50}{\celsius}, \SI{60}{\celsius}, \SI{70}{\celsius} or \SI{80}{\celsius}) and the 
-\gls{db} velocity (\mmps{10}, \mmps{12}, \mmps{14}, \mmps{16}, \mmps{18} or \mmps{20}), 
+The heatable vacuum plate had equally spaced circular \SI{2.5}{\milli\meter} diameter patches of porous metal where underpressure could be applied to keep the substrate in place. 
+Most of them were covered with tape (see figure~\ref{fig:eric}) to increase the suction intensity at the remaining ones.
+After setting the temperature of the heating plate to \SI{200}{\celsius}, the temperature of the vacuum plate 
+(room temperature, \SI{40}{\celsius}, \SI{50}{\celsius}, \SI{60}{\celsius}, \SI{70}{\celsius} or \SI{80}{\celsius}) 
+and the \gls{db} velocity (\mmps{10}, \mmps{12}, \mmps{14}, \mmps{16}, \mmps{18} or \mmps{20}), 
 the blade was put into its initial position, the sample was placed on the vacuum plate and the vacuum 
 was switched on. 
 During pre-optimization, lower \gls{db} velocities (\mmps{0.1}, \mmps{0.5}, 
@@ -200,7 +204,8 @@ applied with a 10 - \ul{1000} pipette and the blade moved over the sample distri
 liquid evenly. After evaporation of the solution, the vacuum was turned off, the 'blade 
 pusher' was put into initial position, the blade was removed and excess solution 
 was removed from the plate with a wipe. 
-The coated substrate was \td{transferred to the \SI{200}{\celsius} heating plate and rested on there for \minutes{5}. (why? what was the purpose?)}
+The coated substrate was dried for \minutes{5} on a \SI{200}{\celsius} heating plate.
+%\td{transferred to the \SI{200}{\celsius} heating plate and rested on there for \minutes{5}. (why? what was the purpose?)}
 This process of applying a \gls{zro} layer was repeated as many times as needed.
 \begin{figure}
 	\centering
@@ -219,7 +224,7 @@ This process of applying a \gls{zro} layer was repeated as many times as needed.
 		Temperature regulator (\underline{1}) on the left,
 		vacuum pump (\underline{2}) in the background and 
 		Erichsen Coatmaster 510 film applicator (\underline{3}) with heatable vacuum plate.
-        (b) Close up of the \gls{db} blade in position with blade height adjusted to \SI{0.2}{\micro\meter}.
+        (b) Close up of the \gls{db} blade in position with blade height adjusted to \SI{0.2}{\milli\meter}.
 		The majority of the suction areas is sealed with tape to increase the underpressure at the remaining ones.
 	}
 	\label{fig:eric}
@@ -230,10 +235,8 @@ This process of applying a \gls{zro} layer was repeated as many times as needed.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Calcination of Films}\label{sec:exp-calc}
 A LabTech EH45C heating plate and a Naberterm LB410 muffle furnace were used to calcinate the coated samples. 
-The heating plate could hold temperature for a certain amount of time, but heated with a 
-fixed rate of \td{circa (and how do you optimze ca?)} \oc{10}/\minutes{}.
-In order to achieve a lower overall heating rate several temperature ramps and plateaus 
-were alternated (see table~\ref{tab:labtech}). % and figure~\ref{fig:heat}).
+The heating plate could hold temperature for a certain amount of time, but heated with a fixed rate of \oc{10}/\minutes{}.
+In order to achieve a lower overall heating rate several temperature ramps and plateaus were alternated (see table~\ref{tab:labtech}). % and figure~\ref{fig:heat}).
 This heating procedure was called HP1.
 The HP1 procedure was optimized for the available hardware by a colleague working on the 
 project prior to the author.
@@ -303,7 +306,9 @@ All heating programs were held at the calcination temperature for one hour.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHARACTERISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Characterization}
-\td{All \gls{sem} micrographs were taken with a Zeiss Supra 40. (conditions? were samples sputtered etc...)}
+All characterization procedures were executed at room temperature.
+All \gls{sem} micrographs were taken with a Zeiss Supra 40 with  \SI{5}{\kilo\volt} acceleration voltages.
+%\td{5kV, raum temperature, vacuum???}
 \Gls{ft}\gls{uv}/\gls{vis}/\gls{nir} transmittance and reflectance spectra (at \SI{20}{\degree} incident 
 angle) were recorded with a Bruker Vertex 70 
 %transmission [\%] and reflection?  which angle? 
@@ -314,7 +319,10 @@ Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter}--\SI{58
 (\SI{500}{\nano\meter}--\SI{1.2}{\micro\meter}). For transmittance the light
 entered the sample from the side with the layer. The \gls{uv} and \gls{vis}/\gls{nir} spectra were merged 
 in Opus software. % included in the spectrometer. 
-\td{\Gls{xrd} diffractograms were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer. (where are the conditions?)}
+%\td{
+\Gls{xrd} diffractograms were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer.
+The diffractograms were measured for \SI{2}{\minute} in reflection mode with \ch{Cu}-$K_{\alpha}$ radiation ($\lambda$=\SI{1.541874}{\angstrom}).
+%. (where are the conditions?)}
 All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 
 \begin{figure}[htb]
@@ -355,7 +363,7 @@ All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and co
 	\label{fig:micro}
 	(a) Sputtered silver contacts on sample with gilded wolfram contact probe touching one of the contacts. 
 	(b) Edge of a sample with the probe touching silver paste on top of a sanded patch.
-	(c) From the source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.\td{(what is XXX circuit?)}}
+	(c) From the voltage source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.\td{(what is XXX circuit?)}}
 \end{figure}
 
 The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
@@ -372,40 +380,20 @@ layer with
 sand paper on two opposing edges of a sample and then by applying silver paste.
 See figure~\ref{fig:circuit} for a sketch of the connectivity.
 
-\iffalse
-\begin{figure}[hbt]
-    \centering
-    \begin{circuitikz} \draw
-        (0,0) to[european voltage source] (0,2)
-        to[ammeter] (2,2) 
-        to[generic,l=W] (4,2) 
-        to[generic,l=Au] (6,2) 
-        to[generic,l=Al] (8,2)
-        -- (8,2)
-        to[generic,l=ZrO$_2$] (8,0)
-        -- (8,0)
-        to[generic,l=steel] (6,0)
-        to[generic,l=Ag] (4,0)
-        to[generic,l=Au] (2,0) 
-        to[generic,l=W] (0,0) 
-            ;
-    \end{circuitikz}
-    \caption{Sketch of circuit, from the source clockwise: varibale voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.}
-    \label{fig:circuit}
-\end{figure}
-\fi
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PREOPTIMISATION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Pre-optimization}\label{sec:exp-preopt}
-\td{preopt of what? recipe?}
+\section{Pre-optimization of Coating Procedure}
+\label{sec:exp-preopt}
+%\td{preopt of what? recipe?}
 %\td{the choice of grenzen for \gls{doe} was done by biotic reinforcement learning (i.e. my brain)}
 %\td{Screening}
-%The main part of the screening pre-optimization samples were optimized via biotic reinforcement learning (i.e. my brain). 
-The main part of all samples (200 out of 244) were pre-optimization samples, 
-from which the bulk were screening experiments optimized via biotic reinforcement learning 
-(i.e.\ my brain) in order to obtain reasonable constraints for computerized pre-optimization. \td{(xxx but using a completely untested recipe!)} 
+%244 - 93 aquatic - 103 testing - 191 buthanol - 206 preopt - 244 emma
+% 93 aq - 20 adapting Hu2016 - 88 testing process vars - 15 pre-opt - 38 emma (3 failed samples)
+244 samples were produced: 93 samples with the aquatic recipes (see section \ref{sec:exp-sol-aq}), 20 samples for adapting the recipe from \cite{Hu2016}, 88 samples for testing coating process variables, 15 samples in pre-optimisation to find fitting constraints for the final optimization (see section \ref{sec:ss}). 
+
+%The first 200 recipes were optimized via biotic refinforcement learning (i.e.\ my brain) in order to obtain reasonable constraints for computerized pre-optimization. \td{(xxx but using a completely untested recipe!)} 
+%The main part of all samples (200 out of 244) were pre-optimization samples,  from which the bulk were screening experiments optimized via biotic reinforcement learning  (i.e.\ my brain) in order to obtain reasonable constraints for computerized pre-optimization. \td{(xxx but using a completely untested recipe!)} 
 %Initially, glass plates were doctor bladed manually with aquatic solution and calcinated 
 %via HP1. 
 %Glass was used because of its availability and in order to be able to make IR 
@@ -418,24 +406,22 @@ from which the bulk were screening experiments optimized via biotic reinforcemen
 %this means if the produced layer is thick and homogeneous enough, it's difficult to see in sem
 %Different additives were included in the recipe (see table \ref{tab:rec1}) and the resistance was checked with a multimeter. 
 %\todo{different additives, heating programs (NT1-NT5 and HP1), blade distances (distance between blade and substrate) and layer counts were tried}
-Composition of the \td{aquatic solution (I thought this did not work?)}, heating program, blade distance (distance between 
-blade and substrate) and layer count were varied but no homogeneous layers resulted. 
-Thus, 
-the buthanolic recipe was introduced, which gave rise to homogeneous films.
-\td{After the blade moved over the substrate the remaining liquid needed about a minute to evaporate at room temperature. (2x mentioned this before!)}
+%Composition of the \td{aquatic solution (I thought this did not work?)}, heating program, blade distance (distance between blade and substrate) and layer count were varied but no homogeneous layers resulted. 
+%
+%The buthanolic recipe was introduced, which gave rise to homogeneous films.
+%\td{After the blade moved over the substrate the remaining liquid needed about a minute to evaporate at room temperature. (2x mentioned this before!)}
 %\td{
-The then current procedure resulted in clear and continuous films, but was plagued from 
-inhomogeneities due to drying stains. 
-The drying stains could be circumvented by using a heat gun, but the results were not 
-reproducible. 
-The glass plate of the film applicator was therefore exchanged with a metal plate which
-allowed to hold the sample in place through underpressure and simultaneously heat it to a certain 
-temperature. The bounds of the process variables were then explored in a preliminary study 
-using the Plackett-Burman\cite{Plackett1946} design implemented in the \texttt{python3} 
-library \texttt{pyDOE}. With 
+%The then current procedure resulted in clear and continuous films, but was plagued from inhomogeneities due to drying stains. 
+%The drying stains could be circumvented by using a heat gun, but the results were not reproducible. 
+The glass plate of the film applicator was exchanged with a metal plate.
+This allowed to hold the sample in place through underpressure and control temperature. 
+The bounds of the process variables were then explored in a preliminary study 
+using the Plackett-Burman\cite{Plackett1946} design implemented in the \td{\texttt{python3}}
+library texttt{pyDOE} \td{(Version 0.3.8)}; 
+with 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
-relative concentration of Zr $c_{zr}$, \td{number of layers $\lambda$ (layers of what?)}, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{DB}$[\mm{}/\s{}] and \gls{db} temperature $T_{DB}$[\oc{}], respectively.
+relative concentration of Zr $c_{zr}$, number of coating layers $\lambda$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{C}$[\mm{}/\s{}] and \gls{db} temperature $T_{C}$[\oc{}], respectively.
 After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see table \ref{tab:pre-opt1}).
 \begin{table}[hbt]
 	\centering
@@ -449,7 +435,7 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 			\hline
 			\hline
 	%		&80-150\oc{} [\oc{}/\minutes{}]	&150-200\oc{} [\oc{}/\minutes{}]	&200\oc{}-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] &t$_{\textrm{Cal}}$ [\minutes{}]	\\
-			$c_{zr}$	&$\lambda$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+			$c_{zr}$	&$\lambda$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
 			\hline
 	1	&10	&5	&20	&120	&400	\\
 	1	&4	&0.1	&20	&120	&500	\\
@@ -469,8 +455,8 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 		\begin{tabular}{cccccc}
 	%conc	&layers	&vDOC	&TDOC	&vCal	&Tcal		\\
 			\hline\hline
-			$c_{zr}$	&$\lambda$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
-	%conc	&layers	&$v_{\textrm{DB}}$	&$T_{\textrm{DB}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
+			$c_{zr}$	&$\lambda$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
+	%conc	&layers	&$v_{\textrm{C}}$	&$T_{\textrm{C}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
 			\hline
 	2	&8	&0.5	&40	&360	&470	\\
 	2	&6	&2	&40	&360	&430	\\
@@ -487,8 +473,8 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 	\end{subtable}
 \end{table}
 
-%$T_{DB}$[\oc{}]
-%$v_{DB}$[\mm{}/\s{}]
+%$T_{C}$[\oc{}]
+%$v_{C}$[\mm{}/\s{}]
 %$T_{cal}$[\oc{}]
 %$v_{cal}$[\oc{}/\h{}]
 %Especially the doctor blading velocity.
@@ -500,7 +486,7 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 %With this new buthanolic recipe and heatable plate the limits of the optimization problem 
 %were explored in a preliminary study using the Plackett-Burman \cite{Plackett1946} design 
 %implemented in the \texttt{python3} library \texttt{pyDOE}.
-%For the preliminary study a DB machine and NT were used and the steel. 
+%For the preliminary study a C machine and NT were used and the steel. 
 \ds{In the preliminary study only steel was used as substrate.}
 %The Plackett-Burman \cite{Plackett1946} design implemented in the python3 library \texttt{pyDOE} was used to
 %get an overview of reasonable boundaries.
@@ -510,18 +496,19 @@ Some additional hand picked experiments (see table \ref{tab:pre-opt2}) were intr
 the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Shortly before the \gls{pso} the stabilization agent was changed from \todo{ \gls{acoh} to \gls{ipo} (but why?)} because of much better \td{solution stability. (how did yo test this??)}
+The stabilization agent was changed from \td{\gls{acoh} to \gls{ipo} 
+shortly before the \gls{pso}
+(but why?)} because of much better \td{solution stability. (how did you test this?? see section \ref{sec:res-mat})}
 The - up to this moment - best process was chosen to be tested with 
-\ml{1} \gls{acoh}, \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} and \ml{1} \gls{ipo}.
+\ml{1} \gls{acoh} (sample no.~199), \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} (sample no.~201) and \ml{1} \gls{ipo} (sample no.~192).
 %\td{As the sample showed the best all ex were proceeded with ipo as stabilization agent. }
-The sample produced with \gls{ipo} as stabilization agent 
-showed \td{comparable passivization results (but where are they?)} and better stability of the solution. 
-Therefore \gls{ipo} was used  as stabilzier in further experiments.
+The sample produced with \gls{ipo} as stabilization agent showed comparable passivization results (see appendix \ref{sec:app-pre-emma}) and better stability of the solution. 
+Therefore, \gls{ipo} was used  as stabilzier in further experiments.
 %\td{After the boundaries of the solution were fixed }
 After the base recipe for the solution has been decided
 the process variables to produce an insulating layer was examined. 
 %There were many variables which had to be taken into account. 
-%\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, DB velocity and DB temperature as input variables.}
+%\td{plachett-burman design of experiment with conc, layers, calcination temperature, heating rate, C velocity and C temperature as input variables.}
 See table~\ref{tab:input} for the input space spanned during the optimization.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \iffalse
@@ -531,7 +518,7 @@ See table~\ref{tab:input} for the input space spanned during the optimization.
     \label{tab:space}
     \begin{tabular}{cccccc}
         \hline\hline
-		$c_{zr}$	&$\lambda$	&$v_{DB}$	&$T_{DB}$	&$v_{cal}$	&$T_{cal}$		\\
+		$c_{zr}$	&$\lambda$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
 %        concentration   &layers &\gls{db} velocity  &\gls{db} temperature   &heating rate   &calcination temperature    \\
         \hline
         2   &4  &10 &40 &120    &300    \\

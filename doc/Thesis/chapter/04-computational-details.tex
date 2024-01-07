@@ -21,7 +21,7 @@
 %    \item 
 %\end{itemize}
 %\td{describe problem and solution found}
-\td{Multiple \gls{iv} curves were measured (where are they?)} for every sample.
+Multiple \gls{iv} curves were measured (see figure \ref{fig:iv}) for every sample.
 The main difficulty faced in processing the data was to present the measurements obtained 
 from a sample in one representative number. 
 %
@@ -78,9 +78,9 @@ The density is 1 if every measurement has a conductance larger than $10^{-5} \, 
 %	G_2 =  \sum_i^N \frac{log(g_i)}{N}
 %%\end{equation}
 
-\section{Sample Selection}
+\section{Evolutionary Model-based Multiresponse Approach}
 \label{sec:ss}
-\todo{for what?}
+%\todo{for what?}
 An evolutionary approach was chosen, namely a multi-objective 
 \gls{pso} algorithm called \gls{emma}\cite{villanova2010function,Kennedy1995,Breiman1997,Carta2011}.
 %
@@ -95,7 +95,7 @@ Next, the output variables (dependant variables), their weights in the objective
 	\centering
 	\begin{tabular}{cc cc cc}
 		\hline\hline
-        $c_{zr}$ [\SI{22}{\milli\mol\per\liter}]	&$\lambda$	&$T_{DB}$[\oc{}]	&$v_{DB}$[\mm{}/\s{}]	&$T_{cal}$[\oc{}]	&$v_{cal}$[\oc{}/\h{}]	\\
+        $c_{zr}$ [\SI{22}{\milli\mol\per\liter}]	&$\lambda$	&$T_{C}$[\oc{}]	&$v_{C}$[\mm{}/\s{}]	&$T_{cal}$[\oc{}]	&$v_{cal}$[\oc{}/\h{}]	\\
 		\hline
 		2				&4		&40					&10				&300				&120	\\
 		3				&6		&50					&12				&400				&360	\\
@@ -109,13 +109,14 @@ Next, the output variables (dependant variables), their weights in the objective
 	\label{tab:input}
 \end{table}
 
-The \textit{optimizands} where chosen to be \td{$\gamma$, $\rho$, $\lambda$ and $v_{cal}$, (here it would help me to remind the reader what the symbols are!)}
+The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $\lambda$ and $v_{cal}$, 
+(i.e. conducticity, pinhole density, coating layer count and heating rate)
 where $\gamma$, $\rho$ and $\lambda$ are to be minimized and $v_{cal}$ to be maximized.
 %which all should be minimized except for $v_{cal}$.
 The next step is to generate an initial population (ensemble of experiments), which is chosen randomly from the population space. 
-The \td{experiments} are executed, \td{measured (unclear!)} and evaluated according to section 
+The samples are produced, the \gls{iv} curves are measured and measurements evaluated according to section 
 \ref{sec:exp} and the responses conducticity $\gamma$ (see eq. \ref{eq:gamma}), pinhole density $\rho_s$ (see eq. \ref{eq:rho}), 
-\todo{$\lambda$ (numbers of layers) (tstill not clear! what is meant?!)} and $v_{cal}$ (heating rate of calcination process in 
+$\lambda$ (numbers of coating layers) and $v_{cal}$ (heating rate of calcination process in 
 \oc{}/\minutes{}) are supplied to the program. 
 The program, then, uses this data to estimate a response for each output variable 
 for the entire population space
@@ -124,7 +125,9 @@ for the entire population space
 The current population - each of the particles independently - 
 are given a random velocity vector associated to them, which is directed to the best predicted sample. 
 %moves towards the optimum solution.
-The population for the next time step is generated and the experiments are again \td{executed, measured and evaluated. (unclear!)}
+The population for the next time step is generated and 
+again the samples are produced, the \gls{iv} curves are measured and measurements evaluated.
+%the experiments are again \td{executed, measured and evaluated. (unclear!)}
 Each time step thus includes experiment identification, solution preparation, coating deposition and layer analysis. 
 
 \ds{system behavior are discussed in Modeling the Results.
@@ -146,21 +149,21 @@ A grid search over a set of hyperparameters was executed.
 %https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py
 %https://scikit-learn.org/stable/modules/svm.html#svc
 % KRR 
-The hyperparameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$ and $\alpha$.
+The hyperparameters which were examined in \gls{krr} were kernel, $\gamma_{ml}$  and $\alpha$ (regularization parameter).
 The kernel took the form of \gls{rbf}, sigmoid or polynomial with degree 1--3.
 The parameters $\alpha$ and $\gamma_{ml}$ (subscript to distinguish from \textit{optimizand}) took the values 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5 and 10.
-%and 0.01, 0.05, 0.1, 0.5, 1.0, 5, 10, respectively.
 Note that $\gamma_{ml}$ is used differently in each kernel. 
+
 % SVM
 The kernels for \gls{svm} were the same as for \gls{krr}. 
-Further hyper parameters were \td{$C$, $\varepsilon$ and $\gamma_{ml}$. 
-$C$ and $\varepsilon$ (define again, forgotten until now) } took the values 0.05--1 with step size 0.05 for \gls{svm} and \gls{krr}.
+\Gls{svm} uses $C$ instead of $\alpha$ as regularization parameter) and  $\varepsilon$ as \gls{svm} tube size parameter.
+$C$ and $\varepsilon$ took the values 0.05--1 with step size 0.05. 
 \Gls{svm} additionally used the \texttt{scale} for $\gamma_{ml}$.
-%\td{and was the same as for \gls{krr} plus \texttt{scale}.} %$\gamma_{ml}$ 0.01, 0.05, 0.1, 0.5, 1, 5, 10, and \texttt{scale}. 
 \texttt{scale} equals to $\frac{1}{d \cdot \sigma(\mathbf{X})}$ with $d$ being the number of features 
 and $\sigma(\mathbf{X})$ the variance of the input variables. 
+
 % GRID SEARCH 
-The input variables ($c_{zr}$, $\lambda$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$) 
+The input variables ($c_{zr}$, $\lambda$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$) 
 of the \gls{emma} data set were scaled with the routine \texttt{sklearn.preprocessing.StandardScaler().fit\_transform()}. %\td{scaled before each calculation.}
 % https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html#sklearn.kernel_ridge.KernelRidge.score
 % https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.score

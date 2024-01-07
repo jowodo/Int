@@ -12,4 +12,7 @@
 [ ] check if all pin hole changed to pinhole
 [ ] check if all cross validaiton changed to cross-validation
 [ ] check UVVis to UV/Vis
+[ ] check pdflatex output
+[ ] check if all layers are change to coating layers
+[ ] check if db/coating passt v_{DB}
 

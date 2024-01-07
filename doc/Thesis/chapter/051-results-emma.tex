@@ -7,23 +7,23 @@
 A total of 30 recipes (see appendix \ref{sec:app-emma}) was investigated in 
 five iterations ($t = 0, \dots, 4$) of the algorithm. 
 Where the first generation encompassed 10 particles and each subsequent generation encompassed 5 particles. 
-The \td{best (what is "best"? How do you measure that?)} recipes for each generation can be seen in table \ref{tab:emma-Gb}. 
+The most insulating recipes for each generation can be seen in table \ref{tab:emma-Gb}. 
 The experiments for generation 5 where not executed but 
 predictions were already made
 with the information from the previous generations. 
 %%% BEST PREDICTED RECIPE
-The sample predicted as best by the algorithm is experiment number 13 with 
-lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\lambda$. 
+The sample predicted as optimum by the algorithm is experiment number 13 with 
+lowest possible $c_{zr}$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$ and second highest possibel $\lambda$ (see table \ref{tab:input}). 
 %lowest solution concentration, second highest layer count, lowest \gls{db} velocity and temperature, 
 %and lowest calcination heating rate and temperature. 
 
 \begin{table}[htb]
 	\centering
-	\caption{Global best per generation with experiment numbers and experiment conditions}% \td{include units?}}
+	\caption{Global optimum per generation with experiment numbers and experiment conditions}% \td{include units?}}
 	\label{tab:emma-Gb}
 	\begin{tabular}{ccccccccc}
         \hline\hline
-		generation& measurements &enr &$c_{zr}$ &$\lambda$ &$v_{DB}$ &$T_{DB}$ &$v_{cal}$ &$T_{cal}$\\
+		generation& measurements &enr &$c_{zr}$ &$\lambda$ &$v_{C}$ &$T_{C}$ &$v_{cal}$ &$T_{cal}$\\
         \hline
 	1  &10	&1       &2    &4   &10   &40  &120  &300\\
 	2  &15	&5       &2    &6   &10   &40  &120  &300\\
@@ -35,7 +35,7 @@ lowest $c_{zr}$, $v_{DB}$, $T_{DB}$, $v_{cal}$, $T_{cal}$ and second highest $\l
 \end{table}
 
 %%% OVER TIME 
-The only clear trend from table \ref{tab:emma-Gb} is the \td{layer count (again not yet clear)}, which rises with \td{the generations (which?)}. 
+The only clear trend from table \ref{tab:emma-Gb} is the count of \gls{zro} layers count, which rises with the generations of the \gls{emma} algorithm.
 The remaining input variables remained more or less the same except for the 3rd generation. 
 %\td{why?}
 %
@@ -63,7 +63,7 @@ from predicted values - works as expected.
     \end{tabular}
 \end{table}
 %
-Contrarily, the predicted conducticity $\hat{\gamma}$ for each generation's \td{best (best in what?)}
+Contrarily, the predicted conducticity $\hat{\gamma}$ for each generation's optimum
 (predicted by the very generation's \gls{rf}) does increase with each iteration 
 (see diagonal in table~\ref{tab:emma-pred-G}). 
 This indicates an underestimation of $\hat\gamma$ at the beginning and a correction with time. 
@@ -72,9 +72,8 @@ The underestimation probably stems from a lucky selection of initial experiments
 Indeed, the samples with the lowest \textit{optimizands} are among the initial generation (see figure \ref{fig:emma-G-gen}, figure \ref{fig:emma-phd-gen} and appendix \ref{sec:app-emma}).
 
 %GENERATIONS
-\td{How did you determine the pinhole densisty}
 In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimizands}, 
-conducticity $\gamma$ and pin hole density $\rho$, of each particle at each generation.
+conducticity $\gamma$ and pin hole density $\rho$ (see section \ref{sec:eval}), of each particle at each generation.
 The \td{green} points at generation number 0 indicate particles which were not included to be propagated. 
 %Each violet line indicates a particle, the blue line depicts the average of all particles and the yellow line depicts the average of all particles which were propagated. 
 \td{Violet} lines connect individual particles in time. 
@@ -145,13 +144,13 @@ This stems from the fact that the algorithm chooses a single minimal set of basi
 \begin{align}
 %
 %    \label{eq:emma-phd1}
-%    \hat{\rho}_1 &= -0.52 + 2.3\cdot 10^{-5} \cdot  T_{DB}\cdot T_{cal} + 0.00080 \cdot h(6-\lambda)\cdot T_{cal}\\
+%    \hat{\rho}_1 &= -0.52 + 2.3\cdot 10^{-5} \cdot  T_{C}\cdot T_{cal} + 0.00080 \cdot h(6-\lambda)\cdot T_{cal}\\
 %    \label{eq:emma-G1}
-%    \hat{\gamma}_1 &= -26  + 0.0025 \cdot T_{DB}\cdot T{cal}  +  0.056 \cdot  h(6-\lambda)\cdot T_{cal} \\
+%    \hat{\gamma}_1 &= -26  + 0.0025 \cdot T_{C}\cdot T{cal}  +  0.056 \cdot  h(6-\lambda)\cdot T_{cal} \\
 %    \label{eq:emma-layr1}
-%    \hat{\lambda}_1 &= 7.1 + 8.1\cdot 10^{-5} \cdot T_{DB}\cdot T_{cal} -  0.0056 \cdot  h(6-\lambda)\cdot T_{cal}\\
+%    \hat{\lambda}_1 &= 7.1 + 8.1\cdot 10^{-5} \cdot T_{C}\cdot T_{cal} -  0.0056 \cdot  h(6-\lambda)\cdot T_{cal}\\
 %    \label{eq:emma-vcal1}
-%    \hat{v}_{cal,1} &= 19 - 0.00025 \cdot  T_{DB}\cdot T_{cal} - 0.0055 \cdot  h(6-\lambda)\cdot T_{cal}\\
+%    \hat{v}_{cal,1} &= 19 - 0.00025 \cdot  T_{C}\cdot T_{cal} - 0.0055 \cdot  h(6-\lambda)\cdot T_{cal}\\
 %
 %    \label{eq:emma-phd2}
 %    \hat{\rho}_2 &= 0.23\\
@@ -172,17 +171,17 @@ This stems from the fact that the algorithm chooses a single minimal set of basi
     \hat{v}_{cal,3} &= -5.2\cdot 10^{-15}  +   0.016 \cdot  v_{cal}  + 1.3\cdot 10^{-15} \cdot  h(6-\lambda)  + 3.9\cdot 10^{-21} \cdot  v_{cal}\cdot T_{cal} \\
 %
     \label{eq:emma-phd4}
-    \hat{\rho}_4 &=  -0.87 + 0.0047 \cdot  T_{cal} - 0.00036 \cdot  \lambda\cdot T_{cal}  +  0.0024 \cdot  h(\lambda-6)\cdot T_{DB} \\
+    \hat{\rho}_4 &=  -0.87 + 0.0047 \cdot  T_{cal} - 0.00036 \cdot  \lambda\cdot T_{cal}  +  0.0024 \cdot  h(\lambda-6)\cdot T_{C} \\
     \label{eq:emma-G4}
-    \hat{\gamma}_4 &=     -19 + 0.28 \cdot  T_{cal}  - 0.022 \cdot  \lambda\cdot T_{cal}  +  0.16 \cdot  h(\lambda-6)\cdot T_{DB} \\
+    \hat{\gamma}_4 &=     -19 + 0.28 \cdot  T_{cal}  - 0.022 \cdot  \lambda\cdot T_{cal}  +  0.16 \cdot  h(\lambda-6)\cdot T_{C} \\
     \label{eq:emma-layr4}
-    \hat{\lambda}_4 &=  6.8 - 0.014 \cdot  T_{cal}  + 0.0018 \cdot  \lambda\cdot T_{cal}  + 0.0060 \cdot  h(\lambda-6)\cdot T_{DB} \\
+    \hat{\lambda}_4 &=  6.8 - 0.014 \cdot  T_{cal}  + 0.0018 \cdot  \lambda\cdot T_{cal}  + 0.0060 \cdot  h(\lambda-6)\cdot T_{C} \\
     \label{eq:emma-vcal4}
-    \hat{v}_{cal,4} &=  29 - 0.052 \cdot  T_{cal}  + 0.0011 \cdot  \lambda\cdot T_{cal}  -  0.011 \cdot  h(\lambda-6)\cdot T_{DB} 
+    \hat{v}_{cal,4} &=  29 - 0.052 \cdot  T_{cal}  + 0.0011 \cdot  \lambda\cdot T_{cal}  -  0.011 \cdot  h(\lambda-6)\cdot T_{C} 
 \end{align}
 
 The coefficients in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) have the same signs and differ by a factor of roughly 100.
-\td{This (what is "this?)} fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $\lambda$ is counter intuitive 
+This difference in magnitude fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $\lambda$ is counter intuitive 
 %as one would expect more layers to be more insulating and thus result in lower conductance and a lower probability of holes going all the way trough the \gls{zro} layers. %pin hole density. 
 The coefficients of the $v_{cal} \cdot T_{cal}$ interaction in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) 
 seem low, but the interaction has -- considering the minimum value of the interaction of $300 \cdot 120 =$  \num{36000} -- several orders of magnitude higher influence on $\rho_3$ and $\gamma_3$ than the $h(6-\lambda)$ term. 
@@ -204,9 +203,10 @@ The influence of $T_{cal}$ on the measures of conductance ($\hat\rho$ and $\hat\
 It was expected that 
 calcination temperatures under \oc{400} do not suffice to produce compact layers (corresponding to $+h(400-T_{cal})$)
 and 
-that therefore the resulting layer does not insulate well if $T_{cal}$ is low. 
+that therefore the resulting layer does not insulate well if $T_{cal}$ is low (under \oc{400}). 
+The oppisite is the case, though. % (see figures \ref{fig:g-tcal} and \ref{fig:phd-tcal}).
 %This would correspond to $+h(400-T_{cal})$
-The \td{original recipe by Hu et al.\cite{Hu2016} used \oc{500} (but to produce Al2O3, so not a surprise? or?)} and thus even \oc{400} are low.
+%The \td{original recipe by Hu et al.\cite{Hu2016} used \oc{500} (but to produce Al2O3, so not a surprise? or?)} and thus even \oc{400} are low.
 \textit{Optimizands} $\hat\rho$ and $\hat{\gamma}$ increase with higher calcination temperature 
 according to equations~(\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) (see also figures~\ref{fig:g-tcal} and \ref{fig:phd-tcal}), 
 ergo the resistance decreases and the conductance increases with increasing calcination temperature contrary to expectations.
@@ -218,14 +218,14 @@ The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in si
 but has the extra factor $\lambda$ (range: 4--12), resulting in the products of coefficients and process variables being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$ terms.
 It can be noted that the coefficient of the $\lambda\cdot T_{cal}$ interaction always has contrary sign to $T_{cal}$ coefficient in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}). 
 This negative correlation could hint a compenzation of the overestimated influence of $T_{cal}$ on the \textit{optimizands}.
-Similarly, signs of coefficients of $\lambda \cdot T_{cal}$ and $h(\lambda -6) \cdot T_{DB}$ correlate negatively in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) and the product of coefficients and input variables are again similar in order of magnitude. 
+Similarly, signs of coefficients of $\lambda \cdot T_{cal}$ and $h(\lambda -6) \cdot T_{C}$ correlate negatively in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) and the product of coefficients and input variables are again similar in order of magnitude. 
 %It should be doubted, though, that the $layr$ only appears as interaction term 
-%together with $T_{cal}$ and $T_{DB}$, which seems rather than an artefact. 
+%together with $T_{cal}$ and $T_{C}$, which seems rather than an artefact. 
 %
 %It seems rather an artefact of noise that the $\lambda$ only appears as interaction 
-%with $T_{cal}$ and $T_{DB}$. 
-%From the analysis of coefficients it can be said, that the most important factor according to EMMA is $T_{cal}$, followed by $\lambda$, then $T_{DB}$ and then the rest of the independent variables. 
-The process variables $T_{cal}$ and $\lambda$ appear as \gls{bf}s in generation 3 and 4, whereas $v_{cal}$ only appears in generation 3's \gls{rf}s and $T_{DB}$ only in generation 4's \gls{rf}s.
+%with $T_{cal}$ and $T_{C}$. 
+%From the analysis of coefficients it can be said, that the most important factor according to EMMA is $T_{cal}$, followed by $\lambda$, then $T_{C}$ and then the rest of the independent variables. 
+The process variables $T_{cal}$ and $\lambda$ appear as \gls{bf}s in generation 3 and 4, whereas $v_{cal}$ only appears in generation 3's \gls{rf}s and $T_{C}$ only in generation 4's \gls{rf}s.
 This can hint the importance of these variables in the process. 
 %I highly doubt though that the specific interactions proposed by EMMA are indeed meaningful. 
 
