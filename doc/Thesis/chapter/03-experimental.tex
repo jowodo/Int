@@ -1,9 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%% EXPERIMENTAL %%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\todo{materials section and sources (incl. purities is missing!) }
+%\todo{materials section and sources (incl. purities is missing!) }
 In this section the used chemicals, substrates, experimental procedures and any used lab equipment are described. 
-\td{All chemicals used in this work are of reagent-grade purity and without further purification.}
+%\td{
+All chemicals used in this work are of reagent-grade purity and without further purification. 
+%}
 %\td{Also, the long, exhaustive path to the base solution is described}
 %\td{The experiments can be split into three sections: }
 First, the base recipe and the base process settings were explored. 
@@ -35,8 +37,8 @@ All substrates were cleaned in three steps before usage:
 	\item \minutes{15} in \gls{water} in a sonic bath
 	\item \minutes{15} in \gls{ipo} in a sonic bath 
 \end{enumerate}
-\td{is that the usual procedure for steel?}
-After the last cleaning step, the samples were blown dry with dry \gls{n2} gas and kept in a clean plastic container until the coating step.
+%\td{is that the usual procedure for steel?}
+After the last cleaning step, the samples were blown dry with dry \gls{n2} gas and kept in a clean plastic container until the coating step (cf. \cite{YAMASHITA2018,Kohli2010}).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -124,15 +126,16 @@ starting the optimization of the process variables
 - the stabilization compound (\gls{acoh}) was changed to \gls{ipo}.
 The most promising combination of solvent, chelating agent and stabilization reagent was 
 \gls{buoh}, \gls{acac} and \gls{ipo}, respectively, which was used for the final optimization.
+\ds{
 The main differences between the used recipe and the recipe mentioned in \cite{Hu2016} were 
-\td{precursor (transition metal complex \gls{zrpro}	\gls{vs} post-transition metal 
-complex aluminium isopropoxide \ch{Al(PrO)3}), solvent (\gls{buoh} \gls{vs} 2-ethoxyethanol \ch{EtOEtOH}), reaction temperature 
+\td{precursor (transition metal complex \gls{zrpro}	\gls{vs} post-transition metal complex aluminium isopropoxide \ch{Al(PrO)3}), solvent (\gls{buoh} \gls{vs} 2-ethoxyethanol \ch{EtOEtOH}), reaction temperature 
 (room temperature \gls{vs} \SI{105}{\celsius}), stirring time (15/15/\SI{30}{\minute}
 \gls{vs} 30/30/\SI{120}{\minute}), application process (doctor blading \gls{vs} spin coating), 
 the heat treatment between layers (\SI{200}{\celsius} \gls{vs} \SI{200}{\celsius} and then \SI{400}
 {\celsius}) and the calcination temperature (\SI{400}{\celsius} \gls{vs}
 \SI{500}{\celsius}).
 ( so everything is different!! now I'm confused? you dream up a recipe and optimize that? not how I would do that! also: quite a difference between alpro3 and zrpro4)}
+}
 %me          hu
 %Zr(OPr)4    Al(iPrO)3   
 %1-BuOH      2-MeO-EtOH  
@@ -170,7 +173,7 @@ doubled and the volume of \gls{buoh} was decreased by the increase of volume of 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Doctor blading}
+\section{Blade Coating}
 \label{sec:exp-db}
 All glass substrates were doctor bladed manually with a smooth stainless steel wire bar coater. 
 On two opposing edges adhesive tape was applied to create a valley in between. 
@@ -363,7 +366,7 @@ All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and co
 	\label{fig:micro}
 	(a) Sputtered silver contacts on sample with gilded wolfram contact probe touching one of the contacts. 
 	(b) Edge of a sample with the probe touching silver paste on top of a sanded patch.
-	(c) From the voltage source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe.\td{(what is XXX circuit?)}}
+	(c) From the voltage source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe. }%\td{(what is XXX circuit?)}}
 \end{figure}
 
 The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
@@ -416,13 +419,16 @@ See figure~\ref{fig:circuit} for a sketch of the connectivity.
 The glass plate of the film applicator was exchanged with a metal plate.
 This allowed to hold the sample in place through underpressure and control temperature. 
 The bounds of the process variables were then explored in a preliminary study 
-using the Plackett-Burman\cite{Plackett1946} design implemented in the \td{\texttt{python3}}
-library texttt{pyDOE} \td{(Version 0.3.8)}; 
+using the Plackett-Burman\cite{Plackett1946} design implemented in the \texttt{python3} (version 3.9)
+library \texttt{pyDOE} (version 0.3.8); 
 with 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
 relative concentration of Zr $c_{zr}$, number of coating layers $\lambda$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{C}$[\mm{}/\s{}] and \gls{db} temperature $T_{C}$[\oc{}], respectively.
-After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see table \ref{tab:pre-opt1}).
+After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see appendix \ref{sec:app-pre-emma}).
+%
+\ds{
+table \ref{tab:pre-opt1}).
 \begin{table}[hbt]
 	\centering
 	\caption{Pre-optimization experiments \td{(still smaller?? why? what am I supposed to learn?)} }
@@ -472,6 +478,7 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 		\end{tabular}
 	\end{subtable}
 \end{table}
+}
 
 %$T_{C}$[\oc{}]
 %$v_{C}$[\mm{}/\s{}]
@@ -492,13 +499,13 @@ After testing the first samples, the lower limit for \gls{db} velocities was alt
 %get an overview of reasonable boundaries.
 %Latin squares were used to chose which experiments should be ausgefuehrt to get an ueberblick of the optimization room.
 %See Code/Input_DOE/make_*exps.py and Code/Input_DOE/mail_theo
-Some additional hand picked experiments (see table \ref{tab:pre-opt2}) were introduced to further narrow down the limits of 
+Some additional hand picked experiments (see appendix~\ref{sec:app-pre-emma}) were introduced to further narrow down the limits of 
 the optimization as every reduction in variables or levels meant a faster convergence.
 %ooooh 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-The stabilization agent was changed from \td{\gls{acoh} to \gls{ipo} 
+The stabilization agent was changed from \gls{acoh} to \gls{ipo} 
 shortly before the \gls{pso}
-(but why?)} because of much better \td{solution stability. (how did you test this?? see section \ref{sec:res-mat})}
+because of much better solution stability and similar electric properties of resulting layers (how did you test this?? see appendix \ref{sec:app-pre-emma}).
 The - up to this moment - best process was chosen to be tested with 
 \ml{1} \gls{acoh} (sample no.~199), \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} (sample no.~201) and \ml{1} \gls{ipo} (sample no.~192).
 %\td{As the sample showed the best all ex were proceeded with ipo as stabilization agent. }
