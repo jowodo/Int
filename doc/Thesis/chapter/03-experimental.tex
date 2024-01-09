@@ -383,10 +383,10 @@ layer with
 sand paper on two opposing edges of a sample and then by applying silver paste.
 See figure~\ref{fig:circuit} for a sketch of the connectivity.
 
-\todo{ To me this does not follow any logical order!}
+%\todo{ To me this does not follow any logical order!}
 \section{Data Processing}
 \label{sec:eval}
-\todo{Why this procedure? Sounds quite arbitrary?}
+%\todo{Why this procedure? Sounds quite arbitrary?}
 %Reading list
 %\begin{itemize}
     %\item https://de.wikipedia.org/wiki/Globaler_F-Test
@@ -505,7 +505,7 @@ library \texttt{pyDOE} (version 0.3.8);
 with 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
-relative concentration of Zr $c_{zr}$, number of coating layers $\lambda$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{C}$[\mm{}/\s{}] and \gls{db} temperature $T_{C}$[\oc{}], respectively.
+relative concentration of Zr $c_{zr}$, number of coating layers $n_L$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{C}$[\mm{}/\s{}] and \gls{db} temperature $T_{C}$[\oc{}], respectively.
 After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see appendix \ref{sec:app-pre-emma}).
 %
 \ds{
@@ -522,7 +522,7 @@ table \ref{tab:pre-opt1}).
 			\hline
 			\hline
 	%		&80-150\oc{} [\oc{}/\minutes{}]	&150-200\oc{} [\oc{}/\minutes{}]	&200\oc{}-T$_{\textrm{Cal}}$ [\oc{}/\minutes{}]	&T$_{\textrm{Cal}}$ [\oc{}] &t$_{\textrm{Cal}}$ [\minutes{}]	\\
-			$c_{zr}$	&$\lambda$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
+			$c_{zr}$	&$n_L$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
 			\hline
 	1	&10	&5	&20	&120	&400	\\
 	1	&4	&0.1	&20	&120	&500	\\
@@ -542,7 +542,7 @@ table \ref{tab:pre-opt1}).
 		\begin{tabular}{cccccc}
 	%conc	&layers	&vDOC	&TDOC	&vCal	&Tcal		\\
 			\hline\hline
-			$c_{zr}$	&$\lambda$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
+			$c_{zr}$	&$n_L$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
 	%conc	&layers	&$v_{\textrm{C}}$	&$T_{\textrm{C}}$	&$v_{\textrm{cal}}$	&$T_{\textrm{cal}}$		\\
 			\hline
 	2	&8	&0.5	&40	&360	&470	\\
@@ -606,7 +606,7 @@ See table~\ref{tab:input} for the input space spanned during the optimization.
     \label{tab:space}
     \begin{tabular}{cccccc}
         \hline\hline
-		$c_{zr}$	&$\lambda$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
+		$c_{zr}$	&$n_L$	&$v_{C}$	&$T_{C}$	&$v_{cal}$	&$T_{cal}$		\\
 %        concentration   &layers &\gls{db} velocity  &\gls{db} temperature   &heating rate   &calcination temperature    \\
         \hline
         2   &4  &10 &40 &120    &300    \\

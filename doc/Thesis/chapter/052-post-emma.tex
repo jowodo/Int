@@ -37,7 +37,7 @@ The choice of a relatively high $alpha$-value is motivated by the rather small a
 %WHAT WERE THE RESULTS?
 %\Gls{anova} shows that for the mentioned indep and dep pairs, the means divided by 
 %indep groups are not equal and that there is at least one group that is different. 
-For both $\rho$ and $\lambda$ (for both the \gls{emma} dataset and the whole dataset (=\gls{emma}+pre-\gls{emma})) 
+For both $\rho$ and $n_L$ (for both the \gls{emma} dataset and the whole dataset (=\gls{emma}+pre-\gls{emma})) 
 the F-values for $T_{cal}$ were in all cases under 0.01, 
 indicating a real influence of $T_{cal}$ on the conductance.
 Furthermore, both datasets exhibit a p-value $< 0.05$ for the interaction $T_{cal}$:$v_{cal}$ on $\rho$
@@ -63,12 +63,12 @@ Categorical inputs have no order and thus information is lost when using numeric
 
 %%%%%%%%%%%%%%%%%%%% LIN REG %% lin reg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Linear Regression} 
-%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by the Zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$, but their coefficients are the smallest in absolute values. 
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by the Zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $n_L$, but their coefficients are the smallest in absolute values. 
 
 %\todo{what was fitted how?}
 The data obtained from the \gls{emma} optimisation was used to fit a linear model. 
 The biggest difference between the linear model and \gls{emma} is that the linear regression function will include all input variables, that the \gls{bf}s are strictly linear and that there are no interaction terms. 
-The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:emma-phd3}, \ref{eq:emma-G3}, \ref{eq:emma-phd4}, \ref{eq:emma-G4} (\gls{emma} \gls{rf}s) and \ref{eq:linreg-phd}, \ref{eq:linreg-G} and have comparable magnitudes too. 
+The coefficients of the $n_L$ term have the same sign in equations \ref{eq:emma-phd3}, \ref{eq:emma-G3}, \ref{eq:emma-phd4}, \ref{eq:emma-G4} (\gls{emma} \gls{rf}s) and \ref{eq:linreg-phd}, \ref{eq:linreg-G} and have comparable magnitudes too. 
 %
 %Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by
 %but their coefficients are the smallest in absolute values. 
@@ -76,15 +76,15 @@ The coefficients of the $\lambda$ term have the same sign in equations \ref{eq:e
 \begin{align}
 	\begin{split}
 		\label{eq:linreg-phd}
-		\hat{\rho} =&  -0.022\cdot c_{zr} -0.022\cdot \lambda -0.0029\cdot v_{C} + 0.0058\cdot T_{C} \\
+		\hat{\rho} =&  -0.022\cdot c_{zr} -0.022\cdot n_L -0.0029\cdot v_{C} + 0.0058\cdot T_{C} \\
 		& -8.5\cdot 10^{-5}\cdot v_{cal} + 0.0026\cdot T_{cal} -0.76
 	\end{split}
 	\\
 	\begin{split}
 		\label{eq:linreg-G}
-		\hat{\gamma} =&  \,\,\qquad 3.2\cdot c_{zr} \,\, - 0.97\cdot \lambda \,\,\quad - 1.2\cdot v_{C}  \,\,\,\quad +0.2\cdot T_{C} \\
+		\hat{\gamma} =&  \,\,\qquad 3.2\cdot c_{zr} \,\, - 0.97\cdot n_L \,\,\quad - 1.2\cdot v_{C}  \,\,\,\quad +0.2\cdot T_{C} \\
 			& \qquad - 0.014\cdot v_{cal} \quad + 0.13\cdot T_{cal} + 7.2
-%		\hat{\gamma} ={} & 3.2\cdot c_{zr} - 0.97\cdot \lambda - 1.2\cdot v_{C} + 0.2\cdot T_{C} \\
+%		\hat{\gamma} ={} & 3.2\cdot c_{zr} - 0.97\cdot n_L - 1.2\cdot v_{C} + 0.2\cdot T_{C} \\
 %			& - 0.014\cdot v_{cal} + 0.13\cdot T_{cal} + 7.2
 	\end{split}
 \end{align}
@@ -93,19 +93,19 @@ All terms in equations \ref{eq:linreg-phd} and \ref{eq:linreg-G} have the same s
 except $c_{zr}$ and the intercept. 
 %
 More particularly, $T_{cal}$ and $T_{C}$ have positive coefficients, i.e. a negative influence on the resistance 
-and $\lambda$, $v_{C}$ and $v_{cal}$ have negative coefficients, i.e. a positive influence on resistance. 
+and $n_L$, $v_{C}$ and $v_{cal}$ have negative coefficients, i.e. a positive influence on resistance. 
 An indication that the data is strongly tainted by noise (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41 of $\hat\rho$, 
 which is (sad but true) even undercut by the $R^2$ of linear fit of $\hat\gamma$, 0.34. 
 %The coefficients, though share the signs. 
 %This is only true if the extended data set is used and therefore again rather by chance. 
 When the linear regression is trained on the whole data set, all terms have the same sign compared to the \gls{emma} data set trained linear model. 
 %It is even more astounding that \gls{emma} managed to decrease the average of $\gamma$ an $\rho$ with each generation (see figure \ref{fig:emma-gen}.
-$v_{cal}$ and $\lambda$ are perfectly predicted by linear regression as there is an exact direct proportionality and thus are not displayed here. 
+$v_{cal}$ and $n_L$ are perfectly predicted by linear regression as there is an exact direct proportionality and thus are not displayed here. 
 %
 \begin{table}[htb]
 	\center
 	\begin{tabular}{cccccccc}
-		        & $c_{zr}$      & $\lambda$     & $v_{C}$      & $T_{C}$      & $v_{cal}$     & $T_{cal}$\\
+		        & $c_{zr}$      & $n_L$     & $v_{C}$      & $T_{C}$      & $v_{cal}$     & $T_{cal}$\\
 				\hline\hline
 				$\hat\rho$          &2.04   &46.58  &1.15   &9.21   &13.50  &27.52\\
 				$\hat\gamma$        &10.24  &7.10   &16.46  &10.97  &7.68   &47.55\\
@@ -116,15 +116,15 @@ $v_{cal}$ and $\lambda$ are perfectly predicted by linear regression as there is
 \end{table}
 
 %
-Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $\lambda$ are largest in value, but the values which are factored with these coefficients - i.e.\, $c_{zr}$ and $\lambda$ themselves -- are the smallest among the input variables. 
+Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $n_L$ are largest in value, but the values which are factored with these coefficients - i.e.\, $c_{zr}$ and $n_L$ themselves -- are the smallest among the input variables. 
 Thus, even though $T_{cal}$ might have a smaller coefficient in the linear \gls{rf}, the influence on the dependent variable might be larger. 
 For better comparison, the influence of an input variable was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{i,min}+x_{i,max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
 %The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{C}$. 
-The biggest influence on $\hat\rho$ is  $\lambda$, followed by $T_{cal}$. 
-While $T_{cal}$ is the second largest influence on $\hat\rho$ as well, it is noteworthy that $\lambda$ contributes the least to $\hat\gamma$. 
+The biggest influence on $\hat\rho$ is  $n_L$, followed by $T_{cal}$. 
+While $T_{cal}$ is the second largest influence on $\hat\rho$ as well, it is noteworthy that $n_L$ contributes the least to $\hat\gamma$. 
 That means that according to the linear regression, the number of layers increases the overall resistance of the zirconium ceramics while a lower calcination temperature leads to less defects. 
 Interestingly, the number of layers has the least amount of influence on the number probability of defects, which seems to be an artefact of the noise rather than a process property. 
-%Furthermore the influence on $\hat\rho$ is dominated by $\lambda$ and $T_{cal}$, while the influences on $\hat\gamma$ are distributed more evenly.
+%Furthermore the influence on $\hat\rho$ is dominated by $n_L$ and $T_{cal}$, while the influences on $\hat\gamma$ are distributed more evenly.
 %Different distributions were not expected. 
 The two very different distributions of influence among the input variables can have three reasons:
 %This can have two reasons: 

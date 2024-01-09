@@ -13,7 +13,7 @@ predictions were already made
 with the information from the previous generations. 
 %%% BEST PREDICTED RECIPE
 The sample predicted as optimum by the algorithm is experiment number 13 with 
-lowest possible $c_{zr}$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$ and second highest possibel $\lambda$ (see table \ref{tab:input}). 
+lowest possible $c_{zr}$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$ and second highest possibel $n_L$ (see table \ref{tab:input}). 
 %lowest solution concentration, second highest layer count, lowest \gls{db} velocity and temperature, 
 %and lowest calcination heating rate and temperature. 
 
@@ -23,7 +23,7 @@ lowest possible $c_{zr}$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$ and second high
 	\label{tab:emma-Gb}
 	\begin{tabular}{ccccccccc}
         \hline\hline
-		generation& measurements &enr &$c_{zr}$ &$\lambda$ &$v_{C}$ &$T_{C}$ &$v_{cal}$ &$T_{cal}$\\
+		generation& measurements &enr &$c_{zr}$ &$n_L$ &$v_{C}$ &$T_{C}$ &$v_{cal}$ &$T_{cal}$\\
         \hline
 	1  &10	&1       &2    &4   &10   &40  &120  &300\\
 	2  &15	&5       &2    &6   &10   &40  &120  &300\\
@@ -74,11 +74,11 @@ Indeed, the samples with the lowest \textit{optimizands} are among the initial g
 %GENERATIONS
 In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimizands}, 
 conducticity $\gamma$ and pin hole density $\rho$ (see section \ref{sec:eval}), of each particle at each generation.
-The \td{green} points at generation number 0 indicate particles which were not included to be propagated. 
+The the solid circles at generation number 0 indicate particles which were not included to be propagated. 
 %Each violet line indicates a particle, the blue line depicts the average of all particles and the yellow line depicts the average of all particles which were propagated. 
-\td{Violet} lines connect individual particles in time. 
-The \td{blue} line connects averages of particles of each generation (including initial non-propagated particles) and 
-\td{yellow} lines connect averages of each generation of only those particles which were propagated. 
+Solid lines connect individual particles in time. 
+The dashed line connects averages of particles of each generation (including initial non-propagated particles) and 
+pointed lines connect averages of each generation of only those particles which were propagated. 
 %
 Both $\gamma$ and $\rho$ were to be minimized and show a clear trend towards low values with increasing generation, 
 indicating that the optimization worked even though 
@@ -86,7 +86,7 @@ the prediction functions (see equations~(\ref{eq:emma-phd3})--(\ref{eq:emma-vcal
 and the chosen samples (i.e. chosen input variables) where not exactly as expected. 
 Neither expected were the measurements for these samples.
 The deviation from expectation might be due to measuring error of samples and variation of quality due to uncontrolled independent variables such as room temperature, humidity or solution age. 
-Measurements were expected to show clear correlation of \textit{optimizands} $\gamma$ and $\rho$ with mainly $c_{Zr}$ and $\lambda$.
+Measurements were expected to show clear correlation of \textit{optimizands} $\gamma$ and $\rho$ with mainly $c_{Zr}$ and $n_L$.
 The only statistically relevant correlation was observed for $T_{cal}$ with the \textit{optimizands}.
 %\td{why}
 %
@@ -94,22 +94,22 @@ In the scatter plots~\ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of 
 
 \begin{figure}[hb]
     \centering
-    \begin{subfigure}{.24\textwidth}
+    \begin{subfigure}{.44\textwidth}
         \centering
         \includegraphics[width=.98\textwidth]{Pics/stats/gen-G.png}
         \caption{} \label{fig:emma-G-gen}
     \end{subfigure}
-    \begin{subfigure}{.24\textwidth}
+    \begin{subfigure}{.44\textwidth}
         \centering
         \includegraphics[width=.98\textwidth]{Pics/stats/gen-phd.png}
         \caption{} \label{fig:emma-phd-gen}
     \end{subfigure}
-    \begin{subfigure}{.24\textwidth}
+    \begin{subfigure}{.44\textwidth}
         \centering
         \includegraphics[width=.98\textwidth]{Pics/stats/G-tcal.png}
         \caption{} \label{fig:g-tcal}
     \end{subfigure}
-    \begin{subfigure}{.24\textwidth}
+    \begin{subfigure}{.44\textwidth}
         \centering
         \includegraphics[width=.98\textwidth]{Pics/stats/phd-tcal.png}
         \caption{} \label{fig:phd-tcal}
@@ -128,15 +128,15 @@ In the scatter plots~\ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of 
 %\subsection{Equation}
 Equations~(\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) and (\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) represent the regression functions at $t=3$ and $t=4$, respectively, rounded to 2 significant digits.
 %$h(x)$ is the hinge function (also called a rectifier function) of the simple form $h(x) = max(0,x)$. 
-The expression $h(\lambda-6)$ translates into layer count only has an influence if larger than 6 
-and $h(6-\lambda)$ into layer count influential only if under 6.
+The expression $h(n_L-6)$ translates into layer count only has an influence if larger than 6 
+and $h(6-n_L)$ into layer count influential only if under 6.
 %
 The first thing to notice is that prediction functions of each generation depend on the same variables. 
 %This means that the algorithm must decide on the variables which explain the most variance independent of optimization weights.
 This stems from the fact that the algorithm chooses a single minimal set of basis functions to predict all dependent variables. 
 %
-%\td{Knowing this, makes the decision of adding $\lambda$ and $v_{cal}$ as \textit{optimizands} rather unfortunate. %highly questionable. 
-%\td{This makes including $\lambda$ and $v_{cal}$ as dependent variables unfortunate decisions with hindsight.}
+%\td{Knowing this, makes the decision of adding $n_L$ and $v_{cal}$ as \textit{optimizands} rather unfortunate. %highly questionable. 
+%\td{This makes including $n_L$ and $v_{cal}$ as dependent variables unfortunate decisions with hindsight.}
 %As the \gls{mars} algorithm is greedy,
 %Different independent variables compete to be used as \gls{bf} in the prediction functions because of the greediness of the \gls{mars} algorithm. 
 %}
@@ -144,50 +144,50 @@ This stems from the fact that the algorithm chooses a single minimal set of basi
 \begin{align}
 %
 %    \label{eq:emma-phd1}
-%    \hat{\rho}_1 &= -0.52 + 2.3\cdot 10^{-5} \cdot  T_{C}\cdot T_{cal} + 0.00080 \cdot h(6-\lambda)\cdot T_{cal}\\
+%    \hat{\rho}_1 &= -0.52 + 2.3\cdot 10^{-5} \cdot  T_{C}\cdot T_{cal} + 0.00080 \cdot h(6-n_L)\cdot T_{cal}\\
 %    \label{eq:emma-G1}
-%    \hat{\gamma}_1 &= -26  + 0.0025 \cdot T_{C}\cdot T{cal}  +  0.056 \cdot  h(6-\lambda)\cdot T_{cal} \\
+%    \hat{\gamma}_1 &= -26  + 0.0025 \cdot T_{C}\cdot T{cal}  +  0.056 \cdot  h(6-n_L)\cdot T_{cal} \\
 %    \label{eq:emma-layr1}
-%    \hat{\lambda}_1 &= 7.1 + 8.1\cdot 10^{-5} \cdot T_{C}\cdot T_{cal} -  0.0056 \cdot  h(6-\lambda)\cdot T_{cal}\\
+%    \hat{n_L}_1 &= 7.1 + 8.1\cdot 10^{-5} \cdot T_{C}\cdot T_{cal} -  0.0056 \cdot  h(6-n_L)\cdot T_{cal}\\
 %    \label{eq:emma-vcal1}
-%    \hat{v}_{cal,1} &= 19 - 0.00025 \cdot  T_{C}\cdot T_{cal} - 0.0055 \cdot  h(6-\lambda)\cdot T_{cal}\\
+%    \hat{v}_{cal,1} &= 19 - 0.00025 \cdot  T_{C}\cdot T_{cal} - 0.0055 \cdot  h(6-n_L)\cdot T_{cal}\\
 %
 %    \label{eq:emma-phd2}
 %    \hat{\rho}_2 &= 0.23\\
 %    \label{eq:emma-G2}
 %    \hat{\gamma}_2 &= 47\\
 %    \label{eq:emma-layr2}
-%    \hat{\lambda}_2 &= 7.3\\
+%    \hat{n_L}_2 &= 7.3\\
 %    \label{eq:emma-vcal2}
 %    \hat{v}_{cal,2} &= 10\\
 %
     \label{eq:emma-phd3}
-    \hat{\rho}_3 &= 0.075  -   0.0014 \cdot  v_{cal}  +    0.18 \cdot  h(6-\lambda)  + 3.9\cdot 10^{-06} \cdot  v_{cal}\cdot T_{cal} \\
+    \hat{\rho}_3 &= 0.075  -   0.0014 \cdot  v_{cal}  +    0.18 \cdot  h(6-n_L)  + 3.9\cdot 10^{-06} \cdot  v_{cal}\cdot T_{cal} \\
     \label{eq:emma-G3}
-    \hat{\gamma}_3 &= 43  -   0.097 \cdot  v_{cal}  +     10 \cdot  h(6-\lambda)  + 0.00026 \cdot  v_{cal}\cdot T_{cal} \\
+    \hat{\gamma}_3 &= 43  -   0.097 \cdot  v_{cal}  +     10 \cdot  h(6-n_L)  + 0.00026 \cdot  v_{cal}\cdot T_{cal} \\
     \label{eq:emma-layr3}
-    \hat{\lambda}_3 &= 9.9  - 0.00064 \cdot  v_{cal}  -     2.7 \cdot  h(6-\lambda)  - 1.3\cdot 10^{-06} \cdot  v_{cal}\cdot T_{cal} \\
+    \hat{n_L}_3 &= 9.9  - 0.00064 \cdot  v_{cal}  -     2.7 \cdot  h(6-n_L)  - 1.3\cdot 10^{-06} \cdot  v_{cal}\cdot T_{cal} \\
     \label{eq:emma-vcal3}
-    \hat{v}_{cal,3} &= -5.2\cdot 10^{-15}  +   0.016 \cdot  v_{cal}  + 1.3\cdot 10^{-15} \cdot  h(6-\lambda)  + 3.9\cdot 10^{-21} \cdot  v_{cal}\cdot T_{cal} \\
+    \hat{v}_{cal,3} &= -5.2\cdot 10^{-15}  +   0.016 \cdot  v_{cal}  + 1.3\cdot 10^{-15} \cdot  h(6-n_L)  + 3.9\cdot 10^{-21} \cdot  v_{cal}\cdot T_{cal} \\
 %
     \label{eq:emma-phd4}
-    \hat{\rho}_4 &=  -0.87 + 0.0047 \cdot  T_{cal} - 0.00036 \cdot  \lambda\cdot T_{cal}  +  0.0024 \cdot  h(\lambda-6)\cdot T_{C} \\
+    \hat{\rho}_4 &=  -0.87 + 0.0047 \cdot  T_{cal} - 0.00036 \cdot  n_L\cdot T_{cal}  +  0.0024 \cdot  h(n_L-6)\cdot T_{C} \\
     \label{eq:emma-G4}
-    \hat{\gamma}_4 &=     -19 + 0.28 \cdot  T_{cal}  - 0.022 \cdot  \lambda\cdot T_{cal}  +  0.16 \cdot  h(\lambda-6)\cdot T_{C} \\
+    \hat{\gamma}_4 &=     -19 + 0.28 \cdot  T_{cal}  - 0.022 \cdot  n_L\cdot T_{cal}  +  0.16 \cdot  h(n_L-6)\cdot T_{C} \\
     \label{eq:emma-layr4}
-    \hat{\lambda}_4 &=  6.8 - 0.014 \cdot  T_{cal}  + 0.0018 \cdot  \lambda\cdot T_{cal}  + 0.0060 \cdot  h(\lambda-6)\cdot T_{C} \\
+    \hat{n_L}_4 &=  6.8 - 0.014 \cdot  T_{cal}  + 0.0018 \cdot  n_L\cdot T_{cal}  + 0.0060 \cdot  h(n_L-6)\cdot T_{C} \\
     \label{eq:emma-vcal4}
-    \hat{v}_{cal,4} &=  29 - 0.052 \cdot  T_{cal}  + 0.0011 \cdot  \lambda\cdot T_{cal}  -  0.011 \cdot  h(\lambda-6)\cdot T_{C} 
+    \hat{v}_{cal,4} &=  29 - 0.052 \cdot  T_{cal}  + 0.0011 \cdot  n_L\cdot T_{cal}  -  0.011 \cdot  h(n_L-6)\cdot T_{C} 
 \end{align}
 
 The coefficients in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) have the same signs and differ by a factor of roughly 100.
-This difference in magnitude fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $\lambda$ is counter intuitive 
+This difference in magnitude fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $n_L$ is counter intuitive 
 %as one would expect more layers to be more insulating and thus result in lower conductance and a lower probability of holes going all the way trough the \gls{zro} layers. %pin hole density. 
 The coefficients of the $v_{cal} \cdot T_{cal}$ interaction in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) 
-seem low, but the interaction has -- considering the minimum value of the interaction of $300 \cdot 120 =$  \num{36000} -- several orders of magnitude higher influence on $\rho_3$ and $\gamma_3$ than the $h(6-\lambda)$ term. 
+seem low, but the interaction has -- considering the minimum value of the interaction of $300 \cdot 120 =$  \num{36000} -- several orders of magnitude higher influence on $\rho_3$ and $\gamma_3$ than the $h(6-n_L)$ term. 
 %It's positive the hinge
 It is astonishing that the knot of the hinge function for equations (\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) was chosen so low; 
-basically only including the influence of the lowest layer count $\lambda=4$.
+basically only including the influence of the lowest layer count $n_L=4$.
 Meaning for equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}), that the lowest layer count produces worse samples which is intuitive, but more than 6 layers do not improve the insulation. 
 Encouragingly, the calcination heating rate $v_{cal}$ (see equation (\ref{eq:emma-vcal3})) has been predicted perfectly within numerical precision. 
 
@@ -196,7 +196,7 @@ The coefficients of equations (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) show t
 as equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}): identical signs and factor 100. 
 %The choice of basis functions in combination with their coefficient signs seems more plausible
 %for (\ref{eq:emma-phd4}) and (\ref{eq:emma-G4}) than for (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}). 
-%$\lambda$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally, the lowest $\lambda$ increases the two \textit{optimizands}. 
+%$n_L$ decreases $\hat{\gamma}$ and $\hat{\rho}$ and additionally, the lowest $n_L$ increases the two \textit{optimizands}. 
 %
 % TCAL ON OPTIMIZANDS
 The influence of $T_{cal}$ on the measures of conductance ($\hat\rho$ and $\hat\gamma$) is highly interesting. 
@@ -213,19 +213,19 @@ ergo the resistance decreases and the conductance increases with increasing calc
 
 %
 % DESCRIBE COEFFICIENTS
-Furthermore, the coefficient of the $T_{cal}$ term is the largest of all terms on $\hat{\rho}$ (\ref{eq:emma-phd4}) and $\hat{\gamma}$ (\ref{eq:emma-G4}); interestingly also on $\hat\lambda$ (\ref{eq:emma-layr4}) and $\hat{v}_{cal}$ (\ref{eq:emma-vcal4}).
-The coefficient of the $\lambda\cdot T_{cal}$ interaction is about a tenth in size of the $T_{cal}$ coefficient, 
-but has the extra factor $\lambda$ (range: 4--12), resulting in the products of coefficients and process variables being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$ terms.
-It can be noted that the coefficient of the $\lambda\cdot T_{cal}$ interaction always has contrary sign to $T_{cal}$ coefficient in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}). 
+Furthermore, the coefficient of the $T_{cal}$ term is the largest of all terms on $\hat{\rho}$ (\ref{eq:emma-phd4}) and $\hat{\gamma}$ (\ref{eq:emma-G4}); interestingly also on $\hat{n_L}$ (\ref{eq:emma-layr4}) and $\hat{v}_{cal}$ (\ref{eq:emma-vcal4}).
+The coefficient of the $n_L\cdot T_{cal}$ interaction is about a tenth in size of the $T_{cal}$ coefficient, 
+but has the extra factor $n_L$ (range: 4--12), resulting in the products of coefficients and process variables being in the same order of magnitude for $T_{cal}$ and $T_{cal}\cdot v_{cal}$ terms.
+It can be noted that the coefficient of the $n_L\cdot T_{cal}$ interaction always has contrary sign to $T_{cal}$ coefficient in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}). 
 This negative correlation could hint a compenzation of the overestimated influence of $T_{cal}$ on the \textit{optimizands}.
-Similarly, signs of coefficients of $\lambda \cdot T_{cal}$ and $h(\lambda -6) \cdot T_{C}$ correlate negatively in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) and the product of coefficients and input variables are again similar in order of magnitude. 
+Similarly, signs of coefficients of $n_L \cdot T_{cal}$ and $h(n_L -6) \cdot T_{C}$ correlate negatively in equations~(\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) and the product of coefficients and input variables are again similar in order of magnitude. 
 %It should be doubted, though, that the $layr$ only appears as interaction term 
 %together with $T_{cal}$ and $T_{C}$, which seems rather than an artefact. 
 %
-%It seems rather an artefact of noise that the $\lambda$ only appears as interaction 
+%It seems rather an artefact of noise that the $n_L$ only appears as interaction 
 %with $T_{cal}$ and $T_{C}$. 
-%From the analysis of coefficients it can be said, that the most important factor according to EMMA is $T_{cal}$, followed by $\lambda$, then $T_{C}$ and then the rest of the independent variables. 
-The process variables $T_{cal}$ and $\lambda$ appear as \gls{bf}s in generation 3 and 4, whereas $v_{cal}$ only appears in generation 3's \gls{rf}s and $T_{C}$ only in generation 4's \gls{rf}s.
+%From the analysis of coefficients it can be said, that the most important factor according to EMMA is $T_{cal}$, followed by $n_L$, then $T_{C}$ and then the rest of the independent variables. 
+The process variables $T_{cal}$ and $n_L$ appear as \gls{bf}s in generation 3 and 4, whereas $v_{cal}$ only appears in generation 3's \gls{rf}s and $T_{C}$ only in generation 4's \gls{rf}s.
 This can hint the importance of these variables in the process. 
 %I highly doubt though that the specific interactions proposed by EMMA are indeed meaningful. 
 
@@ -296,13 +296,13 @@ for including them in the \gls{rf}s is an easy way to reduce the \gls{mse} and i
 These \gls{bf}s then "take away places" of \gls{bf}s predicting other dependent variables in the \gls{rf}. %\td{(cf. musical chairs)} 
 This in turn can lead to wrong predictions and therefore inefficient choice of future samples. 
 
-The two independent variables $v_{cal}$ and $\lambda$ were included as \textit{optimizands} for two reasons: 
+The two independent variables $v_{cal}$ and $n_L$ were included as \textit{optimizands} for two reasons: 
 Maximizing the calcination velocity and minimizing the number of layer application iterations leads to minimization of process time.
 The process time optimization would be better placed in a follow up study. 
 The second reason for including independent variables as \textit{optimizands} was to check if the model works. 
 This idea has two flaws: there is only one set of \gls{bf}s for all \textit{optimizands} and thus 
 additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables and chose future data points. 
-Moreover, $v_{cal}$ and $\lambda$ were only considered with 5\% weight in the overall objective function.
+Moreover, $v_{cal}$ and $n_L$ were only considered with 5\% weight in the overall objective function.
 The second flaw is that there are obviously better methods to assess the quality of a model than to make it more complex. 
 %Good alternatives would have been leave-one-out or cross validation.
 Validation methods for sparse data include re-sampling via leave-one-out or $k$-fold cross validation\cite{kartam1997artificial}.
@@ -314,19 +314,19 @@ Validation methods for sparse data include re-sampling via leave-one-out or $k$-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %\subsection{how did evolve over time?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{rational behind including $v_{cal}$ and $\lambda$ as optimizands}
+\subsection{rational behind including $v_{cal}$ and $n_L$ as optimizands}
 }
 %
 %Three major flaws behind this consideration became obvious with time: 
 %
 \
 \td{
-(1) The true function for predicting $v_{cal}$ and $\lambda$ are $v_cal*60$ (\oc{}/\h{} instead of \oc{}/\minutes{}) and $\lambda$, respectively. 
+(1) The true function for predicting $v_{cal}$ and $n_L$ are $v_cal*60$ (\oc{}/\h{} instead of \oc{}/\minutes{}) and $n_L$, respectively. 
 The algorithm will tend to include those values into the prediction function for 
 all dependent variables and possibly exclude others which have more influence 
 on $\gamma$ and $\rho$ (see equations (\ref{eq:emma-G4})? And (\ref{eq:emma-phd4})?).
 %
-(2) The algorithm would be influenced by those values to choose samples, which potentially optimize $v_{cal}$ and/or $\lambda$ but not $G$ or $\rho$. 
+(2) The algorithm would be influenced by those values to choose samples, which potentially optimize $v_{cal}$ and/or $n_L$ but not $G$ or $\rho$. 
 %
 (3) needlessly making the problem more complicate %, important time (around 10\% of the samples) could have been replaced with more insightful samples. 
 \begin{itemize}

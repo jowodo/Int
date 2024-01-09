@@ -15,7 +15,7 @@ Next, the output variables (dependant variables), their weights in the objective
 	\centering
 	\begin{tabular}{cc cc cc}
 		\hline\hline
-        $c_{zr}$ [\SI{22}{\milli\mol\per\liter}]	&$\lambda$	&$T_{C}$[\oc{}]	&$v_{C}$[\mm{}/\s{}]	&$T_{cal}$[\oc{}]	&$v_{cal}$[\oc{}/\h{}]	\\
+        $c_{zr}$ [\SI{22}{\milli\mol\per\liter}]	&$n_L$	&$T_{C}$[\oc{}]	&$v_{C}$[\mm{}/\s{}]	&$T_{cal}$[\oc{}]	&$v_{cal}$[\oc{}/\h{}]	\\
 		\hline
 		2				&4		&40					&10				&300				&120	\\
 		3				&6		&50					&12				&400				&360	\\
@@ -29,14 +29,14 @@ Next, the output variables (dependant variables), their weights in the objective
 	\label{tab:input}
 \end{table}
 
-The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $\lambda$ and $v_{cal}$, 
+The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $n_L$ and $v_{cal}$, 
 (i.e. conducticity, pinhole density, coating layer count and heating rate)
-where $\gamma$, $\rho$ and $\lambda$ are to be minimized and $v_{cal}$ to be maximized.
+where $\gamma$, $\rho$ and $n_L$ are to be minimized and $v_{cal}$ to be maximized.
 %which all should be minimized except for $v_{cal}$.
 The next step is to generate an initial population (ensemble of experiments), which is chosen randomly from the population space. 
 The samples are produced, the \gls{iv} curves are measured and measurements evaluated according to section 
 \ref{sec:exp} and the responses conducticity $\gamma$ (see eq. \ref{eq:gamma}), pinhole density $\rho_s$ (see eq. \ref{eq:rho}), 
-$\lambda$ (numbers of coating layers) and $v_{cal}$ (heating rate of calcination process in 
+$n_L$ (numbers of coating layers) and $v_{cal}$ (heating rate of calcination process in 
 \oc{}/\minutes{}) are supplied to the program. 
 The program, then, uses this data to estimate a response for each output variable 
 for the entire population space
@@ -83,7 +83,7 @@ $C$ and $\varepsilon$ took the values 0.05--1 with step size 0.05.
 and $\sigma(\mathbf{X})$ the variance of the input variables. 
 
 % GRID SEARCH 
-The input variables ($c_{zr}$, $\lambda$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$) 
+The input variables ($c_{zr}$, $n_L$, $v_{C}$, $T_{C}$, $v_{cal}$, $T_{cal}$) 
 of the \gls{emma} data set were scaled with the routine \texttt{sklearn.preprocessing.StandardScaler().fit\_transform()}. %\td{scaled before each calculation.}
 % https://scikit-learn.org/stable/modules/generated/sklearn.kernel_ridge.KernelRidge.html#sklearn.kernel_ridge.KernelRidge.score
 % https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.score
@@ -100,4 +100,4 @@ the parameters with the highest score were noted.
  
 Finally, the different data sets were predicted for each model and \gls{mae} and \gls{mse} were calculated.
 These values were also calculated for \gls{emma} and the linear model in order to compare the different methods. 
-\todo{(and how did this output help you to optimize your exp. procedure??)}
+%\todo{(and how did this output help you to optimize your exp. procedure??)}

@@ -45,12 +45,12 @@ L_2&= \sum(y_i - \hat y_i)^2 = \sum (y_i - x_{i,j}\cdot k_i+c)^2
 %
 
 \textbf{Ridge Regression} is like linear regression but with an extra term which penalizes steep regression functions.
-This extra term is scaled by a correction parameter $\lambda$. 
-The larger $\lambda$ the larger regularization and the flatter the regression functions. 
-If $\lambda$ were infinite, then the regression function would be a flat line. 
+This extra term is scaled by a correction parameter $\lambda_{RR}$. 
+The larger $\lambda_{RR}$ the larger regularization and the flatter the regression functions. 
+If $\lambda_{RR}$ were infinite, then the regression function would be a flat line. 
 The correction term avoids overfitting. 
 \begin{equation}
-    L_{RR} = L_2 + \lambda \sum k_i = \sum(y_i - \hat y_i)^2 + \lambda \sum k_i
+	L_{RR} = L_2 + \lambda_{RR} \sum k_i = \sum(y_i - \hat y_i)^2 + \lambda_{RR} \sum k_i
 \end{equation}
 
 \textbf{Kernel Ridge Regression}
@@ -74,8 +74,8 @@ radial basis functionial kernel~(eq. \ref{eq:rbf-kernel}).
     k_{rbf}(\mathbf{x}, \mathbf{y}) &= \text{exp}(- \gamma \| \mathbf{x} -  \mathbf{y} \|^2) 
 \end{align}
 These kernels fulfill the requirements of nonnegativity, symmetry, linearity\cite{rupp2015machine}.
-\td{Note that when $\lambda$ tends to zero, the regularized loss function becomes the OLS loss function.
-When $\lambda$ tends to infinity, we get an intercept-only model}
+\td{Note that when $\lambda_{RR}$ tends to zero, the regularized loss function becomes the OLS loss function.
+When $\lambda_{RR}$ tends to infinity, we get an intercept-only model}
 \td{A critique of ridge regression is that all the variables tend to end up in the model. The model only shrinks the coefficients.}
 % from https://medium.com/@zxr.nju/the-classical-linear-regression-model-is-good-why-do-we-need-regularization-c89dba10c8eb
 %
@@ -102,7 +102,7 @@ The goal is to find the decision boundary which correctly classifies all samples
 %In the same manner as no data points are found within the margin for classification, 
 %no data points should be found outside of the margin. 
 %If the data is not seperable by a hyperplane the kernel trick can be used. 
-%\td{$\text{min}\frac{1}{N} \sum_{i=1}^{N} max(0,1- y_i(\mathbf{x}x_i-b)) + \lambda \|w\|$
+%\td{$\text{min}\frac{1}{N} \sum_{i=1}^{N} max(0,1- y_i(\mathbf{x}x_i-b)) + \lambda_{RR} \|w\|$
 %The downside of \gls{svm} is that it is very sensitive to outliers.}
 %
 %$\min_{w,b} \|w\|$ 
