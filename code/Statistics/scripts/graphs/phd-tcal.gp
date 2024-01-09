@@ -16,7 +16,7 @@ set yrange [0:1.4]
 set xtics 300,100
 
 set key font ",30"
-plot "../../db_final.tsv" u 12:4 pt 7 ps width t "pre-EMMA" ,\
-    filename u 13:5 pt 9 ps width t "EMMA"
+plot "../../db_final.tsv" u 12:4 pt 3 ps width t "pre-EMMA" ,\
+    filename u 13:5 pt 7 ps width t "EMMA"
 
 #pause -1
