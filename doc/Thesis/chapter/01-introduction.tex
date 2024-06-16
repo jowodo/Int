@@ -1,29 +1,30 @@
 %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Photovoltaics (PV) is one viable option for becoming carbon neutral. 
+Photovoltaics (PV) is a viable renewable energy source towards energy neutrality.
 Furthermore, 
 it uses the sun's energy directly in contrast to other energy sources (e.g. wind, water or even carbon based) and therefore 
-it is fit to be used in energy harvesting projects like futuristic Dyson spheres\cite{dyson1960search} which harness the whole power output of the sun.
+it is fit to be used in energy harvesting projects like futuristic Dyson spheres\cite{dyson1960search, kardashev1964transmission} which harness the whole power output of the sun.
 %
-One sort of PV are CIGS (copper indium gallium sulfide) cells\cite{Vasekar2010}. 
-Due to their large absorption coefficient (compared to silicon based cells), less material is needed and they can be made thinner and flexible. 
+One type  of thin film PV is based on the CIGS (copper indium gallium sulfide) semiconductor absorber\cite{Vasekar2010}. 
+Due to the large light absorption coefficient of CIGS (compared to silicon), less absorber material is needed (a couple of micrometers) and the PV cell can be made thinner and flexible. 
 %\td{was sind vorteile?}
-In order to make a module, multiple cells are operated in series. 
-The cells must be applied to a non-conducting surface.
-Glass is a popular non-conducting substrate, but very rigid and brittle. 
-An alternative is steel, which is ductile, inexpensive and highly available, but conducting. 
-An insulating layer must therefore be applied to the steel substrate before any CIGS cells can be synthesised on top.
-Polymers would be a obvious choice if not for its low thermal stability which makes high production temperatures impractical.
-A non-toxic material which is suitable for the insulation is \ch{ZrO2}. 
+In order to make a module, multiple solar cells are connected in series. 
+The solar cells must be deposited on a non-conducting surface.
+Glass is a popular non-conducting substrate, but rigid and brittle. 
+A flexible alternative is steel foil, which is ductile, inexpensive and highly available, but electrically conducting. 
+An insulating layer must therefore be applied to the steel substrate before any CIGS cells can be deposited on top.
+Polymers would be a choice if not for their low thermal stability which does not permit high production temperatures.
+A non-toxic material which is suitable for the insulation is zirconium oxide (\ch{ZrO2}). 
 %An economic and scalable method is doctor blading via a sol-gel process. 
-Sol-gel roll-to-roll coating processes (e.g. tape casting) are economic and scalable methods to apply liquid precursors to substrates.
+Sol-gel roll-to-roll coating processes (e.g. tape casting) are economic and scalable methods to apply liquid precursors to substrates, and have been also reported for the deposition of \ch{ZrO2}\cite{yeo1998design,michalek2015comparison}.
 Sol-gel processes often produce porous layers, though. 
-In this work a dense, insulating and homogeneous layer is pursued. 
+
+In this work a dense, insulating and homogeneous layer of \ch{ZrO2} is pursued. 
 Machine learning can help to uncover complex non-linear relations, such as the 
-dependence of the thickness and resistance of the resulting layer on production factors.
+dependence of the thickness and resistance of the deposited layer on the coating parameters.
 %\td{influence} of the production factors on the thickness and resistance of the resulting layer.
-The minimization of the conductance of the layer is performed with a particle swarm optimization 
+The minimization of the electrical conductance of the layer is performed with a particle swarm optimization 
 algorithm which has the coating process variables as input. 
 %The resulting optimum is compared with other optimization methods.
 %\td{and how do you transfer knowledge ...}
@@ -35,10 +36,10 @@ Finally, the engineering problem was solved within the limits of acceptability, 
 The larger bulk of literature research was done after the practical work has been finished in order to solve the secondary scientific problem of predicting outputs and approximate dependencies. 
 }
 
-The remainder of this work is organized with chapter 
-\ref{sec:theoretical} giving 
+This work is organized as follows: chapter 
+\ref{sec:theoretical} gives 
 %some background information on topics of PV, \td{material science} and \td{computational science (more detail)} which were used in this work. 
-information on the general working principles of PV, the structure, characteristics and properties of materials which were used and computational, statistical and machine learning methods for data processing. 
+information on the general working principles of PV, the structure, characteristics and properties of materials which were used and the employed computational, statistical and machine learning methods for data processing. 
 
 In chapter \ref{sec:exp} and \ref{sec:comp} the experimental and computational procedures are described. 
 Section \ref{sec:results} is split into four sections: material specific results are presented in section \ref{sec:res-mat}, results regarding particle swarm optimization in section \ref{sec:res-emma}, further analysis in section \ref{sec:res-post-emma} and discussion of the process and the results in \ref{sec:res-discussion}.
