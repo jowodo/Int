@@ -1,4 +1,3 @@
-
 [ ] check if all headings are descriptive in TOC 
 [ ] check all headings for consistent capitalization
 [ ] check if all \cite are in front of fullstops
@@ -15,4 +14,5 @@
 [ ] check pdflatex output
 [ ] check if all layers are change to coating layers
 [ ] check if db/coating passt v_{DB}
+[ ] translate all DB to tape casting 
 

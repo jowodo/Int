@@ -3,12 +3,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\td{https://en.wikipedia.org/wiki/Thesis}
-\ds{what is it? What is it used for? How does it work? What different kinds are there? }
-\ds{what? how? why?}
+%\ds{what is it? What is it used for? How does it work? What different kinds are there? }
+%\ds{what? how? why?}
 This chapter can be broken down into three sections. 
-The first section tries to shine light on the evolution of PV and give some background information on \gls{cigs}.
-The middle section reads about material-scientific methods which were used during the practical part of this work. 
-The last and third part focuses on the algorithmic, statistical and analytical methods used to optimize and predict material properties. 
+The first section tries to shine light on the evolution of PV and give some background information on \gls{cigs} absorber.
+The next section concerns the description of materials and scientific methods used during the experminental part of this work. 
+The third and last part focuses on the algorithmic, statistical and analytical methods used to optimize and predict material properties. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,7 +19,9 @@ The world wide energy consumption has more than doubled between 1970 and 2015\ci
 and according to recent studies both fossil\cite{BGR2017} and uranium sources\cite{Uran2006} 
 will be exhausted within the next 100 years. 
 Even though this time period is not exact and highly dependent on detection methods of resources, 
-this number is rather small and brings us in \textit{zugzwang} to develop sustainable energy sources. 
+the situation demands the fast 
+development of sustainable energy sources. 
+% this number is rather small and brings us in \textit{zugzwang} to develop sustainable energy sources. 
 One viable option is \gls{pv}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,7 +39,7 @@ selenium with attached platinum electrodes.
 And finally, in 1905 Einstein described the physical background of the photoelectric 
 effect with his light quantum theory\cite{einstein1905erzeugung}.
 %\todo{https://doi.org/10.1063/1.1716492}
-In the late 1950s the first solar cells (with efficiencies around 10 percent\cite{prince1958}) were used in niche applications such as space exploration.  
+In the late 1950s the first solar cells (with power conversion efficiencies around 10 percent\cite{prince1958}) were used in niche applications such as space exploration.  
 In 1958 the US American Vanguard I\cite{vanguard2004} and the soviet Sputnik III\cite{sputnik1959} were the first satellites with solar cells.
 These "solar batteries" - as they were called then - allowed the transmission system of Vanguard I to be operating for over a year after the chemical battery powered system stopped transmitting after 20 days\cite{vanguard2004}. 
 %
@@ -45,21 +47,22 @@ Eventually, the interest in photovoltaic and other alternative energy sources
 rose - fuelled by the oil crisis in 1973 - 
 and the development of photovoltaic devices for the consumer market was boosted. 
 This development lead to a drop in 
-average price for \gls{pv} module from \$ 100 per watt in 1975 to \$ 4 per watt in 2007\cite{pagliaro2008flexible}.
+average price for \gls{pv} module from \$ 100 per watt in 1975 
+%to \$ 4 per watt in 2007\cite{pagliaro2008flexible}. 
+to under \$ 1 per watt in 2022\cite{irena2023renewable}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Photovoltaics Basics}
-The process of conversion of photons into voltaic energy can be broken down into two essential steps (both in human made \gls{pv} or in plants): 
-the creation of an electron-hole pair and then its separation by the structure of the material\cite{markvart2013principles}.
+The process of conversion of photons into electric energy can be broken down into two essential steps: 
+the generation of an electron-hole pair through photon absorption, the electron-hole separation by the built in electric field at the p-n junction and finally collection of the electrons and holes at the opposite terminals of the device\cite{markvart2013principles}.
 This means that \gls{pv} cells are basically diodes, which have a low resistance in one direction and a high resistance in the other direction. 
-This is often achieved through a p-n junction.
-The n-type side has excess electrons and p-type side has excess electron holes. 
-If the n- and p-type are of the same basis material, they are called homojunctions (e.g. silicon); if not, heterojunctions e.g. \ch{CdS}/\gls{cigs} and \ch{CdS/CdTe}\cite{breitenstein2013understanding}.
+%This is often achieved through a p-n junction.
+The n-type side of the p-n junction has excess electrons and p-type side has excess electron holes. 
+If the n- and p-type are of the same basis material, they are called homojunctions (e.g. silicon); if not, heterojunctions (e.g. \ch{CdS}/\gls{cigs} and \ch{CdS/CdTe})\cite{breitenstein2013understanding}.
 %
 The first marketable \gls{pv} were crystalline silicon photovoltaic modules which still 
 have the biggest market share in the \gls{pv} segment (including polycrystalline and monocrystalline silicon).
-In 2022 
-over 88\% of all sold \gls{pv} where made of silicon (including amorphous silicon)\cite{breitenstein2013understanding}.
+In 2022 over 88\% of all sold \gls{pv} where made of silicon (including amorphous silicon)\cite{breitenstein2013understanding}.
 %
 A comprehensive overview on different \gls{pv} technologies can be found in \cite{markvart2013principles}.
 
@@ -74,13 +77,12 @@ The potential use of \ch{CuInSe2} as \gls{pv} material in combination with \ch{C
 %Already in 1975 efficiencies of cells of over 10\% were achieved.\cite{kazmerski1976thin}
 Cells with efficiencies of over 10\% were achieved already by 1975\cite{kazmerski1976thin}.
 Today, 
-\gls{cigs} modules (multiple \gls{pv} cells in series) 
-reach efficiencies of up to 16\%\cite{feurer2017cigs},
-monocrystalline silicon \gls{pv} modules reach efficiencies of 14-20\%
-and polycrystalline silicon \gls{pv} modules 12-17\%\cite{mcevoy2011practical}.
+\gls{cigs} (multiple \gls{pv} cells in series) 
+reach efficiencies of up to 19\%,
+monocrystalline silicon \gls{pv} modules reach efficiencies of 24\%
+and polycrystalline silicon \gls{pv} modules 20\%\cite{green2023solar}.
 
-Just like CdTe, GaAs and amorphous silicon, CIGS has much higher absorption coefficients 
-(lower penetration depth) of visible light than crystalline silicon (see table \ref{tab:cigs:alpha}). 
+Just like CdTe, GaAs and amorphous silicon solar cells, CIGS has much higher absorption coefficients of UV, visible and IR light than crystalline silicon (see table \ref{tab:cigs:alpha}). 
 This is due to a direct band gap rather than an indirect band gap (like crystalline silicon). 
 These thin film \gls{pv}s not only use less material, but also can be used in flexible applications. 
 
@@ -127,27 +129,29 @@ These thin film \gls{pv}s not only use less material, but also can be used in fl
 	\label{fig:cigs}
 \end{figure}
 
-
-Amazingly, the band gap of CIGS can be varied between \ev{1} and \ev{1.7} by varying the indium gallium ratio.
+The band gap of CIGS can be varied between \ev{1} and \ev{1.7} by varying the indium-gallium and sulfur-selenium ratios.
 This is a result of the large difference of band gaps of \ch{CuInSe2} and \ch{CuGaSe2} (see table \ref{tab:cigs}). 
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 In figure \ref{fig:cigs} the schematic layer sequence of a standard \gls{cigs} thin film cell is shown. 
 Typically, a \um{1} thick molybdenum layer is deposited on soda lime glass. 
-The sodium in the glass diffuses through the molybdenum layer and increases efficiency and reliability by directing the growth of \gls{cigs} in 112 direction\cite{hedstrom1993cigs}.
-A \gls{cigs} layer of 1-\um{2} thickness is applied on top via co-evaporation from elemental sources controlled by a mass spectrometer\cite{hedstrom1993cigs}.
+The sodium in the glass diffuses through the molybdenum layer and increases efficiency and reliability by directing the growth of \gls{cigs} in the 112 direction\cite{hedstrom1993cigs}.
+A \gls{cigs} layer of 1-\um{2} thickness is applied on top via co-evaporation from elemental sources\cite{hedstrom1993cigs}.
 The p-type doping of \gls{cigs} is achieved by adding more than stoichiometric copper to the mix. 
-The heterojunction is then completed by deposition of \ch{CdS} (typically \nm{50} thick).
+The heterojunction is then completed by deposition of \ch{CdS} n-type layer (typically \nm{50} thick).
 \ch{CdS} was earlier used as front contact, but now only acts as n-type wide-gap window and buffer. 
+After the \ch{CdS} layer 
+A window layer of intrinsic \ch{ZnO} is deposited after the \ch{CdS}, followed by a highly conductive aluminium doped layer. 
 \ch{ZnO} has a band gap of \ev{3.2} and is therefore transparent for visible light. 
 The \ch{ZnO} window layer (usually of thickness 50-\nm{70} is highly conductive (especially the aluminium doped layer) and acts as front contact. 
 
 %
 Instead of glass as substrate, steel and polymers (e.g. polyimide\cite{feurer2017cigs}) can be used to create flexible \gls{cigs} modules. 
 They both come with their own inconveniences. 
-Polymers generally have low thermal stability compared with ceramics and metals which restrict preparation temperatures of \gls{cigs}.
-Steel, on the other hand, is temperature resistant enough, but is an electric conductor. 
-The conductance of steel can be masked by a insulator layer (e.g. \ch{ZrO2}, \ch{Al2O3}).
+Polymers generally have low thermal stability compared with ceramics and metals which restrict the fabrication temperature of \gls{cigs}.
+Steel, on the other hand, is temperature resistant enough, but is an electric conductor, which is problematic for the serial interconnection of cells into modules. 
+Thus, an insulating layer has to be deposited on the steel substrate. 
+%The conductance of steel can be masked by a insulator layer (e.g. \ch{ZrO2}, \ch{Al2O3}).
 
 \pagebreak[4]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -162,9 +166,10 @@ The conductance of steel can be masked by a insulator layer (e.g. \ch{ZrO2}, \ch
 Zirconium oxide \gls{zro} is a ceramic with a band gap of 5-7 eV\cite{Anwar2017} and relative permittivity of circa 20 at room temperature\cite{kukli2001dielectric}. 
 This makes it attractive as an insulator for semiconductor and \gls{pv} industry. 
 It is monoclinic below 1050 °C, tetragonal between 1170 °C and 2370 °C, and cubic above 2370 °C\cite{Nielsen2005}.
-The cubic phase can be stabilized down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}) which avoids mechanical failing due to shrinkage 
+The cubic phase can be stabilized down to room temperature by the addition of magnesia (\ch{MgO}), calcia (\ch{CaO}) or yttria (\ch{Y2O3}). 
+This prevents mechanical failing due to shrinkage 
 when cooling and undergoing phase transition\cite{Nielsen2005}.
-It is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and alkalis\cite{Nielsen2005}.
+\ch{ZrO2} is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and bases\cite{Nielsen2005}.
 %Hydrous Zirconium Oxide (\ch{Zr(OH)8 * 16 H2O}) gel can be produced by neutral hydrolysis of sodium zirconate (\ch{NaZrO3})\cite{Nielsen2005}.
 %"Zirconium alkoxides hydrolyze quite easily, [providing] a route to high purity, high-surface-area zirconium oxide"\cite{Nielsen2005}.
 
@@ -173,9 +178,9 @@ It is very resistant to acids (except \ch{HF} and hot \gls{h2so4}) and alkalis\c
 \subsection{Tape Casting}
 %\td{what is it? What is it used for? How does it work? What different kinds are there? }One of the advantages of sol-gel process is that it can be used in roll-to-roll procedures.
 %
-\Gls{db} (also known as tape casting) is widely used in the textile, paper, photographic film, printing and ceramic industries.
-The roll-to-roll compatible process can fabricate highly uniform flat films over large areas\cite{yang2010large}.
-A blade is moved over a substrate spreading a slurry at a fixed distance with a fixed velocity.
+Tape casting (also known as tape casting) is widely used in the textile, paper, photographic film, printing and ceramic industries.
+The roll-to-roll compatible process gives rise to highly uniform films over large areas\cite{yang2010large}.
+A blade is moved over a substrate spreading a slurry at a fixed distance with a fixed speed.
 In roll-to-roll processes the substrate moves instead of the blade. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
