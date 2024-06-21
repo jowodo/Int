@@ -186,20 +186,42 @@ In roll-to-roll processes the substrate moves instead of the blade.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Contact Deposition by Sputtering}
 %SPUTTERING FREEWRITING: 
-%what is sputtering? \\
-Sputtering is the processes of highly energetic ions hitting a surface and atoms or molecules being expelled. 
-This is called a \gls{pvd} technique in contrast to chemical vapor deposition. 
-\Gls{pvd} can be divided into activation by thermal energy and activation by energetic particle bombardment. 
-Sputtering is of the latter kind, which 
-is advantageous if substrates can't withstand high temperatures.
-%\td{what can it be used for?}\\
-Sputtering evolved from being a curious experiment in the middle of the 20th century to 
-having various applications in research and engineering.
+% what is sputtering?
+Sputtering describes the process of highly energetic ions bombarding a surface and atoms being ejected from the surface as a consequence.
+% what can it be used for? 
+%It can be used for high precision etching (semiconductors and nanomaterial) or to deposit thin films. 
+%
 Use cases vary from thin films depositions for \gls{pv}, 
 for electrical circuits or for storage media such as CDs and DVDs 
 over sputter cleaning and etching to analysis.
 Advantages of sputter-deposited thin films include good adhesion to the substrate 
 and good step coverage\cite{Swann1988}.
+% how does it work? 
+%A plasma is created and the ions are accelerated to the surface. 
+The ions, which are accelerated to the surface, mostly originate from a plasma.
+The ion bombardment leads to a transfer of momentum from the ions to the surface atoms which in turn leads to a collision cascade. 
+The cascade can reach the surface again. 
+If the energy of an atom is larger than the binding energy, the atom is ejected. 
+%If a surface particle obtains momentum pointing away from the bulk and its kinetic energy is higher than the binding energy, the particle is sputtered. 
+This neutral ejected particle travels -- unaffected by the electrical field nearly perpendicular to the surface -- towards the substrate and condenses with other particles to form a layer.
+The pressure in the chamber should be small, such that the sputtered particle has a long mean free path, but on the other hand 
+a minimum pressure is needed to sustain the plasma.
+Usual pressures are around \SI{1}{\Pa} (\num{e-2}\SI{}{\milli\bar}) or lower\cite{Swann1988}.
+% what is used? 
+Nobel gases (e.g. argon) in plasma phase are mainly used for bombardmnt because of their inert properties. 
+Oxygen or nitrogen can be added to the plasme to deposit oxides or nitrides, respectively.
+%Reactive gases can be added (e.g. \ch{O2} or \ch{N2}).
+In order to use sputtering for depositing a target material on top of a substrate material, 
+the target and the substrate are positioned parallel and in between the gas is transitioned into plasma and the ions are accelerated in the direction of the target (by a high electrostatic potential). 
+
+%what is sputtering? \\
+% Sputtering is the processes of highly energetic ions hitting a surface and atoms or molecules being expelled. 
+%This is called a \gls{pvd} technique in contrast to chemical vapor deposition. 
+%\Gls{pvd} can be divided into activation by thermal energy and activation by energetic particle bombardment. 
+%Sputtering is of the latter kind, which is advantageous if substrates can't withstand high temperatures.
+%\td{what can it be used for?}\\
+%Sputtering evolved from being a curious experiment in the middle of the 20th century to 
+%having various applications in research and engineering.
 
 \begin{figure}[tbh]
     \centering
@@ -228,6 +250,7 @@ and good step coverage\cite{Swann1988}.
 	\label{fig:sputter}
 \end{figure}
 
+\iffalse
 %\td{how does it work?}\\
 A high voltage is applied to 
 two parallel electrodes with low pressure gas in between. 
@@ -237,12 +260,10 @@ The anode, then, emits electrons which collide with gas particles (mostly argon 
 Some gas particles may get ionized by the collision and the gas cations are accelerated to the anode. 
 If a cation has enough energy, it will bump off one or more atoms or molecules from the surface. 
 This happens by a cascade of momentum transfers, which can reach the surface again (see figure \ref{fig:sputter1}). 
-If a surface particle obtains momentum pointing away from the bulk and its kinetic energy is higher than the binding energy, the particle is sputtered. 
-This neutral sputtered particle travels -- unaffected by the electrical field nearly perpendicular to the surface -- towards the substrate and condenses with other particles to form a layer.
-The pressure in the chamber should be small, such that the sputtered particle has a long mean free path, but on the other hand 
-a minimum pressure is needed to sustain the plasma.
-Usual pressures buzz around \SI{1}{\Pa} (\num{e-2}\SI{}{\milli\bar}) or lower\cite{Swann1988}.
+\fi
 
+
+\iffalse
 A magnetron can be placed behind the cathode (target) in order to trap the plasma close to the source. 
 This lowers the pressure needed to sustain the plasma. 
 Furthermore, magnetrons prevent high energy electrons from reaching the substrate and 
@@ -259,6 +280,7 @@ The limitation of only being able to use conducting materials as targets can be 
 This prevents charge from building up on the target. \linebreak[2]
 Although radio frequency sputtering is more versatile, directional current sputtering is more common because of it's simpler system and economical reasons.
 %\td{sputtered particles are neutral and not influenced by the electrical field}
+\fi
 
 %\pagebreak[4]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
