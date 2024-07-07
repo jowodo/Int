@@ -79,7 +79,7 @@ These additives were added to influence pH and surface tension with the goal to 
 The \gls{water}-\gls{ipo} mixture was added to the \gls{zrpro}-gls{acac} solution and stirred over night. 
 The exact volumes can be taken from table~\ref{tab:rec1}.
 %Unfortunately, this solution failed to produce \td{anything near homogeneous layers (??)}.
-Unfortunately, this solution failed to produce homogeneous layers, but instead only resulted in sparse patches of \gls{zro} on the substrate.
+Unfortunately, this solution failed to produce homogeneous layers, but instead only resulted in sparse patches of deposits on the substrate.
 Thus, an alternative solution was found.
 %\td{At this point in time everything was doctor bladed by hand. The hight was varied (with tape).}
 \begin{table}[h]
@@ -175,8 +175,9 @@ doubled and the volume of \gls{buoh} was decreased by the increase of volume of 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tape Casting}
 \label{sec:exp-db}
-All glass substrates were doctor bladed manually with a smooth stainless steel wire bar coater. 
-On two opposing edges adhesive tape was applied to create a valley in between. 
+All glass substrates were tape-casted manually with a smooth stainless steel wire bar coater. 
+On two opposing edges adhesive tape was applied. %to create a valley in between. 
+This allowed material to only be deposited on the area between the tape.
 After the layer was applied and dried, the tape was removed and the substrate heat treated (see table~\ref{tab:heating}).
 %\td{(at which T?)}.
 Lower \gls{db} velocities resulted in less homogeneous layers.
@@ -203,10 +204,10 @@ was switched on.
 During pre-optimization, lower \gls{db} velocities (\mmps{0.1}, \mmps{0.5}, 
 \mmps{1}, \mmps{2} and \mmps{5}) were tested. 
 \ul{100} of solution were 
-applied with a 10 - \ul{1000} pipette and the blade moved over the sample distributing the 
-liquid evenly. After evaporation of the solution, the vacuum was turned off, the 'blade 
-pusher' was put into initial position, the blade was removed and excess solution 
-was removed from the plate with a wipe. 
+applied with a 10 - \ul{1000} pipette and the blade moved over the sample distributing the liquid evenly. 
+After evaporation of the solution, the vacuum was turned off, the pushing bar
+%'blade pusher' \td{film applicator, travel pusher, traverse something, pushing bar} 
+was put into initial position, the blade was removed and excess solution was removed from the plate with a wipe. 
 The coated substrate was dried for \minutes{5} on a \SI{200}{\celsius} heating plate.
 %\td{transferred to the \SI{200}{\celsius} heating plate and rested on there for \minutes{5}. (why? what was the purpose?)}
 This process of applying a \gls{zro} layer was repeated as many times as needed.
@@ -327,7 +328,7 @@ The diffractograms were measured for \SI{2}{\minute} in reflection mode with \ch
 All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 \fi
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 	\centering
 	\begin{subfigure}{0.49\textwidth}
 		\centering
@@ -368,19 +369,19 @@ All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and co
 	(c) From the voltage source clockwise: variable voltage source, built-in amperometer, gold plated tungsten probe, sputtered aluminium contact, \gls{zro} layer to be measured, steel substrate, dried silver paste contact, gold plated tungsten probe. }%\td{(what is XXX circuit?)}}
 \end{figure}
 
-The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor 
-Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of 
-\SI{10}{\milli\volt}.
-Prior to \gls{iv} measurements the samples were sputtered with aluminium 
-through a mask to produce a multitude of equidistant contacts with a Leybold 
-UNIVEX450C Sputter System.
-Directional current sputtering was used with argon as inert gas at \SI{0.005}{\milli\bar} 
-and with a power of \SI{40}{\watt} for \SI{700}{\second}.
-Between sputtering and \gls{iv} measurements 
-direct contacts to the steel substrate were created by removing a patch of the \gls{zro}
-layer with 
-sand paper on two opposing edges of a sample and then by applying silver paste.
+The \gls{iv} curves were measured with Agilent 4156C Precision Semiconductor Parameter Analyzer from \SI{-0.5}{\volt} to \SI{0.5}{\volt} with steps of \SI{10}{\milli\volt}.
+
+Top contacts for the I-V measurements were formed 
+with a Leybold UNIVEX450C Sputter System.
+by sputtering 200 nm of aluminum through a shadow mask, defining circular contacts of a diameter approximately \SI{6}{\milli\meter}. 
+The bottom contacts to the steel substrate or to the ITO- or FTO-coated glass were formed by removing the ZrO2 deposit from a corner of the substrate, by soft abrasion with sand paper, and then applying conductive silver paste.     
+%Prior to \gls{iv} measurements the samples were sputtered with aluminium through a mask to produce a multitude of equidistant contacts with a Leybold UNIVEX450C Sputter System.
+%Directional current sputtering was used with argon as inert gas at \SI{0.005}{\milli\bar} and with a power of \SI{40}{\watt} for \SI{700}{\second}.
+%Between sputtering and \gls{iv} measurements direct contacts to the steel substrate were created by removing a patch of the \gls{zro} layer with sand paper on two opposing edges of a sample and then by applying silver paste.
 See figure~\ref{fig:circuit} for a sketch of the connectivity.
+
+The measured I-V curves therefore represent the vertical resistance of the deposited layer. 
+This resistance will be predominantly influence by the presence of shunts (hotspots or short-cuts between the top and bottom contact), appearing due to the inhomogenous thickness, and pinholes through the ZrO2 layer. 
 
 %\todo{ To me this does not follow any logical order!}
 \section{Data Processing of Electrical Measurements}
@@ -425,14 +426,14 @@ calculating averages $\overline{V}$ and $\overline{I}$ of each point cloud and t
     g = \frac{\overline{I}_{+} - \overline{I}_-}{\overline{V}_{+} - \overline{V}_-}
 \end{equation}
 %
-The average of each conductance would be an easy and naive choice but difficult to represent a 
+The average of each conductance would be an easy choice but difficult to represent a 
 sample correctly since the possible values of conductance span across several magnitudes.
 So the average of base 10 logarithm of conductances is the next nearby \textit{ansatz}.
 %
 In order to make the metric closer 
 %and better comparable to the 
 \gls{mse} (and to penalize deviation from ideal more than linearly) the average of the squared difference 
-to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the average of logarithms and shall be called conducticity hereafter for lack of a better term. 
+to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the average of logarithms and shall be called conductivity hereafter. % for lack of a better term. 
 %As a measure of conductance a distance $D$ from an ideal non-conducting case. 
 %The average of the negative base 10 logarithm subtracted from an ideal non-conducting gradient of $10^{-13}$ 
 %and the mean of all conductances was taken
@@ -441,7 +442,7 @@ to the ideal non-conduction case ($g=10^{-13}$) was chosen instead of the averag
     \gamma = \sum_i^N \frac{ (-log_{10}(g_i) - 13)^2}{N}
 	\label{eq:gamma}
 \end{equation}
-Another measure is the density of shorted species $\rho$ (pinhole density), calculated in following way:
+Another measure is the density of shorted elements $\rho$ (pinhole density), calculated in following way:
 \begin{equation}
 	s_i = \begin{cases}
         1 &\text{if} \quad -log_{10}(g_i) < 5 \\
@@ -473,7 +474,7 @@ The density is 1 if every measurement has a conductance larger than $10^{-5} \, 
 %\td{Screening}
 %244 - 93 aqueous - 103 testing - 191 buthanol - 206 preopt - 244 emma
 % 93 aq - 20 adapting Hu2016 - 88 testing process vars - 15 pre-opt - 38 emma (3 failed samples)
-244 samples were produced: 93 samples with the aqueous recipes (see section \ref{sec:exp-sol-aq}), 20 samples for adapting the recipe from \cite{Hu2016}, 88 samples for testing coating process variables, 15 samples in pre-optimization to find fitting constraints for the final optimization (see section \ref{sec:ss}). 
+% 244 samples were produced: 93 samples with the aqueous recipes (see section \ref{sec:exp-sol-aq}), 20 samples for adapting the recipe from \cite{Hu2016}, 88 samples for testing coating process variables, 15 samples in pre-optimization to find fitting constraints for the final optimization (see section \ref{sec:ss}). 
 
 %The first 200 recipes were optimized via biotic refinforcement learning (i.e.\ my brain) in order to obtain reasonable constraints for computerized pre-optimization. \td{(xxx but using a completely untested recipe!)} 
 %The main part of all samples (200 out of 244) were pre-optimization samples,  from which the bulk were screening experiments optimized via biotic reinforcement learning  (i.e.\ my brain) in order to obtain reasonable constraints for computerized pre-optimization. \td{(xxx but using a completely untested recipe!)} 
