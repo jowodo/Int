@@ -303,15 +303,16 @@ The electron beam produces X-rays, elastically backscattered (primary) electrons
 Secondary electrons carry information to conclude morphology and topology of the sample, while X-rays can be used to identify elements present in the surface. 
 Electrons originate from either a \gls{feg}, where a strong electrical field rips electrons from the bulk, or from thermionic guns where a filament (tungsten W or \ch{LaB6} (brighter and longer lasting but more expensive)) is heated until electrons are emitted. 
 Electrons are then accelerated by a voltage of \SI{2}{\kilo\volt} to \SI{40}{\kilo\volt} and bundled into narrow beams by lenses\cite{Vernon2000}.
-All micrographs in this work were made at 
-%Scanning electron microscopy was performed at 
-an acceleration voltage of 5 kV.
+%%Scanning electron microscopy was performed at 
+%All micrographs in this work were made at 
+%an acceleration voltage of 5 kV.
+All SEM micrographs were taken with a Zeiss Supra 40 with 5 kV acceleration voltages.
 A high mean free path is needed for electrons to travel from the source to the sample (and to the detector). 
 Thus, a very low pressure is needed inside the microscope. 
 In this work \gls{sem} was used as a preliminary way of checking the quality of the deposited layer. 
 % squeeze condition into this page 
 \enlargethispage{\baselineskip}
-\todo{specifications of instruments used: acceleration voltage of 5 kV ??and with an in-lens detector??}
+%\todo{specifications of instruments used: acceleration voltage of 5 kV ??and with an in-lens detector??}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -346,8 +347,8 @@ absorbed by a molecule or atom.
 Firstly, the energy of the photon must be the same as the difference between two electronic states. %, a lower populated and a higher empty orbital.}
 The electron will then be excited into a energetically higher orbital.
 Secondly, the electronic spin state of the molecule has to be the same before and after, otherwise the transition is quantum mechanically "forbidden" and the absorption is extremely unlikely. 
-\fi
 
+\subsubsection{Infrared spectroscopy}
 % IR
 \Gls{ir} light interacts with molecular vibrations, which is only a part of the degrees of freedom of a molecule.
 A molecule has $F=3N$ ($N$ number of atoms) degrees of freedom, including translational $F_T=3$ and rotational $F_R=3$ (2 for linear molecules) movements. 
@@ -363,7 +364,7 @@ Only vibrations that change the dipole moment of the molecule are \gls{ir} activ
 The absorption of \Gls{nir} electromagnetic waves involves excitations of non-fundamental vibrations, overtones and combination modes which lead to intricate patterns in the so called fingerprint region. 
 These transition are mostly "forbidden" and allow analysis of bulk matter without extensive preparation
 due to the deep penetration depth of \gls{nir} light\cite{bec2019breakthrough}.
-
+\fi
 %\td{describe simple IR with monochromator}
 
 \subsubsection{Fourier Transform Spectrometer}
@@ -372,16 +373,24 @@ In the classic two-beam-spectrometer the light emitted from the light source is 
 sent through the sample and the reference, and one of the two beams is alternately 
 sent through a monochromator to a detector (often a thermopile).
 %
-In the \gls{ft} spectrometer the beam is sent through the sample, split and 
+In the \gls{ft} spectrometer, on the other hand, the beam is sent through the sample, split and 
 reflected from a static and from a moving mirror, recombined and detected by a photo 
 multiplier (a device which transforms photons into electrical signals). 
-How the two beams will interfere upon recombination depends on the optical path difference (also called retardation) of the two light beams\cite{Schwedt2008}.
+%How the two beams will interfere upon recombination 
+The interference of the two beams 
+depends on the optical path difference (also called retardation) of the two light beams\cite{Schwedt2008}.
 In a \gls{ft} spectrometer the reference has to be measured before the sample.
+
+\Gls{ft}\gls{uv}/\gls{vis}/\gls{nir} transmittance and reflectance spectra (at \SI{20}{\degree} incident angle) were recorded with a Bruker Vertex 70 spectrometer with a quartz beam splitter, \SI{0.5}{\milli\meter} aperture and Gallium-Phosphide detector for ultra violet light (\SI{303}{\nano\meter}--\SI{588} {\nano\meter}) and a silicon detector for visual and \gls{nir} light (\SI{500}{\nano\meter}--\SI{1.2}{\micro\meter}). 
+% gallium phosphide http://dx.doi.org/10.1051/epjconf/20134800028
+For transmittance the light entered the sample from the side with the layer. 
+The \gls{uv} and \gls{vis}/\gls{nir} spectra were merged in Opus software. % included in the spectrometer. 
 %
 %When the refractive index of two layers differ, light can be used to measure the thickness\cite{Dumin1967} of the optical less dense material.
 
 %\td{Frank-Condon rules, spin verbot and symmetrie verbot are ausschlaggebend für the resulting spectrum. }
 %differences to \gls{uv}\gls{vis}: transmission instead of absorbance, higher energy left instead right in plot, base line on top instead of bottom.
+\td{specifications of instruments}
 
 \ds{
 	IR around page 45;
@@ -400,5 +409,9 @@ Each crystalline material has a discreet atomic structure, which upon irradiatio
 X-rays causes constructive and destructive interference according to Bragg's law and generates unique diffraction patterns. 
 \Gls{xrd} diffraction plots of crystalline materials feature distinct peaks, whereas amorphous materials exhibit a broad curve with a maximum extending over several degrees (2$\theta$).
 
-%\url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
+\Gls{xrd} diffractograms were obtained with a Thermo Scientific ARL Equinox 100 X-Ray Diffractometer.
+The diffractograms were measured for \SI{2}{\minute} in reflection mode with \ch{Cu}-$K_{\alpha}$ radiation ($\lambda$=\SI{1.541874}{\angstrom}).
+%. (where are the conditions?)}
+All \gls{xrd} diffractograms were taken at \SI{5}{\degree} incident angle and compared to the internal database.
 
+%\url{https://chem.libretexts.org/Courses/Franklin_and_Marshall_College/Introduction_to_Materials_Characterization__CHM_412_Collaborative_Text/Diffraction_Techniques/X-ray_diffraction_(XRD)_basics_and_application}\\
