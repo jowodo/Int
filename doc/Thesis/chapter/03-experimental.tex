@@ -497,16 +497,19 @@ The density is 1 if every measurement has a conductance larger than $10^{-5} \, 
 %\td{
 %The then current procedure resulted in clear and continuous films, but was plagued from inhomogeneities due to drying stains. 
 %The drying stains could be circumvented by using a heat gun, but the results were not reproducible. 
-The glass plate of the film applicator was exchanged with a metal plate.
-This allowed to hold the sample in place through underpressure and control temperature. 
+
+%starting with pre-optimisation
+%The glass plate of the film applicator was exchanged with a metal plate.
+A metal plate with vacuum chuck and temperature control was used as a base in the film applicator. 
+%This allowed to hold the sample in place through underpressure and control temperature. 
 The bounds of the process variables were then explored in a preliminary study 
 using the Plackett-Burman\cite{Plackett1946} design implemented in the \texttt{python3} (version 3.9)
 library \texttt{pyDOE} (version 0.3.8); 
 with 
 (1,5), (4,10), (400,500), (120,480), (0.1,5) and  (20,80) 
 as nominal and extreme values for 
-relative concentration of Zr $c_{zr}$, number of coating layers $n_L$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} velocity $v_{C}$[\mm{}/\s{}] and \gls{db} temperature $T_{C}$[\oc{}], respectively.
-After testing the first samples, the lower limit for \gls{db} velocities was altered from 0.1 to 1 (see appendix \ref{sec:app-pre-emma}).
+relative concentration of Zr $c_{zr}$, number of coating layers $n_L$, calcination temperature $T_{cal}$[\oc{}], heating rate $v_{cal}$[\oc{}/\h{}], \gls{db} speed $v_{C}$[\mm{}/\s{}] and \gls{db} temperature $T_{C}$[\oc{}], respectively.
+After testing the first samples, the lower limit for \gls{db} speed was altered from 0.1 to 1 (see appendix \ref{sec:app-pre-emma}).
 %
 \ds{
 table \ref{tab:pre-opt1}).
@@ -587,10 +590,10 @@ the optimization as every reduction in variables or levels meant a faster conver
 The stabilization agent was changed from \gls{acoh} to \gls{ipo} 
 shortly before the \gls{pso}
 because of much better solution stability and similar electric properties of resulting layers (how did you test this?? see appendix \ref{sec:app-pre-emma}).
-The - up to this moment - best process was chosen to be tested with 
+The best process after this set of experiments was chosen to be tested with 
 \ml{1} \gls{acoh} (sample no.~199), \ml{0.5} \gls{acoh} plus \ml{0.5} \gls{ipo} (sample no.~201) and \ml{1} \gls{ipo} (sample no.~192).
 %\td{As the sample showed the best all ex were proceeded with ipo as stabilization agent. }
-The sample produced with \gls{ipo} as stabilization agent showed comparable passivization results (see appendix \ref{sec:app-pre-emma}) and better stability of the solution. 
+The sample produced with \gls{ipo} as stabilization agent showed comparable electric insulation results (see appendix \ref{sec:app-pre-emma}) and better stability of the solution. 
 Therefore, \gls{ipo} was used  as stabilzier in further experiments.
 %\td{After the boundaries of the solution were fixed }
 After the base recipe for the solution has been decided
