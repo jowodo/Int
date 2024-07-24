@@ -19,3 +19,5 @@
 - [ ] check if all layers are change to coating layers
 - [ ] check if db/coating passt v_{DB}
 - [ ] translate all DB to tape casting 
+- [ ] optimizand 
+- [ ] number of layers vs layer count 
