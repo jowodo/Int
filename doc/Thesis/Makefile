@@ -16,6 +16,7 @@ clear:
 		$(basename).aux \
 		$(basename).bbl \
 		$(basename).blg \
+		$(basename).brf \
 		$(basename).glsdefs \
 		$(basename).ist \
 		$(basename).log \

@@ -1,4 +1,7 @@
 - [x] check if all 'aquatic' are now 'aqueous'
+- [ ] check if all conducticity and other optimizands are homogene
+- [ ] check if all optimize and no optimise
+- [ ] increase size of images (especially results)
 - [ ] change 'pinhole density' to 'pinhole'?
 - [ ] change conducticity to 'conductivity'
 - [ ] change 'velocity' to 'speed'

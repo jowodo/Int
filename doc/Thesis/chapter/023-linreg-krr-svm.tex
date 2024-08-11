@@ -5,8 +5,8 @@ It persuades by its computational simplicity and easy interpretation.
 \begin{equation}
 \mathbf{y} = \mathbf{X} \mathbf{k} +c 
 \end{equation}
-Where $\mathbf{y} \in \mathbb{R}^n$ ($n$ is the number of data points) is a vector of dependent variables which shall be predicted and $\mathbf{X}\in \mathbb{R}^{n\times d}$ ($d$ is the the number of independent variables) is a matrix of independent variables. 
-The parameters $\mathbf{k} \in \mathbb{R}^d$ and $c \in \mathbb{R}$ are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
+Where $\mathbf{y} \in \mathbb{R}^n$ ($n$ is the number of data points) is a vector of dependent variables which shall be predicted and $\mathbf{X}\in \mathbb{R}^{n\times d}$ ($d$ is the number of independent variables) is a matrix of independent variables. 
+The parameters $\mathbf{k} \in \mathbb{R}^d$ and $c \in \mathbb{R}$ are chosen by minimizing an objective function (loss function in \gls{ml} jargon).
 A typical function to minimize are the $L_1$ and $L_2$ error, i.e. \gls{mae} and \gls{mse}, respectively.
 \begin{align}
 L_1&= \sum_i |y_i - \hat y_i| \\%= \sum_i \sum_j |y_i - x_{i,j}\cdot k_i+c| \\
@@ -30,14 +30,14 @@ When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss func
 A~kernel transforms data in such a way that a linear hyperplane (a point in one dimension, a line in two dimensions, 
 a plane in three dimensions) can fit data in regression problems or separate the data in classification problems without actually doing the transformation for every data point, which lowers computational costs.
 A kernel is some kind of similarity measure 
-which fulfills the requirements of nonnegativity, symmetry and linearity\cite{rupp2015machine}.
+which fulfills the requirements of non-negativity, symmetry and linearity\cite{rupp2015machine}.
 %\enlargethispage{\baselineskip}
 %\looseness=-1
 The following equations show definitions for 
 linear~(eq.~\ref{eq:lin-kernel}), 
 polynomial (eq.~\ref{eq:pol-kernel}), 
 sigmoidal (eq.~\ref{eq:sig-kernel}) and 
-radial basis functionial kernel~(eq.~\ref{eq:rbf-kernel}), with $\gamma$ as fixed hyperparameter and $c_0$ as parameter to optimize.
+radial basis functional kernel~(eq.~\ref{eq:rbf-kernel}), with $\gamma$ as fixed hyperparameter and $c_0$ as parameter to optimize.
 A requirement for using kernels is having a dot product in the loss function. 
 This can be accomplished by expressing $\mathbf{k}$ in terms of $\mathbf{X}$: $\mathbf{k}=\mathbf{X}^\top \mathbf{r}$
 \cite{rudin2020least}.
@@ -59,13 +59,13 @@ This can be accomplished by expressing $\mathbf{k}$ in terms of $\mathbf{X}$: $\
 The \gls{svm} was initially developed by Vladimir Vapnik for the binary classification of separable data, then improved to handle non-separable data\cite{cortes1995support} and eventually adapted to solve regression problems\cite{drucker1996support}.
 The concepts of \gls{svm} will be discussed in the same chronological order. 
 %
-Classifiction works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
+Classification works by spanning a hyperplane between two linearly separable categories in a way such that the closest points from each category have the largest distance to the hyperplane. 
 The distance from the points to the hyperplane is called margin $\tau$.
 The points with the shortest distance to the hyperplane are called support vectors and are used to define the hyperplane.
 A \gls{svm} avoids overfitting by only using a subset of the data - the support vectors - to fit the model. 
 The goal is to find the decision boundary which correctly classifies all samples with the biggest margin. 
 %
-The decision boundary can be expressed as an hyperplane
+The decision boundary can be expressed as a hyperplane
 \begin{equation}
 	\hat{\mathbf{y}} = h(\mathbf{X}) = \mathbf{X} \cdot \mathbf{w} + b
 \end{equation}
@@ -111,7 +111,7 @@ we get the width of the margin.
 \end{equation}
 %\td{draw sketch and make \ref{eq:svm02} on two lines}
 Thus, maximizing the margin is equivalent with minimizing $\|\mathbf{w}\|$ and minimizing $\frac{1}{2}\|\mathbf{w}\|^2$ (mathematical convenience for further steps).
-By incorporation the contraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we 
+By incorporation the constraint (eq. \ref{eq:svm01}) via the Lagrangian multiplier method we 
 \textit{mathemagically} arrive at the loss function which should be maximized: 
 \begin{equation}
 	\label{eq:svm03}
@@ -130,16 +130,16 @@ to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cher
 %
 %%%%%%%%%% SOFT MARGIN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{Soft margin \gls{svm}} -- in contrast to hard margin \gls{svm} -- is used if the data is non-separable due to outliers\cite{cortes1995support}.
-Such data can be handeled by introducing a penalization term for wrongly categorized samples into the loss function. 
+Such data can be handled by introducing a penalization term for wrongly categorized samples into the loss function. 
 \begin{equation}
 	\label{eq:svm-soft}
 	L_{SM} = \frac{1}{2} \|\mathbf{w}\|^2 + \sum_i^n max \left( 0, 1- y_i ( \mathbf{w} \mathbf{x}_i + b ) \right) 
 \end{equation}
 If the prediction $(\mathbf{w}\mathbf{x}_i+b)$ and the true category $y_i$ do not agree, 
 they have opposite signs and their product will be a negative number.
-The substraction of a negative number will result in a positive penalization. 
+The subtraction of a negative number will result in a positive penalization. 
 If the sample is correctly predicted, the product will result in a positive number, 
-the substraction will lead to a negative number and the maximum will be 0 if the sample is ousite of the margin. 
+the substraction will lead to a negative number and the maximum will be 0 if the sample is outside of the margin. 
 %
 %%%%%%%%%%% KERNELS IN SVM %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %A big advantage of \gls{svm} is that through the kernel trick non-linearly separable data can be divided. 
@@ -148,7 +148,7 @@ The function we want to optimize (eq.~\ref{eq:svm04}) and its soft margin equiva
 This allows us to separate data not only by hyperplanes 
 but also by intricate decision boundaries due to the kernel trick. 
 
-Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the innerproduct of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
+Again, a kernel $K(\mathbf{x}_i, \mathbf{x}_j) = T(\mathbf{x}_i)^\top \cdot T(\mathbf{x}_j)$ allows to calculate the inner product of two vectors in a transformed space without the need of transforming each vector, which turns out to be computationally much cheaper. 
 %\td{write about sv regrgession}
 
 \Gls{svm}s can also be used for regression (support vector regression).
