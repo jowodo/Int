@@ -57,7 +57,7 @@ Categorical inputs have no order and thus information is lost when using numeric
 %where our data is numerical and thus information is lost. 
 
 %\textbf{Pre-writing:}
-%\Gls{anova} doesn't provide a lot of extra information. 
+%\Gls{anova} does not provide a lot of extra information. 
 %wrong the second is not for phd but for extended data set
 %but for phd even lower than 0.1 \%
 %Anova shows that the influence of TCal is significant as shown by the F 
@@ -93,8 +93,8 @@ The coefficients of the $n_L$ term have the same sign in equations \ref{eq:emma-
 All terms in equations \ref{eq:linreg-phd} and \ref{eq:linreg-G} have the same sign 
 except $c_{zr}$ and the intercept. 
 %
-More particularly, $T_{cal}$ and $T_{C}$ have positive coefficients, i.e. a negative influence on the resistance 
-and $n_L$, $v_{C}$ and $v_{cal}$ have negative coefficients, i.e. a positive influence on resistance. 
+More particularly, $T_{cal}$ and $T_{C}$ have positive coefficients, i.e.\ a negative influence on the resistance 
+and $n_L$, $v_{C}$ and $v_{cal}$ have negative coefficients, i.e.\ a positive influence on resistance. 
 An indication that the data is strongly tainted by noise (see also section \ref{sec:res-anova}) is the low $R^2$ score of 0.41 of $\hat\rho$, 
 which is (sad but true) even undercut by the $R^2$ of linear fit of $\hat\gamma$, 0.34. 
 %The coefficients, though share the signs. 
@@ -117,7 +117,7 @@ $v_{cal}$ and $n_L$ are perfectly predicted by linear regression as there is an 
 \end{table}
 
 %
-Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $n_L$ are largest in value, but the values which are factored with these coefficients - i.e.\, $c_{zr}$ and $n_L$ themselves -- are the smallest among the input variables. 
+Regarding the coefficients of the linear model, the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $n_L$ are largest in value, but the values which are factored with these coefficients - i.e.\ $c_{zr}$ and $n_L$ themselves -- are the smallest among the input variables. 
 Thus, even though $T_{cal}$ might have a smaller coefficient in the linear \gls{rf}, the influence on the dependent variable might be larger. 
 For better comparison, the influence of an input variable was calculated by the formula: $I(x_i)=\frac{\bar{x}_i \cdot k_i}{\sum_i \bar{x}_i \cdot k_i}$ with $i=1,\dots,d $ and where $\bar{x}_i= \frac{(x_{i,min}+x_{i,max})}{2}$ is average possible value of the $i$-th input variable and $k_i$ is the coefficient of the $i$-th input variable in the linear regression. 
 %The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{C}$. 

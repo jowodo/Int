@@ -43,7 +43,7 @@ an interrogator communicates with two unknown entities \textbf{A} and \textbf{B}
 The question is if \textbf{A} is replaced with a computer how the ratio of outcomes would deviate from the original ratio. 
 %
 At the moment it is hard to imagine a computer getting a higher ratio than a human
-but when reading AI written articles\cite{gpt2020}, it's easy to see this test being passed in the near future; especially with ChatGPT's convincingly human-like answers\cite{dis2023chatgpt}.
+but when reading AI written articles\cite{gpt2020}, it is easy to see this test being passed in the near future; especially with ChatGPT's convincingly human-like answers\cite{dis2023chatgpt}.
 
 But this does not mean that computers are more intelligent than humans or \linebreak[4] sentient\cite{searle1980,searle1999married} even though some claim\cite{tiku2022google} and it certainly does not mean that research is over. 
 AI is still a young field, which is strongly growing and is gaining ubiquitous status. 
@@ -66,7 +66,7 @@ making video games\cite{Guzdial2016}.
 It is nearly hard to find a field where \gls{ai} is not used in some way. 
 This steady incorporation of \gls{ai} leads to the so called \gls{ai} effect\cite{McCorduck1982,ai100}: 
 certain fields get incorporated into \gls{ai} research and practice,
-such that after some time of general use it is no more considered \gls{ai} (e.g. spam filter or web searches).
+such that after some time of general use it is no more considered \gls{ai} (e.g.\ spam filter or web searches).
 Google CEO Sundar Pichai even goes as far and said: 
 "AI is one of the most important things humanity is working on. It is more profound than [...] electricity or fire"\cite{Hassan2020}.
 
@@ -86,7 +86,7 @@ Independent from these $2\times2$ categories there are multiple ways to let mach
 Artificial neurons (also called nodes), which are arranged in layers, 
 are connected to each of the neurons of previous and next layers
 and the weights (parameters of intensity), with which the data is routed from one neuron to another, 
-are optimised during training. 
+are optimized during training. 
 %
 Convolutional-layer \gls{nn} excel in picture recognition\cite{Lecun1995conv} and are useful in quantum mechanics too\cite{westermayr2020combining}.
 Other common methods include linear regression, kernel ridge regression and support vector regression.
@@ -97,7 +97,7 @@ Other common methods include linear regression, kernel ridge regression and supp
 \subsection{Population Based Optimization Algorithms}
 
 There are also lesser known \gls{ml} algorithms such as 
-evolutionary algorithms (e.g. \gls{ga} and \gls{pso}).
+evolutionary algorithms (e.g.\ \gls{ga} and \gls{pso}).
 Evolutionary algorithms take advantage of the ability to cope with local optima by evolving several candidate solutions simultaneously\cite{villanova2010function}.
 %
 %One advantage 
@@ -123,11 +123,11 @@ is represented by its independent and dependent variables.
 It was originally inspired by the behavior of bird flocks and fish schools\cite{villanova2010function,Kennedy1995}.
 %"PSO is a population based heuristic inspired by the flocking behavior of birds. 
 %To simulate the behavior of a swarm, each bird (or particle) is allowed to fly towards the optimum solution."\cite{villanova2010function}
-Each particle has an associated position and velocity. 
+Each particle has an associated position and speed. 
 Every movement across the search space is, 
 additionally to a stochastic term, 
 %stochastic and 
-influenced by its particle velocity and position as well as its and the swarm's best visited position.
+influenced by its particle speed and position as well as its and the swarm's best visited position.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -142,7 +142,7 @@ The \gls{mars} \gls{rf} is then used to chose the next position for each particl
 The \texttt{CRAN} (Comprehensive R Archive Network) package which implements \gls{mars} is called \texttt{earth} due to \gls{mars} being trade marked\cite{mars}.
 %%% MARS 
 \gls{mars} is an extension of multivariate linear regression.
-Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g. kernel functions). %, whose number of parameter quickly \td{exceeds the practical} for moderate dimensional problems ($n>5$). 
+Friedman presented \gls{mars} as an alternative to piecewise polynomials (splines) and local averaging methods (e.g.\ kernel functions). %, whose number of parameter quickly \td{exceeds the practical} for moderate dimensional problems ($n>5$). 
 Advantages of \Gls{mars} are that it uses less parameters and it produces continuous models with continuous derivatives.
 %
 %to higher dimensions (n > 2) is straightforward in principle but difficult in practice. 
@@ -193,9 +193,9 @@ The coefficients for each term are then chosen via regular \gls{mse} minimizatio
     \item kernel ridge regression 
     \item support vector machine 
     \item anova (categorical), PCA, step wise regression
-    \item all previous ananlyse data to predict, but don't tell me which data point is needed next 
+    \item all previous ananlyse data to predict, but dont tell me which data point is needed next 
     \item DOE (add data acquisition)
-    \item genetic algorithm and pso (they combine data gen with regression/prediction and optimization, actually incorporate prediction into selection process but don't per se specify which pred and optimization)
+    \item genetic algorithm and pso (they combine data gen with regression/prediction and optimization, actually incorporate prediction into selection process but dont per se specify which pred and optimization)
     \item comment: always tradeoff between complexity and interpretability
     \item quesiton: which paragraph by GPT2?? 
 \end{itemize}
@@ -227,7 +227,7 @@ The coefficients for each term are then chosen via regular \gls{mse} minimizatio
 \end{quote}
 %
 In two cases a deliberate \gls{doe} is especially beneficial.
-(1) If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g. drilling for oil or quantum chemical calculations). 
+(1) If the query of a new data point is very expensive, it is favourable to actively chose the query (e.g.\ drilling for oil or quantum chemical calculations). 
 
 (2) If the query space is so vast, that randomly querying might explore domains, which might lead to uninteresting or even misleading information.
 %Both encompass nearly all cases. 

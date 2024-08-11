@@ -7,7 +7,7 @@ It persuades by its computational simplicity and easy interpretation.
 \end{equation}
 Where $\mathbf{y} \in \mathbb{R}^n$ ($n$ is the number of data points) is a vector of dependent variables which shall be predicted and $\mathbf{X}\in \mathbb{R}^{n\times d}$ ($d$ is the number of independent variables) is a matrix of independent variables. 
 The parameters $\mathbf{k} \in \mathbb{R}^d$ and $c \in \mathbb{R}$ are chosen by minimizing an objective function (loss function in \gls{ml} jargon).
-A typical function to minimize are the $L_1$ and $L_2$ error, i.e. \gls{mae} and \gls{mse}, respectively.
+A typical function to minimize are the $L_1$ and $L_2$ error, i.e.\ \gls{mae} and \gls{mse}, respectively.
 \begin{align}
 L_1&= \sum_i |y_i - \hat y_i| \\%= \sum_i \sum_j |y_i - x_{i,j}\cdot k_i+c| \\
 L_2&= \sum_i(y_i - \hat y_i)^2 %= \sum_i \sum_j (y_i - x_{i,j}\cdot k_i+c)^2

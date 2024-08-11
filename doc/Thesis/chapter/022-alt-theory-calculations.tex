@@ -21,7 +21,7 @@ In order to solve these problems machine learning resorts to statistical methods
 linear regression, ridge regression. 
 Further machine learning methods not regularly seen in statistics are the 
 kernel trick, support vector machines, genetic algorithms and particle swarm algorithms. 
-The last two are special in the sense that they don't provide a certain regression method,
+The last two are special in the sense that they dont provide a certain regression method,
 but rather a frame work to choose the next sample which should be tested in a optimization. 
 \td{mention classification vs regression and supervized vs supervized}
 %
@@ -37,7 +37,7 @@ It besticht by its computational simplicity and easy interpretation.
 \end{equation}
 Where $\mathbf{y}$ (size $\mathbb{R}^n$, where $n$ is the number of data points) is a vector of dependent variables and $\mathbf{X}$ (size $\mathbb{R}^{n\times d}$, where $d$ is the the number of independent variables) is a matrix of independent variables. 
 The parameters $\mathbf{k}$ (size $\mathbb{R}^d$) and $c$ (size $\mathbb{R}$) are chosen by minimizing an objective function (loss function in \gls{ml} chargon).
-A typical function to minimize are the L1 and L2 error, i.e. \gls{mae} and \gls{mse}, respectively.
+A typical function to minimize are the L1 and L2 error, i.e.\ \gls{mae} and \gls{mse}, respectively.
 \begin{align}
 L_1&= \sum |y_i - \hat y_i| = \sum \sum |y_i - x_{i,j}\cdot k_i+c| \\
 L_2&= \sum(y_i - \hat y_i)^2 = \sum (y_i - x_{i,j}\cdot k_i+c)^2
@@ -175,9 +175,9 @@ to zero and inserting into eq. (\ref{eq:svm03}))\cite{winston1992artificial,cher
     \item \sout{kernel ridge regression}
     \item \sout{support vector machine}
     \item anova (categorical), PCA, step wise regression
-    \item all previous ananlyse data to predict, but don't tell me which data point is needed next 
+    \item all previous ananlyse data to predict, but dont tell me which data point is needed next 
     \item DOE (add data acquisition)
-    \item genetic algorithm and pso (they combine data gen with regression/prediction and optimization, actually incorporate prediction into selection process but don't per se specify which pred and optimization)
+    \item genetic algorithm and pso (they combine data gen with regression/prediction and optimization, actually incorporate prediction into selection process but dont per se specify which pred and optimization)
     \item comment: always tradeoff between complexity and interpretability
     \item quesiton: which paragraph by GPT2?? 
 \end{itemize}

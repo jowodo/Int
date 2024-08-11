@@ -57,7 +57,7 @@ A general experimental design procedure was stated by Cherkassky and Mulier in  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Narrowing, pre-optimization and constraint phase}
 \label{sec:phase2}
-The selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} %(page 25)
+The selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself\cite{cherkassky1998learning}. %(page 25)
 After having decided on a base recipe, it is important to define limits and decrease the number of independent variables. 
 The later is more important due to the curse of dimensionality\cite{cherkassky1998learning}, 
 which states that with increasing dimensionality it get exponentially more difficult to arrive at the same density of data points. 
@@ -67,8 +67,7 @@ This leads to more information, which can be extracted from the same amount of d
 be it in more detail of the dependence or higher confidence interval. 
 A good measure to compare data density with literature and other methods is the element per variable ratio.
 The \gls{epv} in this work is round 5,
-which is low in comparison with literature consulted
-\cite{
+which is low in comparison with literature consulted\cite{
 ahmed2017preparation,
 fernandes2010multi,
 kaczmarowski2015genetic,
@@ -165,7 +164,7 @@ $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\te
 %Issues of methods for learning from data: 
 %\begin{itemize}
 %	\item How to incorporate a priori assumptions into learning? 
-%	\item How to measure model complexity (i.e. flexibility to fit the training data)?
+%	\item How to measure model complexity (i.e.\ flexibility to fit the training data)?
 %	\item How to find a optimal balance between the data and a priori knowledge? 
 %\end{itemize}
 %\cite{cherkassky1998learning}
@@ -206,7 +205,7 @@ $x'= \frac{x-\bar{x}}{x_{max} - \bar{x}}$ with $\bar{x}= x_{\text{max}} - x_{\te
     \item minimize prelaminary study time by testing a wide range of designs. scrutinize (hinterfragen) everything!
     \item \textbf{planning} gives chance of zooming out and force oneself to get an overview and to decide how much time on each task
     \item \textbf{research} phase is most important, dig into basics, discuss ideas with colleagues or go into detail about plan. Understand details of methods. Make a dummy run. Collect (dis-)advantages of different methods. Like in design project: do as many and as diverse solutions as possbile. Compare and combine the best parts. Reading will let learn from others mistakes. \\ \td{longer literature research (first solution,second solution) and PSO wrongly eingeschaetzt, could have been verhindert durch lesen the docu and more papers more thoughoughly. Ich war geblendet von dem was ich wollte und dadurch nicht realistisch}
-    \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g. the primary goal of a screening experiment is to identify the active factors.\cite{miller2001using} Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
+    \item \textbf{objective} should be defined as clear as possible. It will help to set a clear goal for each todo, e.g.\ the primary goal of a screening experiment is to identify the active factors\cite{miller2001using}. Which question should be answered and aufstellen a null Hypothesis. This is often very trivial, but let's you focus on the correct path. 
     \item what was goal of incorporating ml into this work? 
 %\td{The goal of introducing \gls{ml} to this project was to apply and delve/vertiefen into subject which I've been studying during my undergrad courses. This seemed like the perfect opputrunity. And indeed I learned a lot. Even if only although \gls{ml} is a hot topic at the moment, it can not solve every problem. Two important things have I learned regarding \gls{ml}: 
 \end{itemize}
@@ -225,7 +224,7 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 \textbf{3. Data Generation and Experiment Design} can be either in control of the modeler (designed experiment) or in an observational setting. The data collection can affect the sampling distribution and influence the next steps. 
 \textbf{4. Collect the Data and Perform Preprocessing} here outliers are detected and data preprocessing/encoding/feature selection. Scaling by standard deviation might be a good idea, but independent scaling of variables can lead to suboptimal representation for the learning task. Feature selection: A small number of informative features make the task of estimating dependencies easier. 
 \textbf{5. Model Estimation} The main goal is to construct a model for accurate prediction of future outputs
-\textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables. \cite{cherkassky1998learning}
+\textbf{6. Interpret the Model and Drawing Conclusions} The interpretability and accuracy of the model are compete. In classical statistics such as linearly parametrized function will suit both requirements. More complex and flexible models might lead to better estimates with less interpretability. Identifying the most important input variables\cite{cherkassky1998learning}.
 \fi
 \fi
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -237,11 +236,11 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 %\td{In example of documentation 2 input variables and 1-2 responses initial population=10
 %, subsequent population=5, but 10 iterations. Clearly more input varibles and less 
 %iterations (as in actual experiments) lead to suboptimal results.}
-    \item \textbf{pre-optimization}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $2\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see miller 2001 \cite{miller2001using} section 1) }
-    \item \textbf{factorial design} (classical \gls{doe}) is more robust at feature extraction for error laden data \cite{giunta2003overview} putting data on the extrems makes trend extraction easier. "By moving the samples to the boundaries of the design space, the effect of the random error terms is reduced."
+    \item \textbf{pre-optimization}{The primary goal of a screening experiment is to identify the active factors. A secondary goal is to provide a simple model that captures the essential features of the relationship between these active factors and the response—that is, to identify the active effects. \cite{miller2001using}} But $2^6=64$ are too many for preliminary test so maybe check base and from there do $2\cdot6=12$ experiments. Then focus on selected input vars, which might have mutliple maxima \\ \td{pre optimization was used to check if limits where okay, but could also have been used to sieve out factors without impact on response (see Miller 2001\cite{miller2001using} section 1) }
+    \item \textbf{factorial design} (classical \gls{doe}) is more robust at feature extraction for error laden data\cite{giunta2003overview} putting data on the extrems makes trend extraction easier. "By moving the samples to the boundaries of the design space, the effect of the random error terms is reduced."
     \item only include relevant variables\cite{gunst2009fractional}, but include all variables which could contribute\cite{haertler2014statistisch}
-%-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e., that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2009}
-%but on the other hand: If one ain't sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
+%-\td{"Similarly, it is often wise not to plan a comprehensive experiment that involves a large number of factors of interest. Such an experiment presupposes that most or all of the factors are important contributors to changes in the response variable and that they contribute jointly; i.e.,\ that individual factor effects and their interactions are statistically significant and meaningful." - from Gunst2009}
+%but on the other hand: If one is not sure a if factor is relevant, the model should be able to detect if there is a influence. - from Haertler2014?
     \item which input variables could have been left out? why? justify with intuition and maths
     \item selection of in- and output vars is more important than coice of learning algorithm. 
 %The process informal part of selection of input and output variables, data encoding/representation and incorporating a prior knowledge into the design of the learning system is often more critical for an overall success than the design of the learning machine itself.\cite{cherkassky1998learning} (page 25)
@@ -267,7 +266,7 @@ General experimental procedure from Cherkassky and Mulier Learning from Data\cit
 %by \url{https://blog.minitab.com/en/adventures-in-statistics-2/the-danger-of-overfitting-regression-models} 
 \iffalse %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \textbf{Curse and Complexity of Dimensionality}\cite{cherkassky1998learning} chapter 3.1.
-goal is to estimate function with finite samples, so it's always inaccurate (biased). 
+goal is to estimate function with finite samples, so it is always inaccurate (biased). 
 Meaning, full estimate only possible with high sampling density, which is difficult for high dimensional functions.
 \begin{enumerate}
 	\item Sample sizes yielding the same density increse exponentially with dimension.
