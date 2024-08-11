@@ -1,4 +1,4 @@
-\section{Evolutionary Model-based Multiresponse Approach (EMMA)}
+\section{Evolutionary Model-Based Multiresponse Approach (EMMA)}
 \label{sec:ss}
 %\todo{for what?}
 An evolutionary approach was chosen, namely a multi-objective 
@@ -30,14 +30,14 @@ Next, the output variables (dependant variables), their weights in the objective
 \end{table}
 
 The \textit{optimizands} where chosen to be $\gamma$, $\rho$, $n_L$ and $v_{cal}$, 
-(i.e.\ conductivity, pinhole density, number of coated layers and heating rate)
+(i.e.\ conductivity, pinhole ratio, number of coated layers and heating rate)
 where $\gamma$, $\rho$ and $n_L$ are to be minimized and $v_{cal}$ to be maximized.
 %which all should be minimized except for $v_{cal}$.
 The next step is to generate an initial population (ensemble of experiments), which is chosen randomly from the population space. 
 The samples are produced, the \gls{iv} curves are measured and the measurements evaluated according to section 
 \ref{sec:exp}, yielding the quantities 
 $\gamma$, $\rho_s$, $n_L$ and $v_{cal}$, which were used as inputs for the program.
-% and the responses conductivity $\gamma$ (see eq. \ref{eq:gamma}), pinhole density $\rho_s$ (see eq. \ref{eq:rho}), $n_L$ (numbers of coating layers) and $v_{cal}$ (heating rate of calcination process in \oc{}/\minutes{}) are supplied to the program. 
+% and the responses conductivity $\gamma$ (see eq. \ref{eq:gamma}), pinhole ratio $\rho_s$ (see eq. \ref{eq:rho}), $n_L$ (numbers of coating layers) and $v_{cal}$ (heating rate of calcination process in \oc{}/\minutes{}) are supplied to the program. 
 
 The program, then, uses this data to estimate a response for each output variable 
 for the entire population space
@@ -49,7 +49,7 @@ are given a random velocity vector associated to them, which is directed to the 
 The population for the next time step is generated and 
 again the samples are produced, the \gls{iv} curves are measured and measurements evaluated.
 %the experiments are again \td{executed, measured and evaluated. (unclear!)}
-Each time step thus includes experiment identification, solution preparation, coating deposition and layer analysis. 
+Each time step thus includes experiment identification, solution preparation, coating deposition and coating layer analysis. 
 
 \ds{system behavior are discussed in Modeling the Results.
 Algorithm and Coating Features. The theoretical efficiency
@@ -61,7 +61,7 @@ instant involves experiment identification, solution preparation,
 coating deposition, and spot analysis.
 }%\cite{Carta2011}
 
-\section{Fitting via Machine Learning}
+\section{Fitting Data via Machine Learning}
 %\td{scarce data may lead to overfitting\cite{Lecun1995conv}}\\
 Python 3.10.9 and sci-kit learn 1.1.2\cite{pedregosa2011scikit} were used to implement a linear fit model, \gls{krr} and \gls{svm} with polynomial, \gls{rbf} and sigmoid kernels. 
 %\subsection{Grid Search}

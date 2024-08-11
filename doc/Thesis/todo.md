@@ -7,21 +7,21 @@
 - [x] check all spellings!
 - [x] check for won't don't can't \*n't it's 
 - [x] check spaces after e.g. and i.e.  (change to e.g.\ lorem)
-- [ ] increase size of images (especially results)
-- [ ] change 'pinhole density' to 'pinhole'?
-- [ ] check if all headings are descriptive in TOC 
-- [ ] check all headings for consistent capitalization
-- [ ] check abriviations e.g. DB, optimisands (lambda, ...)
-    - [ ] DB blade-coating: https://onlinelibrary.wiley.com/doi/10.1002/eem2.12118
-- [ ] check punctuation of which see https://www.scribbr.com/commas/comma-before-which/
-- [ ] check if all elements are lowercase
-- [ ] check if all pin hole changed to pinhole
-- [ ] check if all cross validaiton changed to cross-validation
-- [ ] check UVVis to UV/Vis
-- [ ] check pdflatex output
-- [ ] check if all layers are change to coating layers
-- [ ] check if db/coating passt v_{DB}
-- [ ] translate all DB to tape casting 
-- [ ] optimizand 
-- [ ] number of layers vs layer count 
+- [x] check if all pin hole changed to pinhole
+- [x] check UVVis to UV/Vis
+- [x] check if all cross validaiton changed to cross-validation
+- [x] check if all layers are change to coating layers
+- [x] number of layers vs layer count 
+- [x] check all headings for consistent capitalization https://editorsmanual.com/articles/capitalizing-headings/
+- [x] check if all headings are descriptive in TOC 
+- [x] check if db/coating passt v_{DB}
+- [x] check if all chemical elements are lowercase
+- [x] change 'pinhole density' to 'pinhole'? or rather pinhole ratio
+- [/] check punctuation of which see https://www.scribbr.com/commas/comma-before-which/
+- [/] check abriviations e.g. DB, optimisands (lambda, ...)
+    - [/] DB blade-coating: https://onlinelibrary.wiley.com/doi/10.1002/eem2.12118
+- [/] translate all DB to tape casting 
+- [/] optimizand 
 - [ ] \todo in text
+- [/] increase size of images (especially results)
+- [/] check pdflatex output

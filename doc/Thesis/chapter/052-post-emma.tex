@@ -64,7 +64,7 @@ Categorical inputs have no order and thus information is lost when using numeric
 
 %%%%%%%%%%%%%%%%%%%% LIN REG %% lin reg %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \subsection{Linear Regression} 
-%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by the Zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $n_L$, but their coefficients are the smallest in absolute values. 
+%Initially, it was thought that the resulting layer and thus resistance of a sample is mainly influenced by the zirconium concentration in the starting solution $c_{zr}$ and the number of layers applied $n_L$, but their coefficients are the smallest in absolute values. 
 
 %\todo{what was fitted how?}
 The data obtained from the \gls{emma} optimization was used to fit a linear model. 
@@ -123,8 +123,8 @@ For better comparison, the influence of an input variable was calculated by the 
 %The biggest influence on $\rho$ is indeed $T_{cal}$, next with about a third of the influence $T_{C}$. 
 The biggest influence on $\hat\rho$ is  $n_L$, followed by $T_{cal}$. 
 While $T_{cal}$ is the second largest influence on $\hat\rho$ as well, it is noteworthy that $n_L$ contributes the least to $\hat\gamma$. 
-That means that according to the linear regression, the number of layers increases the overall resistance of the zirconium ceramics while a lower calcination temperature leads to less defects. 
-Interestingly, the number of layers has the least amount of influence on the number probability of defects, which seems to be an artifact of the noise rather than a process property. 
+That means that according to the linear regression, the number of coating layers increases the overall resistance of the zirconium ceramics while a lower calcination temperature leads to less defects. 
+Interestingly, the number of coating layers has the least amount of influence on the number probability of defects, which seems to be an artifact of the noise rather than a process property. 
 %Furthermore the influence on $\hat\rho$ is dominated by $n_L$ and $T_{cal}$, while the influences on $\hat\gamma$ are distributed more evenly.
 %Different distributions were not expected. 
 The two very different distributions of influence among the input variables can have three reasons:
@@ -178,7 +178,7 @@ All these extreme values of hyperparameters stimulate regularization and indicat
     \label{tab:grid-search}
 \end{table}
 % R2
-The $R^2$ values were calculated for each of the models using cross validation. 
+The $R^2$ values were calculated for each of the models using cross-validation. 
 Resulting $R^2$ are all below zero (see table~\ref{tab:grid-search}). 
 A negative $R^2$ value means that the prediction provided by the model is worse than predicting only the mean of $\gamma$ and $\rho$ (see \ref{eq:r2}). 
 %\td{how can R2 be below zero?}

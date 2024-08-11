@@ -74,7 +74,7 @@ Indeed, the samples with the lowest \textit{optimizands} are among the initial g
 
 %GENERATIONS
 In figures \ref{fig:emma-G-gen} and \ref{fig:emma-phd-gen} we can see the two measured main \textit{optimizands}, 
-conductivity $\gamma$ and pin hole density $\rho$ (see section \ref{sec:eval}), of each particle at each generation.
+conductivity $\gamma$ and pinhole ratio $\rho$ (see section \ref{sec:eval}), of each particle at each generation.
 The the solid circles at generation number 0 indicate particles which were not included to be propagated. 
 %Each violet line indicates a particle, the blue line depicts the average of all particles and the yellow line depicts the average of all particles which were propagated. 
 Solid lines connect individual particles in time. 
@@ -117,9 +117,9 @@ In the scatter plots~\ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of 
     \end{subfigure}
 	\caption{
 		(a)~calculated conductivity measures~$\gamma$ of each particle against the generation number %blue shows average for each generation and yellow shows average of each generation without discarded particles from initial generation. 
-		(b)~calculated pin hole density~$\rho$ of each particle against the generation number %blue shows average for each generation and yellow shows average of each generation without discarded particles from initial generation. 
+		(b)~calculated pinhole ratio~$\rho$ of each particle against the generation number %blue shows average for each generation and yellow shows average of each generation without discarded particles from initial generation. 
 		(c)~calculated conductivity measures~$\gamma$ against calcination temperature $T_{cal}$
-		(d)~calculated pin hole density~$\rho$ against calcination temperature $T_{cal}$
+		(d)~calculated pinhole ratio~$\rho$ against calcination temperature $T_{cal}$
 	change colors }
 
     \label{fig:emma-gen}
@@ -129,8 +129,8 @@ In the scatter plots~\ref{fig:g-tcal} and \ref{fig:phd-tcal} the correlation of 
 %\subsection{Equation}
 Equations~(\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) and (\ref{eq:emma-phd4})--(\ref{eq:emma-vcal4}) represent the regression functions at $t=3$ and $t=4$, respectively, rounded to 2 significant digits.
 %$h(x)$ is the hinge function (also called a rectifier function) of the simple form $h(x) = max(0,x)$. 
-The expression $h(n_L-6)$ translates into layer count only has an influence if larger than 6 
-and $h(6-n_L)$ into layer count influential only if under 6.
+The expression $h(n_L-6)$ translates into number of coating layers only has an influence if larger than 6 
+and $h(6-n_L)$ into number of coating layers is influential only if under 6.
 %
 The first thing to notice is that prediction functions of each generation depend on the same variables. 
 %This means that the algorithm must decide on the variables which explain the most variance independent of optimization weights.
@@ -183,13 +183,13 @@ This stems from the fact that the algorithm chooses a single minimal set of basi
 
 The coefficients in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) have the same signs and differ by a factor of roughly 100.
 This difference in magnitude fits the data well since the maxima of $\rho$ and $\gamma$ are separated by rough factor of 100 (see figure~\ref{fig:emma-gen} and appendix~\ref{sec:app-emma}). %, but the positive influence of the layer count $n_L$ is counter intuitive 
-%as one would expect more layers to be more insulating and thus result in lower conductivity and a lower probability of holes going all the way trough the \gls{zro} layers. %pin hole density. 
+%as one would expect more layers to be more insulating and thus result in lower conductivity and a lower probability of holes going all the way trough the \gls{zro} layers. %pinhole ratio. 
 The coefficients of the $v_{cal} \cdot T_{cal}$ interaction in equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}) 
 seem low, but the interaction has -- considering the minimum value of the interaction of $300 \cdot 120 =$  \num{36000} -- several orders of magnitude higher influence on $\rho_3$ and $\gamma_3$ than the $h(6-n_L)$ term. 
 %It's positive the hinge
 It is astonishing that the knot of the hinge function for equations (\ref{eq:emma-phd3})--(\ref{eq:emma-vcal3}) was chosen so low; 
-basically only including the influence of the lowest layer count $n_L=4$.
-Meaning for equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}), that the lowest layer count produces worse samples which is intuitive, but more than 6 layers do not improve the insulation. 
+basically only including the influence of the lowest number of coating layers $n_L=4$.
+Meaning for equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}), that the lowest number of coating layer produces worse samples which is intuitive, but more than 6 layers do not improve the insulation. 
 Encouragingly, the calcination heating rate $v_{cal}$ (see equation (\ref{eq:emma-vcal3})) has been predicted perfectly within numerical precision. 
 
 %%% T=4
@@ -202,7 +202,7 @@ as equations (\ref{eq:emma-phd3}) and (\ref{eq:emma-G3}): identical signs and fa
 % TCAL ON OPTIMIZANDS
 The influence of $T_{cal}$ on the measures of conductivity ($\hat\rho$ and $\hat\gamma$) is highly interesting. 
 It was expected that 
-calcination temperatures under \oc{400} do not suffice to produce compact layers (corresponding to $+h(400-T_{cal})$)
+calcination temperatures under \oc{400} do not suffice to produce compact coating layers (corresponding to $+h(400-T_{cal})$)
 and 
 that therefore the resulting layer does not insulate well if $T_{cal}$ is low (under \oc{400}). 
 The opposite is the case, though. % (see figures \ref{fig:g-tcal} and \ref{fig:phd-tcal}).
@@ -305,8 +305,8 @@ This idea has two flaws: there is only one set of \gls{bf}s for all \textit{opti
 additional dependent variables not only complicate the model but make it more difficult to predict the actual dependent variables and chose future data points. 
 Moreover, $v_{cal}$ and $n_L$ were only considered with 5\% weight in the overall objective function.
 The second flaw is that there are obviously better methods to assess the quality of a model than to make it more complex. 
-%Good alternatives would have been leave-one-out or cross validation.
-Validation methods for sparse data include re-sampling via leave-one-out or $k$-fold cross validation\cite{kartam1997artificial}.
+%Good alternatives would have been leave-one-out or cross-validation.
+Validation methods for sparse data include re-sampling via leave-one-out or $k$-fold cross-validation\cite{kartam1997artificial}.
 
 
 

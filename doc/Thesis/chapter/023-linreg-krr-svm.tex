@@ -14,7 +14,7 @@ L_2&= \sum_i(y_i - \hat y_i)^2 %= \sum_i \sum_j (y_i - x_{i,j}\cdot k_i+c)^2
 \end{align}
 %
 
-\textbf{Ridge Regression} is like linear regression with an extra term which penalizes steep regression functions.
+\textbf{Ridge regression} is like linear regression with an extra term, which penalizes steep regression functions.
 The extra term reduces overfitting and is scaled by a correction parameter~$\alpha$. 
 The larger $\alpha$ is, the larger is the regularization and the flatter is the regression function. 
 When $\alpha$ tends to infinity, we get an intercept-only model.
@@ -29,8 +29,7 @@ When $\alpha$ is zero, the regularized loss function becomes the $L_2$ loss func
 \textbf{\Gls{krr}} combines ridge regression with the kernel method. 
 A~kernel transforms data in such a way that a linear hyperplane (a point in one dimension, a line in two dimensions, 
 a plane in three dimensions) can fit data in regression problems or separate the data in classification problems without actually doing the transformation for every data point, which lowers computational costs.
-A kernel is some kind of similarity measure 
-which fulfills the requirements of non-negativity, symmetry and linearity\cite{rupp2015machine}.
+A kernel is some kind of similarity measure, which fulfills the requirements of non-negativity, symmetry and linearity\cite{rupp2015machine}.
 %\enlargethispage{\baselineskip}
 %\looseness=-1
 The following equations show definitions for 
