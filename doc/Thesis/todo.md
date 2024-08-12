@@ -25,3 +25,5 @@
 - [ ] \todo in text
 - [/] increase size of images (especially results)
 - [/] check pdflatex output
+- [ ] find sputtering settings
+- [ ] find spectrometer instrument specifications
