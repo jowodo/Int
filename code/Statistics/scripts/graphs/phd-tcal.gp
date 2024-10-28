@@ -10,7 +10,7 @@ filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "T_{cal} [^oC]"
-set ylabel "{/Symbol r}"
+set ylabel "pin hole density {/Symbol r}"
 set xrange [250:550]
 set yrange [0:1.4]
 set xtics 300,100

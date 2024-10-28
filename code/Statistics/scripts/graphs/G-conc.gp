@@ -9,8 +9,8 @@ filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
-set xlabel "conc c_{zr}"
-set ylabel "MAE (pG) {/Symbol g} [a.u.]"
+set xlabel "conc c_{zr} [a.u.]"
+set ylabel "leakage {/Symbol g} [a.u.]"
 set xrange [1.5:5.5]
 set yrange [0:120]
 set xtics 1,1

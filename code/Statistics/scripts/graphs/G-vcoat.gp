@@ -10,7 +10,7 @@ filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "v_{coat} [mm/s]"
-set ylabel "{/Symbol g} [a.u.]"
+set ylabel "leakage {/Symbol g} [a.u.]"
 set xrange [9:21]
 set yrange [0:140]
 set xtics 10,2,20

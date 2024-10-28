@@ -9,7 +9,7 @@ filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
-set xlabel "conc c_{zr}"
+set xlabel "conc c_{zr} [a.u.]"
 set ylabel "pin hole density {/Symbol r}"
 set xrange [1.5:5.5]
 set yrange [0:1.2]

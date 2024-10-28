@@ -10,7 +10,7 @@ filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "layers {/Symbol l}"
-set ylabel "MAE (pG) {/Symbol g} [a.u.]"
+set ylabel "leakage {/Symbol g} [a.u.]"
 set xrange [3:13]
 set yrange [0:120]
 set xtics 4,2,12

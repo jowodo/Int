@@ -10,7 +10,7 @@ filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "sample number"
-set ylabel "conductivity G a.u." 
+set ylabel "leakage {/Symbol g} [a.u.]"
 #set xrange [0:550]
 #set yrange [0:550]
 #set xtics 0,60
