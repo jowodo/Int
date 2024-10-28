@@ -21,6 +21,7 @@ set xtics 1,1
 #0    212  2947  10.95940  0.00000  -8.43005  -9.76459  4     6     16    80    18    300
 #plot filename u 8:4 pt 7 t "O"
 
-plot "../../db_final.tsv" u 7:3 pt 7 t "PO" ,\
-    filename u 8:4 pt 7 t "O"
+plot \
+    filename \
+	u 8:4 pt 7 ps width notitle
 #pause -1
