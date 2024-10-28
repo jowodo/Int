@@ -1,3 +1,5 @@
+%\documentclass[hyperref={pdfpagelabels=false}, aspectratio=43, t, draft]{beamer}  %% Choose aspectratio=43 or aspectratio=169
+\documentclass[hyperref={pdfpagelabels=false}, aspectratio=43, t]{beamer}  %% Choose aspectratio=43 or aspectratio=169
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %%  Die vorliegenden LaTeX-Folien stehen Mitarbeiter*innen und Studierenden der Universität Wien
@@ -11,8 +13,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%\documentclass[hyperref={pdfpagelabels=false}, aspectratio=43, t, draft]{beamer}  %% Choose aspectratio=43 or aspectratio=169
-\documentclass[hyperref={pdfpagelabels=false}, aspectratio=43, t]{beamer}  %% Choose aspectratio=43 or aspectratio=169
 
 	
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,7 +22,7 @@
 %% ======== required inputs ========
 
 	%% ====== title page ======
-	\title{Particle Swarm Optimization for Chemical Passivation of Steel Substrate with Zirconium Oxide Layers} %% Presentation Title
+	\title{Particle Swarm Optimization for Chemical Passivation of Steel Substrate with Zirconium Oxide} %% Presentation Title
 	\newcommand{\titleBackground}{2}    						%% Background graphic: 0 = no; 1 = yes; 2 = yes with more text space
 	\newcommand{\gPath}{figures/}									%% set graphics path
 	\newcommand{\graphicsTitleBackground}{title}    %% Filename of background graphic
@@ -62,12 +62,14 @@
 
 \usepackage{siunitx}
 \usepackage{chemformula}
+\usepackage{upgreek}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ====== Begin Document ======= %% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+
 
 %% ====== Title Page ======
 
@@ -88,13 +90,39 @@
 	% - AI and PV
 	% - Lab or Computer 
 %02. agenda
+\begin{frame}{Agenda}
+	\vspace{2em}
+	\begin{itemize}
+		\item Motivation: CIGS substrate
+		\item Methods: recipe and sample preparation
+		\item Calculation: PSO and data pipeline
+		\item Results: materials and optimisation
+	\end{itemize}
+\end{frame}
 	% - more like process  from beginning to finish
 %03. background info
 	% - PV CIGS substrate % https://de.wikipedia.org/wiki/Chalkopyrit
 	% https://en.wikipedia.org/wiki/Copper_indium_gallium_selenide_solar_cell
-\begin{textFrame}
-	{Copper indium gallium selenide solar cell}
-	{1}{}
+\begin{graphicsFrame}{Copper Indium Gallium Selenide (CIGS)}{}{0.37}{left}{cigs}{U. Rau, H.W. Schock (2013) "Solar Cells"}
+\begin{table}
+	\resizebox{.95\textwidth}{!}{
+    \begin{tabular}{cccc}
+        \hline\hline
+		Empirical Formula&   Band Gap [\SI{}{\electronvolt}]\\
+        \hline
+		\ch{CuInSe2}&  1.04\\
+		\ch{CuGaSe2}&  1.7\\
+		\ch{CuInS2}&  1.5\\
+		\ch{CuGaS2}&  1.55\\
+        \hline\hline
+    \end{tabular}
+}
+    \caption{Band gaps of different chalcopyrites (K. Mertens 2015 "Photovoltaik")}
+\end{table}
+\end{graphicsFrame}
+
+\iffalse
+\begin{textFrame}{Thin Film Solar Cell}{1}{}
 %	\begin{itemize}
 %		\item lorem
 %		\item ipsum
@@ -103,63 +131,43 @@
 \begin{table}[tbh]
 	\small
     \center
-%	\iffalse
 	\resizebox{\textwidth}{!}{
 		\begin{tabular}{cccccc}
 			\hline
 			\hline
-			Material&   Type&    Band Gap [eV]&    $\lambda$ [nm]&    Abs. coef. $\alpha$ [cm$^{-1}$]    &Penetration Depth [$\mu$m]\\
+			Material&   Type&    Band Gap [\SI{}{\electronvolt}]&    $\lambda$ [\SI{}{\nano\meter}]&    Abs. coef. $\upalpha$ [\SI{}{\centi\meter^{-1}}]    &Penetration Depth [\SI{}{\micro\meter}]\\
 			\hline
-			c-Si&   indirect&   1.12&   600&    \num{4000}&    2.5\\
-			c-Si&   indirect&   1.12&   1000&    \num{64}&    150\\
-			c-Si&   indirect&   1.12&   1100&    \num{3.5}&    290\\
-			a-Si&   direct&      1.7&    600&    \num{40000}&  0.25\\
-			CdTe&   direct&      1.45&    600&    \num{37000}&  0.3\\
-			GaAs&   direct&      1.42&    600&    \num{40000}&  0.2\\
+			c-Si&   indirect&   1.12&   600&    4000&    2.5\\
+			c-Si&   indirect&   1.12&   1000&    64&    150\\
+			c-Si&   indirect&   1.12&   1100&    3.5&    290\\
+			a-Si&   direct&      1.7&    600&    40000&  0.25\\
+			CdTe&   direct&      1.45&    600&    37000&  0.3\\
+			GaAs&   direct&      1.42&    600&    40000&  0.2\\
 			\hline
 			\hline
 		\end{tabular}
 	}
-    \caption{Photonic properties of several established PV materials (\cite{mertens2020photovoltaik})}
+    \caption{Photonic properties of several established PV materials (K. Mertens 2015 "Photovoltaik")}
 	\label{tab:cigs:alpha}
-%	\fi
-%
-	\resizebox{.45\textwidth}{!}{
-    \begin{tabular}{cccc}
-        \hline\hline
-		Empirical Formula&   Band Gap [\si{eV}{}]\\
-        \hline
-		\ch{CuInSe2}&  1.04\\
-		\ch{CuInS2}&  1.5\\
-		\ch{CuGaSe2}&  1.7\\
-		\ch{CuGaS2}&  1.55\\
-        \hline\hline
-    \end{tabular}
-}
-    \caption{Band gaps of different chalcopyrites (K. Mertens 2015 "Photovoltaik")}
 \end{table}
 \end{textFrame}
-
-\begin{graphicsFrame}{Copper Indium Gallium Sulfide}{}{0.37}{left}{cigs}{Rau, Schock (2013) "Solar Cells"}
-		\begin{itemize}
-			\item Abgeschieden wohnen sie in Buchstab-hausen an der Küste des Semantik, eines großen Sprachozeans.
-			\item Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien.
-		\end{itemize}
-\end{graphicsFrame}
+\fi
 
 \begin{graphicsFrame}{CIGS modules}{}{0.1}{}{cigs_mod}{}
-
 \end{graphicsFrame}
+
 %04. hypothesis 
 %05. manual methods
 	% - precursor solution preparation 
 		% Anwar 2017 https://iopscience.iop.org/article/10.1088/1757-899X/257/1/012087
 		% Hu 2016 https://www.sciencedirect.com/science/article/abs/pii/S0272884216312548
-\begin{frame}{test}
-
+\begin{frame}{Recipes for Precursor Solutions}
+	\begin{figure}
+		\includegraphics[width=.79\textwidth]{figures/huetal.png}
+	\end{figure}
+	\pause
 \begin{table}[h]
 	\center
-	\caption{Composition of different buthanolic solutions}
 	\label{tab:rec2}
 	\begin{tabular}{rlllll}
 		\hline
@@ -171,33 +179,101 @@
 		\ch{IPO}/\ch{AcOH} [ml]	&2		&2		&2		&2		&2		\\
 		\hline
 	\end{tabular}
+	%\caption{Composition of different buthanolic solutions}
 \end{table}
 \end{frame}
 
 	% - doctor blading = tape castig 
 	% - calcination 
 \begin{frame}{Tape casting and Calcination}
-	\begin{itemize}
-		\item doctor blading construction 
-		\item calcination infos (max temperatur, heating rate)
-	\end{itemize}
+	\begin{figure}
+		\center
+		\includegraphics[width=.65\textwidth]{figures/tc.jpg}
+	\end{figure}
 \end{frame}
+%	\begin{itemize}
+%		\item doctor blading construction 
+%		\item calcination infos (max temperatur, heating rate)
+%	\end{itemize}
+%\end{frame}
 	% - sputtering contacts
 	% - measuring current-voltage characteristics
 \begin{frame}{Sputtering and I-V measurement}
+	\begin{figure}
+		\includegraphics<1>[width=.63\textwidth]{figures/sample1.jpg}
+		\includegraphics<2>[width=.63\textwidth]{figures/sample2.jpg}
+		\includegraphics<3>[width=.63\textwidth]{figures/sample3.jpg}
+	\end{figure}
+\end{frame}
+
+%06. computational pipeline 
+\begin{frame}{Pin Hole Density and Leakage Current}
+	\vspace{2em}
 	\begin{itemize}
-		\item Aluminium Contact through mask
-		\item Silver paste
+		\item Pin Hole Density 
+			\begin{itemize}
+				\item $
+%	\rho = \frac{n_{-}}{(n_{-} + n_{+})}
+	\rho = \sum_i^N \frac{s_i}{N}
+					$
+				\item $
+	s_i = \begin{cases}
+        1 &\text{if} \quad -log_{10}(g_i) < 5 \\
+        0 &\text{if} \quad -log_{10}(g_i) \geq 5 \\
+	\end{cases}
+					$
+			\end{itemize}
+	\vspace{0.5em}
+		\item Leakage Current 
+			\begin{itemize}
+				\item $
+    \gamma = \sum_i^N \frac{ (-log_{10}(g_i) - 13)^2}{N}
+	$
+			\end{itemize}
 	\end{itemize}
 \end{frame}
-%06. computational pipeline 
 	% - PSO + MARS = EMMA
 	% PSO https://doi.org/10.1109/CEC.2010.5586165
-\begin{frame}{EMMA = PSO + MARS}
+\begin{graphicsFrame}{Particle Swarm Optimisation}{}{0.37}{right}{swarm}{}
+	\vspace{2em}
 	\begin{itemize}
-		\item Particle Swarm Opitimisation 
+		\item ispired by bird flocks and fish schools %# swarm intelligence
+		\item iterative process % nice bcs sample prep takes long time 
+		\item particles: 
+			\begin{itemize}
+				\item position 
+				\item velocity
+			\end{itemize}
+		\item update model
+		\item R package \texttt{emma} 
 	\end{itemize}
+\end{graphicsFrame}
+
+\begin{frame}{PSO variables}
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{cc cc cc}
+		\hline\hline
+		$c_{zr}$ [\SI{22}{\milli\mol/\liter}]	&$n_L$	&$T_{C}$[\SI{}{\degreeCelsius}]	&$v_{C}$[\SI{}{\milli\meter/\second}]	&$T_{cal}$[\SI{}{\degreeCelsius}]	&$v_{cal}$[\SI{}{\degreeCelsius/\hour}]	\\
+		\hline
+		2				&4		&40					&10				&300				&120	\\
+		3				&6		&50					&12				&400				&360	\\
+		4				&8		&60					&14				&500				&600	\\
+		5				&10		&70					&16				&					&840	\\
+						&12		&80					&18				&					&1080	\\
+						&		&					&20				&					&		\\
+		\hline\hline
+	\end{tabular}
+	\caption{Discrete levels of each input parameter }
+	\label{tab:input}
+\end{table}
 \end{frame}
+
+%	\begin{itemize}
+%		\item Aluminium Contact through mask
+%		\item Silver paste
+%	\end{itemize}
+%\end{frame}
 %07. results measuring 
 	% - SEM % check which sample 
 \begin{graphicsFrame}{SEM micrographs}{}{0.37}{right}{sem}{}
@@ -215,19 +291,58 @@
 \begin{graphicsFrame}{I-V characteristics}{}{0.1}{}{iv3}{}\end{graphicsFrame}
 	% - EMMA 
 %08. results EMMA 
-\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
-\begin{graphicsFrame}{Leakage Current}{}{0.1}{}{leakage_w}{}\end{graphicsFrame}
-\begin{graphicsFrame}{Leakage Current}{}{-1}{}{leakage}{}\end{graphicsFrame}
-\begin{graphicsFrame}{Leakage Current}{}{0.24}{right}{leakage}{}\end{graphicsFrame}
-\begin{graphicsFrame}{Leakage Current}{}{0.37}{right}{leakage}{}\end{graphicsFrame}
-\begin{graphicsFrame}{EMMA generations}{}{0.1}{}{emma-gen}{}\end{graphicsFrame}
+\begin{frame}{Pin Hole Density}\begin{figure}\includegraphics[width=.66\textwidth]{figures/phd.png}\end{figure}\end{frame}
+\begin{frame}{Leakage Current}\begin{figure}\includegraphics[width=.66\textwidth]{figures/leakage.png}\end{figure}\end{frame}
+\begin{frame}{PSO generations}\begin{figure}\includegraphics[width=.96\textwidth]{figures/emma-gen.png}\end{figure}\end{frame}
+%\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
+%\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
+%\begin{graphicsFrame}{Leakage Current}{}{0.1}{}{leakage_w}{}\end{graphicsFrame}
+%\begin{graphicsFrame}{Leakage Current}{}{-1}{}{leakage}{}\end{graphicsFrame}
+%\begin{graphicsFrame}{Leakage Current}{}{0.24}{right}{leakage}{}\end{graphicsFrame}
+%\begin{graphicsFrame}{Leakage Current}{}{0.37}{right}{leakage}{}\end{graphicsFrame}
+%\begin{graphicsFrame}{EMMA generations}{}{0.1}{}{emma-gen}{}\end{graphicsFrame}
 	% - gen 
 %09. comparison with other statistics 
 	% - comparing with other stats
-	\begin{frame}{Comparison with Statistics}
+
+\begin{frame}{Comparison with Statistics}
 \begin{table}[htb]
 	\centering
-%    \caption{Post EMMA vergleich}
+%	\resizebox{.95\textwidth}{!}{
+	\begin{tabular}{c cc }
+    \hline\hline
+        $\gamma$&  MAE(e)&   MSE(e)\\
+    \hline
+		PSO&   \textbf{10}& 171\\
+        LR&    13& 250\\
+        KRR &17 &548 \\
+        SVM& 15&  415\\
+    \hline\hline
+	\end{tabular}
+%}
+	\pause
+%	\vspace{1em}
+%	\resizebox{.95\textwidth}{!}{
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+        $\rho$&  MAE(e)&   MSE(e)\\
+    \hline
+		PSO&   \textbf{0.14}&   0.03\\
+        LR&    0.19&   0.06\\
+        KRR &0.25 &0.12 \\
+        SVM &0.23 &0.13 \\
+    \hline\hline
+	\end{tabular}
+%}
+%    \caption{Comparison of MAE and MSE of different prediction methods for different data sets: EMMA data set~(e), pre-EMMA data set~(p), pre-EMMA data set within EMMA bounds~(c) and complete dataset~(a)}
+	\label{tab:post-emma}
+\end{table}
+\end{frame}
+    
+\iffalse
+\begin{frame}{Comparison with Statistics}
+\begin{table}[htb]
+	\centering
 	\resizebox{.95\textwidth}{!}{
 	\begin{tabular}{c cc cc cc cc}
     \hline\hline
@@ -235,7 +350,6 @@
     \hline
         MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
         LR&    13& 250&    24& 747&    34& 1327&   17& 454\\
-%        KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
         KRR &17 &548 &30 &1477 &35 &2167 &23 &931\\
         SVM& 15&  415&    26& 1050&   28& 1588&   19& 677\\
         \hline
@@ -243,7 +357,6 @@
 	\end{tabular}
 }
 	\vspace{1em}
-    %
 	\resizebox{.95\textwidth}{!}{
 	\begin{tabular}{c cc cc cc cc}
     \hline\hline
@@ -251,9 +364,7 @@
     \hline
         MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
         LR&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
-%        KRR& 0.30&   0.22&   0.47&   0.38&   0.52&   0.44&   0.34&   0.26\\
         KRR &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
-%        SVM& 0.28&   0.12&   0.37&   0.21&   0.42&   0.25&   0.32&   0.16\\
         SVM &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
     \hline\hline
 	\end{tabular}
@@ -262,8 +373,17 @@
 	\label{tab:post-emma}
 \end{table}
 \end{frame}
+\fi
     
 %10. summary 
+\begin{frame}{Summary}
+	\vspace{2em}
+	\begin{itemize}
+		\item new recipe for dense \ch{ZrO2}
+			\vspace{.5em}
+		\item optimzed method with PSO
+	\end{itemize}
+\end{frame}
 	% - created ZrO2
 	% - optimized with EMMA
 	% - double checked with stats
