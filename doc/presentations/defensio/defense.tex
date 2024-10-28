@@ -1,19 +1,3 @@
-%01. title slide 
-	%- aufhänger
-%02. agenda
-%03. background info
-%04. hypothesis 
-%05. manual methods
-%06. computational pipeline 
-%07. results measuring 
-%08. results EMMA 
-%09. comparison with other statistics 
-%10. summary 
-%11. conclusion 
-%12. end 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %%  Die vorliegenden LaTeX-Folien stehen Mitarbeiter*innen und Studierenden der Universität Wien
@@ -27,6 +11,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%\documentclass[hyperref={pdfpagelabels=false}, aspectratio=43, t, draft]{beamer}  %% Choose aspectratio=43 or aspectratio=169
 \documentclass[hyperref={pdfpagelabels=false}, aspectratio=43, t]{beamer}  %% Choose aspectratio=43 or aspectratio=169
 
 	
@@ -37,7 +22,7 @@
 %% ======== required inputs ========
 
 	%% ====== title page ======
-	\title{Particle Swarm Optimization of Chemical Passivation of Steel Substrate with Zirconium Oxide Layers} %% Presentation Title
+	\title{Particle Swarm Optimization for Chemical Passivation of Steel Substrate with Zirconium Oxide Layers} %% Presentation Title
 	\newcommand{\titleBackground}{2}    						%% Background graphic: 0 = no; 1 = yes; 2 = yes with more text space
 	\newcommand{\gPath}{figures/}									%% set graphics path
 	\newcommand{\graphicsTitleBackground}{title}    %% Filename of background graphic
@@ -48,14 +33,14 @@
 	%% ====== title page ======
 	\subtitle{PSO for Steel Passivation with ZrO}  %% (optional) Subtitle, comment out to avoid include
 	\newcommand{\authorText}{Johann Dorn}				%% (optional) Author
-	\newcommand{\logoTitleFooterR}{grey}  %% (optional) additional logo in title page footer, most right
-	\newcommand{\logoTitleFooterM}{grey}  %% (optional) additional logo in title page footer, more right (if horizontal spacing not adequate, save multiple logos in one file, use \logoTitleFooterR)
-	\newcommand{\logoTitleFooterL}{grey}  %% (optional) additional logo in title page footer, right (if horizontal spacing not adequate, save multiple logos in one file, use \logoTitleFooterR)
+%	\newcommand{\logoTitleFooterR}{grey}  %% (optional) additional logo in title page footer, most right
+%	\newcommand{\logoTitleFooterM}{grey}  %% (optional) additional logo in title page footer, more right (if horizontal spacing not adequate, save multiple logos in one file, use \logoTitleFooterR)
+%	\newcommand{\logoTitleFooterL}{grey}  %% (optional) additional logo in title page footer, right (if horizontal spacing not adequate, save multiple logos in one file, use \logoTitleFooterR)
 
 	%% ====== footer ======
 	\newcommand{\textFooter}{\subtitle - \authorText} %% (optional) Text for footline, e.g. title, comment out lines to avoid include, max. 1 line
 	\newcommand{\slideNumberLabelFooter}{Slide}    	%% Page/Slide/Folie/Seite
-%	\date{November 2017}              									%% Date, comment out to get current date
+	\date{2024-10-30} %% Date, comment out to get current date
 
 	%% ====== header ====== 
 	%\newcommand{\sectionHeader}{Section (optional)} %% (optional) Text before section number, e.g. Section or Kapitel; comment out to avoid headline
@@ -75,6 +60,8 @@
 %% ====== settings (optional) ======
 	\usenavigationsymbolstemplate{}     %% (optional) Comment out to include navigation 
 
+\usepackage{siunitx}
+\usepackage{chemformula}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ====== Begin Document ======= %% 
@@ -95,7 +82,198 @@
 
 
 %% ====== Slides ======
+%TODO: - read aqua/good recipe/mars paper
+%01. title slide 
+	% - aufhänger
+	% - AI and PV
+	% - Lab or Computer 
+%02. agenda
+	% - more like process  from beginning to finish
+%03. background info
+	% - PV CIGS substrate % https://de.wikipedia.org/wiki/Chalkopyrit
+	% https://en.wikipedia.org/wiki/Copper_indium_gallium_selenide_solar_cell
+\begin{textFrame}
+	{Copper indium gallium selenide solar cell}
+	{1}{}
+%	\begin{itemize}
+%		\item lorem
+%		\item ipsum
+%		\item \dots
+%	\end{itemize}
+\begin{table}[tbh]
+	\small
+    \center
+%	\iffalse
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{cccccc}
+			\hline
+			\hline
+			Material&   Type&    Band Gap [eV]&    $\lambda$ [nm]&    Abs. coef. $\alpha$ [cm$^{-1}$]    &Penetration Depth [$\mu$m]\\
+			\hline
+			c-Si&   indirect&   1.12&   600&    \num{4000}&    2.5\\
+			c-Si&   indirect&   1.12&   1000&    \num{64}&    150\\
+			c-Si&   indirect&   1.12&   1100&    \num{3.5}&    290\\
+			a-Si&   direct&      1.7&    600&    \num{40000}&  0.25\\
+			CdTe&   direct&      1.45&    600&    \num{37000}&  0.3\\
+			GaAs&   direct&      1.42&    600&    \num{40000}&  0.2\\
+			\hline
+			\hline
+		\end{tabular}
+	}
+    \caption{Photonic properties of several established PV materials (\cite{mertens2020photovoltaik})}
+	\label{tab:cigs:alpha}
+%	\fi
+%
+	\resizebox{.45\textwidth}{!}{
+    \begin{tabular}{cccc}
+        \hline\hline
+		Empirical Formula&   Band Gap [\si{eV}{}]\\
+        \hline
+		\ch{CuInSe2}&  1.04\\
+		\ch{CuInS2}&  1.5\\
+		\ch{CuGaSe2}&  1.7\\
+		\ch{CuGaS2}&  1.55\\
+        \hline\hline
+    \end{tabular}
+}
+    \caption{Band gaps of different chalcopyrites (K. Mertens 2015 "Photovoltaik")}
+\end{table}
+\end{textFrame}
 
+\begin{graphicsFrame}{Copper Indium Gallium Sulfide}{}{0.37}{left}{cigs}{Rau, Schock (2013) "Solar Cells"}
+		\begin{itemize}
+			\item Abgeschieden wohnen sie in Buchstab-hausen an der Küste des Semantik, eines großen Sprachozeans.
+			\item Ein kleines Bächlein namens Duden fließt durch ihren Ort und versorgt sie mit den nötigen Regelialien.
+		\end{itemize}
+\end{graphicsFrame}
+
+\begin{graphicsFrame}{CIGS modules}{}{0.1}{}{cigs_mod}{}
+
+\end{graphicsFrame}
+%04. hypothesis 
+%05. manual methods
+	% - precursor solution preparation 
+		% Anwar 2017 https://iopscience.iop.org/article/10.1088/1757-899X/257/1/012087
+		% Hu 2016 https://www.sciencedirect.com/science/article/abs/pii/S0272884216312548
+\begin{frame}{test}
+
+\begin{table}[h]
+	\center
+	\caption{Composition of different buthanolic solutions}
+	\label{tab:rec2}
+	\begin{tabular}{rlllll}
+		\hline
+		recipe	&1F		&2F		&3F		&4F		&5F		\\
+		\hline
+		\ch{BuOH} [ml]	&4.95	&4.9	&4.85	&4.8	&4.75	\\
+		\ch{ZrPro} [ml]	&0.05	&0.1	&0.15	&0.2	&0.25	\\
+		\ch{AcAc} [ml]	&0.0125	&0.025	&0.0375	&0.05	&0.0625	\\
+		\ch{IPO}/\ch{AcOH} [ml]	&2		&2		&2		&2		&2		\\
+		\hline
+	\end{tabular}
+\end{table}
+\end{frame}
+
+	% - doctor blading = tape castig 
+	% - calcination 
+\begin{frame}{Tape casting and Calcination}
+	\begin{itemize}
+		\item doctor blading construction 
+		\item calcination infos (max temperatur, heating rate)
+	\end{itemize}
+\end{frame}
+	% - sputtering contacts
+	% - measuring current-voltage characteristics
+\begin{frame}{Sputtering and I-V measurement}
+	\begin{itemize}
+		\item Aluminium Contact through mask
+		\item Silver paste
+	\end{itemize}
+\end{frame}
+%06. computational pipeline 
+	% - PSO + MARS = EMMA
+	% PSO https://doi.org/10.1109/CEC.2010.5586165
+\begin{frame}{EMMA = PSO + MARS}
+	\begin{itemize}
+		\item Particle Swarm Opitimisation 
+	\end{itemize}
+\end{frame}
+%07. results measuring 
+	% - SEM % check which sample 
+\begin{graphicsFrame}{SEM micrographs}{}{0.37}{right}{sem}{}
+		\begin{itemize}
+			\item (a) first recipe on FTO
+			\item (b) 10 layers on steel
+			\item (c) cross section of 5 layers on FTO
+			\item (d) side view of scratched layer on steel
+		\end{itemize}
+\end{graphicsFrame}
+
+	% - I-V % https://en.wikipedia.org/wiki/Current%E2%80%93voltage_characteristic
+\begin{graphicsFrame}{I-V characteristics}{}{0.1}{}{iv1}{}\end{graphicsFrame}
+\begin{graphicsFrame}{I-V characteristics}{}{0.1}{}{iv2}{}\end{graphicsFrame}
+\begin{graphicsFrame}{I-V characteristics}{}{0.1}{}{iv3}{}\end{graphicsFrame}
+	% - EMMA 
+%08. results EMMA 
+\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
+\begin{graphicsFrame}{Leakage Current}{}{0.1}{}{leakage_w}{}\end{graphicsFrame}
+\begin{graphicsFrame}{Leakage Current}{}{-1}{}{leakage}{}\end{graphicsFrame}
+\begin{graphicsFrame}{Leakage Current}{}{0.24}{right}{leakage}{}\end{graphicsFrame}
+\begin{graphicsFrame}{Leakage Current}{}{0.37}{right}{leakage}{}\end{graphicsFrame}
+\begin{graphicsFrame}{EMMA generations}{}{0.1}{}{emma-gen}{}\end{graphicsFrame}
+	% - gen 
+%09. comparison with other statistics 
+	% - comparing with other stats
+	\begin{frame}{Comparison with Statistics}
+\begin{table}[htb]
+	\centering
+%    \caption{Post EMMA vergleich}
+	\resizebox{.95\textwidth}{!}{
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+        $\gamma$&  MAE(e)&   MSE(e)&   MAE(p)&   MSE(p)&   MAE(c)&   MSE(c)&   MAE(a)& MSE(a) \\
+    \hline
+        MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
+        LR&    13& 250&    24& 747&    34& 1327&   17& 454\\
+%        KRR& 15& 415&    26& 1048&   28& 1586&   19& 676\\
+        KRR &17 &548 &30 &1477 &35 &2167 &23 &931\\
+        SVM& 15&  415&    26& 1050&   28& 1588&   19& 677\\
+        \hline
+%    \hline\hline
+	\end{tabular}
+}
+	\vspace{1em}
+    %
+	\resizebox{.95\textwidth}{!}{
+	\begin{tabular}{c cc cc cc cc}
+    \hline\hline
+        $\rho$&  MAE(e)&   MSE(e)&   MAE(p)&   MSE(p)&   MAE(c)&   MSE(c)&   MAE(a)& MSE(a) \\
+    \hline
+        MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
+        LR&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
+%        KRR& 0.30&   0.22&   0.47&   0.38&   0.52&   0.44&   0.34&   0.26\\
+        KRR &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
+%        SVM& 0.28&   0.12&   0.37&   0.21&   0.42&   0.25&   0.32&   0.16\\
+        SVM &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
+    \hline\hline
+	\end{tabular}
+}
+    \caption{Comparison of MAE and MSE of different prediction methods for different data sets: EMMA data set~(e), pre-EMMA data set~(p), pre-EMMA data set within EMMA bounds~(c) and complete dataset~(a)}
+	\label{tab:post-emma}
+\end{table}
+\end{frame}
+    
+%10. summary 
+	% - created ZrO2
+	% - optimized with EMMA
+	% - double checked with stats
+%11. conclusion 
+%12. end 
+
+
+
+
+\iffalse
 \begin{graphicsFrame}{Layout ``Body with figure, small right''}{short}{0.63}{left}{graphic_rs}{\textcopyright~Universität Wien/derknopfdruecker.com}
 
 		Random formula
@@ -254,6 +432,7 @@
 
 \end{graphicsFrame2}
 
+\fi
 
 %% ====== End Document ====== %%
 \end{document}

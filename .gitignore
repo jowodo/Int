@@ -16,3 +16,5 @@
 *.RData
 *.DS_Store
 *.brf
+*.nav
+*.snm
