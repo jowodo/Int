@@ -8,12 +8,12 @@ set out "G-layr.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=3
+width=2
 set xlabel "layers {/Symbol l}"
 set ylabel "MAE (pG) {/Symbol g} [a.u.]"
-set xrange [0.5:12.5]
+set xrange [3:13]
 set yrange [0:120]
-set xtics 2,2
+set xtics 4,2,12
 
 #:.! head -n2 ../../db_final.gen.tsv
 #1    2    3     4         5        6         7         8     9     10    11    12    13

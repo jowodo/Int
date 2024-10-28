@@ -1,11 +1,11 @@
 #!/usr/bin/gnuplot 
 
-set term pngcairo size 1200, 900 font ",45"
+set term pngcairo size 1200, 900 font ",30"
 set out "gen-phd.png"
 #set term svg
 #set out "gen-phd.svg"
 filename="../../db_final.gen.tsv"
-width=3
+width=2
 set xlabel "generation number"
 set ylabel "{/Symbol r}"  
 set xtics 0,1

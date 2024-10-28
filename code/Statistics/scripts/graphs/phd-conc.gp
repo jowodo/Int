@@ -8,12 +8,13 @@ set out "phd-conc.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=3
+width=2
 set xlabel "conc c_{zr}"
 set ylabel "pin hole density {/Symbol r}"
-set xrange [0.5:5.5]
+set xrange [1.5:5.5]
 set yrange [0:1.2]
 set xtics 1,1
+set ytics 0.2,0.2,1
 
 #:.! head -n2 ../../db_final.gen.tsv
 #1    2    3     4         5        6         7         8     9     10    11    12    13

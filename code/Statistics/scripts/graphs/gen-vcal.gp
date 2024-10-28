@@ -5,7 +5,7 @@ set out "gen-vcal.png"
 #set term svg
 #set out "gen-vcal.svg"
 filename="../../db_final.gen.tsv"
-width=3
+width=2
 set xlabel "generation number"
 set ylabel "heating rate calcination"  
 set xtics 0,1

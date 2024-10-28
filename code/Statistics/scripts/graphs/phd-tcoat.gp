@@ -1,20 +1,22 @@
 #!/usr/bin/gnuplot 
 
 set term pngcairo size 1200, 900 font ",30"
-set out "G-tcal.png"
+set out "phd-tcoat.png"
 #set term svg
-#set out "G-tcal.svg"
+#set out "phd-tcal.svg"
 #filename="../../db_final.sorted.tsv"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
 width=2
-set xlabel "T_{cal} [^oC]"
-set ylabel "{/Symbol g} [a.u.]"
-set xrange [250:550]
-set yrange [0:140]
-set xtics 300,100
+set xlabel "T_{coat} [^oC]"
+set ylabel "{/Symbol r}"
+set xrange [35:85]
+set yrange [0:1.4]
+set xtics 40,10
+set ytics 0.2,0.2,1
 
 set key font ",30"
-plot filename u 13:4 pt 7 ps width notitle
+plot filename u 11:5 pt 7 ps width notitle
+
 #pause -1

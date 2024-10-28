@@ -5,7 +5,7 @@ set out "gen-layr.png"
 #set term svg
 #set out "gen-layr.svg"
 filename="../../db_final.gen.tsv"
-width=3
+width=2
 set xlabel "generation number"
 set ylabel "layers"  
 set xtics 0,1

@@ -8,7 +8,7 @@ set out "G-t.png"
 filename="../../db_final.tsv"
 filename="../../gen.tsv"
 filename="../../db_final.gen.tsv"
-width=3
+width=2
 set xlabel "sample number"
 set ylabel "conductivity G a.u." 
 #set xrange [0:550]
