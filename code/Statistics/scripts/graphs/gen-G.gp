@@ -7,9 +7,9 @@ set out "gen-G.png"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "generation number"
-set ylabel "{/Symbol g} [a.u.]"  
+set ylabel "leak current {/Symbol g} [a.u.]"  
 set xtics 0,1
-set ytics 0,20
+set ytics 0,20,100
 set yrange [0:120]
 
 #plot [1:4] filename u 1:4 w l lw width notitle

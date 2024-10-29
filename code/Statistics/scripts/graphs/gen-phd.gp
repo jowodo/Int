@@ -7,8 +7,9 @@ set out "gen-phd.png"
 filename="../../db_final.gen.tsv"
 width=2
 set xlabel "generation number"
-set ylabel "{/Symbol r}"  
+set ylabel "pinhole density {/Symbol r}"  
 set xtics 0,1
+set ytics 0,0.2,1
 set yrange [0:1.2]
 
 #plot [1:4] filename u 1:5 w l lw width notitle

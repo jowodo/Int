@@ -169,8 +169,22 @@
 \end{textFrame}
 \fi
 
-\begin{graphicsFrame}{Thin-Film Photovoltaics: CIGS modules}{}{0.1}{}{cigs_mod}{}
-\end{graphicsFrame}
+%\begin{graphicsFrame}{Thin-Film Photovoltaics: CIGS modules}{}{0.1}{}{cigs_mod}{}
+	\begin{frame}{Thin-Film Photovoltaics: CIGS modules}
+	\begin{itemize}
+		\item high absorption coefficient
+		\item connected in series 
+		\item substrate:
+			\begin{itemize}
+				\item must be insulating 
+				\item mostly glass
+			\end{itemize}
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=.9\textwidth]{figures/cigs_mod.png}
+	\end{figure}
+\end{frame}
+%\end{graphicsFrame}
 
 %04. hypothesis 
 %05. manual methods
@@ -228,14 +242,14 @@
 		\begin{itemize}
 			\item Tape Casting
 				\begin{itemize}
-					\item temperature: 40-\SI{80}{\degreeCelsius}
-					\item blade speed: 10-\SI{20}{\milli\meter/\second}
+					\item temperature: 40-80\SI{}{\degreeCelsius}
+					\item blade speed: 10-20\SI{}{\milli\meter/\second}
 				\end{itemize}
 				\vspace{1em}
 			\item Calcination
 				\begin{itemize}
-					\item temperature: 300-\SI{500}{\degreeCelsius}
-					\item heating rate: 2-\SI{12}{\degreeCelsius/\hour}
+					\item temperature: 300-500\SI{}{\degreeCelsius}
+					\item heating rate: 2-18\SI{}{\degreeCelsius/\minute}
 				\end{itemize}
 		\end{itemize}
 \end{graphicsFrame}
@@ -311,7 +325,7 @@
 	\begin{itemize}
 		\item voltage sweep
 		\vspace{.5em}
-		\item \SI{10}{\milli\volt} steps
+		\item 10\SI{}{\milli\volt} steps
 		\vspace{.5em}
 		\item very low current 
 		\vspace{.5em}
@@ -390,19 +404,30 @@
 \end{graphicsFrame}
 
 \begin{frame}{Input Variables for Optimisation}
+	\begin{itemize}
+		\item precursor solution concentration
+		\item number of layers 
+		\item coating temperature
+		\item blade speed
+		\item calcination temperature
+		\item calcination heating rate
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Input Variables for Optimisation}
 \begin{table}[htb]
 	\centering
 	\begin{tabular}{cc cc cc}
 		\hline\hline
-		$c_{zr}$ [\SI{22}{\milli\mol/\liter}]	&$n_L$	&$T_{C}$[\SI{}{\degreeCelsius}]	&$v_{C}$[\SI{}{\milli\meter/\second}]	&$T_{cal}$[\SI{}{\degreeCelsius}]	&$v_{cal}$[\SI{}{\degreeCelsius/\hour}]	\\
+		$c_{zr}$ [22\SI{}{\milli\mol/\liter}]	&$n_L$	&$T_{C}$[\SI{}{\degreeCelsius}]	&$v_{C}$[\SI{}{\milli\meter/\second}]	&$T_{cal}$[\SI{}{\degreeCelsius}]	&$v_{cal}$[\SI{}{\degreeCelsius/\minute}]	\\
 		\hline
-		\pause
-		2				&4		&40					&10				&300				&120	\\
-		3				&6		&50					&12				&400				&360	\\
-		4				&8		&60					&14				&500				&600	\\
-		5				&10		&70					&16				&					&840	\\
-						&12		&80					&18				&					&1080	\\
-						&		&					&20				&					&		\\
+%		\pause
+		2				&4		&40					&10				&300				&2	\\
+		3				&6		&50					&12				&400				&6	\\
+		4				&8		&60					&14				&500				&10	\\
+		5				&10		&70					&16				&					&14	\\
+						&12		&80					&18				&					&18	\\
+						&		&					&20				&					& \\
 		\hline\hline
 	\end{tabular}
 	\caption{Discrete levels of each input parameter }
@@ -422,7 +447,16 @@
 %08. results EMMA 
 %\begin{frame}{Pin Hole Density}\begin{figure}\includegraphics[width=.66\textwidth]{figures/phd.png}\end{figure}\end{frame}
 %\begin{frame}{Leakage Current}\begin{figure}\includegraphics[width=.66\textwidth]{figures/leakage.png}\end{figure}\end{frame}
-\begin{frame}{PSO generations}\begin{figure}\includegraphics[width=.96\textwidth]{figures/emma-gen.png}\end{figure}\end{frame}
+\begin{frame}{Particle Swarm Optimisation Iterations}
+	\begin{itemize}
+		\item metrics are reduced per generation
+		\item model learned to represent data
+	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=.96\textwidth]{figures/emma-gen.png}
+	\end{figure}
+\end{frame}
+
 %\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
 %\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
 %\begin{graphicsFrame}{Leakage Current}{}{0.1}{}{leakage_w}{}\end{graphicsFrame}
@@ -510,9 +544,11 @@
 \begin{frame}{Summary}
 	\vspace{2em}
 	\begin{itemize}
-		\item new recipe for dense \ch{ZrO2}
+		\item found recipe for dense \ch{ZrO2} via sol-gel
 			\vspace{.5em}
-		\item optimzed method with PSO
+		\item prepared insulating \ch{ZrO2} layers
+			\vspace{.5em}
+		\item optimization chose correct input variables
 	\end{itemize}
 \end{frame}
 	% - created ZrO2
