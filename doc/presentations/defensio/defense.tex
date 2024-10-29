@@ -63,6 +63,9 @@
 \usepackage{siunitx}
 \usepackage{chemformula}
 \usepackage{upgreek}
+\usepackage{physics}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% ====== Begin Document ======= %% 
@@ -210,20 +213,28 @@
 \begin{frame}{Pin Hole Density and Leakage Current}
 	\vspace{2em}
 	\begin{itemize}
-		\item Pin Hole Density 
+		\item Conductivity
 			\begin{itemize}
 				\item $
-%	\rho = \frac{n_{-}}{(n_{-} + n_{+})}
-	\rho = \sum_i^N \frac{s_i}{N}
+					g = \eval{\dv{I}{V}}_{V =0}
 					$
+			\end{itemize}
+	\vspace{0.5em}
+	\pause
+		\item Pin Hole Density 
+			\begin{itemize}
 				\item $
 	s_i = \begin{cases}
         1 &\text{if} \quad -log_{10}(g_i) < 5 \\
         0 &\text{if} \quad -log_{10}(g_i) \geq 5 \\
 	\end{cases}
 					$
+				\item $
+	\rho = \sum_i^N \frac{s_i}{N}
+					$
 			\end{itemize}
 	\vspace{0.5em}
+	\pause
 		\item Leakage Current 
 			\begin{itemize}
 				\item $
