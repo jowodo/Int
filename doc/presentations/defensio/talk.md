@@ -1,13 +1,14 @@
 ### 1 
 Good morning everyone and thank you for joining me today.
 Today I want to present the results I obtained from a 6 month intership at the Austrian Institute of Technology.
+
 The picture you see here on the first slide is already a glimpse into part of my results. 
-What we see here are multiple ZrO2 layers on top of steel substrate. 
-The colors we wahrnehmen are created by the precursor solution drying up irregularly. 
+> What we see here are multiple ZrO2 layers on top of steel substrate. 
+> The colors, which can be perceived, are created by the precursor solution drying up irregularly. 
 But let's not get ahead of us. 
 
 ### 2 
-My presentation today is structured into 4 grob parts.
+My presentation today is structured into 4 parts.
 ###### Motivation
 I want to talk about the motivation why we want to apply a passivation layer on top of the steel substrate. 
 The ultimate goal is to use the passivated steel as substrate CIGS PV cells. 
