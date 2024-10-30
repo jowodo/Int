@@ -89,88 +89,9 @@
 
 
 %% ====== Slides ======
-%TODO: - read aqua/good recipe/mars paper
-%01. title slide 
-	% - aufhänger
-	% - AI and PV
-	% - Lab or Computer 
-%02. agenda
-%\begin{frame}{The Iterative Process}
-%	\begin{figure}
-%		\center
-%		\includegraphics[width=.8\textwidth]{figures/iteration.png}
-%	\end{figure}
-%\end{frame}
 \begin{graphicsFrame}{}{}{0.1}{}{iteration}{}\end{graphicsFrame}
-	\iffalse
-\begin{frame}{Agenda}
-	\vspace{2em}
-	\begin{itemize}
-		\item Motivation: CIGS substrate
-		\item Methods: recipe and sample preparation
-		\item Calculation: PSO and data pipeline
-		\item Results: materials and optimisation
-	\end{itemize}
-\end{frame}
-\fi
-	% - more like process  from beginning to finish
-%03. background info
-	% - PV CIGS substrate % https://de.wikipedia.org/wiki/Chalkopyrit
-	% https://en.wikipedia.org/wiki/Copper_indium_gallium_selenide_solar_cell
-\iffalse
-\begin{graphicsFrame}{Copper Indium Gallium Selenide (CIGS)}{}{0.37}{left}{cigs}{U. Rau, H.W. Schock (2013) "Solar Cells"}
-\begin{table}
-	\resizebox{.95\textwidth}{!}{
-    \begin{tabular}{cccc}
-        \hline\hline
-		Empirical Formula&   Band Gap [\SI{}{\electronvolt}]\\
-        \hline
-		\ch{CuInSe2}&  1.04\\
-		\ch{CuGaSe2}&  1.7\\
-		\ch{CuInS2}&  1.5\\
-		\ch{CuGaS2}&  1.55\\
-        \hline\hline
-    \end{tabular}
-}
-    \caption{Band gaps of different chalcopyrites (K. Mertens 2015 "Photovoltaik")}
-\end{table}
-\end{graphicsFrame}
-\fi
 
-\iffalse
-\begin{textFrame}{Thin Film Solar Cell}{1}{}
-%	\begin{itemize}
-%		\item lorem
-%		\item ipsum
-%		\item \dots
-%	\end{itemize}
-\begin{table}[tbh]
-	\small
-    \center
-	\resizebox{\textwidth}{!}{
-		\begin{tabular}{cccccc}
-			\hline
-			\hline
-			Material&   Type&    Band Gap [\SI{}{\electronvolt}]&    $\lambda$ [\SI{}{\nano\meter}]&    Abs. coef. $\upalpha$ [\SI{}{\centi\meter^{-1}}]    &Penetration Depth [\SI{}{\micro\meter}]\\
-			\hline
-			c-Si&   indirect&   1.12&   600&    4000&    2.5\\
-			c-Si&   indirect&   1.12&   1000&    64&    150\\
-			c-Si&   indirect&   1.12&   1100&    3.5&    290\\
-			a-Si&   direct&      1.7&    600&    40000&  0.25\\
-			CdTe&   direct&      1.45&    600&    37000&  0.3\\
-			GaAs&   direct&      1.42&    600&    40000&  0.2\\
-			\hline
-			\hline
-		\end{tabular}
-	}
-    \caption{Photonic properties of several established PV materials (K. Mertens 2015 "Photovoltaik")}
-	\label{tab:cigs:alpha}
-\end{table}
-\end{textFrame}
-\fi
-
-%\begin{graphicsFrame}{Thin-Film Photovoltaics: CIGS modules}{}{0.1}{}{cigs_mod}{}
-	\begin{frame}{Thin-Film Photovoltaics: CIGS modules}
+\begin{frame}{Thin-Film Photovoltaics: CIGS modules}
 	\begin{itemize}
 		\item high absorption coefficient
 		\item connected in series 
@@ -184,13 +105,7 @@
 		\includegraphics[width=.9\textwidth]{figures/cigs_mod.png}
 	\end{figure}
 \end{frame}
-%\end{graphicsFrame}
 
-%04. hypothesis 
-%05. manual methods
-	% - precursor solution preparation 
-		% Anwar 2017 https://iopscience.iop.org/article/10.1088/1757-899X/257/1/012087
-		% Hu 2016 https://www.sciencedirect.com/science/article/abs/pii/S0272884216312548
 \begin{frame}{Adaption of Precursor Solutions Recipe}
 	\begin{figure}
 		\includegraphics[width=.79\textwidth]{figures/huetal.png}
@@ -211,7 +126,7 @@
 	%\caption{Composition of different buthanolic solutions}
 \end{table}
 \end{frame}
-%\iffalse
+
 \begin{frame}{Different Precusor Concentrations}
 	\begin{figure}
 		\includegraphics[width=.79\textwidth]{figures/huetal.png}
@@ -231,13 +146,9 @@
 	\end{tabular}
 	%\caption{Composition of different buthanolic solutions}
 \end{table}
-%\fi
 \end{frame}
 
-	% - doctor blading = tape castig 
-	% - calcination 
 \begin{graphicsFrame}{Tape Casting and Calcination}{}{0.37}{left}{tc}{}
-
 		\vspace{1em}
 		\begin{itemize}
 			\item Tape Casting
@@ -254,7 +165,6 @@
 		\end{itemize}
 \end{graphicsFrame}
 
-	% - SEM % check which sample 
 \begin{graphicsFrame}{Cross Section of \ch{ZrO2}}{}{0.37}{right}{sem_cs}{}
 	\vspace{3em}
 		\begin{itemize}
@@ -264,35 +174,6 @@
 		\end{itemize}
 \end{graphicsFrame}
 
-%\begin{frame}{Tape casting and Calcination}
-%	\begin{figure}
-%		\center
-%		\includegraphics[width=.65\textwidth]{figures/tc.jpg}
-%	\end{figure}
-%\end{frame}
-%	\begin{itemize}
-%		\item doctor blading construction 
-%		\item calcination infos (max temperatur, heating rate)
-%	\end{itemize}
-%\end{frame}
-	% - sputtering contacts
-	% - measuring current-voltage characteristics
-\iffalse
-\begin{frame}{Application of Contacts}
-	\begin{figure}
-		\includegraphics<1>[width=.63\textwidth]{figures/sample1.jpg}
-		\includegraphics<2>[width=.63\textwidth]{figures/sample2.jpg}
-		\includegraphics<3>[width=.63\textwidth]{figures/sample3.jpg}
-	\end{figure}
-\end{frame}
-\fi
-%\begin{graphicsFrame}{Application of Contacts}{}{0.37}{right}{sample1}{}
-%		\begin{itemize}
-%			\item Left: Shadow mask
-%			\item Right: Steel substrate \ch{ZrO2} layer
-%		\end{itemize}
-%\end{graphicsFrame}
-%
 \begin{graphicsFrame}{Application of Contacts}{}{0.37}{left}{sput1}{}
 		\begin{itemize}
 			\item Bottom left: Shadow mask
@@ -319,7 +200,6 @@
 		\end{itemize}
 \end{graphicsFrame}
 
-	% - I-V % https://en.wikipedia.org/wiki/Current%E2%80%93voltage_characteristic
 \begin{graphicsFrame}{Current-Voltage characteristics}{}{0.37}{left}{iv-noi}{}
 	\vspace{2em}
 	\begin{itemize}
@@ -334,6 +214,7 @@
 		\item high resistance 
 	\end{itemize}
 \end{graphicsFrame}
+
 \begin{graphicsFrame}{Current-Voltage characteristics II}{}{0.37}{left}{iv-log}{}
 	\vspace{2em}
 	\begin{itemize}
@@ -366,8 +247,8 @@
 			\begin{itemize}
 				\item $
 	s_i = \begin{cases}
-		1 &\text{if} \quad g_i < 10^{-5} \\
-		0 &\text{if} \quad g_i \geq 10^{-5} \\
+		1 &\text{if} \quad g_i \geq 10^{-5} \\
+		0 &\text{if} \quad g_i < 10^{-5} \\
 %        1 &\text{if} \quad -log_{10}(g_i) < 5 \\
 %        0 &\text{if} \quad -log_{10}(g_i) \geq 5 \\
 	\end{cases}
@@ -386,8 +267,7 @@
 			\end{itemize}
 	\end{itemize}
 \end{graphicsFrame}
-	% - PSO + MARS = EMMA
-	% PSO https://doi.org/10.1109/CEC.2010.5586165
+
 \begin{graphicsFrame}{Particle Swarm Optimisation}{}{0.37}{right}{swarm}{}
 	\vspace{3em}
 	\begin{itemize}
@@ -435,18 +315,6 @@
 \end{table}
 \end{frame}
 
-%	\begin{itemize}
-%		\item Aluminium Contact through mask
-%		\item Silver paste
-%	\end{itemize}
-%\end{frame}
-%07. results measuring 
-%\begin{graphicsFrame}{I-V characteristics}{}{0.1}{}{iv2}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{I-V characteristics}{}{0.1}{}{iv3}{}\end{graphicsFrame}
-	% - EMMA 
-%08. results EMMA 
-%\begin{frame}{Pin Hole Density}\begin{figure}\includegraphics[width=.66\textwidth]{figures/phd.png}\end{figure}\end{frame}
-%\begin{frame}{Leakage Current}\begin{figure}\includegraphics[width=.66\textwidth]{figures/leakage.png}\end{figure}\end{frame}
 \begin{frame}{Particle Swarm Optimisation Iterations}
 	\begin{itemize}
 		\item metrics are reduced per generation
@@ -457,90 +325,6 @@
 	\end{figure}
 \end{frame}
 
-%\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{Pin Hole Density}{}{0.1}{}{phd}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{Leakage Current}{}{0.1}{}{leakage_w}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{Leakage Current}{}{-1}{}{leakage}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{Leakage Current}{}{0.24}{right}{leakage}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{Leakage Current}{}{0.37}{right}{leakage}{}\end{graphicsFrame}
-%\begin{graphicsFrame}{EMMA generations}{}{0.1}{}{emma-gen}{}\end{graphicsFrame}
-	% - gen 
-%09. comparison with other statistics 
-	% - comparing with other stats
-
-	\iffalse
-\begin{frame}{Comparison with Statistics}
-\begin{table}[htb]
-	\centering
-%	\resizebox{.95\textwidth}{!}{
-	\begin{tabular}{c cc }
-    \hline\hline
-        $\gamma$&  MAE&   MSE\\
-    \hline
-		PSO&   \textbf{10}& 171\\
-        LR&    13& 250\\
-        KRR &17 &548 \\
-        SVM& 15&  415\\
-    \hline\hline
-	\end{tabular}
-%}
-	\pause
-%	\vspace{1em}
-%	\resizebox{.95\textwidth}{!}{
-	\begin{tabular}{c cc cc cc cc}
-    \hline\hline
-        $\rho$&  MAE&   MSE\\
-    \hline
-		PSO&   \textbf{0.14}&   0.03\\
-        LR&    0.19&   0.06\\
-        KRR &0.25 &0.12 \\
-        SVM &0.23 &0.13 \\
-    \hline\hline
-	\end{tabular}
-%}
-%    \caption{Comparison of MAE and MSE of different prediction methods for different data sets: EMMA data set~(e), pre-EMMA data set~(p), pre-EMMA data set within EMMA bounds~(c) and complete dataset~(a)}
-	\label{tab:post-emma}
-\end{table}
-\end{frame}
-\fi
-    
-\iffalse
-\begin{frame}{Comparison with Statistics}
-\begin{table}[htb]
-	\centering
-	\resizebox{.95\textwidth}{!}{
-	\begin{tabular}{c cc cc cc cc}
-    \hline\hline
-        $\gamma$&  MAE(e)&   MSE(e)&   MAE(p)&   MSE(p)&   MAE(c)&   MSE(c)&   MAE(a)& MSE(a) \\
-    \hline
-        MARS&   10& 171&    28& 1084&   30& 1280&   17& 548\\
-        LR&    13& 250&    24& 747&    34& 1327&   17& 454\\
-        KRR &17 &548 &30 &1477 &35 &2167 &23 &931\\
-        SVM& 15&  415&    26& 1050&   28& 1588&   19& 677\\
-        \hline
-%    \hline\hline
-	\end{tabular}
-}
-	\vspace{1em}
-	\resizebox{.95\textwidth}{!}{
-	\begin{tabular}{c cc cc cc cc}
-    \hline\hline
-        $\rho$&  MAE(e)&   MSE(e)&   MAE(p)&   MSE(p)&   MAE(c)&   MSE(c)&   MAE(a)& MSE(a) \\
-    \hline
-        MARS&   0.14&   0.03&   0.41&   0.21&   0.39&   0.18&   0.25&   0.11\\
-        LR&    0.19&   0.06&   0.30&   0.15&   0.38&   0.13&   0.24&   0.09\\
-        KRR &0.25 &0.12 &0.38 &0.24 &0.43 &0.29 &0.31 &0.17\\
-        SVM &0.23 &0.13 &0.41 &0.28 &0.45 &0.33 &0.31 &0.20\\
-    \hline\hline
-	\end{tabular}
-}
-    \caption{Comparison of MAE and MSE of different prediction methods for different data sets: EMMA data set~(e), pre-EMMA data set~(p), pre-EMMA data set within EMMA bounds~(c) and complete dataset~(a)}
-	\label{tab:post-emma}
-\end{table}
-\end{frame}
-\fi
-    
-%10. summary 
 \begin{frame}{Summary}
 	\center
 	\vspace{2em}
@@ -557,9 +341,6 @@
 	% - double checked with stats
 %11. conclusion 
 %12. end 
-
-
-
 
 \iffalse
 \begin{graphicsFrame}{Layout ``Body with figure, small right''}{short}{0.63}{left}{graphic_rs}{\textcopyright~Universität Wien/derknopfdruecker.com}
